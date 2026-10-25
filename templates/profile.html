@@ -1,0 +1,22 @@
+{% extends "base.html" %}{% block title %}{{ p.name }} – weelect{% endblock %}
+{% block body %}<p><a href="javascript:history.back()">&larr; Back</a></p>
+<div class="profile">{% if p.photo %}<img src="{{ p.photo }}" alt="{{ p.name }}" referrerpolicy="no-referrer">{% endif %}
+<div><h1 style="margin:0">{{ p.name }}</h1><p>{{ p.office }} &middot; {{ p.where }}{% if p.party %} &middot; <span class="party">{{ p.party }}</span>{% endif %}</p>
+{% if since %}<p>In Congress since {{ since }}{% if term_end %}; current term ends {{ term_end }}{% endif %}.</p>{% endif %}</div></div>
+<h2>Contact</h2><ul>{% for k,v in contact.items() if v %}<li><strong>{{ k }}:</strong> {{ v }}</li>{% endfor %}</ul>
+<h2>Links</h2><ul>{% for label,url in links %}<li><a href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a></li>{% endfor %}</ul>
+{% if kind == "fed" %}<h2>Recently sponsored bills</h2>
+{% if bills %}<ul>{% for b in bills %}<li><a href="{{ b.url }}" target="_blank" rel="noopener">{{ b.number }} ({{ b.congress }}th)</a> – {{ b.title }}<br><small>Introduced {{ b.introduced }}. Latest action: {{ b.action }}</small></li>{% endfor %}</ul>
+{% elif bills_error %}<p class="err">Congress.gov API error: {{ bills_error }}</p>
+{% elif not has_key %}<p class="note">Set CONGRESS_API_KEY (free) to show sponsored bills here. Until then, see the Congress.gov profile link above.</p>
+{% else %}<p>No sponsored bills returned.</p>{% endif %}
+<h2>Recent votes</h2>
+{% if votes %}<table style="width:100%;border-collapse:collapse;background:#fff"><tr style="text-align:left;background:#e4e8ee"><th>Date</th><th>Bill / question</th><th>Vote</th><th>Source</th></tr>
+{% for v in votes %}<tr style="border-top:1px solid #ddd;vertical-align:top"><td style="padding:6px;white-space:nowrap">{{ v.date }}</td>
+<td style="padding:6px">{% if v.bill_url %}<a href="{{ v.bill_url }}" target="_blank" rel="noopener"><strong>{{ v.label }}</strong></a>{% else %}<strong>{{ v.label or "—" }}</strong>{% endif %} – {{ v.question }}{% if v.desc %}<br><small>{{ v.desc }}</small>{% endif %}{% if v.result %}<br><small>Result: {{ v.result }}</small>{% endif %}</td>
+<td style="padding:6px"><strong>{{ v.vote }}</strong></td><td style="padding:6px"><a href="{{ v.source }}" target="_blank" rel="noopener">{{ v.source_name }}</a></td></tr>{% endfor %}</table>
+{% if votes_note %}<p class="note">{{ votes_note }}</p>{% endif %}
+{% elif votes_error %}<p class="err">{{ votes_error }}</p>
+{% else %}<p>No recent recorded votes found for this member.</p>{% endif %}{% endif %}
+<h2>The other side</h2><p class="note">Phase 2: sourced strongest-counterargument section per position (not built yet).</p>
+{% endblock %}

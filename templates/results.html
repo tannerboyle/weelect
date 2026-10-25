@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% macro cards(items) %}<div class="grid">{% for o in items %}
+<a class="card" href="/official/{{ o.kind }}/{{ o.id }}">{% if o.photo %}<img src="{{ o.photo }}" alt="" loading="lazy" referrerpolicy="no-referrer">{% else %}<img alt="">{% endif %}
+<div><strong>{{ o.name }}</strong><div class="meta">{{ o.office }}<br>{{ o.where }}</div>{% if o.party %}<span class="party">{{ o.party }}</span>{% endif %}</div></a>{% endfor %}</div>{% endmacro %}
+{% block body %}
+<form class="search" action="/lookup"><input name="address" value="{{ address }}"><button>Find</button></form>
+{% if error %}<p class="err">{{ error }}</p>{% else %}
+<p>Matched address: <strong>{{ geo.matched }}</strong> ({{ geo.county }}{% if geo.place_full %}, {{ geo.place_full }}{% endif %})</p>
+{% for n in notes %}<div class="note">{{ n }}</div>{% endfor %}
+<h2>Federal</h2>{% if federal %}{{ cards(federal) }}{% else %}<p>None found.</p>{% endif %}
+<h2>State legislature</h2>{% if state %}{{ cards(state) }}{% else %}<p>None found.</p>{% endif %}
+<h2>Local</h2>{% if local %}{{ cards(local) }}{% else %}<p>No local officials found in free data.</p>{% endif %}
+{% endif %}{% endblock %}
