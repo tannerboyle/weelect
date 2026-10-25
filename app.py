@@ -7,6 +7,8 @@ import json, os, re, time
 import votes as votes_mod
 from functools import lru_cache
 import requests
+import datetime
+from markupsafe import Markup
 from flask import Flask, render_template, request, abort
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -19,6 +21,34 @@ CENSUS_VINTAGE = os.environ.get("CENSUS_VINTAGE", "ACS2025_Current")
 UA = {"User-Agent": "weelect-prototype/0.1"}
 
 app = Flask(__name__)
+
+
+@app.context_processor
+def _globals():
+    return {"today": datetime.date.today().strftime("%A, %B %-d, %Y")}
+
+
+@lru_cache(maxsize=128)
+def state_svg(code):
+    """Inline SVG (so CSS can colour it) of the state/territory outline from static/states/, or None."""
+    p = os.path.join(ROOT, "static", "states", f"{code}.svg")
+    if not re.fullmatch(r"[A-Z]{2}", code or "") or not os.path.exists(p):
+        return None
+    return Markup(open(p).read())
+
+
+def flag_url(code):
+    if re.fullmatch(r"[A-Z]{2}", code or ""):
+        for ext in ("svg", "webp"):   # simple flags stay SVG; very detailed ones are 480px WebP
+            if os.path.exists(os.path.join(ROOT, "static", "flags", f"{code}.{ext}")):
+                return f"/static/flags/{code}.{ext}"
+    return None
+
+
+@app.route("/credits")
+def credits():
+    flags = _load("flag_credits.json")
+    return render_template("credits.html", flags=flags)
 
 
 # ---------- data loading ----------
@@ -85,8 +115,8 @@ def fed_photo(bio):
 
 def fed_summary(l):
     t = l["terms"][-1]
-    chamber = "U.S. Senator" if t["type"] == "sen" else (
-        "U.S. Delegate" if t["state"] in ("DC", "PR", "GU", "VI", "AS", "MP") else "U.S. Representative")
+    chamber = "U.S. Senator" if t["type"] == "sen" else ("Resident Commissioner" if t["state"] == "PR" else (
+        "U.S. Delegate" if t["state"] in ("DC", "GU", "VI", "AS", "MP") else "U.S. Representative"))
     where = t["state"] if t["type"] == "sen" else (
         f'{t["state"]}-{t["district"]}' if t["district"] else f'{t["state"]} (at large)')
     return {"id": l["id"]["bioguide"], "kind": "fed", "name": l["name"].get("official_full") or f'{l["name"]["first"]} {l["name"]["last"]}',
@@ -195,14 +225,15 @@ def lookup():
             notes.append(f"Open States API failed ({e}); fell back to local data.")
     if not state:
         state, missed = state_for_keyless(geo)
-        if missed:
-            notes.append("Could not match " + ", ".join(missed) + " to a legislator (district naming differs between Census and Open States).")
-        if not OPENSTATES_KEY:
-            notes.append("State legislators matched from the Open States public data snapshot by district name. Set OPENSTATES_API_KEY for exact point-in-polygon matching.")
+        if missed and geo["state"] == "DC":
+            notes.append("D.C. Council members are not covered yet.")
+        elif missed:
+            notes.append("We couldn't match every state legislative district for this address; some state legislators may be missing.")
     if not local:
         notes.append("Local officials (city council, county, school board) are not covered by a free source; only some mayors are listed.")
     return render_template("results.html", address=address, geo=geo, federal=federal, state=state,
-                           local=local, notes=notes, error=None)
+                           local=local, notes=notes, error=None,
+                           state_svg=state_svg(geo["state"]), flag_url=flag_url(geo["state"]))
 
 
 @lru_cache(maxsize=256)

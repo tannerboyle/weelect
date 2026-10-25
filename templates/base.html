@@ -1,20 +1,20 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{% block title %}weelect{% endblock %}</title>
-<style>
-body{font-family:system-ui,sans-serif;margin:0;background:#f6f7f9;color:#1b1f24}
-header{background:#14213d;color:#fff;padding:14px 20px}header a{color:#fff;text-decoration:none;font-weight:700;font-size:1.3rem}
-main{max-width:900px;margin:0 auto;padding:20px}
-form.search{display:flex;gap:8px}form.search input{flex:1;padding:12px;font-size:1rem;border:1px solid #bbb;border-radius:6px}
-button{padding:12px 18px;font-size:1rem;background:#2a6fdb;color:#fff;border:0;border-radius:6px;cursor:pointer}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
-.card{background:#fff;border-radius:10px;padding:12px;display:flex;gap:12px;text-decoration:none;color:inherit;box-shadow:0 1px 3px #0002}
-.card img{width:64px;height:78px;object-fit:cover;border-radius:6px;background:#ddd}
-.card .meta{font-size:.9rem;color:#555}.party{font-size:.8rem;padding:1px 6px;border-radius:8px;background:#e4e8ee}
-.note{background:#fff6dd;border:1px solid #e8d38a;padding:8px 12px;border-radius:6px;margin:8px 0;font-size:.9rem}
-.err{background:#fde4e4;border:1px solid #e39a9a;padding:10px;border-radius:6px}
-h2{margin-top:28px}.profile{display:flex;gap:20px}.profile img{width:150px;border-radius:8px}
-footer{max-width:900px;margin:30px auto;padding:0 20px;font-size:.8rem;color:#666}
-</style></head><body>
-<header><a href="/">weelect</a></header><main>{% block body %}{% endblock %}</main>
-<footer>Prototype. Data: U.S. Census Geocoder, unitedstates/congress-legislators (CC0), Open States people data (CC0), Congress.gov API. Always verify with official sources.</footer>
+<title>{% block title %}weelect – Who represents you?{% endblock %}</title>
+<meta name="description" content="Enter your address to see your federal and state elected officials. Nonpartisan civic information.">
+<link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+<link rel="preload" href="{{ url_for('static', filename='fonts/playfair-display-latin-700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2">
+</head><body>
+<div class="flagstripe"></div>
+<header class="mast">
+  <div class="mast-top"><span>{{ today }}</span><span>Nonpartisan civic information</span></div>
+  <a class="brand" href="/" aria-label="weelect home"><img src="{{ url_for('static', filename='logo-mark.svg') }}" alt=""><span class="wordmark">wee<i>l</i>ect</span></a>
+  <p class="mast-sub">Know who represents you.</p>
+  <nav class="rules"><a href="/">Find my officials</a><a href="/credits">About &amp; credits</a></nav>
+</header>
+<main>{% block body %}{% endblock %}</main>
+<footer>
+  <p>weelect is an independent, nonpartisan civic information project. It is not affiliated with any government agency, party or campaign. Always verify with official sources.</p>
+  <p>Data: U.S. Census Bureau geocoder and boundaries; unitedstates/congress-legislators (CC0); Open States people data (CC0); House Clerk and Voteview roll calls; Congress.gov. State flags: Wikimedia Commons. <a href="/credits">Full credits</a>.</p>
+</footer>
 </body></html>

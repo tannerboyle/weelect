@@ -2,12 +2,28 @@
 {% macro cards(items) %}<div class="grid">{% for o in items %}
 <a class="card" href="/official/{{ o.kind }}/{{ o.id }}">{% if o.photo %}<img src="{{ o.photo }}" alt="" loading="lazy" referrerpolicy="no-referrer">{% else %}<img alt="">{% endif %}
 <div><strong>{{ o.name }}</strong><div class="meta">{{ o.office }}<br>{{ o.where }}</div>{% if o.party %}<span class="party">{{ o.party }}</span>{% endif %}</div></a>{% endfor %}</div>{% endmacro %}
+{% block title %}Your officials{% if geo %} – {{ geo.state_name }}{% endif %} – weelect{% endblock %}
 {% block body %}
-<form class="search" action="/lookup"><input name="address" value="{{ address }}"><button>Find</button></form>
+<form class="search" action="/lookup"><input name="address" value="{{ address }}" aria-label="Address"><button>Find</button></form>
 {% if error %}<p class="err">{{ error }}</p>{% else %}
-<p>Matched address: <strong>{{ geo.matched }}</strong> ({{ geo.county }}{% if geo.place_full %}, {{ geo.place_full }}{% endif %})</p>
+<section class="ataglance" aria-label="Your state at a glance">
+  <div class="state-icon" aria-hidden="true">{% if state_svg %}{{ state_svg }}{% endif %}</div>
+  <div class="info">
+    <div class="kicker">Your address is in</div>
+    <h2>{{ geo.state_name }}</h2>
+    <div class="meta" style="font-size:.9rem;color:var(--mute)">{{ geo.matched }}</div>
+    <ul class="facts">
+      {% if geo.county %}<li><b>County:</b> {{ geo.county }}</li>{% endif %}
+      {% if geo.place_full %}<li><b>City:</b> {{ geo.place_full }}</li>{% endif %}
+      {% if geo.cd_label %}<li><b>U.S. House:</b> {{ geo.cd_label }}</li>{% endif %}
+      {% if geo.sldu %}<li><b>State Senate:</b> {{ geo.sldu }}</li>{% endif %}
+      {% if geo.sldl %}<li><b>State House:</b> {{ geo.sldl }}</li>{% endif %}
+    </ul>
+  </div>
+  {% if flag_url %}<figure class="flagbox" style="margin:0"><img class="flag" src="{{ flag_url }}" alt="Flag of {{ geo.state_name }}"><figcaption>Flag of {{ geo.state_name }}</figcaption></figure>{% endif %}
+</section>
 {% for n in notes %}<div class="note">{{ n }}</div>{% endfor %}
-<h2>Federal</h2>{% if federal %}{{ cards(federal) }}{% else %}<p>None found.</p>{% endif %}
-<h2>State legislature</h2>{% if state %}{{ cards(state) }}{% else %}<p>None found.</p>{% endif %}
-<h2>Local</h2>{% if local %}{{ cards(local) }}{% else %}<p>No local officials found in free data.</p>{% endif %}
+<div class="sechead"><span class="star">★</span><h2>Federal</h2><small>Congress</small></div>{% if federal %}{{ cards(federal) }}{% else %}<p>None found.</p>{% endif %}
+<div class="sechead"><span class="star">★</span><h2>State legislature</h2><small>{{ geo.state_name }}</small></div>{% if state %}{{ cards(state) }}{% else %}<p>None found.</p>{% endif %}
+<div class="sechead"><span class="star">★</span><h2>Local</h2><small>City &amp; county</small></div>{% if local %}{{ cards(local) }}{% else %}<p>No local officials found in free data.</p>{% endif %}
 {% endif %}{% endblock %}

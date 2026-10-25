@@ -26,3 +26,14 @@ e.g. `CONGRESS_API_KEY=xxxx OPENSTATES_API_KEY=yyyy .venv/bin/python app.py`
 
 ## Production server
 `.venv/bin/gunicorn -w 2 -b 0.0.0.0:8000 app:app`
+
+## Branding & assets (Oct 2026)
+Broadsheet look (serif type, thin rules, cream paper, muted red/navy), faint continental-US outline as page background,
+and a state outline + state flag on the results dashboard (all 50 states, DC and the five territories).
+- `static/style.css`, `static/logo-mark.svg`, `static/favicon.svg` – our own design (logo and wordmark are original).
+- `static/states/*.svg`, `static/us-outline.svg` – built by `scripts/build_state_svgs.py` from the U.S. Census Bureau 2023 Cartographic Boundary File `cb_2023_us_state_500k` (U.S. Government work, no copyright; Census asks to be cited, which the footer/credits page do).
+- `static/flags/*` – Wikimedia Commons flag files (license metadata checked via the Commons API on 2026-10-25: 55 are "Public domain", Mississippi is "Copyrighted free use" - the state says the design "can be freely used by members of the public"). No attribution required; all 56 sources are listed on `/credits` (data in `data/flag_credits.json`). Files over 60 KB after SVG optimization (scour) were converted to 480 px WebP.
+- `static/fonts/` – Playfair Display and Source Serif 4 (SIL OFL 1.1, via Fontsource); see `static/fonts/FONT-LICENSES.txt`.
+
+## Stipple (hedcut-style) portraits - experimental, not live
+`scripts/stipple.py` converts `static/photos/<ID>.jpg` to dot-drawing SVGs (needs `requirements-dev.txt`). The live site still uses the original photos.

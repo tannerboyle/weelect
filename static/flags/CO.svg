@@ -1,0 +1,6 @@
+<svg viewBox="0 0 1800 1200" xmlns="http://www.w3.org/2000/svg">
+ <path d="M0 0h1800v1200H0" fill="#00205B"/>
+ <path d="M0 400h1800v400H0" fill="#fff"/>
+ <path d="m1130.8 750a400 400 0 1 1 0-300l-370.81 150" fill="#BF0A30"/>
+ <circle cx="760" cy="600" r="200" fill="gold"/>
+</svg>

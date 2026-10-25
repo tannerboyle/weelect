@@ -1,6 +1,12 @@
 {% extends "base.html" %}{% block body %}
-<h1>Who represents me?</h1>
-<p>Enter your US street address to see your federal and state representatives.</p>
-<form class="search" action="/lookup"><input name="address" placeholder="e.g. 1600 Pennsylvania Ave NW, Washington, DC 20500" required autofocus><button>Find</button></form>
-<p style="font-size:.85rem;color:#666">Your address is sent to the U.S. Census geocoder to find districts; this prototype does not store it.</p>
+<h1 class="hero">Who represents you?</h1>
+<p class="deck">Enter a home address to see the federal and state officials elected to speak for you &mdash; from Washington to your statehouse.</p>
+<form class="search" action="/lookup"><input name="address" placeholder="Street address, city, state (e.g. 1600 Pennsylvania Ave NW, Washington, DC)" autocomplete="street-address" required autofocus><button>Find</button></form>
+<p class="fine">Your address is sent to the U.S. Census geocoder to find your districts. This site does not store it.</p>
+<div class="stars" aria-hidden="true">★ ★ ★ ★ ★</div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+ <div class="card" style="display:block"><strong>Federal</strong><div class="meta">Your U.S. Representative and both U.S. Senators, with recent votes.</div></div>
+ <div class="card" style="display:block"><strong>State</strong><div class="meta">Your state senator and state representative.</div></div>
+ <div class="card" style="display:block"><strong>Local</strong><div class="meta">Mayors where data exists. More local coverage is coming.</div></div>
+</div>
 {% endblock %}
