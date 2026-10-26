@@ -128,3 +128,24 @@ ul.offices li,ul.measures li{display:flex;gap:12px;padding:9px 0;border-top:1px 
 .mtype{flex:none;min-width:58px;text-align:center;font-size:.66rem;letter-spacing:.06em;padding:2px 4px;margin-top:3px;border:1px solid var(--ink);background:var(--card)}
 .srcl{font-size:.74rem;color:var(--mute);white-space:nowrap}
 @media (max-width:640px){.elgrid{grid-template-columns:1fr}.drow{grid-template-columns:1fr}.countdown{text-align:left}.lvl{width:64px}}
+
+/* ---- voting-locations map (Leaflet, self-hosted) ---- */
+.elmapbox{margin:4px 0 12px;padding:0}
+.elmap{width:100%;height:340px;border:1px solid var(--ink);background:#ece6d4;z-index:0}
+.elmap .leaflet-tile-pane{filter:grayscale(.55) sepia(.28) contrast(.93) brightness(1.04)} /* mute the OSM tiles toward the cream palette */
+.elmap .leaflet-control-attribution{font:.68rem var(--text);background:rgba(247,243,232,.85)}
+.elmap .leaflet-control-zoom a{color:var(--navy)}
+.elmap .elpin{background:none;border:0}.elmap .elpin svg{display:block;filter:drop-shadow(0 1px 1px rgba(0,0,0,.35))}
+.elmap .leaflet-marker-icon:focus-visible{outline:3px solid #000;outline-offset:2px;border-radius:4px}
+.elmap .leaflet-popup-content-wrapper,.elmap .leaflet-tooltip{border-radius:0;background:var(--card);color:var(--ink);border:1px solid var(--ink);font:.84rem/1.35 var(--text);box-shadow:3px 3px 0 var(--hair)}
+.elmap .leaflet-popup-tip{background:var(--card)}
+.elmap .leaflet-tooltip{white-space:normal;width:215px;max-width:70vw}.elmap .leaflet-popup-content{margin:10px 12px}
+.elmap .leaflet-tooltip-top:before{border-top-color:var(--ink)}
+.elp strong{font-family:var(--display);font-size:.95rem}.elp .elp-d{color:var(--mute);font-size:.78rem}
+.elp .elp-e{margin-top:5px}.elp .elp-e b{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.elp .elp-h,.elp .elp-n{white-space:pre-line}.elp .elp-n{color:var(--mute)}
+.maplegend{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:6px 0 2px;padding:0;font-size:.84rem}.maplegend li{display:flex;align-items:center;gap:6px}
+.elmapbox figcaption .meta{font-size:.76rem}
+.hrs{white-space:pre-line}
+@media (max-width:640px){.elmap{height:260px}}
+.elmap .leaflet-popup-content{max-height:210px;overflow:auto}

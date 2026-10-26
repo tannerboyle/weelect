@@ -34,9 +34,26 @@
   <section class="elcard" aria-label="Where to vote">
     <h3>Where &amp; when to vote</h3>
     {% if C and C.status == "ok" and (C.polling or C.early or C.dropoff) %}
-      {% if C.polling %}<h4>Your Election Day polling place</h4><ul class="sites">{% for s in C.polling %}{{ site(s) }}{% endfor %}</ul>{% endif %}
+      {% if E.map %}
+      <figure class="elmapbox" aria-label="Map of your address and voting locations">
+        <div id="elmap" class="elmap" role="region" aria-label="Map: your address and nearby voting locations. Locations are also listed in text."></div>
+        <figcaption>
+          <ul class="maplegend" aria-label="Map legend">
+            <li><svg viewBox="0 0 34 34" width="18" height="18" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#1f2f5a"/><polygon points="17,6.5 20.2,13.6 28,14.5 22.2,19.7 23.8,27.4 17,23.5 10.2,27.4 11.8,19.7 6,14.5 13.8,13.6" fill="#f7f3e8"/></svg> Your address</li>
+            <li><svg viewBox="0 0 30 40" width="14" height="19" aria-hidden="true"><path d="M15 38C15 38 2.5 23.5 2.5 14.5a12.5 12.5 0 0 1 25 0C27.5 23.5 15 38 15 38Z" fill="#9b2335"/></svg> Voting location <span class="meta">(P polling · E early · D drop-off)</span></li>
+          </ul>
+          <div class="meta">Showing {{ E.map.total }} nearest location{{ "s" if E.map.total != 1 }}; zoomed to the closest {{ [E.map.fit, E.map.total]|min }}. Hover, tap or press Enter on a pin for details.{% if E.map.unplaced %} {{ E.map.unplaced }} could not be placed on the map but may be in the lists.{% endif %}</div>
+          <div class="meta">Map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors; pin positions from the Voting Information Project / U.S. Census geocoder.</div>
+        </figcaption>
+      </figure>
+      <script type="application/json" id="elmap-data">{{ {"voter": E.map.voter, "sites": E.map.sites, "fit": E.map.fit}|tojson }}</script>
+      <link rel="stylesheet" href="{{ url_for('static', filename='vendor/leaflet/leaflet.css') }}?v=1">
+      <script src="{{ url_for('static', filename='vendor/leaflet/leaflet.js') }}?v=1" defer></script>
+      <script src="{{ url_for('static', filename='elmap.js') }}?v=6" defer></script>
+      {% endif %}
+      {% if C.polling %}<h4>Election Day polling place{{ "s" if C.polling|length > 1 }}</h4><ul class="sites">{% for s in C.polling[:6] %}{{ site(s) }}{% endfor %}</ul>{% if C.polling|length > 6 %}<p class="meta">+ {{ C.polling|length - 6 }} more — your assigned polling place is on your state's lookup below.</p>{% endif %}{% endif %}
       {% if C.early %}<h4>Early voting sites</h4><ul class="sites">{% for s in C.early[:6] %}{{ site(s) }}{% endfor %}</ul>{% if C.early|length > 6 %}<p class="meta">+ {{ C.early|length - 6 }} more — see your state's lookup below.</p>{% endif %}{% endif %}
-      {% if C.dropoff %}<h4>Ballot drop-off locations</h4><ul class="sites">{% for s in C.dropoff[:6] %}{{ site(s) }}{% endfor %}</ul>{% endif %}
+      {% if C.dropoff %}<h4>Ballot drop-off locations</h4><ul class="sites">{% for s in C.dropoff[:6] %}{{ site(s) }}{% endfor %}</ul>{% if C.dropoff|length > 6 %}<p class="meta">+ {{ C.dropoff|length - 6 }} more — see the map and your state's lookup.</p>{% endif %}{% endif %}
       {{ src("Google Civic Information API / Voting Information Project" ~ (" (official state data)" if (C.polling + C.early + C.dropoff)|selectattr("official")|list else ""), "https://developers.google.com/civic-information") }}
       <p class="fine left">Polling places can change close to Election Day. Verify with the official lookup below.</p>
     {% else %}

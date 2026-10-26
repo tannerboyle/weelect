@@ -10,7 +10,7 @@ Everything shown carries a source label. Nothing is guessed:
                        - Google Civic Information API (voterinfo) ONLY when GOOGLE_CIVIC_API_KEY is set.
                          Without a key the panel links to the state's official lookup instead.
 """
-import datetime, json, os, re, time
+import datetime, json, os, re, threading, time
 from functools import lru_cache
 import requests
 
@@ -144,11 +144,40 @@ def _addr(a):
     return {"place": a.get("locationName") or "", "address": ", ".join(x for x in [line, city] if x)}
 
 
-def _site(s):
+def _num(v):
+    try:
+        f = float(v)
+        return f if -180 <= f <= 180 else None
+    except (TypeError, ValueError):
+        return None
+
+
+_HRS = re.compile(r"^\s*(?P<day>[A-Za-z]{3},? [A-Za-z]{3,9}\.? \d{1,2}):\s*(?P<t>.+?)\s*$")
+
+
+def compact_hours(h):
+    """'Mon, Oct 19: 7 am - 7 pm' x12 lines -> 'Mon, Oct 19 – Fri, Oct 30: 7 am - 7 pm' (consecutive identical times)."""
+    lines = [l for l in (h or "").splitlines() if l.strip()]
+    parsed = [_HRS.match(l) for l in lines]
+    if len(lines) < 3 or not all(parsed):
+        return (h or "").strip()
+    runs = []
+    for m in parsed:
+        if runs and runs[-1][2] == m.group("t"):
+            runs[-1][1] = m.group("day")
+        else:
+            runs.append([m.group("day"), m.group("day"), m.group("t")])
+    if len(runs) > 6:
+        return (h or "").strip()
+    return "\n".join(f"{a}: {t}" if a == b else f"{a} – {b}: {t}" for a, b, t in runs)
+
+
+def _site(s, kind=""):
     a = _addr(s.get("address"))
     o = any(x.get("official") for x in s.get("sources") or [])
-    return {"name": s.get("name") or a["place"], "place": a["place"], "address": a["address"],
-            "hours": (s.get("pollingHours") or "").strip(), "notes": (s.get("notes") or "").strip(),
+    return {"kind": kind, "lat": _num(s.get("latitude")), "lng": _num(s.get("longitude")),
+            "name": s.get("name") or a["place"], "place": a["place"], "address": a["address"],
+            "hours": compact_hours(s.get("pollingHours") or ""), "notes": (s.get("notes") or "").strip(),
             "start": s.get("startDate") or "", "end": s.get("endDate") or "", "official": o,
             "map": "https://www.google.com/maps/search/?api=1&query=" + requests.utils.quote(a["address"]) if a["address"] else None}
 
@@ -156,9 +185,9 @@ def _site(s):
 def parse_civic(j):
     """Normalise a voterinfo response into what the template shows."""
     res = {"status": "ok", "election": (j.get("election") or {}).get("name"), "day": (j.get("election") or {}).get("electionDay"),
-           "polling": [_site(s) for s in j.get("pollingLocations") or []],
-           "early": [_site(s) for s in j.get("earlyVoteSites") or []],
-           "dropoff": [_site(s) for s in j.get("dropOffLocations") or []],
+           "polling": [_site(s, "polling") for s in j.get("pollingLocations") or []],
+           "early": [_site(s, "early") for s in j.get("earlyVoteSites") or []],
+           "dropoff": [_site(s, "dropoff") for s in j.get("dropOffLocations") or []],
            "mail_only": bool(j.get("mailOnly")), "contests": [], "measures": [], "admin": {}}
     for c in j.get("contests") or []:
         official = any(x.get("official") for x in c.get("sources") or [])
@@ -207,6 +236,106 @@ def civic_lookup(address):
     _cache[address] = (time.time(), out)
     return out
 
+
+
+# ---------------- map data (voter pin + voting-site pins) ----------------
+GEO_CACHE_PATH = os.path.join(ROOT, "cache", "site_geocode.json")
+_geo_mem = None
+_geo_lock = threading.Lock()
+MAX_SITES = 60            # markers sent to the browser per request
+MAX_GEOCODE = 12          # Census lookups per request for sites Google gave no coordinates for
+FIT_NEAREST = 12          # the map zooms to the voter plus this many nearest sites
+KINDS = {"polling": ("P", "Election Day polling place"), "early": ("E", "Early voting site"), "dropoff": ("D", "Ballot drop-off")}
+
+
+def _geo_load():
+    global _geo_mem
+    if _geo_mem is None:
+        try:
+            with open(GEO_CACHE_PATH) as f:
+                _geo_mem = json.load(f)
+        except Exception:
+            _geo_mem = {}
+    return _geo_mem
+
+
+def _geo_save():
+    try:
+        os.makedirs(os.path.dirname(GEO_CACHE_PATH), exist_ok=True)
+        with open(GEO_CACHE_PATH + ".tmp", "w") as f:
+            json.dump(_geo_mem, f)
+        os.replace(GEO_CACHE_PATH + ".tmp", GEO_CACHE_PATH)
+    except Exception:
+        pass
+
+
+def census_site_geocode(address):
+    """Free U.S. Census geocoder, one address. Result cached in memory + cache/site_geocode.json
+    (misses are remembered for a day so a bad address is not retried on every page view)."""
+    key = re.sub(r"\s+", " ", address.strip().lower())
+    cache = _geo_load()
+    hit = cache.get(key)
+    if hit and (hit.get("lat") is not None or time.time() - hit.get("ts", 0) < 86400):
+        return (hit["lat"], hit["lng"]) if hit.get("lat") is not None else None
+    try:
+        r = requests.get("https://geocoding.geo.census.gov/geocoder/locations/onelineaddress",
+                         params={"address": address, "benchmark": "Public_AR_Current", "format": "json"}, headers=UA, timeout=8)
+        m = r.json()["result"]["addressMatches"]
+        val = {"lat": m[0]["coordinates"]["y"], "lng": m[0]["coordinates"]["x"], "ts": time.time()} if m else {"lat": None, "lng": None, "ts": time.time()}
+    except Exception:
+        return None              # transient error: do not cache
+    with _geo_lock:
+        cache[key] = val
+    return (val["lat"], val["lng"]) if val["lat"] is not None else None
+
+
+def _km(a, b):
+    from math import radians, sin, cos, asin, sqrt
+    la1, lo1, la2, lo2 = map(radians, (a[0], a[1], b[0], b[1]))
+    h = sin((la2 - la1) / 2) ** 2 + cos(la1) * cos(la2) * sin((lo2 - lo1) / 2) ** 2
+    return 12742 * asin(sqrt(h))
+
+
+def build_map(geo, civic):
+    """Return the data the map needs, or None (-> the panel hides the map)."""
+    if not civic or civic.get("status") != "ok":
+        return None
+    try:
+        voter = (float(geo["lat"]), float(geo["lng"]))
+    except (KeyError, TypeError, ValueError):
+        return None
+    sites = [s for k in ("polling", "early", "dropoff") for s in civic.get(k, [])]
+    missing = [s for s in sites if s["lat"] is None and s["address"]]
+    if missing:      # only for sites Google gave no coordinates for: cached ones are free, at most MAX_GEOCODE new lookups
+        cache = _geo_load()
+        norm = lambda a: re.sub(r"\s+", " ", a.strip().lower())
+        fresh = [s for s in missing if norm(s["address"]) not in cache][:MAX_GEOCODE]
+        if fresh:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=4) as ex:
+                list(ex.map(lambda x: census_site_geocode(x["address"]), fresh))
+            _geo_save()
+        for s in missing:
+            hit = cache.get(norm(s["address"]))
+            if hit and hit.get("lat") is not None:
+                s["lat"], s["lng"] = hit["lat"], hit["lng"]
+    merged = {}
+    for s in sites:
+        if s["lat"] is None or s["lng"] is None:
+            continue        # could not be placed; still listed in the text
+        key = (round(s["lat"], 4), round(s["lng"], 4))      # ~11 m: one pin per building, even if listed under two names
+        m = merged.setdefault(key, {"lat": s["lat"], "lng": s["lng"], "name": s["place"] or s["name"] or "Voting location",
+                                    "address": s["address"], "map": s["map"], "entries": []})
+        m["entries"].append({"name": s["place"] or s["name"] or "", "kind": s["kind"], "label": KINDS[s["kind"]][1], "hours": s["hours"], "notes": s["notes"],
+                             "dates": (s["start"] + (" – " + s["end"] if s["end"] else "")) if s["start"] else ""})
+    pts = sorted(merged.values(), key=lambda m: _km(voter, (m["lat"], m["lng"])))[:MAX_SITES]
+    if not pts:
+        return None
+    for m in pts:
+        m["letter"] = KINDS[m["entries"][0]["kind"]][0]
+        m["miles"] = round(_km(voter, (m["lat"], m["lng"])) * 0.621371, 1)
+    return {"voter": {"lat": voter[0], "lng": voter[1], "label": geo.get("matched") or "Your address"},
+            "sites": pts, "fit": FIT_NEAREST, "total": len(pts), "unplaced": len([s for s in sites if s["lat"] is None])}
 
 # ---------------- the panel ----------------
 def build_panel(geo, fed_raw, address):
@@ -287,5 +416,9 @@ def build_panel(geo, fed_raw, address):
     # polling
     panel["polling"] = {"lookup": S["lookup"], "hours": S["hours"], "hours_note": S.get("hours_note") or "", "vote_gov": VOTE_GOV, "nass": NASS}
     panel["civic"] = civic_lookup(address)
+    try:
+        panel["map"] = build_map(geo, panel["civic"])
+    except Exception:      # a map problem must never break the panel
+        panel["map"] = None
     panel["civic_enabled"] = bool(CIVIC_KEY)
     return panel
