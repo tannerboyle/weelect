@@ -46,3 +46,15 @@ and a state outline + state flag on the results dashboard (all 50 states, DC and
 
 
 **Voting-locations map is opt-in:** the "Where & when to vote" card shows the text list by default; a "Show map" button (with `aria-expanded`) reveals the map. Leaflet and OSM tiles are not requested until the first click (`static/elmap.js`), and each list entry has a "show on map" link that opens that pin's popup.
+
+## Both sides on key votes
+
+Editorial section showing the strongest case for and against a few notable votes (`/votes`, `/votes/<id>`, plus an expandable "Both sides" on member profiles).
+
+- **Data:** `data/counterarguments.json` — `meta` (last reviewed date, disclaimer), `sources` (id → org, title, url, type, date, checked) and `items` (summary, `rolls` pointing at real House Clerk / Senate roll numbers, `for` and `against` points, each citing source ids). `bothsides.py` loads it and looks up each member's vote on the featured rolls.
+- **Rules:** same structure and length for both sides, always "for" then "against", no party colors, at least two real sources per side, no quote or number that is not in a source we opened. Anything unverifiable is left out. Update `last_reviewed` whenever an item is re-checked.
+- **Adding an item:** add sources and an item to the JSON (rolls: House `chamber/year/roll`, Senate `chamber/session/roll`), re-read every cited page, and check each quote and number against the page text.
+- Corrections contact on `/credits#both-sides` is generic (a Brunner Creative site); add a real address before launch.
+
+### "What neither side is saying"
+Each item in `data/counterarguments.json` has an `unsaid` list (`label`, `text`, `src[]`) shown full width under the two columns (copy in `meta.unsaid_*`). Only add a point if it concerns the bill's effects, cost, enforcement or who it affects, is not covered by the for/against arguments, is sourced to a page you opened, and states no opinion on what should be done. Add its sources to `sources` and re-check every number and quote against the source text.

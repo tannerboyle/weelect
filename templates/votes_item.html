@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block title %}{{ it.title }}: both sides – We Elect{% endblock %}
+{% block body %}{% import "_bothsides.html" as B with context %}<p><a href="/votes">&larr; All key votes</a></p>
+<div class="bs-page">
+<span class="bs-kicker">{{ it.topic }}</span>
+<h1 class="bs-title">{{ it.title }}</h1>
+<p class="meta"><a href="{{ it.bill.url }}" target="_blank" rel="noopener">{{ it.bill.label }} ({{ it.bill.congress }}th Congress)</a> · {{ it.bill.law }}</p>
+<div class="sechead"><span class="star">★</span><h2>How Congress voted</h2></div>
+<table class="votes"><thead><tr><th>Chamber</th><th>Date</th><th>Question</th><th>Result</th><th>Record</th></tr></thead>
+{% for r in it.rolls %}<tr><td>{{ r.chamber }}</td><td style="white-space:nowrap">{{ r.date }}</td><td>{{ r.question }}</td><td>{{ r.result }}{% if r.note %}<br><small>{{ r.note }}</small>{% endif %}</td><td><a href="{{ bs_roll_url(r) }}" target="_blank" rel="noopener">Roll call {{ r.roll }}</a></td></tr>{% endfor %}</table>
+<div class="sechead"><span class="star">★</span><h2>Both sides</h2></div>
+{{ B.block(it, "bs") }}
+<nav class="bs-pager" aria-label="More key votes">{% if prev %}<a href="/votes/{{ prev.id }}">&larr; {{ prev.title }}</a>{% else %}<span></span>{% endif %}{% if nxt %}<a href="/votes/{{ nxt.id }}">{{ nxt.title }} &rarr;</a>{% endif %}</nav>
+<p class="fine" style="text-align:left;margin-left:0">We Elect is a Brunner Creative site. {{ bs_meta.disclaimer }}</p>
+</div>{% endblock %}

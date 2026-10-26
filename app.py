@@ -6,6 +6,7 @@ Optional env vars (see README): CONGRESS_API_KEY, OPENSTATES_API_KEY
 import json, os, re, time
 import votes as votes_mod
 import elections as elections_mod
+import bothsides as bs_mod
 from functools import lru_cache
 import requests
 import datetime
@@ -49,7 +50,28 @@ def flag_url(code):
 @app.route("/credits")
 def credits():
     flags = _load("flag_credits.json")
-    return render_template("credits.html", flags=flags)
+    return render_template("credits.html", flags=flags, bs_sources=bs_mod.all_sources())
+
+
+@app.context_processor
+def _bothsides_helpers():
+    return {"bs_numbers": bs_mod.source_numbers, "bs_sourcelist": bs_mod.sources, "bs_roll_url": bs_mod.roll_url,
+            "bs_for_vote": bs_mod.match_recent, "bs_meta": bs_mod.meta()}
+
+
+@app.route("/votes")
+def votes_index():
+    return render_template("votes_index.html", items=bs_mod.items())
+
+
+@app.route("/votes/<slug>")
+def votes_item(slug):
+    it = bs_mod.get(slug)
+    if not it:
+        abort(404)
+    items = bs_mod.items()
+    i = items.index(it)
+    return render_template("votes_item.html", it=it, prev=items[i - 1] if i else None, nxt=items[i + 1] if i + 1 < len(items) else None)
 
 
 # ---------- data loading ----------
@@ -319,7 +341,11 @@ def fed_profile(bioguide):
         bills_error = str(e)
     contact = {"Phone": t.get("phone"), "Office": t.get("address")}
     vlist, verr, vnote = votes_mod.recent_votes(bioguide, t["type"])
-    return render_template("profile.html", p=s, votes=vlist, votes_error=verr, votes_note=vnote, since=l["terms"][0]["start"][:4], term_end=t.get("end"),
+    try:
+        notable = bs_mod.member_votes(bioguide, t["type"])
+    except Exception:
+        notable = []
+    return render_template("profile.html", p=s, notable=notable, votes=vlist, votes_error=verr, votes_note=vnote, since=l["terms"][0]["start"][:4], term_end=t.get("end"),
                            contact=contact, links=links, bills=bills, bills_error=bills_error,
                            has_key=bool(CONGRESS_KEY), kind="fed")
 
@@ -336,7 +362,7 @@ def st_profile(pid):
     contact = {"Email": p.get("email")}
     for o in p["offices"][:3]:
         contact[f'{(o.get("classification") or "office").title()} office'] = ", ".join(x for x in (o.get("address"), o.get("voice")) if x)
-    return render_template("profile.html", p=s, votes=None, votes_error=None, votes_note=None, since=None, term_end=None, contact=contact, links=links,
+    return render_template("profile.html", p=s, notable=[], votes=None, votes_error=None, votes_note=None, since=None, term_end=None, contact=contact, links=links,
                            bills=None, bills_error=None, has_key=False, kind="st")
 
 

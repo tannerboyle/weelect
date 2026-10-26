@@ -1,0 +1,999 @@
+{
+ "meta": {
+  "last_reviewed": "2026-10-26",
+  "disclaimer": "Editorial summary of arguments made by others, not the opinion of We Elect. Each side is written to be the strongest case its supporters would recognize, and every claim is tied to a source we opened and read.",
+  "publisher": "a Brunner Creative site",
+  "unsaid_title": "What neither side is saying",
+  "unsaid_intro": "Context that bears on what this bill does or who it affects but that the arguments above do not address. These are sourced facts, not arguments for or against the bill.",
+  "unsaid_note": "Editorial context, not the opinion of We Elect. Each point is a fact we found in a source we opened and read; where sources disagree or data are missing, we say so."
+ },
+ "sources": {
+  "lra-congress": {
+   "org": "Congress.gov (CRS summary)",
+   "title": "S.5 – Laken Riley Act, summary",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/5",
+   "type": "Government record",
+   "date": "2025-01-29",
+   "used_for": "What the bill does; vote counts",
+   "checked": "2026-10-26"
+  },
+  "lra-heritage": {
+   "org": "The Heritage Foundation",
+   "title": "Heritage Border Security Experts Applaud Passage of Laken Riley Act…",
+   "url": "https://www.heritage.org/press/heritage-border-security-experts-applaud-passage-laken-riley-act-first-much-needed-0",
+   "type": "Think tank statement",
+   "date": "2025-01-29",
+   "used_for": "Supporters’ public-safety and state-lawsuit arguments",
+   "checked": "2026-10-26"
+  },
+  "lra-britt": {
+   "org": "Sen. Katie Britt (R-Ala.)",
+   "title": "Britt, Budd Introduce Laken Riley Act in Senate",
+   "url": "https://www.britt.senate.gov/news/press-releases/u-s-senators-katie-britt-ted-budd-introduce-laken-riley-act-in-senate-call-for-immediate-consideration/",
+   "type": "Official statement",
+   "date": "2024-03-13",
+   "used_for": "Sponsor’s rationale (as introduced in 2024)",
+   "checked": "2026-10-26"
+  },
+  "lra-nbc": {
+   "org": "NBC News",
+   "title": "Senate passes Laken Riley Act aimed at cracking down on illegal immigration",
+   "url": "https://www.nbcnews.com/politics/congress/senate-passes-laken-riley-act-crack-down-immigration-rcna188226",
+   "type": "News report",
+   "date": "2025-01-20",
+   "used_for": "Bipartisan vote counts; offenses covered",
+   "checked": "2026-10-26"
+  },
+  "lra-medill": {
+   "org": "Medill on the Hill (Northwestern University)",
+   "title": "Immigration experts share concern about new Laken Riley Act",
+   "url": "https://medillonthehill.medill.northwestern.edu/2025/01/immigration-experts-share-concern-about-new-laken-riley-act/",
+   "type": "News report",
+   "date": "2025-01",
+   "used_for": "Background on the Riley case; experts’ concerns",
+   "checked": "2026-10-26"
+  },
+  "lra-aclu-letter": {
+   "org": "American Civil Liberties Union",
+   "title": "Letter urging a NO vote on H.R. 29, the Laken Riley Act",
+   "url": "https://assets.aclu.org/live/uploads/2025/01/aclu-vote-no-laken-riley.pdf",
+   "type": "Advocacy group letter",
+   "date": "2025-01",
+   "used_for": "Opponents’ due-process, cost and profiling arguments",
+   "checked": "2026-10-26"
+  },
+  "lra-aclu-pr": {
+   "org": "American Civil Liberties Union",
+   "title": "Federal Court Declares Noncitizen’s Detention Under Laken Riley Act Unconstitutional",
+   "url": "https://www.aclu.org/press-releases/federal-court-declares-noncitizens-detention-under-laken-riley-act-unconstitutional",
+   "type": "Advocacy group statement",
+   "date": "2025",
+   "used_for": "Court ruling in one case; how mandatory detention works",
+   "checked": "2026-10-26"
+  },
+  "gen-congress": {
+   "org": "Congress.gov (CRS summary)",
+   "title": "S.1582 – GENIUS Act, summary",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1582",
+   "type": "Government record",
+   "date": "2025-07-18",
+   "used_for": "What the act requires; vote counts",
+   "checked": "2026-10-26"
+  },
+  "gen-nbc": {
+   "org": "NBC News",
+   "title": "Senate passes landmark crypto regulation bill on a bipartisan vote, sending it to the House",
+   "url": "https://www.nbcnews.com/politics/congress/senate-passes-landmark-crypto-regulation-bill-bipartisan-vote-sending-rcna213437",
+   "type": "News report",
+   "date": "2025-06-17",
+   "used_for": "Sponsor and critics’ statements; the bipartisan deal",
+   "checked": "2026-10-26"
+  },
+  "gen-brookings": {
+   "org": "Brookings Institution",
+   "title": "Stablecoins after GENIUS: Private money, public debt, and the global dollar",
+   "url": "https://www.brookings.edu/articles/stablecoins-after-genius/",
+   "type": "Think tank analysis",
+   "date": "2026-08-19",
+   "used_for": "Payment-speed, dollar and Treasury-demand arguments; consumer-protection gaps",
+   "checked": "2026-10-26"
+  },
+  "gen-dem-staff": {
+   "org": "Senate Banking Committee Democratic staff",
+   "title": "Fact sheet: Critical Amendments to Fix the GENIUS Act (June 9, 2025)",
+   "url": "https://www.banking.senate.gov/imo/media/doc/genius_act_analysis_6925.pdf",
+   "type": "Official statement (minority staff)",
+   "date": "2025-06-09",
+   "used_for": "Ethics, loophole and audit criticisms (written before the final Senate text)",
+   "checked": "2026-10-26"
+  },
+  "gen-aei": {
+   "org": "American Enterprise Institute",
+   "title": "The GENIUS Act Is Not Pure Genius (Jim Harper)",
+   "url": "https://www.aei.org/domestic-policy/technology-and-innovation/the-genius-act-is-not-pure-genius/",
+   "type": "Think tank commentary",
+   "date": "2025-08-12",
+   "used_for": "Interest ban, competition and privacy criticisms",
+   "checked": "2026-10-26"
+  },
+  "gen-cato": {
+   "org": "Cato Institute",
+   "title": "The GENIUS Act Is a Good Start, but Congress Could Make It Smarter (Norbert Michel)",
+   "url": "https://www.cato.org/commentary/genius-act-good-start-congress-could-make-it-smarter",
+   "type": "Think tank commentary",
+   "date": "2025-06-04",
+   "used_for": "Competition and review-committee criticisms",
+   "checked": "2026-10-26"
+  },
+  "ndaa-crs": {
+   "org": "Congressional Research Service",
+   "title": "FY2026 NDAA: Summary of Funding Authorizations (IN12641)",
+   "url": "https://www.everycrsreport.com/reports/IN12641.html",
+   "type": "Government record (CRS)",
+   "date": "2026-01-20",
+   "used_for": "Funding levels compared with the request",
+   "checked": "2026-10-26"
+  },
+  "ndaa-sasc": {
+   "org": "Senate Armed Services Committee",
+   "title": "Wicker and Reed Commend Final Passage of the FY2026 NDAA",
+   "url": "https://www.armed-services.senate.gov/press-releases/sasc-chairman-wicker-and-ranking-member-reed-commend-final-passage-of-the-fiscal-year-2026-national-defense-authorization-act",
+   "type": "Official statement",
+   "date": "2025-12-17",
+   "used_for": "Supporters’ case; bill highlights",
+   "checked": "2026-10-26"
+  },
+  "ndaa-rollcall": {
+   "org": "Roll Call",
+   "title": "House votes overwhelmingly to pass compromise NDAA",
+   "url": "https://rollcall.com/2025/12/10/house-votes-overwhelmingly-to-pass-compromise-ndaa/",
+   "type": "News report",
+   "date": "2025-12-10",
+   "used_for": "Party breakdown; objections from both parties",
+   "checked": "2026-10-26"
+  },
+  "ndaa-cpc": {
+   "org": "Congressional Progressive Caucus",
+   "title": "CPC Opposes the NDAA for FY2026",
+   "url": "https://progressives.house.gov/2025/9/congressional-progressive-caucus-opposes-the-national-defense-authorization-act-for-fy2026",
+   "type": "Official statement",
+   "date": "2025-09-10",
+   "used_for": "Opponents’ spending and domestic-deployment concerns (House version)",
+   "checked": "2026-10-26"
+  },
+  "ndaa-guardian": {
+   "org": "The Guardian / Reuters",
+   "title": "Trump signs $1tn annual US defense bill without fanfare",
+   "url": "https://www.theguardian.com/us-news/2025/dec/18/trump-ndaa-military-spending",
+   "type": "News report",
+   "date": "2025-12-18",
+   "used_for": "Europe and Ukraine provisions",
+   "checked": "2026-10-26"
+  },
+  "cr-congress": {
+   "org": "Congress.gov (CRS summary)",
+   "title": "H.R.5371 – Continuing Appropriations, Agriculture, Legislative Branch, Military Construction and Veterans Affairs, and Extensions Act, 2026",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/5371",
+   "type": "Government record",
+   "date": "2025-11-12",
+   "used_for": "What the law does; vote counts",
+   "checked": "2026-10-26"
+  },
+  "cr-nbc-pass": {
+   "org": "NBC News",
+   "title": "Senate passes bill to reopen the government as 8 Democrats join with Republicans",
+   "url": "https://www.nbcnews.com/politics/congress/senate-passes-bill-reopen-government-sends-to-house-rcna243120",
+   "type": "News report",
+   "date": "2025-11-10",
+   "used_for": "Both sides’ statements; the December ACA vote promise",
+   "checked": "2026-10-26"
+  },
+  "cr-nbc-rebel": {
+   "org": "NBC News",
+   "title": "Democrats rebel after 8 senators cut a deal to end the shutdown without ACA funds",
+   "url": "https://www.nbcnews.com/politics/congress/democrats-rebel-8-senators-cut-deal-end-shutdown-aca-funds-rcna242994",
+   "type": "News report",
+   "date": "2025-11-10",
+   "used_for": "Democratic critics’ statements",
+   "checked": "2026-10-26"
+  },
+  "cr-crfb": {
+   "org": "Committee for a Responsible Federal Budget",
+   "title": "CRFB Reacts to End of America’s Longest Shutdown",
+   "url": "https://www.crfb.org/press-releases/crfb-reacts-end-americas-longest-shutdown",
+   "type": "Think tank statement",
+   "date": "2025-11-12",
+   "used_for": "Deficit and PAYGO criticism",
+   "checked": "2026-10-26"
+  },
+  "ob-heritage": {
+   "org": "The Heritage Foundation",
+   "title": "How Trump’s “Big, Beautiful Bill” Ends Decades of Temporary Tax Policy Games in Washington",
+   "url": "https://www.heritage.org/taxes/commentary/how-trumps-big-beautiful-bill-ends-decades-temporary-tax-policy-games-washington",
+   "type": "Think tank commentary",
+   "date": "2025-07-24",
+   "used_for": "Supporters’ tax-permanence and spending-cut arguments",
+   "checked": "2026-10-26"
+  },
+  "ob-taxfoundation": {
+   "org": "Tax Foundation",
+   "title": "Will the OBBBA Tax Cuts Grow the US Economy?",
+   "url": "https://taxfoundation.org/blog/will-the-obbba-tax-cuts-grow-the-us-economy/",
+   "type": "Think tank analysis",
+   "date": "2026-02-03",
+   "used_for": "Growth estimates, tariff offset and debt projection",
+   "checked": "2026-10-26"
+  },
+  "ob-aha": {
+   "org": "American Hospital Association (AHA News)",
+   "title": "CBO projects OBBBA to increase uninsured by 10 million, federal deficit by $3.4 trillion",
+   "url": "https://www.aha.org/news/headline/2025-07-21-cbo-projects-obbba-increase-uninsured-10-million-federal-deficit-34-trillion",
+   "type": "Trade-group news summary of a CBO estimate",
+   "date": "2025-07-21",
+   "used_for": "CBO deficit and coverage estimates",
+   "checked": "2026-10-26"
+  },
+  "ob-cap": {
+   "org": "Center for American Progress",
+   "title": "$1 Trillion in Medicaid Cuts—$1 Trillion in Tax Giveaways for the Richest 1 Percent",
+   "url": "https://www.americanprogress.org/article/1-trillion-in-medicaid-cuts-1-trillion-in-tax-giveaways-for-the-richest-1-percent-the-one-big-beautiful-bills-budget-math/",
+   "type": "Think tank analysis",
+   "date": "2025-07",
+   "used_for": "Distribution of tax cuts and Medicaid reductions (using CBO and JCT estimates)",
+   "checked": "2026-10-26"
+  },
+  "ob-kff": {
+   "org": "KFF",
+   "title": "Tracking Implementation of the 2025 Reconciliation Law: Medicaid Work Requirements",
+   "url": "https://www.kff.org/medicaid/medicaid-work-requirements-tracker-overview/",
+   "type": "Nonprofit research (health policy)",
+   "date": "2026-09-29",
+   "used_for": "When Medicaid work requirements start",
+   "checked": "2026-10-26"
+  },
+  "lra-npr": {
+   "org": "NPR",
+   "title": "ICE estimates it would need $26.9 billion to enforce GOP deportation bill",
+   "url": "https://www.npr.org/2025/01/16/nx-s1-5262921/laken-riley-act-deportation-ice",
+   "type": "News report",
+   "date": "2025-01-16",
+   "used_for": "ICE internal cost estimate; no added funding in the bill",
+   "checked": "2026-10-26"
+  },
+  "lra-govexec": {
+   "org": "Government Executive",
+   "title": "Congress passes migrant detention bill that DHS said it can’t enforce without more resources",
+   "url": "https://www.govexec.com/management/2025/01/congress-passes-migrant-detention-bill-dhs-said-it-cant-enforce-without-more-resources/402486/",
+   "type": "News report",
+   "date": "2025-01-24",
+   "used_for": "ICE budget; CBO estimate of the 2024 House version",
+   "checked": "2026-10-26"
+  },
+  "lra-crs-detention": {
+   "org": "Congressional Research Service",
+   "title": "Immigration Detention: A Legal Overview (R45915)",
+   "url": "https://www.congress.gov/crs-product/R45915",
+   "type": "Government record (CRS)",
+   "date": "2019-09-16",
+   "used_for": "Detention rules that already existed (INA §236(c)); report predates the act",
+   "checked": "2026-10-26"
+  },
+  "gen-usc5910": {
+   "org": "U.S. Code (Office of the Law Revision Counsel)",
+   "title": "12 U.S.C. § 5910: Treatment of payment stablecoin issuers in insolvency proceedings",
+   "url": "https://uscode.house.gov/us/usc/119-124/t12/s5910/",
+   "type": "Statute text",
+   "date": "2025-07-18",
+   "used_for": "Holder priority in insolvency; effective date",
+   "checked": "2026-10-26"
+  },
+  "gen-usc5903": {
+   "org": "U.S. Code (Office of the Law Revision Counsel)",
+   "title": "12 U.S.C. § 5903: Requirements for issuing payment stablecoins",
+   "url": "https://uscode.house.gov/us/usc/119-124/t12/s5903/",
+   "type": "Statute text",
+   "date": "2025-07-18",
+   "used_for": "No federal guarantee or deposit insurance for stablecoins",
+   "checked": "2026-10-26"
+  },
+  "gen-occ": {
+   "org": "Office of the Comptroller of the Currency",
+   "title": "GENIUS Act Regulations: Final Rule (Bulletin 2026-50)",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-50.html",
+   "type": "Government record",
+   "date": "2026-10-23",
+   "used_for": "OCC final rule and its January 18, 2027 effective date",
+   "checked": "2026-10-26"
+  },
+  "gen-fr": {
+   "org": "Federal Register",
+   "title": "Implementing the GENIUS Act for the Issuance of Stablecoins by Entities Subject to the Jurisdiction of the OCC (final rule)",
+   "url": "https://www.federalregister.gov/documents/2026/10/23/2026-21706/implementing-the-guiding-and-establishing-national-innovation-for-us-stablecoins-act-for-the",
+   "type": "Government record",
+   "date": "2026-10-23",
+   "used_for": "Anti-money-laundering rules left to a separate rulemaking",
+   "checked": "2026-10-26"
+  },
+  "gen-coindesk": {
+   "org": "CoinDesk",
+   "title": "Circle’s USDC Gains Versus Tether’s USDT (reporting on a JPMorgan analysis)",
+   "url": "https://www.coindesk.com/markets/2025/09/30/stablecoin-market-surges-on-u-s-regulation-with-circle-s-usdc-gaining-ground-jpmorgan",
+   "type": "News report",
+   "date": "2025-09-30",
+   "used_for": "Size and concentration of the stablecoin market",
+   "checked": "2026-10-26"
+  },
+  "ndaa-dodig": {
+   "org": "Department of Defense Office of Inspector General",
+   "title": "Press Release: Independent Auditor’s Reports on the DoD FY 2025 Financial Statements",
+   "url": "https://www.dodig.mil/In-the-Spotlight/Article/4365200/press-release-independent-auditors-reports-on-the-dod-fy-2025-financial-stateme/",
+   "type": "Government record",
+   "date": "2025-12-19",
+   "used_for": "Fiscal 2025 audit result",
+   "checked": "2026-10-26"
+  },
+  "ndaa-defnews": {
+   "org": "Defense News",
+   "title": "Pentagon fails financial audit for 8th year in a row",
+   "url": "https://www.defensenews.com/news/pentagon-congress/2025/12/19/pentagon-fails-financial-audit-for-8th-year-in-a-row/",
+   "type": "News report",
+   "date": "2025-12-19",
+   "used_for": "Audit history; DoD’s 2028 target",
+   "checked": "2026-10-26"
+  },
+  "ndaa-gao": {
+   "org": "Government Accountability Office",
+   "title": "Weapon Systems Annual Assessment (GAO-25-107569)",
+   "url": "https://www.gao.gov/products/gao-25-107569",
+   "type": "Government record (GAO)",
+   "date": "2025-06-11",
+   "used_for": "Weapon-program cost growth and schedule delays",
+   "checked": "2026-10-26"
+  },
+  "cr-crs": {
+   "org": "Congressional Research Service",
+   "title": "The 2025 (FY2026) Government Shutdown: Economic Effects (R48832)",
+   "url": "https://www.congress.gov/crs-product/R48832",
+   "type": "Government record (CRS)",
+   "date": "2026-01-29",
+   "used_for": "Shutdown economic effects; retroactive pay",
+   "checked": "2026-10-26"
+  },
+  "cr-cbo-letter": {
+   "org": "Congressional Budget Office (letter hosted by the House Budget Committee)",
+   "title": "A Quantitative Analysis of the Effects of the Government Shutdown on the Economy Under Three Scenarios, as of October 29, 2025",
+   "url": "https://arrington.house.gov/uploadedfiles/61823-quantitative-effects-of-a-shutdown-1.pdf",
+   "type": "Government record (CBO)",
+   "date": "2025-10-29",
+   "used_for": "CBO’s GDP estimates for four-, six- and eight-week shutdowns",
+   "checked": "2026-10-26"
+  },
+  "cr-cbs": {
+   "org": "CBS News",
+   "title": "Who gets back pay and who doesn’t after a government shutdown?",
+   "url": "https://www.cbsnews.com/news/government-shutdown-contract-worker-back-pay/",
+   "type": "News report",
+   "date": "2025-10",
+   "used_for": "Back pay for federal employees versus contractors",
+   "checked": "2026-10-26"
+  },
+  "cr-rollcall-aca": {
+   "org": "Roll Call",
+   "title": "Permanent health tax credit extension would insure 3.8 million: CBO",
+   "url": "https://rollcall.com/2025/09/18/permanent-health-tax-credit-extension-would-insure-3-8-million-cbo/",
+   "type": "News report",
+   "date": "2025-09-18",
+   "used_for": "CBO estimate for extending the ACA credits",
+   "checked": "2026-10-26"
+  },
+  "cr-kff": {
+   "org": "KFF",
+   "title": "How Much More Would People Pay in Premiums if the ACA’s Enhanced Premium Tax Credits Expire?",
+   "url": "https://www.kff.org/interactive/calculator-aca-enhanced-premium-tax-credit/",
+   "type": "Think tank analysis",
+   "date": "2026",
+   "used_for": "Estimated premium increase after the credits expired",
+   "checked": "2026-10-26"
+  },
+  "ob-crs-snap": {
+   "org": "Congressional Research Service",
+   "title": "SNAP and Related Nutrition Programs in P.L. 119-21: An Overview (R48552)",
+   "url": "https://www.congress.gov/crs-product/R48552",
+   "type": "Government record (CRS)",
+   "date": "2025-08-15",
+   "used_for": "SNAP changes and CBO estimates",
+   "checked": "2026-10-26"
+  },
+  "ob-crs-energy": {
+   "org": "Congressional Research Service",
+   "title": "IRA Tax Credit Repeal in the FY2025 Reconciliation Law: Part 1 (IN12624)",
+   "url": "https://www.congress.gov/crs_external_products/IN/PDF/IN12624/IN12624.4.pdf",
+   "type": "Government record (CRS)",
+   "date": "2025-12-12",
+   "used_for": "New deadlines for wind and solar credits",
+   "checked": "2026-10-26"
+  },
+  "ob-aaf": {
+   "org": "American Action Forum",
+   "title": "Evaluating the OBBBA’s Energy Provisions (Shuting Pomerleau)",
+   "url": "https://www.americanactionforum.org/insight/evaluating-the-obbbas-energy-provisions/",
+   "type": "Think tank analysis",
+   "date": "2025-07-07",
+   "used_for": "Joint Committee on Taxation estimates for the energy provisions",
+   "checked": "2026-10-26"
+  },
+  "ob-usc3101": {
+   "org": "U.S. Code (Office of the Law Revision Counsel)",
+   "title": "31 U.S.C. § 3101: Public debt limit (note on Pub. L. 119-21, § 72001)",
+   "url": "https://uscode.house.gov/us/usc/119-124/t31/s3101/",
+   "type": "Statute text",
+   "date": "2025-07-04",
+   "used_for": "The $5 trillion debt-limit increase",
+   "checked": "2026-10-26"
+  }
+ },
+ "items": [
+  {
+   "id": "laken-riley-act",
+   "title": "Laken Riley Act",
+   "topic": "Immigration",
+   "bill": {
+    "label": "S. 5",
+    "congress": 119,
+    "law": "Public Law 119-1",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/5"
+   },
+   "summary": "Requires the Department of Homeland Security to detain certain non-citizens who are in the country unlawfully (or lacked entry documents) and who are charged with, arrested for, convicted of, or admit to crimes such as burglary, theft, larceny, shoplifting, or assaulting a police officer. It also lets states sue the federal government over some immigration decisions.",
+   "summary_src": [
+    "lra-congress"
+   ],
+   "rolls": [
+    {
+     "chamber": "Senate",
+     "date": "2025-01-20",
+     "session": 1,
+     "roll": 7,
+     "vv": 7,
+     "question": "Passage",
+     "result": "Passed 64–35",
+     "note": "12 Democrats joined Senate Republicans."
+    },
+    {
+     "chamber": "House",
+     "date": "2025-01-22",
+     "year": 2025,
+     "roll": 23,
+     "question": "Passage (final, with Senate changes)",
+     "result": "Passed 263–156"
+    }
+   ],
+   "for": [
+    {
+     "text": "Supporters argue that people who are in the country unlawfully and are accused of theft or violent crime should be held, not released, while their cases proceed, so they cannot commit more crimes before they are removed.",
+     "src": [
+      "lra-heritage",
+      "lra-britt"
+     ]
+    },
+    {
+     "text": "They point to the 2024 killing of Georgia nursing student Laken Riley, for which a Venezuelan man who entered the country illegally was found guilty, as the kind of tragedy they say the law is meant to prevent.",
+     "src": [
+      "lra-medill",
+      "lra-heritage"
+     ]
+    },
+    {
+     "text": "They also support the provision letting state attorneys general sue the federal government over immigration decisions or failures that harm their state, which they see as a check on non-enforcement.",
+     "src": [
+      "lra-heritage",
+      "lra-congress"
+     ]
+    },
+    {
+     "text": "Backers note the bill was bipartisan: 12 Democrats joined Senate Republicans, and 48 House Democrats backed the earlier House version.",
+     "src": [
+      "lra-nbc"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Critics, led by civil-liberties groups such as the ACLU, say the law requires detention based on an arrest or charge rather than a conviction, with no individual bond hearing, so someone whose charge is dropped, or who is never charged, could still be held.",
+     "src": [
+      "lra-aclu-letter",
+      "lra-aclu-pr"
+     ]
+    },
+    {
+     "text": "They note the listed offenses include minor ones such as shoplifting, so the law reaches well beyond the violent crime that inspired it.",
+     "src": [
+      "lra-aclu-pr",
+      "lra-nbc"
+     ]
+    },
+    {
+     "text": "The ACLU also warns of “enormous taxpayer expense” and diverted law-enforcement resources, and experts quoted by Northwestern’s Medill News Service fear more racial profiling.",
+     "src": [
+      "lra-aclu-letter",
+      "lra-medill"
+     ]
+    },
+    {
+     "text": "In 2025 a federal judge in Boston ruled that holding one 18-year-old solely on a prior arrest, without a bond hearing, violated due process, according to the ACLU, which brought the case.",
+     "src": [
+      "lra-aclu-pr"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Funding and capacity.",
+     "text": "NPR reported that the version of the bill the House passed earlier included no funding for additional ICE staff or resources, and Government Executive reported that ICE had warned it would be “impossible” to carry out with current resources. An internal ICE document obtained by NPR estimated an earlier version would cost $26.9 billion in its first year; ICE’s annual budget was about $9 billion. The Congressional Budget Office, scoring a 2024 House version, estimated a cost under $500,000 through 2029 because it expected the new requirement to replace, not add to, other detentions. The two estimates were made for different earlier versions of the bill.",
+     "src": [
+      "lra-npr",
+      "lra-govexec"
+     ]
+    },
+    {
+     "label": "What the law already required.",
+     "text": "Federal law already required detention of non-citizens who are removable on specified criminal or terrorism-related grounds (INA §236(c)). The act adds a separate category with its own list of offenses, covering people who are unlawfully present or lacked the necessary documents when applying for admission and who have been charged with, arrested for, convicted of, or admit to those offenses.",
+     "src": [
+      "lra-crs-detention",
+      "lra-congress"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "genius-act",
+   "title": "GENIUS Act (stablecoins)",
+   "topic": "Technology & crypto",
+   "bill": {
+    "label": "S. 1582",
+    "congress": 119,
+    "law": "Public Law 119-27",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1582"
+   },
+   "summary": "Creates the first federal rules for “payment stablecoins,” digital tokens meant to hold a steady dollar value. Only approved issuers may offer them in the U.S.; they must hold reserves backing each token one-for-one in liquid assets such as U.S. currency and Treasury securities, publish monthly reserve reports, and follow anti-money-laundering rules.",
+   "summary_src": [
+    "gen-congress"
+   ],
+   "rolls": [
+    {
+     "chamber": "Senate",
+     "date": "2025-06-17",
+     "session": 1,
+     "roll": 318,
+     "vv": 318,
+     "question": "Passage",
+     "result": "Passed 68–30",
+     "note": "18 Democrats voted yes; Republican Sens. Paul and Hawley voted no."
+    },
+    {
+     "chamber": "House",
+     "date": "2025-07-17",
+     "year": 2025,
+     "roll": 200,
+     "question": "Passage (final)",
+     "result": "Passed 308–122"
+    }
+   ],
+   "for": [
+    {
+     "text": "Supporters say clear federal rules make stablecoins safer to use: issuers must back every token with reserves one-for-one and publish reserve details monthly, and the bill’s sponsor, Sen. Bill Hagerty (R-Tenn.), said it would “protect customers.”",
+     "src": [
+      "gen-congress",
+      "gen-nbc"
+     ]
+    },
+    {
+     "text": "They argue stablecoins can make payments faster and cheaper. A Brookings summary of work by economists Nellie Liang and Brent Neiman says existing payment systems, especially for international transfers, are “costly, slow, and fragmented,” while stablecoins can settle nearly instantly, around the clock, and could reinforce the dollar’s global role.",
+     "src": [
+      "gen-brookings"
+     ]
+    },
+    {
+     "text": "Because reserves must be held largely in short-term Treasuries, Hagerty said the bill would “drive demand for U.S. treasuries”; the Brookings authors estimate net new demand for Treasury bills of $400 billion to $2.3 trillion by 2030 under private-sector forecasting scenarios.",
+     "src": [
+      "gen-nbc",
+      "gen-brookings"
+     ]
+    },
+    {
+     "text": "Backers add that it won bipartisan support after negotiators added consumer-protection language and limits on tech companies issuing stablecoins.",
+     "src": [
+      "gen-nbc"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Critics on the left, including Democratic staff of the Senate Banking Committee, argue the law does not stop the President and his family from profiting from stablecoins and leaves loopholes for foreign issuers such as Tether and for big technology companies.",
+     "src": [
+      "gen-dem-staff",
+      "gen-nbc"
+     ]
+    },
+    {
+     "text": "They also say consumer protections are thinner than for bank accounts or payment apps: the Democratic staff analysis, written before the final Senate text, notes only one U.S. issuer would currently need an independent audit, and Brookings scholars note stablecoins today lack dispute resolution and fraud recovery.",
+     "src": [
+      "gen-dem-staff",
+      "gen-brookings"
+     ]
+    },
+    {
+     "text": "From a market-oriented direction, AEI’s Jim Harper says the law bars paying holders interest and requires unanimous approval from a government committee for most nonfinancial public companies to issue stablecoins, and Cato’s Norbert Michel, writing about the Senate draft, says that harms competition.",
+     "src": [
+      "gen-aei",
+      "gen-cato"
+     ]
+    },
+    {
+     "text": "Harper also warns that required Bank Secrecy Act compliance and procedures to “block, freeze, and reject” transactions move financial privacy “from the frying pan to the fire.”",
+     "src": [
+      "gen-aei"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Not yet in effect.",
+     "text": "The act takes effect on the earlier of January 18, 2027, or 120 days after regulators issue final implementing rules. The OCC’s final rule, published in the Federal Register on October 23, 2026, takes effect January 18, 2027, and the OCC said anti-money-laundering and sanctions requirements will be handled in a separate rulemaking.",
+     "src": [
+      "gen-usc5910",
+      "gen-occ",
+      "gen-fr"
+     ]
+    },
+    {
+     "label": "The market already exists.",
+     "text": "Stablecoins are already widely used. A JPMorgan analysis reported by CoinDesk put the market at nearly $300 billion in late September 2025, with Circle’s USDC at about $74 billion (a 25.5% share) and Tether’s share down from 67.5% at the start of 2025 to 60.4%.",
+     "src": [
+      "gen-coindesk"
+     ]
+    },
+    {
+     "label": "What holders are and aren’t protected by.",
+     "text": "The statute says payment stablecoins are not backed by the full faith and credit of the United States and are not covered by FDIC deposit insurance or NCUA share insurance. If an issuer becomes insolvent, holders have a priority claim on the required reserves ahead of other claimants, but that priority applies only to claims arising directly from holding the stablecoin.",
+     "src": [
+      "gen-usc5903",
+      "gen-usc5910"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ndaa-fy2026",
+   "title": "National Defense Authorization Act for FY2026",
+   "topic": "Defense",
+   "bill": {
+    "label": "S. 1071",
+    "congress": 119,
+    "law": "Public Law 119-60",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1071"
+   },
+   "summary": "The annual defense policy law. It authorizes roughly $890–$900 billion in national defense spending (counts differ by source; the money itself must be provided in separate appropriations bills), a 3.8% military pay raise, and an overhaul of how the Pentagon buys weapons and technology. It also sets policy such as continued Ukraine security assistance.",
+   "summary_src": [
+    "ndaa-crs",
+    "ndaa-rollcall",
+    "ndaa-sasc"
+   ],
+   "rolls": [
+    {
+     "chamber": "House",
+     "date": "2025-12-10",
+     "year": 2025,
+     "roll": 320,
+     "question": "Passage",
+     "result": "Passed 312–112",
+     "note": "Republicans 197–18; Democrats 115–94 (Roll Call)."
+    },
+    {
+     "chamber": "Senate",
+     "date": "2025-12-17",
+     "session": 1,
+     "roll": 648,
+     "vv": 648,
+     "question": "Agree to the House amendment (final passage)",
+     "result": "Passed 77–20"
+    }
+   ],
+   "for": [
+    {
+     "text": "Supporters say it modernizes both the military and the Pentagon: Senate Armed Services Chairman Roger Wicker (R-Miss.) called its acquisition changes “the most sweeping upgrades to the Pentagon’s business practices in 60 years,” and it funds a 3.8% pay raise, shipbuilding, drones and counter-drone authority.",
+     "src": [
+      "ndaa-sasc"
+     ]
+    },
+    {
+     "text": "Ranking Member Jack Reed (D-R.I.) said it “enhances military readiness, supports servicemembers and their families,” reinforces alliances in Europe and the Indo-Pacific, and maintains “robust Congressional oversight.”",
+     "src": [
+      "ndaa-sasc"
+     ]
+    },
+    {
+     "text": "House Armed Services Democrat Adam Smith (D-Wash.) acknowledged provisions he opposed and left-out provisions he wanted, but said that on balance the bill is a strong positive for U.S. national security, Roll Call reported.",
+     "src": [
+      "ndaa-rollcall"
+     ]
+    },
+    {
+     "text": "Backers also point to provisions that limit reducing U.S. troops in Europe below 76,000 and extend Ukraine security assistance, which they see as guarding against abrupt shifts in alliances.",
+     "src": [
+      "ndaa-guardian",
+      "ndaa-sasc"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Critics in both parties objected to the cost: Roll Call reports the $900.6 billion authorization was $8 billion above the President’s request and troubled fiscal conservatives and many liberals, and the Congressional Progressive Caucus said that with reconciliation-law funding the Pentagon would exceed $1 trillion a year.",
+     "src": [
+      "ndaa-rollcall",
+      "ndaa-cpc",
+      "ndaa-crs"
+     ]
+    },
+    {
+     "text": "Progressives said it does nothing to curb the President’s use of the military inside U.S. cities, and Democrats objected that leadership removed provisions on IVF coverage under TRICARE, Confederate-named bases and collective bargaining for civilian Pentagon workers.",
+     "src": [
+      "ndaa-cpc",
+      "ndaa-rollcall"
+     ]
+    },
+    {
+     "text": "Some conservatives objected to the topline, aid to Ukraine and other partners, and the absence of unrelated priorities such as a ban on a central bank digital currency.",
+     "src": [
+      "ndaa-rollcall"
+     ]
+    },
+    {
+     "text": "Even Rep. Smith, who supported it, said the Pentagon has not given Congress the information it is supposed to receive, which Roll Call said implied the law’s requirements might not be heeded.",
+     "src": [
+      "ndaa-rollcall"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "The Pentagon’s audit record.",
+     "text": "The Defense Department has failed every annual audit since they began in 2018 and is the only one of 24 major federal agencies never to pass, Defense News reported. For fiscal 2025 the DoD Inspector General issued a “disclaimer of opinion,” meaning auditors could not get enough evidence to give an opinion, and identified 26 material weaknesses; the Inspector General also said officials had made progress, with auditors downgrading some weaknesses. The Pentagon says it aims for a clean opinion by 2028.",
+     "src": [
+      "ndaa-dodig",
+      "ndaa-defnews"
+     ]
+    },
+    {
+     "label": "Weapons costs and schedules.",
+     "text": "GAO’s June 2025 annual assessment found the combined cost estimates for 30 major weapon programs it also reviewed the year before rose by $49.3 billion, more than $36 billion (73%) of it from the Air Force’s Sentinel missile program. The average time for major programs to deliver an initial capability rose by 18 months, to almost 12 years. GAO lists DoD weapon systems acquisition on its High Risk List.",
+     "src": [
+      "ndaa-gao"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shutdown-funding-bill",
+   "title": "Shutdown-ending funding bill (FY2026)",
+   "topic": "Budget & appropriations",
+   "bill": {
+    "label": "H.R. 5371",
+    "congress": 119,
+    "law": "Public Law 119-37",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/5371"
+   },
+   "summary": "Ended the federal government shutdown that began on October 1, 2025. It funds most agencies at last year’s levels through January 30, 2026, provides full-year funding for agriculture (including SNAP and WIC), veterans’ affairs and military construction, and Congress itself, and pays back wages to furloughed workers and reverses shutdown-era layoffs.",
+   "summary_src": [
+    "cr-congress",
+    "cr-nbc-pass"
+   ],
+   "rolls": [
+    {
+     "chamber": "Senate",
+     "date": "2025-11-10",
+     "session": 1,
+     "roll": 618,
+     "vv": 618,
+     "question": "Passage (with amendment)",
+     "result": "Passed 60–40",
+     "note": "Eight members of the Democratic caucus voted yes; Sen. Rand Paul was the only Republican to vote no."
+    },
+    {
+     "chamber": "House",
+     "date": "2025-11-12",
+     "year": 2025,
+     "roll": 285,
+     "question": "Agree to the Senate amendment (final)",
+     "result": "Passed 222–209"
+    }
+   ],
+   "for": [
+    {
+     "text": "Supporters say reopening the government was urgent. Sen. Dick Durbin (D-Ill.) said he “cannot accept a strategy that wages political battle” at the expense of federal workers’ paychecks, and the law pays back wages to furloughed employees and bars layoffs (reductions in force) through January 30, 2026.",
+     "src": [
+      "cr-nbc-pass",
+      "cr-congress"
+     ]
+    },
+    {
+     "text": "It includes three full-year spending bills (agriculture, military construction and veterans’ affairs, and the legislative branch), with full funding of SNAP benefits through the end of September, and keeps the rest of the government open through Jan. 30.",
+     "src": [
+      "cr-congress",
+      "cr-nbc-pass"
+     ]
+    },
+    {
+     "text": "Democrats who voted yes argued it was the best path to a health-care fix: Sen. Jeanne Shaheen (D-N.H.) called it “the only deal on the table” and the best chance to “immediately begin negotiations” on the ACA tax credits, and Majority Leader John Thune (R-S.D.) promised a Senate vote on the subsidies by the end of the second week of December.",
+     "src": [
+      "cr-nbc-pass"
+     ]
+    },
+    {
+     "text": "Independent Sen. Angus King said the promised vote raised the odds of an extension from “zero” to “maybe 50%.”",
+     "src": [
+      "cr-nbc-pass",
+      "cr-nbc-rebel"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Most Senate Democrats voted no because the bill did not extend the enhanced Affordable Care Act subsidies set to expire at the end of 2025; Minority Leader Chuck Schumer (D-N.Y.) said it “fails to do anything of substance to fix America’s health care crisis,” and NBC reported more than 20 million Americans could see premiums rise.",
+     "src": [
+      "cr-nbc-pass"
+     ]
+    },
+    {
+     "text": "Critics noted the promised December vote carried no guarantee: it needed 60 votes, and all 53 Senate Republicans had just voted against a one-year extension. Sen. Elizabeth Warren (D-Mass.) called the deal “a terrible mistake.”",
+     "src": [
+      "cr-nbc-pass",
+      "cr-nbc-rebel"
+     ]
+    },
+    {
+     "text": "Fiscal watchdogs raised a different objection: the Committee for a Responsible Federal Budget said the package “effectively codifies $3.4 trillion of new borrowing” by wiping the Pay-As-You-Go scorecard and allows further deficit increases through the end of this Congress.",
+     "src": [
+      "cr-crfb"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "The size and spread of the economic hit.",
+     "text": "CBO estimated that in a six-week shutdown about $11 billion of real GDP would never be recovered, because lost work hours of furloughed employees cannot be made up; delayed spending was expected to be made up later. CRS puts that at less than 1% of GDP and notes the effects were uneven, hitting the Washington, D.C., area and places reliant on federal funds harder. It also reported the Small Business Administration said the shutdown held up $5.3 billion in loans to 10,000 small businesses.",
+     "src": [
+      "cr-crs",
+      "cr-cbo-letter"
+     ]
+    },
+    {
+     "label": "Who was paid later, and who was not.",
+     "text": "The funding law provided for all federal employees to be paid retroactively, as a 2019 law already guaranteed. Employees of private contractors have no similar guarantee, CBS News reported. In 2024 the federal government spent about $755 billion on contracts, per GAO, and Oxford Economics estimates up to 10 million private-sector workers are supported by federal grants and contracts.",
+     "src": [
+      "cr-crs",
+      "cr-cbs"
+     ]
+    },
+    {
+     "label": "What extending the ACA credits was estimated to cost and cover.",
+     "text": "CBO estimated that permanently extending the enhanced premium tax credits would add about $349.8 billion to deficits over 10 years and increase the number of insured people by 3.8 million by 2035. KFF estimates that their expiration raises average Marketplace premium payments by 114%, about $1,016 a year.",
+     "src": [
+      "cr-rollcall-aca",
+      "cr-kff"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "one-big-beautiful-bill",
+   "title": "One Big Beautiful Bill Act (tax, Medicaid and energy)",
+   "topic": "Taxes, health care & energy",
+   "bill": {
+    "label": "H.R. 1",
+    "congress": 119,
+    "law": "Public Law 119-21",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/1"
+   },
+   "summary": "A 2025 budget-reconciliation law. It made most of the 2017 income-tax cuts permanent and added new temporary tax breaks, cut federal Medicaid spending (including new work requirements for many adults in the Medicaid expansion group), phased down many clean-energy subsidies, and added defense funding.",
+   "summary_src": [
+    "ob-heritage",
+    "ob-taxfoundation",
+    "ob-aha",
+    "ob-kff",
+    "ndaa-rollcall"
+   ],
+   "rolls": [
+    {
+     "chamber": "Senate",
+     "date": "2025-07-01",
+     "session": 1,
+     "roll": 372,
+     "vv": 372,
+     "question": "Passage",
+     "result": "Passed 51–50",
+     "note": "Vice President Vance broke a 50–50 tie; Republican Sens. Collins, Paul and Tillis voted no."
+    },
+    {
+     "chamber": "House",
+     "date": "2025-07-03",
+     "year": 2025,
+     "roll": 190,
+     "question": "Agree to the Senate amendment (final)",
+     "result": "Passed 218–214"
+    }
+   ],
+   "for": [
+    {
+     "text": "Supporters say it prevents a large tax increase and ends a pattern of temporary tax policy: Heritage’s Preston Brashers writes that it dealt with roughly $9 trillion in expiring tax provisions and averted a $4 trillion tax hike scheduled for January 1 by making the 2017 tax cuts permanent.",
+     "src": [
+      "ob-heritage"
+     ]
+    },
+    {
+     "text": "The Tax Foundation, a tax-policy think tank, estimates that permanently extending lower tax rates and business expensing will raise long-run GDP by about 1.2%, wages by 0.4%, and hours worked by the equivalent of 938,000 full-time jobs.",
+     "src": [
+      "ob-taxfoundation"
+     ]
+    },
+    {
+     "text": "Supporters also favor its spending changes: Heritage cites about $1.2 trillion in spending cuts, “reasonable work requirements for able-bodied adults without children,” and the end of many clean-energy subsidies it calls the “Green New Scam.”",
+     "src": [
+      "ob-heritage"
+     ]
+    },
+    {
+     "text": "The law also adds about $156 billion for defense over ten years, which Roll Call reported pleased defense hawks.",
+     "src": [
+      "ndaa-rollcall"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Critics point to the cost: the Congressional Budget Office estimated it would add $3.4 trillion to deficits over 2025–2034 (as reported by AHA News), and even the Tax Foundation, which counts new tariff revenue as offsetting about half of the fiscal cost, projects debt reaching about 120% of GDP by 2034 versus 117% before the law.",
+     "src": [
+      "ob-aha",
+      "ob-taxfoundation"
+     ]
+    },
+    {
+     "text": "On health care, CBO projected 10 million more uninsured people in 2034, largely from Medicaid changes such as work requirements ($325.6 billion in reduced spending), a freeze on state provider taxes and reduced funding for state-directed payments; the work requirements begin January 1, 2027.",
+     "src": [
+      "ob-aha",
+      "ob-kff"
+     ]
+    },
+    {
+     "text": "The Center for American Progress argues the benefits are skewed: using CBO and Joint Committee on Taxation estimates for the Senate version, it finds about $1 trillion in Medicaid cuts and about $1 trillion in tax cuts for the top 1% of earners over a decade.",
+     "src": [
+      "ob-cap"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Food assistance (SNAP).",
+     "text": "CBO estimated the law’s nutrition provisions cut federal spending by almost $187 billion over 2025–2034. SNAP work requirements now cover adults up to age 64 and parents of children 14 and older, and exemptions for veterans, homeless people and former foster youth were removed; CBO estimated those changes reduce participation by 2.4 million people in an average month. Starting in fiscal year 2028, states with payment-error rates of 6% or more must pay 5% to 15% of benefit costs, which were previously fully federal.",
+     "src": [
+      "ob-crs-snap"
+     ]
+    },
+    {
+     "label": "Energy tax credits.",
+     "text": "Wind and solar facilities must begin construction before July 5, 2026, or be producing electricity before January 1, 2028, to keep the clean-electricity credits, CRS reports. The American Action Forum, citing Joint Committee on Taxation estimates, says the energy changes raise about $543 billion over 2025–2034, partly offset by about $44 billion for expanded credits.",
+     "src": [
+      "ob-crs-energy",
+      "ob-aaf"
+     ]
+    },
+    {
+     "label": "A higher borrowing limit.",
+     "text": "Section 72001 of the law raised the statutory debt limit by $5 trillion. The debt limit caps the total face amount of federal obligations outstanding at one time (31 U.S.C. §3101).",
+     "src": [
+      "ob-usc3101"
+     ]
+    }
+   ]
+  }
+ ]
+}

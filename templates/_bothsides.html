@@ -1,0 +1,27 @@
+{# Both-sides block. Same structure, order and visual weight for both sides: "for" first, then "against". No party colours. #}
+{% macro side(it, key, heading, nums, pfx) %}
+<section class="bs-side" aria-labelledby="{{ pfx }}-{{ it.id }}-{{ key }}">
+  <h4 id="{{ pfx }}-{{ it.id }}-{{ key }}">{{ heading }}</h4>
+  {% for pt in it[key] %}<p>{{ pt.text }}{% for sid in pt.src %} <sup><a href="#{{ pfx }}-{{ it.id }}-s{{ nums[sid] }}" aria-label="Source {{ nums[sid] }}">[{{ nums[sid] }}]</a></sup>{% endfor %}</p>{% endfor %}
+</section>
+{% endmacro %}
+{% macro block(it, pfx="bs") %}
+{% set nums = bs_numbers(it) %}
+<div class="bs">
+  <p class="bs-summary"><strong>What the bill did.</strong> {{ it.summary }}{% for sid in it.summary_src %} <sup><a href="#{{ pfx }}-{{ it.id }}-s{{ nums[sid] }}" aria-label="Source {{ nums[sid] }}">[{{ nums[sid] }}]</a></sup>{% endfor %}</p>
+  <div class="bs-cols">
+    {{ side(it, "for", "Strongest case for", nums, pfx) }}
+    {{ side(it, "against", "Strongest case against", nums, pfx) }}
+  </div>
+  {% if it.unsaid %}<section class="bs-unsaid" aria-labelledby="{{ pfx }}-{{ it.id }}-unsaid">
+    <h4 id="{{ pfx }}-{{ it.id }}-unsaid">{{ bs_meta.unsaid_title }}</h4>
+    <p class="bs-unsaid-intro">{{ bs_meta.unsaid_intro }}</p>
+    <ul>{% for pt in it.unsaid %}<li><strong>{{ pt.label }}</strong> {{ pt.text }}{% for sid in pt.src %} <sup><a href="#{{ pfx }}-{{ it.id }}-s{{ nums[sid] }}" aria-label="Source {{ nums[sid] }}">[{{ nums[sid] }}]</a></sup>{% endfor %}</li>{% endfor %}</ul>
+    <p class="bs-unsaid-note">{{ bs_meta.unsaid_note }} <a href="/credits#both-sides">How we choose these</a>.</p>
+  </section>{% endif %}
+  <div class="bs-sources"><h4>Sources</h4>
+    <ol>{% for n, sid, s in bs_sourcelist(it) %}<li id="{{ pfx }}-{{ it.id }}-s{{ n }}"><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a> — {{ s.org }} <span class="bs-type">({{ s.type }}, {{ s.date }})</span></li>{% endfor %}</ol>
+  </div>
+  <p class="bs-fine">Editorial summary of arguments made by others, not the opinion of We Elect. Last reviewed {{ bs_meta.last_reviewed }}. <a href="/credits#both-sides">How we write both sides</a>.</p>
+</div>
+{% endmacro %}

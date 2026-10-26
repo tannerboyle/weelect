@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block title %}Both sides on key votes – We Elect{% endblock %}
+{% block body %}{% import "_bothsides.html" as B with context %}<div class="credits">
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Both sides on key votes</h1>
+<p class="deck" style="text-align:left;margin-left:0">For a handful of recent, widely covered roll-call votes, we lay out the strongest case for and the strongest case against, each with the sources behind it. This is editorial content summarizing arguments made by others. It is not our opinion, and we do not say who is right.</p>
+<div class="grid bs-grid">
+{% for it in items %}<a class="card bs-card" href="/votes/{{ it.id }}"><div><span class="bs-kicker">{{ it.topic }}</span><br><strong>{{ it.title }}</strong><div class="meta">{{ it.bill.label }} · {{ it.bill.law }}</div><div class="meta">{{ it.rolls | map(attribute="result") | join(" · ") }}</div></div></a>{% endfor %}
+</div>
+<p class="fine" style="text-align:left;margin-left:0">Last reviewed {{ bs_meta.last_reviewed }}. {{ bs_meta.disclaimer }} <a href="/credits#both-sides">How we write both sides</a>. See how your own representatives voted on these: <a href="/">find my officials</a>.</p>
+</div>{% endblock %}

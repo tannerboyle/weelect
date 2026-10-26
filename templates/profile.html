@@ -1,5 +1,5 @@
 {% extends "base.html" %}{% block title %}{{ p.name }} – We Elect{% endblock %}
-{% block body %}<p><a href="/">&larr; Find another address</a></p>
+{% block body %}{% import "_bothsides.html" as B with context %}<p><a href="/">&larr; Find another address</a></p>
 <div class="profile p-{{ p.pclass }}"><span class="avatar big">{% if p.photo %}<img src="{{ p.photo }}" alt="Photo of {{ p.name }}" referrerpolicy="no-referrer">{% else %}<span class="initials" role="img" aria-label="No photo available for {{ p.name }}">{{ p.initials }}</span>{% endif %}</span>
 <div><h1>{{ p.name }}</h1><p>{{ p.office }} &middot; {{ p.where }}{% if p.party %} &middot; <span class="party">{{ p.party }}</span>{% endif %}</p>
 {% if since %}<p>In Congress since {{ since }}{% if term_end %}; current term ends {{ term_end }}{% endif %}.</p>{% endif %}</div></div>
@@ -13,10 +13,20 @@
 <div class="sechead"><span class="star">★</span><h2>Recent votes</h2></div>
 {% if votes %}<table class="votes"><thead><tr><th>Date</th><th>Bill / question</th><th>Vote</th><th>Source</th></tr></thead>
 {% for v in votes %}<tr><td style="white-space:nowrap">{{ v.date }}</td>
-<td>{% if v.bill_url %}<a href="{{ v.bill_url }}" target="_blank" rel="noopener"><strong>{{ v.label }}</strong></a>{% else %}<strong>{{ v.label or "—" }}</strong>{% endif %} – {{ v.question }}{% if v.desc %}<br><small>{{ v.desc }}</small>{% endif %}{% if v.result %}<br><small>Result: {{ v.result }}</small>{% endif %}</td>
+<td>{% if v.bill_url %}<a href="{{ v.bill_url }}" target="_blank" rel="noopener"><strong>{{ v.label }}</strong></a>{% else %}<strong>{{ v.label or "—" }}</strong>{% endif %} – {{ v.question }}{% if v.desc %}<br><small>{{ v.desc }}</small>{% endif %}{% if v.result %}<br><small>Result: {{ v.result }}</small>{% endif %}{% set bsi = bs_for_vote(v) %}{% if bsi %}<details class="bs-details"><summary>Both sides on this vote</summary>{{ B.block(bsi, "rv" ~ loop.index) }}</details>{% endif %}</td>
 <td><strong>{{ v.vote }}</strong></td><td><a href="{{ v.source }}" target="_blank" rel="noopener">{{ v.source_name }}</a></td></tr>{% endfor %}</table>
 {% if votes_note %}<p class="note">{{ votes_note }}</p>{% endif %}
 {% elif votes_error %}<p class="err">{{ votes_error }}</p>
 {% else %}<p>No recent recorded votes found for this member.</p>{% endif %}{% endif %}
-<div class="sechead"><span class="star">★</span><h2>The other side</h2></div><p class="note">Coming soon: a fair, sourced look at the strongest counterargument to each position.</p>
+<div class="sechead"><span class="star">★</span><h2>Both sides on notable votes</h2><small><a href="/votes">All key votes</a></small></div>
+{% if kind == "fed" and notable %}
+<p class="note bs-intro">How {{ p.name }} voted on a few widely covered 2025 votes, each with the strongest case for and against. Editorial summaries of arguments made by others, not the opinion of We Elect. <a href="/credits#both-sides">How we write both sides</a>.</p>
+<div class="bs-list">{% for n in notable %}<article class="bs-row">
+<h3><a href="/votes/{{ n.item.id }}">{{ n.item.title }}</a></h3>
+<p class="meta">{{ n.item.bill.label }} · {{ n.roll.date }} · {{ n.roll.chamber }}: {{ n.roll.question }} ({{ n.roll.result }}) · <a href="{{ n.url }}" target="_blank" rel="noopener">roll call record</a></p>
+<p class="bs-vote">{{ p.name.split(" ")[-1] }} voted: <strong>{{ n.vote }}</strong></p>
+<details class="bs-details"><summary>Both sides</summary>{{ B.block(n.item, "n" ~ loop.index) }}</details>
+</article>{% endfor %}</div>
+{% elif kind == "fed" %}<p class="note">No recorded votes on our featured bills were found for this member. <a href="/votes">See the featured votes</a>.</p>
+{% else %}<p class="note">Both-sides summaries currently cover a few notable federal votes. <a href="/votes">See them here</a>.</p>{% endif %}
 {% endblock %}
