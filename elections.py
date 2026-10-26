@@ -140,7 +140,7 @@ _cache = {}
 def _addr(a):
     a = a or {}
     line = ", ".join(x for x in [a.get("line1"), a.get("line2"), a.get("line3")] if x)
-    city = ", ".join(x for x in [a.get("city"), (a.get("state") or "") + (" " + a["zip"] if a.get("zip") else "")] if x.strip())
+    city = ", ".join(x for x in [a.get("city"), (a.get("state") or "") + (" " + a["zip"] if a.get("zip") else "")] if x and x.strip())
     return {"place": a.get("locationName") or "", "address": ", ".join(x for x in [line, city] if x)}
 
 
