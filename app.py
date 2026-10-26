@@ -116,6 +116,13 @@ def party_class(party):
     return "N"
 
 
+def initials(name):
+    parts = [w for w in re.sub(r"[^A-Za-z .'-]", "", name or "").split() if w.rstrip(".").lower() not in ("jr", "sr", "ii", "iii", "iv", "dr", "mr", "mrs", "ms")]
+    if not parts:
+        return "?"
+    return (parts[0][0] + (parts[-1][0] if len(parts) > 1 else "")).upper()
+
+
 def party_label(party):
     return party.strip() if party and party.strip() else "No party listed"
 
@@ -134,6 +141,7 @@ def fed_summary(l):
     where = t["state"] if t["type"] == "sen" else (
         f'{t["state"]}-{t["district"]}' if t["district"] else f'{t["state"]} (at large)')
     return {"id": l["id"]["bioguide"], "kind": "fed", "name": l["name"].get("official_full") or f'{l["name"]["first"]} {l["name"]["last"]}',
+            "initials": initials(l["name"].get("official_full") or l["name"]["last"]),
             "party": party_label(t.get("party", "")), "pclass": party_class(t.get("party", "")),
             "office": chamber, "where": where,
             "photo": fed_photo(l["id"]["bioguide"])}
@@ -156,7 +164,7 @@ def federal_for(geo):
 # ---------- state / local ----------
 def state_summary(p, role):
     chamber = {"upper": "State Senator", "lower": "State Representative", "mayor": "Mayor"}.get(role["type"], role["type"])
-    return {"id": p["id"], "kind": "st", "name": p["name"], "party": party_label(p["party"]),
+    return {"id": p["id"], "kind": "st", "name": p["name"], "initials": initials(p["name"]), "party": party_label(p["party"]),
             "pclass": party_class(p["party"]), "office": chamber,
             "where": (f'{p["state"]} district {role["district"]}' if role["district"] else (role["place"] or "").replace("_", " ").title()),
             "photo": p.get("image")}
@@ -191,7 +199,7 @@ def state_for_api(geo):
             continue  # federal members come from congress-legislators
         pid = person["id"].replace("ocd-person/", "")
         local = STATE_BY_ID.get(pid)
-        out.append({"id": pid, "kind": "st", "name": person["name"],
+        out.append({"id": pid, "kind": "st", "name": person["name"], "initials": initials(person["name"]),
                     "party": party_label(person.get("party", "")), "pclass": party_class(person.get("party", "")),
                     "office": "State Senator" if role["org_classification"] == "upper" else "State Representative",
                     "where": f'{geo["state"]} district {role.get("district", "")}',
