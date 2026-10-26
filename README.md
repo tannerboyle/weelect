@@ -43,3 +43,6 @@ and a state outline + state flag on the results dashboard (all 50 states, DC and
 - `static/flags/*` – Wikimedia Commons flag files (license metadata checked via the Commons API on 2026-10-25: 55 are "Public domain", Mississippi is "Copyrighted free use" - the state says the design "can be freely used by members of the public"). No attribution required; all 56 sources are listed on `/credits` (data in `data/flag_credits.json`). Files over 60 KB after SVG optimization (scour) were converted to 480 px WebP.
 - `static/fonts/` – Playfair Display and Source Serif 4 (SIL OFL 1.1, via Fontsource); see `static/fonts/FONT-LICENSES.txt`.
 
+
+
+**Voting-locations map is opt-in:** the "Where & when to vote" card shows the text list by default; a "Show map" button (with `aria-expanded`) reveals the map. Leaflet and OSM tiles are not requested until the first click (`static/elmap.js`), and each list entry has a "show on map" link that opens that pin's popup.

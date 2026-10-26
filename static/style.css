@@ -149,3 +149,11 @@ ul.offices li,ul.measures li{display:flex;gap:12px;padding:9px 0;border-top:1px 
 .hrs{white-space:pre-line}
 @media (max-width:640px){.elmap{height:260px}}
 .elmap .leaflet-popup-content{max-height:210px;overflow:auto}
+
+/* "Show map" toggle: a real <button> that looks like the site's links */
+button.linkbtn{all:unset;box-sizing:border-box;cursor:pointer;color:var(--navy);text-decoration:underline;text-underline-offset:2px;font:600 .95rem var(--text);padding:2px 0}
+button.linkbtn:hover{color:var(--red)}button.linkbtn:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+button.linkbtn[disabled]{opacity:.6;cursor:progress}
+.mapopen{margin:8px 0 10px}.mapopen .meta{margin-left:6px}
+.showpin{white-space:nowrap}
+#elmap-wrap[hidden],button.linkbtn[hidden]{display:none}

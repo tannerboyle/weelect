@@ -321,16 +321,21 @@ def build_map(geo, civic):
                 s["lat"], s["lng"] = hit["lat"], hit["lng"]
     merged = {}
     for s in sites:
+        s["pin"] = None
         if s["lat"] is None or s["lng"] is None:
             continue        # could not be placed; still listed in the text
         key = (round(s["lat"], 4), round(s["lng"], 4))      # ~11 m: one pin per building, even if listed under two names
-        m = merged.setdefault(key, {"lat": s["lat"], "lng": s["lng"], "name": s["place"] or s["name"] or "Voting location",
+        s["_pin"] = f"{key[0]},{key[1]}"
+        m = merged.setdefault(key, {"id": s["_pin"], "lat": s["lat"], "lng": s["lng"], "name": s["place"] or s["name"] or "Voting location",
                                     "address": s["address"], "map": s["map"], "entries": []})
         m["entries"].append({"name": s["place"] or s["name"] or "", "kind": s["kind"], "label": KINDS[s["kind"]][1], "hours": s["hours"], "notes": s["notes"],
                              "dates": (s["start"] + (" – " + s["end"] if s["end"] else "")) if s["start"] else ""})
     pts = sorted(merged.values(), key=lambda m: _km(voter, (m["lat"], m["lng"])))[:MAX_SITES]
     if not pts:
         return None
+    shown = {m["id"] for m in pts}
+    for s in sites:        # the text list gets a "show on map" link only for sites that have a pin
+        s["pin"] = s.pop("_pin", None) if s.get("_pin") in shown else None
     for m in pts:
         m["letter"] = KINDS[m["entries"][0]["kind"]][0]
         m["miles"] = round(_km(voter, (m["lat"], m["lng"])) * 0.621371, 1)

@@ -1,7 +1,7 @@
 {# Elections panel. Every block carries a source label. `elections` comes from elections.build_panel(). #}
 {% macro src(label, url) %}<span class="src">Source: {% if url %}<a href="{{ url }}" rel="noopener" target="_blank">{{ label }}</a>{% else %}{{ label }}{% endif %}</span>{% endmacro %}
 {% macro site(s) %}<li><strong>{{ s.place or s.name or s.address }}</strong>{% if s.name and s.place and s.name != s.place %} <span class="meta">({{ s.name }})</span>{% endif %}
-  {% if s.address %}<div>{{ s.address }}{% if s.map %} · <a href="{{ s.map }}" target="_blank" rel="noopener">map</a>{% endif %}</div>{% endif %}
+  {% if s.address %}<div>{{ s.address }}{% if s.map %} · <a href="{{ s.map }}" target="_blank" rel="noopener">map</a>{% endif %}{% if s.pin %} · <a href="#elmap-wrap" class="showpin" data-pin="{{ s.pin }}" role="button">show on map</a>{% endif %}</div>{% endif %}
   {% if s.hours %}<div class="hrs">{{ s.hours }}</div>{% endif %}
   {% if s.start or s.end %}<div class="meta">{{ s.start }}{% if s.end %} – {{ s.end }}{% endif %}</div>{% endif %}
   {% if s.notes %}<div class="meta">{{ s.notes }}</div>{% endif %}</li>{% endmacro %}
@@ -35,6 +35,10 @@
     <h3>Where &amp; when to vote</h3>
     {% if C and C.status == "ok" and (C.polling or C.early or C.dropoff) %}
       {% if E.map %}
+      <p class="mapopen"><button type="button" class="linkbtn" id="elmap-toggle" hidden aria-expanded="false" aria-controls="elmap-wrap"
+         data-js="{{ url_for('static', filename='vendor/leaflet/leaflet.js') }}?v=1" data-css="{{ url_for('static', filename='vendor/leaflet/leaflet.css') }}?v=1">Show map</button>
+         <span class="meta">of your address and {{ E.map.total }} nearby location{{ "s" if E.map.total != 1 }}</span></p>
+      <div id="elmap-wrap" hidden>
       <figure class="elmapbox" aria-label="Map of your address and voting locations">
         <div id="elmap" class="elmap" role="region" aria-label="Map: your address and nearby voting locations. Locations are also listed in text."></div>
         <figcaption>
@@ -46,10 +50,9 @@
           <div class="meta">Map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors; pin positions from the Voting Information Project / U.S. Census geocoder.</div>
         </figcaption>
       </figure>
+      </div>
       <script type="application/json" id="elmap-data">{{ {"voter": E.map.voter, "sites": E.map.sites, "fit": E.map.fit}|tojson }}</script>
-      <link rel="stylesheet" href="{{ url_for('static', filename='vendor/leaflet/leaflet.css') }}?v=1">
-      <script src="{{ url_for('static', filename='vendor/leaflet/leaflet.js') }}?v=1" defer></script>
-      <script src="{{ url_for('static', filename='elmap.js') }}?v=6" defer></script>
+      <script src="{{ url_for('static', filename='elmap.js') }}?v=8" defer></script>
       {% endif %}
       {% if C.polling %}<h4>Election Day polling place{{ "s" if C.polling|length > 1 }}</h4><ul class="sites">{% for s in C.polling[:6] %}{{ site(s) }}{% endfor %}</ul>{% if C.polling|length > 6 %}<p class="meta">+ {{ C.polling|length - 6 }} more — your assigned polling place is on your state's lookup below.</p>{% endif %}{% endif %}
       {% if C.early %}<h4>Early voting sites</h4><ul class="sites">{% for s in C.early[:6] %}{{ site(s) }}{% endfor %}</ul>{% if C.early|length > 6 %}<p class="meta">+ {{ C.early|length - 6 }} more — see your state's lookup below.</p>{% endif %}{% endif %}

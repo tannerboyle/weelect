@@ -1,11 +1,25 @@
-/* Voting-locations map for the Elections panel. Leaflet (self-hosted) + OpenStreetMap tiles.
-   Data comes from <script type="application/json" id="elmap-data"> rendered by the server. */
+/* Voting-locations map for the Elections panel (opt-in). The text list is the default view; the map stays hidden
+   and NOTHING (Leaflet, tiles) is fetched until the user clicks "Show map". Leaflet is self-hosted. */
 (function () {
-  var el = document.getElementById("elmap"), raw = document.getElementById("elmap-data");
-  if (!el || !raw || !window.L) { if (el) el.hidden = true; return; }
-  var D = JSON.parse(raw.textContent);
+  var btn = document.getElementById("elmap-toggle"), wrap = document.getElementById("elmap-wrap"),
+      el = document.getElementById("elmap"), raw = document.getElementById("elmap-data");
+  if (!btn || !wrap || !el || !raw) return;
+  var D = JSON.parse(raw.textContent), state = null, loading = null;
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]; }); }
+  btn.hidden = false;                       // without JavaScript the button stays hidden and the list is all there is
 
+  function loadLeaflet() {
+    if (window.L) return Promise.resolve(window.L);
+    if (loading) return loading;
+    loading = new Promise(function (ok, fail) {
+      var css = document.createElement("link"); css.rel = "stylesheet"; css.href = btn.dataset.css; document.head.appendChild(css);
+      var js = document.createElement("script"); js.src = btn.dataset.js;
+      js.onload = function () { ok(window.L); }; js.onerror = function () { loading = null; fail(new Error("leaflet")); };
+      document.head.appendChild(js);
+    });
+    return loading;
+  }
+  function build(L) {
   var touch = L.Browser.mobile;
   var map = L.map(el, {scrollWheelZoom: false, dragging: !touch, tap: false, zoomControl: true, attributionControl: true, keyboard: true});
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -65,17 +79,51 @@
     if (full && s.map) h += '<div><a href="' + esc(s.map) + '" target="_blank" rel="noopener">Open in Google Maps &rarr;</a></div>';
     return h + "</div>";
   }
+  var markers = {};
   D.sites.forEach(function (s, i) {
     var label = s.name + (s.address ? ", " + s.address : "");
-    var m = L.marker([s.lat, s.lng], {icon: siteIcon(s.letter), title: label, alt: label, keyboard: true}).addTo(map);
+    var m = markers[s.id] = L.marker([s.lat, s.lng], {icon: siteIcon(s.letter), title: label, alt: label, keyboard: true}).addTo(map);
     m.bindTooltip(body(s, false), {direction: "top", opacity: 1, className: "eltip", offset: [0, -4]});
-    m.on("tooltipopen", function () { fitTooltip(m); });
+    m.on("tooltipopen", function () { if (m.isPopupOpen()) { m.closeTooltip(); return; } fitTooltip(m); });
     m.bindPopup(body(s, true), {maxWidth: 280, autoPanPaddingTopLeft: [56, 14], autoPanPaddingBottomRight: [14, 14]});
-    m.on("add", function () { var n = m.getElement(); if (n) { n.setAttribute("role", "button"); n.setAttribute("aria-label", label + ". Press Enter for details."); } });
+    m.on("add", function () { var n = m.getElement(); if (n) { n.setAttribute("role", "button"); n.setAttribute("aria-label", label + ". Press Enter for details.");
+      n.addEventListener("focus", function () { if (!m.isPopupOpen()) m.openTooltip(); }); n.addEventListener("blur", function () { m.closeTooltip(); }); } });
     m.on("popupopen", function () { m.closeTooltip(); });
     if (i < (D.fit || 12)) bounds.push([s.lat, s.lng]);     // sites arrive sorted nearest-first
   });
-  map.fitBounds(bounds, {padding: [28, 28], maxZoom: 15});
-  // Leaflet's marker elements are created on add(); wire focus events to the DOM nodes (Leaflet does not emit them)
-  map.eachLayer(function (l) { if (l instanceof L.Marker && l.getElement) { var n = l.getElement(); if (n) { n.addEventListener("focus", function () { if (!l.isPopupOpen()) l.openTooltip(); }); n.addEventListener("blur", function () { l.closeTooltip(); }); } } });
+  return {map: map, markers: markers, bounds: bounds};
+  }
+
+  function setOpen(open) {
+    wrap.hidden = !open; btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.textContent = open ? "Hide map" : "Show map";
+  }
+  // Open the map (initialising it on first use). Resolves with the state once it is visible and sized.
+  function open() {
+    setOpen(true);
+    btn.disabled = true;
+    return loadLeaflet().then(function (L) {
+      if (!state) { state = build(L); }
+      state.map.invalidateSize();
+      if (!state.fitted) { state.map.fitBounds(state.bounds, {padding: [28, 28], maxZoom: 15}); state.fitted = true; }
+      btn.disabled = false; return state;
+    }).catch(function () {
+      btn.disabled = false; setOpen(false);
+      btn.textContent = "Map unavailable — retry"; return null;
+    });
+  }
+  btn.addEventListener("click", function () { if (wrap.hidden) open(); else setOpen(false); });
+  // "show on map" links in the list
+  document.addEventListener("click", function (ev) {
+    var a = ev.target.closest && ev.target.closest("[data-pin]"); if (!a) return;
+    ev.preventDefault();
+    var id = a.getAttribute("data-pin");
+    open().then(function (st) {
+      if (!st || !st.markers[id]) return;
+      wrap.scrollIntoView({block: "nearest", behavior: "smooth"});
+      var m = st.markers[id];
+      st.map.setView(m.getLatLng(), Math.max(st.map.getZoom(), 14), {animate: false});
+      m.openPopup(); var n = m.getElement(); if (n) n.focus({preventScroll: true});
+    });
+  });
 })();
