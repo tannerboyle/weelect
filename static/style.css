@@ -198,3 +198,6 @@ details.bs-details>summary:focus-visible{outline:2px solid var(--navy);outline-o
 .bs-unsaid li:first-child{border-top:0}
 .bs-unsaid li strong{font-variant:small-caps;letter-spacing:.03em}
 .bs-unsaid sup a{text-decoration:none;font-size:.7rem;white-space:nowrap}
+/* both-sides intro/disclaimer text spans the full content width, matching the columns below */
+.deck.bs-wide,.fine.bs-wide{max-width:none;width:100%;text-align:left;margin-left:0;margin-right:0}
+.bs-summary,.bs-fine,.bs-unsaid-intro,.bs-unsaid-note{max-width:none}

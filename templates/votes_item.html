@@ -10,5 +10,5 @@
 <div class="sechead"><span class="star">★</span><h2>Both sides</h2></div>
 {{ B.block(it, "bs") }}
 <nav class="bs-pager" aria-label="More key votes">{% if prev %}<a href="/votes/{{ prev.id }}">&larr; {{ prev.title }}</a>{% else %}<span></span>{% endif %}{% if nxt %}<a href="/votes/{{ nxt.id }}">{{ nxt.title }} &rarr;</a>{% endif %}</nav>
-<p class="fine" style="text-align:left;margin-left:0">We Elect is a Brunner Creative site. {{ bs_meta.disclaimer }}</p>
+<p class="fine bs-wide">We Elect is a Brunner Creative site. {{ bs_meta.disclaimer }}</p>
 </div>{% endblock %}
