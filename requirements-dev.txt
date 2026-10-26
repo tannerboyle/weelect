@@ -1,5 +1,0 @@
-# only needed to run scripts/stipple.py (not needed by the website)
-numpy
-scipy
-opencv-python-headless<4.12
-pillow

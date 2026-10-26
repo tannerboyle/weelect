@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% macro cards(items) %}<div class="grid">{% for o in items %}
-<a class="card" href="/official/{{ o.kind }}/{{ o.id }}">{% if o.photo %}<img src="{{ o.photo }}" alt="" loading="lazy" referrerpolicy="no-referrer">{% else %}<img alt="">{% endif %}
+<a class="card p-{{ o.pclass }}" href="/official/{{ o.kind }}/{{ o.id }}">{% if o.photo %}<img src="{{ o.photo }}" alt="" loading="lazy" referrerpolicy="no-referrer">{% else %}<img alt="">{% endif %}
 <div><strong>{{ o.name }}</strong><div class="meta">{{ o.office }}<br>{{ o.where }}</div>{% if o.party %}<span class="party">{{ o.party }}</span>{% endif %}</div></a>{% endfor %}</div>{% endmacro %}
-{% block title %}Your officials{% if geo %} – {{ geo.state_name }}{% endif %} – weelect{% endblock %}
+{% block title %}Your officials{% if geo %} – {{ geo.state_name }}{% endif %} – WeElect{% endblock %}
 {% block body %}
 <form class="search" action="/lookup"><input name="address" value="{{ address }}" aria-label="Address"><button>Find</button></form>
 {% if error %}<p class="err">{{ error }}</p>{% else %}
@@ -22,6 +22,7 @@
   </div>
   {% if flag_url %}<figure class="flagbox" style="margin:0"><img class="flag" src="{{ flag_url }}" alt="Flag of {{ geo.state_name }}"><figcaption>Flag of {{ geo.state_name }}</figcaption></figure>{% endif %}
 </section>
+<ul class="legend" aria-label="Party colour key"><li><i class="sw p-R"></i>Republican</li><li><i class="sw p-D"></i>Democratic</li><li><i class="sw p-N"></i>Independent, other or nonpartisan</li></ul>
 {% for n in notes %}<div class="note">{{ n }}</div>{% endfor %}
 <div class="sechead"><span class="star">★</span><h2>Federal</h2><small>Congress</small></div>{% if federal %}{{ cards(federal) }}{% else %}<p>None found.</p>{% endif %}
 <div class="sechead"><span class="star">★</span><h2>State legislature</h2><small>{{ geo.state_name }}</small></div>{% if state %}{{ cards(state) }}{% else %}<p>None found.</p>{% endif %}

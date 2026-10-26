@@ -3,7 +3,7 @@
 @font-face{font-family:"Source Serif 4";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/source-serif-4-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:"Source Serif 4";font-weight:400;font-style:italic;font-display:swap;src:url(fonts/source-serif-4-latin-400-italic.woff2) format("woff2")}
 @font-face{font-family:"Source Serif 4";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/source-serif-4-latin-600-normal.woff2) format("woff2")}
-:root{--paper:#f7f3e8;--card:#fbf9f2;--ink:#15171c;--mute:#5d5f66;--rule:#15171c;--hair:#cfc8b4;--red:#9b2335;--navy:#1f2f5a;
+:root{--paper:#f7f3e8;--card:#fbf9f2;--ink:#15171c;--mute:#5d5f66;--rule:#15171c;--hair:#cfc8b4;--red:#9b2335;--navy:#1f2f5a;--pR:#9b2335;--pD:#23407a;--pN:#3a3f47;--cream:#f7f3e8;
  --display:"Playfair Display",Georgia,"Times New Roman",serif;--text:"Source Serif 4",Georgia,"Times New Roman",serif}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -73,3 +73,20 @@ footer a{color:var(--mute)}
  .profile{flex-direction:column}.grid{grid-template-columns:1fr}
  table.votes thead{display:none}table.votes tr{display:block;border-top:1px solid var(--hair);padding:6px 0}table.votes td{display:block;border:0;padding:2px 6px}
 }
+
+/* party badges: solid colour + cream text (contrast vs #f7f3e8: red 7.1, blue 9.1, charcoal 9.6) */
+.p-R{background:var(--pR)!important;color:var(--cream)!important;border-color:var(--pR)!important}
+.p-D{background:var(--pD)!important;color:var(--cream)!important;border-color:var(--pD)!important}
+.p-N{background:var(--pN)!important;color:var(--cream)!important;border-color:var(--pN)!important}
+.card.p-R,.card.p-D,.card.p-N{border-top:2px solid var(--ink)!important}
+.card[class*="p-"] strong,.card[class*="p-"] .meta{color:var(--cream)}
+.card[class*="p-"] .meta{opacity:.95}
+.card[class*="p-"] img{border-color:var(--cream)}
+.card[class*="p-"] .party{border-color:var(--cream);color:var(--cream);font-weight:600}
+.card[class*="p-"]:hover{box-shadow:3px 3px 0 var(--ink)}
+.profile[class*="p-"]{padding:18px;box-shadow:4px 4px 0 var(--hair)}
+.profile[class*="p-"] img{border:2px solid var(--cream);box-shadow:none}
+.profile[class*="p-"] h1,.profile[class*="p-"] p{color:var(--cream)}
+.profile[class*="p-"] .party{border:1px solid var(--cream);color:var(--cream);padding:0 6px;font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:14px 0 0;padding:0;font-size:.78rem;color:var(--mute)}
+.legend li{display:flex;align-items:center;gap:6px}.legend .sw{display:inline-block;width:14px;height:14px;border:1px solid var(--ink)}

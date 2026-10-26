@@ -106,6 +106,20 @@ def census_geocode(address):
 
 
 # ---------- federal ----------
+def party_class(party):
+    """'R' / 'D' / 'N' (neutral: independents, other parties, nonpartisan, unknown) for badge colours."""
+    p = (party or "").strip().lower()
+    if p.startswith("republican"):
+        return "R"
+    if p.startswith("democrat"):
+        return "D"
+    return "N"
+
+
+def party_label(party):
+    return party.strip() if party and party.strip() else "No party listed"
+
+
 def fed_photo(bio):
     """Local copy from static/photos (downloaded by scripts/fetch_data.py), or None."""
     if os.path.exists(os.path.join(ROOT, "static", "photos", bio + ".jpg")):
@@ -120,7 +134,8 @@ def fed_summary(l):
     where = t["state"] if t["type"] == "sen" else (
         f'{t["state"]}-{t["district"]}' if t["district"] else f'{t["state"]} (at large)')
     return {"id": l["id"]["bioguide"], "kind": "fed", "name": l["name"].get("official_full") or f'{l["name"]["first"]} {l["name"]["last"]}',
-            "party": t.get("party", ""), "office": chamber, "where": where,
+            "party": party_label(t.get("party", "")), "pclass": party_class(t.get("party", "")),
+            "office": chamber, "where": where,
             "photo": fed_photo(l["id"]["bioguide"])}
 
 
@@ -141,7 +156,8 @@ def federal_for(geo):
 # ---------- state / local ----------
 def state_summary(p, role):
     chamber = {"upper": "State Senator", "lower": "State Representative", "mayor": "Mayor"}.get(role["type"], role["type"])
-    return {"id": p["id"], "kind": "st", "name": p["name"], "party": p["party"], "office": chamber,
+    return {"id": p["id"], "kind": "st", "name": p["name"], "party": party_label(p["party"]),
+            "pclass": party_class(p["party"]), "office": chamber,
             "where": (f'{p["state"]} district {role["district"]}' if role["district"] else (role["place"] or "").replace("_", " ").title()),
             "photo": p.get("image")}
 
@@ -176,7 +192,7 @@ def state_for_api(geo):
         pid = person["id"].replace("ocd-person/", "")
         local = STATE_BY_ID.get(pid)
         out.append({"id": pid, "kind": "st", "name": person["name"],
-                    "party": person.get("party", ""),
+                    "party": party_label(person.get("party", "")), "pclass": party_class(person.get("party", "")),
                     "office": "State Senator" if role["org_classification"] == "upper" else "State Representative",
                     "where": f'{geo["state"]} district {role.get("district", "")}',
                     "photo": person.get("image") or (local or {}).get("image")})

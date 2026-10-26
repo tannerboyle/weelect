@@ -1,6 +1,6 @@
-{% extends "base.html" %}{% block title %}{{ p.name }} – weelect{% endblock %}
+{% extends "base.html" %}{% block title %}{{ p.name }} – WeElect{% endblock %}
 {% block body %}<p><a href="/">&larr; Find another address</a></p>
-<div class="profile">{% if p.photo %}<img src="{{ p.photo }}" alt="{{ p.name }}" referrerpolicy="no-referrer">{% endif %}
+<div class="profile p-{{ p.pclass }}">{% if p.photo %}<img src="{{ p.photo }}" alt="{{ p.name }}" referrerpolicy="no-referrer">{% endif %}
 <div><h1>{{ p.name }}</h1><p>{{ p.office }} &middot; {{ p.where }}{% if p.party %} &middot; <span class="party">{{ p.party }}</span>{% endif %}</p>
 {% if since %}<p>In Congress since {{ since }}{% if term_end %}; current term ends {{ term_end }}{% endif %}.</p>{% endif %}</div></div>
 <div class="sechead"><span class="star">★</span><h2>Contact</h2></div><ul>{% for k,v in contact.items() if v %}<li><strong>{{ k }}:</strong> {{ v }}</li>{% endfor %}</ul>
