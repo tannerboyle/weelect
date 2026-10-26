@@ -90,12 +90,11 @@ footer a{color:var(--mute)}
 .legend{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:14px 0 0;padding:0;font-size:.78rem;color:var(--mute)}
 .legend li{display:flex;align-items:center;gap:6px}.legend .sw{display:inline-block;width:14px;height:14px;border:1px solid var(--ink)}
 
-/* circular portraits with a soft feathered edge that fades into the badge colour (no border, no ring) */
-.avatar{flex:none;display:block;width:84px;height:84px;border-radius:50%;overflow:hidden;position:relative;
- -webkit-mask-image:radial-gradient(circle closest-side,#000 58%,rgba(0,0,0,0) 97%);mask-image:radial-gradient(circle closest-side,#000 58%,rgba(0,0,0,0) 97%)}
-.avatar img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%;border:0;box-shadow:none}
-.avatar.big{width:176px;height:176px}
-.avatar .initials{display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:rgba(247,243,232,.2);color:var(--cream);font-family:var(--display);font-weight:700;font-size:1.7rem;letter-spacing:.02em}
-.avatar.big .initials{font-size:3.4rem}
-.card{align-items:center}
-@media (max-width:640px){.avatar.big{width:150px;height:150px}.profile[class*="p-"]{align-items:center;text-align:left}}
+/* portraits: original portrait rectangle, no border/ring/mask */
+.avatar{flex:none;display:block;width:66px;height:80px;border-radius:2px;overflow:hidden;position:relative}
+.avatar img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 15%;border:0;box-shadow:none;outline:0}
+.avatar.big{width:150px;height:183px}
+.avatar .initials{display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:rgba(247,243,232,.16);color:var(--cream);font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:.02em}
+.avatar.big .initials{font-size:3rem}
+.card{align-items:flex-start}
+@media (max-width:640px){.avatar.big{width:150px;height:183px}}
