@@ -23,8 +23,9 @@
   </div>
   {% if flag_url %}<figure class="flagbox" style="margin:0"><img class="flag" src="{{ flag_url }}" alt="Flag of {{ geo.state_name }}"><figcaption>Flag of {{ geo.state_name }}</figcaption></figure>{% endif %}
 </section>
-<ul class="legend" aria-label="Party colour key"><li><i class="sw p-R"></i>Republican</li><li><i class="sw p-D"></i>Democratic</li><li><i class="sw p-N"></i>Independent, other or nonpartisan</li></ul>
 {% for n in notes %}<div class="note">{{ n }}</div>{% endfor %}
+{% if elections %}{% include "_elections.html" %}{% endif %}
+<ul class="legend" aria-label="Party colour key"><li><i class="sw p-R"></i>Republican</li><li><i class="sw p-D"></i>Democratic</li><li><i class="sw p-N"></i>Independent, other or nonpartisan</li></ul>
 <div class="sechead"><span class="star">★</span><h2>Federal</h2><small>Congress</small></div>{% if federal %}{{ cards(federal) }}{% else %}<p>None found.</p>{% endif %}
 <div class="sechead"><span class="star">★</span><h2>State legislature</h2><small>{{ geo.state_name }}</small></div>{% if state %}{{ cards(state) }}{% else %}<p>None found.</p>{% endif %}
 <div class="sechead"><span class="star">★</span><h2>Local</h2><small>City &amp; county</small></div>{% if local %}{{ cards(local) }}{% else %}<p>No local officials found in free data.</p>{% endif %}

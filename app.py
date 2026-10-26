@@ -5,6 +5,7 @@ Optional env vars (see README): CONGRESS_API_KEY, OPENSTATES_API_KEY
 """
 import json, os, re, time
 import votes as votes_mod
+import elections as elections_mod
 from functools import lru_cache
 import requests
 import datetime
@@ -147,7 +148,8 @@ def fed_summary(l):
             "photo": fed_photo(l["id"]["bioguide"])}
 
 
-def federal_for(geo):
+def federal_raw(geo):
+    """congress-legislators records for this address: its House member(s), then its senators."""
     st = geo["state"]
     out = []
     reps = [l for l in LEGS if l["terms"][-1]["type"] == "rep" and l["terms"][-1]["state"] == st]
@@ -158,7 +160,11 @@ def federal_for(geo):
             out.append(l)
     out.sort(key=lambda l: 0)
     sens = [l for l in LEGS if l["terms"][-1]["type"] == "sen" and l["terms"][-1]["state"] == st]
-    return [fed_summary(l) for l in out + sens]
+    return out + sens
+
+
+def federal_for(geo):
+    return [fed_summary(l) for l in federal_raw(geo)]
 
 
 # ---------- state / local ----------
@@ -255,8 +261,13 @@ def lookup():
             notes.append("We couldn't match every state legislative district for this address; some state legislators may be missing.")
     if not local:
         notes.append("Local officials (city council, county, school board) are not covered by a free source; only some mayors are listed.")
+    try:
+        elections = elections_mod.build_panel(geo, federal_raw(geo), address)
+    except Exception as e:   # the elections panel must never break the officials page
+        app.logger.exception("elections panel failed: %s", e)
+        elections = None
     return render_template("results.html", address=address, geo=geo, federal=federal, state=state,
-                           local=local, notes=notes, error=None,
+                           local=local, notes=notes, error=None, elections=elections,
                            state_svg=state_svg(geo["state"]), flag_url=flag_url(geo["state"]))
 
 

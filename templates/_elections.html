@@ -1,0 +1,83 @@
+{# Elections panel. Every block carries a source label. `elections` comes from elections.build_panel(). #}
+{% macro src(label, url) %}<span class="src">Source: {% if url %}<a href="{{ url }}" rel="noopener" target="_blank">{{ label }}</a>{% else %}{{ label }}{% endif %}</span>{% endmacro %}
+{% macro site(s) %}<li><strong>{{ s.place or s.name or s.address }}</strong>{% if s.name and s.place and s.name != s.place %} <span class="meta">({{ s.name }})</span>{% endif %}
+  {% if s.address %}<div>{{ s.address }}{% if s.map %} · <a href="{{ s.map }}" target="_blank" rel="noopener">map</a>{% endif %}</div>{% endif %}
+  {% if s.hours %}<div class="hrs">{{ s.hours }}</div>{% endif %}
+  {% if s.start or s.end %}<div class="meta">{{ s.start }}{% if s.end %} – {{ s.end }}{% endif %}</div>{% endif %}
+  {% if s.notes %}<div class="meta">{{ s.notes }}</div>{% endif %}</li>{% endmacro %}
+{% set E = elections %}{% set C = E.civic %}
+<div class="sechead" id="elections"><span class="star">★</span><h2>Elections &amp; voting</h2><small>{{ E.name }}</small></div>
+
+<section class="electionbar" aria-label="Next election">
+  <div>
+    <div class="kicker">Next election</div>
+    <h3>General Election</h3>
+    <div class="edate">{{ E.date }}</div>
+  </div>
+  <div class="countdown{% if E.past %} done{% endif %}"><b>{{ E.when }}</b>{{ src("2 U.S.C. §7 (federal Election Day)", "https://www.law.cornell.edu/uscode/text/2/7") }}</div>
+</section>
+
+<div class="elgrid">
+  <section class="elcard" aria-label="Key dates">
+    <h3>Key dates in {{ E.name }}</h3>
+    <dl class="dates">
+      {% for r in E.rows %}
+      <div class="drow"><dt>{{ r.label }}</dt>
+        <dd>{{ r.value }}{% if r.status %} <span class="pill {{ r.status[0] }}">{{ r.status[1] }}</span>{% endif %}
+          {% if r.note %}<div class="meta">{{ r.note }}</div>{% endif %}
+          {{ src(r.source_label, r.source) }}</dd></div>
+      {% endfor %}
+    </dl>
+    <p class="fine left">Dates are statewide; your county may add days or hours. Confirm with your local election office.</p>
+  </section>
+
+  <section class="elcard" aria-label="Where to vote">
+    <h3>Where &amp; when to vote</h3>
+    {% if C and C.status == "ok" and (C.polling or C.early or C.dropoff) %}
+      {% if C.polling %}<h4>Your Election Day polling place</h4><ul class="sites">{% for s in C.polling %}{{ site(s) }}{% endfor %}</ul>{% endif %}
+      {% if C.early %}<h4>Early voting sites</h4><ul class="sites">{% for s in C.early[:6] %}{{ site(s) }}{% endfor %}</ul>{% if C.early|length > 6 %}<p class="meta">+ {{ C.early|length - 6 }} more — see your state's lookup below.</p>{% endif %}{% endif %}
+      {% if C.dropoff %}<h4>Ballot drop-off locations</h4><ul class="sites">{% for s in C.dropoff[:6] %}{{ site(s) }}{% endfor %}</ul>{% endif %}
+      {{ src("Google Civic Information API / Voting Information Project" ~ (" (official state data)" if (C.polling + C.early + C.dropoff)|selectattr("official")|list else ""), "https://developers.google.com/civic-information") }}
+      <p class="fine left">Polling places can change close to Election Day. Verify with the official lookup below.</p>
+    {% else %}
+      <p><strong>Election Day hours:</strong> {{ E.polling.hours }}{% if E.polling.hours_note %} <span class="meta">— {{ E.polling.hours_note }}</span>{% endif %}</p>
+      <p class="needlookup">Your exact polling place, early-voting sites and drop boxes depend on your registered address and are published by your state. Use the official lookup:</p>
+    {% endif %}
+    <p class="actions"><a class="btn" href="{{ E.polling.lookup }}" target="_blank" rel="noopener">Find my polling place ({{ E.name }} official tool)</a></p>
+    <p class="otherlinks"><a href="{{ E.polling.vote_gov }}" target="_blank" rel="noopener">vote.gov</a> · <a href="{{ E.polling.nass }}" target="_blank" rel="noopener">NASS “Can I Vote?”</a></p>
+    {{ src("official state voter lookup; hours from Ballotpedia", E.polling.lookup) }}
+    {% if C and C.status == "error" %}<p class="fine left">Address-level polling data is temporarily unavailable.</p>{% endif %}
+  </section>
+</div>
+
+<h3 class="sub">What’s up for election at your address</h3>
+<ul class="offices">
+  {% for o in E.offices %}
+  <li><span class="lvl {{ o.level|lower }}">{{ o.level }}</span>
+    <div><strong>{{ o.title }}</strong><div class="meta">{{ o.detail }}{% if o.link %} <a class="srcl" href="{{ o.link }}" target="_blank" rel="noopener">{{ o.link_label or "Source" }}</a>{% endif %}</div></div></li>
+  {% endfor %}
+  {% if C and C.status == "ok" %}{% for c in C.contests %}<li><span class="lvl {{ 'state' if 'state' in (c.scope|lower) else 'local' }}">On your ballot</span><div><strong>{{ c.office }}</strong>{% if c.scope %} <span class="meta">· {{ c.scope }}</span>{% endif %}
+    <div class="meta">{% for k in c.candidates %}{{ k.name }}{% if k.party %} ({{ k.party }}){% endif %}{% if not loop.last %}; {% endif %}{% endfor %}</div></div></li>{% endfor %}{% endif %}
+</ul>
+<p class="fine left">Federal seats are derived from <a href="https://github.com/unitedstates/congress-legislators" target="_blank" rel="noopener">congress-legislators</a> term end dates; governor and legislature from Wikipedia; each item links its source. {% if not (C and C.status == "ok") %}Local offices (city, county, school board, judges) are not listed — your state’s lookup above shows your full ballot.{% endif %}</p>
+
+<h3 class="sub">Statewide ballot measures</h3>
+{% if E.measures %}
+<ul class="measures">
+  {% for m in E.measures %}
+  <li><span class="mtype" title="{{ m.type_label }}">{{ m.type }}</span>
+    <div><strong>{% if m.url %}<a href="{{ m.url }}" target="_blank" rel="noopener">{{ m.title }}</a>{% else %}{{ m.title }}{% endif %}</strong>
+    <div class="meta">{{ m.summary }}</div></div></li>
+  {% endfor %}
+</ul>
+{{ src("Ballotpedia, 2026 statewide ballot measures (checked " ~ E.retrieved ~ ")", "https://ballotpedia.org/2026_ballot_measures") }}
+{% else %}
+<p>Ballotpedia lists no statewide measures for {{ E.name }} on the Nov. 3, 2026 ballot. {{ src("Ballotpedia", "https://ballotpedia.org/2026_ballot_measures") }}</p>
+{% endif %}
+{% if C and C.status == "ok" and C.measures %}
+<h4>Local and other measures on your ballot</h4>
+<ul class="measures">{% for m in C.measures %}<li><span class="mtype">Measure</span><div><strong>{% if m.url %}<a href="{{ m.url }}" target="_blank" rel="noopener">{{ m.title }}</a>{% else %}{{ m.title }}{% endif %}</strong>{% if m.scope %} <span class="meta">· {{ m.scope }}</span>{% endif %}<div class="meta">{{ m.summary }}</div></div></li>{% endfor %}</ul>
+{{ src("Google Civic Information API / Voting Information Project", "https://developers.google.com/civic-information") }}
+{% else %}
+<p class="fine left">County, city and school-district measures are not shown here; see your state’s lookup for your full ballot. <a href="{{ E.bp }}" target="_blank" rel="noopener">{{ E.name }} elections on Ballotpedia</a>.</p>
+{% endif %}

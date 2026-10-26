@@ -14,6 +14,13 @@ No keys are required to run. Optional (both free):
 
 e.g. `CONGRESS_API_KEY=xxxx OPENSTATES_API_KEY=yyyy .venv/bin/python app.py`
 
+## Elections panel (Nov. 3, 2026)
+The results page has an "Elections & voting" panel: election date + countdown, key dates for the state (early voting, registration and mail-ballot deadlines, poll hours), offices up, statewide ballot measures, and the state's official polling-place lookup. **Every item shows its source.** Nothing is invented: if a fact has no source, it is not shown.
+- `elections.py` builds the panel. Federal seats come from congress-legislators term end dates (House `end == 2027-01-03`; Senate `end <= 2027-01-03`, which also catches the OH/FL specials).
+- `data/elections_2026.json` is built by `scripts/fetch_elections.py` (needs `pip install beautifulsoup4`; re-run it to refresh): Ballotpedia (hours, early voting, deadlines, statewide measures), Wikipedia (governor + state legislative seats up), plus hand-curated official state lookup URLs (link-checked 2026-10-26; AK, IA, KY, NH, OH, RI block automated checks but are listed by Ballotpedia).
+- **Optional `GOOGLE_CIVIC_API_KEY`** (free; Google Cloud Console -> enable "Google Civic Information API" -> create an API key). Unlocks address-specific polling place, early-vote sites, drop boxes, and the full contest/measure list via `voterinfo` (election id `GOOGLE_CIVIC_ELECTION_ID`, default `12000` = Nov. 3, 2026 General). Data is published by the Voting Information Project typically 2-4 weeks before the election and expires after Election Day. Without the key the panel links to the state lookup instead.
+- No FEC key is needed (candidate lists are not shown: FEC filings include candidates who lost primaries).
+
 ## Notes
 - Census vintage `ACS2025_Current` is used on purpose: the default `Current_Current` returns the *120th* Congress district map (starts Jan 2027), which can differ from the districts of sitting (119th) members after mid-decade redistricting.
 - Data: congress-legislators (CC0), openstates/people (CC0). Photos for federal members are hotlinked from unitedstates.github.io/images (should be copied/hosted before launch).
