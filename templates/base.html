@@ -1,20 +1,20 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{% block title %}WeElect – Who represents you?{% endblock %}</title>
+<title>{% block title %}We Elect – Who represents you?{% endblock %}</title>
 <meta name="description" content="Enter your address to see your federal and state elected officials. Nonpartisan civic information.">
 <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
 <link rel="preload" href="{{ url_for('static', filename='fonts/playfair-display-latin-700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=3">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=4">
 </head><body>
 <div class="flagstripe"></div>
 <header class="mast">
   <div class="mast-top"><span>{{ today }}</span><span>Nonpartisan civic information</span></div>
-  <a class="brand" href="/" aria-label="WeElect home"><img src="{{ url_for('static', filename='logo-mark.svg') }}" alt=""><span class="wordmark">We<i>E</i>lect</span></a>
+  <a class="brand" href="/" aria-label="We Elect home"><img src="{{ url_for('static', filename='logo-mark.svg') }}" alt=""><span class="wordmark">We Elect</span></a>
   <p class="mast-sub">Know who represents you.</p>
   <nav class="rules"><a href="/">Find my officials</a><a href="/credits">About &amp; credits</a></nav>
 </header>
 <main>{% block body %}{% endblock %}</main>
 <footer>
-  <p>WeElect is an independent, nonpartisan civic information project. It is not affiliated with any government agency, party or campaign. Always verify with official sources.</p>
+  <p>We Elect is an independent, nonpartisan civic information project. It is not affiliated with any government agency, party or campaign. Always verify with official sources.</p>
   <p>Data: U.S. Census Bureau geocoder and boundaries; unitedstates/congress-legislators (CC0); Open States people data (CC0); House Clerk and Voteview roll calls; Congress.gov. State flags: Wikimedia Commons. <a href="/credits">Full credits</a>.</p>
 </footer>
 </body></html>

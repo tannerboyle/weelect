@@ -1,4 +1,4 @@
-# WeElect prototype (weelect.org)
+# We Elect prototype (weelect.org)
 
 Address -> who represents you (federal, state legislature, a few mayors) + profile pages.
 
