@@ -1,6 +1,6 @@
 # We Elect prototype (weelect.org)
 
-Address -> who represents you (federal, state legislature, a few mayors) + profile pages.
+Address -> who represents you (federal, state legislature, plus mayors and some county leaders where verified) + profile pages.
 
 ## Run locally
 ```
@@ -58,3 +58,6 @@ Editorial section showing the strongest case for and against a few notable votes
 
 ### "What neither side is saying"
 Each item in `data/counterarguments.json` has an `unsaid` list (`label`, `text`, `src[]`) shown full width under the two columns (copy in `meta.unsaid_*`). Only add a point if it concerns the bill's effects, cost, enforcement or who it affects, is not covered by the for/against arguments, is sourced to a page you opened, and states no opinion on what should be done. Add its sources to `sources` and re-check every number and quote against the source text.
+
+## Local officials data
+`data/local_officials.json` (keyed by Census place / county GEOID) is built offline with `python scripts/build_local_officials.py` from free data only: Wikidata (SPARQL), openstates/people mayor records, Wikipedia infobox names for large counties, and the Census Gazetteer. Each entry is marked `confirmed` (name+title found on the cited government page), `corroborated` (two datasets agree) or `unverified` (hidden in the UI). `localdata.py` serves it; the Census Geocoder supplies the GEOIDs (places, counties, county subdivisions, school districts). No per-lookup cost.

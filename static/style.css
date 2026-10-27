@@ -210,3 +210,11 @@ details.bs-details>summary:focus-visible{outline:2px solid var(--navy);outline-o
 .support-btn:hover{background:var(--red);border-color:var(--red)}
 .support-btn:focus-visible{outline:2px solid var(--red);outline-offset:3px}
 .support-foot{margin-top:6px}
+.localjur{background:var(--card);border:1px solid var(--hair);border-top:2px solid var(--ink);padding:12px 14px;margin:0 0 12px}
+.localjur h3{font-family:var(--display);font-size:1.05rem;margin:0 0 6px}
+.locallist{list-style:none;margin:0;padding:0}
+.locallist li{padding:8px 0 8px 12px;border-left:4px solid var(--pN);margin:6px 0}
+.locallist li.lp-R{border-left-color:var(--pR)}.locallist li.lp-D{border-left-color:var(--pD)}
+.locallist .meta,.localjur p.meta,.localnote{font-size:.85rem;color:var(--mute);line-height:1.4}
+.localjur p.meta{margin:0}
+.localnote{margin:4px 0 14px}
