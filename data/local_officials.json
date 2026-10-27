@@ -14,11 +14,11 @@
    "US Census Gazetteer"
   ],
   "stats": {
-   "count:confirmed": 29,
-   "count:unverified": 78,
-   "place:confirmed": 874,
+   "county:confirmed": 29,
+   "county:unverified": 78,
+   "place:confirmed": 875,
    "place:corroborated": 62,
-   "place:unverified": 1456
+   "place:unverified": 1455
   }
  },
  "places": {
@@ -21086,7 +21086,7 @@
      "party": "Republican",
      "term_start": "2022-12-06",
      "term_end": null,
-     "status": "unverified",
+     "status": "confirmed",
      "source_url": "https://www.huntingtonbeachca.gov/government/city_council/previous_city_mayors.php",
      "listed_by": "Wikidata",
      "last_verified": "2026-10-27"

@@ -39,7 +39,7 @@ if A.apply:
     st = {}
     for kind in ("places", "counties"):
         for v in D[kind].values():
-            for o in v["officials"]: st[f"{kind[:-3] if kind=='counties' else kind[:-1]}:{o['status']}"] = st.get(f"{kind[:-3] if kind=='counties' else kind[:-1]}:{o['status']}", 0) + 1
+            for o in v["officials"]: st[f"{'county' if kind=='counties' else kind[:-1]}:{o['status']}"] = st.get(f"{'county' if kind=='counties' else kind[:-1]}:{o['status']}", 0) + 1
     D["meta"]["stats"] = dict(sorted(st.items()))
     json.dump(D, open(PATH, "w"), indent=1, ensure_ascii=False); print("promoted", n_ok, st); sys.exit()
 i, n = map(int, A.shard.split("/"))
