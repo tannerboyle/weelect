@@ -29,4 +29,5 @@
 <div class="sechead"><span class="star">★</span><h2>Federal</h2><small>Congress</small></div>{% if federal %}{{ cards(federal) }}{% else %}<p>None found.</p>{% endif %}
 <div class="sechead"><span class="star">★</span><h2>State legislature</h2><small>{{ geo.state_name }}</small></div>{% if state %}{{ cards(state) }}{% else %}<p>None found.</p>{% endif %}
 <div class="sechead"><span class="star">★</span><h2>Local</h2><small>City &amp; county</small></div>{% if local %}{{ cards(local) }}{% else %}<p>No local officials found in free data.</p>{% endif %}
+{% include "_support.html" %}
 {% endif %}{% endblock %}

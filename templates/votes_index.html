@@ -6,4 +6,5 @@
 {% for it in items %}<a class="card bs-card" href="/votes/{{ it.id }}"><div><span class="bs-kicker">{{ it.topic }}</span><br><strong>{{ it.title }}</strong><div class="meta">{{ it.bill.label }} · {{ it.bill.law }}</div><div class="meta">{{ it.rolls | map(attribute="result") | join(" · ") }}</div></div></a>{% endfor %}
 </div>
 <p class="fine bs-wide">Last reviewed {{ bs_meta.last_reviewed }}. {{ bs_meta.disclaimer }} <a href="/credits#both-sides">How we write both sides</a>. See how your own representatives voted on these: <a href="/">find my officials</a>.</p>
+{% include "_support.html" %}
 </div>{% endblock %}

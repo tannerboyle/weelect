@@ -201,3 +201,12 @@ details.bs-details>summary:focus-visible{outline:2px solid var(--navy);outline-o
 /* both-sides intro/disclaimer text spans the full content width, matching the columns below */
 .deck.bs-wide,.fine.bs-wide{max-width:none;width:100%;text-align:left;margin-left:0;margin-right:0}
 .bs-summary,.bs-fine,.bs-unsaid-intro,.bs-unsaid-note{max-width:none}
+/* donation card + footer link: plain link to Ko-fi, no widget or scripts */
+.support{margin:30px 0 6px;padding:16px 20px 14px;background:var(--card);border:1px solid var(--ink);border-top:3px double var(--ink);text-align:center}
+.support h2{font-family:var(--display);font-size:1.35rem;margin:0 0 6px;color:var(--ink)}
+.support p{margin:0 auto 8px;max-width:640px;font-size:.98rem}
+.support .support-pledge{font-style:italic;color:#34363c}
+.support-btn{display:inline-block;margin-top:4px;padding:9px 20px;background:var(--navy);color:var(--cream)!important;font:600 .82rem var(--text);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--navy)}
+.support-btn:hover{background:var(--red);border-color:var(--red)}
+.support-btn:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.support-foot{margin-top:6px}
