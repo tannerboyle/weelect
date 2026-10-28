@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}{{ it.state_name }} {{ it.label }}: {{ it.title }}, the strongest case for and against – We Elect{% endblock %}
+{% block meta_description %}{{ it.state_name }} {{ it.label }} ({{ it.title }}) on the Nov. 3, 2026 ballot: what a yes vote and a no vote do, the cost, the strongest case for and against, and what neither side is saying. Sourced, nonpartisan.{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block body %}{% import "_measure_block.html" as B with context %}<p><a href="/measures">&larr; All ballot measures</a></p>
+<div class="bs-page">
+<span class="bs-kicker">{{ it.state_name }} · {{ it.topic }}</span>
+<h1 class="bs-title">{{ it.state_name }} {{ it.label }}: {{ it.title }}</h1>
+<p class="meta">{{ it.mtype }} · On the ballot Nov. 3, 2026 · <a href="{{ it.official_url }}" target="_blank" rel="noopener">Official state page</a> · <a href="{{ it.ballotpedia_url }}" target="_blank" rel="noopener">Ballotpedia</a></p>
+{{ B.block(it) }}
+<nav class="bs-pager" aria-label="More ballot measures">{% if prev %}<a href="/measures/{{ prev.id }}">&larr; {{ prev.state_name }} {{ prev.label }}</a>{% else %}<span></span>{% endif %}{% if nxt %}<a href="/measures/{{ nxt.id }}">{{ nxt.state_name }} {{ nxt.label }} &rarr;</a>{% endif %}</nav>
+<p class="fine bs-wide">We Elect is a Brunner Creative site. {{ ms_meta.disclaimer }}</p>
+</div>{% endblock %}

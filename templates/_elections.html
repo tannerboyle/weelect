@@ -87,9 +87,11 @@
   {% for m in E.measures %}
   <li><span class="mtype" title="{{ m.type_label }}">{{ m.type }}</span>
     <div><strong>{% if m.url %}<a href="{{ m.url }}" target="_blank" rel="noopener">{{ m.title }}</a>{% else %}{{ m.title }}{% endif %}</strong>
-    <div class="meta">{{ m.summary }}</div></div></li>
+    <div class="meta">{{ m.summary }}</div>
+    {% set ms = ms_match(m.url) %}{% if ms %}<a class="ms-link" href="/measures/{{ ms.id }}">What yes and no do, and both sides &rarr;</a>{% endif %}</div></li>
   {% endfor %}
 </ul>
+{% set ns = namespace(n=0, st="") %}{% for m in E.measures %}{% set x = ms_match(m.url) %}{% if x %}{% set ns.n = ns.n + 1 %}{% set ns.st = x.state|lower %}{% endif %}{% endfor %}{% if ns.n %}<p class="fine left">We have plain-language, two-sided summaries for {{ ns.n }} of these. <a href="/measures#{{ ns.st }}">See {{ "it" if ns.n == 1 else "them" }}</a>.</p>{% endif %}
 {{ src("Ballotpedia, 2026 statewide ballot measures (checked " ~ E.retrieved ~ ")", "https://ballotpedia.org/2026_ballot_measures") }}
 {% else %}
 <p>Ballotpedia lists no statewide measures for {{ E.name }} on the Nov. 3, 2026 ballot. {{ src("Ballotpedia", "https://ballotpedia.org/2026_ballot_measures") }}</p>

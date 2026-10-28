@@ -70,3 +70,9 @@ Each item in `data/counterarguments.json` has an `unsaid` list (`label`, `text`,
 
 ## Local officials data
 `data/local_officials.json` (keyed by Census place / county GEOID) is built offline with `python scripts/build_local_officials.py` from free data only: Wikidata (SPARQL), openstates/people mayor records, Wikipedia infobox names for large counties, and the Census Gazetteer. Each entry is marked `confirmed` (name+title found on the cited government page), `corroborated` (two datasets agree) or `unverified` (hidden in the UI). `localdata.py` serves it; the Census Geocoder supplies the GEOIDs (places, counties, county subdivisions, school districts). No per-lookup cost.
+
+## Ballot measures (`/measures`)
+
+Neutral two-sided summaries of selected statewide measures on the Nov. 3, 2026 ballot, in `data/measures_bothsides.json` (loaded by `measures.py`, rendered by `templates/measures_*.html` and `_measure_block.html`, which reuse the `.bs-*` styles from the key-votes pages). Each item has: official ballot question, what a yes and a no vote do (official wording), the official fiscal estimate, strongest case for and against (same order, within ~20% of each other in length, attributed to named supporters and opponents), an optional sourced "What neither side is saying", optional campaign-money totals, and numbered sources. Items are matched to the Elections panel on the results page by their Ballotpedia URL (`ballotpedia_url`), so a state's measures link to their summary automatically.
+
+Authoring rules are on the credits page (`#measures`). Before a measure is added, every quotation and every dollar or percentage figure must appear verbatim in the cited source text, and the two sides must be balanced in length. Dates are reviewed manually; bump `meta.last_reviewed` when you re-check an item.

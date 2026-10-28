@@ -39,6 +39,21 @@
 <p>Source links for each featured vote. Opening them is the best way to check our work.</p>
 {% for it, srcs in bs_sources %}<h3 style="font-size:1.05rem;margin:14px 0 4px"><a href="/votes/{{ it.id }}">{{ it.title }}</a></h3>
 <ul class="bs-credit">{% for n, sid, s in srcs %}<li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a> — {{ s.org }} ({{ s.type }}, {{ s.date }})</li>{% endfor %}</ul>{% endfor %}
+<div class="sechead" id="measures"><span class="star">★</span><h2>How we write the ballot-measure summaries</h2></div>
+<p>The pages under <a href="/measures">Ballot measures</a> are editorial content that summarize arguments made by others. They are not the opinion of We Elect, they do not say how to vote, and they carry no ratings or endorsements.</p>
+<ul>
+<li><strong>Choosing measures.</strong> We cover the most widely debated statewide measures first, drawn from the statewide list on your results page (built from Ballotpedia), aiming for a mix of topics and of the most populous states. We do not choose measures by which party or side they help. We cover only some of the statewide measures; where there is no summary, the results page links to Ballotpedia and the state&rsquo;s own ballot materials.</li>
+<li><strong>What a yes and no vote do.</strong> We take the plain-language meaning of a yes or no vote from the state&rsquo;s official ballot materials (the Secretary of State, election department, voter guide or ballot-question text) wherever available. If the official wording is long, we show it as written.</li>
+<li><strong>Cost.</strong> The fiscal estimate comes from the state&rsquo;s official analyst where one exists (for example the California Legislative Analyst&rsquo;s Office, Nevada&rsquo;s Legislative Counsel Bureau, Virginia&rsquo;s Department of Planning and Budget). Where the two sides cite different numbers, we say so and show the official estimate.</li>
+<li><strong>Both sides.</strong> The strongest case for and the strongest case against, in the same order, with roughly equal length (we check that neither side is more than about 20% longer). Each side is attributed to named supporters and opponents, taken from the official ballot arguments where the state publishes them, or from named people and groups quoted by Ballotpedia and news outlets. We quote exact words only; before a measure is published, every quotation and every dollar or percentage figure is checked against the source it cites. Official ballot arguments are the opinions of their authors and are not checked for accuracy by the state; we attribute them rather than endorse them.</li>
+<li><strong>What neither side is saying.</strong> Included only where there is a sourced fact that bears on what the measure does and that none of the cited arguments covers, using the same rules as for key votes.</li>
+<li><strong>Campaign money.</strong> Totals are the contributions Ballotpedia had processed from state campaign-finance reports as of the date shown, and change daily. We name a donor only where the cited source does.</li>
+<li><strong>Dates and updates.</strong> Each page shows when it was last reviewed (currently {{ ms_meta.last_reviewed }}). Court rulings, new filings and campaign reports can change after that date.</li>
+</ul>
+<div class="sechead"><span class="star">★</span><h2>Ballot-measure sources</h2></div>
+<p>Source links for each ballot measure. Opening them is the best way to check our work.</p>
+{% for it, srcs in ms_sources %}<h3 style="font-size:1.05rem;margin:14px 0 4px"><a href="/measures/{{ it.id }}">{{ it.state_name }} {{ it.label }}: {{ it.title }}</a></h3>
+<ul class="bs-credit">{% for n, sid, s in srcs %}<li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a> — {{ s.org }} ({{ s.type }}, {{ s.date }})</li>{% endfor %}</ul>{% endfor %}
 <div class="sechead" id="donations"><span class="star">★</span><h2>Donations</h2></div>
 <p>Voluntary donations to We Elect, a Brunner Creative site, are made through <a href="https://ko-fi.com/weelect" target="_blank" rel="noopener">Ko-fi</a> and processed by Ko-fi; We Elect does not collect or store payment details. Donations do not influence what we publish.</p>
 <div class="sechead"><span class="star">★</span><h2>Fonts</h2></div>

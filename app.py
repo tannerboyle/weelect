@@ -7,6 +7,7 @@ import json, os, re, time
 import votes as votes_mod
 import elections as elections_mod
 import bothsides as bs_mod
+import measures as ms_mod
 import localdata
 from functools import lru_cache
 import requests
@@ -129,13 +130,15 @@ def flag_url(code):
 @app.route("/credits")
 def credits():
     flags = _load("flag_credits.json")
-    return render_template("credits.html", flags=flags, bs_sources=bs_mod.all_sources())
+    return render_template("credits.html", flags=flags, bs_sources=bs_mod.all_sources(), ms_sources=ms_mod.all_sources())
 
 
 @app.context_processor
 def _bothsides_helpers():
     return {"bs_numbers": bs_mod.source_numbers, "bs_sourcelist": bs_mod.sources, "bs_roll_url": bs_mod.roll_url,
-            "bs_for_vote": bs_mod.match_recent, "bs_meta": bs_mod.meta()}
+            "bs_for_vote": bs_mod.match_recent, "bs_meta": bs_mod.meta(),
+            "ms_numbers": ms_mod.source_numbers, "ms_sourcelist": ms_mod.sources, "ms_match": ms_mod.match,
+            "ms_meta": ms_mod.meta(), "ms_for_state": ms_mod.for_state}
 
 
 @app.route("/votes")
@@ -151,6 +154,21 @@ def votes_item(slug):
     items = bs_mod.items()
     i = items.index(it)
     return render_template("votes_item.html", it=it, prev=items[i - 1] if i else None, nxt=items[i + 1] if i + 1 < len(items) else None)
+
+
+@app.route("/measures")
+def measures_index():
+    return render_template("measures_index.html", groups=ms_mod.by_state(), total=len(ms_mod.items()))
+
+
+@app.route("/measures/<slug>")
+def measures_item(slug):
+    it = ms_mod.get(slug)
+    if not it:
+        abort(404)
+    items = ms_mod.items()
+    i = items.index(it)
+    return render_template("measures_item.html", it=it, prev=items[i - 1] if i else None, nxt=items[i + 1] if i + 1 < len(items) else None)
 
 
 # ---------- data loading ----------
@@ -537,8 +555,9 @@ def robots_txt():
 @app.route("/sitemap.xml")
 def sitemap_xml():
     from xml.sax.saxutils import escape
-    urls = [("/", None), ("/votes", bs_mod.meta().get("last_reviewed")), ("/credits", None)]
+    urls = [("/", None), ("/votes", bs_mod.meta().get("last_reviewed")), ("/measures", ms_mod.meta().get("last_reviewed")), ("/credits", None)]
     urls += [(f"/votes/{it['id']}", bs_mod.meta().get("last_reviewed")) for it in bs_mod.items()]
+    urls += [(f"/measures/{it['id']}", ms_mod.meta().get("last_reviewed")) for it in ms_mod.items()]
     urls += [(f"/official/fed/{b}", None) for b in sorted(FED_BY_ID)]
     if SITEMAP_INCLUDE_STATE:   # ~7,700 thinner pages; off by default (see PR notes)
         urls += [(f"/official/st/{pid}", None) for pid in sorted(STATE_BY_ID)]

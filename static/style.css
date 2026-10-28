@@ -240,3 +240,17 @@ details.bs-details>summary:focus-visible{outline:2px solid var(--navy);outline-o
 .skip:focus{left:8px;top:8px}
 .avatar [hidden]{display:none!important}
 a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+
+/* Ballot measures: yes/no box, fact blocks. Ink/navy only, no party colours */
+.ms-ballot{margin:0 0 12px;font-size:.95rem;color:var(--ink)}
+.ms-yn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 14px}
+.ms-yn section{border:1px solid var(--ink);border-top-width:3px;padding:10px 14px 4px;background:#fffdf7}
+.ms-yn h4,.ms-fact h4{font-family:var(--display);font-size:1.1rem;margin:0 0 8px;color:var(--ink)}
+.ms-yn p{margin:0 0 .7em;font-size:.97rem}
+.ms-fact{border-left:3px solid var(--navy);padding:4px 0 2px 14px;margin:14px 0}
+.ms-fact p{margin:0 0 .5em;font-size:.97rem}
+.ms-yn sup a,.ms-fact sup a,.ms-ballot sup a{text-decoration:none;font-size:.7rem;white-space:nowrap}
+.ms-sechead{margin-top:18px}
+.ms-state{font-family:var(--display);font-size:1.5rem;margin:22px 0 8px;border-bottom:1px solid var(--ink);padding-bottom:4px}
+.ms-link{display:inline-block;margin-top:4px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;white-space:nowrap}
+@media (max-width:760px){.ms-yn{grid-template-columns:1fr}}

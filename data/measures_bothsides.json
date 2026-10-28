@@ -1,0 +1,1422 @@
+{
+ "meta": {
+  "last_reviewed": "2026-10-28",
+  "election_day": "2026-11-03",
+  "disclaimer": "Editorial summary of arguments made by others, not the opinion of We Elect. Each side is written to be the strongest case its supporters would recognize, and every claim is tied to a source we opened and read.",
+  "publisher": "a Brunner Creative site",
+  "unsaid_title": "What neither side is saying",
+  "unsaid_intro": "Context that bears on what this measure does or who it affects but that the arguments above do not address. These are sourced facts, not arguments for or against the measure.",
+  "unsaid_note": "Editorial context, not the opinion of We Elect. Each point is a fact we found in a source we opened and read; where sources disagree or data are missing, we say so."
+ },
+ "sources": {
+  "ca-vig": {
+   "org": "California Secretary of State",
+   "title": "2026 General Election Official Voter Information Guide (title and summary, official arguments and rebuttals)",
+   "url": "https://vig.cdn.sos.ca.gov/2026/general/pdf/complete-vig.pdf",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "Official title and summary, ballot arguments written by supporters and opponents (not checked for accuracy by any agency)",
+   "checked": "2026-10-28"
+  },
+  "ca3-lao": {
+   "org": "California Legislative Analyst’s Office",
+   "title": "Proposition 3 ballot analysis",
+   "url": "https://lao.ca.gov/BallotAnalysis/Proposition?number=3&year=2026",
+   "type": "Official fiscal analysis",
+   "date": "2026",
+   "used_for": "Yes/no statement and fiscal effects",
+   "checked": "2026-10-28"
+  },
+  "ca39-lao": {
+   "org": "California Legislative Analyst’s Office",
+   "title": "Proposition 39 ballot analysis",
+   "url": "https://lao.ca.gov/BallotAnalysis/Proposition?number=39&year=2026",
+   "type": "Official fiscal analysis",
+   "date": "2026",
+   "used_for": "Yes/no statement, what the measure requires, fiscal effects",
+   "checked": "2026-10-28"
+  },
+  "ca40-lao": {
+   "org": "California Legislative Analyst’s Office",
+   "title": "Proposition 40 ballot analysis",
+   "url": "https://lao.ca.gov/BallotAnalysis/Proposition?number=40&year=2026",
+   "type": "Official fiscal analysis",
+   "date": "2026",
+   "used_for": "Yes/no statement and fiscal effects",
+   "checked": "2026-10-28"
+  },
+  "ca3-bp": {
+   "org": "Ballotpedia",
+   "title": "California Proposition 3 (2026)",
+   "url": "https://ballotpedia.org/California_Proposition_3,_Renew_State_Income_Tax_Increase_for_Education_Funding_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "ca39-bp": {
+   "org": "Ballotpedia",
+   "title": "California Proposition 39 (2026)",
+   "url": "https://ballotpedia.org/California_Proposition_39,_Voter_Identification,_Citizenship_Verification,_and_Registered_Voter_List_Administration_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "ca40-bp": {
+   "org": "Ballotpedia",
+   "title": "California Proposition 40 (2026)",
+   "url": "https://ballotpedia.org/California_Proposition_40,_One-Time_Wealth_Tax_for_State-Funded_Healthcare,_Education,_and_Food_Assistance_Programs_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "va1-official": {
+   "org": "Virginia Department of Elections",
+   "title": "Proposed Constitutional Amendment, Question 1 (official explanation and full text)",
+   "url": "https://www.elections.virginia.gov/election-law/proposed-constitutional-amendment-question-1/",
+   "type": "Official state explanation",
+   "date": "2026-06-22",
+   "used_for": "Ballot question, present law, proposed law, full text",
+   "checked": "2026-10-28"
+  },
+  "va1-bp": {
+   "org": "Ballotpedia",
+   "title": "Virginia Question 1, Right to Reproductive Freedom Amendment (2026)",
+   "url": "https://ballotpedia.org/Virginia_Question_1,_Right_to_Reproductive_Freedom_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "va1-fiscal": {
+   "org": "Virginia Department of Planning and Budget",
+   "title": "State Fiscal Impact Statement, HB 781 (2026)",
+   "url": "https://lis.blob.core.windows.net/files/1141203.PDF",
+   "type": "Official fiscal analysis",
+   "date": "2026-02-11",
+   "used_for": "State cost of the referendum",
+   "checked": "2026-10-28"
+  },
+  "va2-official": {
+   "org": "Virginia Department of Elections",
+   "title": "Proposed Constitutional Amendment, Question 2 (official explanation and full text)",
+   "url": "https://www.elections.virginia.gov/election-law/proposed-constitutional-amendment-question-2/",
+   "type": "Official state explanation",
+   "date": "2026-06-22",
+   "used_for": "Ballot question, present law, proposed law, full text",
+   "checked": "2026-10-28"
+  },
+  "va2-bp": {
+   "org": "Ballotpedia",
+   "title": "Virginia Question 2, Remove Constitutional Same-Sex Marriage Ban Amendment (2026)",
+   "url": "https://ballotpedia.org/Virginia_Question_2,_Remove_Constitutional_Same-Sex_Marriage_Ban_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "va2-fiscal": {
+   "org": "Virginia Department of Planning and Budget",
+   "title": "State Fiscal Impact Statement, HB 612 (2026)",
+   "url": "https://lis.blob.core.windows.net/files/1141202.PDF",
+   "type": "Official fiscal analysis",
+   "date": "2026-02-11",
+   "used_for": "State cost of the referendum",
+   "checked": "2026-10-28"
+  },
+  "va3-official": {
+   "org": "Virginia Department of Elections",
+   "title": "Proposed Constitutional Amendment, Question 3 (official explanation and full text)",
+   "url": "https://www.elections.virginia.gov/election-law/proposed-constitutional-amendment-question-3/",
+   "type": "Official state explanation",
+   "date": "2026-06-22",
+   "used_for": "Ballot question, present law, proposed law, full text",
+   "checked": "2026-10-28"
+  },
+  "va3-bp": {
+   "org": "Ballotpedia",
+   "title": "Virginia Question 3, Voting Rights Restoration for Felons Upon Release Amendment (2026)",
+   "url": "https://ballotpedia.org/Virginia_Question_3,_Voting_Rights_Restoration_for_Felons_Upon_Release_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "va3-fiscal": {
+   "org": "Virginia Department of Planning and Budget",
+   "title": "State Fiscal Impact Statement, HB 963 (2026)",
+   "url": "https://lis.blob.core.windows.net/files/1141205.PDF",
+   "type": "Official fiscal analysis",
+   "date": "2026-02-11",
+   "used_for": "State cost of the referendum",
+   "checked": "2026-10-28"
+  },
+  "nv-official": {
+   "org": "Nevada state ballot questions (published by Clark County Elections)",
+   "title": "Statewide ballot questions for the November 2026 general election: explanations, committee arguments and Legislative Counsel Bureau fiscal notes",
+   "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:e74294d7-218d-41cc-995f-0e16bc0a9e1f/original/as/all-quests-26g.pdf",
+   "type": "Official ballot materials",
+   "date": "2026",
+   "used_for": "Ballot question, yes/no meaning, committee arguments and rebuttals, fiscal note",
+   "checked": "2026-10-28"
+  },
+  "nv6-bp": {
+   "org": "Ballotpedia",
+   "title": "Nevada Question 6, Right to Abortion Initiative (2026)",
+   "url": "https://ballotpedia.org/Nevada_Question_6,_Right_to_Abortion_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "nv7-bp": {
+   "org": "Ballotpedia",
+   "title": "Nevada Question 7, Require Voter Identification Initiative (2026)",
+   "url": "https://ballotpedia.org/Nevada_Question_7,_Require_Voter_Identification_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "mo-sos": {
+   "org": "Missouri Secretary of State",
+   "title": "2026 Ballot Measures (official ballot titles and fair ballot language)",
+   "url": "https://www.sos.mo.gov/petitions/2026ballotmeasures",
+   "type": "Official state ballot language",
+   "date": "accessed 2026-10-28",
+   "used_for": "Official ballot title, yes/no meaning, cost estimate",
+   "checked": "2026-10-28"
+  },
+  "moA-bp": {
+   "org": "Ballotpedia",
+   "title": "Missouri Proposition A, Congressional Map Referendum (2026)",
+   "url": "https://ballotpedia.org/Missouri_Proposition_A,_Congressional_Map_Referendum_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "mo3-bp": {
+   "org": "Ballotpedia",
+   "title": "Missouri Amendment 3, Prohibit Abortion and Gender Transition Procedures for Minors Amendment (2026)",
+   "url": "https://ballotpedia.org/Missouri_Amendment_3,_Prohibit_Abortion_and_Gender_Transition_Procedures_for_Minors_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "moA-hb1": {
+   "org": "Missouri House of Representatives",
+   "title": "HB 1 (2025 Second Extraordinary Session) committee summary of proponents’ and opponents’ testimony",
+   "url": "https://documents.house.mo.gov/billtracking/bills254/sumpdf/HB0001C.pdf",
+   "type": "Official legislative summary",
+   "date": "2025",
+   "used_for": "Arguments made in committee for and against the map",
+   "checked": "2026-10-28"
+  },
+  "moA-indep": {
+   "org": "Missouri Independent",
+   "title": "Missouri congressional map fight reaches voters as Republican campaign goes quiet",
+   "url": "https://missouriindependent.com/2026/10/27/missouris-congressional-map-fight-reaches-voters-as-republican-campaign-goes-quiet/",
+   "type": "News report (nonprofit newsroom)",
+   "date": "2026-10-27",
+   "used_for": "Effect of the vote, quotes from both campaigns, polling",
+   "checked": "2026-10-28"
+  },
+  "moA-stlpr": {
+   "org": "St. Louis Public Radio",
+   "title": "Proposition A will determine fate of Missouri’s Trump-backed congressional map",
+   "url": "https://www.stlpr.org/government-politics-issues/2026-10-26/proposition-a-missouris-trump-backed-congressional-map",
+   "type": "News report (public radio)",
+   "date": "2026-10-26",
+   "used_for": "Effect of the vote, quotes from both campaigns",
+   "checked": "2026-10-28"
+  },
+  "co87-bb": {
+   "org": "Colorado Legislative Council Staff",
+   "title": "2026 Blue Book: Amendment 87, Graduated Income Tax",
+   "url": "https://leg.colorado.gov/ballots/graduated-income-tax-2/files/blue-book",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "What a yes and no vote do, tax tables, fiscal impact, arguments for and against as listed in the Blue Book",
+   "checked": "2026-10-28"
+  },
+  "co87-bp": {
+   "org": "Ballotpedia",
+   "title": "Colorado Amendment 87, Establish Graduated Income Tax and Dedicate New Revenue to Education, Healthcare, and Childcare Initiative (2026)",
+   "url": "https://ballotpedia.org/Colorado_Amendment_87,_Establish_Graduated_Income_Tax_and_Dedicate_New_Revenue_to_Education,_Healthcare,_and_Childcare_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "wa645-ag": {
+   "org": "Washington Attorney General’s Office",
+   "title": "Ballot title and ballot measure summary, Initiative IP26-645",
+   "url": "https://www.sos.wa.gov/sites/default/files/2026-07/IP26-645%20Ballot%20title%20%26%20Summary.pdf",
+   "type": "Official ballot title",
+   "date": "2026-05-04",
+   "used_for": "Official ballot title and summary",
+   "checked": "2026-10-28"
+  },
+  "wa645-fis": {
+   "org": "Washington Office of Financial Management",
+   "title": "Fiscal Impact Statement for Initiative 645",
+   "url": "https://www.sos.wa.gov/sites/default/files/2026-07/FIS%20-%20Initiative%20645%20-%20FINAL.pdf",
+   "type": "Official fiscal analysis",
+   "date": "2026",
+   "used_for": "State revenue and spending effects",
+   "checked": "2026-10-28"
+  },
+  "wa645-bp": {
+   "org": "Ballotpedia",
+   "title": "Washington Initiative 645, Repeal Tax on Household Income Over $1 Million and Prohibit State and Local Taxes on Income Initiative (2026)",
+   "url": "https://ballotpedia.org/Washington_Initiative_645,_Repeal_Tax_on_Household_Income_Over_$1_Million_and_Prohibit_State_and_Local_Taxes_on_Income_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "ma8-ifv": {
+   "org": "Massachusetts Secretary of the Commonwealth",
+   "title": "2026 Information for Voters: Question 8 (summary, what a yes or no vote does, fiscal statement, 150-word arguments)",
+   "url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "Attorney General summary, yes/no statements, Executive Office for Administration and Finance fiscal statement, official arguments written by proponents and opponents (not certified for accuracy by the state)",
+   "checked": "2026-10-28"
+  },
+  "ma8-bp": {
+   "org": "Ballotpedia",
+   "title": "Massachusetts Question 8, Eliminate Recreational Marijuana Sales and Allow Limited Possession Initiative (2026)",
+   "url": "https://ballotpedia.org/Massachusetts_Question_8,_Eliminate_Recreational_Marijuana_Sales_and_Allow_Limited_Possession_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  }
+ },
+ "items": [
+  {
+   "id": "california-proposition-3",
+   "state": "CA",
+   "state_name": "California",
+   "label": "Proposition 3",
+   "title": "Make permanent the income tax rates on high earners",
+   "topic": "Taxes and education funding",
+   "mtype": "Citizen-initiated constitutional amendment",
+   "ballot_title": "Provides permanent funding for schools and health care by extending existing tax on high incomes. Initiative constitutional amendment.",
+   "official_url": "https://voterguide.sos.ca.gov/propositions/3/",
+   "ballotpedia_url": "https://ballotpedia.org/California_Proposition_3,_Renew_State_Income_Tax_Increase_for_Education_Funding_Initiative_(2026)",
+   "summary": "Voters approved higher income tax rates on high earners in 2012 (Proposition 30) and extended them in 2016 (Proposition 55). They are set to expire in 2031. Proposition 3 would make them permanent. The rates apply to income over about $371,000 for single filers and $742,000 for joint filers (2025 levels, adjusted yearly for inflation). Revenue would go 89% to K–12 schools and 11% to community colleges, and would increase General Fund revenues available for health care, budget reserves and other programs.",
+   "summary_src": [
+    "ca-vig",
+    "ca3-lao"
+   ],
+   "yes": "A YES vote on this measure means: An income tax increase on high-income earners in place since 2012 would become permanent instead of expiring in 2031.",
+   "no": "A NO vote on this measure means: An income tax increase on high-income earners in place since 2012 would expire in 2031.",
+   "fiscal": {
+    "text": "The Legislative Analyst estimates the measure “maintains $5 billion to $15 billion of annual state income tax revenue by making a temporary tax increase on high-income earners permanent instead of letting it expire in 2031.” The amount varies widely from year to year because much of it comes from income tied to the stock market.",
+    "src": [
+     "ca3-lao"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 22, 2026, committees supporting Proposition 3 reported $74,864,711.10 in total contributions (several also support or oppose other measures), and the committee opposing it reported $5,500.00.",
+    "src": [
+     "ca3-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor, signed by the presidents of the California Teachers Association, the California School Nurses Organization and Planned Parenthood Affiliates of California, says “Proposition 3 is NOT a new tax and does NOT raise taxes on anyone,” and that it “prevents millionaires and billionaires from getting a tax cut.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "They argue the money is needed. Without it, they write, “California’s 8 million public school and community college students face billions in cuts, including teacher layoffs, overcrowded classrooms and bigger class sizes.” They add that it “only extends the current tax rates on the wealthiest top 2%.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "They say the measure has safeguards: “Every dollar in Prop. 3 is independently audited every year,” and the Legislature “cannot touch it, redirect it, or spend a single dollar on bureaucracy or administrative overhead.”",
+     "src": [
+      "ca-vig"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against, signed by the presidents of the California Taxpayers Association, the Family Business Association of California and the California Hispanic Chambers of Commerce, says “Politicians told voters higher income taxes would be temporary—only for seven years to cover a budget deficit,” and now want to make them permanent.",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "They argue that taxes add to costs: “Californians have the nation’s highest cost of living partly because we also suffer from the highest income taxes, highest sales taxes and highest gas taxes of all fifty states.” The Howard Jarvis Taxpayers Association’s Jon Coupal, in a rebuttal, calls it “the largest permanent state income tax increase in California history.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "They say the state’s problem is spending: “California doesn’t have a revenue problem. We have a spending problem,” and that politicians “turned a $100 billion budget surplus into a $30 billion budget deficit in just three years.”",
+     "src": [
+      "ca-vig"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Only part of the money goes to schools.",
+     "text": "The Legislative Analyst says: “Roughly 40 percent of the funding would go to schools and community colleges. The rest would go to other state programs.” Part of that amount “would be set aside in budget reserves.”",
+     "src": [
+      "ca3-lao"
+     ]
+    }
+   ],
+   "official_src": [
+    "ca-vig",
+    "ca3-lao"
+   ]
+  },
+  {
+   "id": "california-proposition-39",
+   "state": "CA",
+   "state_name": "California",
+   "label": "Proposition 39",
+   "title": "Voter ID and citizenship verification",
+   "topic": "Elections and voting",
+   "mtype": "Citizen-initiated constitutional amendment",
+   "ballot_title": "Prohibits citizens from voting unless they present government-issued identification. Initiative constitutional amendment.",
+   "official_url": "https://voterguide.sos.ca.gov/propositions/39/",
+   "ballotpedia_url": "https://ballotpedia.org/California_Proposition_39,_Voter_Identification,_Citizenship_Verification,_and_Registered_Voter_List_Administration_Initiative_(2026)",
+   "summary": "Today California voters establish their identity with their signature. Proposition 39 would require voters to present government-issued ID to vote in person, and to write the last four digits of a selected government-issued ID number on the envelope when voting by mail. The state would provide a voter ID card at no cost to voters who request one. Elections officials would have to make “best efforts” to verify citizenship of registered voters, and the State Auditor would audit compliance every odd-numbered year.",
+   "summary_src": [
+    "ca39-lao"
+   ],
+   "yes": "A YES vote on this measure means: Voters would be required to present additional identifying information to elections officials each time they vote.",
+   "no": "A NO vote on this measure means: A voter’s identity would continue to be established with the voter’s signature.",
+   "fiscal": {
+    "text": "The Legislative Analyst says Proposition 39 “would increase state and local government costs each year by tens of millions of dollars to low hundreds of millions of dollars,” less than one-quarter of 1 percent of the state’s General Fund budget. The exact cost depends on future decisions, such as the design of the voter ID card and how many cards are requested.",
+    "src": [
+     "ca39-lao"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 22, 2026, committees supporting Proposition 39 reported $39,540,774.87 in total contributions, and committees opposing it reported $33,277,742.21. The largest reported support donors were Richard Uihlein ($17,000,000.00) and Joseph Gebbia ($8,000,000.00).",
+    "src": [
+     "ca39-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor, signed by the Democratic, Republican and Independent coalition chairs of Californians for Voter ID, calls voter ID “a common-sense reform to increase trust and participation in our elections,” and says almost half of the signatures to qualify it came from Democratic and Independent voters.",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "They argue it would fix a weakness in signature checks: “In the last election, more than 100,000 ballots were rejected due to signature mismatches.” They say the measure guarantees every voter a free ID on request and that “states with voter ID laws have not seen decreases in voter participation.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "They also point to the citizenship and audit provisions: “Election officials will also be required to check voter rolls to ensure only citizens are registered,” and the measure “requires an independent audit be conducted every two years.”",
+     "src": [
+      "ca-vig"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against, signed by the heads of ACLU California Action, Common Cause and the League of Women Voters of California, says mail voters “would have to include a personal ID number on their ballot envelope that has to exactly match state records. Get one digit wrong, and a valid ballot could get thrown out.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "They also raise privacy: the measure “will make every vote by mail voter include their personal details on their return envelope—making voters easy targets for identity theft.” They say voters would have to choose between voting and protecting their privacy.",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "They argue a free ID is not cost-free for voters, who still pay for “transportation, time off work, and costs like childcare or getting required documents,” and that “Seniors, students, low-income workers, voters of color, and the millions of women who changed their names at marriage are hit hardest.”",
+     "src": [
+      "ca-vig"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Key details would be left to the Legislature.",
+     "text": "The Legislative Analyst says the measure “requires the Legislature to pass additional laws to implement the measure,” including which forms of identification could be used and what steps would count as best efforts to verify citizenship.",
+     "src": [
+      "ca39-lao"
+     ]
+    }
+   ],
+   "official_src": [
+    "ca39-lao"
+   ]
+  },
+  {
+   "id": "california-proposition-40",
+   "state": "CA",
+   "state_name": "California",
+   "label": "Proposition 40",
+   "title": "One-time 5% tax on billionaires’ wealth",
+   "topic": "Taxes and health care",
+   "mtype": "Citizen-initiated constitutional amendment and statute",
+   "ballot_title": "Imposes one-time tax on certain taxpayers. Initiative constitutional amendment and statute.",
+   "official_url": "https://voterguide.sos.ca.gov/propositions/40/",
+   "ballotpedia_url": "https://ballotpedia.org/California_Proposition_40,_One-Time_Wealth_Tax_for_State-Funded_Healthcare,_Education,_and_Food_Assistance_Programs_Initiative_(2026)",
+   "summary": "Proposition 40 would impose a one-time tax of up to 5% on certain taxpayers with covered assets valued over $1 billion. Covered assets include businesses, securities, art, collectibles and intellectual property, but exclude real property and some pensions and retirement accounts. Ninety percent of the revenue would go to health care and 10% to food assistance or education-related programs, and the revenue would be exempt from constitutional requirements for school funding, budget reserves and the state spending limit.",
+   "summary_src": [
+    "ca-vig",
+    "ca40-lao"
+   ],
+   "yes": "A YES vote on this measure means: The state would collect a one-time tax from billionaires equal to 5 percent of their wealth.",
+   "no": "A NO vote on this measure means: The state would not collect a one-time tax from billionaires equal to 5 percent of their wealth.",
+   "fiscal": {
+    "text": "The Legislative Analyst says the state “probably would collect tens of billions of dollars from the wealth tax” over several years, but “exactly when and how much the state would collect is very hard to predict.” Some billionaires may respond in ways that reduce income tax payments, which “probably would reduce state revenues by less than $1 billion per year.” Administration costs “could be tens of millions of dollars per year for several years,” paid from the new revenue. The two sides cite different numbers: supporters say it will raise about $100 billion, and opponents cite a study they say shows a $25 billion loss.",
+    "src": [
+     "ca40-lao",
+     "ca-vig"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 22, 2026, committees supporting Proposition 40 reported $33,219,546.42 in total contributions, and committees opposing it reported $140,513,001.15 (after subtracting transfers between committees). SEIU-United Healthcare Workers West was the largest reported support donor.",
+    "src": [
+     "ca40-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor, signed by representatives of SEIU-United Healthcare Workers West, Planned Parenthood of Pacific Southwest and an American Federation of Teachers local, says Proposition 40 “makes approximately 200 California billionaires pay a modest, one-time tax on their global wealth to keep local hospitals and ERs open and healthcare affordable for millions of Californians.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "They argue the tax is fair: “You pay your taxes out of every paycheck, but billionaires pay much lower rates than working families.” They say it affects “a small group of people who together hold $2 trillion in wealth—most of which will never be taxed due to loopholes that favor the ultra-wealthy.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "In their rebuttal they say it is limited and cannot be widened: “Prop. 40 is a BILLIONAIRE tax. It cannot be applied to anyone else,” and that opponents “have not put forth any viable solution” to replace health care funding.",
+     "src": [
+      "ca-vig"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against, signed by the presidents of the California Medical Association and the California School Boards Association and the CEO of the California Primary Care Association, says “a study by Stanford University economists found the tax will cost California $25 billion as the tax drives companies and wealthy residents out-of-state.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "They also argue the measure has weak guardrails. It “exempts itself from voter-approved constitutional protections for schools, shortchanging classrooms over $3 billion annually,” and the authors say its backers “wrote it to give the State Legislature power to amend the measure—without voter approval.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "They say “Prop. 40 taxes retirement accounts for the first time.” The official summary says covered assets exclude real property and some pensions and retirement accounts. The authors state that it is opposed by Governor Gavin Newsom and the Democratic and Republican candidates for governor.",
+     "src": [
+      "ca-vig"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "It could fail even with a majority of yes votes.",
+     "text": "The Legislative Analyst notes that if Proposition 41 or 42 on the same ballot receive more yes votes than Proposition 40, courts could find they conflict, and Proposition 40 “could be stopped from becoming law even if it gets yes votes from a majority of voters.”",
+     "src": [
+      "ca40-lao"
+     ]
+    }
+   ],
+   "official_src": [
+    "ca-vig",
+    "ca40-lao"
+   ]
+  },
+  {
+   "id": "virginia-question-1",
+   "state": "VA",
+   "state_name": "Virginia",
+   "label": "Question 1",
+   "title": "Right to reproductive freedom amendment",
+   "topic": "Abortion and reproductive health",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Should the Constitution of Virginia be amended to (i) protect the freedom to make personal decisions about prenatal care, childbirth, postpartum care, birth control, abortion, miscarriage management, and fertility care; (ii) protect doctors, nurses, and patients from being punished for these decisions; and (iii) allow for restrictions on access to abortion during the third trimester of pregnancy except when the patient's health is at risk or the pregnancy cannot survive?",
+   "official_url": "https://www.elections.virginia.gov/election-law/proposed-constitutional-amendment-question-1/",
+   "ballotpedia_url": "https://ballotpedia.org/Virginia_Question_1,_Right_to_Reproductive_Freedom_Amendment_(2026)",
+   "summary": "The Virginia Constitution does not now explicitly provide a right to reproductive freedom or explicitly protect or prohibit certain kinds of health care decisions. The proposed amendment would add to the Bill of Rights a fundamental right to make and carry out decisions about one’s own reproductive care. It would allow the state to regulate abortion in the third trimester, but any such law would have to allow abortion when it is medically needed to protect the life and health of the pregnant person or because the fetus is not viable. Under current state law, according to Ballotpedia, abortion is legal until the third trimester, with exceptions in the third trimester for a threat to the mother’s life or general health.",
+   "summary_src": [
+    "va1-official",
+    "va1-bp"
+   ],
+   "yes": "A yes vote adds a section to the Constitution’s Bill of Rights establishing a fundamental right to reproductive freedom, which the state could burden only for a compelling state interest by the least restrictive means, and bars penalties against people for exercising the right or helping someone else do so with their consent.",
+   "no": "A no vote leaves the Constitution as it is: no explicit right to reproductive freedom, and no explicit protection or prohibition of these health care decisions. Existing state laws would not change.",
+   "fiscal": {
+    "text": "Virginia’s Department of Planning and Budget estimated a one-time state cost of $205,000 for the Department of Elections to run newspaper notices and prepare posters and pamphlets about the referendum. Its statement identifies no other fiscal impact.",
+    "src": [
+     "va1-fiscal"
+    ]
+   },
+   "money": {
+    "text": "In campaign finance reports Ballotpedia had processed through October 24, 2026, committees supporting Question 1 reported $4,044,718.29 in total contributions, and committees opposing it reported $1,279,700.61.",
+    "src": [
+     "va1-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Supporters say the decision belongs with patients and doctors, not legislators. State Sen. Jennifer Boysko (D) said the amendment “ensures that individuals, not politicians, are in control of these deeply personal decisions.” A letter from Virginia medical professionals published by the Committee to Protect Health Care says that without it, “politicians have the ability to restrict and criminalize certain care, or even ban it entirely.”",
+     "src": [
+      "va1-bp"
+     ]
+    },
+    {
+     "text": "They say reproductive rights are fragile after the U.S. Supreme Court’s Dobbs decision. Jamie Lockhart of Planned Parenthood Advocates of Virginia said, “In the wake of the fall of Roe v. Wade, reproductive health care rights are increasingly vulnerable.” The ACLU of Virginia’s Heather St Amand said the amendment covers “birth control, fertility, prenatal care, abortion, miscarriage management, childbirth and postpartum care.”",
+     "src": [
+      "va1-bp"
+     ]
+    },
+    {
+     "text": "Supporters also stress care beyond abortion. Virginians for Reproductive Freedom argues that “in states with abortion bans, doctors have delayed or withheld standard miscarriage treatment for fear of prosecution,” and says that is why miscarriage care needs constitutional protection. House Majority Leader Charniele Herring (D) said residents “can no longer allow politicians to control their bodies and their personal decision” about contraception or fertility treatment.",
+     "src": [
+      "va1-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Opponents say the amendment is too broad and could reach minors. State Sen. Mark Peake (R) said, “There’s no age mentioned in the constitutional amendment,” and that “we’re very concerned that will do away with parental consent.” Protect Virginia 2026, the campaign opposing the amendment, says it “circumvents a parent’s right to make healthcare decisions for their children.”",
+     "src": [
+      "va1-bp"
+     ]
+    },
+    {
+     "text": "They say it would go well beyond current law. Former Del. Mark Earley Jr. (R) said Virginia “already permits abortion during the first two trimesters and under limited circumstances during the third,” so the question is whether to “change the standard governing third-trimester abortion, and subject existing and future laws to heightened judicial scrutiny.” The Virginia Catholic Conference calls it “radical” and says it provides “no protections whatsoever for preborn children.”",
+     "src": [
+      "va1-bp"
+     ]
+    },
+    {
+     "text": "Opponents also say the wording leaves too much to interpretation. Earley wrote that “the ballot question does not fully explain those potential legal consequences.” Live Action argues that “ambiguous language in the amendment would place the fate of a preborn child into the hands of a single physician” who decides whether an abortion is needed to protect the mother’s life or physical or mental health.",
+     "src": [
+      "va1-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Court challenges are pending.",
+     "text": "Ballotpedia reports two lawsuits over the amendment. One, brought by a Bedford County supervisor, argues the House did not follow constitutional procedures in placing it on the ballot; a circuit court dismissed it on July 14, 2026, and it is now before the Court of Appeals. The other, by the Association of American Physicians and Surgeons and others, argues the ballot question is misleading; on October 26, 2026 a circuit court denied a motion to end it and scheduled oral arguments for November 13, 2026.",
+     "src": [
+      "va1-bp"
+     ]
+    },
+    {
+     "label": "What the text says about its own force.",
+     "text": "The amendment says it “shall be self-executing” and that a state interest is compelling “only if it is for the limited purpose of maintaining or improving the health of an individual seeking care.”",
+     "src": [
+      "va1-official"
+     ]
+    }
+   ],
+   "official_src": [
+    "va1-official"
+   ]
+  },
+  {
+   "id": "virginia-question-2",
+   "state": "VA",
+   "state_name": "Virginia",
+   "label": "Question 2",
+   "title": "Repeal the same-sex marriage ban; protect the right to marry",
+   "topic": "Marriage",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Should the Constitution of Virginia be amended to (i) remove the ban on same-sex marriage; (ii) affirm that two adults may marry regardless of sex, gender, or race; and (iii) require all legally valid marriages to be treated equally under the law?",
+   "official_url": "https://www.elections.virginia.gov/election-law/proposed-constitutional-amendment-question-2/",
+   "ballotpedia_url": "https://ballotpedia.org/Virginia_Question_2,_Remove_Constitutional_Same-Sex_Marriage_Ban_Amendment_(2026)",
+   "summary": "Virginia’s Constitution now prohibits marriages, civil unions and similar legal relationships between persons of the same sex or gender. That prohibition is no longer enforceable because of the U.S. Supreme Court’s 2015 decision in Obergefell v. Hodges, but it remains in the text and would be enforceable again if the Court overturned that decision. The amendment would remove it and replace it with a fundamental right to marry, requiring the state to recognize and treat equally any lawful marriage between two adults regardless of sex, gender or race, and barring it from denying a marriage license on those grounds.",
+   "summary_src": [
+    "va2-official"
+   ],
+   "yes": "A yes vote removes the ban on same-sex marriage from the Constitution and adds a right to marry that applies regardless of the sex, gender or race of the two adults.",
+   "no": "A no vote leaves the current ban in the Constitution. It stays unenforceable while Obergefell stands, and would become enforceable if that decision were overturned.",
+   "fiscal": {
+    "text": "Virginia’s Department of Planning and Budget estimated a one-time state cost of $205,000 for the Department of Elections to run newspaper notices and prepare posters and pamphlets about the referendum.",
+    "src": [
+     "va2-fiscal"
+    ]
+   },
+   "money": {
+    "text": "In campaign finance reports Ballotpedia had processed through October 24, 2026, committees supporting Question 2 reported $703,735.24 in total contributions, and committees opposing it reported $126,798.88.",
+    "src": [
+     "va2-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Supporters say the 2006 ban is out of step with current law and should come out. Progress Virginia’s LaTwyla Mathias called it “a stain on Virginia’s constitution for too long” and said Virginia should “affirmatively protect the right of everyone to marry the person they love.” State Sen. Adam Ebbin (D) said the amendment means every constituent “is treated with dignity and respect.”",
+     "src": [
+      "va2-bp"
+     ]
+    },
+    {
+     "text": "They say the protection could be needed. Equality Virginia’s Narissa Rahaman said that if the Supreme Court weakened or overturned Obergefell, “Virginia’s ban in our constitution would immediately go into effect.” Virginians for Marriage Equality says that outcome would cost couples “hospital visitation rights, inheritance protections, the ability to make medical decisions for a spouse.”",
+     "src": [
+      "va2-bp"
+     ]
+    },
+    {
+     "text": "Supporters also frame it as a statement of values. GLAAD said that by voting yes, “Virginia can lead the way and send a powerful, positive message to the entire country,” and that “the fundamental freedom to marry belongs to us all, regardless of religion or political background.”",
+     "src": [
+      "va2-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Opponents say the amendment is about more than marriage because it separates “sex” from “gender.” The Family Foundation says it “would enshrine gender ideology into our state constitution, threatening girls’ safety and sports, as well as basic religious liberties.” Heritage Action says the new language “distinguishes ‘sex’ from ‘gender’ in Virginia law for the first time.”",
+     "src": [
+      "va2-bp"
+     ]
+    },
+    {
+     "text": "Former Del. Tim Anderson (R) argues that same-sex marriage is already legal, so the amendment “is NOT about legalizing gay marriage. That has already been settled by SCOTUS.” He says it is instead about “transgender rights becoming protected classes in family law, school law and custody cases.”",
+     "src": [
+      "va2-bp"
+     ]
+    },
+    {
+     "text": "Opponents also raise religious freedom. Lt. Gov. nominee John Reid said it “doesn’t provide protection for people who sincerely don’t agree with gay marriage.” Victoria Cobb of the Family Foundation of Virginia says that by separating the terms, “they are implying that one can be a different gender than their sex,” which she says “opens the door” to renewed disputes over girls’ sports and other policies.",
+     "src": [
+      "va2-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "It also ends the ban on civil unions.",
+     "text": "Under present law, the Constitution’s prohibition covers not only same-sex marriage but also civil unions and other legal relationships with the same rights, benefits and effects of marriage between persons of the same sex or gender. The amendment deletes that language along with the marriage ban.",
+     "src": [
+      "va2-official"
+     ]
+    }
+   ],
+   "official_src": [
+    "va2-official"
+   ]
+  },
+  {
+   "id": "virginia-question-3",
+   "state": "VA",
+   "state_name": "Virginia",
+   "label": "Question 3",
+   "title": "Restore voting rights upon release from prison",
+   "topic": "Voting rights",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Should the Constitution of Virginia be amended (i) to provide for the fundamental right to vote in the Commonwealth, (ii) to revise the qualifications of voters so that a person convicted of a felony is not entitled to vote during his period of incarceration but is automatically invested with the right to vote upon release from incarceration, and (iii) to update the existing prohibition on voting by persons found to be mentally incompetent to instead apply to persons who have been found to lack the capacity to understand the act of voting?",
+   "official_url": "https://www.elections.virginia.gov/election-law/proposed-constitutional-amendment-question-3/",
+   "ballotpedia_url": "https://ballotpedia.org/Virginia_Question_3,_Voting_Rights_Restoration_for_Felons_Upon_Release_Amendment_(2026)",
+   "summary": "Today, a person convicted of any felony in Virginia loses the right to vote for life unless the Governor takes administrative action to restore that person’s right. The amendment would add a fundamental right to vote for qualified persons. A person convicted of a felony would lose the right only while incarcerated and would get it back automatically on release, without applying to the Governor. It would also replace the current rule that a court finding of any incapacity ends the right to vote with a requirement that a court find the person does not understand the act of voting.",
+   "summary_src": [
+    "va3-official"
+   ],
+   "yes": "A yes vote writes a fundamental right to vote into the Constitution, ends the lifetime loss of voting rights for felony convictions (leaving loss only during incarceration, with automatic restoration on release), and narrows the mental-incapacity exception to a court finding that the person does not understand the act of voting.",
+   "no": "A no vote keeps the current system: a felony conviction ends the right to vote for life unless the Governor restores it person by person, and a court finding of incapacity of any kind ends the right to vote until a court restores it.",
+   "fiscal": {
+    "text": "Virginia’s Department of Planning and Budget estimated a one-time state cost of $205,000 for the Department of Elections to run newspaper notices and prepare posters and pamphlets about the referendum.",
+    "src": [
+     "va3-fiscal"
+    ]
+   },
+   "money": {
+    "text": "In campaign finance reports Ballotpedia had processed through October 24, 2026, committees supporting Question 3 reported $678,824.99 in total contributions, and committees opposing it reported $10,500.00.",
+    "src": [
+     "va3-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Supporters say people who have served their sentences should be full citizens. Progress Virginia’s LaTwyla Mathias said, “When someone has paid their debt to society, they return to the community as full citizens, which includes the right to make their voices heard at the ballot box.” Gov. Abigail Spanberger (D) said Virginia is “one of the worst states in the country” at restoring those rights.",
+     "src": [
+      "va3-bp"
+     ]
+    },
+    {
+     "text": "They point to history and to reentry. State Del. Elizabeth Bennett-Parker (D) said the lifetime disenfranchisement “was intentionally inserted into the 1902 Virginia Constitution to disenfranchise as many black voters as possible.” The Sentencing Project says re-enfranchisement “can facilitate successful reentry and reduce recidivism.”",
+     "src": [
+      "va3-bp"
+     ]
+    },
+    {
+     "text": "Support is not only from Democrats. State Del. Mike Cherry (R) said, “Your constitutional rights should never be tied to a criminal behavior outcome.” Heather Rice-Minus of Prison Fellowship said of people with a record, “We want them to provide for their families, to pay taxes, and yes, to vote.”",
+     "src": [
+      "va3-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Opponents say the current process gives people a reason to earn their rights back. Former Del. Paul Milde (R), who regained his own rights, said he went through “a lengthy deliberative process” that began with completing his sentence, including restitution and fines, and “I was incentivized to be a better member of society because I knew there was a process.”",
+     "src": [
+      "va3-bp"
+     ]
+    },
+    {
+     "text": "Former Del. Todd Gilbert (R) argues the amendment also reaches people who are never incarcerated, who “essentially never lose their right to vote,” with “no other consequence” for a felony conviction.",
+     "src": [
+      "va3-bp"
+     ]
+    },
+    {
+     "text": "Others object to the change in the mental-capacity rule. Former Del. Tim Anderson (R) said, “This is not a ‘good intention’ amendment. This is about people who don’t know what year it is still being able to vote.” The amendment’s text instead bars voting by those a court finds do not understand the act of voting.",
+     "src": [
+      "va3-bp",
+      "va3-official"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Other rights come with the vote.",
+     "text": "The official explanation notes that “with the right to vote, a person also has the right to be a juror, the right to be elected to an office, and the right to be a notary public,” so restoring voting rights restores those too.",
+     "src": [
+      "va3-official"
+     ]
+    }
+   ],
+   "official_src": [
+    "va3-official"
+   ]
+  },
+  {
+   "id": "nevada-question-6",
+   "state": "NV",
+   "state_name": "Nevada",
+   "label": "Question 6",
+   "title": "Constitutional right to abortion",
+   "topic": "Abortion and reproductive health",
+   "mtype": "Citizen-initiated constitutional amendment (second required vote)",
+   "ballot_title": "Should the Nevada Constitution be amended to create an individual’s fundamental right to an abortion, without interference by state or local governments, whenever the abortion is performed by a qualified healthcare professional until fetal viability or when necessary to protect the health or life of the pregnant individual at any point during the pregnancy?",
+   "official_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:e74294d7-218d-41cc-995f-0e16bc0a9e1f/original/as/all-quests-26g.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Nevada_Question_6,_Right_to_Abortion_Initiative_(2026)",
+   "summary": "Existing Nevada law makes abortion legal up to 24 weeks after the start of pregnancy, with an exception after that if a physician reasonably believes an abortion is necessary to preserve the pregnant person’s life or health. The initiative would add a new section to the Nevada Constitution creating a fundamental right to abortion, performed by a qualified health care practitioner, until fetal viability or when needed to protect the life or health of the pregnant patient. State and local governments could interfere only for a compelling state interest, using the least restrictive means, to protect or improve the pregnant person’s life or health in ways that follow clinical standards of practice.",
+   "summary_src": [
+    "nv-official"
+   ],
+   "yes": "A “Yes” vote would create a new section of the Nevada Constitution to establish a person’s constitutional right to abortion, so that a person can make decisions about abortion and reproductive healthcare without interference from state or local governments.",
+   "no": "A “No” vote would keep the Nevada Constitution in its current form and would not impact the availability of abortion as a statutory right under Nevada law.",
+   "fiscal": {
+    "text": "The Legislative Counsel Bureau’s Fiscal Analysis Division (August 1, 2024) concluded the financial impact “cannot be determined.” It said the Legislature may need to review existing abortion laws, but because it is unknown what laws would need changes, “the financial effect upon the State or local governments cannot be determined with any reasonable degree of certainty.” The two ballot committees disagree: the supporters’ committee wrote that Question 6 “has no fiscal or environmental impact,” and the opponents’ committee wrote that it “may cost taxpayers MORE than $120-million-dollars every year.”",
+    "src": [
+     "nv-official"
+    ]
+   },
+   "money": {
+    "text": "In campaign finance reports Ballotpedia had processed through its latest update, committees supporting Question 6 reported $1,568,861.29 in total contributions, and committees opposing it reported $77,407.33.",
+    "src": [
+     "nv6-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The supporters’ ballot committee says abortion decisions belong with patients and doctors: “politicians are never more qualified to make healthcare decisions than women and their doctors.” Lindsey Harmon of Nevadans for Reproductive Freedom told reporters, “this is about bodily autonomy and individual freedoms,” which she says belong in the state constitution.",
+     "src": [
+      "nv-official",
+      "nv6-bp"
+     ]
+    },
+    {
+     "text": "They argue a constitutional right would last. The committee says a yes vote means “no matter who holds office in our state, extreme abortion bans” cannot become law in Nevada, pointing to bans in other states. Harmon says other states’ legislators have pushed bans “against the will of the people.”",
+     "src": [
+      "nv-official",
+      "nv6-bp"
+     ]
+    },
+    {
+     "text": "Supporters also say the amendment protects medical care. The committee says a yes vote “protects doctors so that they will never have to risk jail time just to treat the patient in front of them,” and cites a Texas woman who miscarried and “lost liters of blood and had to go on a breathing machine before doctors could legally help her.”",
+     "src": [
+      "nv-official"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The opponents’ ballot committee says the amendment is unclear compared with current law: “Question 6 has no bright-line rule saying when abortion is legal. Is it always legal at 4 months? 6 months? 9 months? Our current law is clear. Question 6 is not.” It notes that under current law doctors can perform abortions “up to 24 weeks.”",
+     "src": [
+      "nv-official"
+     ]
+    },
+    {
+     "text": "They say it would remove safeguards. The committee asks, “Can a non-doctor perform a surgical abortion at 9 months outside a hospital? Question 6 may not stop this,” and “Can a non-doctor perform a secret surgical abortion on a 13-year-old girl? Question 6 may not stop this.” Protect Our Girls Nevada says it would “remove parental notification for any minor seeking an abortion.”",
+     "src": [
+      "nv-official",
+      "nv6-bp"
+     ]
+    },
+    {
+     "text": "Opponents also warn of lawsuits and cost. The committee writes that “when laws are unclear, the result is expensive lawsuits,” and says Question 6 “may cost taxpayers MORE than $120-million-dollars every year.” Priests for Life says the amendment’s purpose would be to “take away from Nevada voters and their elected representatives the ability to regulate abortion in the future.”",
+     "src": [
+      "nv-official",
+      "nv6-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "This is the second of two required votes.",
+     "text": "Nevada voters approved Question 6 in 2024 by 64.36%-35.64%, and an initiated constitutional amendment must be approved at two successive general elections. The Legislative Counsel Bureau’s fiscal note says that if voters approve it again, it would become effective on November 24, 2026, when the Supreme Court canvasses the votes.",
+     "src": [
+      "nv6-bp",
+      "nv-official"
+     ]
+    }
+   ],
+   "official_src": [
+    "nv-official"
+   ]
+  },
+  {
+   "id": "nevada-question-7",
+   "state": "NV",
+   "state_name": "Nevada",
+   "label": "Question 7",
+   "title": "Require voter ID",
+   "topic": "Elections and voting",
+   "mtype": "Citizen-initiated constitutional amendment (second required vote)",
+   "ballot_title": "Should the Nevada Constitution be amended to require voters to either present photo identification to verify their identity when voting in-person or to provide certain personal information to verify their identity when voting by mail ballot?",
+   "official_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:e74294d7-218d-41cc-995f-0e16bc0a9e1f/original/as/all-quests-26g.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Nevada_Question_7,_Require_Voter_Identification_Initiative_(2026)",
+   "summary": "Under current law, Nevada voters must show identification only in rare situations tied to how and when they registered. The initiative would require voters who vote in person to show a listed form of ID that is current or expired no more than four years (any expiration if the voter is over 70). Voters who vote by mail would provide the last four digits of their Nevada driver’s license, or of their Social Security number, or a number provided by the county clerk when they registered. The Legislature could approve additional forms of ID.",
+   "summary_src": [
+    "nv-official"
+   ],
+   "yes": "A “Yes” vote would amend the Nevada Constitution to require in-person voters to present certain identification and mail ballot voters to provide certain information in order to cast a legal ballot.",
+   "no": "A “No” vote would keep the Nevada Constitution in its current form.",
+   "fiscal": {
+    "text": "The Legislative Counsel Bureau’s Fiscal Analysis Division (July 29, 2024) said the measure is anticipated to have a financial impact. Based on the Secretary of State’s Office, the cost of changes to voter systems would be approximately $6,750, needed by the 2028 elections. The cost of issuing free alternative IDs to voters who lack an accepted ID “cannot be determined with any reasonable degree of certainty,” because the measure does not say who would provide them and it is unknown how many voters would need one.",
+    "src": [
+     "nv-official"
+    ]
+   },
+   "money": {
+    "text": "In campaign finance reports Ballotpedia had processed through its latest update, committees supporting Question 7 reported $341,791.98 in total contributions, and committees opposing it reported $0.00.",
+    "src": [
+     "nv7-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The supporters’ ballot committee says a photo ID requirement is “a sensible and effective step to help make our elections more secure and to give people more confidence in the results,” and that close elections “show the need for every vote to be legal.” It cites a poll showing 74% of Nevadans back the idea.",
+     "src": [
+      "nv-official"
+     ]
+    },
+    {
+     "text": "They point to other states: “As of 2024, 36 states have laws requiring photo ID for voting,” and the committee says that, “contrary to what people were told would happen, turnout has not decreased.” It says many everyday activities already require a photo ID, so the requirement should not burden minorities or low-income people.",
+     "src": [
+      "nv-official"
+     ]
+    },
+    {
+     "text": "On access, the committee says the measure lets the Legislature approve additional forms of ID, and the committee’s rebuttal says, “The Legislature can find a way to help these voters, just like 36 other states have done.” Its rebuttal adds that the opponents’ own study says “the research is mixed on whether ID laws actually reduce turnout.”",
+     "src": [
+      "nv-official"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The opponents’ ballot committee says the requirement “will mean fewer eligible people will cast ballots, while the new law would do nothing to prevent voter fraud.” It says in-person impersonation is extremely rare, citing a study that found it “happened 31 times” out of more than a billion votes cast.",
+     "src": [
+      "nv-official"
+     ]
+    },
+    {
+     "text": "They argue many eligible voters would struggle to get the required ID. The committee says rural and tribal voters “will have to travel long distances to a DMV,” and that “almost 21% of all voting-age Americans don’t have a valid driver’s license with their current name and address,” which it says would equal more than half a million people in Nevada.",
+     "src": [
+      "nv-official"
+     ]
+    },
+    {
+     "text": "The committee also cites cost and turnout research: “Voter ID laws are also a waste of taxpayer dollars. Indiana, for example, spent over $10 million to produce free ID cards between 2007 and 2010.” It says studies show strict ID laws reduce turnout among underserved communities and communities of color.",
+     "src": [
+      "nv-official"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Nothing would change before 2028.",
+     "text": "Nevada voters approved Question 7 in 2024 by 73%-27%. According to the official digest, if voters approve it again, the Legislature could write related laws in its 2027 session and the changes would go into effect for the 2028 election cycle. Under current law, only voters who register by mail or computer and have not previously voted in a federal election in Nevada must show identification.",
+     "src": [
+      "nv7-bp",
+      "nv-official"
+     ]
+    }
+   ],
+   "official_src": [
+    "nv-official"
+   ]
+  },
+  {
+   "id": "missouri-proposition-a",
+   "state": "MO",
+   "state_name": "Missouri",
+   "label": "Proposition A",
+   "title": "Congressional map referendum",
+   "topic": "Redistricting",
+   "mtype": "Citizen-initiated veto referendum",
+   "ballot_title": "Do the people of the state of Missouri approve the act of the General Assembly entitled “House Bill No. 1 (2025 Second Extraordinary Session),” which repeals Missouri’s existing congressional plan, and replaces it with new congressional boundaries that keep more counties intact?",
+   "official_url": "https://www.sos.mo.gov/petitions/2026ballotmeasures",
+   "ballotpedia_url": "https://ballotpedia.org/Missouri_Proposition_A,_Congressional_Map_Referendum_(2026)",
+   "summary": "Missouri’s legislature passed a new congressional district map in 2025, and voters collected signatures to put it to a referendum. Voting on it does not change the districts used in the November 2026 election. Proposition A decides which map applies beginning with the 2028 election: the 2025 map, or the 2022 map now in use. The largest changes would be around Kansas City.",
+   "summary_src": [
+    "mo-sos",
+    "moA-indep",
+    "moA-stlpr"
+   ],
+   "yes": "A “yes” vote will approve the act of the General Assembly entitled “House Bill No. 1 (2025 Extraordinary Session),” which redraws the congressional district boundaries.",
+   "no": "A “no” vote will leave in place the congressional district boundaries enacted in 2022.",
+   "fiscal": {
+    "text": "The official ballot title says: “State and local governmental entities estimate no costs or savings.” The fair ballot language says: “If passed, this measure will have no impact on taxes.”",
+    "src": [
+     "mo-sos"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through September 30, 2026, the committee supporting Proposition A (Put Missouri First) reported $3,114,012.50 in total contributions, and the committee opposing it (People Not Politicians) reported $8,307,164.93.",
+    "src": [
+     "moA-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Supporters say the map is more compact and keeps communities together. In the Missouri House committee summary, proponents said the map “is more compact and splits fewer municipalities than the current map” and “keeps each congressperson’s address within the district that person currently represents.”",
+     "src": [
+      "moA-hb1"
+     ]
+    },
+    {
+     "text": "The Put Missouri First campaign makes the same case. Spokesman Michael Hafner told the Missouri Independent that “Prop A deserves Missourians’ support because it delivers a practical, commonsense map that respects more community boundaries throughout our state.” U.S. Rep. Bob Onder said that under the old map both St. Charles and Warren counties are split, “whereas they’re whole under the new map.”",
+     "src": [
+      "moA-indep",
+      "moA-stlpr"
+     ]
+    },
+    {
+     "text": "Supporters also argue the map better reflects the state. Gov. Mike Kehoe said the legislature drew it “because they thought it represented us better,” and Rep. Onder said it “does more represent Missouri in that it has that partisan composition of sending seven Republicans and one Democrat to Congress.”",
+     "src": [
+      "moA-stlpr"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Opponents say politicians should not pick their voters. Richard von Glahn, executive director of People Not Politicians, said, “People should pick our politicians,” and “Politicians shouldn’t pick their voters.” He argues the map would weaken the voices of Kansas City residents, noting that one dividing line follows Troost Avenue, long associated with racial segregation.",
+     "src": [
+      "moA-indep"
+     ]
+    },
+    {
+     "text": "They say the redraw was done for partisan advantage outside the normal cycle. In the House committee summary, opponents said the map is “an illegal gerrymander” that “divides communities only for partisan gain.” U.S. House Minority Leader Hakeem Jeffries (D) called it a “mid-decade gerrymandering scheme.”",
+     "src": [
+      "moA-hb1",
+      "moA-bp"
+     ]
+    },
+    {
+     "text": "The St. Louis Post-Dispatch editorial board, which opposes Proposition A, wrote that redistricting “historically has coincided with new census data every 10 years” and that this redraw was not that.",
+     "src": [
+      "moA-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Neither outcome changes this year’s districts.",
+     "text": "The U.S. Supreme Court ordered Missouri to use its 2022 map in November 2026. Proposition A decides the map for 2028 onward, and the Missouri Independent reports that even if voters reject it, Republican legislators have signaled interest in another redistricting attempt in 2027.",
+     "src": [
+      "moA-indep"
+     ]
+    },
+    {
+     "label": "The official ballot wording does not describe the partisan effect.",
+     "text": "The Missouri Independent notes that the official ballot description “emphasizes that the new map would keep more counties intact” but “does not mention the plan’s potential to give Republicans another congressional seat.” The same report says that under the 2025 boundaries the 5th District would change from one Kamala Harris carried with about 61% in 2024 to one Donald Trump carried with about 58%.",
+     "src": [
+      "moA-indep"
+     ]
+    }
+   ],
+   "official_src": [
+    "mo-sos"
+   ]
+  },
+  {
+   "id": "missouri-amendment-3",
+   "state": "MO",
+   "state_name": "Missouri",
+   "label": "Amendment 3",
+   "title": "Repeal abortion-rights amendment; ban gender transition procedures for minors",
+   "topic": "Abortion and reproductive health",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Shall the Missouri Constitution be amended to: Repeal the 2024 voter-approved Amendment providing reproductive healthcare rights, including abortion through fetal viability; Allow abortions for rape and incest (under twelve-weeks’ gestation), emergencies, and fetal anomalies; Allow legislation regulating abortion; Ensure parental consent for minors’ abortions; Prohibit gender transition procedures for minors?",
+   "official_url": "https://www.sos.mo.gov/petitions/2026ballotmeasures",
+   "ballotpedia_url": "https://ballotpedia.org/Missouri_Amendment_3,_Prohibit_Abortion_and_Gender_Transition_Procedures_for_Minors_Amendment_(2026)",
+   "summary": "In 2024 Missouri voters added a right to reproductive freedom, including abortion through fetal viability, to the state constitution. This legislatively referred amendment would repeal that section. It would allow the legislature to regulate abortion and restrict it to medical emergencies, fetal anomalies, and rape or incest (under twelve weeks). It would also require parental consent for minors’ abortions and prohibit gender transition procedures for minors.",
+   "summary_src": [
+    "mo-sos",
+    "mo3-bp"
+   ],
+   "yes": "A “yes” vote will repeal Article I, Section 36, of the Missouri Constitution approved by the voters in 2024 which provided reproductive healthcare rights, including abortion through fetal viability; continue to ensure women’s ability to access medical care for medical emergencies, ectopic pregnancies, and miscarriages; allow legislation to regulate abortion providers and facilities to ensure health and safety; require informed and voluntary consent for an abortion, including parental or judicial consent for minors; allow restriction of abortions to cases of medical emergency, rape and incest under twelve weeks gestation, and fetal anomalies; prohibit public funding of abortions except in limited circumstances; and prohibit gender transition procedures for minors including gender transition surgeries, cross-sex hormones or puberty-blocking drugs, with exceptions for specific medical conditions.",
+   "no": "A “no” vote will leave Article I, Section 36, of the Missouri Constitution approved by voters in 2024 in place; will not limit abortion to cases of medical emergency, rape and incest under twelve weeks gestation, and fetal anomalies, but leave access to abortion available through fetal viability; will not prohibit gender transition procedures for minors.",
+   "fiscal": {
+    "text": "The official ballot title says: “State governmental entities estimate no costs or savings. Greene County estimates it may experience an unknown increase in tax revenue. Other local governmental entities estimate no costs or savings.” The fair ballot language says: “If passed, this measure will not increase or decrease taxes.”",
+    "src": [
+     "mo-sos"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through September 30, 2026, committees supporting Amendment 3 reported $3,748,888.61 in total contributions, and committees opposing it reported $20,474,636.42. The largest reported opposition donor was The Fairness Project ($8,300,000.00); the largest reported support donor was Rick Briton ($250,000.00).",
+    "src": [
+     "mo3-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Supporters say the 2024 amendment went too far and that voters want some rules. Jamie Morris of the Missouri Catholic Conference said, “I don’t believe the average Missouri resident is comfortable with abortion with no regulations,” and called Amendment 3 “a way to craft policy more protective of mom and baby.”",
+     "src": [
+      "mo3-bp"
+     ]
+    },
+    {
+     "text": "They say the 2024 amendment removed common-sense safeguards. The Missouri Catholic Conference says it “eliminated the legislature’s ability to set common-sense safeguards for the abortion industry,” including requirements for parental consent and clinic licensing and inspection. Priests for Life says abortion policy should “be set through the legislative process rather than by a constitutional amendment.”",
+     "src": [
+      "mo3-bp"
+     ]
+    },
+    {
+     "text": "On the minors provision, Attorney General Catherine Hanaway (R) said the amendment is about “protecting them from making irreversible decisions before they’re old enough to fully understand dangerous consequences,” and urged voters to ensure that protection “doesn’t expire.”",
+     "src": [
+      "mo3-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Opponents say voters already decided this in 2024. Tori Schafer of the ACLU of Missouri said, “Missourians made clear that they want to make personal decisions around abortion care with their families and doctors, not with politicians,” and called the amendment a “trojan horse to reinstate Missouri’s total abortion ban.”",
+     "src": [
+      "mo3-bp"
+     ]
+    },
+    {
+     "text": "Margot Riphagen of Planned Parenthood Great Rivers Action said, “The majority of Missourians want to make their own decisions about health care without interference from prying politicians.” Tom Bastian, spokesperson for the Stop the Ban campaign, said supporters are misleading voters about the minors provision.",
+     "src": [
+      "mo3-bp"
+     ]
+    },
+    {
+     "text": "Some abortion opponents also oppose the amendment. Act for Missouri says it “does not deliver equal protection for every unborn child” and “permits abortion across multiple broad exceptions,” arguing for a measure that protects “all unborn children without exception.”",
+     "src": [
+      "mo3-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Gender transition procedures for minors are already banned by state law.",
+     "text": "Ballotpedia reports that gender transition procedures for minors are currently prohibited by Missouri statute, and the Stop the Ban campaign’s spokesperson says that ban “will remain banned no matter how people vote.” The amendment would put the prohibition in the state constitution.",
+     "src": [
+      "mo3-bp"
+     ]
+    },
+    {
+     "label": "This would be the first repeal of a right-to-abortion amendment by voters.",
+     "text": "Ballotpedia notes that, with Missouri’s Amendment 3, “this will be the first time voters will decide to repeal a right-to-abortion amendment.”",
+     "src": [
+      "mo3-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "mo-sos"
+   ]
+  },
+  {
+   "id": "colorado-amendment-87",
+   "state": "CO",
+   "state_name": "Colorado",
+   "label": "Amendment 87",
+   "title": "Graduated state income tax",
+   "topic": "Taxes and education funding",
+   "mtype": "Citizen-initiated constitutional amendment and statute",
+   "ballot_title": "Shall state taxes be increased $2.7 billion annually, in order to increase or improve levels of public services, including K-12 public school education, health care, and early child care and education services, by an amendment to the Colorado Constitution and a change to the Colorado Revised Statutes repealing existing law and creating new law to replace the uniform state income tax rate with a graduated income tax structure… [abridged; see the state page for the full title]",
+   "official_url": "https://leg.colorado.gov/ballots/graduated-income-tax-2/files/blue-book",
+   "ballotpedia_url": "https://ballotpedia.org/Colorado_Amendment_87,_Establish_Graduated_Income_Tax_and_Dedicate_New_Revenue_to_Education,_Healthcare,_and_Childcare_Initiative_(2026)",
+   "summary": "Colorado has had a flat income tax since 1987; the rate is now 4.4 percent. Amendment 87 would replace it, starting in 2027, with six brackets: 3.7% on taxable income up to $25,000, 4.2% from $25,001 to $100,000, 4.4% from $100,001 to $500,000, 7.4% from $500,001 to $750,000, 7.9% from $750,001 to $1,000,000, and 8.4% above $1,000,000. The brackets would not be adjusted for inflation. The additional revenue would have to be spent on K-12 education, health care, and early childhood care and education, and would be exempt from the state’s TABOR revenue limit.",
+   "summary_src": [
+    "co87-bb"
+   ],
+   "yes": "A “yes” vote on Amendment 87 creates a graduated state income tax that increases revenue; uses the additional money for K-12 education, health care, and early childhood care and education; and exempts additional revenue collected from the state’s constitutional revenue limit.",
+   "no": "A “no” vote on Amendment 87 keeps the current constitutional requirement for a flat state income tax rate.",
+   "fiscal": {
+    "text": "The Legislative Council Staff estimates the measure would increase state income tax revenue by $958.4 million in budget year 2026-27 (a half-year impact), $1.972 billion in 2027-28, and more in later years; the maximum increase for 2027-28, allowing for forecast error, is $2.7 billion. Taxpayers with Colorado taxable income below $510,834 would owe less (up to $325 less per taxpayer) and taxpayers at $510,834 and above would owe more. Administering the change would cost the Department of Revenue a one-time $98,000.",
+    "src": [
+     "co87-bb"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 14, 2026, committees supporting Amendment 87 reported $2,528,931.10 in total contributions, and committees opposing it reported $6,909,605.55.",
+    "src": [
+     "co87-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The Blue Book lists, as the first argument for, that the measure “cuts taxes for 97 percent of taxpayers, including most households and small businesses, while increasing taxes only for top earners who have the ability to pay.” New Era Colorado says the current system “treats a billionaire and a person making less than $50,000 a year the same.”",
+     "src": [
+      "co87-bb",
+      "co87-bp"
+     ]
+    },
+    {
+     "text": "Supporters say the revenue is needed. The Blue Book summary of arguments says “crucial programs are at risk of further cuts because of changes in federal policy.” The Bell Policy Center says, “We have long underfunded our child care and education systems, and healthcare costs are rising uncontrollably.”",
+     "src": [
+      "co87-bb",
+      "co87-bp"
+     ]
+    },
+    {
+     "text": "They also argue the idea is proven: “The federal government and 27 other states already have a graduated income tax,” and sales and property taxes “place greater burdens on lower-income households.” The Western Colorado Alliance says the change would make the tax system “more fair, where lower earners pay less and higher earners pay more.”",
+     "src": [
+      "co87-bb",
+      "co87-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Gov. Jared Polis (D) says, “This is a $2.7 billion dollar tax increase,” and the National Federation of Independent Business says it would take “more money away from the businesses that create jobs and support local communities.” The Blue Book lists the argument that “hiking taxes on higher incomes will harm Colorado’s economy.”",
+     "src": [
+      "co87-bp",
+      "co87-bb"
+     ]
+    },
+    {
+     "text": "Opponents say the unindexed brackets would raise taxes over time. The Independence Institute says all Coloradans will see long-term increases “as incomes rise due to wage growth and inflation, while the brackets remain fixed.” The Blue Book makes the same point: “more and more taxpayers will pay these higher taxes each year.”",
+     "src": [
+      "co87-bp",
+      "co87-bb"
+     ]
+    },
+    {
+     "text": "They also warn about competitiveness. The Blue Book lists the argument that higher rates “make Colorado a less competitive place to start and grow a business, and may encourage some high earners to leave the state entirely,” and that the measure “will permanently expand the size of government.”",
+     "src": [
+      "co87-bb"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "A competing measure could cancel part of it.",
+     "text": "Proposition 136 on the same ballot would cap state income tax rates at 4.4 percent. The Blue Book says that if both pass, the Amendment 87 rates above $500,000 would exceed that cap and “the exact outcome is unclear”; the legislature or a court would need to resolve the conflict.",
+     "src": [
+      "co87-bb"
+     ]
+    }
+   ],
+   "official_src": [
+    "co87-bb"
+   ]
+  },
+  {
+   "id": "washington-initiative-645",
+   "state": "WA",
+   "state_name": "Washington",
+   "label": "Initiative 645",
+   "title": "Repeal the tax on income over $1 million; ban income taxes",
+   "topic": "Taxes",
+   "mtype": "Citizen-initiated state statute",
+   "ballot_title": "Initiative Measure No. IP26-645 concerns state and local taxes. This measure would repeal a 9.9% tax on annual individual income over $1,000,000; prohibit taxes measured by individual income and taxes on individual income or the receipt of individual income; and define “income.” Should this measure be enacted into law?",
+   "official_url": "https://www.sos.wa.gov/elections/voters/proposed-ballot-measure-information",
+   "ballotpedia_url": "https://ballotpedia.org/Washington_Initiative_645,_Repeal_Tax_on_Household_Income_Over_$1_Million_and_Prohibit_State_and_Local_Taxes_on_Income_Initiative_(2026)",
+   "summary": "In 2026 the Legislature passed Senate Bill 6346, which imposes a 9.9% tax on annual individual income over $1,000,000 beginning in 2028. Initiative 645 would repeal that tax and prohibit state and local governments from imposing taxes on individual income or the receipt of individual income, or taxes measured by an individual’s income. It would define income as “any gain or benefit measured in money derived from an individual’s capital, labor, property, or other source.”",
+   "summary_src": [
+    "wa645-ag",
+    "wa645-fis"
+   ],
+   "yes": "A yes vote would repeal the 9.9% tax on annual individual income over $1,000,000 before it takes effect, and would prohibit state and local governments from taxing individual income.",
+   "no": "A no vote would leave the 9.9% tax on annual individual income over $1,000,000 in place, and would not add the new prohibition on income taxes.",
+   "fiscal": {
+    "text": "The Office of Financial Management’s fiscal impact statement estimates the initiative would reduce state revenue by $11,432,414,000 over state fiscal years 2027–2031, with the first impact in fiscal year 2029, and that it would not affect local revenue. It also estimates net state agency savings of $150,471,700 over the same period. It says impacts “that might occur due to actions of a future Legislature or those only expressed through legislative intent, are not included.”",
+    "src": [
+     "wa645-fis"
+    ]
+   },
+   "money": {
+    "text": "Ballotpedia reported that as of October 2026 about $13.1 million had been raised for and against Initiative 645: $7.7 million by supporters and about $5.4 million by opponents. Its largest reported support donor was Brian Heywood, founder of Let’s Go Washington (about $2.23 million); reported opposition donors included the Washington Federation of State Employees and SEIU 775 Ballot Fund ($1 million each). Ballotpedia notes that the main support committee is also funding two other initiatives on the ballot.",
+    "src": [
+     "wa645-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Let’s Go Washington, which leads the campaign, says the tax is “a legal test case designed to open the door to a broader statewide income tax.” Greg Lane of the Building Industry Association of Washington says an income tax would “drive down the state economy and add more cost burdens when we’re already the fourth highest cost of living state in the entire country.”",
+     "src": [
+      "wa645-bp"
+     ]
+    },
+    {
+     "text": "State Sen. John Braun (R) says, “I think it’s important for the people to get their chance at direct democracy,” noting that “this is a state that has rejected the income tax 10 times at the ballot” and that voters are “anxious to get a chance to say no.”",
+     "src": [
+      "wa645-bp"
+     ]
+    },
+    {
+     "text": "Brian Heywood of Let’s Go Washington says that if the thresholds change, taxpayers who miss a payment risk collection against them: “they can actually come in and seize your retirement assets to pay that tax lien.” Ballotpedia notes that the bill’s amendments to the state retirement system statutes made pension, disability and death benefits subject to the tax.",
+     "src": [
+      "wa645-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Larry Delaney, president of the Washington Education Association, says, “Initiative 645 will blow a $13 billion hole in our state’s budget, resulting in devastating cuts to education, health care, and human services.” Washington PTA cites the state’s own estimate of “an $11.4 billion revenue loss across fiscal years 2027–2031.”",
+     "src": [
+      "wa645-bp"
+     ]
+    },
+    {
+     "text": "The No on 645 campaign says the law “was a package, with tax cuts for 99.5% of Washingtonians paid for by a tax on millionaires,” and spokesman Erik Houser says “it is highly likely that the tax cuts would have to be pulled back” if the revenue is lost.",
+     "src": [
+      "wa645-bp"
+     ]
+    },
+    {
+     "text": "Washington PTA, which says it could not support the original bill, argues that repeal is a different question: the initiative “bans any tax measured by income, broadly defined, at the state level and in every county and city in Washington.”",
+     "src": [
+      "wa645-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "The tax has not started, and the promised uses are not binding.",
+     "text": "The fiscal impact statement says the 9.9 percent tax would otherwise go into effect on January 1, 2028, with first payments due in April 2029. It notes the Legislature “expressed an intent” to use the revenue for free school meals, childcare and early learning, and local governments, but that impacts expressed only through legislative intent are not included in its estimate.",
+     "src": [
+      "wa645-fis"
+     ]
+    }
+   ],
+   "official_src": [
+    "wa645-ag",
+    "wa645-fis"
+   ]
+  },
+  {
+   "id": "massachusetts-question-8",
+   "state": "MA",
+   "state_name": "Massachusetts",
+   "label": "Question 8",
+   "title": "End recreational marijuana sales",
+   "topic": "Drug policy",
+   "mtype": "Citizen-initiated state law",
+   "ballot_title": "Prohibit Retail Sale of Adult Recreational Use Marijuana. Do you approve of a law summarized below, on which no vote was taken by the Senate or the House of Representatives before May 6, 2026?",
+   "official_url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Massachusetts_Question_8,_Eliminate_Recreational_Marijuana_Sales_and_Allow_Limited_Possession_Initiative_(2026)",
+   "summary": "Massachusetts voters legalized recreational marijuana in 2016. Question 8 would repeal the laws that legalize, regulate and tax its retail sale, while letting people 21 and older possess one ounce or less (no more than 5 grams as concentrate) and gift that amount to another adult. Possession of between one and two ounces would carry a $100 civil penalty and forfeiture. Licensed recreational businesses could apply to become medical dispensaries, and the Cannabis Control Commission would regulate only the medical market. The law would take effect on January 1, 2028.",
+   "summary_src": [
+    "ma8-ifv"
+   ],
+   "yes": "A YES VOTE would prohibit the legalization, regulation, and taxation of the retail sale of adult recreational use marijuana, and change the penalties for possession of marijuana.",
+   "no": "A NO VOTE would make no change to the law relative to marijuana.",
+   "fiscal": {
+    "text": "The state’s fiscal statement, written by the Executive Office of Administration and Finance, says the proposed law “would reduce the amount that state and municipal governments receive from the taxation of those sales.” In fiscal year 2025, taxation of retail adult-use marijuana sales raised approximately $280 million in state revenue and $50 million in local revenue. The opponents’ official argument says repeal would “eliminate billions of dollars in state tax revenue”; the supporters’ official argument says that for every $1 gained in tax revenue taxpayers spend $4.50 on societal costs.",
+    "src": [
+     "ma8-ifv"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 20, 2026, the committee supporting Question 8 (Coalition for a Healthy Massachusetts) reported $3,781,800.00 in total contributions, including $3,730,000.00 from SAM Action, and committees opposing it reported $2,979,813.91.",
+    "src": [
+     "ma8-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor was written by Dr. Jeffrey Morgan of the Coalition For a Healthy Massachusetts. It says Question 8 “would keep personal possession of marijuana legal, keep medical marijuana legal, and stop commercial marijuana stores,” and that “since commercial legalization, marijuana is now the most common drug found in fatal car accidents in Massachusetts.”",
+     "src": [
+      "ma8-ifv"
+     ]
+    },
+    {
+     "text": "The argument cites mental health: “Modern concentrates and edibles have been linked to mental health conditions like psychosis, severe anxiety, and schizophrenia, particularly in young adults,” and says “ER visits in Massachusetts have drastically increased for teenagers with psychiatric conditions.”",
+     "src": [
+      "ma8-ifv"
+     ]
+    },
+    {
+     "text": "It also argues the costs outweigh the revenue: “For every $1 gained in tax revenue, taxpayers spend $4.50 to mitigate the effects of legalization,” and “business owners have increased costs from higher rates of workplace injuries, increased healthcare costs, and higher turnover.”",
+     "src": [
+      "ma8-ifv"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against was written by Ryan Dominguez of the Massachusetts Cannabis Coalition. It says Question 8 “would create serious public health and safety problems by repealing the rules and regulations that currently control the production and sale of marijuana in Massachusetts.”",
+     "src": [
+      "ma8-ifv"
+     ]
+    },
+    {
+     "text": "It says regulation protects consumers: products are “tested for safety, packaged and labelled properly, and sold in licensed businesses to adults 21 and over,” and that repeal would return marijuana “to the illicit market where there are no safeguards in place.”",
+     "src": [
+      "ma8-ifv"
+     ]
+    },
+    {
+     "text": "It also says repeal would burden police and the economy: “Law enforcement would be forced to waste time and resources on marijuana arrests instead of fighting serious crime,” and Question 8 “would shut down hundreds of small businesses, kill thousands of jobs, and eliminate billions of dollars in state tax revenue.”",
+     "src": [
+      "ma8-ifv"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Home growing would also end.",
+     "text": "Ballotpedia reports that Question 8 would also repeal the laws that permit cultivation of marijuana in a personal residence, which the official summary and arguments do not mention.",
+     "src": [
+      "ma8-bp"
+     ]
+    },
+    {
+     "label": "It would be the first repeal of its kind.",
+     "text": "Ballotpedia notes that if Massachusetts voters approve Question 8 they “would be the first to repeal a voter-approved measure legalizing marijuana.”",
+     "src": [
+      "ma8-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "ma8-ifv"
+   ]
+  }
+ ]
+}
