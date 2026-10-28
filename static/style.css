@@ -210,8 +210,17 @@ details.bs-details>summary:focus-visible{outline:2px solid var(--navy);outline-o
 .support-btn:hover{background:var(--red);border-color:var(--red)}
 .support-btn:focus-visible{outline:2px solid var(--red);outline-offset:3px}
 .support-foot{margin-top:6px}
+.localjur{background:var(--card);border:1px solid var(--hair);border-top:2px solid var(--ink);padding:12px 14px;margin:0 0 12px}
+.localjur h3{font-family:var(--display);font-size:1.05rem;margin:0 0 6px}
+.locallist{list-style:none;margin:0;padding:0}
+.locallist li{padding:8px 0 8px 12px;border-left:4px solid var(--pN);margin:6px 0}
+.locallist li.lp-R{border-left-color:var(--pR)}.locallist li.lp-D{border-left-color:var(--pD)}
+.locallist .meta,.localjur p.meta,.localnote{font-size:.85rem;color:var(--mute);line-height:1.4}
+.localjur p.meta{margin:0}
+.localnote{margin:4px 0 14px}
 
-/* v21: mission line, "tell us your city" form */
+
+/* v22: mission line, "tell us your city" form */
 .mission{max-width:640px;margin:14px auto 0;text-align:center;font-style:italic;font-size:1.02rem;line-height:1.45;color:#34363c;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:10px 4px}
 .cityform{max-width:720px;margin:34px auto 0;border-top:2px solid var(--ink);padding-top:10px}
 .cityform h2{font-size:1.15rem;margin:0 0 4px}

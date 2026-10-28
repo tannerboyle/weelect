@@ -1,6 +1,6 @@
 # We Elect prototype (weelect.org)
 
-Address -> who represents you (federal, state legislature, a few mayors) + profile pages.
+Address -> who represents you (federal, state legislature, plus mayors and some county leaders where verified) + profile pages.
 
 ## Run locally
 ```
@@ -66,3 +66,6 @@ Each item in `data/counterarguments.json` has an `unsaid` list (`label`, `text`,
 - **"Tell us your city"** (`/city-interest`): city + state only; one `CITY_INTEREST {...}` line is written to the app log. No database. TODO(Bob): move to a durable destination if you want to keep these.
 - **About page placeholders:** set `CORRECTIONS_EMAIL` and `RESPONSIBLE_NAME` (Render env vars) to replace the `[TODO(Bob): ...]` text.
 - The masthead date uses U.S. Eastern time (same clock as the election countdown); `tzdata` is in requirements.txt.
+
+## Local officials data
+`data/local_officials.json` (keyed by Census place / county GEOID) is built offline with `python scripts/build_local_officials.py` from free data only: Wikidata (SPARQL), openstates/people mayor records, Wikipedia infobox names for large counties, and the Census Gazetteer. Each entry is marked `confirmed` (name+title found on the cited government page), `corroborated` (two datasets agree) or `unverified` (hidden in the UI). `localdata.py` serves it; the Census Geocoder supplies the GEOIDs (places, counties, county subdivisions, school districts). No per-lookup cost.

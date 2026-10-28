@@ -31,6 +31,21 @@
 <ul class="legend" aria-label="Party colour key"><li><i class="sw p-R"></i>Republican</li><li><i class="sw p-D"></i>Democratic</li><li><i class="sw p-N"></i>Independent, other or nonpartisan</li></ul>
 <div class="sechead"><span class="star">★</span><h2>Federal</h2><small>Congress</small></div>{% if federal %}{{ cards(federal) }}{% else %}<p>None found.</p>{% endif %}
 <div class="sechead"><span class="star">★</span><h2>State legislature</h2><small>{{ geo.state_name }}</small></div>{% if state %}{{ cards(state) }}{% else %}<p>None found.</p>{% endif %}
-<div class="sechead"><span class="star">★</span><h2>Local</h2><small>City &amp; county</small></div>{% if local %}{{ cards(local) }}{% else %}<p>No local officials found in free data.</p>{% include "_city_interest.html" %}{% endif %}
+<div class="sechead"><span class="star">★</span><h2>Local</h2><small>City &amp; county</small></div>
+<div class="local">
+{% for j in local.jurisdictions %}
+<div class="localjur"><h3>{{ j.label }}: {{ j.name }}</h3>
+{% if j.officials %}<ul class="locallist">{% for o in j.officials %}
+<li class="lp-{{ o.pclass }}"><div><strong>{{ o.name }}</strong>, {{ o.title }}{% if o.party %} <span class="party">{{ o.party }}</span>{% endif %}
+<div class="meta">{% if o.term %}{{ o.term }} · {% endif %}<a href="{{ o.source_url }}" rel="noopener" target="_blank">Source</a> · {% if o.confirmed %}name found on the cited government page{% else %}listed by {{ o.listed_by }}{% endif %} · checked {{ o.last_verified }}</div></div></li>{% endfor %}</ul>
+{% elif j.unincorporated %}<p class="meta">This address is in an unincorporated community, so there is no city government to list.</p>
+{% else %}<p class="meta">We don&rsquo;t have a verified {{ "mayor or city leader" if j.label.startswith("City") else "county executive or board chair" }} for {{ j.name }} yet. Coverage is partial; we&rsquo;re adding more.</p>{% endif %}
+</div>
+{% endfor %}
+<div class="localjur"><h3>City council, county board &amp; school board</h3>
+<p class="meta">{% if local.school_districts %}Your school district{{ "s" if local.school_districts|length > 1 }}: {% for d in local.school_districts %}{{ d.name }}{{ ", " if not loop.last }}{% endfor %}. {% endif %}City councils, county commissioners and school boards are not yet covered. Coverage is partial; we&rsquo;re adding more.</p></div>
+{% if local.jurisdictions|rejectattr("officials")|list %}{% include "_city_interest.html" %}{% endif %}
+<p class="meta localnote">Local data comes from open datasets (Open States, Wikidata, Census) and was last checked {{ local.last_verified or "recently" }}. Local offices change often &mdash; please confirm with your city or county website.</p>
+</div>
 {% include "_support.html" %}
 {% endif %}{% endblock %}

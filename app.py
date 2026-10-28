@@ -7,6 +7,7 @@ import json, os, re, time
 import votes as votes_mod
 import elections as elections_mod
 import bothsides as bs_mod
+import localdata
 from functools import lru_cache
 import requests
 import datetime
@@ -142,7 +143,21 @@ def census_geocode(address):
                 return v[0]
         return None
 
+    def all_of(*names):
+        out = []
+        for n in names:
+            for x in g.get(n) or []:
+                out.append({"geoid": x.get("GEOID"), "name": x.get("NAME"), "layer": n})
+        return out
+
+    place = (g.get("Incorporated Places") or [{}])[0]
+    cdp = (g.get("Census Designated Places") or [{}])[0]
+    cousub = (g.get("County Subdivisions") or [{}])[0]
     return {
+        "place_geoid": place.get("GEOID"), "cdp_geoid": cdp.get("GEOID"), "cdp_name": cdp.get("NAME"),
+        "county_geoid": (g.get("Counties") or [{}])[0].get("GEOID"),
+        "cousub_geoid": cousub.get("GEOID"), "cousub_name": cousub.get("NAME"),
+        "school_districts": all_of("Unified School Districts", "Elementary School Districts", "Secondary School Districts"),
         "matched": m["matchedAddress"], "lat": m["coordinates"]["y"], "lng": m["coordinates"]["x"],
         "state": g["States"][0]["STUSAB"], "state_name": g["States"][0]["NAME"],
         "county": (g.get("Counties") or [{}])[0].get("NAME"),
@@ -332,7 +347,8 @@ def _lookup_post(address):
         return render_template("results.html", address=address, geo=None,
                                error="The Census geocoder could not match that address. Try adding city, state and ZIP."), 200
     federal = federal_for(geo)
-    state, local = [], local_mayors(geo)
+    state = []
+    local = localdata.for_geo(geo)
     if OPENSTATES_KEY:
         try:
             state = state_for_api(geo)
@@ -344,8 +360,6 @@ def _lookup_post(address):
             notes.append("D.C. Council members are not covered yet.")
         elif missed:
             notes.append("We couldn't match every state legislative district for this address; some state legislators may be missing.")
-    if not local:
-        notes.append("Local officials (city council, county, school board) are not covered by a free source; only some mayors are listed.")
     try:
         elections = elections_mod.build_panel(geo, federal_raw(geo), address)
     except Exception as e:   # the elections panel must never break the officials page
