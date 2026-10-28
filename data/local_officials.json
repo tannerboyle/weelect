@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-10-27",
-  "last_verified": "2026-10-27",
+  "generated": "2026-10-28",
+  "last_verified": "2026-10-28",
   "status_key": {
    "confirmed": "Name and title found on a page from the cited government site when we checked (automated check).",
    "corroborated": "Two independent open datasets list the same person; we could not open an official page to confirm.",
@@ -11,7 +11,8 @@
    "openstates/people (CC0)",
    "Wikidata (CC0)",
    "Wikipedia infobox (CC BY-SA, used for names only)",
-   "US Census Gazetteer"
+   "US Census Gazetteer",
+   "Official city and county websites (checked by hand, then by automated page check)"
   ],
   "stats": {
    "county:confirmed": 82,
@@ -44676,19 +44677,7 @@
   "41067": {
    "name": "Washington County",
    "state": "OR",
-   "officials": [
-    {
-     "name": "Kathryn Harrington",
-     "title": "Chair",
-     "party": null,
-     "term_start": null,
-     "term_end": null,
-     "status": "confirmed",
-     "source_url": "https://www.washingtoncountyor.gov/bcc",
-     "listed_by": "Official site (checked)",
-     "last_verified": "2026-10-28"
-    }
-   ]
+   "officials": []
   },
   "15009": {
    "name": "Maui County",
