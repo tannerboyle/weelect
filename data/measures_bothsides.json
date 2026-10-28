@@ -539,6 +539,96 @@
    "date": "accessed 2026-10-28",
    "used_for": "Quoted arguments, campaign finance and background",
    "checked": "2026-10-28"
+  },
+  "az-pp": {
+   "org": "Arizona Secretary of State (2026 General Election Publicity Pamphlet; copy hosted by the Citizens Clean Elections Commission)",
+   "title": "2026 General Election Guide: Legislative Council analyses, ballot language, and voter-submitted arguments for and against",
+   "url": "https://storageccec.blob.core.usgovcloudapi.net/public/docs/1533-2026AZPublicityPamphlet-English.pdf",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "Legislative Council analysis, official ballot language, and arguments submitted by voters and groups (reproduced as submitted)",
+   "checked": "2026-10-28"
+  },
+  "az144-bp": {
+   "org": "Ballotpedia",
+   "title": "Arizona Proposition 144, Voter Identification and Citizenship Voting Requirements Amendment (2026)",
+   "url": "https://ballotpedia.org/Arizona_Proposition_144,_Voter_Identification_and_Citizenship_Voting_Requirements_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "az318-bp": {
+   "org": "Ballotpedia",
+   "title": "Arizona Proposition 318, Require All Schools and Athletic Associations to Restrict Sports Participation and Access to Private Spaces Based on Sex (2026)",
+   "url": "https://ballotpedia.org/Arizona_Proposition_318,_Require_All_Schools_and_Athletic_Associations_to_Restrict_Sports_Participation_and_Access_to_Private_Spaces_Based_on_Sex_Measure_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "fl3-bk": {
+   "org": "Florida Department of State, Division of Elections",
+   "title": "Proposed Constitutional Amendment Booklet, November 3, 2026 (ballot title, summary and full text of Amendment 3)",
+   "url": "https://files.floridados.gov/media/711369/eng-2026-booklet-constitutional-amendpub-updated-20260903.pdf",
+   "type": "Official state ballot booklet",
+   "date": "2026-09-03",
+   "used_for": "Ballot title, summary and full text",
+   "checked": "2026-10-28"
+  },
+  "fl3-rec": {
+   "org": "Florida Revenue Estimating Conference (Office of Economic and Demographic Research)",
+   "title": "Revenue impact: Homestead Exemption Increases; Assessment Increase Limitation 10% to 5% (CS/HJR 1F)",
+   "url": "https://edr.state.fl.us/Content/conferences/revenueimpact/archives/2026F/_pdf/impact0710.pdf",
+   "type": "Official fiscal estimate",
+   "date": "2026-07-10",
+   "used_for": "Description of the change and the estimated revenue impact",
+   "checked": "2026-10-28"
+  },
+  "fl3-bp": {
+   "org": "Ballotpedia",
+   "title": "Florida Amendment 3, Homestead Tax Exemptions, Property Assessments, and Spending Restrictions Amendment (2026)",
+   "url": "https://ballotpedia.org/Florida_Amendment_3,_Homestead_Tax_Exemptions,_Property_Assessments,_and_Spending_Restrictions_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "ma4-ifv": {
+   "org": "Massachusetts Secretary of the Commonwealth",
+   "title": "2026 Information for Voters: Question 4 (summary, what a yes or no vote does, fiscal statement, 150-word arguments)",
+   "url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "Attorney General summary, yes/no statements, fiscal statement and official arguments",
+   "checked": "2026-10-28"
+  },
+  "ma4-bp": {
+   "org": "Ballotpedia",
+   "title": "Massachusetts Question 4, Permit Same-Day Voter Registration Initiative (2026)",
+   "url": "https://ballotpedia.org/Massachusetts_Question_4,_Permit_Same-Day_Voter_Registration_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "ma9-ifv": {
+   "org": "Massachusetts Secretary of the Commonwealth",
+   "title": "2026 Information for Voters: Question 9 (summary, what a yes or no vote does, fiscal statement, 150-word arguments)",
+   "url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "Attorney General summary, yes/no statements, fiscal statement and official arguments",
+   "checked": "2026-10-28"
+  },
+  "ma9-bp": {
+   "org": "Ballotpedia",
+   "title": "Massachusetts Question 9, Firearm Regulations Referendum (2026)",
+   "url": "https://ballotpedia.org/Massachusetts_Question_9,_Firearm_Regulations_Referendum_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
   }
  },
  "items": [
@@ -2540,6 +2630,442 @@
    ],
    "official_src": [
     "co136-bb"
+   ]
+  },
+  {
+   "id": "arizona-proposition-144",
+   "state": "AZ",
+   "state_name": "Arizona",
+   "label": "Proposition 144",
+   "title": "Require ID to vote in every election, including by mail",
+   "topic": "Elections",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Proposed amendment to the Constitution by the Legislature relating to election requirements. Amending Article VII, Constitution of Arizona, by adding Section 19. Requires all voters, including voters who vote by mail, to show government-issued ID to vote in each election; makes other changes to election administration and campaign finance prohibitions.",
+   "official_url": "https://storageccec.blob.core.usgovcloudapi.net/public/docs/1533-2026AZPublicityPamphlet-English.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Arizona_Proposition_144,_Voter_Identification_and_Citizenship_Voting_Requirements_Amendment_(2026)",
+   "summary": "Proposition 144, called the Fast Accurate Secure Transparent Election Results Act, would amend the Arizona Constitution to reaffirm that only U.S. citizens may register and vote; require voters to present valid government-issued proof of identity before casting a ballot, whether voting in person or by another method, as prescribed by law; require that voters be given the option to have their ballot tabulated at their voting location on Election Day; prohibit foreign nationals from contributing or spending money to influence an Arizona election; allow the people and the Legislature to enact election laws, including on early and mail voting, if they are rationally connected to a legitimate state interest; and require the Legislature to fund implementation. It would apply to elections on or after January 1, 2028.",
+   "summary_src": [
+    "az-pp"
+   ],
+   "yes": "A yes vote shall have the effect of amending the Arizona Constitution to: (1) require voters to show proof of identity when voting in each election, including when voting by mail; (2) changing existing proof of identity requirements to limit acceptable documentation to government-issued ID; (3) require election officials to provide all voters the option to have their ballot tabulated at their voting location on election day; (4) prohibit foreign nationals from contributing or spending to influence elections in Arizona and prohibit anyone from knowingly accepting such contributions, similar to prohibitions that already exist in federal law; (5) create a new standard for judicial review of election laws under the Arizona Constitution, which may make it harder to challenge election laws; and (6) require the legislature to appropriate money necessary to implement these provisions.",
+   "no": "A no vote shall have the effect of maintaining current constitutional provisions governing elections.",
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 24, 2026, no committee had registered to support Proposition 144. Two committees registered in opposition, Protect the Vote Arizona and Will of the People, reported $1,276,143.13 in total contributions. Ballotpedia notes that Arizona Free Enterprise Club ($9,639.65) and Freedom Club PAC ($17,937) made independent expenditures supporting it.",
+    "src": [
+     "az144-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Rep. Alexander Kolodin, the measure’s sponsor, writes in the pamphlet: “A YES vote guarantees four things. Only United States citizens may vote in Arizona elections — period. Every voter provides a government-issued ID, so we know each ballot is cast by the person casting it.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "He argues that “Election Day means Election Day, and you’ll have fast results you can trust on election night,” and that “Arizona has been a national punchline for slow counts and broken trust.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Heritage Action for America says “A loophole exists in Arizona law that allows foreign nationals to fund ballot measures in our state,” and another supporter says the measure puts four protections into the constitution “where they can’t be repealed by a legislative majority.”",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The Arizona Public Health Association says “Arizona already has a secure vote-by-mail system. Voters must sign their ballot envelopes. Election workers compare those signatures with the voter’s record,” and that Proposition 144 “will make it much harder to vote early or by mail for no reason.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Vitalyst Health Foundation says “Proposition 144 eliminates current identification options such as a utility bill, bank statement, or insurance card,” and that “Both Democratic and Republican election officials oppose Proposition 144 because it imposes unrealistic mandates on already under-resourced local election offices.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "The League of Women Voters of Arizona says “Constitutional amendments should protect fundamental rights, not lock election administration policies into place,” and that the measure places “detailed election procedures beyond the reach of ordinary legislative review and improvement.”",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "It would change how courts review election laws.",
+     "text": "The ballot language says the measure would “create a new standard for judicial review of election laws under the Arizona Constitution, which may make it harder to challenge election laws.” The Legislative Council analysis describes it as allowing the people and the Legislature to enact election laws, including on early and mail voting, if they are rationally connected to a legitimate state interest.",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "label": "What Arizona requires today.",
+     "text": "Ballotpedia reports that Arizona currently requires voters to present photo identification or two forms of non-photo identification when voting in person, that the requirement is in state statute rather than the Constitution, and that there is no voter ID requirement for absentee or mail-in voting.",
+     "src": [
+      "az144-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "az-pp"
+   ]
+  },
+  {
+   "id": "arizona-proposition-318",
+   "state": "AZ",
+   "state_name": "Arizona",
+   "label": "Proposition 318",
+   "title": "Restrict girls’ sports and school private spaces by sex recorded at birth",
+   "topic": "Education",
+   "mtype": "Legislatively referred state statute",
+   "ballot_title": "Referred to the people by the Legislature relating to student athletics. Amending Section 15-120.02, Arizona Revised Statutes. Requires all schools and athletic associations to designate athletic teams as male, female, or coed based on the biological sex of the athletes as defined at birth; prohibits these entities from authorizing use of private spaces not designated for a person’s sex.",
+   "official_url": "https://storageccec.blob.core.usgovcloudapi.net/public/docs/1533-2026AZPublicityPamphlet-English.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Arizona_Proposition_318,_Require_All_Schools_and_Athletic_Associations_to_Restrict_Sports_Participation_and_Access_to_Private_Spaces_Based_on_Sex_Measure_(2026)",
+   "summary": "Proposition 318, the Protect Girls’ Sports in Arizona Act, would require public and private schools and athletic associations that sponsor teams to designate each as male, female or coed based on athletes’ biological sex, and would prohibit males from playing on female-designated teams. Sex would be defined as recorded at birth on the original birth certificate. It would also prohibit schools, higher education institutions and athletic associations from authorizing anyone to use restrooms, locker rooms, shower rooms or other private spaces not designated for that person’s biological sex, and would expand who may sue and be sued for violations. Ballotpedia says current Arizona law applies only to public schools and private schools that compete against them.",
+   "summary_src": [
+    "az-pp",
+    "az318-bp"
+   ],
+   "yes": "A yes vote shall have the effect of: (1) requiring private schools, public schools, and athletic associations to designate every athletic team as male, female, or coed/mixed based on sex and to prevent males from joining female teams; existing law imposes this requirement only on public schools and those competing against them; (2) prohibiting schools and athletic associations from authorizing anyone to use private spaces (such as restrooms) not designated for that individual’s sex; (3) defining sex as an individual’s biological status as male or female as recorded at birth on an original birth certificate; and (4) authorizing athletes to sue schools and athletic associations that knowingly violate this law.",
+   "no": "A no vote shall have the effect of maintaining the current laws relating to student athletics.",
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 24, 2026, the committee supporting Proposition 318, Protect Girls’ Sports in AZ, reported $3,600.00 in total contributions. The committee opposing it, Will of the People, reported $871,000.00 and is also registered against Propositions 142, 144 and 320.",
+    "src": [
+     "az318-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Attorney Thomas Bouman writes in the pamphlet that “girls’ sports should be reserved for girls,” and that when biological males compete in female divisions, “the physical advantages of male physiology—greater muscle mass, bone density, and speed—can displace female athletes from podiums, scholarships, and roster spots.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "He says the measure “also protects privacy” in locker rooms and showers, and that it is narrowly drawn: “It does not create criminal penalties. It does not regulate private youth sports.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "A collegiate volleyball player and coach writes that “boys who identify a certain way should not be allowed to bypass the common-sense rules that protect women and girls,” and that girls’ ability to compete on girls’ teams should not depend on politics.",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The League of Women Voters of Arizona says the measure “addresses a situation that affects very few students, yet it imposes statewide mandates on every public school, many private schools, colleges, universities, and athletic associations,” and “invites costly litigation by creating new private rights of action.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "State Sen. Mitzi Epstein says “Prop 318 would subject girls to invasive inspections and questions about their gender,” and that it “create[s] new ways to start lawsuits” accusing any girl of not being feminine enough. She says it would betray Title IX’s promise to women and girls.",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "The League adds that decisions about student well-being “should be guided by educators, parents, and established athletic policies—not broad mandates written into law through a statewide ballot measure.” Other opponents say local schools and sports associations, not politicians, should handle the issue.",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "The measure covers restrooms and locker rooms, not only sports.",
+     "text": "The Legislative Council analysis says Proposition 318 would also prohibit public schools, private schools, higher education institutions and athletic associations that maintain private spaces integral to athletic engagement from authorizing anyone to use a private space not designated for that person’s biological sex as recorded at birth on their original birth certificate.",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "label": "Changes would be hard to make later.",
+     "text": "The pamphlet notes that under Proposition 105 (1998), measures like this one “cannot be changed in the future if approved on the ballot except by a three-fourths vote of the members of each house of the legislature and if the change furthers the purpose of the original ballot measure, by an initiative petition or by referring the change to the ballot.”",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "official_src": [
+    "az-pp"
+   ]
+  },
+  {
+   "id": "florida-amendment-3",
+   "state": "FL",
+   "state_name": "Florida",
+   "label": "Amendment 3",
+   "title": "Raise the homestead exemption and cap non-homestead assessment increases at 5%",
+   "topic": "Taxes",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Increased homestead exemption; lower cap on increases in non-homestead property assessments.",
+   "official_url": "https://files.floridados.gov/media/711369/eng-2026-booklet-constitutional-amendpub-updated-20260903.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Florida_Amendment_3,_Homestead_Tax_Exemptions,_Property_Assessments,_and_Spending_Restrictions_Amendment_(2026)",
+   "summary": "Amendment 3 would raise the homestead exemption for non-school property taxes to $150,000 in 2027 and $250,000 in 2028, adjusted for inflation after that. People who were not Florida residents on December 31, 2026 would get the existing exemption when they first qualify, with the larger exemption starting in the fifth year. It would lower the annual cap on assessment increases for non-homestead property, such as rentals and commercial property, from 10% to 5%. It would require the Legislature to set a uniform procedure for counties and municipalities to raise the exemption up to full assessed value, and would limit what counties and municipalities may spend property taxes on to listed purposes. It takes effect January 1, 2027.",
+   "summary_src": [
+    "fl3-bk",
+    "fl3-rec"
+   ],
+   "yes": "A yes vote would approve the amendment: the non-school homestead exemption would rise to $150,000 in 2027 and $250,000 in 2028, the annual cap on non-homestead assessment increases would drop from 10% to 5%, and counties and municipalities would be limited to listed purposes when spending property taxes.",
+   "no": "A no vote would leave the current homestead exemption, the 10% cap on non-homestead assessment increases, and current rules on local property tax spending in place.",
+   "fiscal": {
+    "text": "The Florida Revenue Estimating Conference’s middle estimate (reviewed June 12 and July 10, 2026) is a reduction in local non-school property tax revenue of $4,929.5 million in 2027-28 and $8,714.5 million in 2028-29, rising to a recurring reduction of $11,834.7 million per year. It estimates no impact on school taxes. It says the effect of requiring the Legislature to set procedures for fully exempting homesteads from county and municipal levies is unknown, because it depends on future legislative action.",
+    "src": [
+     "fl3-rec"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 9, 2026, the committee supporting Amendment 3 (Vote Yes on 3) reported $21,516,510.33 in total contributions, including $19,500,000.00 from Florida Realtors. Committees opposing it reported $1,618,801.49 combined.",
+    "src": [
+     "fl3-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Gov. Ron DeSantis (R) says “Property tax revenue collected by local governments has nearly doubled in the past seven years and is expected to reach an astounding $83 billion by 2032. Florida homeowners need relief. Now is the time to stand up for taxpayers, enact a historic reform, and save the home of every Floridian.”",
+     "src": [
+      "fl3-bp"
+     ]
+    },
+    {
+     "text": "State Sen. Bryan Avila (R) says the amendment “takes a historic step, providing meaningful relief for Florida families, while protecting businesses from extreme tax increases and safeguarding local funding for education, law enforcement, infrastructure, and other essential government functions.”",
+     "src": [
+      "fl3-bp"
+     ]
+    },
+    {
+     "text": "The Republican Party of Florida says “Homeowners shouldn’t be taxed out of the homes they’ve worked for. Amendment 3 delivers real tax relief, slows runaway assessments, and makes local governments spend your money on core priorities.” Sen. Rick Scott (R) says “every county has waste to cut.”",
+     "src": [
+      "fl3-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Sadaf Knight of the Florida Policy Institute says the measure “does not represent cost savings, but rather a cost shift — one that will force local lawmakers to cut local services that families rely upon or increase other taxes and fees to make up for the missing revenue.”",
+     "src": [
+      "fl3-bp"
+     ]
+    },
+    {
+     "text": "Jacksonville Mayor Donna Deegan (D) says the reduction “will inevitably result in roads deteriorating, libraries, pools, and parks closing, public safety response times going up, housing affordability worsening, and more homeless on our streets.”",
+     "src": [
+      "fl3-bp"
+     ]
+    },
+    {
+     "text": "Former state Sen. Jeff Brandes, president of the Florida Policy Project, says “Nobody in all of Florida understands how this is going to play out. We have no models, no math, nothing. It’s budget chaos.” Former county commissioner Bryan Desolge says the bills for “public safety, roads and bridges, stormwater protection and even hurricane response don’t go away.”",
+     "src": [
+      "fl3-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "A court found the original ballot language defective.",
+     "text": "Ballotpedia reports that on August 3, 2026, a Leon County circuit judge ruled that the Legislature’s title and summary were “clearly and conclusively defective,” kept that language off the ballot, and ordered the Attorney General to submit corrected language within 10 days. The title and summary on this page come from the state’s booklet updated September 3, 2026.",
+     "src": [
+      "fl3-bp"
+     ]
+    },
+    {
+     "label": "How far the exemption could go, and who gets the smaller one.",
+     "text": "The Revenue Estimating Conference says the amendment would require the Legislature to prescribe a uniform procedure for counties and municipalities to raise the exemption so that all homesteads are fully exempt from county and municipal levies, and that “No timeline or limit is provided.” People who did not maintain a permanent residence in Florida as of December 31, 2026 would receive a $50,000 exemption for four years and the larger exemption in the fifth year.",
+     "src": [
+      "fl3-rec"
+     ]
+    }
+   ],
+   "official_src": [
+    "fl3-bk",
+    "fl3-rec"
+   ]
+  },
+  {
+   "id": "massachusetts-question-4",
+   "state": "MA",
+   "state_name": "Massachusetts",
+   "label": "Question 4",
+   "title": "Allow voters to register on Election Day",
+   "topic": "Elections",
+   "mtype": "Citizen-initiated state law",
+   "ballot_title": "Election Day Registration. Do you approve of a law summarized below, on which no vote was taken by the Senate or the House of Representatives before May 6, 2026?",
+   "official_url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Massachusetts_Question_4,_Permit_Same-Day_Voter_Registration_Initiative_(2026)",
+   "summary": "Question 4 would let eligible people register to vote, or update their registration address, on Election Day. They would go to the polling place in the precinct where they live during voting hours, present proof of residency and sign a written oath certifying that they are a U.S. citizen, at least 18, not legally prohibited from voting, and have not voted and will not vote in the same election elsewhere. Providing false information would be a felony punishable by up to 5 years in prison or a fine of up to $10,000. Someone without proof of residency could cast a provisional ballot. People already registered could not change party affiliation on Election Day. It would take effect January 1, 2028.",
+   "summary_src": [
+    "ma4-ifv"
+   ],
+   "yes": "A YES VOTE would permit eligible citizens to register to vote or to update their voter registration address at their polling place on Election Day.",
+   "no": "A NO VOTE would make no change to the laws governing voter registration.",
+   "fiscal": {
+    "text": "The state’s fiscal statement, written by the Executive Office of Administration and Finance, says the proposed law “has no discernible material fiscal consequences for state and municipal government finances.”",
+    "src": [
+     "ma4-ifv"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 20, 2026, committees supporting Question 4 reported $329,753.70 in total contributions. As of October 2026 no committees had registered in opposition.",
+    "src": [
+     "ma4-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor was written by Norma B. Shulman of YES on Election Day Registration. It says “This law would give eligible Massachusetts citizens the ability to register or update their address on Election Day – an opportunity voters in the rest of New England already have.”",
+     "src": [
+      "ma4-ifv"
+     ]
+    },
+    {
+     "text": "It argues that “Allowing voters to register at the polls will give thousands of citizens the chance to participate in important national elections. This policy especially helps those who move frequently, like young people and renters.”",
+     "src": [
+      "ma4-ifv"
+     ]
+    },
+    {
+     "text": "It says the law is secure: “Election Day registrants must present verified proof of residence at the polls and sign an oath backed by severe felony penalties to ensure accountability and deter fraud. Provisional ballots would be available to protect the integrity of the vote if documentation is missing.”",
+     "src": [
+      "ma4-ifv"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against was written by Amy Carnevale of the Massachusetts Republican Party. It says same-day registration eliminates “the advance period during which election officials can examine a registrant’s identity, residence, eligibility, or duplicate registration before a ballot is issued.”",
+     "src": [
+      "ma4-ifv"
+     ]
+    },
+    {
+     "text": "It argues that officials “would be required to make those determinations at the polling place, under substantial time pressure and amid the extraordinary demands of Election Day,” and that errors “may not be discovered until after the ballot has been cast and commingled with all others, when it can no longer be identified or withdrawn.”",
+     "src": [
+      "ma4-ifv"
+     ]
+    },
+    {
+     "text": "It concludes that the question “would replace advance review with hurried, same-day judgments that could create avoidable vulnerabilities in election administration, increase the risk that unlawful ballots could affect close contests, and weaken confidence that every ballot was lawfully cast.”",
+     "src": [
+      "ma4-ifv"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "What happens to a provisional ballot.",
+     "text": "Under the official summary, a provisional ballot cast without proof of residency would be counted only if the person returned with the required information before the close of polls for a municipal election, within two days after a state primary, or within six days after a state election.",
+     "src": [
+      "ma4-ifv"
+     ]
+    },
+    {
+     "label": "Today’s deadline and early-voting exception.",
+     "text": "Ballotpedia reports that Massachusetts voters currently must register 10 days before an election, but because early voting begins 17 days before the election, some people who vote early can register on the same day they cast their ballot. It says 21 states and the District of Columbia offer same-day registration on Election Day.",
+     "src": [
+      "ma4-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "ma4-ifv"
+   ]
+  },
+  {
+   "id": "massachusetts-question-9",
+   "state": "MA",
+   "state_name": "Massachusetts",
+   "label": "Question 9",
+   "title": "Keep or repeal the 2024 firearms law",
+   "topic": "Public safety",
+   "mtype": "Referendum on an existing law",
+   "ballot_title": "Firearms Regulation. Do you approve of a law summarized below, which was approved by the House of Representatives on July 18, 2024 by a vote of 124 to 33, and approved by the Senate on July 18, 2024 by a vote of 35 to 5?",
+   "official_url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Massachusetts_Question_9,_Firearm_Regulations_Referendum_(2026)",
+   "summary": "Question 9 is a referendum on a 2024 law (Chapter 135, also called An Act Modernizing Firearm Laws) that made many changes to Massachusetts firearms law. According to the Attorney General’s summary, it lets school administrators and licensed healthcare providers ask a court for an Extreme Risk Protection Order; imposes penalties for possessing, making or transferring untraceable “ghost guns” and requires serial numbers on firearms other than antiques and relics; requires people to be 21 to own semiautomatic rifles or shotguns; expands the definitions of “machine gun” and “silencer”; bars carrying firearms in government buildings, polling locations and schools, with exceptions; and creates a public data dashboard. A yes vote keeps the law; a no vote repeals it.",
+   "summary_src": [
+    "ma9-ifv"
+   ],
+   "yes": "A YES VOTE would keep in place the law, which increases the regulation of firearms, including ghost guns, machine guns, and assault-style weapons.",
+   "no": "A NO VOTE would repeal this law.",
+   "fiscal": {
+    "text": "The state’s fiscal statement, written by the Executive Office of Administration and Finance, says that since the law passed in 2024 “the Commonwealth has made significant investments to implement the law including training employees, promulgating new gun licensure processes, and developing IT infrastructure,” and that “Repealing the law would require the Commonwealth to expend resources in suspending or re-directing those investments.”",
+    "src": [
+     "ma9-ifv"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 20, 2026, committees supporting a yes vote (Yes for A Safe Massachusetts and Democratic Socialists for a Fair Massachusetts) reported $896,930.04 in total contributions, with the Massachusetts Teachers Association the top listed donor ($500,237.00). The committee supporting a no vote, The Civil Rights Coalition, reported $593,467.57.",
+    "src": [
+     "ma9-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument for a yes vote was written by Ned Notis-McConarty of Vote Yes for a Safe Massachusetts. It says the law made “vital updates, including banning ghost guns; outlawing devices that turn semi-automatic weapons into machine guns; expanding tools to help prevent firearm suicide and mass shootings; creating a firearms data dashboard to better understand gun trafficking.”",
+     "src": [
+      "ma9-ifv"
+     ]
+    },
+    {
+     "text": "It argues that “Massachusetts has a gun death rate 70% lower than the national average,” and that “Critical elements of the 2024 law are actively being implemented; they are already helping keep our communities safe.”",
+     "src": [
+      "ma9-ifv"
+     ]
+    },
+    {
+     "text": "It concludes that a yes vote “will preserve this law, safeguard important progress, and allow us to continue the work of eradicating gun violence. Repealing it would make everyone in Massachusetts less safe.”",
+     "src": [
+      "ma9-ifv"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument for a no vote was written by Toby Leary of The Civil Rights Coalition. It says “Before the new law, the state already had some of the strictest gun laws in the country,” and calls Chapter 135 “a deeply flawed, 116-page piece of bureaucratic overreach that wastes valuable tax dollars and burdens local communities.”",
+     "src": [
+      "ma9-ifv"
+     ]
+    },
+    {
+     "text": "It argues the law “mandates an expensive, real-time electronic tracking system that the state hasn’t funded and doesn’t know how to build,” and “forces local police departments to enforce a confusing patchwork of vague rules, pulling officers away from investigating violent crime.”",
+     "src": [
+      "ma9-ifv"
+     ]
+    },
+    {
+     "text": "It says state agencies issued “dozens of clarifications for rules that treat harmless historical re-enactors and antique hobbyists like criminals,” and urges voters to demand “common-sense, transparent legislation focused on violent criminals, not limiting citizens’ civil rights.”",
+     "src": [
+      "ma9-ifv"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "The law’s firearm registration system.",
+     "text": "Ballotpedia reports that the law requires the Department of Criminal Justice Information Services to develop and maintain a real-time electronic system for firearm registration, and requires a basic firearms safety certificate to apply for a Firearm Identification Card or License to Carry. The Attorney General’s summary in the voter guide does not mention these provisions; the argument against refers to the tracking system.",
+     "src": [
+      "ma9-bp"
+     ]
+    },
+    {
+     "label": "What the summary says about assault-style weapons already owned.",
+     "text": "The official summary says the law “clarifies how to determine whether a firearm is an assault-style weapon and the circumstances under which a person may continue to possess assault-style weapons and large capacity feeding devices they already own.” Neither argument describes this part of the law.",
+     "src": [
+      "ma9-ifv"
+     ]
+    }
+   ],
+   "official_src": [
+    "ma9-ifv"
    ]
   }
  ]
