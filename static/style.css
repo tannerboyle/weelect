@@ -220,13 +220,16 @@ details.bs-details>summary:focus-visible{outline:2px solid var(--navy);outline-o
 .localnote{margin:4px 0 14px}
 
 
-/* v22: mission line, "tell us your city" form */
+/* v23: mission line (city form centered) , "tell us your city" form */
 .mission{max-width:640px;margin:14px auto 0;text-align:center;font-style:italic;font-size:1.02rem;line-height:1.45;color:#34363c;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:10px 4px}
-.cityform{max-width:720px;margin:34px auto 0;border-top:2px solid var(--ink);padding-top:10px}
+.cityform{max-width:720px;margin:34px auto 0;border-top:2px solid var(--ink);padding-top:10px;text-align:center}
 .cityform h2{font-size:1.15rem;margin:0 0 4px}
-.cityform form{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
-.cityform label{display:flex;flex-direction:column;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);gap:4px}
+.cityform form{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;justify-content:center}
+.cityform label{display:flex;flex-direction:column;align-items:stretch;text-align:left;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);gap:4px}
 .cityform input:not(.hp),.cityform select{padding:10px 12px;font:inherit;font-size:1rem;border:1px solid var(--ink);border-radius:0;background:#fffdf7;color:var(--ink);letter-spacing:normal;text-transform:none}
 .cityform input:focus,.cityform select:focus{outline:2px solid var(--navy);outline-offset:-2px}
 .cityform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .cityform button{padding:11px 20px}
+.cityform .fine{text-align:center;max-width:560px;margin:0 auto 10px}
+.cityform input:not(.hp),.cityform select{height:44px;box-sizing:border-box}
+@media (max-width:520px){.cityform form{flex-direction:column;align-items:stretch}.cityform button{width:100%}}

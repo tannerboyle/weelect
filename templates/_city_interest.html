@@ -1,6 +1,6 @@
 <section class="cityform" aria-labelledby="cityform-h">
   <h2 id="cityform-h">Is your city missing?</h2>
-  <p class="fine" style="text-align:left;margin:0 0 8px">Tell us your city so we know where to add local officials next. City and state only &mdash; please do not enter a street address.</p>
+  <p class="fine">Tell us your city so we know where to add local officials next. City and state only &mdash; please do not enter a street address.</p>
   <form action="/city-interest" method="post">
     <label>City <input name="city" maxlength="60" required autocomplete="address-level2"></label>
     <label>State <select name="state" required autocomplete="address-level1"><option value="">Choose</option>{% for c in state_codes %}<option>{{ c }}</option>{% endfor %}</select></label>
