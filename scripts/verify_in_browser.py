@@ -22,7 +22,8 @@ def confirm(name, text, titles=("mayor",)):
     F, L, T = re.escape(t[0]), re.escape(t[-1]), "|".join(titles)
     for pat in (rf"\b(?:{T})\b[\s,:\-–—]*(?:[\w.'’\"“”()-]+\s+){{0,4}}?{L}\b", rf"\b{F}\b[^.]{{0,40}}\b{L}\b[\s,.\-–—(]{{1,8}}(?:[\w.]+\s+){{0,3}}(?:{T})\b"):
         for m in re.finditer(pat, text, re.I):
-            if any(w in text[max(0, m.start() - 12):m.start()].lower() for w in ("former", "past ", "late ")): continue
+            if any(w in text[max(0, m.start() - 12):m.start()].lower() for w in ("former", "past ", "late ", "deputy", "vice", "assistant", "associate")): continue
+            if re.search(r"deputy|vice|assistant|associate|pro tem", m.group(0), re.I): continue
             return True
     return False
 

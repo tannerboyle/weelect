@@ -177,6 +177,7 @@ def confirm(name, text, titles):
         for m in re.finditer(pat, text, re.I):
             before = text[max(0, m.start() - 12):m.start()].lower()
             if "former" in before or "past " in before or "late " in before: continue
+            if re.search(r"deputy|vice|assistant|associate|pro tem", m.group(0), re.I) or re.search(r"deputy|vice|assistant|associate", before): continue
             return True
     return False
 

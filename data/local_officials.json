@@ -14,11 +14,11 @@
    "US Census Gazetteer"
   ],
   "stats": {
-   "county:confirmed": 29,
-   "county:unverified": 78,
-   "place:confirmed": 895,
+   "county:confirmed": 82,
+   "county:unverified": 49,
+   "place:confirmed": 908,
    "place:corroborated": 62,
-   "place:unverified": 1432
+   "place:unverified": 1418
   }
  },
  "places": {
@@ -339,10 +339,10 @@
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.midlandtexas.gov/directory.aspx?eid=9",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.midlandtexas.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -6004,12 +6004,12 @@
      "name": "Ron Jensen",
      "title": "Mayor",
      "party": null,
-     "term_start": "2013-01-01",
+     "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.gptx.org/",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.gptx.org/Government/Mayor-and-City-Council",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -6096,10 +6096,10 @@
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.wvc-ut.gov/912/Mayor",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.wvc-ut.gov/government/city_council/city_council_members/index.php",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -9044,26 +9044,15 @@
    "pop": 178127,
    "officials": [
     {
-     "name": "Chris Rogers",
-     "title": "Mayor",
-     "party": "Democratic",
-     "term_start": null,
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://srcity.org/1516/Welcome-from-the-Mayor",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
-    },
-    {
      "name": "Mark Stapp",
      "title": "Mayor",
      "party": null,
      "term_start": null,
-     "term_end": "2026-12-31",
-     "status": "unverified",
-     "source_url": "https://www.srcity.org/Directory.aspx?EID=740",
-     "listed_by": "Open States",
-     "last_verified": "2026-10-27"
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://srcity.org/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -10416,15 +10405,15 @@
    "pop": 180542,
    "officials": [
     {
-     "name": "Richard C. Irvin",
+     "name": "John Laesch",
      "title": "Mayor",
      "party": null,
-     "term_start": "2017-05-09",
+     "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.aurora-il.org",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.aurora.il.us/Government-and-Engagement/Staff-Directory/Mayors-Office",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -10792,10 +10781,10 @@
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.hollywoodfl.org",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.hollywoodfl.org/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -18506,15 +18495,15 @@
    "pop": 150362,
    "officials": [
     {
-     "name": "Bob O’Dekirk",
+     "name": "Terry D'Arcy",
      "title": "Mayor",
-     "party": "Republican",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.joliet.gov/government/city-council-3189",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.joliet.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -22071,15 +22060,15 @@
    "pop": 208634,
    "officials": [
     {
-     "name": "Yxstian Gutierrez",
+     "name": "Ulises Cabrera",
      "title": "Mayor",
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://moval.gov/city_council/mayor.shtml",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://moval.gov/city_council/index.html",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -22615,15 +22604,15 @@
    "pop": 153701,
    "officials": [
     {
-     "name": "Chokwe Antar Lumumba",
+     "name": "John Horhn",
      "title": "Mayor",
-     "party": "Democratic",
-     "term_start": "2017-07-03",
+     "party": null,
+     "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.jacksonms.gov/departments/office-of-the-mayor/",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://jacksonms.gov/government/mayor-office/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -27923,15 +27912,15 @@
    "pop": 141867,
    "officials": [
     {
-     "name": "Janifer Kulmann",
+     "name": "Jan Kulmann",
      "title": "Mayor",
      "party": null,
-     "term_start": "2019-11-01",
+     "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.thorntonco.gov/government/city-council/Pages/mayor.aspx",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.thorntonco.gov/government/mayor-council",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -28297,12 +28286,12 @@
      "name": "John Bacon",
      "title": "Mayor",
      "party": null,
-     "term_start": "2020-08-01",
+     "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.olatheks.org",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.olatheks.gov/government/city-council",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -37858,15 +37847,15 @@
    "pop": 169810,
    "officials": [
     {
-     "name": "Jeni Arndt",
+     "name": "Emily Francis",
      "title": "Mayor",
      "party": null,
-     "term_start": "2021-04-01",
+     "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.fcgov.com/",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.fortcollins.gov/Government/City-Council",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -37951,12 +37940,12 @@
      "name": "Dan Slater",
      "title": "Mayor",
      "party": null,
-     "term_start": "2022-12-15",
+     "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.cityoforange.org",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.cityoforange.org/our-city/local-government/city-council",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -42881,13 +42870,13 @@
     {
      "name": "Daniella Levine Cava",
      "title": "Mayor",
-     "party": "Democratic",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.miamidade.gov/",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://miamidade.gov/global/government/mayor/home.page",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43030,37 +43019,15 @@
    "state": "FL",
    "officials": [
     {
-     "name": "Beam Furr",
+     "name": "Mark Bogen",
      "title": "Mayor",
-     "party": "Democratic",
-     "term_start": null,
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.broward.org/",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
-    },
-    {
-     "name": "Mark D. Bogen",
-     "title": "Vice Mayor",
-     "party": "Democratic",
-     "term_start": null,
-     "term_end": null,
-     "status": "confirmed",
-     "source_url": "https://www.broward.org/",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
-    },
-    {
-     "name": "Monica Cepero",
-     "title": "County administrator",
      "party": null,
      "term_start": null,
      "term_end": null,
      "status": "confirmed",
-     "source_url": "https://www.broward.org/",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "source_url": "https://www.broward.org/district2",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43087,14 +43054,14 @@
    "officials": [
     {
      "name": "Warren Evans",
-     "title": "Executive",
+     "title": "County Executive",
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.waynecounty.com",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.waynecountymi.gov/Government/Elected-Officials/County-Executive",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43160,14 +43127,14 @@
    "officials": [
     {
      "name": "Edward P. Romaine",
-     "title": "Executive",
-     "party": "Republican",
+     "title": "County Executive",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://suffolkcountyny.gov/",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://suffolkcountyny.gov/elected-officials",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43176,15 +43143,15 @@
    "state": "FL",
    "officials": [
     {
-     "name": "Jerry Demings </ref>}}",
+     "name": "Jerry Demings",
      "title": "Mayor",
-     "party": "Democratic",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.orangecountyfl.net/",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.orangecountyfl.net/BoardofCommissioners.aspx",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43194,14 +43161,14 @@
    "officials": [
     {
      "name": "Bruce Blakeman",
-     "title": "Executive",
-     "party": "Republican",
+     "title": "County Executive",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.nassaucountyny.gov",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.nassaucountyny.gov/481/County-Executive",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43211,14 +43178,14 @@
    "officials": [
     {
      "name": "David Coulter",
-     "title": "Executive",
-     "party": "Democratic",
+     "title": "County Executive",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.oakgov.com",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.oakgov.com/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43285,35 +43252,13 @@
     {
      "name": "Robb Pitts",
      "title": "Chairman",
-     "party": "Democratic",
-     "term_start": null,
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.fultoncountyga.gov",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
-    },
-    {
-     "name": "Khadijah Abdur-Rahman",
-     "title": "Vice Chair",
-     "party": "Democratic",
-     "term_start": null,
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.fultoncountyga.gov",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
-    },
-    {
-     "name": "Dick Anderson",
-     "title": "County Manager",
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.fultoncountyga.gov",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.fultoncountyga.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43341,13 +43286,13 @@
     {
      "name": "Rick Blangiardi",
      "title": "Mayor",
-     "party": "Independent",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://en.wikipedia.org/wiki/Honolulu_County,_Hawaii",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.honolulu.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43385,14 +43330,14 @@
    "officials": [
     {
      "name": "Ken Jenkins",
-     "title": "Executive",
-     "party": "Democratic",
+     "title": "County Executive",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://en.wikipedia.org/wiki/Westchester_County,_New_York",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.westchestergov.com/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43402,14 +43347,14 @@
    "officials": [
     {
      "name": "Sam Page",
-     "title": "County executive",
-     "party": "Democratic",
+     "title": "County Executive",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://en.wikipedia.org/wiki/St._Louis_County,_Missouri",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://stlouiscountymo.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43437,13 +43382,13 @@
     {
      "name": "Mark Poloncarz",
      "title": "County Executive",
-     "party": "Democratic",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://erie.gov",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www4.erie.gov/exec/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43453,14 +43398,14 @@
    "officials": [
     {
      "name": "David Crowley",
-     "title": "Executive",
+     "title": "County Executive",
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.county.milwaukee.gov",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://county.milwaukee.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43469,15 +43414,15 @@
    "state": "TN",
    "officials": [
     {
-     "name": "Lee Harris",
+     "name": "Mickell Lowery",
      "title": "Mayor",
      "party": null,
-     "term_start": null,
+     "term_start": "2026-08-31",
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.shelbycountytn.gov",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.shelbycountytn.gov/78/Mayors-Office",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43508,21 +43453,10 @@
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.kerncounty.com/",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
-    },
-    {
-     "name": "Leticia Perez",
-     "title": "Vice Chair",
-     "party": null,
-     "term_start": null,
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.kerncounty.com/",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.kerncounty.com/government/board-of-supervisors",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43532,14 +43466,14 @@
    "officials": [
     {
      "name": "Joseph N. DiVincenzo Jr.",
-     "title": "County executive",
+     "title": "County Executive",
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.essex-countynj.org/",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.essexcountynj.org/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43643,32 +43577,10 @@
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://sjgov.org",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
-    },
-    {
-     "name": "Steven J. Ding",
-     "title": "Vice Chair",
-     "party": null,
-     "term_start": null,
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://sjgov.org",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
-    },
-    {
-     "name": "Jerome C. Wilverding",
-     "title": "County Administrator",
-     "party": null,
-     "term_start": null,
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://sjgov.org",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.sjgov.org/department/bos",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43677,15 +43589,15 @@
    "state": "GA",
    "officials": [
     {
-     "name": "Jackie McMorris",
-     "title": "County manager",
+     "name": "Lisa Cupid",
+     "title": "Chair",
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.cobbcounty.org",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.cobbcounty.gov/board/county-clerk/agenda-minutes",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43712,14 +43624,14 @@
    "officials": [
     {
      "name": "Adam Bello",
-     "title": "County executive",
-     "party": "Democratic",
+     "title": "County Executive",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.monroecounty.gov",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.monroecounty.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43747,13 +43659,13 @@
     {
      "name": "Freddie O'Connell",
      "title": "Mayor",
-     "party": "Democratic",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://en.wikipedia.org/wiki/Davidson_County,_Tennessee",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.nashville.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43814,14 +43726,14 @@
    "officials": [
     {
      "name": "Melissa Agard",
-     "title": "Executive",
+     "title": "County Executive",
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.countyofdane.com",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.danecounty.gov/elected-officials",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -43989,13 +43901,13 @@
     {
      "name": "Betsy Henderson",
      "title": "Mayor",
-     "party": "Republican",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://knoxcounty.org",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.knoxcounty.org/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -44274,14 +44186,14 @@
    "officials": [
     {
      "name": "Daniel R. Benson",
-     "title": "County executive",
+     "title": "County Executive",
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.mercercounty.org/",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.mercercounty.org/government/county-executive",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -44292,13 +44204,13 @@
     {
      "name": "Weston Wamp",
      "title": "County Mayor",
-     "party": "Republican",
+     "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.hamiltontn.gov",
-     "listed_by": "Wikipedia",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.hamiltontn.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -44316,6 +44228,533 @@
      "source_url": "http://www.RutherfordCountyTN.gov",
      "listed_by": "Wikipedia",
      "last_verified": "2026-10-27"
+    }
+   ]
+  },
+  "48029": {
+   "name": "Bexar County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "Peter Sakai",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.bexar.org/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "48121": {
+   "name": "Denton County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "Andy Eads",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.dentoncounty.gov/165/Commissioners-Court",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "48027": {
+   "name": "Bell County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "David Blackburn",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.bellcountytx.com/about_us/elected_officials/index.php",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "26099": {
+   "name": "Macomb County",
+   "state": "MI",
+   "officials": [
+    {
+     "name": "Mark Hackel",
+     "title": "County Executive",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.macombgov.org/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "24027": {
+   "name": "Howard County",
+   "state": "MD",
+   "officials": [
+    {
+     "name": "Calvin Ball",
+     "title": "County Executive",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.howardcountymd.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "13089": {
+   "name": "DeKalb County",
+   "state": "GA",
+   "officials": [
+    {
+     "name": "Lorraine Cochran-Johnson",
+     "title": "Chief Executive Officer",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.dekalbcountyga.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "49035": {
+   "name": "Salt Lake County",
+   "state": "UT",
+   "officials": [
+    {
+     "name": "Jenny Wilson",
+     "title": "Mayor",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://slco.org/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "48355": {
+   "name": "Nueces County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "Connie Scott",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.nuecesco.com/commissioners-court/commissioner-court-administration/accessibility-awareness",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "17031": {
+   "name": "Cook County",
+   "state": "IL",
+   "officials": [
+    {
+     "name": "Toni Preckwinkle",
+     "title": "Board President",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.cookcountyil.gov/agency/office-president",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "42003": {
+   "name": "Allegheny County",
+   "state": "PA",
+   "officials": [
+    {
+     "name": "Sara Innamorato",
+     "title": "County Executive",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.alleghenycounty.us/Government/County-Executive",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "48453": {
+   "name": "Travis County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "Andy Brown",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.traviscountytx.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "48039": {
+   "name": "Brazoria County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "Matt Sebesta",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.brazoriacountytx.gov/government/commissioners-court/county-judge",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "53033": {
+   "name": "King County",
+   "state": "WA",
+   "officials": [
+    {
+     "name": "Girmay Zahilay",
+     "title": "County Executive",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://kingcounty.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "48085": {
+   "name": "Collin County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "Chris Hill",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.collincountytx.gov/government/commissioners-court",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "48167": {
+   "name": "Galveston County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "Mark Henry",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.galvestoncountytx.gov/our-county/county-judge",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "24033": {
+   "name": "Prince George's County",
+   "state": "MD",
+   "officials": [
+    {
+     "name": "Aisha Braveboy",
+     "title": "County Executive",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.princegeorgescountymd.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "48491": {
+   "name": "Williamson County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "Steven Snell",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.wilcotx.gov/334/County-Judge",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "48439": {
+   "name": "Tarrant County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "Tim O'Hare",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.tarrantcountytx.gov/en/county-judge.html",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "48157": {
+   "name": "Fort Bend County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "Daniel Wong",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.fortbendcountytx.gov/government/departments/commissioners-court/county-judge",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "48215": {
+   "name": "Hidalgo County",
+   "state": "TX",
+   "officials": [
+    {
+     "name": "Richard F. Cortez",
+     "title": "County Judge",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.hidalgocounty.us/2121/County-Judge",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "51107": {
+   "name": "Loudoun County",
+   "state": "VA",
+   "officials": [
+    {
+     "name": "Phyllis J. Randall",
+     "title": "Chair",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.loudoun.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "17043": {
+   "name": "DuPage County",
+   "state": "IL",
+   "officials": [
+    {
+     "name": "Deborah Conroy",
+     "title": "Chair",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.dupagecounty.gov/government/county_board/index.php",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "36027": {
+   "name": "Dutchess County",
+   "state": "NY",
+   "officials": [
+    {
+     "name": "Sue Serino",
+     "title": "County Executive",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.dutchessny.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "37119": {
+   "name": "Mecklenburg County",
+   "state": "NC",
+   "officials": [
+    {
+     "name": "Mark Jerrell",
+     "title": "Chair",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.mecknc.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "41051": {
+   "name": "Multnomah County",
+   "state": "OR",
+   "officials": [
+    {
+     "name": "Jessica Vega Pederson",
+     "title": "Chair",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.multco.us/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "15001": {
+   "name": "Hawaii County",
+   "state": "HI",
+   "officials": [
+    {
+     "name": "Kimo Alameda",
+     "title": "Mayor",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.hawaiicounty.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "41067": {
+   "name": "Washington County",
+   "state": "OR",
+   "officials": [
+    {
+     "name": "Kathryn Harrington",
+     "title": "Chair",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.washingtoncountyor.gov/bcc",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "15009": {
+   "name": "Maui County",
+   "state": "HI",
+   "officials": [
+    {
+     "name": "Richard T. Bissen Jr.",
+     "title": "Mayor",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.mauicounty.gov/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "51059": {
+   "name": "Fairfax County",
+   "state": "VA",
+   "officials": [
+    {
+     "name": "Jeffrey C. McKay",
+     "title": "Chair",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.fairfaxcounty.gov/boardofsupervisors/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "41005": {
+   "name": "Clackamas County",
+   "state": "OR",
+   "officials": [
+    {
+     "name": "Craig Roberts",
+     "title": "Chair",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.clackamas.us/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
+    }
+   ]
+  },
+  "36001": {
+   "name": "Albany County",
+   "state": "NY",
+   "officials": [
+    {
+     "name": "Daniel P. McCoy",
+     "title": "County Executive",
+     "party": null,
+     "term_start": null,
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.albanycounty.com/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   }
