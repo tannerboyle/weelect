@@ -44,7 +44,8 @@
 </div>
 {% endfor %}
 <div class="localjur"><h3>City council, county board &amp; school board</h3>
-<p class="meta">{% if local.school_districts %}Your school district{{ "s" if local.school_districts|length > 1 }}: {% for d in local.school_districts %}{{ d.name }}{{ ", " if not loop.last }}{% endfor %}. {% endif %}City councils, county commissioners and school boards are not yet covered. Coverage is partial; we&rsquo;re adding more.</p></div>
+<p class="meta">{% if local.school_districts %}Your school district{{ "s" if local.school_districts|length > 1 }}: {% for d in local.school_districts %}{{ d.name }}{{ ", " if not loop.last }}{% endfor %}. {% endif %}City councils, county commissioners and school boards are not yet covered. Coverage is partial; we&rsquo;re adding more.</p>
+<p class="meta">Want to take part locally? <a href="/get-involved">How to get involved in local politics</a>.</p></div>
 {% if local.jurisdictions|rejectattr("officials")|list %}{% include "_city_interest.html" %}{% endif %}
 <p class="meta localnote">Local data comes from open datasets (Open States, Wikidata, Census) and was last checked {{ local.last_verified or "recently" }}. Local offices change often &mdash; please confirm with your city or county website.</p>
 </div>

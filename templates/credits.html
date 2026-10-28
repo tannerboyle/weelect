@@ -54,6 +54,9 @@
 <p>Source links for each ballot measure. Opening them is the best way to check our work.</p>
 {% for it, srcs in ms_sources %}<h3 style="font-size:1.05rem;margin:14px 0 4px"><a href="/measures/{{ it.id }}">{{ it.state_name }} {{ it.label }}: {{ it.title }}</a></h3>
 <ul class="bs-credit">{% for n, sid, s in srcs %}<li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a> — {{ s.org }} ({{ s.type }}, {{ s.date }})</li>{% endfor %}</ul>{% endfor %}
+<div class="sechead" id="get-involved"><span class="star">★</span><h2>How we wrote &ldquo;How to get involved in local politics&rdquo;</h2></div>
+<p>The <a href="/get-involved">get-involved page</a> is general civic information, not advice on how to vote or whom to support. Every factual statement on it is drawn from a page we opened and read, listed at the bottom of that page: U.S. government sites (USAGov, the Election Assistance Commission), state and city government pages used only as examples, and nonpartisan references (Ballotpedia, the League of Women Voters Education Fund&rsquo;s VOTE411, the Reporters Committee for Freedom of the Press, CAPLAW and the National Conference of State Legislatures). We use no statistics, and because laws and processes vary by place we point you to your own clerk or election office for the details that apply to you.</p>
+<ul class="bs-credit">{% for s in gi_sources %}<li><a href="{{ s[2] }}" target="_blank" rel="noopener">{{ s[1] }}</a> — {{ s[0] }} ({{ s[3] }})</li>{% endfor %}</ul>
 <div class="sechead" id="donations"><span class="star">★</span><h2>Donations</h2></div>
 <p>Voluntary donations to We Elect, a Brunner Creative site, are made through <a href="https://ko-fi.com/weelect" target="_blank" rel="noopener">Ko-fi</a> and processed by Ko-fi; We Elect does not collect or store payment details. Donations do not influence what we publish.</p>
 <div class="sechead"><span class="star">★</span><h2>Fonts</h2></div>
