@@ -1,0 +1,134 @@
+{
+ "_comment": "Shop catalog. Prices are set here on the server, never taken from the browser. Printful variant ids come from Printful's public catalog (run scripts/printful_sync.py to re-check or refresh). Set available=false to hide a product.",
+ "currency": "usd",
+ "limits": {
+  "max_lines": 8,
+  "max_qty_per_line": 10
+ },
+ "shipping": {
+  "label": "Standard shipping (U.S.)",
+  "countries": [
+   "US"
+  ],
+  "first_item_cents": 595,
+  "additional_item_cents": 200,
+  "_note": "Placeholder flat rates. Compare with Printful's rates (scripts/printful_sync.py --rates) and your margin, then edit."
+ },
+ "products": [
+  {
+   "id": "tee",
+   "available": true,
+   "name": "We Elect tee",
+   "kind": "tee",
+   "blurb": "Soft unisex jersey tee with the We Elect mark on the chest. A thank-you gift for readers who help keep the site free.",
+   "details": [
+    "Bella+Canvas 3001 unisex short-sleeve tee",
+    "Ring-spun cotton (heather colors contain polyester)",
+    "Printed on demand in the U.S. and shipped by Printful"
+   ],
+   "price_cents": 2800,
+   "tax_code": null,
+   "printful": {
+    "catalog_product_id": 71,
+    "file_type": "default",
+    "files": {
+     "navy": "/static/shop/print/tee-on-navy.png",
+     "cream": "/static/shop/print/tee-on-cream.png"
+    }
+   },
+   "colors": [
+    {
+     "id": "navy",
+     "name": "Navy",
+     "swatch": "#1f2f5a",
+     "printful_color": "Navy",
+     "image": "/static/shop/tee-navy.svg"
+    },
+    {
+     "id": "cream",
+     "name": "Cream",
+     "swatch": "#f1e9d2",
+     "printful_color": "Soft Cream",
+     "image": "/static/shop/tee-cream.svg"
+    }
+   ],
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "variants": {
+    "navy:S": {
+     "printful_variant_id": 4111
+    },
+    "navy:M": {
+     "printful_variant_id": 4112
+    },
+    "navy:L": {
+     "printful_variant_id": 4113
+    },
+    "navy:XL": {
+     "printful_variant_id": 4114
+    },
+    "navy:2XL": {
+     "printful_variant_id": 4115
+    },
+    "cream:S": {
+     "printful_variant_id": 4151
+    },
+    "cream:M": {
+     "printful_variant_id": 4152
+    },
+    "cream:L": {
+     "printful_variant_id": 4153
+    },
+    "cream:XL": {
+     "printful_variant_id": 4154
+    },
+    "cream:2XL": {
+     "printful_variant_id": 4155
+    }
+   }
+  },
+  {
+   "id": "hat",
+   "available": true,
+   "name": "We Elect dad hat",
+   "kind": "hat",
+   "blurb": "Low-profile, unstructured cotton cap with the We Elect mark embroidered on the front. A thank-you gift for readers.",
+   "details": [
+    "Yupoong 6245CM classic dad cap",
+    "Adjustable strap, one size",
+    "Embroidered on demand and shipped by Printful"
+   ],
+   "price_cents": 2800,
+   "tax_code": null,
+   "printful": {
+    "catalog_product_id": 206,
+    "file_type": "default",
+    "files": {
+     "navy": "/static/shop/print/hat-embroidery.png"
+    }
+   },
+   "colors": [
+    {
+     "id": "navy",
+     "name": "Navy",
+     "swatch": "#1f2f5a",
+     "printful_color": "Navy",
+     "image": "/static/shop/hat-navy.svg"
+    }
+   ],
+   "sizes": [
+    "One size"
+   ],
+   "variants": {
+    "navy:One size": {
+     "printful_variant_id": 7857
+    }
+   }
+  }
+ ]
+}

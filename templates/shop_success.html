@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block title %}Thank you – We Elect shop{% endblock %}
+{% block meta_description %}Thank you for supporting We Elect.{% endblock %}
+{% block body %}<div class="credits support-page">
+<meta name="robots" content="noindex">
+<p class="kicker">Thank you</p>
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Thank you for supporting We Elect</h1>
+{% if info.paid %}<p class="deck bs-wide">Your order is in.{% if info.email %} A receipt is on its way to {{ info.email }} from Stripe.{% endif %} Your items are made to order and shipped by Printful, who will email tracking details when they ship.</p>
+{% elif info.paid is none %}<p class="deck bs-wide">If you just finished paying, your order is on its way to us. Stripe will email your receipt, and Printful will email tracking details when your items ship.</p>
+{% else %}<p class="deck bs-wide">We could not confirm a payment for this visit, so you have not been charged by us. <a href="/support#shop">Return to the shop</a> to try again.</p>{% endif %}
+<p class="bs-wide">Readers like you keep We Elect free for everyone. Sales and gifts help cover hosting and data costs. Questions about an order? Contact us from the <a href="/credits#who">About page</a>.</p>
+<p><a class="support-btn" href="/">Find my officials</a></p>
+<script>try{localStorage.removeItem('we_cart_v1')}catch(e){}</script>
+</div>{% endblock %}

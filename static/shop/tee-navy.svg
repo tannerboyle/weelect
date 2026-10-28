@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Illustration of a navy tee with the We Elect mark"><rect width="400" height="400" fill="#f4efe0"/>
+<ellipse cx="200" cy="372" rx="130" ry="9" fill="#000" opacity=".08"/>
+<path d="M150,46 L104,62 L44,106 L72,164 L120,142 L120,352 L280,352 L280,142 L328,164 L356,106 L296,62 L250,46 Q200,92 150,46 Z" fill="#1f2f5a" stroke="#16223f" stroke-width="2" stroke-linejoin="round"/>
+<path d="M150,46 Q200,92 250,46" fill="none" stroke="#16223f" stroke-width="2"/><path d="M158,52 Q200,100 242,52" fill="none" stroke="#16223f" stroke-width="5" opacity=".25"/>
+<path d="M120,142 L104,62 M280,142 L296,62" stroke="#16223f" stroke-width="1" opacity=".35" fill="none"/>
+<path d="M120,336 L280,336" stroke="#16223f" stroke-width="1" opacity=".3"/>
+<g transform="translate(160 112) scale(1.25)"><circle cx="32" cy="32" r="32.5" fill="none" stroke="#f7f3e8" stroke-width="1.6"/><defs><clipPath id="we-inner-tn"><circle cx="32" cy="32" r="23.5"/></clipPath></defs><circle cx="32" cy="32" r="30" fill="#1f2f5a"/><circle cx="32" cy="32" r="26.5" fill="none" stroke="#f7f3e8" stroke-width="1"/><g clip-path="url(#we-inner-tn)"><rect x="0" y="40" width="64" height="3" fill="#9b2335"/><rect x="0" y="46" width="64" height="2" fill="#f7f3e8"/></g><polygon fill="#f7f3e8" points="32.00,12.00 34.92,20.98 44.36,20.98 36.72,26.53 39.64,35.52 32.00,29.97 24.36,35.52 27.28,26.53 19.64,20.98 29.08,20.98"/></g></svg>

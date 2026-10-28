@@ -9,6 +9,7 @@ import elections as elections_mod
 import bothsides as bs_mod
 import measures as ms_mod
 import getinvolved as gi_mod
+import shop as shop_mod
 import localdata
 from functools import lru_cache
 import requests
@@ -563,6 +564,7 @@ def robots_txt():
             "Allow: /\n"
             "Disallow: /lookup\n"
             "Disallow: /city-interest\n"
+            "Disallow: /shop/\n"
             f"\nSitemap: {SITE_URL}/sitemap.xml\n")
     return Response(body, mimetype="text/plain")
 
@@ -570,7 +572,7 @@ def robots_txt():
 @app.route("/sitemap.xml")
 def sitemap_xml():
     from xml.sax.saxutils import escape
-    urls = [("/", None), ("/get-involved", gi_mod.CHECKED), ("/votes", bs_mod.meta().get("last_reviewed")), ("/measures", ms_mod.meta().get("last_reviewed")), ("/credits", None)]
+    urls = [("/", None), ("/support", None), ("/get-involved", gi_mod.CHECKED), ("/votes", bs_mod.meta().get("last_reviewed")), ("/measures", ms_mod.meta().get("last_reviewed")), ("/credits", None)]
     urls += [(f"/votes/{it['id']}", bs_mod.meta().get("last_reviewed")) for it in bs_mod.items()]
     urls += [(f"/measures/{it['id']}", ms_mod.meta().get("last_reviewed")) for it in ms_mod.items()]
     urls += [(f"/official/fed/{b}", None) for b in sorted(FED_BY_ID)]
@@ -581,6 +583,9 @@ def sitemap_xml():
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + rows + "</urlset>\n")
     return Response(xml, mimetype="application/xml")
+
+
+shop_mod.register(app, _rate_limited, _error_page)
 
 
 if __name__ == "__main__":

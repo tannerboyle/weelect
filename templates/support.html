@@ -1,0 +1,79 @@
+{% extends "base.html" %}{% block title %}Support We Elect – free for everyone, supported by readers{% endblock %}
+{% block meta_description %}We Elect is free for everyone and supported by readers. Give through Ko-fi or pick up a thank-you tee or dad hat; sales and gifts help cover hosting and data costs. Not a charity; not tax-deductible.{% endblock %}
+{% block body %}<div class="credits support-page">
+{% if csrf %}<meta name="csrf-token" content="{{ csrf }}">{% endif %}
+<p class="kicker">A word of thanks</p>
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Support We Elect</h1>
+<p class="deck bs-wide"><strong>We Elect is free for everyone and supported by readers.</strong> There are no ads, no accounts and no paywall, and the site works the same whether you give or not. If it helped you find your representatives or make sense of your ballot, thank you for reading &mdash; and thank you, if you decide to chip in.</p>
+<p class="bs-wide">Sales and gifts help cover hosting and data costs. Support never buys influence, coverage or changes to what we publish.</p>
+
+<nav class="gi-jump" aria-label="On this page"><strong>Jump to:</strong> <a href="#give">Give</a> &middot; <a href="#gifts">Thank-you gifts</a> &middot; <a href="#shop">Shop</a> &middot; <a href="#fine-print">Fine print</a></nav>
+
+<section id="give" class="sup-give" aria-labelledby="give-h">
+  <div class="sechead"><span class="star">★</span><h2 id="give-h">Give any amount</h2></div>
+  <p>Gifts of any size go through Ko-fi, a service that handles the payment. We Elect never sees or stores your card details. Ko-fi is optional and loads only if you ask for it below.</p>
+  <p class="sup-actions"><a class="support-btn" href="{{ kofi_page }}" target="_blank" rel="noopener">Give through Ko-fi</a>
+  <button type="button" class="support-btn alt" id="kofi-show" data-src="{{ kofi_embed }}" aria-controls="kofi-slot" aria-expanded="false" hidden>Show the Ko-fi form here</button></p>
+  <div id="kofi-slot" class="kofi-slot" aria-live="polite"></div>
+  <p class="fine">Gifts to We Elect, a {{ seller }} site, are voluntary. We Elect is not a charity, and gifts are not tax-deductible.</p>
+</section>
+
+<section id="gifts" class="sup-gifts" aria-labelledby="gifts-h">
+  <div class="sechead"><span class="star">★</span><h2 id="gifts-h">Ways to say thanks</h2></div>
+  <div class="tiers">
+    <div class="tier"><h3>Reader</h3><p class="tier-price">Any amount</p><p>Give what you like on Ko-fi, or nothing at all. Every reader gets the same site.</p><p><a href="#give">Give on Ko-fi</a></p></div>
+    <div class="tier"><h3>Thank-you tee</h3><p class="tier-price">$28</p><p>Our mark on a soft navy or cream tee. A thank-you gift from us to readers who want one.</p><p><a href="#shop">See the tee</a></p></div>
+    <div class="tier"><h3>Thank-you dad hat</h3><p class="tier-price">$28</p><p>A low-profile navy cap with the mark embroidered on the front.</p><p><a href="#shop">See the hat</a></p></div>
+  </div>
+  <p class="fine">The tee and hat are sold at a fixed price; buying one is a purchase, not a donation. The sale helps cover hosting and data costs.</p>
+</section>
+
+<section id="shop" class="sup-shop" aria-labelledby="shop-h">
+  <div class="sechead"><span class="star">★</span><h2 id="shop-h">The We Elect shop</h2></div>
+  {% if not shop_open %}
+  <div class="shop-soon" role="status"><h3>Coming soon</h3><p>The tee and dad hat are on the way. The shop is not open yet, so there is nothing to buy today &mdash; the rest of this page works as usual. Check back soon.</p></div>
+  <div class="prod-grid soon">
+    {% for p in products %}<article class="prod"><img src="{{ p.colors[0].image }}" alt="Illustration of the {{ p.name }}" width="400" height="400" loading="lazy"><h3>{{ p.name }}</h3><p class="prod-price">{{ p.price }}</p><p>{{ p.blurb }}</p></article>{% endfor %}
+  </div>
+  {% else %}
+  <noscript><p class="note">The shop needs JavaScript to build your cart. You can still give through Ko-fi above.</p></noscript>
+  <div class="shop-layout">
+  <div class="prod-grid">
+    {% for p in products %}<article class="prod" data-pid="{{ p.id }}">
+      <img class="prod-img" src="{{ p.colors[0].image }}" alt="Illustration of the {{ p.name }}" width="400" height="400" loading="lazy">
+      <h3>{{ p.name }}</h3><p class="prod-price">{{ p.price }}</p><p>{{ p.blurb }}</p>
+      <ul class="prod-details">{% for d in p.details %}<li>{{ d }}</li>{% endfor %}</ul>
+      <fieldset class="opt"><legend>Color</legend>{% for c in p.colors %}<label class="swatch"><input type="radio" name="color-{{ p.id }}" value="{{ c.id }}" data-img="{{ c.image }}"{% if loop.first %} checked{% endif %}><span style="background:{{ c.swatch }}" aria-hidden="true"></span> {{ c.name }}</label>{% endfor %}</fieldset>
+      {% if p.sizes|length > 1 %}<label class="opt">Size <select name="size-{{ p.id }}">{% for s in p.sizes %}<option>{{ s }}</option>{% endfor %}</select></label>{% else %}<input type="hidden" name="size-{{ p.id }}" value="{{ p.sizes[0] }}">{% endif %}
+      <label class="opt">Quantity <input type="number" name="qty-{{ p.id }}" value="1" min="1" max="10" inputmode="numeric"></label>
+      <button type="button" class="support-btn add-btn" data-pid="{{ p.id }}">Add to cart</button>
+    </article>{% endfor %}
+  </div>
+  <aside class="cart" id="cart" aria-labelledby="cart-h" aria-live="polite">
+    <h3 id="cart-h">Your cart</h3>
+    <div id="cart-lines"><p class="fine">Your cart is empty.</p></div>
+    <p class="cart-total" id="cart-total" hidden></p>
+    <p class="fine" id="cart-ship" hidden></p>
+    <p><a class="support-btn" id="cart-checkout" href="/shop/checkout" hidden>Check out</a> <button type="button" class="linkbtn" id="cart-clear" hidden>Empty cart</button></p>
+    <p class="fine">Payment is handled by Stripe on the next step. We never see your card details.</p>
+  </aside>
+  </div>
+  <script type="application/json" id="shop-data">{{ shop_json|tojson }}</script>
+  <script src="{{ url_for('static', filename='shop.js') }}?v=1" defer></script>
+  {% endif %}
+</section>
+
+<section id="fine-print" aria-labelledby="fine-h">
+  <div class="sechead"><span class="star">★</span><h2 id="fine-h">Fine print</h2></div>
+  <ul class="fineprint">
+    <li><strong>Seller.</strong> Shop items are sold by {{ seller }}, which operates We Elect.</li>
+    <li><strong>Not a charity.</strong> We Elect is not a charity or nonprofit, and neither gifts nor purchases are tax-deductible.</li>
+    <li><strong>Made to order.</strong> Items are printed or embroidered on demand and shipped by Printful. We ship within the United States only.</li>
+    <li><strong>Shipping{% if tax_mode != 'none' %} and tax{% endif %}.</strong> {{ shipping_label }} is {{ shipping_first }} for the first item and {{ shipping_more }} for each additional item.{% if tax_mode != 'none' %} Sales tax is added at checkout where required.{% endif %}</li>
+    <li><strong>Problems with an order.</strong> If something arrives damaged or misprinted, contact us from the <a href="/credits#who">About page</a> and we will make it right.</li>
+    <li><strong>Privacy.</strong> Checkout is run by <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe</a>; we keep the order, shipping address and email only to fulfil and support your order. The address lookup on the rest of this site stays separate and is never saved.</li>
+    <li><strong>No influence.</strong> Gifts and purchases do not buy influence, coverage or changes to what we publish.</li>
+  </ul>
+</section>
+<script src="{{ url_for('static', filename='kofi.js') }}?v=1" defer></script>
+</div>{% endblock %}

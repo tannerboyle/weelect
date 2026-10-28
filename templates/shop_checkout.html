@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block title %}Checkout – We Elect shop{% endblock %}
+{% block meta_description %}Secure checkout for the We Elect shop, handled by Stripe.{% endblock %}
+{% block body %}<div class="credits support-page">
+<meta name="csrf-token" content="{{ csrf }}">
+<meta name="robots" content="noindex">
+<p class="kicker">We Elect shop</p>
+<h1 class="hero" style="text-align:left;font-size:2rem">Checkout</h1>
+<p class="fine" style="text-align:left;margin-left:0">Payment and shipping address are collected by Stripe in the form below, not by We Elect. Shop items are sold by {{ seller }}. <a href="/support#shop">&larr; Back to the shop</a></p>
+<div id="checkout-status" class="note" role="status" hidden></div>
+<div id="checkout" data-pk="{{ publishable_key }}"></div>
+<noscript><p class="note">Checkout needs JavaScript. You can still <a href="/support#give">give through Ko-fi</a>.</p></noscript>
+<script src="{{ url_for('static', filename='shop-checkout.js') }}?v=1" defer></script>
+</div>{% endblock %}
