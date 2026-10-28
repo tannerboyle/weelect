@@ -449,6 +449,96 @@
    "date": "accessed 2026-10-28",
    "used_for": "Campaign finance",
    "checked": "2026-10-28"
+  },
+  "ma3-ifv": {
+   "org": "Massachusetts Secretary of the Commonwealth",
+   "title": "2026 Information for Voters: Question 3 (summary, what a yes or no vote does, fiscal statement, 150-word arguments)",
+   "url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "Attorney General summary, yes/no statements, fiscal statement and official arguments",
+   "checked": "2026-10-28"
+  },
+  "ma3-bp": {
+   "org": "Ballotpedia",
+   "title": "Massachusetts Question 3, Top-Two Primary Elections Initiative (2026)",
+   "url": "https://ballotpedia.org/Massachusetts_Question_3,_Top-Two_Primary_Elections_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "ma7-ifv": {
+   "org": "Massachusetts Secretary of the Commonwealth",
+   "title": "2026 Information for Voters: Question 7 (summary, what a yes or no vote does, fiscal statement, 150-word arguments)",
+   "url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "Attorney General summary, yes/no statements, fiscal statement and official arguments",
+   "checked": "2026-10-28"
+  },
+  "ma7-bp": {
+   "org": "Ballotpedia",
+   "title": "Massachusetts Question 7, Limit on Required Lot Size for Single-Family Homes Initiative (2026)",
+   "url": "https://ballotpedia.org/Massachusetts_Question_7,_Limit_on_Required_Lot_Size_for_Single-Family_Homes_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "ca41-lao": {
+   "org": "California Legislative Analyst’s Office",
+   "title": "Proposition 41 ballot analysis",
+   "url": "https://lao.ca.gov/BallotAnalysis/Proposition?number=41&year=2026",
+   "type": "Official fiscal analysis",
+   "date": "2026",
+   "used_for": "Yes/no statement, what the measure requires, fiscal effects",
+   "checked": "2026-10-28"
+  },
+  "ca42-lao": {
+   "org": "California Legislative Analyst’s Office",
+   "title": "Proposition 42 ballot analysis",
+   "url": "https://lao.ca.gov/BallotAnalysis/Proposition?number=42&year=2026",
+   "type": "Official fiscal analysis",
+   "date": "2026",
+   "used_for": "Yes/no statement, background, fiscal effects",
+   "checked": "2026-10-28"
+  },
+  "ca41-bp": {
+   "org": "Ballotpedia",
+   "title": "California Proposition 41 (2026)",
+   "url": "https://ballotpedia.org/California_Proposition_41,_Prohibit_Excluding_New_State_Taxes_from_Spending_Limit_and_Require_Special_Tax_Audits_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "ca42-bp": {
+   "org": "Ballotpedia",
+   "title": "California Proposition 42 (2026)",
+   "url": "https://ballotpedia.org/California_Proposition_42,_Prohibit_New_Taxes_on_Retirement_Holdings,_Personal_Assets,_and_Savings_and_Limit_Retroactive_Taxes_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "co136-bb": {
+   "org": "Colorado Legislative Council Staff",
+   "title": "2026 Blue Book: Proposition 136, Income Tax Rate Limit",
+   "url": "https://leg.colorado.gov/ballots/income-tax-rate-limit-2/files/blue-book",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "What a yes and no vote do, fiscal impact, and the arguments for and against listed in the Blue Book",
+   "checked": "2026-10-28"
+  },
+  "co136-bp": {
+   "org": "Ballotpedia",
+   "title": "Colorado Proposition 136, Establish 4.4% Cap on Individual and Corporate Income Tax Rates Initiative (2026)",
+   "url": "https://ballotpedia.org/Colorado_Proposition_136,_Establish_4.4%25_Cap_on_Individual_and_Corporate_Income_Tax_Rates_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
   }
  },
  "items": [
@@ -2005,6 +2095,451 @@
    ],
    "official_src": [
     "wa638-ex"
+   ]
+  },
+  {
+   "id": "massachusetts-question-3",
+   "state": "MA",
+   "state_name": "Massachusetts",
+   "label": "Question 3",
+   "title": "Replace party primaries with a single top-two primary",
+   "topic": "Elections",
+   "mtype": "Citizen-initiated state law",
+   "ballot_title": "State Primary Elections. Do you approve of a law summarized below, on which no vote was taken by the Senate or the House of Representatives before May 6, 2026?",
+   "official_url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Massachusetts_Question_3,_Top-Two_Primary_Elections_Initiative_(2026)",
+   "summary": "Question 3 would eliminate political party primaries for state elections. Instead there would be a single primary with all candidates, regardless of party, on one ballot; voters could vote for any candidate, and the two candidates with the most votes would advance to the general election. Candidates for governor and lieutenant governor would run and be listed jointly. Any group whose candidates for a statewide office received at least 3% of the ballots cast in the state primary would get political party status. Ballotpedia notes the presidential primary would not be included, and that it is possible for two candidates of the same party to advance.",
+   "summary_src": [
+    "ma3-ifv",
+    "ma3-bp"
+   ],
+   "yes": "A YES VOTE would eliminate separate party primaries for state elections and require a single primary in which all candidates appear on one ballot, voters could vote for any candidate, and the top two candidates would advance to the general election.",
+   "no": "A NO VOTE would make no change to the laws governing primary elections.",
+   "fiscal": {
+    "text": "The state’s fiscal statement, written by the Executive Office of Administration and Finance, says the proposed law “has no discernible material fiscal consequences for state and municipal government finances.”",
+    "src": [
+     "ma3-ifv"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 20, 2026, the committee supporting Question 3 (Coalition for Healthy Democracy 2026) reported $7,164,297.62 in total contributions, including $1,050,000.00 from David Randolph Peeler, its top listed donor. Two committees registered to oppose it (Voter Rights MA and Democratic Socialists Against Reactionary Rollbacks) reported $195,159.27 combined.",
+    "src": [
+     "ma3-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor was written by Danielle Allen of the Coalition for Healthy Democracy. It says “Many elections are over before most of us ever cast a ballot. Candidates can be blocked at party conventions. Today, two-thirds of the legislature is running unopposed.”",
+     "src": [
+      "ma3-ifv"
+     ]
+    },
+    {
+     "text": "It argues that “All candidates appear on your primary ballot, and the top two advance to November where they need a majority of votes to win. Insiders have less control and we get fresh voices running for office.”",
+     "src": [
+      "ma3-ifv"
+     ]
+    },
+    {
+     "text": "It concludes that “More competition means more accountability. Legislators who know voters can replace them listen to us and deliver real results.”",
+     "src": [
+      "ma3-ifv"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against was written by Vanessa A. Snow of Voter Rights MA. It says that “Similar top-two systems in California and Washington have favored wealthy, self-funded candidates who can out-advertise crowded fields and the corporate PACs seeking to purchase offices.”",
+     "src": [
+      "ma3-ifv"
+     ]
+    },
+    {
+     "text": "It argues that “Third-party and independent candidates would be shut out of the general election, and working-class candidates would lose out on institutional support and access to party resources.”",
+     "src": [
+      "ma3-ifv"
+     ]
+    },
+    {
+     "text": "It says the proposal “would limit voter choice by allowing only two candidates to advance to November” even if they belong to the same party, “reducing competition, lowering voter participation, worsening inequities, and narrowing debate.”",
+     "src": [
+      "ma3-ifv"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Small parties could still win ballot status.",
+     "text": "The official summary says the law would give political party status to any group whose candidates for any statewide office received at least 3% of the ballots cast in the state primary. Neither argument mentions this provision.",
+     "src": [
+      "ma3-ifv"
+     ]
+    },
+    {
+     "label": "Where else top-two is used, and how ballots would look.",
+     "text": "Ballotpedia says that as of September 2025 California, Washington and Nebraska used a top-two primary for some elections. It says primary ballots under Question 3 would show the party or political designation from each candidate’s nomination papers, with the words “Endorsed by the political party or designation” added next to a candidate’s name at the request of both the candidate and the party.",
+     "src": [
+      "ma3-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "ma3-ifv"
+   ]
+  },
+  {
+   "id": "massachusetts-question-7",
+   "state": "MA",
+   "state_name": "Massachusetts",
+   "label": "Question 7",
+   "title": "Allow single-family homes on lots of 5,000 square feet or more",
+   "topic": "Housing",
+   "mtype": "Citizen-initiated state law",
+   "ballot_title": "Single Family Homes. Do you approve of a law summarized below, on which no vote was taken by the Senate or the House of Representatives before May 6, 2026?",
+   "official_url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Massachusetts_Question_7,_Limit_on_Required_Lot_Size_for_Single-Family_Homes_Initiative_(2026)",
+   "summary": "Question 7 would allow single-family homes to be built in a residentially zoned area as long as the land is at least 5,000 square feet, has at least 50 feet of land bordering the street, road or public way it faces, and has access to public sewer and water services. Cities and towns could reasonably regulate certain aspects of those homes, including height, distance from neighboring buildings, open space, parking requirements and whether they can be rented out on a short-term basis. The Executive Office of Housing and Livable Communities could issue guidance or regulations to administer the law.",
+   "summary_src": [
+    "ma7-ifv"
+   ],
+   "yes": "A YES VOTE would allow single-family homes to be built on lots of 5,000 square feet or more in residential areas, subject to reasonable local regulation of certain aspects of those homes.",
+   "no": "A NO VOTE would make no change to the law relative to building single-family homes.",
+   "fiscal": {
+    "text": "The state’s fiscal statement, written by the Executive Office of Administration and Finance, says that if the law “enables the growth of housing in communities, it could provide positive new growth revenues to municipalities,” but that “it is difficult to project the potential scale of new growth.” It concludes the law has “no discernible material fiscal consequences for state and municipal government finances.”",
+    "src": [
+     "ma7-ifv"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 20, 2026, committees supporting Question 7 (Legalize Starter Homes, Abundant Housing Legalize Starter Homes and Democratic Socialists for a Fair Massachusetts) reported $1,757,560.37 in total contributions. Its top listed donors included the Greater Boston Real Estate Board and the Mass Association of Realtors PAC ($350,000.00 each). As of October 2026 no committees had registered in opposition.",
+    "src": [
+     "ma7-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor was written by Wesley Lima of Legalize Starter Homes. It says “Massachusetts is the hardest state in the country for young adults to buy a home. The middle class is shrinking because housing costs have doubled since 2014.”",
+     "src": [
+      "ma7-ifv"
+     ]
+    },
+    {
+     "text": "It argues that “Requiring huge lot sizes to build a single-family home makes houses expensive, reduces construction of new single-family housing, and encourages developers to build giant McMansions to recoup land costs.”",
+     "src": [
+      "ma7-ifv"
+     ]
+    },
+    {
+     "text": "It says a yes vote “would reduce minimum lot size requirements to 5,000 square feet - a size more typical of suburbs nationwide - in places with sufficient infrastructure, so we can have more affordable homes for young families and seniors.”",
+     "src": [
+      "ma7-ifv"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against was written by Adam Chapdelaine of the Massachusetts Municipal Association. It says the measure “would override local planning by requiring every city and town to allow single-family homes on lots as small as 5,000 square feet, regardless of existing neighborhoods, infrastructure or environmental conditions.”",
+     "src": [
+      "ma7-ifv"
+     ]
+    },
+    {
+     "text": "It argues that “Local officials are directly responsible to taxpayers, and this would remove significant oversight on behalf of their residents.” Local officials “understand their communities best, and work with residents to plan for housing while balancing public safety, traffic, water and sewer capacity, schools, and environmental protection.”",
+     "src": [
+      "ma7-ifv"
+     ]
+    },
+    {
+     "text": "It says the proposal “replaces thoughtful local planning with a one-size-fits-all mandate that ignores the individual needs of all 351 Massachusetts cities and towns,” and that communities should expand housing “through local planning and collaboration—not through a statewide mandate.”",
+     "src": [
+      "ma7-ifv"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "The measure has conditions and leaves some local rules in place.",
+     "text": "The official summary says a lot would need access to public sewer and water services, and that cities and towns could still reasonably regulate height, distance from neighboring buildings, open space, parking and short-term rental of these homes. The pamphlet arguments do not address these provisions.",
+     "src": [
+      "ma7-ifv"
+     ]
+    },
+    {
+     "label": "Today’s minimum lot sizes are set locally and are often larger.",
+     "text": "Ballotpedia reports that minimum lot sizes are currently set by local governments, not state law. It quotes the state’s Comprehensive Housing Plan for 2025-2029: “Much of Massachusetts is covered by zoning districts that are quite simple: single-family homes with a minimum lot area of one-half to two acres.”",
+     "src": [
+      "ma7-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "ma7-ifv"
+   ]
+  },
+  {
+   "id": "california-proposition-41",
+   "state": "CA",
+   "state_name": "California",
+   "label": "Proposition 41",
+   "title": "Require audits of new special taxes and keep them under the spending limit",
+   "topic": "Taxes",
+   "mtype": "Citizen-initiated constitutional amendment",
+   "ballot_title": "Prohibits New State Taxes That Exclude Revenues From State Spending Limit. Requires Audits for New State Special Taxes. Initiative Constitutional Amendment.",
+   "official_url": "https://vig.cdn.sos.ca.gov/2026/general/pdf/complete-vig.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/California_Proposition_41,_Prohibit_Excluding_New_State_Taxes_from_Spending_Limit_and_Require_Special_Tax_Audits_Initiative_(2026)",
+   "summary": "Proposition 41 would prohibit new state taxes that exclude their revenues from the state spending limit approved by voters in 1979. For statewide special taxes, it would require a State Auditor review of the programs that would receive money from a voter-proposed special tax (after supporters gather 25 percent of the needed signatures), with a summary printed in the voter guide if the measure qualifies, and repeat audits every four years of programs funded by special taxes created after January 1, 2026. It also says other voter-approved measures on the same ballot are void if they conflict with it and it receives more yes votes.",
+   "summary_src": [
+    "ca41-lao",
+    "ca-vig"
+   ],
+   "yes": "A YES vote on this measure means: When special taxes are proposed by voter initiatives, the California State Auditor would review programs funded by the tax before the initiative appears on the ballot. The California State Auditor also would regularly review programs funded by special taxes approved by voters or the Legislature. In addition, the state might not be able to exclude any new special tax spending from its spending limit.",
+   "no": "A NO vote on this measure means: The California State Auditor’s responsibility to review government programs would not change. The state spending limit requirements would not change.",
+   "fiscal": {
+    "text": "The Legislative Analyst estimates an unknown net fiscal effect. State Auditor costs would increase, “in the range of the low millions of dollars per year but would grow over time,” and would mostly be paid from the revenues of the new special taxes. Printing audit summaries in the voter guide could add “a few hundred thousand dollars per qualified initiative.” There could be savings if the Auditor’s recommendations are implemented, but they “are not known.”",
+    "src": [
+     "ca41-lao"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 22, 2026, committees supporting Proposition 41 reported $68.8 million in contributions and committees opposing it (which also oppose Proposition 42 and support Proposition 40) reported $34.1 million. Ballotpedia lists Sergey Brin ($102,000,000.00), L. John Doerr III ($30,000,000.00) and Patrick Collison ($22,000,000.00) as top donors to the support committees, and notes those totals exceed the committees’ reported contributions because Building a Better California also funds other propositions.",
+    "src": [
+     "ca41-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor was signed by leaders of the California Society of CPAs and the California Taxpayers Association and by a former State Auditor. It says “Before we vote on new taxes to fund programs, voters should have access to independent information about how those programs are being managed and whether they actually need more funding.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "It says “This year alone, California’s state government will spend more than $350 billion—a 79% increase in spending since 2019,” with “too little to show for it” from programs such as homelessness efforts, and that audits would help “identify areas of waste, fraud and abuse.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "It argues that “Prop. 41 doesn’t raise taxes—it protects taxpayers’ interests,” and that it “Requires all taxes to comply with the state’s voter-approved spending limit—including its requirement that excess revenues get refunded to taxpayers.”",
+     "src": [
+      "ca-vig"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against was written by Suzanne Jimenez of SEIU-United Healthcare Workers West. It says “This is a billionaire-funded initiative designed specifically to undo the California Billionaire Tax, Prop. 40,” and that “Prop. 41 isn’t about auditing new taxes. It’s about defeating one specific tax that billionaires want to avoid.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "It names Sergey Brin as “One of Prop. 41’s main funders” and says he has spent “over $57 million to fund sham measures like Prop. 41 that attempt to cancel out a billionaire tax.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "Its rebuttal says Prop. 41 was “created to trick voters like you into making a billionaire tax impossible to enforce,” would “cost the state time and money,” and that the Billionaire Tax is needed to fund healthcare, public education and food assistance.",
+     "src": [
+      "ca-vig"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "It could stop Proposition 40 from taking effect.",
+     "text": "The Legislative Analyst says that if Proposition 41 receives more yes votes than Proposition 40, “then Proposition 40 could be stopped from becoming law even if it gets yes votes from a majority of voters,” because courts could find the two conflict.",
+     "src": [
+      "ca41-lao"
+     ]
+    },
+    {
+     "label": "Details of the audit rules.",
+     "text": "The audit would take place after supporters collect 25 percent of the signatures needed, “which is before it is known whether the initiative will qualify for the ballot.” The Legislative Analyst says the audits would include “identifying ways to reduce an audited program’s annual costs by 10 percent,” and that the one-time cost of audits for special taxes that do not reach the ballot or are rejected would be paid from the state’s General Fund.",
+     "src": [
+      "ca41-lao"
+     ]
+    }
+   ],
+   "official_src": [
+    "ca41-lao",
+    "ca-vig"
+   ]
+  },
+  {
+   "id": "california-proposition-42",
+   "state": "CA",
+   "state_name": "California",
+   "label": "Proposition 42",
+   "title": "Ban new state taxes on personal property and savings, and limit retroactive taxes",
+   "topic": "Taxes",
+   "mtype": "Citizen-initiated constitutional amendment",
+   "ballot_title": "Prohibits New State Personal Property Taxes and Certain Retroactive State Taxes. Initiative Constitutional Amendment.",
+   "official_url": "https://vig.cdn.sos.ca.gov/2026/general/pdf/complete-vig.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/California_Proposition_42,_Prohibit_New_Taxes_on_Retirement_Holdings,_Personal_Assets,_and_Savings_and_Limit_Retroactive_Taxes_Initiative_(2026)",
+   "summary": "Proposition 42 would amend the California Constitution to prohibit new state taxes on the ownership of financial assets or other personal property, including assets in retirement and investment accounts, and new state taxes that apply retroactively to things that happened in the past. It would apply to taxes enacted or taking effect on or after January 1, 2026. Ballotpedia notes an exception for taxes enacted by the Legislature after the Governor declares a physical-threat or fiscal emergency, with revenue limited to addressing the emergency. It also says other voter-approved measures on the same ballot are void if they conflict with it and it receives more yes votes.",
+   "summary_src": [
+    "ca42-lao",
+    "ca-vig",
+    "ca42-bp"
+   ],
+   "yes": "A YES vote on this measure means: The state could not establish new taxes on the ownership of financial assets or other personal property.",
+   "no": "A NO vote on this measure means: The state would continue to have the option to establish new taxes on the ownership of financial assets or other personal property.",
+   "fiscal": {
+    "text": "The Legislative Analyst’s estimate is a “Possibility that tax revenues will not go up as much in the future.” It says the measure “restricts the options the state has to raise taxes in the future,” and that “When and by how much future revenues would be reduced is unclear.”",
+    "src": [
+     "ca42-lao"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 22, 2026, committees supporting Proposition 42 reported $138.4 million in contributions and committees opposing it (which also oppose Proposition 41) reported $34.1 million. Ballotpedia lists Sergey Brin ($102,000,000.00), L. John Doerr III ($30,000,000.00) and Patrick Collison ($22,000,000.00) as top donors to the support committees, and notes those totals exceed the committees’ reported contributions because Building a Better California also funds other propositions.",
+    "src": [
+     "ca42-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor was signed by leaders of the California Small Business Association, AMVETS Department of California and the California Senior Alliance. It says “California’s Constitution currently allows the Legislature to tax the value of our personal property like retirement funds and savings accounts, even though residents already pay income tax on that money when they earn it.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "It says the measure “Prohibits new taxes on personal property, such as retirement funds, pensions and savings accounts,” and notes that “the Legislature and special interests have introduced six separate proposals that would tax retirement and savings accounts” in recent years.",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "It argues “The state should not be able to pass new taxes that apply retroactively to money that taxpayers earned in the past.” The rebuttal asks “should California politicians have the power to tax your personal property, including retirement and savings accounts?”",
+     "src": [
+      "ca-vig"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against was written by Suzanne Jimenez of SEIU-United Healthcare Workers West. It says “This is a billionaire-funded initiative designed specifically to undo the California Billionaire Tax, Prop. 40,” and that “Prop. 42 isn’t about preventing new taxes on personal property. It’s about preventing one specific tax that billionaires want to avoid.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "It says the initiative “was created to trick voters like you into making a billionaire tax impossible to enforce,” and that Sergey Brin, one of its main funders, has spent “over $57 million to fund sham measures like Prop. 42 that attempt to cancel out a billionaire tax.”",
+     "src": [
+      "ca-vig"
+     ]
+    },
+    {
+     "text": "Its rebuttal says the California Billionaires Tax “ONLY applies to billionaires” and calls Prop. 42 “a redundant, expensive trick to allow approximately 200 billionaires to keep avoiding paying their own taxes.”",
+     "src": [
+      "ca-vig"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "It could stop Proposition 40 from taking effect.",
+     "text": "The Legislative Analyst says that if Proposition 42 receives more yes votes than Proposition 40, “then Proposition 40 could be stopped from becoming law even if it gets yes votes from a majority of voters,” because courts could find the two conflict.",
+     "src": [
+      "ca42-lao"
+     ]
+    },
+    {
+     "label": "Today’s personal property taxes and financial assets.",
+     "text": "The Legislative Analyst says the state and local governments already tax some personal property, such as the vehicle license fee and property taxes on business equipment. It says that while the state taxes income from financial assets, “there is no tax for simply owning those assets.”",
+     "src": [
+      "ca42-lao"
+     ]
+    }
+   ],
+   "official_src": [
+    "ca42-lao",
+    "ca-vig"
+   ]
+  },
+  {
+   "id": "colorado-proposition-136",
+   "state": "CO",
+   "state_name": "Colorado",
+   "label": "Proposition 136",
+   "title": "Set a 4.4% limit on the state income tax rate",
+   "topic": "Taxes",
+   "mtype": "Citizen-initiated state statute",
+   "ballot_title": "Shall there be a change to the Colorado Revised Statutes capping the state income tax rate at 4.4% of federal taxable income for individuals and corporations?",
+   "official_url": "https://leg.colorado.gov/ballots/income-tax-rate-limit-2/files/blue-book",
+   "ballotpedia_url": "https://ballotpedia.org/Colorado_Proposition_136,_Establish_4.4%25_Cap_on_Individual_and_Corporate_Income_Tax_Rates_Initiative_(2026)",
+   "summary": "Proposition 136 would set a 4.4 percent limit in state law on the income tax rate for individual and corporate taxpayers, beginning January 1, 2027. It would not change today’s 4.4 percent rate. It would not change the process for adjusting the rate: the Legislature or a citizen initiative may still reduce it, and the Colorado Constitution already requires voter approval of tax rate increases. Because it is a statute, Ballotpedia notes, the Legislature could amend or repeal it. The Blue Book says that if Proposition 136 and Amendment 87 (a graduated income tax) both pass, “the exact outcome is unclear.”",
+   "summary_src": [
+    "co136-bb",
+    "co136-bp"
+   ],
+   "yes": "A yes vote on Proposition 136 establishes the current state income tax rate of 4.4 percent as the maximum rate.",
+   "no": "A no vote on Proposition 136 keeps the current state income tax rate of 4.4 percent without establishing a new limit in statute.",
+   "fiscal": {
+    "text": "The Blue Book says the measure “results in no change to state or local government revenue or spending. For this reason, the measure has no fiscal impact.”",
+    "src": [
+     "co136-bb"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 14, 2026, committees supporting Proposition 136 (Brighter Colorado and Keep Colorado Affordable) reported $3,878,275.00 in total contributions, with top listed donors Common Sense America ($2,000,000.00) and the GOPAC Election Fund ($1,000,000.00). Committees opposing it reported $3,359,500.43.",
+    "src": [
+     "co136-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The Blue Book argument for says “Proposition 136 reinforces voter support for maintaining the current state income tax rate. The current rate, overwhelmingly approved by voters in 2022, is fair and keeps Colorado’s tax rate among the lowest in the country.”",
+     "src": [
+      "co136-bb"
+     ]
+    },
+    {
+     "text": "The Independence Institute says “Colorado’s flat 4.4% tax rate remains competitive regionally, as it is lower than the flat and top rates of Utah, New Mexico, Idaho and Montana.”",
+     "src": [
+      "co136-bp"
+     ]
+    },
+    {
+     "text": "Michael Fields, executive director of Advance Colorado, says the measure is “a clear counter to the far left’s attempt to hike taxes in Colorado, price people out of the state we love, and drive business out. We’ll always fight to protect TABOR and keep our taxes low.”",
+     "src": [
+      "co136-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The Blue Book argument against says “This initiative is designed to put Amendment 87 into legal jeopardy, causing confusion and a potentially costly legal battle to resolve. After the 2026 election, Proposition 136 has no effect, since raising tax rates already requires voter approval and any future approval would override this measure.”",
+     "src": [
+      "co136-bb"
+     ]
+    },
+    {
+     "text": "The Bell Policy Center says “This measure is only meaningful because it conflicts with the graduated income tax that is proposed in Amendment 87. The tax rate is already 4.4 percent and the constitution states that only a vote of the people can increase tax rates.”",
+     "src": [
+      "co136-bp"
+     ]
+    },
+    {
+     "text": "New Era Colorado says “Giant corporations and the wealthy should not pay the same income tax rate as people earning $50,000 a year.”",
+     "src": [
+      "co136-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "What happens if both this measure and Amendment 87 pass.",
+     "text": "The Blue Book says that if both pass, the Amendment 87 rate for incomes over $500,000 “would be higher than the 4.4 percent limit in Proposition 136,” and that “Generally, when parts of voter-approved measures conflict, the policy outcome is determined by the measure that receives more votes. However, if both measures are approved by voters, the exact outcome is unclear.” It says the Legislature or a court would resolve any conflict. See our page on Amendment 87.",
+     "src": [
+      "co136-bb"
+     ]
+    }
+   ],
+   "official_src": [
+    "co136-bb"
    ]
   }
  ]
