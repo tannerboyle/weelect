@@ -1,0 +1,769 @@
+{
+ "meta": {
+  "last_reviewed": "2026-10-28",
+  "election_day": "2026-11-03",
+  "disclaimer": "Editorial summary of arguments made by others, not the opinion of We Elect. Each side is written to be the strongest case its supporters would recognize, and every claim is tied to a source we opened and read.",
+  "publisher": "a Brunner Creative site",
+  "unsaid_title": "What neither side is saying",
+  "unsaid_intro": "Context that bears on what this measure does or who it affects but that the arguments above do not address. These are sourced facts, not arguments for or against the measure.",
+  "unsaid_note": "Editorial context, not the opinion of We Elect. Each point is a fact we found in a source we opened and read; where sources disagree or data are missing, we say so."
+ },
+ "sources": {
+  "fl-a1-an": {
+   "org": "Florida House of Representatives (nonpartisan committee staff)",
+   "title": "Final Bill Analysis, HJR 5019 (Budget Stabilization Fund)",
+   "url": "https://www.flsenate.gov/Session/Bill/2025/5019/Analyses/h5019z1.BUC.PDF",
+   "type": "Official nonpartisan legislative staff analysis",
+   "date": "2025-08-15",
+   "used_for": "Fiscal impact, how the fund works today, withdrawal conditions",
+   "checked": "2026-10-28"
+  },
+  "fl-a2-an": {
+   "org": "Florida House of Representatives (nonpartisan committee staff)",
+   "title": "Final Bill Analysis, CS/HJR 1215 (Ad Valorem Tax Exemption)",
+   "url": "https://www.flsenate.gov/Session/Bill/2025/1215/Analyses/h1215z.WMC.PDF",
+   "type": "Official nonpartisan legislative staff analysis",
+   "date": "2025-05-22",
+   "used_for": "Revenue Estimating Conference fiscal estimate, what the exemption covers",
+   "checked": "2026-10-28"
+  },
+  "fl-fdacs": {
+   "org": "Florida Department of Agriculture and Consumer Services",
+   "title": "Constitutional Amendment Proposed to Support Florida Agriculture by Eliminating Multiple Taxation of Agricultural Production (press release, January 8, 2024)",
+   "url": "https://www.fdacs.gov/News-Events/Press-Releases/2024-Press-Releases/Constitutional-Amendment-Proposed-to-Support-Florida-Agriculture-by-Eliminating-Multiple-Taxation-of-Agricultural-Production",
+   "type": "Government press release (sponsors’ statements)",
+   "date": "2024-01-08",
+   "used_for": "Sponsors’ statements in support",
+   "checked": "2026-10-28"
+  },
+  "fl1-bp": {
+   "org": "Ballotpedia",
+   "title": "Florida Amendment 1, Changes to Budget Stabilization Fund Amendment (2026)",
+   "url": "https://ballotpedia.org/Florida_Amendment_1,_Changes_to_Budget_Stabilization_Fund_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "fl2-bp": {
+   "org": "Ballotpedia",
+   "title": "Florida Amendment 2, Exempt Tangible Personal Property Used for Agriculture or Agritourism from Property Taxes Amendment (2026)",
+   "url": "https://ballotpedia.org/Florida_Amendment_2,_Exempt_Tangible_Personal_Property_Used_for_Agriculture_or_Agritourism_from_Property_Taxes_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "az-jlbc": {
+   "org": "Arizona Joint Legislative Budget Committee (JLBC) staff",
+   "title": "Ballot Initiatives (page on fiscal analyses of November 2026 ballot propositions)",
+   "url": "https://www.azjlbc.gov/ballot-initiatives/",
+   "type": "Official legislative fiscal office",
+   "date": "2026-08-19",
+   "used_for": "State law on which ballot measures get a JLBC fiscal summary",
+   "checked": "2026-10-28"
+  },
+  "az141-bp": {
+   "org": "Ballotpedia",
+   "title": "Arizona Proposition 141, Prohibit Taxes or Fees on Miles Traveled in Motor Vehicle Amendment (2026)",
+   "url": "https://ballotpedia.org/Arizona_Proposition_141,_Prohibit_Taxes_or_Fees_on_Miles_Traveled_in_Motor_Vehicle_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "az142-bp": {
+   "org": "Ballotpedia",
+   "title": "Arizona Proposition 142 (2026)",
+   "url": "https://ballotpedia.org/Arizona_Proposition_142,_Prohibit_Race-_or_Ethnicity-Based_Preferential_Treatment,_Public_Education_Offices,_and_Disciplinary_Policies_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "az316-bp": {
+   "org": "Ballotpedia",
+   "title": "Arizona Proposition 316 (2026)",
+   "url": "https://ballotpedia.org/Arizona_Proposition_316,_Limit_Local_Tax_Rate_on_Groceries_to_2%25_of_Base_Price_and_Require_Voter_Approval_to_Increase_Tax_Rate_Measure_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "az316-mirror": {
+   "org": "Arizona Mirror",
+   "title": "Prop. 316 would cap Arizona grocery taxes. Rural cities say it will cost them, and their residents.",
+   "url": "https://azmirror.com/2026/09/21/prop-316-would-cap-arizona-grocery-taxes-rural-cities-say-it-will-cost-them-and-their-residents/",
+   "type": "News report",
+   "date": "2026-09-21",
+   "used_for": "City impact, the earlier total ban, quotes from the Chandler and Bisbee mayors",
+   "checked": "2026-10-28"
+  },
+  "az317-bp": {
+   "org": "Ballotpedia",
+   "title": "Arizona Proposition 317 (2026)",
+   "url": "https://ballotpedia.org/Arizona_Proposition_317,_Designate_Drug_Cartels_as_Terrorist_Organizations_and_Require_State_DHS_to_Address_Threats_Measure_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "az319-bp": {
+   "org": "Ballotpedia",
+   "title": "Arizona Proposition 319 (2026)",
+   "url": "https://ballotpedia.org/Arizona_Proposition_319,_Prohibit_New_Photo_Traffic_Enforcement_Systems_Measure_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "az320-bp": {
+   "org": "Ballotpedia",
+   "title": "Arizona Proposition 320 (2026)",
+   "url": "https://ballotpedia.org/Arizona_Proposition_320,_Require_Certain_School_Districts_to_Spend_60%25_of_Operational_Spending_on_Direct_Instruction_Measure_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  }
+ },
+ "items": [
+  {
+   "id": "florida-amendment-1",
+   "state": "FL",
+   "state_name": "Florida",
+   "label": "Amendment 1",
+   "title": "Raise the cap on the state’s rainy-day fund",
+   "topic": "State budget and taxes",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Budget Stabilization Fund. Proposing an amendment to the State Constitution to increase the amount of funds that may be retained in the budget stabilization fund from 10% to 25% of general revenue collections, require the legislature to transfer the lesser of $750 million or the amount required to reach 25% of the general revenue collections each year unless certain conditions are met, and allow the legislature to withdraw funds for critical state needs.",
+   "official_url": "https://files.floridados.gov/media/711369/eng-2026-booklet-constitutional-amendpub-updated-20260903.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Florida_Amendment_1,_Changes_to_Budget_Stabilization_Fund_Amendment_(2026)",
+   "summary": "Florida’s Budget Stabilization Fund, created in 1992, is a state savings account for budget shortfalls and emergencies. Its balance cannot exceed 10% of the last year’s general revenue collections. Amendment 1 would raise that cap to 25% and require the Legislature to transfer each year the lesser of $750 million or the amount needed to reach the cap. The Legislature could suspend the transfer in some cases, including when it finds a critical state need and two-thirds of each house agree. Money could be withdrawn for emergencies, for revenue shortfalls, or for a critical state need if the balance is above 15% and two-thirds of the Legislature approves. Amendments in Florida need 60% of the vote to pass.",
+   "summary_src": [
+    "fl3-bk",
+    "fl-a1-an",
+    "fl1-bp"
+   ],
+   "yes": "A YES vote would approve the amendment and raise the fund’s cap from 10% to 25% of general revenue collections, with the annual transfer and withdrawal rules above. It needs 60% to pass.",
+   "no": "A NO vote would reject the amendment and leave the fund’s cap at 10% of general revenue collections.",
+   "fiscal": {
+    "text": "The House’s nonpartisan staff analysis says “The fiscal impact on the state is indeterminate but likely insignificant.” The amendment requires an annual transfer into the fund of the lesser of $750 million or the amount needed to reach the cap, unless the Legislature suspends it under the conditions above.",
+    "src": [
+     "fl-a1-an"
+    ]
+   },
+   "money": {
+    "text": "Ballotpedia has not located a campaign in support of or opposition to Amendment 1, and lists $0.00 in contributions on both sides.",
+    "src": [
+     "fl1-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Senate President Ben Albritton says the amendment “makes Florida’s balance sheet more durable in difficult times, and we’re setting more money aside to have its rainy-day reserves if things get difficult.”",
+     "src": [
+      "fl1-bp"
+     ]
+    },
+    {
+     "text": "House Speaker Daniel Perez says it is “a preparation of being prepared for the unexpected,” and points to the last big downturn: “[T]he state of Florida was not prepared for that recession.”",
+     "src": [
+      "fl1-bp"
+     ]
+    },
+    {
+     "text": "The Republican Party of Florida says “Hurricanes, emergencies, and economic downturns don’t wait for the budget cycle. Amendment 1 makes sure Florida saves in good years so it doesn’t have to raise taxes in bad ones.”",
+     "src": [
+      "fl1-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Gov. Ron DeSantis calls it “a foolish constitutional amendment proposal,” saying “We already have a maxed out rainy day fund and have run the largest surpluses in state history. Any additional revenue should be used for lower taxes.” He recommends a no vote.",
+     "src": [
+      "fl1-bp"
+     ]
+    },
+    {
+     "text": "Rich Templin of the Florida AFL-CIO says “We have so many needs and obligations that are still unmet. Why would we take money and put it in our retirement account?”",
+     "src": [
+      "fl1-bp"
+     ]
+    },
+    {
+     "text": "The Sun Sentinel editorial board says that although the amendment “purports to place new guardrails” on using the fund, “we’re suspicious. If lawmakers want to find a way to break this cash-stuffed piggy bank, they’ll do it.”",
+     "src": [
+      "fl1-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Spending the money would still take a supermajority.",
+     "text": "Under the amendment, a withdrawal for a “critical state need” would need a two-thirds vote of the membership of each house in a separate bill for that purpose only, and could not take the balance below 10% of revenue collections, according to the House staff analysis. Withdrawals for an emergency or a general revenue shortfall would need only a regular bill.",
+     "src": [
+      "fl-a1-an",
+      "fl1-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "fl3-bk",
+    "fl-a1-an"
+   ]
+  },
+  {
+   "id": "florida-amendment-2",
+   "state": "FL",
+   "state_name": "Florida",
+   "label": "Amendment 2",
+   "title": "Exempt farm equipment from property tax",
+   "topic": "Taxes and agriculture",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Exemption of tangible personal property on agricultural land from taxation. Proposing an amendment to the State Constitution to exempt tangible personal property habitually located or typically present on land classified as agricultural, used in the production of agricultural products or for agritourism activities, and owned by the landowner or leaseholder of the agricultural land from ad valorem taxation. If approved this amendment would first apply for tax years beginning January 1, 2027.",
+   "official_url": "https://files.floridados.gov/media/711369/eng-2026-booklet-constitutional-amendpub-updated-20260903.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Florida_Amendment_2,_Exempt_Tangible_Personal_Property_Used_for_Agriculture_or_Agritourism_from_Property_Taxes_Amendment_(2026)",
+   "summary": "Local governments in Florida tax tangible personal property such as machinery, tools and equipment, and the first $25,000 of its value is already exempt. Amendment 2 would exempt tangible personal property that is regularly on land classified as agricultural, is used to produce agricultural products or for agritourism, and is owned by the landowner or leaseholder. The Legislature could set conditions and definitions in general law. If approved, it would first apply for tax years beginning January 1, 2027. It needs 60% of the vote to pass.",
+   "summary_src": [
+    "fl3-bk",
+    "fl-a2-an",
+    "fl2-bp"
+   ],
+   "yes": "A YES vote would approve the amendment and exempt qualifying agricultural tangible personal property from property taxes beginning with tax year 2027. It needs 60% to pass.",
+   "no": "A NO vote would reject the amendment, and qualifying farm equipment would continue to be taxed under current law, including the existing $25,000 exemption.",
+   "fiscal": {
+    "text": "The Revenue Estimating Conference estimates the amendment would have “a negative recurring impact on local government revenues of $31.0 million, beginning in Fiscal Year 2027-28,” and no impact if it fails.",
+    "src": [
+     "fl-a2-an"
+    ]
+   },
+   "money": {
+    "text": "Ballotpedia has not identified any committee registered to support or oppose Amendment 2, and lists $0.00 in contributions on both sides.",
+    "src": [
+     "fl2-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Agriculture Commissioner Wilton Simpson says “Food security is a national security issue,” and that ending “burdensome multiple taxation of agricultural production” would help agriculture grow.",
+     "src": [
+      "fl-fdacs"
+     ]
+    },
+    {
+     "text": "Rep. Danny Alvarez, the sponsor, says “Florida agriculture is the backbone of our state’s culture and economy.” Sen. Keith Truenow calls it “a great opportunity to help farmers reach their goals and their needs.”",
+     "src": [
+      "fl-fdacs",
+      "fl2-bp"
+     ]
+    },
+    {
+     "text": "The Republican Party of Florida says “Amendment 2 gives financial relief to the farmers and agricultural businesses who feed our state and keep rural communities strong.” The Department of Agriculture said, when an earlier version was filed in 2024, that it would “ease increasing food costs to consumers by lowering the cost of production.”",
+     "src": [
+      "fl2-bp",
+      "fl-fdacs"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Rep. Anna Eskamani says “This bill would have a $30 million fiscal impact for local governments, with no guardrails to prevent windfalls.”",
+     "src": [
+      "fl2-bp"
+     ]
+    },
+    {
+     "text": "She argues it would “mostly benefit a handful of giant agribusinesses with multiple TPP (tangible personal property) accounts,” and that “There could be a more targeted approach to support smaller business owners and farmers.”",
+     "src": [
+      "fl2-bp"
+     ]
+    },
+    {
+     "text": "The Sun Sentinel editorial board says “it’s bad policy to enshrine special-interest tax breaks in the constitution,” and that lawmakers could help farmers with “funding from their own tax collections, instead of sticking local governments with the bill for their generosity.” It concedes the cost is “relatively small.”",
+     "src": [
+      "fl2-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "The details are left to the Legislature.",
+     "text": "The House staff analysis says the exemption “is subject to conditions, limitations, and reasonable definitions that may be specified by the Legislature in general law.” The measure passed the House 110–1 and the Senate 37–0 in 2025, according to Ballotpedia.",
+     "src": [
+      "fl-a2-an",
+      "fl2-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "fl3-bk",
+    "fl-a2-an"
+   ]
+  },
+  {
+   "id": "arizona-proposition-141",
+   "state": "AZ",
+   "state_name": "Arizona",
+   "label": "Proposition 141",
+   "title": "Ban taxes and tracking based on miles driven",
+   "topic": "Taxes and transportation",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Proposed amendment to the Constitution by the Legislature relating to taxation. Amending Article IX, Constitution of Arizona, by adding Section 26. Prohibits taxes or fees based on vehicle miles traveled and laws monitoring or limiting vehicle miles traveled without consent.",
+   "official_url": "https://apps.azsos.gov/election/BallotMeasures/2026/2026-AZ-Publicity-Pamphlet.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Arizona_Proposition_141,_Prohibit_Taxes_or_Fees_on_Miles_Traveled_in_Motor_Vehicle_Amendment_(2026)",
+   "summary": "Proposition 141 would add a section to the Arizona Constitution barring the state and any county, city, town or other local government from imposing a tax or fee based on the number of miles a person travels in a motor vehicle. It would also bar them from monitoring or limiting the miles a person travels unless the person voluntarily consents. It would not apply to commercial vehicles that operate in more than one state under an interstate agreement for reporting fuel taxes or registration fees, or to vehicles owned and operated by the state or local governments.",
+   "summary_src": [
+    "az-pp"
+   ],
+   "yes": "A “yes” vote shall have the effect of amending the Arizona Constitution to prohibit: (1) taxes or fees based on motor vehicle miles traveled; and (2) laws or rules that monitor or limit motor vehicle miles traveled without consent. These prohibitions do not apply in certain instances to interstate commercial vehicles or to vehicles owned by the state or local governments.",
+   "no": "A “no” vote shall have the effect of maintaining the current constitutional language related to taxation.",
+   "fiscal": {
+    "text": "Arizona law requires the Joint Legislative Budget Committee (JLBC) staff to summarize the fiscal impact of each voter initiative, and the JLBC states that “This requirement excludes legislatively referred propositions.” This measure was referred by the legislature, so the official pamphlet has no JLBC fiscal summary for it. The Legislative Council analysis in the pamphlet does not include a cost estimate, and we did not find another official one.",
+    "src": [
+     "az-jlbc",
+     "az-pp"
+    ]
+   },
+   "money": {
+    "text": "Ballotpedia, through reports covering October 24, 2026, has not found any committee registered to support or oppose Proposition 141. Independent expenditures supporting it included $22,596.65 from Freedom Club PAC and $9,639.65 from the Arizona Free Enterprise Club. Opposing expenditures were small, such as $916.32 from LD4 Democrats.",
+    "src": [
+     "az141-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "In an argument sponsored by the Arizona Free Enterprise Club, Hans VanDanElzen of Gilbert writes that “Vehicle mileage tracking is surveillance, plain and simple,” and that Arizona “can find ways to ensure electric vehicles contribute their fair share to road maintenance without building an invasive tracking infrastructure. Tax the tires. Tax charging stations.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Gregory Gonzalez of Mesa writes that “A mileage tax isn’t about funding roads. It’s about collecting granular data on where you drive, when you drive, and how often,” and that the amendment “keeps government out of our daily movements.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Richard Martin of Tucson writes that “A per-mile tax punishes the people who can least afford it,” including rural families, commuters and tradespeople, and that it “raises the cost of every product on every shelf, because every one of them got there by truck.”",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Ted Maxwell, chair of the Arizona State Transportation Board, writes that the measure “would permanently prohibit consideration of vehicle-miles-traveled (VMT) funding options, even voluntary or pilot programs designed to evaluate whether such approaches could work for Arizona.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Traffic engineer Michael Grandy writes that the state’s long-range transportation plan identifies $231.4 billion in needs over 25 years against $69.1 billion in forecast revenue from the fuel tax, “a funding gap of $162.3 billion.” He says a mileage-based fee would more equitably assess vehicles for their proportional wear and tear on roads, and that it is “short-sided and premature to prohibit it before even conducting analysis.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Civic Engagement Beyond Voting says the measure would keep plug-in electric vehicles, which “don’t pay gas taxes,” from ever paying by the mile: “Anyone who drives a gas-fueled vehicle pays 18 cents in tax on every gallon of gas,” while Arizona’s gas tax “hasn’t gone up in decades.”",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "The consent exception covers monitoring, not charging.",
+     "text": "In the Legislative Council’s description, the ban on monitoring or limiting miles applies “unless the person voluntarily consents.” The ban on imposing a tax or fee based on miles traveled has no consent exception, so a voluntary per-mile fee program would also be barred.",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "official_src": [
+    "az-pp"
+   ]
+  },
+  {
+   "id": "arizona-proposition-142",
+   "state": "AZ",
+   "state_name": "Arizona",
+   "label": "Proposition 142",
+   "title": "Further ban on race-based preferences and DEI requirements in public institutions",
+   "topic": "Civil rights and public education",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Proposed amendment to the Constitution by the Legislature relating to the prohibition of preferential treatment and discrimination. Amending Article II, Section 36, Constitution of Arizona. Adds further details to the constitutional prohibition against preferential treatment or discrimination by the state based on race, ethnicity, or other classes.",
+   "official_url": "https://apps.azsos.gov/election/BallotMeasures/2026/2026-AZ-Publicity-Pamphlet.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Arizona_Proposition_142,_Prohibit_Race-_or_Ethnicity-Based_Preferential_Treatment,_Public_Education_Offices,_and_Disciplinary_Policies_Amendment_(2026)",
+   "summary": "The Arizona Constitution already says the state “shall not grant preferential treatment to or discriminate against any individual or group on the basis of race, sex, color, ethnicity, or national origin” in public employment, education or contracting. Proposition 142 would extend that, even when part of a federal program, and would bar the state and local governments, public universities, community colleges and school districts from requiring applicants, employees, students or contractors to endorse certain race-based diversity, equity and inclusion concepts; from requiring people to discuss their own race or ethnicity; and from requiring training that promotes those ideas. It would also bar spending public money on offices at public educational institutions responsible for promoting preferential treatment, and bar disciplinary policies that treat students or employees differently by race or ethnicity. It includes specified exceptions.",
+   "summary_src": [
+    "az-pp"
+   ],
+   "yes": "A “yes” vote shall have the effect of amending the Arizona Constitution’s current prohibition against preferential treatment or discrimination by the state based on race, ethnicity, or other classes, to specifically prohibit: (1) compelling individuals to support preferential treatment or discrimination based on race or ethnicity as a condition of education, employment, or contract opportunities; (2) spending public money on positions in public education responsible for promoting preferential treatment or discrimination based on race or ethnicity; and (3) implementing disciplinary practices that treat students or employees differently based on race or ethnicity.",
+   "no": "A “no” vote shall have the effect of maintaining the current prohibition in the Arizona Constitution against preferential treatment or discrimination by the state based on race, ethnicity, or other classes.",
+   "fiscal": {
+    "text": "Arizona law requires the Joint Legislative Budget Committee (JLBC) staff to summarize the fiscal impact of each voter initiative, and the JLBC states that “This requirement excludes legislatively referred propositions.” This measure was referred by the legislature, so the official pamphlet has no JLBC fiscal summary for it. The Legislative Council analysis in the pamphlet does not include a cost estimate, and we did not find another official one.",
+    "src": [
+     "az-jlbc",
+     "az-pp"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 24, 2026, no committee was registered to support Proposition 142. Will of the People, the committee opposing it (and Propositions 144, 318 and 320), reported $871,000.00 in contributions. Independent expenditures supporting it included $365,730.63 from the Goldwater Institute and $4,639.65 from the Arizona Free Enterprise Club.",
+    "src": [
+     "az142-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Victor Riches of the Goldwater Institute writes that the measure ensures “state taxpayer resources are never used to force students or state employees to endorse race-based discrimination,” and closes “an existing loophole that has allowed race-based preferential treatment in hiring, education and state contracting if the federal government calls for it.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Nathan Duell of Heritage Action for America writes that DEI policies “have led to divisive discriminatory practices and preferential treatment of individuals based on characteristics such as race and sex,” and that the measure would “prohibit the employers from requiring DEI loyalty oaths as a condition of employment.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Jerry Pittman of Prescott writes that it “guarantees that every Arizonan will be judged as an individual based on merit, not as a member of a racial category,” and “removes the threat that partisan political maneuvering in Washington can impose unfair racial preferences on Arizona.”",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Marie Sansone of Williams writes that the Constitution already bars preferential treatment and discrimination, so the measure “adds nothing to the Constitution’s clear prohibition. To the contrary, it would result in confusion, disputes, and significant public and private costs.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "The League of Women Voters of Arizona says the measure “contains expansive and ambiguous language that could discourage institutions from offering lawful programs focused on student success, community engagement, cultural understanding, mentoring, or educational access.” It also says the measure “grants future Legislatures the authority to prohibit additional concepts and activities without returning to voters for approval.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Civic Engagement Beyond Voting says it “would block teachers from discussing truthful history and accurate science,” and that “race and ethnicity data is essential to meaningful research or medical results.”",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "unsaid": [],
+   "official_src": [
+    "az-pp"
+   ]
+  },
+  {
+   "id": "arizona-proposition-316",
+   "state": "AZ",
+   "state_name": "Arizona",
+   "label": "Proposition 316",
+   "title": "Cap local grocery taxes at 2% and require voter approval to raise them",
+   "topic": "Taxes",
+   "mtype": "Legislatively referred state statute",
+   "ballot_title": "Referred to the people by the Legislature relating to municipal transaction privilege tax. Amending Title 42, Chapter 6, Article 1, Section 42-6015, Arizona Revised Statutes. Retroactively prohibits local governments from adopting or increasing a tax on groceries without voter approval and sets a maximum rate of 2%.",
+   "official_url": "https://apps.azsos.gov/election/BallotMeasures/2026/2026-AZ-Publicity-Pamphlet.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Arizona_Proposition_316,_Limit_Local_Tax_Rate_on_Groceries_to_2%25_of_Base_Price_and_Require_Voter_Approval_to_Increase_Tax_Rate_Measure_(2026)",
+   "summary": "Proposition 316 would limit the ability of a city, town or other taxing jurisdiction to impose a sales, use, franchise or similar tax or fee on food and certain ready-to-drink nonalcoholic beverages intended for home consumption. Any increase, or any new tax, would need voter approval and could not exceed 2 percent of the tax base. A jurisdiction already at 2 percent or more could not raise its rate. No new tax or increase could take effect between June 30, 2025 and June 30, 2027. The measure is a state law, so under Proposition 105 (1998) it could later be changed only by a three-fourths vote of each house of the legislature, or by initiative or referral to the ballot.",
+   "summary_src": [
+    "az-pp"
+   ],
+   "yes": "A “yes” vote shall have the effect of: (1) retroactively prohibiting local governments from adopting or increasing a tax on groceries from July 1, 2025, through June 30, 2027; and (2) after that time, prohibiting local governments from adopting or increasing a tax on groceries without voter approval and limiting any new or increased tax to a maximum rate of 2%.",
+   "no": "A “no” vote shall have the effect of maintaining the current laws relating to local government taxation.",
+   "fiscal": {
+    "text": "Arizona law requires the Joint Legislative Budget Committee (JLBC) staff to summarize the fiscal impact of each voter initiative, and the JLBC states that “This requirement excludes legislatively referred propositions.” This measure was referred by the legislature, so the official pamphlet has no JLBC fiscal summary for it. The Legislative Council analysis in the pamphlet does not include a cost estimate, and we did not find another official one. The Arizona Mirror reports that a JLBC analysis estimated a complete ban on grocery taxes, which this measure started out as, would forfeit $227 million in city revenue in 2028 alone. That figure is not an estimate for the 2% cap.",
+    "src": [
+     "az-jlbc",
+     "az-pp",
+     "az316-mirror"
+    ]
+   },
+   "money": {
+    "text": "Ballotpedia, in reports covering October 24, 2026, did not identify any campaign registered in support or opposition to Proposition 316. Local Democratic committees reported small independent expenditures opposing it, such as $916.32 from LD4 Democrats.",
+    "src": [
+     "az316-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Chandler Mayor Kevin Hartke and René Guillen, Jr., of the League of Arizona Cities and Towns, write that Proposition 316 “strikes a meaningful compromise between household affordability for residents, capturing funding from tourists and visitors who utilize public infrastructure and public services, and maintaining budget stability for cities and towns.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Rep. Leo Biasiucci says: “I don’t believe that we should be taxing essential foods like eggs and milk and meat. These are the things that every family needs to survive.”",
+     "src": [
+      "az316-bp"
+     ]
+    },
+    {
+     "text": "Hartke, who helped negotiate the measure down from a complete ban, told the Arizona Mirror that “The original conversation for years has been to entirely remove this,” and called the 2% cap “an uneasy win-win.”",
+     "src": [
+      "az316-mirror"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Civic Engagement Beyond Voting writes that Gov. Katie Hobbs “vetoed a similar bill in 2023 that would have cost 65 Arizona cities over $150 million a year,” and that “food tax revenue makes up more than 30% of the budget in the small town of Taylor.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Gayle Shanks and Clive Sommer of Tempe write that the measure “has been designed to strip local control” and that requiring a public vote for “any minor increase” to a local food tax “imposes an additional administrative hurdle” that is “an inefficient and expensive use of taxpayer resources.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Bisbee Mayor Ken Budge asks: “Why should the state be able to tell local governments and their residents how much and how they are willing to be taxed to support their town?”",
+     "src": [
+      "az316-mirror"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "The measure reaches back to July 2025.",
+     "text": "The ballot language says a “yes” vote would retroactively prohibit local governments from adopting or increasing a grocery tax from July 1, 2025, through June 30, 2027. None of the arguments printed in the pamphlet mentions that period.",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "official_src": [
+    "az-pp"
+   ]
+  },
+  {
+   "id": "arizona-proposition-317",
+   "state": "AZ",
+   "state_name": "Arizona",
+   "label": "Proposition 317",
+   "title": "Declare drug cartels terrorist organizations under state law",
+   "topic": "Public safety and immigration",
+   "mtype": "Legislatively referred state statute",
+   "ballot_title": "Referred to the people by the Legislature relating to the Arizona Department of Homeland Security. Amending Title 41, Chapter 41, Article 1, Arizona Revised Statutes, by adding Section 41-4256. Declares that drug cartels are terrorist organizations; directs the Arizona Department of Homeland Security to do everything in its authority to address drug cartels.",
+   "official_url": "https://apps.azsos.gov/election/BallotMeasures/2026/2026-AZ-Publicity-Pamphlet.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Arizona_Proposition_317,_Designate_Drug_Cartels_as_Terrorist_Organizations_and_Require_State_DHS_to_Address_Threats_Measure_(2026)",
+   "summary": "Proposition 317 would declare that drug cartels, defined as associations of persons engaging in human smuggling, drug trafficking for profit or any act of terrorism, are terrorist organizations. It would require the Arizona Department of Homeland Security to use all lawful means available within its authority to address threats posed by drug cartels, and declare that the proposition does not support an alien’s claim for asylum under federal law. The measure is a state law, so under Proposition 105 (1998) it could later be changed only by a three-fourths vote of each house of the legislature, or by initiative or referral to the ballot.",
+   "summary_src": [
+    "az-pp"
+   ],
+   "yes": "A “yes” vote shall have the effect of: (1) declaring drug cartels as terrorist organizations and directing the Arizona Department of Homeland Security to do everything in its authority to address threats posed by drug cartels; (2) defining “drug cartel” to mean an ongoing formal or informal association of persons engaged in human smuggling, drug trafficking, or any act defined as terrorism under Arizona law; and (3) clarifying that this measure does not support an alien’s asylum claim.",
+   "no": "A “no” vote shall have the effect of maintaining the current laws relating to terrorism and the Arizona Department of Homeland Security.",
+   "fiscal": {
+    "text": "Arizona law requires the Joint Legislative Budget Committee (JLBC) staff to summarize the fiscal impact of each voter initiative, and the JLBC states that “This requirement excludes legislatively referred propositions.” This measure was referred by the legislature, so the official pamphlet has no JLBC fiscal summary for it. The Legislative Council analysis in the pamphlet does not include a cost estimate, and we did not find another official one.",
+    "src": [
+     "az-jlbc",
+     "az-pp"
+    ]
+   },
+   "money": {
+    "text": "Ballotpedia, in reports covering October 15, 2026, has not found any campaign registered in support or opposition to Proposition 317. Local Democratic committees reported small independent expenditures opposing it, such as $916.32 from LD4 Democrats.",
+    "src": [
+     "az317-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "George Khalaf of Scottsdale writes in the official pamphlet that the “violent drug cartels operating along Arizona’s border constitute a grave threat to the safety of Arizonans,” and that the measure “not just allows, but requires, that AZDOHS do everything within its authority to fight back against the cartels, ensuring that Arizonans will be protected regardless of partisan politics.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "House Speaker Steve Montenegro says: “These cartels are not just smuggling drugs; they are running sophisticated, brutal operations that profit off human misery—trafficking women and children, flooding our streets with fentanyl, and killing Americans at an unprecedented rate.”",
+     "src": [
+      "az317-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The ACLU of Arizona says the measure “would seem to define any group of two or more individuals transporting or selling illicit drugs as a cartel, and consequently, a terrorist organization,” and that people “lawfully seeking asylum who are compelled to pay guides for safe passage through Mexico could be unjustly categorized as members or associates of a drug cartel.”",
+     "src": [
+      "az317-bp"
+     ]
+    },
+    {
+     "text": "Sen. Analise Ortiz says a no vote “keeps existing laws against drug trafficking, cartels, terrorism, and human smuggling in place without expanding the state’s enforcement powers under this measure.”",
+     "src": [
+      "az317-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "What the text itself does.",
+     "text": "The statute printed in the pamphlet has three operative parts: a declaration that drug cartels are terrorist organizations, a directive that the Department of Homeland Security “do everything within its authority” to address them, and a statement that it does not support an asylum claim. It does not create a new crime, penalty or funding source.",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "official_src": [
+    "az-pp"
+   ]
+  },
+  {
+   "id": "arizona-proposition-319",
+   "state": "AZ",
+   "state_name": "Arizona",
+   "label": "Proposition 319",
+   "title": "Ban new photo traffic enforcement and require voter approval of existing systems",
+   "topic": "Public safety and privacy",
+   "mtype": "Legislatively referred state statute",
+   "ballot_title": "Referred to the people by the Legislature relating to photo enforcement systems. Amending Section 28-1201, Arizona Revised Statutes; amending Title 28, Chapter 3, Article 21, Arizona Revised Statutes, by adding Section 28-1207. Prohibits state agencies and local governments from using photo enforcement systems for traffic enforcement unless provided by contract as of December 31, 2026; requires local governments to obtain voter approval to continue their use.",
+   "official_url": "https://apps.azsos.gov/election/BallotMeasures/2026/2026-AZ-Publicity-Pamphlet.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Arizona_Proposition_319,_Prohibit_New_Photo_Traffic_Enforcement_Systems_Measure_(2026)",
+   "summary": "Proposition 319 would prohibit a local authority or state agency from using a photo enforcement system for speeding or traffic control device violations unless it has a contract in place before December 31, 2026. A local authority with such a contract would have to seek voter approval at the next general election to keep operating the system. If voters reject it, the system must stop operating within 90 days; if they approve it, it may continue for 10 years, after which the local authority must seek voter approval again for each additional 10-year period. The measure is a state law, so under Proposition 105 (1998) it could later be changed only by a three-fourths vote of each house of the legislature, or by initiative or referral to the ballot.",
+   "summary_src": [
+    "az-pp"
+   ],
+   "yes": "A “yes” vote shall have the effect of: (1) prohibiting state agencies and local governments from using photo enforcement systems to identify violators of traffic laws unless the agency or government contracts to use those systems by December 31, 2026; and (2) requiring local governments to obtain voter approval of existing photo enforcement systems at the next regular general election and every 10 years afterward to continue using photo enforcement systems.",
+   "no": "A “no” vote shall have the effect of maintaining the current laws governing photo enforcement systems.",
+   "fiscal": {
+    "text": "Arizona law requires the Joint Legislative Budget Committee (JLBC) staff to summarize the fiscal impact of each voter initiative, and the JLBC states that “This requirement excludes legislatively referred propositions.” This measure was referred by the legislature, so the official pamphlet has no JLBC fiscal summary for it. The Legislative Council analysis in the pamphlet does not include a cost estimate, and we did not find another official one.",
+    "src": [
+     "az-jlbc",
+     "az-pp"
+    ]
+   },
+   "money": {
+    "text": "Ballotpedia’s campaign-finance tables, covering reports through October 24, 2026, show $0.00 in contributions to committees supporting or opposing Proposition 319. The Arizona Free Enterprise Club reported $4,639.65 in independent expenditures supporting it, and local Democratic committees reported small expenditures opposing it, such as $916.32 from LD4 Democrats.",
+    "src": [
+     "az319-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Kristin Baumgartner of Prescott writes that the measure “restores accountability to the people. It bans new automated camera systems and requires cities and towns with existing contracts to obtain voter approval at the ballot box,” and that “Government should not treat every driver as a suspect under constant watch.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Sen. Wendy Rogers says that “Automated enforcement removes discretion, undermines due process, and turns routine driving into a revenue stream,” and that “If these programs truly have public support, they should be able to earn it at the ballot box.”",
+     "src": [
+      "az319-bp"
+     ]
+    },
+    {
+     "text": "Sen. Analise Ortiz, a Democrat, says that “Arizona’s photo-enforcement systems increasingly rely on technology like Flock Cameras that track our movements and sell our data,” and that “We can improve street safety with non-surveillance solutions that do not compromise our privacy.”",
+     "src": [
+      "az319-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Will Humble of the Arizona Public Health Association writes that Phoenix Police “found that the city’s cameras reduced red-light-running crashes by 31% at the intersections where they were used,” and that the measure “takes an important safety tool, red-light cameras, away from every city and town in Arizona that doesn’t already have them.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Traffic engineer Michael Grandy writes that “Traffic fatalities in Arizona have increased 70% since 2010,” that photo enforcement has resulted in “crash reductions of 20%-54%” per federal research, and that “A trained law enforcement officer reviews and confirms photo evidence before issuing a citation.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Sen. Lauren Kuby says: “Prop 319 does not ban or regulate surveillance cameras—it only dismantles traffic safety tools. Do not confuse red-light and speed safety cameras with ALPR license plate tracking.”",
+     "src": [
+      "az319-bp"
+     ]
+    }
+   ],
+   "unsaid": [],
+   "official_src": [
+    "az-pp"
+   ]
+  },
+  {
+   "id": "arizona-proposition-320",
+   "state": "AZ",
+   "state_name": "Arizona",
+   "label": "Proposition 320",
+   "title": "Require large school districts to spend 60% of operating money on direct instruction",
+   "topic": "Education",
+   "mtype": "Legislatively referred state statute",
+   "ballot_title": "Referred to the people by the Legislature relating to school district budgets. Amending Title 15, Chapter 9, Article 1, Arizona Revised Statutes by adding Section 15-917. Requires certain school districts to spend at least sixty percent of their operational spending on direct instructional expenses as defined by the Auditor General; reduces certain state funding for non-compliant districts.",
+   "official_url": "https://apps.azsos.gov/election/BallotMeasures/2026/2026-AZ-Publicity-Pamphlet.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Arizona_Proposition_320,_Require_Certain_School_Districts_to_Spend_60%25_of_Operational_Spending_on_Direct_Instruction_Measure_(2026)",
+   "summary": "Proposition 320 would require each school district with at least 7,500 students, or that operates a school in a county with a population of at least 500,000, to spend at least 60 percent of its operational spending on direct instructional expenses, with the auditor general defining “direct instructional expenses” and “operational spending.” Beginning in fiscal year 2027-2028, a district below 60 percent would have to raise that share by at least one-half of one percent per year until it complies. A district that does not comply would lose 25 percent of its classroom site fund allocation for each year of non-compliance, up to 100 percent after four or more years, unless a waiver is granted; the withheld money would go to compliant districts the following year. The measure is a state law, so under Proposition 105 (1998) it could later be changed only by a three-fourths vote of each house of the legislature, or by initiative or referral to the ballot.",
+   "summary_src": [
+    "az-pp"
+   ],
+   "yes": "A “yes” vote shall have the effect of: (1) requiring school districts with 7,500 or more students in any county or that operate in a county with 500,000 or more people to spend at least 60% of their operational spending on direct instructional expenses; (2) requiring the state Auditor General to define “operational spending” and “direct instructional expenses”; (3) requiring non-compliant school districts to gradually adjust their spending each year until they are in compliance; and (4) requiring the state Department of Education to reduce funding from the state Classroom Site Fund by 25% each year for non-compliant districts, subject to limited waivers that the state Superintendent of Public Instruction may authorize.",
+   "no": "A “no” vote shall have the effect of maintaining the current laws governing school district budgets.",
+   "fiscal": {
+    "text": "Arizona law requires the Joint Legislative Budget Committee (JLBC) staff to summarize the fiscal impact of each voter initiative, and the JLBC states that “This requirement excludes legislatively referred propositions.” This measure was referred by the legislature, so the official pamphlet has no JLBC fiscal summary for it. The Legislative Council analysis in the pamphlet does not include a cost estimate, and we did not find another official one.",
+    "src": [
+     "az-jlbc",
+     "az-pp"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 24, 2026, Pay Teachers First PAC, supporting Proposition 320, reported $20,000.00 in contributions. Opposing it, Will of the People (which also opposes Propositions 142, 144 and 318) reported $871,000.00; Ballotpedia lists $886,337.85 in total contributions to the committees opposing it, which include the No on Prop 320 PAC.",
+    "src": [
+     "az320-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Victor Riches of the Goldwater Institute writes that “the percentage of funds used for classroom instruction has dropped to just 52%,” and that the Auditor General “found that Arizona’s teachers would make $7,500 more per year if schools hadn’t diverted available funds away from the classroom.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Rep. Matt Gress says: “We have over 3,000 teacher vacancies. … And yet we’re spending more money outside of the classroom year after year after year. We have to reverse that.”",
+     "src": [
+      "az320-bp"
+     ]
+    },
+    {
+     "text": "Arizona Women of Action writes that “Teachers will gain competitive pay, essential supplies, and the ability to focus on inspiring students,” and that “Families will see their tax dollars invested wisely in their children’s education.”",
+     "src": [
+      "az-pp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "School nurse William Graham writes that “To comply, some districts could be forced to reduce funding for nurses, counselors, psychologists, support staff, or other critical services,” and that “Local school leaders and communities are best equipped to determine how resources should be allocated.”",
+     "src": [
+      "az-pp"
+     ]
+    },
+    {
+     "text": "Will of the People says that “Prop 320 asks voters to approve penalties now and let a political appointee write the rules later,” and that districts would face “tough choices between firing nurses, counselors, school safety and other support staff, or massive across-the-board funding cuts.”",
+     "src": [
+      "az320-bp"
+     ]
+    },
+    {
+     "text": "Former Arizona Republican Party Chair Gina Swoboda says: “You’re punishing the growing counties with this mandate that’s not defined. Stop sending referrals to the people to just make a political point.”",
+     "src": [
+      "az320-bp"
+     ]
+    }
+   ],
+   "unsaid": [],
+   "official_src": [
+    "az-pp"
+   ]
+  }
+ ]
+}

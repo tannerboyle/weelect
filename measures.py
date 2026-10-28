@@ -8,13 +8,20 @@ import json, os
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PATH = os.path.join(ROOT, "data", "measures_bothsides.json")
-_data = {"mtime": 0, "doc": None}
+# Additional batches of measures (same schema). Each file is optional; items and sources are merged into the main document.
+EXTRA_PATHS = [os.path.join(ROOT, "data", "measures_bothsides_b.json")]
+_data = {"mtime": (), "doc": None}
 
 
 def doc():
-    m = os.path.getmtime(PATH)
+    paths = [PATH] + [p for p in EXTRA_PATHS if os.path.exists(p)]
+    m = tuple(os.path.getmtime(p) for p in paths)
     if _data["doc"] is None or m != _data["mtime"]:
         d = json.load(open(PATH))
+        for p in paths[1:]:
+            extra = json.load(open(p))
+            d["items"] = d["items"] + extra["items"]
+            d["sources"] = {**d["sources"], **extra["sources"]}
         d["_by_id"] = {i["id"]: i for i in d["items"]}
         d["_by_url"] = {i["ballotpedia_url"].rstrip("/"): i for i in d["items"]}
         _data["doc"], _data["mtime"] = d, m
