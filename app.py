@@ -11,7 +11,7 @@ from functools import lru_cache
 import requests
 import datetime
 from markupsafe import Markup
-from flask import Flask, render_template, request, abort
+from flask import Flask, render_template, request, abort, Response, url_for
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "data")
@@ -25,9 +25,36 @@ UA = {"User-Agent": "weelect-prototype/0.1"}
 app = Flask(__name__)
 
 
+# Public base URL used for canonical links, Open Graph tags and the sitemap. Override with SITE_URL
+# (for example when testing on a staging host) so canonicals never point at the wrong site.
+SITE_URL = os.environ.get("SITE_URL", "https://weelect.org").rstrip("/")
+# TODO(Bob): set these in Render -> Environment (or hard-code them here) before merging.
+# Until they are set, the About page shows a clearly marked [TODO] instead of an address / name.
+CORRECTIONS_EMAIL = os.environ.get("CORRECTIONS_EMAIL", "").strip()
+RESPONSIBLE_NAME = os.environ.get("RESPONSIBLE_NAME", "").strip()
+SITEMAP_INCLUDE_STATE = os.environ.get("SITEMAP_INCLUDE_STATE", "").strip() == "1"
+OG_IMAGE_PATH = "/static/og-default.png"
+
+
 @app.context_processor
 def _globals():
-    return {"today": datetime.date.today().strftime("%A, %B %-d, %Y")}
+    # The masthead date uses the same U.S. Eastern clock as the election countdown (elections._today),
+    # so the two can never disagree in the evening when UTC is already "tomorrow".
+    return {"today": elections_mod._today().strftime("%A, %B %-d, %Y"),
+            "site_url": SITE_URL,
+            "canonical_url": SITE_URL + request.path,
+            "og_image": SITE_URL + OG_IMAGE_PATH,
+            "corrections_email": CORRECTIONS_EMAIL,
+            "responsible_name": RESPONSIBLE_NAME,
+            "state_codes": STATE_CODES}
+
+
+@app.after_request
+def _security_headers(resp):
+    # Cross-origin links and requests (official sites, OpenStreetMap tiles) get only our origin, never a path.
+    resp.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
+    resp.headers.setdefault("X-Content-Type-Options", "nosniff")
+    return resp
 
 
 @lru_cache(maxsize=128)
@@ -255,9 +282,45 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/lookup")
+STATE_CODES = ("AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND "
+               "OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY AS GU MP PR VI").split()
+
+
+def _private(resp):
+    """Pages that contain or react to a home address: never cached, never indexed."""
+    resp.headers["Cache-Control"] = "no-store"
+    resp.headers["X-Robots-Tag"] = "noindex, nofollow"
+    return resp
+
+
+@app.route("/lookup", methods=["GET", "POST"])
 def lookup():
-    address = (request.args.get("address") or "").strip()
+    # POST keeps the address out of the URL (and so out of access logs, browser history, shared links and
+    # Referer headers). A GET with ?address= is only a bridge for old links: it hands the address to an
+    # auto-submitting POST form and renders nothing else.
+    if request.method == "GET":
+        legacy = (request.args.get("address") or "").strip()
+        if not legacy:
+            return _private(app.make_response(render_template("home.html")))
+        return _private(app.make_response(render_template("lookup_bridge.html", address=legacy)))
+    return _private(app.make_response(_lookup_post((request.form.get("address") or "").strip())))
+
+
+@app.route("/city-interest", methods=["POST"])
+def city_interest():
+    """'Tell us your city': city + state only, never a street address. Nothing is stored in a database;
+    one line is written to the application log (Render -> Logs) so Bob can see demand.
+    TODO(Bob): replace the log line with a durable destination (email service or a form tool) if you want to keep these."""
+    city = " ".join((request.form.get("city") or "").split())
+    st = (request.form.get("state") or "").strip().upper()
+    ok = (not request.form.get("website")            # honeypot: real visitors leave it empty
+          and 2 <= len(city) <= 60 and re.fullmatch(r"[A-Za-z .'\-]+", city) and st in STATE_CODES)
+    if ok:
+        print("CITY_INTEREST " + json.dumps({"city": city, "state": st}), flush=True)
+    return _private(app.make_response((render_template("city_interest.html", ok=bool(ok), city=city, state=st), 200 if ok else 400)))
+
+
+def _lookup_post(address):
     if not address:
         return render_template("home.html")
     notes = []
@@ -364,6 +427,31 @@ def st_profile(pid):
         contact[f'{(o.get("classification") or "office").title()} office'] = ", ".join(x for x in (o.get("address"), o.get("voice")) if x)
     return render_template("profile.html", p=s, notable=[], votes=None, votes_error=None, votes_note=None, since=None, term_end=None, contact=contact, links=links,
                            bills=None, bills_error=None, has_key=False, kind="st")
+
+
+@app.route("/robots.txt")
+def robots_txt():
+    body = ("User-agent: *\n"
+            "Allow: /\n"
+            "Disallow: /lookup\n"
+            "Disallow: /city-interest\n"
+            f"\nSitemap: {SITE_URL}/sitemap.xml\n")
+    return Response(body, mimetype="text/plain")
+
+
+@app.route("/sitemap.xml")
+def sitemap_xml():
+    from xml.sax.saxutils import escape
+    urls = [("/", None), ("/votes", bs_mod.meta().get("last_reviewed")), ("/credits", None)]
+    urls += [(f"/votes/{it['id']}", bs_mod.meta().get("last_reviewed")) for it in bs_mod.items()]
+    urls += [(f"/official/fed/{b}", None) for b in sorted(FED_BY_ID)]
+    if SITEMAP_INCLUDE_STATE:   # ~7,700 thinner pages; off by default (see PR notes)
+        urls += [(f"/official/st/{pid}", None) for pid in sorted(STATE_BY_ID)]
+    rows = "".join(f"<url><loc>{escape(SITE_URL + path)}</loc>" + (f"<lastmod>{escape(str(last))}</lastmod>" if last else "") + "</url>"
+                   for path, last in urls)
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + rows + "</urlset>\n")
+    return Response(xml, mimetype="application/xml")
 
 
 if __name__ == "__main__":

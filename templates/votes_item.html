@@ -1,4 +1,6 @@
-{% extends "base.html" %}{% block title %}{{ it.title }}: both sides – We Elect{% endblock %}
+{% extends "base.html" %}{% block title %}{{ it.title }}: the strongest case for and against – We Elect{% endblock %}
+{% block meta_description %}{{ it.title }} ({{ it.bill.label }}): what the bill did, the strongest case for and against it, what neither side is saying, and how Congress voted. Sourced, nonpartisan.{% endblock %}
+{% block og_type %}article{% endblock %}
 {% block body %}{% import "_bothsides.html" as B with context %}<p><a href="/votes">&larr; All key votes</a></p>
 <div class="bs-page">
 <span class="bs-kicker">{{ it.topic }}</span>

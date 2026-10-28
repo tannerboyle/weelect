@@ -4,8 +4,11 @@
 <a class="card p-{{ o.pclass }}" href="/official/{{ o.kind }}/{{ o.id }}">{{ avatar(o) }}
 <div><strong>{{ o.name }}</strong><div class="meta">{{ o.office }}<br>{{ o.where }}</div>{% if o.party %}<span class="party">{{ o.party }}</span>{% endif %}</div></a>{% endfor %}</div>{% endmacro %}
 {% block title %}Your officials{% if geo %} – {{ geo.state_name }}{% endif %} – We Elect{% endblock %}
+{% block meta_description %}Your U.S. Representative, U.S. Senators and state legislators, with election dates, voting information and key votes. Nonpartisan, with sources.{% endblock %}
+{% block robots %}<meta name="robots" content="noindex,nofollow">{% endblock %}
+{% block canonical %}{{ site_url }}/{% endblock %}
 {% block body %}
-<form class="search" action="/lookup"><input name="address" value="{{ address }}" aria-label="Address"><button>Find</button></form>
+<form class="search" action="/lookup" method="post"><input name="address" value="{{ address }}" aria-label="Address"><button>Find</button></form>
 {% if error %}<p class="err">{{ error }}</p>{% else %}
 <section class="ataglance" aria-label="Your state at a glance">
   <div class="state-icon" aria-hidden="true">{% if state_svg %}{{ state_svg }}{% endif %}</div>
@@ -28,6 +31,6 @@
 <ul class="legend" aria-label="Party colour key"><li><i class="sw p-R"></i>Republican</li><li><i class="sw p-D"></i>Democratic</li><li><i class="sw p-N"></i>Independent, other or nonpartisan</li></ul>
 <div class="sechead"><span class="star">★</span><h2>Federal</h2><small>Congress</small></div>{% if federal %}{{ cards(federal) }}{% else %}<p>None found.</p>{% endif %}
 <div class="sechead"><span class="star">★</span><h2>State legislature</h2><small>{{ geo.state_name }}</small></div>{% if state %}{{ cards(state) }}{% else %}<p>None found.</p>{% endif %}
-<div class="sechead"><span class="star">★</span><h2>Local</h2><small>City &amp; county</small></div>{% if local %}{{ cards(local) }}{% else %}<p>No local officials found in free data.</p>{% endif %}
+<div class="sechead"><span class="star">★</span><h2>Local</h2><small>City &amp; county</small></div>{% if local %}{{ cards(local) }}{% else %}<p>No local officials found in free data.</p>{% include "_city_interest.html" %}{% endif %}
 {% include "_support.html" %}
 {% endif %}{% endblock %}
