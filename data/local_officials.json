@@ -16,9 +16,9 @@
   "stats": {
    "county:confirmed": 29,
    "county:unverified": 78,
-   "place:confirmed": 875,
+   "place:confirmed": 895,
    "place:corroborated": 62,
-   "place:unverified": 1455
+   "place:unverified": 1432
   }
  },
  "places": {
@@ -5947,15 +5947,15 @@
    "pop": 256684,
    "officials": [
     {
-     "name": "Rick Stopfer",
+     "name": "Al Zapanta",
      "title": "Mayor",
      "party": null,
-     "term_start": "2017-06-08",
+     "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.cityofirving.org/210/Meet-Your-Mayor-and-Council",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://irvingtx.gov/mayor-council",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -7535,15 +7535,15 @@
    "pop": 874579,
    "officials": [
     {
-     "name": "Vi Lyles",
+     "name": "Rob Harrington",
      "title": "Mayor",
-     "party": "Democratic",
-     "term_start": "2017-12-04",
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.charlottenc.gov/City-Government/Leadership",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "party": null,
+     "term_start": "2026-07-01",
+     "term_end": "2027-12-31",
+     "status": "confirmed",
+     "source_url": "https://www.charlottenc.gov/City-Government/Leadership/Mayor/Meet-the-Mayor",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -7611,11 +7611,11 @@
      "title": "Mayor",
      "party": null,
      "term_start": "2022-12-01",
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.cityoflaredo.com/mayor-council/N_MCmSites/Mayor/biography.html",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "term_end": "2026-11-30",
+     "status": "confirmed",
+     "source_url": "https://www.cityoflaredo.com/government/mayor-city-council/mayor-dr-victor-d-trevi-o",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -7625,26 +7625,15 @@
    "pop": 440646,
    "officials": [
     {
-     "name": "Sheng Thao",
-     "title": "Mayor",
-     "party": null,
-     "term_start": null,
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.oaklandca.gov/officials/sheng-thao",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
-    },
-    {
      "name": "Barbara Lee",
      "title": "Mayor",
-     "party": null,
-     "term_start": null,
-     "term_end": "2027-01-03",
-     "status": "unverified",
-     "source_url": "https://www.oaklandca.gov/officials/office-of-the-mayor",
-     "listed_by": "Open States",
-     "last_verified": "2026-10-27"
+     "party": "Democratic",
+     "term_start": "2025-05-22",
+     "term_end": null,
+     "status": "confirmed",
+     "source_url": "https://www.oaklandca.gov/Government/City-Council-Leadership/Leadership/Office-of-the-Mayor",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -18430,12 +18419,12 @@
      "name": "Connie Boesen",
      "title": "Mayor",
      "party": null,
-     "term_start": null,
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.dsm.city/government/index.php",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "term_start": "2024-01-01",
+     "term_end": "2028-01-01",
+     "status": "confirmed",
+     "source_url": "https://www.dsm.city/government/city_council/index.php",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -18553,15 +18542,15 @@
    "pop": 278349,
    "officials": [
     {
-     "name": "Christopher Scanlon",
+     "name": "Sean Ryan",
      "title": "Mayor",
      "party": "Democratic",
-     "term_start": "2024-10-15",
+     "term_start": "2026-01-01",
      "term_end": null,
-     "status": "unverified",
+     "status": "confirmed",
      "source_url": "https://www.buffalony.gov/490/Mayor",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -18627,13 +18616,13 @@
     {
      "name": "Janet Cowell",
      "title": "Mayor",
-     "party": "Democratic",
-     "term_start": "2024-01-01",
+     "party": null,
+     "term_start": "2024-12-02",
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://raleighnc.gov/government/news/new-council-meets-dec-3-regular-session-1-pm",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://raleighnc.gov/city-council/janet-cowell",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -18751,26 +18740,15 @@
    "pop": 230504,
    "officials": [
     {
-     "name": "Lily Mei",
-     "title": "Mayor",
-     "party": null,
-     "term_start": "1916-12-13",
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://fremont.gov/701/Lily-Mei-Mayor",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
-    },
-    {
      "name": "Raj Salwan",
      "title": "Mayor",
      "party": null,
-     "term_start": null,
-     "term_end": "2028-12-31",
-     "status": "unverified",
+     "term_start": "2024-12-01",
+     "term_end": "2028-11-30",
+     "status": "confirmed",
      "source_url": "https://www.fremont.gov/government/mayor-city-council",
-     "listed_by": "Open States",
-     "last_verified": "2026-10-27"
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -18800,13 +18778,13 @@
     {
      "name": "Paulette Guajardo",
      "title": "Mayor",
-     "party": "Democratic",
-     "term_start": "2022-01-01",
+     "party": null,
+     "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.cctexas.com/",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.corpuschristitx.gov/our-government/mayor-and-council/mayor-s-office/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -21574,12 +21552,12 @@
      "name": "Marikay Abuzuaiter",
      "title": "Mayor",
      "party": null,
-     "term_start": "2025-12-02",
+     "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.greensboro-nc.gov/government/city-council",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.greensboro-nc.gov/government/city-council/connect-with-city-council",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -21630,10 +21608,10 @@
      "party": null,
      "term_start": null,
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.santa-ana.org/",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.santa-ana.org/elections/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -21664,12 +21642,12 @@
      "name": "Ashleigh Aitken",
      "title": "Mayor",
      "party": null,
-     "term_start": "2022-11-01",
+     "term_start": "2022-12-01",
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.wikidata.org/wiki/Q116277972",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.anaheim.net/5174/Anaheim-Mayor-Ashleigh-Aitken",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -21787,15 +21765,15 @@
    "pop": 263886,
    "officials": [
     {
-     "name": "Tom Henry",
+     "name": "Sharon Tucker",
      "title": "Mayor",
      "party": "Democratic",
-     "term_start": null,
+     "term_start": "2024-04-23",
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.cityoffortwayne.org/meet-the-mayor.html",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.cityoffortwayne.in.gov/427/Mayors-Office",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -21841,15 +21819,15 @@
    "pop": 257141,
    "officials": [
     {
-     "name": "Tray Payne",
+     "name": "Mark McBrayer",
      "title": "Mayor",
      "party": null,
-     "term_start": "2022-05-01",
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://ci.lubbock.tx.us/pages/city-government/mayor",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "term_start": "2024-06-01",
+     "term_end": "2028-05-31",
+     "status": "confirmed",
+     "source_url": "https://www.mylubbock.us/832/Mayor",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -21859,15 +21837,15 @@
    "pop": 246018,
    "officials": [
     {
-     "name": "Scott LeMay",
+     "name": "Dylan Hedrick",
      "title": "Mayor",
      "party": null,
-     "term_start": null,
+     "term_start": "2025-06-17",
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.garlandtx.gov/directory.aspx?eid=222",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.garlandtx.gov/782/Mayor",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -21877,15 +21855,15 @@
    "pop": 223109,
    "officials": [
     {
-     "name": "Esteban Bovo",
+     "name": "Bryan Calvo",
      "title": "Mayor",
-     "party": "Republican",
-     "term_start": "2021-11-02",
+     "party": null,
+     "term_start": "2026-01-12",
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.hialeahfl.gov/directory.aspx?EID=106",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.hialeahfl.gov/195/City-Mayor",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -22673,26 +22651,15 @@
    "pop": 227470,
    "officials": [
     {
-     "name": "Sharon Weston Broome",
-     "title": "Mayor",
-     "party": "Democratic",
-     "term_start": "2017-01-02",
-     "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.brla.gov/",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
-    },
-    {
      "name": "Sid Edwards",
-     "title": "Mayor",
-     "party": null,
+     "title": "Mayor-President",
+     "party": "Republican",
      "term_start": null,
-     "term_end": "2028-12-31",
-     "status": "unverified",
+     "term_end": null,
+     "status": "confirmed",
      "source_url": "https://www.brla.gov/588/Mayor-President",
-     "listed_by": "Open States",
-     "last_verified": "2026-10-27"
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -25548,10 +25515,10 @@
      "party": "Democratic",
      "term_start": "2025-06-18",
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.sa.gov/",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.sa.gov/Directory/Departments/Mayor-Council/Mayor/Biography",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -32561,12 +32528,12 @@
      "name": "Helen Tran",
      "title": "Mayor",
      "party": null,
-     "term_start": "2022-12-21",
+     "term_start": "2022-12-01",
      "term_end": null,
-     "status": "unverified",
-     "source_url": "https://www.sbcity.org/city_hall/mayor_s_office",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://www.sbcity.org/mayor",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
@@ -37945,15 +37912,15 @@
    "pop": 228673,
    "officials": [
     {
-     "name": "Jason Gibbs",
+     "name": "Laurene Weste",
      "title": "Mayor",
      "party": null,
-     "term_start": "2020-01-01",
+     "term_start": "2025-12-09",
      "term_end": null,
-     "status": "unverified",
-     "source_url": "http://www.santa-clarita.com",
-     "listed_by": "Wikidata",
-     "last_verified": "2026-10-27"
+     "status": "confirmed",
+     "source_url": "https://santaclarita.gov/city-council/laurene-weste/",
+     "listed_by": "Official site (checked)",
+     "last_verified": "2026-10-28"
     }
    ]
   },
