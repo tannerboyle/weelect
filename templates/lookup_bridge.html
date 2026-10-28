@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Looking up your officials – We Elect{% endblock %}
+{% block meta_description %}Looking up your officials.{% endblock %}
+{% block robots %}<meta name="robots" content="noindex,nofollow">{% endblock %}
+{% block body %}<h1 class="hero">One moment&hellip;</h1>
+<p class="deck">For your privacy, We Elect no longer puts your address in the web address. Press the button to continue.</p>
+<form class="search" id="bridge" action="/lookup" method="post"><input name="address" value="{{ address }}" aria-label="Address"><button>Find</button></form>
+<script>document.getElementById("bridge").submit();</script>
+{% endblock %}

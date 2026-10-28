@@ -1,4 +1,5 @@
-{% extends "base.html" %}{% block title %}{{ p.name }} – We Elect{% endblock %}
+{% extends "base.html" %}{% block title %}{{ p.name }}, {{ p.office }} ({{ p.where }}) – We Elect{% endblock %}
+{% block meta_description %}{{ p.name }}, {{ p.office }}{% if p.where %}, {{ p.where }}{% endif %}: contact information, official links{% if kind == "fed" %} and recent votes with sources{% endif %}. Nonpartisan civic information from We Elect.{% endblock %}
 {% block body %}{% import "_bothsides.html" as B with context %}<p><a href="/">&larr; Find another address</a></p>
 <div class="profile p-{{ p.pclass }}"><span class="avatar big">{% if p.photo %}<img src="{{ p.photo }}" alt="Photo of {{ p.name }}" referrerpolicy="no-referrer">{% else %}<span class="initials" role="img" aria-label="No photo available for {{ p.name }}">{{ p.initials }}</span>{% endif %}</span>
 <div><h1>{{ p.name }}</h1><p>{{ p.office }} &middot; {{ p.where }}{% if p.party %} &middot; <span class="party">{{ p.party }}</span>{% endif %}</p>

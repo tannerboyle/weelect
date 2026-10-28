@@ -4,8 +4,11 @@
 <a class="card p-{{ o.pclass }}" href="/official/{{ o.kind }}/{{ o.id }}">{{ avatar(o) }}
 <div><strong>{{ o.name }}</strong><div class="meta">{{ o.office }}<br>{{ o.where }}</div>{% if o.party %}<span class="party">{{ o.party }}</span>{% endif %}</div></a>{% endfor %}</div>{% endmacro %}
 {% block title %}Your officials{% if geo %} – {{ geo.state_name }}{% endif %} – We Elect{% endblock %}
+{% block meta_description %}Your U.S. Representative, U.S. Senators and state legislators, with election dates, voting information and key votes. Nonpartisan, with sources.{% endblock %}
+{% block robots %}<meta name="robots" content="noindex,nofollow">{% endblock %}
+{% block canonical %}{{ site_url }}/{% endblock %}
 {% block body %}
-<form class="search" action="/lookup"><input name="address" value="{{ address }}" aria-label="Address"><button>Find</button></form>
+<form class="search" action="/lookup" method="post"><input name="address" value="{{ address }}" aria-label="Address"><button>Find</button></form>
 {% if error %}<p class="err">{{ error }}</p>{% else %}
 <section class="ataglance" aria-label="Your state at a glance">
   <div class="state-icon" aria-hidden="true">{% if state_svg %}{{ state_svg }}{% endif %}</div>
@@ -41,6 +44,7 @@
 {% endfor %}
 <div class="localjur"><h3>City council, county board &amp; school board</h3>
 <p class="meta">{% if local.school_districts %}Your school district{{ "s" if local.school_districts|length > 1 }}: {% for d in local.school_districts %}{{ d.name }}{{ ", " if not loop.last }}{% endfor %}. {% endif %}City councils, county commissioners and school boards are not yet covered. Coverage is partial; we&rsquo;re adding more.</p></div>
+{% if local.jurisdictions|rejectattr("officials")|list %}{% include "_city_interest.html" %}{% endif %}
 <p class="meta localnote">Local data comes from open datasets (Open States, Wikidata, Census) and was last checked {{ local.last_verified or "recently" }}. Local offices change often &mdash; please confirm with your city or county website.</p>
 </div>
 {% include "_support.html" %}
