@@ -17,7 +17,7 @@
 <meta name="twitter:description" content="{{ self.meta_description() }}">
 <meta name="twitter:image" content="{{ og_image }}">
 <meta name="twitter:image:alt" content="We Elect: Who represents you? Nonpartisan civic information.">
-<link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+<link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}?v=2" type="image/svg+xml">
 <link rel="preload" href="{{ url_for('static', filename='fonts/playfair-display-latin-700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=26">
 </head><body>
@@ -25,7 +25,7 @@
 <div class="flagstripe"></div>
 <header class="mast">
   <div class="mast-top"><span>{{ today }}</span><span>Nonpartisan civic information</span></div>
-  <a class="brand" href="/" aria-label="We Elect home"><img src="{{ url_for('static', filename='logo-mark.svg') }}" alt=""><span class="wordmark">We Elect</span></a>
+  <a class="brand" href="/" aria-label="We Elect home"><img src="{{ url_for('static', filename='logo-mark.svg') }}?v=2" alt=""><span class="wordmark">We Elect</span></a>
   <p class="mast-sub">Know who represents you.</p>
   <nav class="rules"><a href="/">Find my officials</a><a href="/votes">Both sides on key votes</a><a href="/measures">Ballot measures</a><a href="/get-involved">Get involved</a><a href="/credits">About &amp; credits</a></nav>
 </header>
