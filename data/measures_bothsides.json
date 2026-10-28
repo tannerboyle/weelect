@@ -746,6 +746,87 @@
    "date": "accessed 2026-10-28",
    "used_for": "Quoted arguments, campaign finance and background",
    "checked": "2026-10-28"
+  },
+  "mi2-ballot": {
+   "org": "Michigan Department of State, Bureau of Elections",
+   "title": "November 2026 ballot questions: Proposal 2026-2 (approved ballot wording)",
+   "url": "https://www.michigan.gov/sos/-/media/Project/Websites/sos/Elections/Home/Documents/2026-November-ballot-questions.pdf?rev=ba2a4778632f4f55bbc8c6f226ab3ecc",
+   "type": "Official ballot wording",
+   "date": "2026-08-17",
+   "used_for": "Official ballot wording",
+   "checked": "2026-10-28"
+  },
+  "mi2-sfa": {
+   "org": "Michigan Senate Fiscal Agency",
+   "title": "November 2026 Ballot Proposal 26-2: An Overview",
+   "url": "https://sfa.senate.michigan.gov/Publications/BallotProps/Proposal26-2.pdf",
+   "type": "Official nonpartisan legislative analysis",
+   "date": "2026",
+   "used_for": "Summary of the proposal, views of proponents and opponents, and fiscal impact",
+   "checked": "2026-10-28"
+  },
+  "mi2-bp": {
+   "org": "Ballotpedia",
+   "title": "Michigan Proposal 2, Utility and Government Contractor Campaign Finance Regulations Initiative (2026)",
+   "url": "https://ballotpedia.org/Michigan_Proposal_2,_Utility_and_Government_Contractor_Campaign_Finance_Regulations_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "nc4-lso": {
+   "org": "North Carolina Legislative Services Officer",
+   "title": "Official Summary Explanation of 2026 Constitutional Amendments (press release; copy published by the Beaufort County Board of Elections)",
+   "url": "https://www.beaufortncboe.org/sites/beaufortncboe.org/files/attachments/2026-09/2026_11_03_Summary%20Explanation%20of%20Constitutional%20Amendments.pdf",
+   "type": "Official summary explanation",
+   "date": "2026-08-20",
+   "used_for": "Official ballot question and summary explanation",
+   "checked": "2026-10-28"
+  },
+  "nc4-fn": {
+   "org": "North Carolina General Assembly, Fiscal Research Division",
+   "title": "Legislative Fiscal Note, H.B. 1089 (First Edition), Const. Amend. Property Tax Levy Limit",
+   "url": "https://www.ncleg.gov/Sessions/2025/FiscalNotes/House/PDF/HFN1089v1.pdf",
+   "type": "Official fiscal note",
+   "date": "2026-05-05",
+   "used_for": "Fiscal impact estimate",
+   "checked": "2026-10-28"
+  },
+  "nc4-bp": {
+   "org": "Ballotpedia",
+   "title": "North Carolina Property Tax Levy Limit Amendment (2026)",
+   "url": "https://ballotpedia.org/North_Carolina_Property_Tax_Levy_Limit_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "nc5-lso": {
+   "org": "North Carolina Legislative Services Officer",
+   "title": "Official Summary Explanation of 2026 Constitutional Amendments (press release; copy published by the Beaufort County Board of Elections)",
+   "url": "https://www.beaufortncboe.org/sites/beaufortncboe.org/files/attachments/2026-09/2026_11_03_Summary%20Explanation%20of%20Constitutional%20Amendments.pdf",
+   "type": "Official summary explanation",
+   "date": "2026-08-20",
+   "used_for": "Official ballot question and summary explanation",
+   "checked": "2026-10-28"
+  },
+  "nc5-fn": {
+   "org": "North Carolina General Assembly, Fiscal Research Division",
+   "title": "Legislative Fiscal Note, S.B. 1080 (First Edition), Lower Taxes for All NC",
+   "url": "https://www.ncleg.gov/Sessions/2025/FiscalNotes/Senate/PDF/SFN1080v1.pdf",
+   "type": "Official fiscal note",
+   "date": "2026-05-19",
+   "used_for": "Fiscal impact estimate",
+   "checked": "2026-10-28"
+  },
+  "nc5-bp": {
+   "org": "Ballotpedia",
+   "title": "North Carolina Reduce Income Tax Rate Cap from 7% to 3.5% Amendment (2026)",
+   "url": "https://ballotpedia.org/North_Carolina_Reduce_Income_Tax_Rate_Cap_from_7%25_to_3.5%25_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
   }
  },
  "items": [
@@ -3571,6 +3652,286 @@
    ],
    "official_src": [
     "ma6-ifv"
+   ]
+  },
+  {
+   "id": "michigan-proposal-2",
+   "state": "MI",
+   "state_name": "Michigan",
+   "label": "Proposal 26-2",
+   "title": "Bar campaign gifts from regulated utilities and large government contractors",
+   "topic": "Campaign finance",
+   "mtype": "Citizen-initiated state law",
+   "ballot_title": "A proposed initiated law to prohibit campaign contributions from certain regulated utilities and government contractors and apply campaign finance laws and regulations to additional types of political communications",
+   "official_url": "https://www.michigan.gov/sos/-/media/Project/Websites/sos/Elections/Home/Documents/2026-November-ballot-questions.pdf?rev=ba2a4778632f4f55bbc8c6f226ab3ecc",
+   "ballotpedia_url": "https://ballotpedia.org/Michigan_Proposal_2,_Utility_and_Government_Contractor_Campaign_Finance_Regulations_Initiative_(2026)",
+   "summary": "Proposal 26-2 would amend the Michigan Campaign Finance Act. It would prohibit electric and gas utilities regulated by the Michigan Public Service Commission, state and local government contractors with contracts over $250,000 in a calendar year, and certain people and organizations affiliated with them, from making direct or indirect campaign contributions to candidates and officeholders in the offices that affect them. A utility that violated the ban could face a civil fine of up to 10 times the contribution, and a contractor could lose its contract and be barred from new contracts for 12 months. It would also apply the law requiring disclosure of who paid for political communications to internet communications, and require reports of electioneering communications totaling $5,000 or more in a calendar year, including those that clearly identify a candidate or ballot question without expressly urging a vote.",
+   "summary_src": [
+    "mi2-sfa",
+    "mi2-ballot"
+   ],
+   "yes": "A YES vote would adopt the proposed law. The Senate Fiscal Agency says that if a majority of electors vote “yes,” the Michigan Campaign Finance Act “would be amended accordingly.”",
+   "no": "A NO vote would reject the proposed law and leave the current Michigan Campaign Finance Act in place.",
+   "fiscal": {
+    "text": "The Senate Fiscal Agency says the proposal “would have a minor negative fiscal impact on the Department of the Attorney General” and “could have a minor negative fiscal impact on State district courts,” which hear misdemeanor violations. It says the proposal “could have a negative fiscal impact on the Department of State, depending on the number of investigations into potential violations that it conducted.” New fines would support local libraries, and the amount is indeterminate and would depend on the number of violations. The average annual cost of one additional full-time position is estimated at $145,700.",
+    "src": [
+     "mi2-sfa"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 18, 2026, committees supporting Proposal 2 (Michiganders for Money Out of Politics and Voters Not Politicians Ballot Committee) reported $10,379,342.49 in total contributions. The top donors were All Hands on Deck Network Inc ($3,155,000.00), Pro-Democracy Campaign ($900,000.00) and Sixteen Thirty Fund ($700,000.00). The committee opposing it, Protect MI Free Speech, reported $579,000.00; its top donor was MITA, Inc ($125,000.00).",
+    "src": [
+     "mi2-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Christy McGillivray, co-chair of the Michiganders for Money Out of Politics campaign, said “Voters in Michigan will get to vote this November to ban the corrupt campaign donations flowing from regulated utilities, like DTE and Consumers, and corporations with contracts with the state of Michigan, like Blue Cross Blue Shield.”",
+     "src": [
+      "mi2-bp"
+     ]
+    },
+    {
+     "text": "The Senate Fiscal Agency reports that proponents believe expanding disclosure of electioneering spending “would increase transparency and close the loophole,” and notes that 38 states require sponsor disclosure on internet communications while Michigan does not.",
+     "src": [
+      "mi2-sfa"
+     ]
+    },
+    {
+     "text": "The agency says proponents also believe companies that benefit from state funds through government contracts should not be able to donate to campaigns, citing a study that “found that over 80% of State legislators accepted political spending from energy utility companies.”",
+     "src": [
+      "mi2-sfa"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Wendy Block of the Michigan Chamber of Commerce said “this measure raises serious concerns and sets a dangerous precedent by limiting public discourse and free speech,” and that Michigan’s process “should welcome all voices and encourage fair, open and transparent debate.”",
+     "src": [
+      "mi2-bp"
+     ]
+    },
+    {
+     "text": "Katie Carey of Consumers Energy said the measure “will simply shift influence away from Michigan companies and toward wealthy national donors and special interests,” and that “local employers and their employees risk being sidelined.”",
+     "src": [
+      "mi2-bp"
+     ]
+    },
+    {
+     "text": "The Senate Fiscal Agency reports that opponents say barring one industry from supporting candidates sets “a bad legal precedent by selectively limiting free speech for specific groups,” and fear “a series of potentially expensive court challenges.”",
+     "src": [
+      "mi2-sfa"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "When the bans would start.",
+     "text": "According to the Senate Fiscal Agency, the contribution prohibitions “would not be enforceable until 18 months after the proposal’s effective date, except in certain circumstances.”",
+     "src": [
+      "mi2-sfa"
+     ]
+    },
+    {
+     "label": "What counts as a contract.",
+     "text": "The agency says “contract” would not include loans or loan guarantees, subsidies or grants allocated through the appropriations process, collective bargaining agreements, or agreements between political subdivisions of the state. A person would not violate the ban if a prohibited contribution were returned within 30 days of the recipient knowing or having reason to know its source.",
+     "src": [
+      "mi2-sfa"
+     ]
+    }
+   ],
+   "official_src": [
+    "mi2-sfa",
+    "mi2-ballot"
+   ]
+  },
+  {
+   "id": "north-carolina-property-tax-levy-limit-amendment",
+   "state": "NC",
+   "state_name": "North Carolina",
+   "label": "Amendment (property tax limit)",
+   "title": "Require the General Assembly to limit local property tax increases",
+   "topic": "Taxes",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Constitutional amendment requiring limits on property tax increases by local governments.",
+   "official_url": "https://www.beaufortncboe.org/sites/beaufortncboe.org/files/attachments/2026-09/2026_11_03_Summary%20Explanation%20of%20Constitutional%20Amendments.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/North_Carolina_Property_Tax_Levy_Limit_Amendment_(2026)",
+   "summary": "This amendment to the North Carolina Constitution would require the General Assembly to set limits on property tax increases by local governments. The amendment does not itself set a limit. Ballotpedia says the state constitution does not currently include such a requirement. The legislature referred the amendment to the ballot as House Bill 1089, which passed the House 73-46 and the Senate 31-15, mostly along party lines.",
+   "summary_src": [
+    "nc4-lso",
+    "nc4-bp"
+   ],
+   "yes": "A FOR vote would add to the state constitution a requirement that the General Assembly enact limits on property tax increases by local governments.",
+   "no": "An AGAINST vote would leave the constitution as it is, without that requirement.",
+   "fiscal": {
+    "text": "The General Assembly’s Fiscal Research Division estimates the measure has “no fiscal impact” for two reasons. The specifics of any levy limit “would be addressed by a future fiscal note should the referendum pass,” and additional election costs are expected to be minimal. The note says the bill does not require or prohibit the General Assembly from using any specific variables to define allowable increases, such as flat growth rates, population changes or inflation.",
+    "src": [
+     "nc4-fn"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 2, 2026, NC By the People was the only committee registered on this amendment. It opposes the measure and reported $59,305.62 in total contributions, including $50,000.00 in cash. Ballotpedia had not identified any committee registered in support.",
+    "src": [
+     "nc4-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "House Speaker Destin Hall (R) said “Property taxes are out of control, and some local governments are abusing their power by overtaxing and underdelivering for their constituents.”",
+     "src": [
+      "nc4-bp"
+     ]
+    },
+    {
+     "text": "He said “It’s time for real reform, and this constitutional amendment on levy limits will help stop runaway property tax hikes and protect North Carolina taxpayers.”",
+     "src": [
+      "nc4-bp"
+     ]
+    },
+    {
+     "text": "Rep. Alan Branson (R) said “This changes the incentive structure for local governments by preventing expanded budgeting by automatic absorption of large revenue increases from reevaluation.”",
+     "src": [
+      "nc4-bp"
+     ]
+    },
+    {
+     "text": "Ballotpedia lists the Republican Party of North Carolina, Americans for Tax Reform and the National Federation of Independent Businesses among supporters.",
+     "src": [
+      "nc4-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Alexandra Sirota of the NC Budget & Tax Center said “A levy limit will not address the unaffordable housing costs that so many households are facing.”",
+     "src": [
+      "nc4-bp"
+     ]
+    },
+    {
+     "text": "Rep. Deb Butler (D) said “property taxes are not rising because cities and counties suddenly went on a wild, drunken binge and started spending like sailors. It’s because of the cost shifting that we have done from this body.”",
+     "src": [
+      "nc4-bp"
+     ]
+    },
+    {
+     "text": "The Sierra Club of North Carolina said “The legislature already has enormous power over what local governments can do, including the ability to enact laws limiting the amount by which property taxes may be increased.”",
+     "src": [
+      "nc4-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "No limit is written yet.",
+     "text": "The Fiscal Research Division says that if the amendment passes, “the specifics of any limits on levies would be specified in subsequent legislation.”",
+     "src": [
+      "nc4-fn",
+      "nc4-bp"
+     ]
+    },
+    {
+     "label": "Who has taken sides.",
+     "text": "Ballotpedia lists the Democratic Party of North Carolina, the NC AFL-CIO, the NC PTA and the Sierra Club North Carolina among opponents.",
+     "src": [
+      "nc4-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "nc4-lso"
+   ]
+  },
+  {
+   "id": "north-carolina-income-tax-cap-amendment",
+   "state": "NC",
+   "state_name": "North Carolina",
+   "label": "Amendment (income tax cap)",
+   "title": "Lower the constitutional cap on the state income tax rate from 7% to 3.5%",
+   "topic": "Taxes",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Constitutional amendment to keep the State income tax rate from being raised higher than three and one-half percent (3.5%).",
+   "official_url": "https://www.beaufortncboe.org/sites/beaufortncboe.org/files/attachments/2026-09/2026_11_03_Summary%20Explanation%20of%20Constitutional%20Amendments.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/North_Carolina_Reduce_Income_Tax_Rate_Cap_from_7%25_to_3.5%25_Amendment_(2026)",
+   "summary": "This amendment to the North Carolina Constitution would lower the State income tax rate from a maximum of 7% to a maximum of 3.5% beginning January 1, 2027. The Fiscal Research Division says the cap would apply to both personal and corporate income tax. It sets a ceiling, not a rate. Under the amendment the legislature could not go above 3.5% without voters approving another constitutional amendment. The legislature referred it as Senate Bill 1080, which passed the Senate 30-18 and the House 73-46, along party lines.",
+   "summary_src": [
+    "nc5-lso",
+    "nc5-fn",
+    "nc5-bp"
+   ],
+   "yes": "A FOR vote would lower the constitutional maximum state income tax rate from 7% to 3.5% beginning January 1, 2027.",
+   "no": "An AGAINST vote would leave the constitutional maximum at 7%.",
+   "fiscal": {
+    "text": "The General Assembly’s Fiscal Research Division estimates “no fiscal impact.” State law already schedules the personal income tax rate at 3.99% in 2026, and the May 2026 revenue forecast expects it to fall to 3.49% in 2027 and 2.99% in 2028 and after, under the cap. The corporate rate is set at 2% in 2026 and 2027, 1% in 2028 and 2029, and 0% in 2030 and after. The note adds that if revenue fell short of the statutory triggers and the rate stayed at 3.99%, “the 3.5% maximum allowable income tax rate would become binding and require a reduction to the personal income tax rate.”",
+    "src": [
+     "nc5-fn"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 2, 2026, NC By the People was the only committee registered on this amendment. It opposes the measure and reported $59,305.62 in total contributions, including $50,000.00 in cash. Ballotpedia had not identified any committee registered in support.",
+    "src": [
+     "nc5-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "Sen. Michael Lee (R), the sponsor, said “Our tax reforms have produced more than a decade of strong revenue growth while letting people keep more of what they earn, and this amendment locks in that progress.”",
+     "src": [
+      "nc5-bp"
+     ]
+    },
+    {
+     "text": "He said “This is their decision to make, and it’s a chance to put a real, lasting protection in the constitution for every taxpayer in the state.”",
+     "src": [
+      "nc5-bp"
+     ]
+    },
+    {
+     "text": "Ballotpedia lists the Republican Party of North Carolina, Americans for Tax Reform and the National Federation of Independent Businesses among supporters.",
+     "src": [
+      "nc5-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Gov. Josh Stein (D) called the amendment “a con, a cynical shell game and a millionaire protection cap.”",
+     "src": [
+      "nc5-bp"
+     ]
+    },
+    {
+     "text": "The NC Budget & Tax Center said “A limit on the income tax rate won’t keep total state and local taxes low,” and that states with income tax limits “tend to rely more on sales taxes, property taxes, and fees.”",
+     "src": [
+      "nc5-bp"
+     ]
+    },
+    {
+     "text": "The Sierra Club of North Carolina said the amendment “would have no near-term effect, as state law already mandates that the personal income tax rate will be lowered to 3.49% starting in 2027,” but would “tie the hands of future state legislators.”",
+     "src": [
+      "nc5-bp"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "2018 precedent.",
+     "text": "Voters last decided an income tax cap amendment in 2018, when they approved lowering the maximum rate from 10% to 7%, 57.35% to 42.65%.",
+     "src": [
+      "nc5-bp"
+     ]
+    },
+    {
+     "label": "Another vote would be required.",
+     "text": "Ballotpedia says the state government would be prohibited from raising the rate above 3.5% without voter approval of another constitutional amendment.",
+     "src": [
+      "nc5-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "nc5-lso",
+    "nc5-fn"
    ]
   }
  ]
