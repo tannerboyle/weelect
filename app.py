@@ -8,6 +8,7 @@ import votes as votes_mod
 import elections as elections_mod
 import bothsides as bs_mod
 import measures as ms_mod
+import getinvolved as gi_mod
 import localdata
 from functools import lru_cache
 import requests
@@ -130,7 +131,7 @@ def flag_url(code):
 @app.route("/credits")
 def credits():
     flags = _load("flag_credits.json")
-    return render_template("credits.html", flags=flags, bs_sources=bs_mod.all_sources(), ms_sources=ms_mod.all_sources())
+    return render_template("credits.html", flags=flags, bs_sources=bs_mod.all_sources(), ms_sources=ms_mod.all_sources(), gi_sources=list(gi_mod.SOURCES.values()))
 
 
 @app.context_processor
@@ -154,6 +155,20 @@ def votes_item(slug):
     items = bs_mod.items()
     i = items.index(it)
     return render_template("votes_item.html", it=it, prev=items[i - 1] if i else None, nxt=items[i + 1] if i + 1 < len(items) else None)
+
+
+@app.route("/get-involved")
+def get_involved():
+    order, ways = [], []
+    for w in gi_mod.WAYS:
+        for sid in w["src"]:
+            if sid not in order:
+                order.append(sid)
+        ways.append(dict(w, nums=[order.index(sid) + 1 for sid in w["src"]]))
+    # Sources cited in the "Official places to start" list are all in SOURCES; list every source in citation order.
+    rest = [k for k in gi_mod.SOURCES if k not in order]
+    sources = [(i + 1, gi_mod.SOURCES[k]) for i, k in enumerate(order + rest)]
+    return render_template("get_involved.html", ways=ways, sources=sources, gi_checked=gi_mod.CHECKED)
 
 
 @app.route("/measures")
@@ -555,7 +570,7 @@ def robots_txt():
 @app.route("/sitemap.xml")
 def sitemap_xml():
     from xml.sax.saxutils import escape
-    urls = [("/", None), ("/votes", bs_mod.meta().get("last_reviewed")), ("/measures", ms_mod.meta().get("last_reviewed")), ("/credits", None)]
+    urls = [("/", None), ("/get-involved", gi_mod.CHECKED), ("/votes", bs_mod.meta().get("last_reviewed")), ("/measures", ms_mod.meta().get("last_reviewed")), ("/credits", None)]
     urls += [(f"/votes/{it['id']}", bs_mod.meta().get("last_reviewed")) for it in bs_mod.items()]
     urls += [(f"/measures/{it['id']}", ms_mod.meta().get("last_reviewed")) for it in ms_mod.items()]
     urls += [(f"/official/fed/{b}", None) for b in sorted(FED_BY_ID)]

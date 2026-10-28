@@ -1,0 +1,38 @@
+{% extends "base.html" %}{% block title %}How to get involved in local politics – We Elect{% endblock %}
+{% block meta_description %}Practical, nonpartisan ways to take part in local government and elections: public comment at city council, county and school board meetings, boards and commissions, running for office, party committees, poll work, volunteering and voter registration, with the steps and official sources for each.{% endblock %}
+{% block body %}<div class="credits gi">
+<h1 class="hero" style="text-align:left;font-size:2.2rem">How to get involved in local politics</h1>
+<p class="deck bs-wide">Local governments make many of their decisions at public meetings, and there are more ways to take part than voting. Below are ten practical ways to get involved, the steps for each, and the official or nonpartisan sources behind them. This page is nonpartisan: it does not tell you which causes, candidates or parties to support.</p>
+<p class="note bs-wide"><strong>Rules vary.</strong> Open-meetings laws, filing deadlines, application processes and eligibility differ by state, city, county and school district. Use this page to learn what to ask, then confirm details with your clerk or election office. It is general information, not legal advice. Last reviewed {{ gi_checked }}.</p>
+<nav class="gi-jump" aria-label="On this page"><strong>Jump to:</strong> {% for w in ways %}<a href="#{{ w.id }}">{{ w.short }}</a>{% if not loop.last %} &middot; {% endif %}{% endfor %}</nav>
+
+<section class="gi-lookup" aria-labelledby="gi-lookup-h">
+  <h2 id="gi-lookup-h">Start with your own address</h2>
+  <p class="fine">See the officials who represent you and what is on your ballot, then use the steps below for your city, county and school district. Your address is handled the same way as on the home page and is not saved.</p>
+  <form class="search" action="/lookup" method="post"><input name="address" maxlength="200" aria-label="Home address" placeholder="Street address, city, state" autocomplete="street-address" required><button>Find</button></form>
+</section>
+
+{% for w in ways %}<section class="gi-way" id="{{ w.id }}">
+<div class="sechead"><span class="star">★</span><h2>{{ w.title }}</h2></div>
+{% for p in w.what %}<p>{{ p|safe }}</p>{% endfor %}
+<h3>How to start</h3>
+<ol>{% for st in w.steps %}<li>{{ st|safe }}</li>{% endfor %}</ol>
+<p class="gi-src">Sources: {% for n in w.nums %}<a href="#gi-src-{{ n }}">[{{ n }}]</a>{% if not loop.last %} {% endif %}{% endfor %}</p>
+</section>{% endfor %}
+
+<div class="sechead"><span class="star">★</span><h2>Official places to start</h2></div>
+<ul>
+<li><a href="https://www.usa.gov/state-election-office" target="_blank" rel="noopener">USAGov: state and local election offices</a>, for help with registering, voting and election results; the office to ask about local filing and sign-up rules.</li>
+<li><a href="https://vote.gov" target="_blank" rel="noopener">Vote.gov</a>, the federal starting point for registering to vote in your state.</li>
+<li><a href="https://www.usa.gov/local-governments" target="_blank" rel="noopener">USAGov: local governments by state</a> and <a href="https://www.usa.gov/elected-officials" target="_blank" rel="noopener">find and contact elected officials</a>.</li>
+<li><a href="https://www.vote411.org" target="_blank" rel="noopener">VOTE411.org</a> from the League of Women Voters Education Fund, for nonpartisan election information.</li>
+<li><a href="https://ballotpedia.org/State_election_agencies" target="_blank" rel="noopener">Ballotpedia: state election agencies</a>, with links to state and local election offices.</li>
+<li><a href="https://www.rcfp.org/open-government-guide/" target="_blank" rel="noopener">Open Government Guide</a> to your state&rsquo;s open meetings and open records laws.</li>
+</ul>
+
+<div class="sechead" id="sources"><span class="star">★</span><h2>Sources</h2></div>
+<p class="fine" style="text-align:left;margin-left:0">Each page below was opened and read on {{ gi_checked }}. We cite city pages only as examples of how a process can work; yours may differ. We Elect does not use statistics on this page.</p>
+<ol class="bs-credit gi-sources">{% for n, s in sources %}<li id="gi-src-{{ n }}"><a href="{{ s[2] }}" target="_blank" rel="noopener">{{ s[1] }}</a> &mdash; {{ s[0] }} ({{ s[3] }}{% if s[4] %}, {{ s[4] }}{% endif %})</li>{% endfor %}</ol>
+<p class="fine bs-wide"><a href="/">Find my officials</a> &middot; <a href="/measures">Ballot measures</a> &middot; <a href="/credits#get-involved">How we wrote this page</a></p>
+{% include "_support.html" %}
+</div>{% endblock %}

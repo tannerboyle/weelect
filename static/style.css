@@ -254,3 +254,23 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{ou
 .ms-state{font-family:var(--display);font-size:1.5rem;margin:22px 0 8px;border-bottom:1px solid var(--ink);padding-bottom:4px}
 .ms-link{display:inline-block;margin-top:4px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;white-space:nowrap}
 @media (max-width:760px){.ms-yn{grid-template-columns:1fr}}
+
+/* v26: "Is your voice not being heard?" home block and /get-involved */
+.voice{max-width:720px;margin:34px auto 0;border-top:2px solid var(--ink);padding-top:10px;text-align:center}
+.voice h2{font-size:1.15rem;margin:0 0 4px}
+.voice .fine{text-align:center;max-width:560px;margin:0 auto 10px}
+.voice p{margin:0}
+.btnlink{display:inline-block;padding:13px 22px;font:600 .85rem var(--text);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:var(--navy);color:#fff;border:1px solid var(--navy);border-radius:0;line-height:1.3}
+.btnlink:hover,.btnlink:focus-visible{background:var(--red);border-color:var(--red);color:#fff}
+@media (max-width:520px){.voice .btnlink{display:block}}
+.gi .gi-jump{font-size:.88rem;line-height:1.9;margin:12px 0 4px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:6px 0}
+.gi .gi-jump a{white-space:nowrap}
+.gi .gi-lookup{border:1px solid var(--ink);border-top-width:3px;background:#fffdf7;padding:12px 16px 14px;margin:18px 0 6px}
+.gi .gi-lookup h2{font-size:1.15rem;margin:0 0 2px}
+.gi .gi-lookup .fine{text-align:left;margin:4px 0 10px;max-width:none}
+.gi .gi-way h3{font-size:1rem;margin:12px 0 4px}
+.gi .gi-way ol{margin:0 0 8px;padding-left:1.3em}
+.gi .gi-way li{margin:0 0 4px}
+.gi .gi-src{font-size:.82rem;color:var(--mute);margin:6px 0 0}
+.gi .gi-sources{font-size:.88rem;padding-left:1.5em;overflow-wrap:anywhere}
+.gi p,.gi li{overflow-wrap:break-word}
