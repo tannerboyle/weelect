@@ -638,6 +638,42 @@
    "date": "2026-08-19",
    "used_for": "State law on which ballot measures get a JLBC fiscal summary",
    "checked": "2026-10-28"
+  },
+  "oh3-lsc": {
+   "org": "Ohio Legislative Service Commission",
+   "title": "Fiscal Note & Local Impact Statement, S.J.R. 10 (version in Senate General Government, June 1, 2026)",
+   "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/00_IN/attachments/fiscal_notes/",
+   "type": "Official fiscal analysis",
+   "date": "2026-06-01",
+   "used_for": "State fiscal effect",
+   "checked": "2026-10-28"
+  },
+  "mi1-protect": {
+   "org": "Protect MI Constitution from Special Interests",
+   "title": "Vote NO on Proposal 1 (campaign website)",
+   "url": "https://www.protectmiconstitution.com/",
+   "type": "Campaign website (opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "The opposition campaign’s own arguments and cost claim",
+   "checked": "2026-10-28"
+  },
+  "fl3-no": {
+   "org": "Vote No on 3 (opponents’ campaign)",
+   "title": "Vote No on 3: Stop Unfair Tax Shifts (campaign website)",
+   "url": "https://votenoonamendment3.com/",
+   "type": "Campaign website (opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "The opponents’ own description and arguments",
+   "checked": "2026-10-28"
+  },
+  "fl3-yes": {
+   "org": "Vote Yes on 3 (supporters’ campaign)",
+   "title": "Vote YES on Amendment 3 (campaign website)",
+   "url": "https://voteyeson3.com/",
+   "type": "Campaign website (supporters)",
+   "date": "accessed 2026-10-28",
+   "used_for": "The supporters’ own description and arguments",
+   "checked": "2026-10-28"
   }
  },
  "items": [
@@ -1842,7 +1878,13 @@
    ],
    "official_src": [
     "oh3-sos"
-   ]
+   ],
+   "fiscal": {
+    "text": "The Legislative Service Commission’s fiscal note on S.J.R. 10 (the Senate version dated June 1, 2026) says the only direct cost is ballot advertising, paid from the Secretary of State’s Statewide Ballot Advertising Fund. It says the actual cost “depends on the length of the ballot measure, explanations, and arguments for and against.” For comparison, the Secretary of State paid approximately $405,000 for State Issue 1 (November 2024) and nearly $358,000 for State Issue 2 (May 2025).",
+    "src": [
+     "oh3-lsc"
+    ]
+   }
   },
   {
    "id": "north-carolina-photo-id-amendment",
@@ -1933,7 +1975,13 @@
     "nc1-lso",
     "nc1-sl",
     "nc1-fiscal"
-   ]
+   ],
+   "fiscal": {
+    "text": "The nonpartisan legislative summary of the amendment bill (S.L. 2024-58) does not include a cost estimate, and we did not find another official fiscal note for this amendment.",
+    "src": [
+     "nc1-fiscal"
+    ]
+   }
   },
   {
    "id": "michigan-proposal-1",
@@ -1953,9 +2001,10 @@
    "yes": "A “yes” vote means a convention of elected delegates would be convened in 2027 to draft a general revision of the State Constitution for presentation to the State’s voters for their approval or rejection.",
    "no": "A “no” vote means no convention would be held, and the current Constitution of 1963 would remain in place, subject to the usual amendment process.",
    "fiscal": {
-    "text": "The Senate Fiscal Agency says a convention’s cost is hard to estimate because the last one was held in 1961. It offers three approaches: about $10.2 million, based on inflating the 1961 convention’s costs (about $0.85 million per month); about $22.0 million per year, scaling spending by Michigan’s redistricting commission; and an operating budget of $47.3 million per year, using Oklahoma’s Legislature as a stand-in. Delegate elections held on regular dates would add no election costs, but three separate statewide elections could exceed $60.9 million. The budget would be set by the Legislature through appropriations.",
+    "text": "The Senate Fiscal Agency says a convention’s cost is hard to estimate because the last one was held in 1961. It offers three approaches: about $10.2 million, based on inflating the 1961 convention’s costs (about $0.85 million per month); about $22.0 million per year, scaling spending by Michigan’s redistricting commission; and an operating budget of $47.3 million per year, using Oklahoma’s Legislature as a stand-in. Delegate elections held on regular dates would add no election costs, but three separate statewide elections could exceed $60.9 million. The budget would be set by the Legislature through appropriations. The campaign opposing the proposal, Protect MI Constitution from Special Interests, says the convention “would cost nearly $45 million in taxpayer dollars”; that is the campaign’s own claim, not an official estimate.",
     "src": [
-     "mi1-sfa"
+     "mi1-sfa",
+     "mi1-protect"
     ]
    },
    "money": {
@@ -2841,9 +2890,11 @@
    "yes": "A yes vote would approve the amendment: the non-school homestead exemption would rise to $150,000 in 2027 and $250,000 in 2028, the annual cap on non-homestead assessment increases would drop from 10% to 5%, and counties and municipalities would be limited to listed purposes when spending property taxes.",
    "no": "A no vote would leave the current homestead exemption, the 10% cap on non-homestead assessment increases, and current rules on local property tax spending in place.",
    "fiscal": {
-    "text": "The Florida Revenue Estimating Conference’s middle estimate (reviewed June 12 and July 10, 2026) is a reduction in local non-school property tax revenue of $4,929.5 million in 2027-28 and $8,714.5 million in 2028-29, rising to a recurring reduction of $11,834.7 million per year. It estimates no impact on school taxes. It says the effect of requiring the Legislature to set procedures for fully exempting homesteads from county and municipal levies is unknown, because it depends on future legislative action.",
+    "text": "The Florida Revenue Estimating Conference’s middle estimate (reviewed June 12 and July 10, 2026) is a reduction in local non-school property tax revenue of $4,929.5 million in 2027-28 and $8,714.5 million in 2028-29, rising to a recurring reduction of $11,834.7 million per year. It estimates no impact on school taxes. It says the effect of requiring the Legislature to set procedures for fully exempting homesteads from county and municipal levies is unknown, because it depends on future legislative action. The campaigns make their own claims, which are not official estimates. The Vote No campaign says the amendment “could eventually bleed $34 billion from local government budgets.” The Vote Yes campaign says it will “help a majority of Florida homeowners achieve SIGNIFICANT savings on their future property tax bills.”",
     "src": [
-     "fl3-rec"
+     "fl3-rec",
+     "fl3-no",
+     "fl3-yes"
     ]
    },
    "money": {
