@@ -629,6 +629,15 @@
    "date": "accessed 2026-10-28",
    "used_for": "Quoted arguments, campaign finance and background",
    "checked": "2026-10-28"
+  },
+  "az-jlbc": {
+   "org": "Arizona Joint Legislative Budget Committee (JLBC) staff",
+   "title": "Ballot Initiatives (page on fiscal analyses of November 2026 ballot propositions)",
+   "url": "https://www.azjlbc.gov/ballot-initiatives/",
+   "type": "Official legislative fiscal office",
+   "date": "2026-08-19",
+   "used_for": "State law on which ballot measures get a JLBC fiscal summary",
+   "checked": "2026-10-28"
   }
  },
  "items": [
@@ -2713,7 +2722,14 @@
    ],
    "official_src": [
     "az-pp"
-   ]
+   ],
+   "fiscal": {
+    "text": "Arizona law requires the Joint Legislative Budget Committee (JLBC) staff to summarize the fiscal impact of each voter initiative, and the JLBC states that “This requirement excludes legislatively referred propositions.” This measure was referred by the legislature, so the official pamphlet has no JLBC fiscal summary for it. The Legislative Council analysis in the pamphlet does not include a cost estimate, and we did not find another official one. The measure itself would require the legislature to appropriate any money necessary to implement it.",
+    "src": [
+     "az-jlbc",
+     "az-pp"
+    ]
+   }
   },
   {
    "id": "arizona-proposition-318",
@@ -2797,7 +2813,14 @@
    ],
    "official_src": [
     "az-pp"
-   ]
+   ],
+   "fiscal": {
+    "text": "Arizona law requires the Joint Legislative Budget Committee (JLBC) staff to summarize the fiscal impact of each voter initiative, and the JLBC states that “This requirement excludes legislatively referred propositions.” This measure was referred by the legislature, so the official pamphlet has no JLBC fiscal summary for it. The Legislative Council analysis in the pamphlet does not include a cost estimate, and we did not find another official one.",
+    "src": [
+     "az-jlbc",
+     "az-pp"
+    ]
+   }
   },
   {
    "id": "florida-amendment-3",
