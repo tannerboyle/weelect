@@ -674,6 +674,78 @@
    "date": "accessed 2026-10-28",
    "used_for": "The supporters’ own description and arguments",
    "checked": "2026-10-28"
+  },
+  "ma1-ifv": {
+   "org": "Massachusetts Secretary of the Commonwealth",
+   "title": "2026 Information for Voters: Question 1 (summary, what a yes or no vote does, fiscal statement, 150-word arguments, legislative report)",
+   "url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "Attorney General summary, yes/no statements, fiscal statement, official arguments and the Legislature's committee report",
+   "checked": "2026-10-28"
+  },
+  "ma1-bp": {
+   "org": "Ballotpedia",
+   "title": "Massachusetts Question 1, Public Records Requirements for Legislature and Governor’s Office Initiative (2026)",
+   "url": "https://ballotpedia.org/Massachusetts_Question_1,_Public_Records_Requirements_for_Legislature_and_Governor%E2%80%99s_Office_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "ma2-ifv": {
+   "org": "Massachusetts Secretary of the Commonwealth",
+   "title": "2026 Information for Voters: Question 2 (summary, what a yes or no vote does, fiscal statement, 150-word arguments, legislative report)",
+   "url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "Attorney General summary, yes/no statements, fiscal statement, official arguments and the Legislature's committee report",
+   "checked": "2026-10-28"
+  },
+  "ma2-bp": {
+   "org": "Ballotpedia",
+   "title": "Massachusetts Question 2, Permit Collective Bargaining for Committee for Public Counsel Services Employees Initiative (2026)",
+   "url": "https://ballotpedia.org/Massachusetts_Question_2,_Permit_Collective_Bargaining_for_Committee_for_Public_Counsel_Services_Employees_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "ma5-ifv": {
+   "org": "Massachusetts Secretary of the Commonwealth",
+   "title": "2026 Information for Voters: Question 5 (summary, what a yes or no vote does, fiscal statement, 150-word arguments, legislative report)",
+   "url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "Attorney General summary, yes/no statements, fiscal statement, official arguments and the Legislature's committee report",
+   "checked": "2026-10-28"
+  },
+  "ma5-bp": {
+   "org": "Ballotpedia",
+   "title": "Massachusetts Question 5, Change State Tax Revenue Limit Initiative (2026)",
+   "url": "https://ballotpedia.org/Massachusetts_Question_5,_Change_State_Tax_Revenue_Limit_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "ma6-ifv": {
+   "org": "Massachusetts Secretary of the Commonwealth",
+   "title": "2026 Information for Voters: Question 6 (summary, what a yes or no vote does, fiscal statement, 150-word arguments, legislative report)",
+   "url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "type": "Official state voter guide",
+   "date": "2026",
+   "used_for": "Attorney General summary, yes/no statements, fiscal statement, official arguments and the Legislature's committee report",
+   "checked": "2026-10-28"
+  },
+  "ma6-bp": {
+   "org": "Ballotpedia",
+   "title": "Massachusetts Question 6, Establish the Nature for All Fund Initiative (2026)",
+   "url": "https://ballotpedia.org/Massachusetts_Question_6,_Establish_the_Nature_for_All_Fund_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
   }
  },
  "items": [
@@ -3140,6 +3212,365 @@
    ],
    "official_src": [
     "ma9-ifv"
+   ]
+  },
+  {
+   "state": "MA",
+   "state_name": "Massachusetts",
+   "mtype": "Citizen-initiated state law",
+   "official_url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "id": "massachusetts-question-1",
+   "label": "Question 1",
+   "title": "Make most Legislature and governor’s office records public",
+   "topic": "Government transparency",
+   "ballot_title": "Expanding the Public Records Law. Do you approve of a law summarized below, on which no vote was taken by the Senate or the House of Representatives before May 6, 2026?",
+   "ballotpedia_url": "https://ballotpedia.org/Massachusetts_Question_1,_Public_Records_Requirements_for_Legislature_and_Governor%E2%80%99s_Office_Initiative_(2026)",
+   "summary": "Question 1 would make most records held by the Legislature and the Office of the Governor public records under the Massachusetts Public Records Law. It would exempt documents related to the development of public policy, and communications between legislators and their constituents if those communications are reasonably related to a constituent’s request for assistance in obtaining government-provided benefits or services or interacting with a government agency.",
+   "summary_src": [
+    "ma1-ifv"
+   ],
+   "yes": "A YES VOTE would make most records held by the Legislature and the Office of the Governor public records under the Massachusetts Public Records Law.",
+   "no": "A NO VOTE would make no change to the Massachusetts Public Records Law.",
+   "fiscal": {
+    "text": "The state’s fiscal statement, written by the Executive Office of Administration and Finance, says the proposed law “has no discernible material fiscal consequences for state and municipal government finances.”",
+    "src": [
+     "ma1-ifv"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 20, 2026, the Committee for Transparency and Democracy, which wrote the official argument for Question 1, reported $374,937.00 in total contributions. Another supporting committee, Coalition for Healthy Democracy 2026, also registered to support Question 3, so its $7,164,297.62 cannot be split between the two measures. Ballotpedia lists no committee registered in opposition.",
+    "src": [
+     "ma1-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor was written by Diana DiZoglio of the Committee for Transparency and Democracy. It says “Good government groups rank our state the least transparent in the nation. We’re one of only two states where both the Governor’s office and the Legislature claim a blanket exemption from the public records law.”",
+     "src": [
+      "ma1-ifv"
+     ]
+    },
+    {
+     "text": "It argues that “Every city, town, and state agency must follow that law, but the politicians on Beacon Hill exempted themselves,” and that the measure “protects constituent privacy” and has no cost to taxpayers.",
+     "src": [
+      "ma1-ifv"
+     ]
+    },
+    {
+     "text": "It adds that “In 2024, 72% of voters said yes to auditing the Legislature,” and that Question 1 “will give you and every taxpayer the ability to access public records directly.”",
+     "src": [
+      "ma1-ifv"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "No organized group urged a no vote, so the Secretary of the Commonwealth compiled the official argument against, in part from the Legislature’s Majority Report. It says the law “includes overly broad and poorly defined exemptions,” and that the temporary exemption for policy development “will chill open communications by lawmakers, raising significant constitutional concerns.”",
+     "src": [
+      "ma1-ifv"
+     ]
+    },
+    {
+     "text": "It argues that “The narrow protection for constituent communications creates serious privacy risks,” because the law leaves open to disclosure “all other general constituent communications, such as emails and letters from citizens expressing personal political views, sharing sensitive local grievances, or criticizing lawmakers.”",
+     "src": [
+      "ma1-ifv"
+     ]
+    },
+    {
+     "text": "It concludes that “this measure creates a flawed framework that fails to deliver genuine accountability while actively compromising constituent privacy.”",
+     "src": [
+      "ma1-ifv"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "How it reached the ballot.",
+     "text": "The petition was presented to the Legislature, which did not enact it. A majority of the Legislature’s Special Joint Committee on Initiative Petitions voted on May 4, 2026 to recommend that the General Court “take no action,” and the question went to voters under the initiative process.",
+     "src": [
+      "ma1-ifv"
+     ]
+    },
+    {
+     "label": "Who has endorsed it.",
+     "text": "Ballotpedia lists supporters from both major parties, including the Democratic Party of Massachusetts and the Republican Party of Massachusetts, and no organized opposition group. The official argument against was written by the Secretary of the Commonwealth rather than an opponent.",
+     "src": [
+      "ma1-bp",
+      "ma1-ifv"
+     ]
+    }
+   ],
+   "official_src": [
+    "ma1-ifv"
+   ]
+  },
+  {
+   "state": "MA",
+   "state_name": "Massachusetts",
+   "mtype": "Citizen-initiated state law",
+   "official_url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "id": "massachusetts-question-2",
+   "label": "Question 2",
+   "title": "Let public defender agency employees bargain collectively",
+   "topic": "Labor and courts",
+   "ballot_title": "Collective Bargaining for CPCS Employees. Do you approve of a law summarized below, on which no vote was taken by the Senate or the House of Representatives before May 6, 2026?",
+   "ballotpedia_url": "https://ballotpedia.org/Massachusetts_Question_2,_Permit_Collective_Bargaining_for_Committee_for_Public_Counsel_Services_Employees_Initiative_(2026)",
+   "summary": "Question 2 would specify that employees of the Committee for Public Counsel Services (CPCS) may engage in collective bargaining with their employer. CPCS provides legal representation to people who are entitled to a lawyer and cannot afford one. After executing a collective bargaining agreement, CPCS would have to request from the Governor the appropriation needed to fund it.",
+   "summary_src": [
+    "ma2-ifv",
+    "ma2-bp"
+   ],
+   "yes": "A YES VOTE would specify that Committee for Public Counsel Services employees may form a union to collectively bargain with their employer.",
+   "no": "A NO VOTE would make no change to the law governing labor relations for Committee for Public Counsel Service employees.",
+   "fiscal": {
+    "text": "The state’s fiscal statement, written by the Executive Office of Administration and Finance, says CPCS “receives its funding, in part, from state government appropriations” and that “The fiscal impact of the proposed law is difficult to project due to the uncertainty regarding the outcomes of any such collective bargaining by CPCS employees.”",
+    "src": [
+     "ma2-ifv"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 20, 2026, committees supporting Question 2 reported $1,073,764.95 in total contributions. The top donors were SEIU Local 888 ($542,060.00) and the National Association of Government Employees ($526,000.00). Ballotpedia lists no committee registered in opposition.",
+    "src": [
+     "ma2-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor was written by Tom McKeever of Labor Unions for Public Counsel Workers Rights. It says a yes vote “will give employees of the Massachusetts Committee for Public Counsel Services (CPCS) the right to organize a union and collectively bargain with their employer if they choose to do so.”",
+     "src": [
+      "ma2-ifv"
+     ]
+    },
+    {
+     "text": "It argues that CPCS employees “provide critical support for the constitutional right to counsel,” yet “unlike other state employees, CPCS employees do not currently have the right to choose whether to organize and collectively bargain over wages, benefits and working conditions.”",
+     "src": [
+      "ma2-ifv"
+     ]
+    },
+    {
+     "text": "It concludes that the measure “simply gives CPCS employees the right to make that choice for themselves.”",
+     "src": [
+      "ma2-ifv"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "No organized group urged a no vote, so the Secretary of the Commonwealth compiled the official argument against, in part from the Legislature’s Majority Report. It says collective bargaining “creates serious operational and fiscal risks for the judiciary,” because CPCS “operates as an independent judicial branch agency tasked with providing constitutional defense to indigent clients.”",
+     "src": [
+      "ma2-ifv"
+     ]
+    },
+    {
+     "text": "It argues that bargaining “could disrupt existing management and supervisory frameworks, introduce ambiguity into lines of authority, and create operational inefficiencies.”",
+     "src": [
+      "ma2-ifv"
+     ]
+    },
+    {
+     "text": "It adds that labor-relations changes of this scale “could have unintended consequences for the delivery of legal services, particularly if they limit the agency’s ability to respond flexibly to fluctuating caseloads, staffing needs, and court demands.”",
+     "src": [
+      "ma2-ifv"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "The funding request.",
+     "text": "Ballotpedia reports the measure would require CPCS to request funding from the Governor for an agreement within 30 days after entering into a collective bargaining contract. The official summary says CPCS would have to request the appropriation after executing the agreement.",
+     "src": [
+      "ma2-bp",
+      "ma2-ifv"
+     ]
+    },
+    {
+     "label": "Who the employees are.",
+     "text": "Ballotpedia reports that CPCS has approximately 500 staff attorneys, contracts with about 3,000 private attorneys who are assigned cases through it, and is governed by a 15-member committee appointed by the governor, legislative leaders and the Supreme Judicial Court.",
+     "src": [
+      "ma2-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "ma2-ifv"
+   ]
+  },
+  {
+   "state": "MA",
+   "state_name": "Massachusetts",
+   "mtype": "Citizen-initiated state law",
+   "official_url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "id": "massachusetts-question-5",
+   "label": "Question 5",
+   "title": "Change the state revenue limit and rebate rules",
+   "topic": "Taxes and state budget",
+   "ballot_title": "State Revenue Limit & Rebate. Do you approve of a law summarized below, on which no vote was taken by the Senate or the House of Representatives before May 6, 2026?",
+   "ballotpedia_url": "https://ballotpedia.org/Massachusetts_Question_5,_Change_State_Tax_Revenue_Limit_Initiative_(2026)",
+   "summary": "Question 5 would change the limit on how much revenue the state can collect in a given year. The limit would be the net amount of state revenue from the year before, increased by the average growth of wages and salaries in Massachusetts over the most recent three years. If the state collects more than the limit, the excess would be refunded to taxpayers the following year. All revenue from the surtax on incomes over $1 million would count toward the limit. The changes would take effect July 1, 2027.",
+   "summary_src": [
+    "ma5-ifv"
+   ],
+   "yes": "A YES VOTE would change the limit on state revenue collection, tying it to prior year collections plus average wage and salary growth, and provide for a rebate of revenue exceeding that limit.",
+   "no": "A NO VOTE would make no change in the law relative to state revenue collection.",
+   "fiscal": {
+    "text": "The state’s fiscal statement, written by the Executive Office of Administration and Finance, says the proposed law “would put stricter limits on allowable annual revenue growth available for budgeting” and would “reduce the amount of money available to support the state budget, which includes local aid for schools and municipal budgets.” It also says the proposal would reduce the amounts available to build the state’s Stabilization (rainy day) Fund and, depending on future conditions, could change how often required refunds to taxpayers occur.",
+    "src": [
+     "ma5-ifv"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 20, 2026, the committee supporting Question 5 (Taxpayers for an Affordable Massachusetts) reported $2,532,364.91 in total contributions, including $1,900,000.00 in in-kind contributions from the Massachusetts Opportunity Alliance. Committees opposing it reported $948,806.96 combined; the top donor was SEIU Mass State Council ($322,920.00).",
+    "src": [
+     "ma5-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor was written by Taxpayers for an Affordable Massachusetts. It says a yes vote “sets reasonable limits on the growth of state government revenue and ensures that taxpayers receive refunds when the Commonwealth collects more money than it needs.”",
+     "src": [
+      "ma5-ifv"
+     ]
+    },
+    {
+     "text": "It argues the proposal “modernizes the state’s existing laws to create stronger fiscal guardrails, promote accountability, guard against future tax increases, and ensure government growth reflects what taxpayers can afford,” and says it “will not cut state spending for important services like education, transportation, or healthcare.”",
+     "src": [
+      "ma5-ifv"
+     ]
+    },
+    {
+     "text": "It adds that “When government collects excess revenue, taxpayers deserve to get that money back instead of seeing it absorbed into a state budget that is growing faster than inflation.”",
+     "src": [
+      "ma5-ifv"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against was written by Colette Berard, an Andover Public Schools history teacher, for Protect Massachusetts’ Future. It says Question 5 “would put a strict limit on state revenue and investment, requiring repeated budget cuts,” and that cities and towns “would have to raise property taxes or lay off teachers and firefighters.”",
+     "src": [
+      "ma5-ifv"
+     ]
+    },
+    {
+     "text": "It argues the measure “would reduce the state’s” rainy day fund, “forcing massive budget cuts to schools, healthcare, affordable housing, and public safety during recessions,” and would “even threaten Massachusetts’ bond rating, raising the cost of repairing bridges and schools.”",
+     "src": [
+      "ma5-ifv"
+     ]
+    },
+    {
+     "text": "It also says millionaires “would get frequent tax rebates, while the rest of us pay the price.”",
+     "src": [
+      "ma5-ifv"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "How the limit works now.",
+     "text": "Ballotpedia reports that the current limit equals the prior year’s limit plus the average growth of wages and salaries over the past three years, and that the surtax on incomes over $1 million is not generally used to calculate it. Question 5 would instead base the limit on revenue actually collected the year before and include the surtax.",
+     "src": [
+      "ma5-bp"
+     ]
+    },
+    {
+     "label": "How often the limit has been exceeded.",
+     "text": "Ballotpedia reports that between 1986 and 2025 the state tax revenue limit was exceeded twice, resulting in refunds to taxpayers.",
+     "src": [
+      "ma5-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "ma5-ifv"
+   ]
+  },
+  {
+   "state": "MA",
+   "state_name": "Massachusetts",
+   "mtype": "Citizen-initiated state law",
+   "official_url": "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf",
+   "id": "massachusetts-question-6",
+   "label": "Question 6",
+   "title": "Dedicate sporting-goods sales tax revenue to a nature conservation fund",
+   "topic": "Environment and state budget",
+   "ballot_title": "Natural Resource Conservation Fund. Do you approve of a law summarized below, on which no vote was taken by the Senate or the House of Representatives before May 6, 2026?",
+   "ballotpedia_url": "https://ballotpedia.org/Massachusetts_Question_6,_Establish_the_Nature_for_All_Fund_Initiative_(2026)",
+   "summary": "Question 6 would create a Nature for All Fund that, subject to appropriation by the Legislature, would receive 50% of state taxes collected on the sale and use of sporting goods, recreational vehicles, and golf courses in its first year and 100% after July 1, 2028. The Executive Office of Energy and Environmental Affairs could spend the money on natural resource conservation, such as protecting drinking water, rivers, farms and forests and creating or improving parks and trails. A 15-member board of five state officials and ten public members appointed by the Governor would set spending rules. It would take effect July 1, 2027.",
+   "summary_src": [
+    "ma6-ifv"
+   ],
+   "yes": "A YES VOTE would create a fund that could be utilized for natural resource conservation that would receive some state taxes collected on the sale and use of sporting goods and recreational vehicles, and the use of golf courses.",
+   "no": "A NO VOTE would not create this natural resource conservation fund or change how sales and use taxes are spent.",
+   "fiscal": {
+    "text": "The state’s fiscal statement, written by the Executive Office of Administration and Finance, says the proposed law “would have a significant impact on state and local budgets,” and that although “a full fiscal analysis is not feasible,” it would divert “tens of millions of dollars of tax receipts that are currently supporting the state operating budget to the new fund.” It adds that the law “would also have substantial implementation costs.”",
+    "src": [
+     "ma6-ifv"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 20, 2026, the committee supporting Question 6 (Vote Yes for Water and Nature) reported $4,311,486.96 in total contributions. The top donors were Mass Audubon ($1,128,150.70) and The Trustees of the Reservations ($812,930.12). Ballotpedia lists no committee registered in opposition.",
+    "src": [
+     "ma6-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor lists Mass Audubon as its author. It says “Voting YES on 6 protects water, land, and wildlife in Massachusetts — without raising taxes,” and that it “dedicates as much as $100 million/year” to purposes including clean drinking water, flood prevention, parks and trails.",
+     "src": [
+      "ma6-ifv"
+     ]
+    },
+    {
+     "text": "It argues that “Question 6 doesn’t raise taxes or create a new tax,” that it “dedicates the sales tax we already pay on sporting goods to protecting water and nature,” and that it “requires strict oversight and annual reporting so we can see how funds are spent.”",
+     "src": [
+      "ma6-ifv"
+     ]
+    },
+    {
+     "text": "It says “90+ local conservation organizations and businesses support YES on 6 to permanently protect our rivers, lakes, forests, farms, and wildlife habitat.”",
+     "src": [
+      "ma6-ifv"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "No organized group urged a no vote, so the Secretary of the Commonwealth compiled the official argument against, in part from the Legislature’s Majority Report. It says the law “creates an unstable fiscal framework by permanently earmarking up to 100% of state sales tax revenues from sporting goods, recreational vehicles, and golf courses.”",
+     "src": [
+      "ma6-ifv"
+     ]
+    },
+    {
+     "text": "It argues that carrying it out “would require the reallocation or reduction of funds presently directed toward other state initiatives, raising questions of opportunity costs and the potential displacement of existing infrastructure and environmental funding priorities.”",
+     "src": [
+      "ma6-ifv"
+     ]
+    },
+    {
+     "text": "It adds that, even if voters approve it, the funds may not reach the new fund because “the Legislature retains exclusive authority over appropriations decisions.”",
+     "src": [
+      "ma6-ifv"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Who would run the fund.",
+     "text": "The official summary says the 15-member Nature for All Board would include ten public members appointed by the Governor, who “include representatives of underserved communities and indigenous peoples and at least one person with expertise or experience in natural resource conservation.” Neither argument mentions the board.",
+     "src": [
+      "ma6-ifv"
+     ]
+    },
+    {
+     "label": "Other states.",
+     "text": "Ballotpedia reports that three other states allocate all or a portion of their tax revenue from the sale of certain outdoor equipment to a state conservation fund: Georgia (75% of sales tax revenue from outdoor recreation equipment), Virginia (revenue from sales tax, not exceeding 2% of the sale price, on specified outdoor equipment) and Texas (100% of sales tax revenue from the sale of sporting goods).",
+     "src": [
+      "ma6-bp"
+     ]
+    }
+   ],
+   "official_src": [
+    "ma6-ifv"
    ]
   }
  ]
