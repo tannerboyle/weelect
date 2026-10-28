@@ -296,6 +296,159 @@
    "date": "accessed 2026-10-28",
    "used_for": "Quoted arguments, campaign finance and background",
    "checked": "2026-10-28"
+  },
+  "oh3-sos": {
+   "org": "Ohio Secretary of State (certified by the Ohio Ballot Board)",
+   "title": "Issue 3 report: ballot language, explanation, arguments for and against, and full text of the proposed amendment",
+   "url": "https://www.ohiosos.gov/assets/2026-11-statewide-issue-3-report.pdf",
+   "type": "Official state voter guide",
+   "date": "2026-08-03",
+   "used_for": "Ballot language, explanation, official arguments, full text",
+   "checked": "2026-10-28"
+  },
+  "oh3-bp": {
+   "org": "Ballotpedia",
+   "title": "Ohio Issue 3, Require Voter Identification Amendment (2026)",
+   "url": "https://ballotpedia.org/Ohio_Issue_3,_Require_Voter_Identification_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "nc1-lso": {
+   "org": "North Carolina Legislative Services Officer",
+   "title": "Official Summary Explanation of 2026 Constitutional Amendments (press release; copy published by the Beaufort County Board of Elections)",
+   "url": "https://www.beaufortncboe.org/sites/beaufortncboe.org/files/attachments/2026-09/2026_11_03_Summary%20Explanation%20of%20Constitutional%20Amendments.pdf",
+   "type": "Official summary explanation",
+   "date": "2026-08-20",
+   "used_for": "Official ballot question and summary explanation",
+   "checked": "2026-10-28"
+  },
+  "nc1-sl": {
+   "org": "North Carolina General Assembly",
+   "title": "Session Law 2024-58 (Senate Bill 921), text of the amendment",
+   "url": "https://www.ncleg.gov/EnactedLegislation/SessionLaws/HTML/2023-2024/SL2024-58.html",
+   "type": "Official legislative text",
+   "date": "2024-12-13",
+   "used_for": "Text of the amendment and ballot question",
+   "checked": "2026-10-28"
+  },
+  "nc1-fiscal": {
+   "org": "North Carolina General Assembly Legislative Analysis Division",
+   "title": "Bill summary and analysis of S.L. 2024-58 (Senate Bill 921)",
+   "url": "https://dashboard.ncleg.gov/api/Services/BillSummary/2023/S921-SMST-118(sl)-v-5",
+   "type": "Official nonpartisan legislative analysis",
+   "date": "2024-12-20",
+   "used_for": "Current law and effect of the amendment",
+   "checked": "2026-10-28"
+  },
+  "nc1-wfae": {
+   "org": "WFAE 90.7 (Charlotte public radio)",
+   "title": "Should the requirement for voter identification be in North Carolina’s Constitution?",
+   "url": "https://www.wfae.org/politics/2026-10-02/should-the-requirement-for-voter-identification-be-in-north-carolinas-constitution",
+   "type": "News report",
+   "date": "2026-10-02",
+   "used_for": "Statements from supporters and opponents; current ID rules",
+   "checked": "2026-10-28"
+  },
+  "nc1-bp": {
+   "org": "Ballotpedia",
+   "title": "North Carolina Require Voter Identification Amendment (2026)",
+   "url": "https://ballotpedia.org/North_Carolina_Require_Voter_Identification_Amendment_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "mi1-sfa": {
+   "org": "Michigan Senate Fiscal Agency",
+   "title": "Ballot Proposal 26-1: An Overview (background, views, fiscal impact)",
+   "url": "https://sfa.senate.michigan.gov/Publications/BallotProps/Proposal26-1.pdf",
+   "type": "Official nonpartisan legislative analysis",
+   "date": "2026",
+   "used_for": "Ballot wording, background, positions and fiscal estimates",
+   "checked": "2026-10-28"
+  },
+  "mi1-bp": {
+   "org": "Ballotpedia",
+   "title": "Michigan Proposal 1, Constitutional Convention Question (2026)",
+   "url": "https://ballotpedia.org/Michigan_Proposal_1,_Constitutional_Convention_Question_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Quoted arguments, campaign finance and background",
+   "checked": "2026-10-28"
+  },
+  "wa1-ex": {
+   "org": "Washington Attorney General’s Office",
+   "title": "Ballot title and explanatory statement, Initiative IL26-001",
+   "url": "https://www.sos.wa.gov/sites/default/files/2026-07/ExStat_IL26-001.pdf",
+   "type": "Official ballot title and explanatory statement",
+   "date": "2026-07-21",
+   "used_for": "Ballot title; current law and effect of the measure",
+   "checked": "2026-10-28"
+  },
+  "wa1-fis": {
+   "org": "Washington Office of Financial Management",
+   "title": "Fiscal Impact Statement for Initiative Measure No. IL26-001",
+   "url": "https://www.sos.wa.gov/sites/default/files/2026-07/Initiative%20Measure%20NoIL26-001_FIS_FINAL.pdf",
+   "type": "Official fiscal analysis",
+   "date": "2026-07",
+   "used_for": "State and local fiscal effects",
+   "checked": "2026-10-28"
+  },
+  "wa1-args": {
+   "org": "Washington Secretary of State (voters’ pamphlet)",
+   "title": "Voters’ pamphlet arguments for and against, with rebuttals, Initiative IL26-001",
+   "url": "https://www.sos.wa.gov/sites/default/files/2026-08/IL26-001%20VP%20page.pdf",
+   "type": "Official voters’ pamphlet statements (written by committees named in the pamphlet)",
+   "date": "2026-08",
+   "used_for": "Official arguments for and against",
+   "checked": "2026-10-28"
+  },
+  "wa1-bp": {
+   "org": "Ballotpedia",
+   "title": "Washington Initiative 1, Parental Right to Review Education Materials, Receive Notifications, and Opt Out of Sexual-Health Education Initiative (2026)",
+   "url": "https://ballotpedia.org/Washington_Initiative_1,_Parental_Right_to_Review_Education_Materials,_Receive_Notifications,_and_Opt_Out_of_Sexual-Health_Education_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Campaign finance",
+   "checked": "2026-10-28"
+  },
+  "wa638-ex": {
+   "org": "Washington Attorney General’s Office",
+   "title": "Ballot title and explanatory statement, Initiative IL26-638",
+   "url": "https://www.sos.wa.gov/sites/default/files/2026-07/IL26-638%20Explanatory%20Statement.pdf",
+   "type": "Official ballot title and explanatory statement",
+   "date": "2026-07-14",
+   "used_for": "Ballot title; current law and effect of the measure",
+   "checked": "2026-10-28"
+  },
+  "wa638-fis": {
+   "org": "Washington Office of Financial Management",
+   "title": "Fiscal Impact Statement for Initiative Measure No. IL26-638",
+   "url": "https://www.sos.wa.gov/sites/default/files/2026-07/Initiative%20Measure%20NoIL26-638_FIS_FINAL.pdf",
+   "type": "Official fiscal analysis",
+   "date": "2026-07",
+   "used_for": "State and local fiscal effects",
+   "checked": "2026-10-28"
+  },
+  "wa638-args": {
+   "org": "Washington Secretary of State (voters’ pamphlet)",
+   "title": "Voters’ pamphlet arguments for and against, with rebuttals, Initiative IL26-638",
+   "url": "https://www.sos.wa.gov/sites/default/files/2026-08/IL26-638%20VP%20page.pdf",
+   "type": "Official voters’ pamphlet statements (written by committees named in the pamphlet)",
+   "date": "2026-08",
+   "used_for": "Official arguments for and against",
+   "checked": "2026-10-28"
+  },
+  "wa638-bp": {
+   "org": "Ballotpedia",
+   "title": "Washington Initiative 638, Sex Verification Requirements for Female School Sports Initiative (2026)",
+   "url": "https://ballotpedia.org/Washington_Initiative_638,_Sex_Verification_Requirements_for_Female_School_Sports_Initiative_(2026)",
+   "type": "Reference (quotes supporters and opponents)",
+   "date": "accessed 2026-10-28",
+   "used_for": "Campaign finance",
+   "checked": "2026-10-28"
   }
  },
  "items": [
@@ -1416,6 +1569,442 @@
    ],
    "official_src": [
     "ma8-ifv"
+   ]
+  },
+  {
+   "id": "ohio-issue-3",
+   "state": "OH",
+   "state_name": "Ohio",
+   "label": "Issue 3",
+   "title": "Require photo ID to vote",
+   "topic": "Elections",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Proposed Constitutional Amendment to require voters to present photo identification in order to vote. Proposed by Joint Resolution of the General Assembly to enact Section 5 of Article V of the Constitution of the State of Ohio. Shall the amendment be approved?",
+   "official_url": "https://www.ohiosos.gov/assets/2026-11-statewide-issue-3-report.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Ohio_Issue_3,_Require_Voter_Identification_Amendment_(2026)",
+   "summary": "Issue 3 was proposed by a three-fifths vote of the Ohio General Assembly. It would add Section 5 to Article V of the Ohio Constitution. Voters would have to show one of a listed set of government-issued photo IDs to vote in person, with a possible alternative way to verify identity for voters with a sincere religious objection to being photographed. Voters using any other method, such as absentee voting by mail, would have to provide photo ID or, if state law allows, a signature plus at least one other unique identifier. Ohio law already requires photo ID to vote, so the amendment would put a similar rule into the Constitution.",
+   "summary_src": [
+    "oh3-sos",
+    "oh3-bp"
+   ],
+   "yes": "A “YES” vote means approval of the amendment. Voters would be required to present an approved form of government-issued photo identification in order to vote, and the amendment would take effect immediately.",
+   "no": "A “NO” vote means disapproval of the amendment. The constitutional photo ID requirement would not be added; the photo ID requirement in current Ohio law would remain a state law rather than part of the Constitution.",
+   "money": {
+    "text": "As of October 2026, Ballotpedia had not identified ballot measure committees registered to support or oppose the amendment.",
+    "src": [
+     "oh3-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument in favor was prepared by Representatives Adam Bird and Heidi Workman and Senators Theresa Gavarone and Jane Timken. It says photo ID checks are “a commonsense method to verify identity and detect fraudsters,” safeguarding voters “from imposters seeking to steal their vote,” and that requiring ID is “backed by a landslide of voters nationally and in Ohio, repeatedly polling with over 80% support.”",
+     "src": [
+      "oh3-sos"
+     ]
+    },
+    {
+     "text": "It argues for stability: “Election laws should not change dramatically every few years based on shifting political majorities, and a constitutional protection provides stability, reliability, and trust in the system.” It adds that “States without constitutional voter photo ID requirements have recently repealed photo ID laws.”",
+     "src": [
+      "oh3-sos"
+     ]
+    },
+    {
+     "text": "It says the amendment adds little burden: “Issue 3 will not burden Ohio’s voters because photo ID is currently in state law and free state ID cards are available to voting-age residents,” and it “continues to provide alternative methods of compliance to voters who have sincere religious objections.”",
+     "src": [
+      "oh3-sos"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against was prepared by Senator Bill DeMora and Representatives Desiree Tims and Terrence Upchurch. It says “Photo Identification is already the law and this amendment locks in voter burden with no voter protections,” and that Issue 3 addresses a problem that does not exist: “Voter impersonation is essentially nonexistent!”",
+     "src": [
+      "oh3-sos"
+     ]
+    },
+    {
+     "text": "It argues the amendment leaves other ways of voting exposed: “Issue 3 provides no protection for your ability to vote absentee, including for servicemembers overseas, students, working parents, and seniors,” and that it leaves any form of voting other than in person open to being revoked or restricted in the future.",
+     "src": [
+      "oh3-sos"
+     ]
+    },
+    {
+     "text": "It also argues that locking the rules into the Constitution removes flexibility: “Constitutional amendments remove flexibility exactly where flexibility is needed.” It says Issue 3 “blocks county issued veterans IDs and digital military IDs currently in use.”",
+     "src": [
+      "oh3-sos"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Which IDs count would be written into the Constitution.",
+     "text": "The amendment text defines “Photo identification” as a document “issued by an agency of this state or the United States” that includes the voter’s name and photograph and is not expired. It lists Ohio driver’s licenses and state ID cards (and certain temporary documents from the Ohio Bureau of Motor Vehicles), U.S. passports and passport cards, and U.S. military, Ohio National Guard and U.S. Department of Veterans Affairs ID cards. Documents issued by counties or other local governments are not on the list.",
+     "src": [
+      "oh3-sos"
+     ]
+    },
+    {
+     "label": "Legislators, not the amendment, would decide the mail-ballot alternative.",
+     "text": "For voting other than in person, the amendment says that “At a minimum, and in accordance with laws passed by the general assembly,” voters must provide photo ID or, if authorized by law, a signature and at least one other unique identifier. Whether the signature option exists, and which identifiers count, would be left to state law.",
+     "src": [
+      "oh3-sos"
+     ]
+    }
+   ],
+   "official_src": [
+    "oh3-sos"
+   ]
+  },
+  {
+   "id": "north-carolina-photo-id-amendment",
+   "state": "NC",
+   "state_name": "North Carolina",
+   "label": "Amendment (photo ID)",
+   "title": "Require photo ID for all voters, including mail-in",
+   "topic": "Elections",
+   "mtype": "Legislatively referred constitutional amendment",
+   "ballot_title": "Constitutional amendment to require all voters, not just those presenting to vote in person, to present photo identification before voting.",
+   "official_url": "https://www.beaufortncboe.org/sites/beaufortncboe.org/files/attachments/2026-09/2026_11_03_Summary%20Explanation%20of%20Constitutional%20Amendments.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/North_Carolina_Require_Voter_Identification_Amendment_(2026)",
+   "summary": "North Carolina’s Constitution, since a 2018 vote, requires voters who vote in person to present photo identification. State law also requires absentee voters to submit a copy of their photo ID or an affidavit of an exception. Session Law 2024-58 puts a different question to voters: whether to amend the Constitution so that all voters, however they vote, must present photo identification. The legislature would still set by law what counts as acceptable ID and any exceptions. If approved, the amendment takes effect when the State Board of Elections certifies the result.",
+   "summary_src": [
+    "nc1-lso",
+    "nc1-sl",
+    "nc1-fiscal",
+    "nc1-bp"
+   ],
+   "yes": "A vote FOR would amend the North Carolina Constitution to require photographic identification for voters in all instances in North Carolina elections, not only those voting in person.",
+   "no": "A vote AGAINST would leave the Constitution as it is, requiring photo identification only for voters presenting to vote in person. The existing state law on absentee ID would remain ordinary law that the legislature can change.",
+   "money": {
+    "text": "In reports Ballotpedia had processed through October 2, 2026, one committee, NC By the People, was registered to oppose the amendment and reported $59,305.62 in total contributions. Ballotpedia had not identified any committee registered in support.",
+    "src": [
+     "nc1-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "State Sen. Warren Daniel (R) says, “Voter ID is a commonsense security measure that needs to apply equally to all voters. As voting has evolved over the years, protecting against fraud needs to as well. We shouldn’t treat one form of voting differently, and our constitution should reflect that.”",
+     "src": [
+      "nc1-bp"
+     ]
+    },
+    {
+     "text": "Rep. Mike Schietzelt (R-Wake) told WUNC News the amendment increases security, especially as mail-in voting has grown since the COVID-19 pandemic: “All of your election law policy is trying to strike a balance between ensuring that every person who is eligible to vote has an opportunity to vote while also limiting opportunities for other people to interfere in the election.”",
+     "src": [
+      "nc1-wfae"
+     ]
+    },
+    {
+     "text": "WFAE reports that Republican lawmakers say the constitutional change is needed to prevent courts and future lawmakers from changing the rules. The conservative John Locke Foundation says that although the voter experience will not change, “it is a meaningful change to the state constitution.”",
+     "src": [
+      "nc1-wfae"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "Katelin Kaiser, policy director of Democracy North Carolina, says, “This is another attempt to disenfranchise voters by mail, and it is working. Legislative leadership has made it more difficult for students, older people, and people who are disabled to vote by mail in North Carolina.”",
+     "src": [
+      "nc1-bp"
+     ]
+    },
+    {
+     "text": "The Sierra Club of North Carolina says passage “would not change current voting requirements at all. But it would make a hugely significant change, stripping future state legislatures of the power to pass new laws to change those requirements.” Rep. Pricey Harrison (D-Guilford) says, “It’s difficult to undo it once it’s in the constitution.”",
+     "src": [
+      "nc1-bp",
+      "nc1-wfae"
+     ]
+    },
+    {
+     "text": "Carolina Forward, a progressive nonprofit, asks “whether this additional constitutional restriction is necessary when requirements already exist in state law and whether election rules that may need to evolve belong in the Constitution.”",
+     "src": [
+      "nc1-wfae"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Exceptions and free ID stay in state law.",
+     "text": "The amendment text says the General Assembly “shall enact general laws governing the requirements of such photographic identification, which may include exceptions.” The nonpartisan legislative analysis says the exceptions enacted so far are religious objections, reasonable impediments, and natural disasters. WFAE reports that a voter who cannot show acceptable photo ID can fill out an ID Exception Form, and that voters can get a free photo ID from a county board of elections.",
+     "src": [
+      "nc1-sl",
+      "nc1-fiscal",
+      "nc1-wfae"
+     ]
+    },
+    {
+     "label": "It does not settle the court challenge.",
+     "text": "WFAE reports that the North Carolina NAACP is appealing a lawsuit it lost earlier this year that challenged the state’s voter photo ID law as discriminatory. Brooks Fuller of Common Cause North Carolina told WFAE that the status of that case should remain unchanged if the amendment passes.",
+     "src": [
+      "nc1-wfae"
+     ]
+    }
+   ],
+   "official_src": [
+    "nc1-lso",
+    "nc1-sl",
+    "nc1-fiscal"
+   ]
+  },
+  {
+   "id": "michigan-proposal-1",
+   "state": "MI",
+   "state_name": "Michigan",
+   "label": "Proposal 26-1",
+   "title": "Hold a constitutional convention to revise the state constitution",
+   "topic": "Government",
+   "mtype": "Automatic constitutional referral (every 16 years)",
+   "ballot_title": "A proposal to convene a constitutional convention for the purpose of drafting a general revision of the State Constitution. Shall a convention of elected delegates be convened in 2027 to draft a general revision of the State Constitution for presentation to the State’s voters for their approval or rejection?",
+   "official_url": "https://sfa.senate.michigan.gov/Publications/BallotProps/Proposal26-1.pdf",
+   "ballotpedia_url": "https://ballotpedia.org/Michigan_Proposal_1,_Constitutional_Convention_Question_(2026)",
+   "summary": "Michigan’s Constitution requires the question of a general revision to go to voters every 16 years. It was last on the ballot in 2010. If a majority votes yes, a convention of 148 elected delegates (one for each Senate and House district) would meet in 2027 to draft a revised constitution. Voters would then decide whether to adopt it, within 90 days after the convention adjourns. A yes vote does not change the Constitution by itself.",
+   "summary_src": [
+    "mi1-sfa"
+   ],
+   "yes": "A “yes” vote means a convention of elected delegates would be convened in 2027 to draft a general revision of the State Constitution for presentation to the State’s voters for their approval or rejection.",
+   "no": "A “no” vote means no convention would be held, and the current Constitution of 1963 would remain in place, subject to the usual amendment process.",
+   "fiscal": {
+    "text": "The Senate Fiscal Agency says a convention’s cost is hard to estimate because the last one was held in 1961. It offers three approaches: about $10.2 million, based on inflating the 1961 convention’s costs (about $0.85 million per month); about $22.0 million per year, scaling spending by Michigan’s redistricting commission; and an operating budget of $47.3 million per year, using Oklahoma’s Legislature as a stand-in. Delegate elections held on regular dates would add no election costs, but three separate statewide elections could exceed $60.9 million. The budget would be set by the Legislature through appropriations.",
+    "src": [
+     "mi1-sfa"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through July 20, 2026, the committee registered to support the question (Yes on Proposal 1) reported $0.00 in contributions. Two committees opposing it, Protect MI Constitution from Special Interests and Voters Not Politicians Ballot Committee, reported $1,102,164.17 in total contributions combined.",
+    "src": [
+     "mi1-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The Senate Fiscal Agency reports that supporters believe the current Constitution does not work: some say its structure promotes corruption and lacks transparency, and that a convention could reform education, the budget process or other areas they consider inoperative. Others say the 1963 document has become too complicated and that delegates could streamline it.",
+     "src": [
+      "mi1-sfa"
+     ]
+    },
+    {
+     "text": "State Rep. Matt Hall (R) says, “They stuff so many things in this Constitution, all kinds of things, every time.” State Sen. Aric Nesbitt (R) says, “I think there’s a lot of things that should be discussed,” and that “the constitution could be a lot simpler than what it is right now.”",
+     "src": [
+      "mi1-bp"
+     ]
+    },
+    {
+     "text": "Columnist Dennis Lennox writes in the Holland Sentinel that “Nothing would take effect without voter ratification,” and that a convention “could establish meaningful safeguards against dark money and influence peddling” and subject the governor and Legislature to the Freedom of Information Act.",
+     "src": [
+      "mi1-bp"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The Senate Fiscal Agency reports that opponents believe the Constitution of 1963’s longevity stems from its flexibility, since citizens can initiate amendments, so there is no need for a new one. Some say the convention process lacks transparency and accountability, and that uncertainty could harm the economy and discourage businesses from relocating to Michigan.",
+     "src": [
+      "mi1-sfa"
+     ]
+    },
+    {
+     "text": "The Michigan Catholic Conference says that if voters approve a convention, “it would undoubtedly attract the influence of national political actors and organizations, each with millions of dollars to spend promoting a particular issue or partisan interest.” It notes the Constitution “already allows for amendments or changes on a narrower, issue-by-issue basis.”",
+     "src": [
+      "mi1-bp"
+     ]
+    },
+    {
+     "text": "Ron Bieber, president of the Michigan AFL-CIO, says opening the whole constitution “would allow it to be hijacked.” Wendy Block of the Michigan Chamber says “there’s no guarantee a convention would deliver better outcomes.” The Fiscal Agency adds that if voters reject the result, the State would have spent funds without any change.",
+     "src": [
+      "mi1-bp",
+      "mi1-sfa"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Voters have said no before, and why that happens.",
+     "text": "Voters defeated the convention question on the 1978, 1994 and 2010 ballots. The Senate Fiscal Agency notes that the 1948 and 1958 votes showed a majority of those voting on the question favored a convention, but the rules then required a majority of all those voting at the election, so the question still failed. The 1960 amendment changed that to a majority of those voting on the question.",
+     "src": [
+      "mi1-sfa"
+     ]
+    },
+    {
+     "label": "A convention could revisit recent ballot-initiated laws.",
+     "text": "The Senate Fiscal Agency says some supporters see a convention as a chance to overturn controversial amendments or recent initiated laws, and that voters have recently adopted a law governing recreational marijuana and a constitutional codification of reproductive rights. It says some have suggested a convention could be an avenue for opponents of those measures to restrict or reverse them, and that opponents worry about reversal of previously enacted constitutional amendments.",
+     "src": [
+      "mi1-sfa"
+     ]
+    }
+   ],
+   "official_src": [
+    "mi1-sfa"
+   ]
+  },
+  {
+   "id": "washington-initiative-1",
+   "state": "WA",
+   "state_name": "Washington",
+   "label": "Initiative 1",
+   "title": "Restore and expand parents’ rights in public schools",
+   "topic": "Education",
+   "mtype": "Citizen-initiated state statute (initiative to the Legislature)",
+   "ballot_title": "Initiative Measure No. IL26-001 concerns parental rights relating to their children in public school. This measure would repeal amendments to a statute listing certain rights of parents and guardians of public-school children and re-enact the law as it was originally enacted by Initiative to the Legislature 2081. Should this measure be enacted into law?",
+   "official_url": "https://www.sos.wa.gov/elections/voters/proposed-ballot-measure-information",
+   "ballotpedia_url": "https://ballotpedia.org/Washington_Initiative_1,_Parental_Right_to_Review_Education_Materials,_Receive_Notifications,_and_Opt_Out_of_Sexual-Health_Education_Initiative_(2026)",
+   "summary": "In 2024 the Legislature passed Initiative to the Legislature 2081, which listed rights of parents and guardians of public-school children; many of those rights already existed elsewhere in state or federal law. In 2025 the Legislature changed that list. Initiative 1 would undo the 2025 changes and restore the 2024 list. According to the Attorney General’s explanatory statement, that would, among other things, require schools to produce records within ten business days instead of up to 45 days, add rights to notice of medical services offered to a child, add topics that parents can opt their child out of, and remove several provisions that are in the current statute (see below).",
+   "summary_src": [
+    "wa1-ex"
+   ],
+   "yes": "A yes vote would repeal the 2025 amendments to the parents’ rights statute (RCW 28A.605.005) and re-enact the law as it was originally enacted in 2024.",
+   "no": "A no vote would leave the parents’ rights statute as the Legislature amended it in 2025.",
+   "fiscal": {
+    "text": "The Office of Financial Management’s fiscal impact statement says the initiative would have no fiscal impact on state government and would not affect state or local revenue. It says local school districts could incur minor costs to update policies and procedures, but that this impact is indeterminate.",
+    "src": [
+     "wa1-fis"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through August 31, 2026, Let’s Go Washington, the committee supporting Initiative 1, reported $8,059,297.89 in total contributions. Ballotpedia notes the committee is funding three initiatives on the ballot (Initiatives 1, 638 and 645), so that total covers all three. The three committees registered to oppose it (No Hate in WA State, Defend Washington and Permanent Defense PAC) reported $3,843,631.74 in total contributions, a figure Ballotpedia lists on the pages for all three initiatives.",
+    "src": [
+     "wa1-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument for says the measure would restore parents’ “access to their child’s instructional materials and student records, notice of medical services, opt-outs from certain activities and instruction, and immediate notification when law enforcement questions their child or their child is removed from campus without parental permission.”",
+     "src": [
+      "wa1-args"
+     ]
+    },
+    {
+     "text": "It says children at risk remain protected: “School staff remain mandatory reporters of suspected child abuse or neglect.” The rebuttal says the measure states that schools “shall not be required to release” mental health counseling records when a parent is the target of a child abuse or neglect investigation, and requires “immediate notification” if a criminal action is deemed committed against or by their child.",
+     "src": [
+      "wa1-args"
+     ]
+    },
+    {
+     "text": "It argues that “safeguards designed for children at risk should not become a default policy of withholding information from all parents,” and that current policies “allow schools to withhold critical information when a child expresses a new gender identity at school,” even though parents must give permission for medication, sunscreen or field trips.",
+     "src": [
+      "wa1-args"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against says there were “117,000 reports of child abuse or neglect in WA in 2024 alone” and that the measure endangers abuse victims by “requiring schools to hand over sensitive information to parents under criminal investigation for raping, abusing or otherwise harming their own child.” It says law enforcement and the Washington Coalition Against Domestic Violence and Sexual Assault oppose it.",
+     "src": [
+      "wa1-args"
+     ]
+    },
+    {
+     "text": "It says “An unintended consequence of IL26-001 is ending Washington’s legal requirement that schools immediately notify parents when the crime is reported.” The rebuttal adds that the measure “would eliminate key existing parental rights” and “ends commonsense protections for child abuse victims whose parents are accused of child abuse and rape.”",
+     "src": [
+      "wa1-args"
+     ]
+    },
+    {
+     "text": "It says school nurses and counselors believe the measure “discourages students facing domestic violence, sexual abuse, or bullying from seeking help from trusted teachers and school counselors” and puts LGBTQ+ students in danger “by outing them to potentially abusive families.” It says the Washington State Nurses Association and others oppose it.",
+     "src": [
+      "wa1-args"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "Parts of the 2025 law that the measure would remove.",
+     "text": "The Attorney General’s explanatory statement says the measure would remove the right to immediate notification when a child is alleged to be the victim of physical or sexual abuse, sexual misconduct, or assault by a school employee or contractor, and the right to file a harassment, intimidation and bullying complaint on a child’s behalf. It would also remove the statute’s non-discrimination provision and instead state a right to assurance that a child’s school will not discriminate based on the family’s sincerely held religious beliefs. The provisions on enrollment, language access and special education rights would be removed.",
+     "src": [
+      "wa1-ex"
+     ]
+    },
+    {
+     "label": "Parts that the measure would add or broaden.",
+     "text": "The explanatory statement says the measure would add a right to prior notification when medical services are offered to a child (except emergency treatment), remove the limit that crime notices apply only to events on school property during school hours, and require schools to notify parents if a child is removed from school without parental permission, including to stay at a youth shelter. Records would have to be produced within ten business days instead of the 45 days allowed by current law.",
+     "src": [
+      "wa1-ex"
+     ]
+    }
+   ],
+   "official_src": [
+    "wa1-ex"
+   ]
+  },
+  {
+   "id": "washington-initiative-638",
+   "state": "WA",
+   "state_name": "Washington",
+   "label": "Initiative 638",
+   "title": "Restrict girls’ school sports to students verified as female",
+   "topic": "Education",
+   "mtype": "Citizen-initiated state statute (initiative to the people)",
+   "ballot_title": "Initiative Measure No. IL26-638 concerns participation in athletics at K-12 schools. This measure would prohibit students it defines as “biologically male” from competing in certain school athletic activities intended for female students only. It would require verification of biological sex by students’ healthcare providers. Should this measure be enacted into law?",
+   "official_url": "https://www.sos.wa.gov/elections/voters/proposed-ballot-measure-information",
+   "ballotpedia_url": "https://ballotpedia.org/Washington_Initiative_638,_Sex_Verification_Requirements_for_Female_School_Sports_Initiative_(2026)",
+   "summary": "Washington schools must offer sports without regard to sex but may provide separate teams based on sex, and state guidelines prohibit discrimination based on sex and gender identity. Initiative 638 would, in its own language, prohibit “biologically male students from competing with and against female students” on teams or in events designated for female students only. The Attorney General says this would generally prevent transgender girls from participating on girls’ teams, and would cover public K-12 schools and private schools that participate in the Washington Interscholastic Activities Association or similar organizations. Students in female-only categories would need a form signed by their personal health care provider verifying “biological sex.”",
+   "summary_src": [
+    "wa638-ex"
+   ],
+   "yes": "A yes vote would prohibit students defined as biologically male from competing in school sports intended for female students only, and would require healthcare provider verification of biological sex for those students.",
+   "no": "A no vote would leave current Washington law and state guidelines in place, which prohibit discrimination in school sports based on sex and gender identity while allowing separate teams based on sex.",
+   "fiscal": {
+    "text": "The Office of Financial Management’s fiscal impact statement says the initiative would not affect state or local revenue. It estimates the Office of the Superintendent of Public Instruction would incur a one-time cost of approximately $21,000 to update guidelines, and that local school districts would likely incur costs to revise policies and procedures, but that this impact is indeterminate.",
+    "src": [
+     "wa638-fis"
+    ]
+   },
+   "money": {
+    "text": "In reports Ballotpedia had processed through August 31, 2026, Let’s Go Washington, the committee supporting Initiative 638, reported $8,059,297.89 in total contributions. Ballotpedia notes the committee is funding three initiatives on the ballot (Initiatives 1, 638 and 645), so that total covers all three. The three committees registered to oppose it (No Hate in WA State, Defend Washington and Permanent Defense PAC) reported $3,843,631.74 in total contributions, a figure Ballotpedia lists on the pages for all three initiatives.",
+    "src": [
+     "wa638-bp"
+    ]
+   },
+   "for": [
+    {
+     "text": "The official argument for says “Female athletes deserve fair opportunities to build confidence, develop skills, and pursue goals,” and that the measure would affirm Title IX’s recognition of “the necessity of the female category.” The rebuttal says “A female athlete should not lose a starting position, medal, championship, or college recruiting opportunity because the category created for her was not protected.”",
+     "src": [
+      "wa638-args"
+     ]
+    },
+    {
+     "text": "It says the verification would be modest: “during a private, consented visit, a licensed medical professional would verify sex based on the student’s birth records, medical history and/or a standard, non-invasive physical examination.” The rebuttal says “IL26-638 doesn’t require invasive or expensive exams.”",
+     "src": [
+      "wa638-args"
+     ]
+    },
+    {
+     "text": "It says the measure would align Washington with other bodies: “Federal law, the Women’s Tennis Association, World Athletics, and the International Olympic Committee have all adopted policies to protect eligibility for the female category.” The rebuttal cites “at least 269 placements by male athletes competing in girls’ interscholastic categories, including 74 firsts and 156 top-three finishes.”",
+     "src": [
+      "wa638-args"
+     ]
+    }
+   ],
+   "against": [
+    {
+     "text": "The official argument against says the measure “would require girls as young as 8 to undergo intrusive medical sex certification as a new part of sports physicals” and “bans parents from using birth certificates.” It says “These requirements apply to girls only, boys are exempt.”",
+     "src": [
+      "wa638-args"
+     ]
+    },
+    {
+     "text": "It says the Washington State Nurses Association, Planned Parenthood Alliance Advocates and doctors warn the measure would subject girls to “medically unnecessary, embarrassing, and potentially harmful genital exams.” It says “Today, students remain fully clothed during sports physicals,” and that many girls without a regular family doctor would be examined by “total strangers.”",
+     "src": [
+      "wa638-args"
+     ]
+    },
+    {
+     "text": "It says “This statewide blanket ban to kick 5 - 10 trans girls off school teams will negatively impact all girls, leaving no room for case by case decisions,” and that coaches and athletes say “invasive genital exam requirements” would discourage girls from playing sports.",
+     "src": [
+      "wa638-args"
+     ]
+    }
+   ],
+   "unsaid": [
+    {
+     "label": "What the verification would require, according to the Attorney General.",
+     "text": "The explanatory statement says verification “would have to be based on the student’s reproductive anatomy, genetic makeup, or normal endogenously produced testosterone levels,” and concludes: “Students would thus have to undergo some type of medical evaluation of their sex to participate in interschool sports designated for female students only.” The pamphlet arguments disagree about how invasive that evaluation would be.",
+     "src": [
+      "wa638-ex"
+     ]
+    }
+   ],
+   "official_src": [
+    "wa638-ex"
    ]
   }
  ]
