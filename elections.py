@@ -217,7 +217,7 @@ def civic_lookup(address):
     if not CIVIC_KEY:
         return None
     hit = _cache.get(address)
-    if hit and time.time() - hit[0] < 900:
+    if hit and time.time() - hit[0] < (900 if hit[1].get("status") != "error" else 60):   # retry errors after a minute
         return hit[1]
     try:
         r = requests.get("https://www.googleapis.com/civicinfo/v2/voterinfo",
@@ -233,6 +233,10 @@ def civic_lookup(address):
                 out["status"] = "none"
     except Exception:
         out = {"status": "error", "code": 0}
+    if len(_cache) >= 500:      # bounded: addresses are only kept in memory, briefly, never written to disk
+        now = time.time()
+        for k in [k for k, v in _cache.items() if now - v[0] > 900] or list(_cache)[:100]:
+            _cache.pop(k, None)
     _cache[address] = (time.time(), out)
     return out
 

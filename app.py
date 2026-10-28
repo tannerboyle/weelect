@@ -55,7 +55,58 @@ def _security_headers(resp):
     # Cross-origin links and requests (official sites, OpenStreetMap tiles) get only our origin, never a path.
     resp.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
     resp.headers.setdefault("X-Content-Type-Options", "nosniff")
+    resp.headers.setdefault("X-Frame-Options", "DENY")
+    resp.headers.setdefault("Permissions-Policy", "geolocation=(), camera=(), microphone=(), payment=()")
+    resp.headers.setdefault("Strict-Transport-Security", "max-age=31536000")
+    # Not a full script policy (the site uses a few small inline styles/scripts), but blocks framing, plugin
+    # content, <base> hijacking and form posts to other sites.
+    resp.headers.setdefault("Content-Security-Policy", "frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'")
+    if request.path.startswith("/static/") and resp.status_code == 200:
+        # CSS/JS are versioned with ?v=N in the templates; bump N when they change.
+        resp.headers["Cache-Control"] = "public, max-age=604800"
     return resp
+
+
+# ---------- abuse protection ----------
+MAX_ADDRESS_LEN = 200
+_HITS = {}   # (bucket, ip) -> recent request times; per worker process, which is plenty for a small site
+
+
+def _client_ip():
+    return (request.headers.get("CF-Connecting-IP") or (request.headers.get("X-Forwarded-For") or "").split(",")[0].strip()
+            or request.remote_addr or "?")
+
+
+def _rate_limited(bucket, limit, window=60):
+    """True when this client has made more than `limit` requests to `bucket` in the last `window` seconds."""
+    now = time.time()
+    if len(_HITS) > 5000:   # keep memory bounded
+        for k in [k for k, v in _HITS.items() if not v or now - v[-1] > window]:
+            _HITS.pop(k, None)
+    key = (bucket, _client_ip())
+    q = [t for t in _HITS.get(key, []) if now - t < window]
+    q.append(now)
+    _HITS[key] = q
+    return len(q) > limit
+
+
+def _error_page(code, title, message):
+    return render_template("error.html", code=code, title=title, message=message), code
+
+
+@app.errorhandler(404)
+def _not_found(e):
+    return _error_page(404, "Page not found", "We couldn\u2019t find that page. It may have moved, or the address may have a typo.")
+
+
+@app.errorhandler(405)
+def _bad_method(e):
+    return _error_page(405, "That didn\u2019t work", "Please go back to the home page and try again.")
+
+
+@app.errorhandler(500)
+def _server_error(e):
+    return _error_page(500, "Something went wrong", "That was our mistake, not yours. Please try again in a minute.")
 
 
 @lru_cache(maxsize=128)
@@ -130,8 +181,13 @@ def census_geocode(address):
         params={"address": address, "benchmark": "Public_AR_Current", "vintage": CENSUS_VINTAGE,
                 "layers": "all", "format": "json"},
         headers=UA, timeout=25)
+    if r.status_code == 400:   # the Census service rejects input it cannot parse at all: same as "no match"
+        return None
     r.raise_for_status()
-    matches = r.json()["result"]["addressMatches"]
+    try:
+        matches = r.json()["result"]["addressMatches"]
+    except ValueError:   # the Census firewall answers some odd input with an HTML "Request Rejected" page
+        return None
     if not matches:
         return None
     m = matches[0]
@@ -232,12 +288,17 @@ def federal_for(geo):
 
 
 # ---------- state / local ----------
+def _https(u):
+    """Official photo hosts serve https; an http:// image on our https pages would be blocked as mixed content."""
+    return ("https://" + u[7:]) if isinstance(u, str) and u.startswith("http://") else u
+
+
 def state_summary(p, role):
     chamber = {"upper": "State Senator", "lower": "State Representative", "mayor": "Mayor"}.get(role["type"], role["type"])
     return {"id": p["id"], "kind": "st", "name": p["name"], "initials": initials(p["name"]), "party": party_label(p["party"]),
             "pclass": party_class(p["party"]), "office": chamber,
             "where": (f'{p["state"]} district {role["district"]}' if role["district"] else (role["place"] or "").replace("_", " ").title()),
-            "photo": p.get("image")}
+            "photo": _https(p.get("image"))}
 
 
 def state_for_keyless(geo):
@@ -273,7 +334,7 @@ def state_for_api(geo):
                     "party": party_label(person.get("party", "")), "pclass": party_class(person.get("party", "")),
                     "office": "State Senator" if role["org_classification"] == "upper" else "State Representative",
                     "where": f'{geo["state"]} district {role.get("district", "")}',
-                    "photo": person.get("image") or (local or {}).get("image")})
+                    "photo": _https(person.get("image") or (local or {}).get("image"))})
     return out
 
 
@@ -318,6 +379,8 @@ def lookup():
         if not legacy:
             return _private(app.make_response(render_template("home.html")))
         return _private(app.make_response(render_template("lookup_bridge.html", address=legacy)))
+    if _rate_limited("lookup", 20):
+        return _private(app.make_response(_error_page(429, "Too many lookups", "Please wait a minute and try again.")))
     return _private(app.make_response(_lookup_post((request.form.get("address") or "").strip())))
 
 
@@ -326,6 +389,8 @@ def city_interest():
     """'Tell us your city': city + state only, never a street address. Nothing is stored in a database;
     one line is written to the application log (Render -> Logs) so Bob can see demand.
     TODO(Bob): replace the log line with a durable destination (email service or a form tool) if you want to keep these."""
+    if _rate_limited("city", 6):
+        return _private(app.make_response(_error_page(429, "Too many requests", "Please wait a minute and try again.")))
     city = " ".join((request.form.get("city") or "").split())
     st = (request.form.get("state") or "").strip().upper()
     ok = (not request.form.get("website")            # honeypot: real visitors leave it empty
@@ -338,11 +403,23 @@ def city_interest():
 def _lookup_post(address):
     if not address:
         return render_template("home.html")
+    address = " ".join(address.split())   # collapse newlines, tabs and runs of spaces
+    if len(address) > MAX_ADDRESS_LEN:
+        return render_template("results.html", address=address[:MAX_ADDRESS_LEN], geo=None,
+                               error="That address is too long. Please enter just a street address, city and state."), 400
+    if re.search(r"[<>{}\[\]|\\;=`^~$%*@!?]", address):
+        return render_template("results.html", address="", geo=None,
+                               error="Please enter a street address using only letters, numbers and ordinary punctuation, for example 1600 Pennsylvania Ave NW, Washington, DC."), 400
+    if re.match(r"^\s*(p\.?\s*o\.?\s*box|post office box)\b", address, re.I):
+        return render_template("results.html", address=address, geo=None,
+                               error="P.O. boxes can\u2019t be matched to a voting district. Please enter the street address where you live."), 200
     notes = []
     try:
         geo = census_geocode(address)
     except Exception as e:
-        return render_template("results.html", address=address, geo=None, error=f"Census geocoder error: {e}"), 502
+        app.logger.warning("census geocoder failed: %s", type(e).__name__)
+        return render_template("results.html", address=address, geo=None,
+                               error="The U.S. Census address service is not responding right now. Your address was not saved. Please try again in a few minutes."), 503
     if not geo:
         return render_template("results.html", address=address, geo=None,
                                error="The Census geocoder could not match that address. Try adding city, state and ZIP."), 200
@@ -353,7 +430,8 @@ def _lookup_post(address):
         try:
             state = state_for_api(geo)
         except Exception as e:
-            notes.append(f"Open States API failed ({e}); fell back to local data.")
+            app.logger.warning("open states failed: %s", type(e).__name__)
+            notes.append("The live state-legislator lookup was unavailable, so we used our saved data instead.")
     if not state:
         state, missed = state_for_keyless(geo)
         if missed and geo["state"] == "DC":
@@ -410,12 +488,15 @@ def fed_profile(bioguide):
     if l["id"].get("ballotpedia"): links.append(("Ballotpedia", "https://ballotpedia.org/" + l["id"]["ballotpedia"].replace(" ", "_")))
     if soc.get("twitter"): links.append(("X / Twitter", "https://x.com/" + soc["twitter"]))
     if soc.get("facebook"): links.append(("Facebook", "https://facebook.com/" + soc["facebook"]))
-    if soc.get("youtube"): links.append(("YouTube", "https://youtube.com/" + soc["youtube"]))
+    if soc.get("youtube"):
+        yt = soc["youtube"]
+        links.append(("YouTube", "https://www.youtube.com/" + ("channel/" + yt if re.fullmatch(r"UC[\w-]{22}", yt) else yt)))
     bills, bills_error = None, None
     try:
         bills = sponsored_bills(bioguide)
     except Exception as e:
-        bills_error = str(e)
+        app.logger.warning("congress.gov sponsored bills failed: %s", type(e).__name__)
+        bills_error = "temporarily unavailable"
     contact = {"Phone": t.get("phone"), "Office": t.get("address")}
     vlist, verr, vnote = votes_mod.recent_votes(bioguide, t["type"])
     try:

@@ -3,14 +3,14 @@
 {% block body %}
 <h1 class="hero">Who represents you?</h1>
 <p class="deck">Enter a home address to see the federal and state officials elected to speak for you &mdash; from Washington to your statehouse.</p>
-<form class="search" action="/lookup" method="post"><input name="address" placeholder="Street address, city, state (e.g. 1600 Pennsylvania Ave NW, Washington, DC)" autocomplete="street-address" required autofocus><button>Find</button></form>
-<p class="fine">Your address is sent to the U.S. Census geocoder to find your districts. This site does not store it, and it is never placed in the web address.</p>
+<form class="search" action="/lookup" method="post"><input name="address" maxlength="200" aria-label="Home address" placeholder="Street address, city, state (e.g. 1600 Pennsylvania Ave NW, Washington, DC)" autocomplete="street-address" required autofocus><button>Find</button></form>
+<p class="fine">Your address is sent to the U.S. Census geocoder to find your districts and, where available, to Google&rsquo;s Civic Information service to find polling places. We Elect does not save it in a database or log it, and it is never placed in the web address.</p>
 <p class="mission">We Elect exists to renew a sense of civic responsibility and a healthy public square: know who speaks for you, read the strongest case on every side, and decide for yourself. Independent and nonpartisan.</p>
 <div class="stars" aria-hidden="true">★ ★ ★ ★ ★</div>
 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
  <div class="card" style="display:block"><strong>Federal</strong><div class="meta">Your U.S. Representative and both U.S. Senators, with recent votes.</div></div>
  <div class="card" style="display:block"><strong>State</strong><div class="meta">Your state senator and state representative.</div></div>
- <div class="card" style="display:block"><strong>Local</strong><div class="meta">Mayors where data exists. More local coverage is coming.</div></div>
+ <div class="card" style="display:block"><strong>Local</strong><div class="meta">Mayors and county leaders where data exists. More local coverage is coming.</div></div>
  <a class="card" href="/votes" style="display:block;grid-column:1/-1"><strong>Both sides on key votes &rarr;</strong><div class="meta">The strongest case for and against recent, widely covered votes in Congress, with the sources behind each side.</div></a>
 </div>
 {% include "_city_interest.html" %}

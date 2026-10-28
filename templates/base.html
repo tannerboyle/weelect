@@ -19,8 +19,9 @@
 <meta name="twitter:image:alt" content="We Elect: Who represents you? Nonpartisan civic information.">
 <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
 <link rel="preload" href="{{ url_for('static', filename='fonts/playfair-display-latin-700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=23">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=24">
 </head><body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="flagstripe"></div>
 <header class="mast">
   <div class="mast-top"><span>{{ today }}</span><span>Nonpartisan civic information</span></div>
@@ -28,7 +29,7 @@
   <p class="mast-sub">Know who represents you.</p>
   <nav class="rules"><a href="/">Find my officials</a><a href="/votes">Both sides on key votes</a><a href="/credits">About &amp; credits</a></nav>
 </header>
-<main>{% block body %}{% endblock %}</main>
+<main id="main">{% block body %}{% endblock %}</main>
 <footer>
   <p>We Elect is an independent, nonpartisan civic information project. It is not affiliated with any government agency, party or campaign. Always verify with official sources.</p>
   <p>Data: U.S. Census Bureau geocoder and boundaries; unitedstates/congress-legislators (CC0); Open States people data (CC0); House Clerk and Voteview roll calls; Congress.gov. State flags: Wikimedia Commons. <a href="/credits">Full credits</a>.</p>

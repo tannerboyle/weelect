@@ -233,3 +233,10 @@ details.bs-details>summary:focus-visible{outline:2px solid var(--navy);outline-o
 .cityform .fine{text-align:center;max-width:560px;margin:0 auto 10px}
 .cityform input:not(.hp),.cityform select{height:44px;box-sizing:border-box}
 @media (max-width:520px){.cityform form{flex-direction:column;align-items:stretch}.cityform button{width:100%}}
+
+/* v24: accessibility helpers */
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--cream);padding:8px 14px;z-index:10}
+.skip:focus{left:8px;top:8px}
+.avatar [hidden]{display:none!important}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--navy);outline-offset:2px}

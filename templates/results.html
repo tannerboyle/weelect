@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% macro avatar(o, cls="") %}<span class="avatar {{ cls }}">{% if o.photo %}<img src="{{ o.photo }}" alt="Photo of {{ o.name }}" loading="lazy" referrerpolicy="no-referrer">{% else %}<span class="initials" role="img" aria-label="No photo available for {{ o.name }}">{{ o.initials }}</span>{% endif %}</span>{% endmacro %}
+{% macro avatar(o, cls="") %}<span class="avatar {{ cls }}">{% if o.photo %}<img src="{{ o.photo }}" alt="Photo of {{ o.name }}" loading="lazy" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="initials" hidden aria-hidden="true">{{ o.initials }}</span>{% else %}<span class="initials" role="img" aria-label="No photo available for {{ o.name }}">{{ o.initials }}</span>{% endif %}</span>{% endmacro %}
 {% macro cards(items) %}<div class="grid">{% for o in items %}
 <a class="card p-{{ o.pclass }}" href="/official/{{ o.kind }}/{{ o.id }}">{{ avatar(o) }}
 <div><strong>{{ o.name }}</strong><div class="meta">{{ o.office }}<br>{{ o.where }}</div>{% if o.party %}<span class="party">{{ o.party }}</span>{% endif %}</div></a>{% endfor %}</div>{% endmacro %}
@@ -8,7 +8,8 @@
 {% block robots %}<meta name="robots" content="noindex,nofollow">{% endblock %}
 {% block canonical %}{{ site_url }}/{% endblock %}
 {% block body %}
-<form class="search" action="/lookup" method="post"><input name="address" value="{{ address }}" aria-label="Address"><button>Find</button></form>
+<h1 class="sr-only">Your officials{% if geo %} in {{ geo.state_name }}{% endif %}</h1>
+<form class="search" action="/lookup" method="post"><input name="address" value="{{ address }}" maxlength="200" aria-label="Address"><button>Find</button></form>
 {% if error %}<p class="err">{{ error }}</p>{% else %}
 <section class="ataglance" aria-label="Your state at a glance">
   <div class="state-icon" aria-hidden="true">{% if state_svg %}{{ state_svg }}{% endif %}</div>

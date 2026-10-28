@@ -1,14 +1,14 @@
 {% extends "base.html" %}{% block title %}{{ p.name }}, {{ p.office }} ({{ p.where }}) – We Elect{% endblock %}
 {% block meta_description %}{{ p.name }}, {{ p.office }}{% if p.where %}, {{ p.where }}{% endif %}: contact information, official links{% if kind == "fed" %} and recent votes with sources{% endif %}. Nonpartisan civic information from We Elect.{% endblock %}
 {% block body %}{% import "_bothsides.html" as B with context %}<p><a href="/">&larr; Find another address</a></p>
-<div class="profile p-{{ p.pclass }}"><span class="avatar big">{% if p.photo %}<img src="{{ p.photo }}" alt="Photo of {{ p.name }}" referrerpolicy="no-referrer">{% else %}<span class="initials" role="img" aria-label="No photo available for {{ p.name }}">{{ p.initials }}</span>{% endif %}</span>
+<div class="profile p-{{ p.pclass }}"><span class="avatar big">{% if p.photo %}<img src="{{ p.photo }}" alt="Photo of {{ p.name }}" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="initials" hidden aria-hidden="true">{{ p.initials }}</span>{% else %}<span class="initials" role="img" aria-label="No photo available for {{ p.name }}">{{ p.initials }}</span>{% endif %}</span>
 <div><h1>{{ p.name }}</h1><p>{{ p.office }} &middot; {{ p.where }}{% if p.party %} &middot; <span class="party">{{ p.party }}</span>{% endif %}</p>
 {% if since %}<p>In Congress since {{ since }}{% if term_end %}; current term ends {{ term_end }}{% endif %}.</p>{% endif %}</div></div>
 <div class="sechead"><span class="star">★</span><h2>Contact</h2></div><ul>{% for k,v in contact.items() if v %}<li><strong>{{ k }}:</strong> {{ v }}</li>{% endfor %}</ul>
 <div class="sechead"><span class="star">★</span><h2>Links</h2></div><ul>{% for label,url in links %}<li><a href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a></li>{% endfor %}</ul>
 {% if kind == "fed" %}<div class="sechead"><span class="star">★</span><h2>Recently sponsored bills</h2></div>
 {% if bills %}<ul>{% for b in bills %}<li><a href="{{ b.url }}" target="_blank" rel="noopener">{{ b.number }} ({{ b.congress }}th)</a> – {{ b.title }}<br><small>Introduced {{ b.introduced }}. Latest action: {{ b.action }}</small></li>{% endfor %}</ul>
-{% elif bills_error %}<p class="err">Congress.gov API error: {{ bills_error }}</p>
+{% elif bills_error %}<p class="err">Sponsored bills are {{ bills_error }}. See this member\u2019s <a href="https://www.congress.gov/member/x/{{ p.id }}" target="_blank" rel="noopener">sponsored legislation on Congress.gov</a>.</p>
 {% elif not has_key %}<p>See this member's <a href="https://www.congress.gov/member/x/{{ p.id }}" target="_blank" rel="noopener">sponsored legislation on Congress.gov</a>.</p>
 {% else %}<p>No sponsored bills returned.</p>{% endif %}
 <div class="sechead"><span class="star">★</span><h2>Recent votes</h2></div>
