@@ -581,6 +581,12 @@ def st_profile(pid):
                            bills=None, bills_error=None, has_key=False, kind="st")
 
 
+@app.route("/BingSiteAuth.xml")
+def bing_site_auth():
+    body = ('<?xml version="1.0"?>\n<users>\n\t<user>2FBEF01D24EF9871F1D7D5A4943756F7</user>\n</users>')
+    return Response(body, mimetype="application/xml")
+
+
 @app.route("/robots.txt")
 def robots_txt():
     body = ("User-agent: *\n"
