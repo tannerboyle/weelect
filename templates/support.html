@@ -55,7 +55,7 @@
     <p class="cart-total" id="cart-total" hidden></p>
     <p class="fine" id="cart-ship" hidden></p>
     <p><a class="support-btn" id="cart-checkout" href="/shop/checkout" hidden>Check out</a> <button type="button" class="linkbtn" id="cart-clear" hidden>Empty cart</button></p>
-    <p class="fine">Payment is handled by Stripe on the next step. We never see your card details.</p>
+    <p class="fine">On the next step you enter a shipping address and pay with PayPal or a debit or credit card, right here on weelect.org. PayPal handles the payment; we never see your card details.</p>
   </aside>
   </div>
   <script type="application/json" id="shop-data">{{ shop_json|tojson }}</script>
@@ -69,9 +69,9 @@
     <li><strong>Seller.</strong> Shop items are sold by {{ seller }}, which operates We Elect.</li>
     <li><strong>Not a charity.</strong> We Elect is not a charity or nonprofit, and neither gifts nor purchases are tax-deductible.</li>
     <li><strong>Made to order.</strong> Items are printed or embroidered on demand and shipped by Printful. We ship within the United States only.</li>
-    <li><strong>Shipping{% if tax_mode != 'none' %} and tax{% endif %}.</strong> {{ shipping_label }} is {{ shipping_first }} for the first item and {{ shipping_more }} for each additional item.{% if tax_mode != 'none' %} Sales tax is added at checkout where required.{% endif %}</li>
+    <li><strong>Shipping{% if tax_mode != 'none' %} and tax{% endif %}.</strong> {{ shipping_label }} is {{ shipping_first }} for the first item and {{ shipping_more }} for each additional item.{% if tax_mode != 'none' %} Sales tax is added at checkout for orders shipped to {{ tax_states|join(', ') }}.{% endif %}</li>
     <li><strong>Problems with an order.</strong> If something arrives damaged or misprinted, contact us from the <a href="/credits#who">About page</a> and we will make it right.</li>
-    <li><strong>Privacy.</strong> Checkout is run by <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe</a>; we keep the order, shipping address and email only to fulfil and support your order. The address lookup on the rest of this site stays separate and is never saved.</li>
+    <li><strong>Privacy.</strong> Payments are processed by <a href="https://www.paypal.com/us/legalhub/privacy-full" target="_blank" rel="noopener">PayPal</a>; we keep the order, shipping address and email only to fulfil and support your order. The address lookup on the rest of this site stays separate and is never saved.</li>
     <li><strong>No influence.</strong> Gifts and purchases do not buy influence, coverage or changes to what we publish.</li>
   </ul>
 </section>

@@ -1,13 +1,43 @@
 {% extends "base.html" %}{% block title %}Checkout – We Elect shop{% endblock %}
-{% block meta_description %}Secure checkout for the We Elect shop, handled by Stripe.{% endblock %}
+{% block meta_description %}Secure checkout for the We Elect shop. Pay with PayPal or a debit or credit card.{% endblock %}
 {% block body %}<div class="credits support-page">
 <meta name="csrf-token" content="{{ csrf }}">
 <meta name="robots" content="noindex">
 <p class="kicker">We Elect shop</p>
 <h1 class="hero" style="text-align:left;font-size:2rem">Checkout</h1>
-<p class="fine" style="text-align:left;margin-left:0">Payment and shipping address are collected by Stripe in the form below, not by We Elect. Shop items are sold by {{ seller }}. <a href="/support#shop">&larr; Back to the shop</a></p>
-<div id="checkout-status" class="note" role="status" hidden></div>
-<div id="checkout" data-pk="{{ publishable_key }}"></div>
+<p class="fine" style="text-align:left;margin-left:0">Shop items are sold by {{ seller }}. Payment is handled by PayPal; you can pay with a PayPal account or with a debit or credit card, without leaving this page. <a href="/support#shop">&larr; Back to the shop</a></p>
+<div id="checkout-status" class="note" role="status" aria-live="polite" hidden></div>
 <noscript><p class="note">Checkout needs JavaScript. You can still <a href="/support#give">give through Ko-fi</a>.</p></noscript>
-<script src="{{ url_for('static', filename='shop-checkout.js') }}?v=1" defer></script>
+<div class="co-layout" id="checkout" data-client-id="{{ paypal_client_id }}" hidden>
+  <form id="ship-form" class="co-ship" novalidate>
+    <h2 class="co-h">1. Ship to</h2>
+    <p class="fine">We ship within the United States only.</p>
+    <label class="co-f">Full name<input name="name" autocomplete="shipping name" maxlength="120" required></label>
+    <label class="co-f">Street address<input name="line1" autocomplete="shipping address-line1" maxlength="120" required></label>
+    <label class="co-f">Apartment, suite, etc. <span class="fine">(optional)</span><input name="line2" autocomplete="shipping address-line2" maxlength="120"></label>
+    <div class="co-row">
+      <label class="co-f">City<input name="city" autocomplete="shipping address-level2" maxlength="80" required></label>
+      <label class="co-f">State<select name="state" autocomplete="shipping address-level1" required><option value="">Choose…</option>{% for code, name in states %}<option value="{{ code }}">{{ name }}</option>{% endfor %}</select></label>
+      <label class="co-f co-zip">ZIP code<input name="zip" autocomplete="shipping postal-code" inputmode="numeric" maxlength="10" required></label>
+    </div>
+    <p><button type="submit" class="support-btn" id="ship-go">Continue to payment</button></p>
+  </form>
+  <aside class="cart co-sum" aria-labelledby="sum-h">
+    <h2 class="co-h" id="sum-h">Your order</h2>
+    <div id="sum-lines"></div>
+    <dl class="co-totals" id="sum-totals" hidden>
+      <dt>Items</dt><dd id="sum-items"></dd>
+      <dt id="sum-ship-l">Shipping</dt><dd id="sum-ship"></dd>
+      <dt>Sales tax</dt><dd id="sum-tax"></dd>
+      <dt class="co-total">Total</dt><dd class="co-total" id="sum-total"></dd>
+    </dl>
+    <p class="fine" id="sum-note">Shipping and any sales tax are worked out once you enter your address.{% if not tax_states %} We do not currently collect sales tax.{% endif %}</p>
+  </aside>
+  <section class="co-pay" id="pay" aria-labelledby="pay-h" hidden>
+    <h2 class="co-h" id="pay-h">2. Pay</h2>
+    <p class="fine">Choose PayPal, or &ldquo;Debit or Credit Card&rdquo; to pay by card without a PayPal account. Your card details go straight to PayPal.</p>
+    <div id="paypal-buttons" class="pp-slot"></div>
+  </section>
+</div>
+<script src="{{ url_for('static', filename='shop-checkout.js') }}?v=2" defer></script>
 </div>{% endblock %}

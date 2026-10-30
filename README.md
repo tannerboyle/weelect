@@ -77,4 +77,4 @@ Neutral two-sided summaries of selected statewide measures on the Nov. 3, 2026 b
 
 Authoring rules are on the credits page (`#measures`). Before a measure is added, every quotation and every dollar or percentage figure must appear verbatim in the cited source text, and the two sides must be balanced in length. Dates are reviewed manually; bump `meta.last_reviewed` when you re-check an item.
 
-- **Support page and shop:** `/support` (thank-you page, Ko-fi, and a Stripe + Printful store that stays "coming soon" until its env vars are set). Code in `shop.py`, catalog in `data/shop_products.json`, tests in `tests/` (`python -m unittest discover -s tests`). Setup steps: `docs/SHOP_SETUP.md`.
+- **Support page and shop:** `/support` (thank-you page, Ko-fi, and a PayPal + Printful store that stays "coming soon" until its env vars are set). Code in `shop.py`, catalog in `data/shop_products.json`, tests in `tests/` (`python -m unittest discover -s tests`). Setup steps: `docs/SHOP_SETUP.md`.

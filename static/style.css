@@ -316,10 +316,31 @@ button.support-btn{font-family:var(--text);cursor:pointer}
 #cart-clear{border:0;text-decoration:underline;color:#34363c}
 .cart-total{font-weight:600;margin:8px 0 2px}
 .fineprint li{margin:6px 0}
-#checkout{margin:16px 0;min-height:200px}
+#checkout{margin:16px 0}
+.co-layout{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:18px;align-items:start}
+.co-ship,.co-pay{background:var(--card);border:1px solid var(--ink);border-top:3px double var(--ink);padding:12px 16px;min-width:0}
+.co-pay{grid-column:1;margin-top:0!important}
+.co-sum{grid-column:2;grid-row:1 / span 2}
+.co-h{font-family:var(--display);font-size:1.25rem;margin:0 0 4px}
+.co-f{display:block;margin:8px 0;font-size:.92rem;font-weight:600}
+.co-f input,.co-f select{display:block;width:100%;box-sizing:border-box;font:400 1rem var(--text);padding:7px 9px;border:1px solid var(--ink);background:#fff;margin-top:3px}
+.co-f .fine{font-weight:400}
+.co-row{display:grid;grid-template-columns:2fr 2fr 1.3fr;gap:10px}
+.co-totals{display:grid;grid-template-columns:1fr auto;gap:4px 0;margin:10px 0 4px;font-size:.95rem}
+.co-totals dd{margin:0;text-align:right;padding-left:10px}
+.co-ship .fine,.co-pay .fine{text-align:left;margin-left:0}
+.co-total{font-weight:700;border-top:1px solid var(--ink);padding-top:5px}
+.pp-slot{max-width:420px;margin:10px 0}
+.pp-btn{margin-bottom:10px}
+.note.ok{border-left-color:var(--navy)}
 @media (max-width:760px){
   .tiers{grid-template-columns:1fr}
   .shop-layout{grid-template-columns:1fr}
   .prod-grid{grid-template-columns:1fr}
   .cart{position:static}
+  .co-layout{grid-template-columns:1fr}
+  .co-sum{grid-column:1;grid-row:auto}
+  .co-pay{grid-column:1}
+  .co-row{grid-template-columns:1fr 1fr}
+  .co-zip{grid-column:span 2}
 }
