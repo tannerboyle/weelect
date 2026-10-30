@@ -1,0 +1,7 @@
+{
+ "meta": {
+  "description": "Optional post-election notes for officials shown on address results. Empty until results are certified. Each entry needs: kind ('fed' or 'st'), id (bioguide or Open States id of the CURRENT officeholder shown on the card), seat, elected_name, takes_office (YYYY-MM-DD), certified_date (YYYY-MM-DD) and source_url (the state's certified results). An entry missing any of these is ignored.",
+  "election_date": "2026-11-03"
+ },
+ "entries": []
+}

@@ -274,3 +274,21 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{ou
 .gi .gi-src{font-size:.82rem;color:var(--mute);margin:6px 0 0}
 .gi .gi-sources{font-size:.88rem;padding-left:1.5em;overflow-wrap:anywhere}
 .gi p,.gi li{overflow-wrap:break-word}
+/* Post-election: official results box, certified outcome stamp, officials-elect note */
+.offres{background:var(--card);border:1px solid var(--rule);border-top:3px double var(--rule);padding:14px 18px 10px;margin:18px 0}
+.offres .kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:600}
+.offres p{margin:6px 0}
+.offres-text{font-size:1.05rem;line-height:1.45}
+.offres-link a{font-weight:600}
+.offres .fine{margin-top:8px}
+.ms-stamp{display:inline-flex;align-items:center;gap:14px;border:2px solid var(--ink);outline:1px solid var(--ink);outline-offset:3px;padding:8px 14px;margin:14px 4px 10px;background:var(--paper)}
+.ms-stamp-word{font:700 1.25rem var(--display);letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.ms-stamp-detail{font-size:.85rem;line-height:1.4;color:var(--ink);border-left:1px solid var(--hair);padding-left:14px}
+.ms-stamp.compact{padding:2px 8px;margin:6px 0 0;outline:none;gap:0}
+.ms-stamp.compact .ms-stamp-word{font-size:.72rem;letter-spacing:.14em}
+.elect-notes{list-style:none;padding:0;margin:8px 0 0}
+.elect-note{font-size:.9rem;margin:6px 0;padding:6px 10px;border-left:3px solid var(--ink);background:var(--card)}
+.rs-recap h2.ms-state{margin-top:24px}
+.rs-list{list-style:none;padding:0;margin:0}
+.rs-list li{border-bottom:1px solid var(--hair);padding:10px 0;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+@media (max-width:600px){.ms-stamp{flex-direction:column;align-items:flex-start;gap:6px}.ms-stamp-detail{border-left:0;padding-left:0}.offres{padding:12px 14px 8px}}

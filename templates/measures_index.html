@@ -1,11 +1,12 @@
 {% extends "base.html" %}{% block title %}Both sides on Nov. 3, 2026 ballot measures – We Elect{% endblock %}
 {% block meta_description %}Plain-language summaries of what a yes and a no vote do on statewide ballot measures on Nov. 3, 2026, with the strongest case for and against each, the cost, and sources. Editorial summaries of arguments made by others; we do not say who is right.{% endblock %}
-{% block body %}<div class="credits">
+{% block body %}{% import "_results.html" as R %}<div class="credits">
 <h1 class="hero" style="text-align:left;font-size:2.2rem">Both sides on the ballot measures</h1>
 <p class="deck bs-wide">For some of the most-debated statewide measures on the Nov. 3, 2026 ballot, we explain what a yes vote and a no vote do in plain language, give the official cost estimate, and lay out the strongest case for and against, each with the sources behind it. This is editorial content summarizing arguments made by others. It is not our opinion, and we do not say how to vote.</p>
+{% if has_recap %}<p class="note">Certified results are in for some of these measures. <a href="/results">See which passed and failed</a>.</p>{% endif %}
 {% for code, name, group in groups %}<h2 class="ms-state" id="{{ code|lower }}">{{ name }}</h2>
 <div class="grid bs-grid">
-{% for it in group %}<a class="card bs-card" href="/measures/{{ it.id }}"><div><span class="bs-kicker">{{ it.topic }}</span><br><strong>{{ it.label }}: {{ it.title }}</strong><div class="meta">{{ it.mtype }}</div></div></a>{% endfor %}
+{% for it in group %}<a class="card bs-card" href="/measures/{{ it.id }}"><div><span class="bs-kicker">{{ it.topic }}</span><br><strong>{{ it.label }}: {{ it.title }}</strong><div class="meta">{{ it.mtype }}</div>{{ R.stamp(rs_outcome(it), compact=True) }}</div></a>{% endfor %}
 </div>{% endfor %}
 <p class="fine bs-wide">We cover {{ total }} measures so far; most statewide measures are not yet covered. Your results page lists every statewide measure Ballotpedia shows for your state, with a link here where we have a summary. Last reviewed {{ ms_meta.last_reviewed }}. {{ ms_meta.disclaimer }} <a href="/credits#measures">How we write both sides</a>. <a href="/">Find my officials</a>.</p>
 {% include "_support.html" %}

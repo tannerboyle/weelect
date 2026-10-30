@@ -1,0 +1,19 @@
+{# Post-election pieces. Neutral by design: Passed and Failed share one ink style (no party red or navy), and every fact links its source. #}
+{% macro box(b) %}{% if b %}
+<aside class="offres" aria-labelledby="offres-{{ b.state|lower }}">
+  <div class="kicker" id="offres-{{ b.state|lower }}">Official results</div>
+  <p class="offres-text">{{ b.text }}{% if b.phase != "before" %} {{ b.unofficial }}{% endif %}</p>
+  <p class="offres-link"><a href="{{ b.url }}" target="_blank" rel="noopener">{{ b.agency }} results page<span class="sr-only"> (opens in a new tab)</span> &rarr;</a></p>
+  {% if b.phase == "before" %}<p class="fine left">{{ b.unofficial }} We link to official sources and do not report counts ourselves.</p>
+  {% else %}<p class="fine left">We do not report counts ourselves. After the state certifies results, we add the outcomes we cover, with sources.</p>{% endif %}
+</aside>
+{% endif %}{% endmacro %}
+
+{% macro stamp(o, compact=False) %}{% if o %}
+<div class="ms-stamp{% if compact %} compact{% endif %}" role="note" aria-label="Certified result: {{ o.label }}">
+  <span class="ms-stamp-word">{{ o.label }}</span>
+  {% if not compact %}<span class="ms-stamp-detail">{% if o.yes_pct is not none and o.no_pct is not none %}Yes {{ "%.1f"|format(o.yes_pct) }}% &middot; No {{ "%.1f"|format(o.no_pct) }}%<br>{% endif %}Certified {{ o.certified_label }} &middot; <a href="{{ o.source_url }}" target="_blank" rel="noopener">Source</a></span>{% endif %}
+</div>
+{% endif %}{% endmacro %}
+
+{% macro elect_note(n) %}{% if n %}<p class="elect-note">{{ n.text }} <a href="{{ n.source_url }}" target="_blank" rel="noopener">Source</a> <span class="meta">(certified {{ n.certified_label }})</span></p>{% endif %}{% endmacro %}
