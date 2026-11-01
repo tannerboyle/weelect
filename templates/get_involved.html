@@ -34,5 +34,6 @@
 <p class="fine" style="text-align:left;margin-left:0">Each page below was opened and read on {{ gi_checked }}. We cite city pages only as examples of how a process can work; yours may differ. We Elect does not use statistics on this page.</p>
 <ol class="bs-credit gi-sources">{% for n, s in sources %}<li id="gi-src-{{ n }}"><a href="{{ s[2] }}" target="_blank" rel="noopener">{{ s[1] }}</a> &mdash; {{ s[0] }} ({{ s[3] }}{% if s[4] %}, {{ s[4] }}{% endif %})</li>{% endfor %}</ol>
 <p class="fine bs-wide"><a href="/">Find my officials</a> &middot; <a href="/measures">Ballot measures</a> &middot; <a href="/credits#get-involved">How we wrote this page</a></p>
+{% include "_newsletter.html" %}
 {% include "_support.html" %}
 </div>{% endblock %}
