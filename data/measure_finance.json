@@ -1,6 +1,6 @@
 {
  "meta": {
-  "source_note": "Figures are reported contributions to registered ballot measure committees, as compiled by Ballotpedia from state campaign-finance filings. They change as new reports are filed.",
+  "source_note": "Figures are reported contributions to registered ballot measure committees, as compiled by Ballotpedia from state campaign-finance filings, except entries whose source kind is 'official', which are built directly from state filings (Washington PDC, California CAL-ACCESS). They change as new reports are filed.",
   "threshold": 100000,
   "min_shown": 3,
   "fallback_top": 5,
@@ -254,22 +254,24 @@
    }
   },
   "california-proposition-40": {
-   "as_of": "2026-10-22",
    "source": {
-    "org": "Ballotpedia",
-    "title": "California Proposition 40 (2026): Campaign finance",
-    "url": "https://ballotpedia.org/California_Proposition_40,_One-Time_Wealth_Tax_for_State-Funded_Healthcare,_Education,_and_Food_Assistance_Programs_Initiative_(2026)#Campaign_finance",
-    "accessed": "2026-11-01"
+    "org": "California Secretary of State, CAL-ACCESS",
+    "kind": "official",
+    "title": "Power Search: contributions to committees supporting and opposing Proposition 40",
+    "url": "https://powersearch.sos.ca.gov/advanced.php",
+    "accessed": "2026-11-01",
+    "method": "Contributions to the committees that report supporting or opposing the measure, with transfers between allied committees left out."
    },
    "filings": {
-    "org": "California Secretary of State, Cal-Access",
+    "org": "California Secretary of State, CAL-ACCESS",
     "url": "https://cal-access.sos.ca.gov/Campaign/Measures/"
    },
    "yes": {
     "committees": [
      {
       "name": "Yes on 40 - Billionaire Tax Now - No on 41 & 42",
-      "total": 32754967.14,
+      "total": 32974997.73,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1484470",
       "also": [
        "california-proposition-41",
        "california-proposition-42"
@@ -277,7 +279,8 @@
      },
      {
       "name": "Tax the Ultra-Rich Now, YES on 3 & 40, NO on 41 & 42",
-      "total": 464579.28,
+      "total": 579579.28,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1495036",
       "also": [
        "california-proposition-3",
        "california-proposition-41",
@@ -287,85 +290,214 @@
     ],
     "donors": [
      {
-      "name": "Service Employees International Union-United Healthcare Workers West",
-      "amount": 31971968.92
+      "name": "Service Employees International Union, United Healthcare Workers West Nonprofit 501(c)(5)",
+      "amount": 22077898.56,
+      "rows": 73,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1373047"
+     },
+     {
+      "name": "SEIU United Health Care Workers West Political Issues Committee",
+      "amount": 7733164.35,
+      "rows": 18,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=991800"
+     },
+     {
+      "name": "SEIU United Healthcare Workers West PAC",
+      "amount": 2000000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=747285"
      },
      {
       "name": "Alan Davis",
-      "amount": 300000.0
+      "amount": 400000.0,
+      "rows": 5
      },
      {
       "name": "Saikat Chakrabarti",
       "amount": 201000.0
      },
      {
-      "name": "California Labor Federation AFL-CIO",
-      "amount": 200000.0
+      "name": "Ross Boucher",
+      "amount": 200000.0,
+      "rows": 2
      },
      {
-      "name": "Ross Boucher",
-      "amount": 200000.0
+      "name": "California Labor Federation AFL-CIO",
+      "amount": 200000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=741504"
+     },
+     {
+      "name": "Service Employees International Union - United Healthcare Workers West",
+      "amount": 160906.01
      },
      {
       "name": "Hillary Perkins",
       "amount": 100000.0
+     },
+     {
+      "name": "Excessive Wealth",
+      "amount": 45000.0,
+      "rows": 2
+     },
+     {
+      "name": "California Donor Table Issues Committee",
+      "amount": 40000.0,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1489719"
+     },
+     {
+      "name": "John O'Farrell",
+      "amount": 35000.0,
+      "rows": 2
+     },
+     {
+      "name": "American Federation of State, County & Municipal Employees Council 57 Issues PAC",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1338455"
+     },
+     {
+      "name": "William Connell",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1494715"
+     },
+     {
+      "name": "John Esler",
+      "amount": 25000.0
+     },
+     {
+      "name": "James Stone",
+      "amount": 25000.0
+     },
+     {
+      "name": "Thomas Scruggs",
+      "amount": 25000.0
+     },
+     {
+      "name": "Nicole Pesco",
+      "amount": 10000.0
+     },
+     {
+      "name": "JB Moss Voice of the Electorate (Vote) FED PAC ID# C00007898",
+      "amount": 10000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1309168"
+     },
+     {
+      "name": "Henry Scott Wallace",
+      "amount": 10000.0
+     },
+     {
+      "name": "Leah Hunt-Hendrix",
+      "amount": 10000.0
+     },
+     {
+      "name": "California Democratic Party",
+      "amount": 8374.58,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=741666"
+     },
+     {
+      "name": "Mark Schlesinger",
+      "amount": 7500.0
+     },
+     {
+      "name": "Betsy Krieger",
+      "amount": 6000.0,
+      "rows": 2
+     },
+     {
+      "name": "David Olsen",
+      "amount": 5100.0,
+      "rows": 2
      }
     ],
-    "total": 33219546.42,
+    "total": 33554577.01,
     "ie": []
    },
    "no": {
     "committees": [
      {
-      "name": "No on Prop 40 - Doctors, Teachers, Small Businesses, Working Families, and Public Safety Against the Reckless Wealth Tax Experiment",
-      "total": 118761261.41
-     },
-     {
-      "name": "Building a Better California",
-      "total": 10499294.93,
-      "also": [
-       "california-proposition-41",
-       "california-proposition-42"
-      ]
+      "name": "No on Prop 40 - Doctors, Teachers, Small Businesses, Working Families and Public Safety Against the Reckless Wealth Tax Experiment",
+      "total": 158739981.97,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1492108"
      },
      {
       "name": "Golden State Promise - No on Prop 40",
-      "total": 10450000.0
+      "total": 10450000.0,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1486695"
      },
      {
-      "name": "Californians Against Tax Increases",
-      "total": 423724.25
+      "name": "Californians Against Tax Increases, sponsored by the California Business Roundtable - No on 40",
+      "total": 1114310.54,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1485228"
      },
      {
-      "name": "Stop the Squeeze",
-      "total": 378720.56
+      "name": "Stop the Squeeze - No on Prop 40",
+      "total": 400000.0,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1485007"
      }
     ],
     "donors": [
      {
-      "name": "Sergey Brin",
-      "amount": 102000000.0
+      "name": "Building a Better California",
+      "amount": 158500000.0,
+      "rows": 17,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1486767"
      },
      {
-      "name": "L. John Doerr, III",
-      "amount": 30000000.0
+      "name": "Chris Larsen",
+      "amount": 5000000.0
      },
      {
-      "name": "Patrick Collison",
-      "amount": 22000000.0
+      "name": "Ripple Labs",
+      "amount": 5000000.0
      },
      {
-      "name": "Eric Schmidt",
-      "amount": 15141313.01
+      "name": "California Business Roundtable Issues PAC",
+      "amount": 975000.0,
+      "rows": 13,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1264590"
      },
      {
-      "name": "Vinod Khosla",
-      "amount": 12561504.0
+      "name": "Right Path California Issues PAC",
+      "amount": 584310.54,
+      "rows": 4,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1483288"
+     },
+     {
+      "name": "Daniel Tierney",
+      "amount": 200000.0
+     },
+     {
+      "name": "Ronald Conway",
+      "amount": 100000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1229437"
+     },
+     {
+      "name": "Intersect USA, LLC(Michael Wheeler)",
+      "amount": 100000.0
+     },
+     {
+      "name": "California Medical Association",
+      "amount": 100000.0
+     },
+     {
+      "name": "California Primary Care Association Advocates",
+      "amount": 100000.0
+     },
+     {
+      "name": "Planned Parenthood Affiliates Of California Votes Pac",
+      "amount": 34293.58,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1331005"
+     },
+     {
+      "name": "California Business Properties Association Issues Pac",
+      "amount": 5000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1244001"
      }
     ],
-    "total": 140513001.15,
+    "total": 170704292.51,
     "ie": []
-   }
+   },
+   "as_of": "2026-10-31"
   },
   "virginia-question-1": {
    "as_of": "2026-10-24",
@@ -1249,12 +1381,14 @@
    }
   },
   "washington-initiative-645": {
-   "as_of": "2026-08-31",
+   "as_of": "2026-10-30",
    "source": {
-    "org": "Ballotpedia",
-    "title": "Washington Initiative 645 (2026): Campaign finance",
-    "url": "https://ballotpedia.org/Washington_Initiative_645,_Repeal_Tax_on_Household_Income_Over_$1_Million_and_Prohibit_State_and_Local_Taxes_on_Income_Initiative_(2026)#Campaign_finance",
-    "accessed": "2026-11-01"
+    "org": "Washington Public Disclosure Commission",
+    "kind": "official",
+    "title": "Contributions to Candidates and Political Committees (open data)",
+    "url": "https://data.wa.gov/Politics/Contributions-to-Candidates-and-Political-Committe/kv7h-kjye",
+    "accessed": "2026-11-01",
+    "method": "Itemized contributions reported to each committee for the 2025 and 2026 election years."
    },
    "filings": {
     "org": "Washington Public Disclosure Commission",
@@ -1264,7 +1398,8 @@
     "committees": [
      {
       "name": "Let's Go Washington",
-      "total": 8059297.89,
+      "total": 8258315.77,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-30644",
       "also": [
        "washington-initiative-1",
        "washington-initiative-638"
@@ -1272,71 +1407,144 @@
      },
      {
       "name": "Vote Yes Repeal the Income Tax",
-      "total": 1726720.0,
+      "total": 3689885.0,
       "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-42237"
      }
     ],
     "donors": [
      {
-      "name": "Brian Heywood",
-      "amount": 2229253.0
+      "name": "Heywood Brian",
+      "amount": 2580049.0,
+      "rows": 41
      },
      {
-      "name": "Larry Gordon",
-      "amount": 325000.0,
-      "rows": 2
+      "name": "Gordon Steve",
+      "amount": 1452000.0,
+      "rows": 12
      },
      {
       "name": "Hughes Lawrence",
-      "amount": 250000.0
+      "amount": 1000000.0,
+      "rows": 2,
+      "separate_address": true
      },
      {
-      "name": "Lawrence Hughes",
-      "amount": 250000.0
+      "name": "Kemper Holdings LLC",
+      "amount": 505000.0,
+      "rows": 5
+     },
+     {
+      "name": "Kelley DevCom LLC",
+      "amount": 450000.0,
+      "rows": 3
+     },
+     {
+      "name": "Crow Robert",
+      "amount": 345000.0,
+      "rows": 4
+     },
+     {
+      "name": "Washington Rising Inc",
+      "amount": 300000.0
      },
      {
       "name": "Madrona Venture Group, LLC",
       "amount": 250000.0
      },
      {
-      "name": "Steve Gordon",
-      "amount": 250000.0
+      "name": "Hughes Lawrence",
+      "amount": 250000.0,
+      "separate_address": true
      },
      {
-      "name": "Kelley DevCom LLC",
-      "amount": 200000.0
+      "name": "Emerald Pacific Properties LLC",
+      "amount": 250000.0,
+      "rows": 2
+     },
+     {
+      "name": "Gordon Larry",
+      "amount": 200000.0,
+      "separate_address": true
+     },
+     {
+      "name": "TDM Strategies",
+      "amount": 189531.7
+     },
+     {
+      "name": "Gordon Virginia",
+      "amount": 125000.0
+     },
+     {
+      "name": "Gordon Larry",
+      "amount": 125000.0,
+      "separate_address": true
+     },
+     {
+      "name": "Sundquist Larry",
+      "amount": 105000.0,
+      "rows": 3
+     },
+     {
+      "name": "Sundquist Diane",
+      "amount": 105000.0,
+      "rows": 3
      },
      {
       "name": "Gordon Truck Centers",
       "amount": 100000.0
      },
      {
-      "name": "Kemper Holdings LLC",
-      "amount": 100000.0
-     },
-     {
-      "name": "Phil Schlaepfer",
-      "amount": 100000.0
-     },
-     {
       "name": "Weidner Community Enhancement Association",
       "amount": 100000.0
+     },
+     {
+      "name": "Sanders Molly",
+      "amount": 100000.0
+     },
+     {
+      "name": "Schlaepfer Phil",
+      "amount": 100000.0
+     },
+     {
+      "name": "Waldorf Chris",
+      "amount": 78000.0,
+      "rows": 5
+     },
+     {
+      "name": "Muglia Bob",
+      "amount": 75000.0,
+      "rows": 2
+     },
+     {
+      "name": "Muglia Laura Ellen",
+      "amount": 75000.0,
+      "rows": 2
+     },
+     {
+      "name": "BIAW Member Services Corporation",
+      "amount": 75000.0,
+      "rows": 2
+     },
+     {
+      "name": "Zieve Peter",
+      "amount": 65000.0,
+      "rows": 3
      }
     ],
-    "total": 9786017.89,
+    "total": 11948200.77,
     "ie": []
    },
    "no": {
     "committees": [
      {
       "name": "No on 645",
-      "total": 12245294.96,
+      "total": 13118972.07,
       "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-42211"
      },
      {
       "name": "Defend Washington",
-      "total": 573791.33,
-      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2025-35835",
+      "total": 578791.33,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-35835",
       "also": [
        "washington-initiative-1",
        "washington-initiative-638"
@@ -1345,11 +1553,12 @@
      {
       "name": "Millionaire's Tax Washington",
       "total": 243799.0,
-      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-42119#overview"
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-42119"
      },
      {
-      "name": "Wrong for Washington",
-      "total": 7709.6,
+      "name": "Permanent Defense PAC (Wrong for Washington)",
+      "total": 8439.52,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-15151",
       "also": [
        "washington-initiative-1",
        "washington-initiative-638"
@@ -1359,31 +1568,121 @@
     "donors": [
      {
       "name": "Washington Education Association",
-      "amount": 3010175.31
+      "amount": 3215887.28,
+      "rows": 14,
+      "separate_address": true
      },
      {
       "name": "Washington Federation of State Employees",
-      "amount": 2501816.76
+      "amount": 2526816.76,
+      "rows": 5
      },
      {
       "name": "SEIU 775 Ballot Fund",
-      "amount": 1511161.48
-     },
-     {
-      "name": "National Education Association",
-      "amount": 1000000.0
+      "amount": 1550000.0,
+      "rows": 4
      },
      {
       "name": "SEIU Initiative Fund",
-      "amount": 1000000.0
+      "amount": 1100000.0,
+      "rows": 8
+     },
+     {
+      "name": "National Education Association",
+      "amount": 1000000.0,
+      "rows": 2
+     },
+     {
+      "name": "SEIU Healthcare 1199NW",
+      "amount": 750000.0,
+      "rows": 3
      },
      {
       "name": "American Federation of State, County, Municipal Employees",
-      "amount": 700000.0
+      "amount": 500000.0
+     },
+     {
+      "name": "Service Employees International Union Local 925",
+      "amount": 330000.0
+     },
+     {
+      "name": "Invest in Washington Now",
+      "amount": 277006.0,
+      "rows": 11
+     },
+     {
+      "name": "David Habib",
+      "amount": 250000.0,
+      "rows": 2
+     },
+     {
+      "name": "PPP Committee",
+      "amount": 250000.0
+     },
+     {
+      "name": "UFCW Local 3000",
+      "amount": 250000.0
+     },
+     {
+      "name": "Jabe Blumenthal",
+      "amount": 200000.0
+     },
+     {
+      "name": "American Federation of Teachers",
+      "amount": 200000.0
+     },
+     {
+      "name": "Holly Marklyn",
+      "amount": 150000.0
+     },
+     {
+      "name": "Samuel McVeety",
+      "amount": 100000.0
+     },
+     {
+      "name": "Washington State Nurses Association",
+      "amount": 100000.0
+     },
+     {
+      "name": "North Coast States Regional Council of Carpenters",
+      "amount": 100000.0
+     },
+     {
+      "name": "Seiu 775",
+      "amount": 96245.48,
+      "rows": 4
+     },
+     {
+      "name": "Brian Jacobson",
+      "amount": 75000.0
+     },
+     {
+      "name": "ACLU of Washington",
+      "amount": 50285.49,
+      "rows": 2
+     },
+     {
+      "name": "Ari Hertz",
+      "amount": 50000.0
+     },
+     {
+      "name": "Rebecca Liebman",
+      "amount": 50000.0,
+      "rows": 2
+     },
+     {
+      "name": "Ruth Lipscomb",
+      "amount": 50000.0
+     },
+     {
+      "name": "Washington Education Association",
+      "amount": 50000.0,
+      "separate_address": true
      }
     ],
-    "total": 13070594.89,
-    "ie": []
+    "total": 13743001.92,
+    "ie": [],
+    "total_note": "The total leaves out $207,000 No on 645 gave to Defend Washington, so that money is not counted twice."
    }
   },
   "massachusetts-question-8": {
@@ -1590,12 +1889,14 @@
    }
   },
   "washington-initiative-1": {
-   "as_of": "2026-08-31",
+   "as_of": "2026-10-30",
    "source": {
-    "org": "Ballotpedia",
-    "title": "Washington Initiative 1 (2026): Campaign finance",
-    "url": "https://ballotpedia.org/Washington_Initiative_1,_Parental_Right_to_Review_Education_Materials,_Receive_Notifications,_and_Opt_Out_of_Sexual-Health_Education_Initiative_(2026)#Campaign_finance",
-    "accessed": "2026-11-01"
+    "org": "Washington Public Disclosure Commission",
+    "kind": "official",
+    "title": "Contributions to Candidates and Political Committees (open data)",
+    "url": "https://data.wa.gov/Politics/Contributions-to-Candidates-and-Political-Committe/kv7h-kjye",
+    "accessed": "2026-11-01",
+    "method": "Itemized contributions reported to each committee for the 2025 and 2026 election years."
    },
    "filings": {
     "org": "Washington Public Disclosure Commission",
@@ -1605,7 +1906,7 @@
     "committees": [
      {
       "name": "Let's Go Washington",
-      "total": 8059297.89,
+      "total": 8258315.77,
       "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-30644",
       "also": [
        "washington-initiative-638",
@@ -1615,38 +1916,130 @@
     ],
     "donors": [
      {
-      "name": "Brian Heywood",
-      "amount": 2229253.0
+      "name": "Heywood Brian",
+      "amount": 2580049.0,
+      "rows": 41
      },
      {
-      "name": "Lawrence Hughes",
-      "amount": 250000.0
-     },
-     {
-      "name": "Steve Gordon",
-      "amount": 250000.0
+      "name": "Gordon Steve",
+      "amount": 902000.0,
+      "rows": 8
      },
      {
       "name": "Kelley DevCom LLC",
-      "amount": 200000.0
+      "amount": 450000.0,
+      "rows": 3
      },
      {
-      "name": "Larry Gordon",
+      "name": "Washington Rising Inc",
+      "amount": 300000.0
+     },
+     {
+      "name": "Kemper Holdings LLC",
+      "amount": 250000.0,
+      "rows": 3
+     },
+     {
+      "name": "Hughes Lawrence",
+      "amount": 250000.0
+     },
+     {
+      "name": "Crow Robert",
+      "amount": 245000.0,
+      "rows": 3
+     },
+     {
+      "name": "TDM Strategies",
+      "amount": 189531.7
+     },
+     {
+      "name": "Gordon Virginia",
       "amount": 125000.0
      },
      {
-      "name": "Phil Schlaepfer",
+      "name": "Gordon Larry",
+      "amount": 125000.0
+     },
+     {
+      "name": "Sundquist Larry",
+      "amount": 105000.0,
+      "rows": 3
+     },
+     {
+      "name": "Sundquist Diane",
+      "amount": 105000.0,
+      "rows": 3
+     },
+     {
+      "name": "Sanders Molly",
       "amount": 100000.0
+     },
+     {
+      "name": "Schlaepfer Phil",
+      "amount": 100000.0
+     },
+     {
+      "name": "Waldorf Chris",
+      "amount": 78000.0,
+      "rows": 5
+     },
+     {
+      "name": "Hermanson Richard",
+      "amount": 61000.0,
+      "rows": 3
+     },
+     {
+      "name": "Zieve Peter",
+      "amount": 55000.0,
+      "rows": 2
+     },
+     {
+      "name": "Magnano Ben",
+      "amount": 50000.0
+     },
+     {
+      "name": "Rowley Properties, Inc.",
+      "amount": 50000.0,
+      "rows": 2
+     },
+     {
+      "name": "Petrie George",
+      "amount": 50000.0,
+      "rows": 2
+     },
+     {
+      "name": "Abraham Zach",
+      "amount": 50000.0
+     },
+     {
+      "name": "McKinley Sands",
+      "amount": 46000.0,
+      "rows": 22
+     },
+     {
+      "name": "Plath Peter",
+      "amount": 40000.0,
+      "rows": 3
+     },
+     {
+      "name": "Barber David",
+      "amount": 26275.0,
+      "rows": 4
+     },
+     {
+      "name": "Barber Jean",
+      "amount": 26250.0,
+      "rows": 3
      }
     ],
-    "total": 8059297.89,
+    "total": 8258315.77,
     "ie": []
    },
    "no": {
     "committees": [
      {
       "name": "No Hate in WA State",
-      "total": 3262130.81,
+      "total": 4702768.92,
       "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-38851",
       "also": [
        "washington-initiative-638"
@@ -1654,7 +2047,7 @@
      },
      {
       "name": "Defend Washington",
-      "total": 573791.33,
+      "total": 578791.33,
       "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-35835",
       "also": [
        "washington-initiative-638",
@@ -1662,8 +2055,9 @@
       ]
      },
      {
-      "name": "Wrong for Washington",
-      "total": 7709.6,
+      "name": "Permanent Defense PAC (Wrong for Washington)",
+      "total": 8439.52,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-15151",
       "also": [
        "washington-initiative-638",
        "washington-initiative-645"
@@ -1672,37 +2066,131 @@
     ],
     "donors": [
      {
-      "name": "SEIU 775 Ballot Fund",
-      "amount": 1511161.48
-     },
-     {
-      "name": "SEIU Initiative Fund",
-      "amount": 1000000.0
-     },
-     {
       "name": "Inatai Foundation",
-      "amount": 750000.0
+      "amount": 1000000.0,
+      "rows": 3
+     },
+     {
+      "name": "SEIU 775 Ballot Fund",
+      "amount": 750500.0,
+      "rows": 5
      },
      {
       "name": "Washington Education Association",
-      "amount": 419440.39
+      "amount": 629091.62,
+      "rows": 31
+     },
+     {
+      "name": "ACLU of Washington",
+      "amount": 333776.19,
+      "rows": 20
      },
      {
       "name": "National Education Association",
       "amount": 250000.0
+     },
+     {
+      "name": "No on 645",
+      "amount": 207000.0,
+      "rows": 2
+     },
+     {
+      "name": "SEIU Initiative Fund",
+      "amount": 150000.0,
+      "rows": 4
+     },
+     {
+      "name": "Gender Justice League",
+      "amount": 125340.84,
+      "rows": 10
+     },
+     {
+      "name": "Seiu 775",
+      "amount": 85084.0,
+      "rows": 3
+     },
+     {
+      "name": "UFCW Local 3000",
+      "amount": 75000.0
+     },
+     {
+      "name": "SEIU Washington State Council",
+      "amount": 75000.0
+     },
+     {
+      "name": "Wfse",
+      "amount": 70000.0,
+      "rows": 2
+     },
+     {
+      "name": "Social Justice Fund",
+      "amount": 65000.0
+     },
+     {
+      "name": "Invest in Washington Now",
+      "amount": 55100.0,
+      "rows": 3
+     },
+     {
+      "name": "Planned Parenthood Alliance Advocates",
+      "amount": 50892.05,
+      "rows": 24
+     },
+     {
+      "name": "Ross Boucher",
+      "amount": 50000.0
+     },
+     {
+      "name": "Pro-Choice Washington",
+      "amount": 37121.87,
+      "rows": 12
+     },
+     {
+      "name": "Pacific Market Research",
+      "amount": 34500.0
+     },
+     {
+      "name": "Equal Rights for All Petition Committee",
+      "amount": 33275.0
+     },
+     {
+      "name": "Rebecca Liebman",
+      "amount": 30000.0
+     },
+     {
+      "name": "Lisa Mennet",
+      "amount": 30000.0
+     },
+     {
+      "name": "Rachel Gelman",
+      "amount": 30000.0
+     },
+     {
+      "name": "Grace Ann Nordhoff",
+      "amount": 25000.0
+     },
+     {
+      "name": "Northwest Health Foundation",
+      "amount": 25000.0
+     },
+     {
+      "name": "Jeffrey S Raikes",
+      "amount": 25000.0
      }
     ],
-    "total": 3843631.74,
+    "total": 5289999.77,
     "ie": []
    }
   },
   "washington-initiative-638": {
-   "as_of": "2026-08-31",
+   "as_of": "2026-10-30",
    "source": {
-    "org": "Ballotpedia",
-    "title": "Washington Initiative 638 (2026): Campaign finance",
-    "url": "https://ballotpedia.org/Washington_Initiative_638,_Sex_Verification_Requirements_for_Female_School_Sports_Initiative_(2026)#Campaign_finance",
-    "accessed": "2026-11-01"
+    "org": "Washington Public Disclosure Commission",
+    "kind": "official",
+    "title": "Contributions to Candidates and Political Committees (open data)",
+    "url": "https://data.wa.gov/Politics/Contributions-to-Candidates-and-Political-Committe/kv7h-kjye",
+    "accessed": "2026-11-01",
+    "method": "Itemized contributions reported to each committee for the 2025 and 2026 election years."
    },
    "filings": {
     "org": "Washington Public Disclosure Commission",
@@ -1712,7 +2200,8 @@
     "committees": [
      {
       "name": "Let's Go Washington",
-      "total": 8059297.89,
+      "total": 8258315.77,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-30644",
       "also": [
        "washington-initiative-1",
        "washington-initiative-645"
@@ -1721,38 +2210,130 @@
     ],
     "donors": [
      {
-      "name": "Brian Heywood",
-      "amount": 2229253.0
+      "name": "Heywood Brian",
+      "amount": 2580049.0,
+      "rows": 41
      },
      {
-      "name": "Lawrence Hughes",
-      "amount": 250000.0
-     },
-     {
-      "name": "Steve Gordon",
-      "amount": 250000.0
+      "name": "Gordon Steve",
+      "amount": 902000.0,
+      "rows": 8
      },
      {
       "name": "Kelley DevCom LLC",
-      "amount": 200000.0
+      "amount": 450000.0,
+      "rows": 3
      },
      {
-      "name": "Larry Gordon",
+      "name": "Washington Rising Inc",
+      "amount": 300000.0
+     },
+     {
+      "name": "Kemper Holdings LLC",
+      "amount": 250000.0,
+      "rows": 3
+     },
+     {
+      "name": "Hughes Lawrence",
+      "amount": 250000.0
+     },
+     {
+      "name": "Crow Robert",
+      "amount": 245000.0,
+      "rows": 3
+     },
+     {
+      "name": "TDM Strategies",
+      "amount": 189531.7
+     },
+     {
+      "name": "Gordon Virginia",
       "amount": 125000.0
      },
      {
-      "name": "Phil Schlaepfer",
+      "name": "Gordon Larry",
+      "amount": 125000.0
+     },
+     {
+      "name": "Sundquist Larry",
+      "amount": 105000.0,
+      "rows": 3
+     },
+     {
+      "name": "Sundquist Diane",
+      "amount": 105000.0,
+      "rows": 3
+     },
+     {
+      "name": "Sanders Molly",
       "amount": 100000.0
+     },
+     {
+      "name": "Schlaepfer Phil",
+      "amount": 100000.0
+     },
+     {
+      "name": "Waldorf Chris",
+      "amount": 78000.0,
+      "rows": 5
+     },
+     {
+      "name": "Hermanson Richard",
+      "amount": 61000.0,
+      "rows": 3
+     },
+     {
+      "name": "Zieve Peter",
+      "amount": 55000.0,
+      "rows": 2
+     },
+     {
+      "name": "Magnano Ben",
+      "amount": 50000.0
+     },
+     {
+      "name": "Rowley Properties, Inc.",
+      "amount": 50000.0,
+      "rows": 2
+     },
+     {
+      "name": "Petrie George",
+      "amount": 50000.0,
+      "rows": 2
+     },
+     {
+      "name": "Abraham Zach",
+      "amount": 50000.0
+     },
+     {
+      "name": "McKinley Sands",
+      "amount": 46000.0,
+      "rows": 22
+     },
+     {
+      "name": "Plath Peter",
+      "amount": 40000.0,
+      "rows": 3
+     },
+     {
+      "name": "Barber David",
+      "amount": 26275.0,
+      "rows": 4
+     },
+     {
+      "name": "Barber Jean",
+      "amount": 26250.0,
+      "rows": 3
      }
     ],
-    "total": 8059297.89,
+    "total": 8258315.77,
     "ie": []
    },
    "no": {
     "committees": [
      {
       "name": "No Hate in WA State",
-      "total": 3262130.81,
+      "total": 4702768.92,
       "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-38851",
       "also": [
        "washington-initiative-1"
@@ -1760,16 +2341,17 @@
      },
      {
       "name": "Defend Washington",
-      "total": 573791.33,
-      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2025-35835",
+      "total": 578791.33,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-35835",
       "also": [
        "washington-initiative-1",
        "washington-initiative-645"
       ]
      },
      {
-      "name": "Wrong for Washington",
-      "total": 7709.6,
+      "name": "Permanent Defense PAC (Wrong for Washington)",
+      "total": 8439.52,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-15151",
       "also": [
        "washington-initiative-1",
        "washington-initiative-645"
@@ -1778,27 +2360,119 @@
     ],
     "donors": [
      {
-      "name": "SEIU 775 Ballot Fund",
-      "amount": 1511161.48
-     },
-     {
-      "name": "SEIU Initiative Fund",
-      "amount": 1000000.0
-     },
-     {
       "name": "Inatai Foundation",
-      "amount": 750000.0
+      "amount": 1000000.0,
+      "rows": 3
+     },
+     {
+      "name": "SEIU 775 Ballot Fund",
+      "amount": 750500.0,
+      "rows": 5
      },
      {
       "name": "Washington Education Association",
-      "amount": 419440.39
+      "amount": 629091.62,
+      "rows": 31
+     },
+     {
+      "name": "ACLU of Washington",
+      "amount": 333776.19,
+      "rows": 20
      },
      {
       "name": "National Education Association",
       "amount": 250000.0
+     },
+     {
+      "name": "No on 645",
+      "amount": 207000.0,
+      "rows": 2
+     },
+     {
+      "name": "SEIU Initiative Fund",
+      "amount": 150000.0,
+      "rows": 4
+     },
+     {
+      "name": "Gender Justice League",
+      "amount": 125340.84,
+      "rows": 10
+     },
+     {
+      "name": "Seiu 775",
+      "amount": 85084.0,
+      "rows": 3
+     },
+     {
+      "name": "UFCW Local 3000",
+      "amount": 75000.0
+     },
+     {
+      "name": "SEIU Washington State Council",
+      "amount": 75000.0
+     },
+     {
+      "name": "Wfse",
+      "amount": 70000.0,
+      "rows": 2
+     },
+     {
+      "name": "Social Justice Fund",
+      "amount": 65000.0
+     },
+     {
+      "name": "Invest in Washington Now",
+      "amount": 55100.0,
+      "rows": 3
+     },
+     {
+      "name": "Planned Parenthood Alliance Advocates",
+      "amount": 50892.05,
+      "rows": 24
+     },
+     {
+      "name": "Ross Boucher",
+      "amount": 50000.0
+     },
+     {
+      "name": "Pro-Choice Washington",
+      "amount": 37121.87,
+      "rows": 12
+     },
+     {
+      "name": "Pacific Market Research",
+      "amount": 34500.0
+     },
+     {
+      "name": "Equal Rights for All Petition Committee",
+      "amount": 33275.0
+     },
+     {
+      "name": "Rebecca Liebman",
+      "amount": 30000.0
+     },
+     {
+      "name": "Lisa Mennet",
+      "amount": 30000.0
+     },
+     {
+      "name": "Rachel Gelman",
+      "amount": 30000.0
+     },
+     {
+      "name": "Grace Ann Nordhoff",
+      "amount": 25000.0
+     },
+     {
+      "name": "Northwest Health Foundation",
+      "amount": 25000.0
+     },
+     {
+      "name": "Jeffrey S Raikes",
+      "amount": 25000.0
      }
     ],
-    "total": 3843631.74,
+    "total": 5289999.77,
     "ie": []
    }
   },
@@ -1972,62 +2646,48 @@
    }
   },
   "california-proposition-41": {
-   "as_of": "2026-10-22",
    "source": {
-    "org": "Ballotpedia",
-    "title": "California Proposition 41 (2026): Campaign finance",
-    "url": "https://ballotpedia.org/California_Proposition_41,_Prohibit_Excluding_New_State_Taxes_from_Spending_Limit_and_Require_Special_Tax_Audits_Initiative_(2026)#Campaign_finance",
-    "accessed": "2026-11-01"
+    "org": "California Secretary of State, CAL-ACCESS",
+    "kind": "official",
+    "title": "Power Search: contributions to committees supporting and opposing Proposition 41",
+    "url": "https://powersearch.sos.ca.gov/advanced.php",
+    "accessed": "2026-11-01",
+    "method": "Contributions to the committees that report supporting or opposing the measure, with transfers between allied committees left out."
    },
    "filings": {
-    "org": "California Secretary of State, Cal-Access",
+    "org": "California Secretary of State, CAL-ACCESS",
     "url": "https://cal-access.sos.ca.gov/Campaign/Measures/"
    },
    "yes": {
     "committees": [
      {
       "name": "Yes on 41 - Californians for Transparency and Accountability",
-      "total": 58336445.92
-     },
-     {
-      "name": "Building a Better California",
-      "total": 10499294.93,
-      "also": [
-       "california-proposition-40",
-       "california-proposition-42"
-      ]
+      "total": 58376445.92,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1488423"
      }
     ],
     "donors": [
      {
-      "name": "Sergey Brin",
-      "amount": 102000000.0
+      "name": "Building a Better California",
+      "amount": 58350000.0,
+      "rows": 13,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1486767"
      },
      {
-      "name": "L. John Doerr, III",
-      "amount": 30000000.0
-     },
-     {
-      "name": "Patrick Collison",
-      "amount": 22000000.0
-     },
-     {
-      "name": "Eric Schmidt",
-      "amount": 15141313.01
-     },
-     {
-      "name": "Vinod Khosla",
-      "amount": 12561504.0
+      "name": "Reform California with Carl DeMaio - Ballot Measure Committee",
+      "amount": 21807.92,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1268914"
      }
     ],
-    "total": 68835740.85,
+    "total": 58376445.92,
     "ie": []
    },
    "no": {
     "committees": [
      {
       "name": "Yes on 40 - Billionaire Tax Now - No on 41 & 42",
-      "total": 32754967.14,
+      "total": 32974997.73,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1484470",
       "also": [
        "california-proposition-40",
        "california-proposition-42"
@@ -2035,14 +2695,16 @@
      },
      {
       "name": "Working Families Say No to Propositions 41 and 42",
-      "total": 951000.0,
+      "total": 1011000.0,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1497412",
       "also": [
        "california-proposition-42"
       ]
      },
      {
       "name": "Tax the Ultra-Rich Now, YES on 3 & 40, NO on 41 & 42",
-      "total": 464579.28,
+      "total": 579579.28,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1495036",
       "also": [
        "california-proposition-3",
        "california-proposition-40",
@@ -2052,87 +2714,180 @@
     ],
     "donors": [
      {
-      "name": "Service Employees International Union-United Healthcare Workers West",
-      "amount": 31971968.92
+      "name": "Service Employees International Union, United Healthcare Workers West Nonprofit 501(c)(5)",
+      "amount": 22077898.56,
+      "rows": 73,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1373047"
      },
      {
-      "name": "Million More Voters",
-      "amount": 500000.0
+      "name": "SEIU United Health Care Workers West Political Issues Committee",
+      "amount": 7733164.35,
+      "rows": 18,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=991800"
+     },
+     {
+      "name": "SEIU United Healthcare Workers West PAC",
+      "amount": 2000000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=747285"
+     },
+     {
+      "name": "Million More Voters, sponsored by the California Labor Federation, AFL-CIO",
+      "amount": 500000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1291923"
      },
      {
       "name": "Alan Davis",
-      "amount": 300000.0
+      "amount": 400000.0,
+      "rows": 5
      },
      {
       "name": "United Domestic Workers of America Issues PAC",
-      "amount": 250000.0
+      "amount": 250000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1367548"
      },
      {
       "name": "Saikat Chakrabarti",
       "amount": 201000.0
+     },
+     {
+      "name": "Ross Boucher",
+      "amount": 200000.0,
+      "rows": 2
+     },
+     {
+      "name": "California Labor Federation AFL-CIO",
+      "amount": 200000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=741504"
+     },
+     {
+      "name": "Service Employees International Union - United Healthcare Workers West",
+      "amount": 160906.01
+     },
+     {
+      "name": "PACE of California School Employees Association - Issues",
+      "amount": 150000.0,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=902738"
+     },
+     {
+      "name": "Hillary Perkins",
+      "amount": 100000.0
+     },
+     {
+      "name": "California Federation of Teachers COPE PROP/BALLOT Committee",
+      "amount": 100000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1240104"
+     },
+     {
+      "name": "Excessive Wealth",
+      "amount": 45000.0,
+      "rows": 2
+     },
+     {
+      "name": "California Donor Table Issues Committee",
+      "amount": 40000.0,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1489719"
+     },
+     {
+      "name": "John O'Farrell",
+      "amount": 35000.0,
+      "rows": 2
+     },
+     {
+      "name": "American Federation of State, County & Municipal Employees Council 57 Issues PAC",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1338455"
+     },
+     {
+      "name": "William Connell",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1494715"
+     },
+     {
+      "name": "John Esler",
+      "amount": 25000.0
+     },
+     {
+      "name": "James Stone",
+      "amount": 25000.0
+     },
+     {
+      "name": "Thomas Scruggs",
+      "amount": 25000.0
+     },
+     {
+      "name": "Henry Scott Wallace",
+      "amount": 20000.0,
+      "rows": 2
+     },
+     {
+      "name": "Nicole Pesco",
+      "amount": 10000.0
+     },
+     {
+      "name": "JB Moss Voice of the Electorate (Vote) FED PAC ID# C00007898",
+      "amount": 10000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1309168"
+     },
+     {
+      "name": "Leah Hunt-Hendrix",
+      "amount": 10000.0
      }
     ],
-    "total": 34170546.42,
+    "total": 34565577.01,
     "ie": []
-   }
+   },
+   "as_of": "2026-10-31"
   },
   "california-proposition-42": {
-   "as_of": "2026-10-22",
    "source": {
-    "org": "Ballotpedia",
-    "title": "California Proposition 42 (2026): Campaign finance",
-    "url": "https://ballotpedia.org/California_Proposition_42,_Prohibit_New_Taxes_on_Retirement_Holdings,_Personal_Assets,_and_Savings_and_Limit_Retroactive_Taxes_Initiative_(2026)#Campaign_finance",
-    "accessed": "2026-11-01"
+    "org": "California Secretary of State, CAL-ACCESS",
+    "kind": "official",
+    "title": "Power Search: contributions to committees supporting and opposing Proposition 42",
+    "url": "https://powersearch.sos.ca.gov/advanced.php",
+    "accessed": "2026-11-01",
+    "method": "Contributions to the committees that report supporting or opposing the measure, with transfers between allied committees left out."
    },
    "filings": {
-    "org": "California Secretary of State, Cal-Access",
+    "org": "California Secretary of State, CAL-ACCESS",
     "url": "https://cal-access.sos.ca.gov/Campaign/Measures/"
    },
    "yes": {
     "committees": [
      {
       "name": "Yes on 42 - Protect Retirement & Life Savings",
-      "total": 127977037.26
-     },
-     {
-      "name": "Building a Better California",
-      "total": 10499294.93,
-      "also": [
-       "california-proposition-40",
-       "california-proposition-41"
-      ]
+      "total": 159277037.26,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1488418"
      }
     ],
     "donors": [
      {
-      "name": "Sergey Brin",
-      "amount": 102000000.0
+      "name": "Building a Better California",
+      "amount": 159100000.0,
+      "rows": 22,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1486767"
      },
      {
-      "name": "L. John Doerr, III",
-      "amount": 30000000.0
+      "name": "Peace Officers Research Association of California Political Issues Committee (PORAC PIC)",
+      "amount": 150000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=911908"
      },
      {
-      "name": "Patrick Collison",
-      "amount": 22000000.0
-     },
-     {
-      "name": "Eric Schmidt",
-      "amount": 15141313.01
-     },
-     {
-      "name": "Vinod Khosla",
-      "amount": 12561504.0
+      "name": "Reform California with Carl DeMaio - Ballot Measure Committee",
+      "amount": 22537.26,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1268914"
      }
     ],
-    "total": 138476332.19,
+    "total": 159277037.26,
     "ie": []
    },
    "no": {
     "committees": [
      {
       "name": "Yes on 40 - Billionaire Tax Now - No on 41 & 42",
-      "total": 32754967.14,
+      "total": 32974997.73,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1484470",
       "also": [
        "california-proposition-40",
        "california-proposition-41"
@@ -2140,14 +2895,16 @@
      },
      {
       "name": "Working Families Say No to Propositions 41 and 42",
-      "total": 951000.0,
+      "total": 1011000.0,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1497412",
       "also": [
        "california-proposition-41"
       ]
      },
      {
       "name": "Tax the Ultra-Rich Now, YES on 3 & 40, NO on 41 & 42",
-      "total": 464579.28,
+      "total": 579579.28,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1495036",
       "also": [
        "california-proposition-3",
        "california-proposition-40",
@@ -2157,29 +2914,131 @@
     ],
     "donors": [
      {
-      "name": "Service Employees International Union-United Healthcare Workers West",
-      "amount": 31971968.92
+      "name": "Service Employees International Union, United Healthcare Workers West Nonprofit 501(c)(5)",
+      "amount": 22077898.56,
+      "rows": 73,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1373047"
      },
      {
-      "name": "Million More Voters",
-      "amount": 500000.0
+      "name": "SEIU United Health Care Workers West Political Issues Committee",
+      "amount": 7733164.35,
+      "rows": 18,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=991800"
+     },
+     {
+      "name": "SEIU United Healthcare Workers West PAC",
+      "amount": 2000000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=747285"
+     },
+     {
+      "name": "Million More Voters, sponsored by the California Labor Federation, AFL-CIO",
+      "amount": 500000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1291923"
      },
      {
       "name": "Alan Davis",
-      "amount": 300000.0
+      "amount": 400000.0,
+      "rows": 5
      },
      {
       "name": "United Domestic Workers of America Issues PAC",
-      "amount": 250000.0
+      "amount": 250000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1367548"
      },
      {
       "name": "Saikat Chakrabarti",
       "amount": 201000.0
+     },
+     {
+      "name": "Ross Boucher",
+      "amount": 200000.0,
+      "rows": 2
+     },
+     {
+      "name": "California Labor Federation AFL-CIO",
+      "amount": 200000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=741504"
+     },
+     {
+      "name": "Service Employees International Union - United Healthcare Workers West",
+      "amount": 160906.01
+     },
+     {
+      "name": "PACE of California School Employees Association - Issues",
+      "amount": 150000.0,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=902738"
+     },
+     {
+      "name": "Hillary Perkins",
+      "amount": 100000.0
+     },
+     {
+      "name": "California Federation of Teachers COPE PROP/BALLOT Committee",
+      "amount": 100000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1240104"
+     },
+     {
+      "name": "Excessive Wealth",
+      "amount": 45000.0,
+      "rows": 2
+     },
+     {
+      "name": "California Donor Table Issues Committee",
+      "amount": 40000.0,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1489719"
+     },
+     {
+      "name": "John O'Farrell",
+      "amount": 35000.0,
+      "rows": 2
+     },
+     {
+      "name": "American Federation of State, County & Municipal Employees Council 57 Issues PAC",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1338455"
+     },
+     {
+      "name": "William Connell",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1494715"
+     },
+     {
+      "name": "John Esler",
+      "amount": 25000.0
+     },
+     {
+      "name": "James Stone",
+      "amount": 25000.0
+     },
+     {
+      "name": "Thomas Scruggs",
+      "amount": 25000.0
+     },
+     {
+      "name": "Henry Scott Wallace",
+      "amount": 20000.0,
+      "rows": 2
+     },
+     {
+      "name": "Nicole Pesco",
+      "amount": 10000.0
+     },
+     {
+      "name": "JB Moss Voice of the Electorate (Vote) FED PAC ID# C00007898",
+      "amount": 10000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1309168"
+     },
+     {
+      "name": "Leah Hunt-Hendrix",
+      "amount": 10000.0
      }
     ],
-    "total": 34170546.42,
+    "total": 34565577.01,
     "ie": []
-   }
+   },
+   "as_of": "2026-10-31"
   },
   "colorado-proposition-136": {
    "as_of": "2026-10-14",

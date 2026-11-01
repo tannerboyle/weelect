@@ -107,7 +107,7 @@ if '--fetch' in sys.argv:
     os.makedirs(CACHE,exist_ok=True)
     for it in items:
         subprocess.run(['curl','-sL','-A','Mozilla/5.0','-o',os.path.join(CACHE,it['id']+'.html'),it['ballotpedia_url']]); time.sleep(1)
-out={'meta':{'source_note':'Figures are reported contributions to registered ballot measure committees, as compiled by Ballotpedia from state campaign-finance filings. They change as new reports are filed.','threshold':100000,'min_shown':3,'fallback_top':5,'built':'2026-11-01'},'items':{}}
+out={'meta':{'source_note':'Figures are reported contributions to registered ballot measure committees, as compiled by Ballotpedia from state campaign-finance filings, except entries whose source kind is \'official\', which are built directly from state filings (Washington PDC, California CAL-ACCESS). They change as new reports are filed.','threshold':100000,'min_shown':3,'fallback_top':5,'built':'2026-11-01'},'items':{}}
 for it in items:
     asof,sides,text=parse(it)
     st=it['state']
@@ -127,6 +127,13 @@ for k,v in out['items'].items():
 # Known parser gap: this sentence form names the spender before the matched phrase (checked by hand 2026-11-01).
 if not out['items']['arizona-proposition-319']['yes']['ie']:
     out['items']['arizona-proposition-319']['yes']['ie']=[{'name':'Arizona Free Enterprise Club','amount':4639.65,'period':''}]
+# Entries built from official filings (scripts/build_official_finance.py) are kept as they are.
+_prev_path=os.path.join(REPO,'data','measure_finance.json')
+if os.path.exists(_prev_path):
+    _prev=json.load(open(_prev_path))
+    for _k,_v in _prev.get('items',{}).items():
+        if _v.get('source',{}).get('kind')=='official':
+            out['items'][_k]=_v
 json.dump(out,open(os.path.join(REPO,'data','measure_finance.json'),'w'),indent=1,ensure_ascii=False)
 for k,v in out['items'].items():
     if '-v' not in sys.argv: continue

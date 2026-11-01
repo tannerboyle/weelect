@@ -2,6 +2,8 @@
 
 Data lives in data/measure_finance.json, built by scripts/build_measure_finance.py from each measure's Ballotpedia
 campaign-finance section (Ballotpedia compiles state filings; every figure is copied as reported, never estimated).
+Entries with source.kind == "official" are built straight from state filings by scripts/build_official_finance.py
+(Washington PDC open data, California CAL-ACCESS via Power Search) and are never overwritten by the Ballotpedia build.
 Per side ("yes" = committees supporting, "no" = committees opposing) the file holds the side total Ballotpedia reports,
 the registered committees, Ballotpedia's top-donor list, and any independent expenditures it lists.
 
@@ -20,6 +22,7 @@ MIN_SHOWN = 3
 FALLBACK_TOP = 5
 FLOOR = 5_000
 MAX_SHOWN = 10
+VERIFYING = "Donor details are being verified."
 _data = {"mtime": None, "doc": None}
 
 
@@ -60,10 +63,21 @@ def _side(raw, slug, names):
     else:
         state = "money"
     csum = round(sum(c["total"] for c in committees), 2)
+    donor_note = raw.get("donor_note")
+    if raw.get("donors_hidden"):
+        shown, share = [], None
+        donor_note = donor_note or VERIFYING
+    elif shown and total and not shared and sum(d["amount"] for d in shown) > total + 1:
+        # Never show donors adding up to more than the side total unless the shared-committee note explains it.
+        shown, share, donor_note = [], None, VERIFYING
+    names_shown = [d["name"].lower() for d in shown]
     return {"state": state, "total": total, "committees": committees, "donors": shown, "rule": rule,
+            "donor_note": donor_note, "total_note": raw.get("total_note"),
+            "same_name": len(set(names_shown)) < len(names_shown),
+            "filer_links": any(d.get("filer_url") for d in shown),
             "listed": len(raw.get("donors", [])), "share": share,
             "shared_with": [names.get(o, o) for o in shared],
-            "sum_differs": bool(committees) and total is not None and abs(csum - total) >= 1,
+            "sum_differs": bool(committees) and total is not None and abs(csum - total) >= 1 and not raw.get("total_note"),
             "ie": sorted(raw.get("ie", []), key=lambda d: -d["amount"])}
 
 
