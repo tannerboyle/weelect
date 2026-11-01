@@ -292,3 +292,24 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{ou
 .rs-list{list-style:none;padding:0;margin:0}
 .rs-list li{border-bottom:1px solid var(--hair);padding:10px 0;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
 @media (max-width:600px){.ms-stamp{flex-direction:column;align-items:flex-start;gap:6px}.ms-stamp-detail{border-left:0;padding-left:0}.offres{padding:12px 14px 8px}}
+/* Follow the money (ballot measure pages). Both sides share one style; no party colours. */
+.ftm{margin:18px 0 6px}
+.ftm-intro{font-size:.95rem;color:#34363c;margin:0 0 12px}
+.ftm-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ftm-side{border:1px solid var(--ink);border-top-width:3px;padding:10px 14px 8px;background:#fffdf7;min-width:0}
+.ftm-side h4{font-family:var(--display);font-size:1.1rem;margin:0 0 8px;color:var(--ink)}
+.ftm-total{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--hair);padding-bottom:6px;margin:0 0 8px}
+.ftm-k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ftm-v{font-family:var(--display);font-size:1.45rem;font-variant-numeric:tabular-nums}
+.ftm-sub{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:10px 0 4px}
+.ftm-comm{list-style:none;margin:0;padding:0;font-size:.9rem}
+.ftm-comm li{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px dotted var(--hair)}
+.ftm-donors{width:100%;border-collapse:collapse;font-size:.92rem}
+.ftm-donors td{padding:4px 0;border-bottom:1px dotted var(--hair);vertical-align:top}
+.ftm-amt{text-align:right;white-space:nowrap;padding-left:10px;font-variant-numeric:tabular-nums}
+.ftm-per{color:var(--mute);font-size:.82rem}
+.ftm-note{font-size:.82rem;color:var(--mute);margin:6px 0 0}
+.ftm-empty{font-style:italic;color:var(--mute);margin:4px 0 6px;font-size:.95rem}
+.ftm-ie{margin-top:10px;font-size:.9rem}.ftm-ie summary{cursor:pointer;color:var(--navy)}
+.ftm-fine{font-size:.8rem;color:var(--mute);margin:10px 0 0}
+@media (max-width:760px){.ftm-cols{grid-template-columns:1fr}.ftm-v{font-size:1.25rem}}

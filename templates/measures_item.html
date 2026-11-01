@@ -8,7 +8,7 @@
 <p class="meta">{{ it.mtype }} · On the ballot Nov. 3, 2026 · <a href="{{ it.official_url }}" target="_blank" rel="noopener">Official state page</a> · <a href="{{ it.ballotpedia_url }}" target="_blank" rel="noopener">Ballotpedia</a></p>
 {% set oc = rs_outcome(it) %}{% if oc %}{{ R.stamp(oc) }}{% endif %}
 {{ R.box(rs_box(it.state)) }}
-{{ B.block(it) }}
+{{ B.block(it, ft_get(it.id)) }}
 <nav class="bs-pager" aria-label="More ballot measures">{% if prev %}<a href="/measures/{{ prev.id }}">&larr; {{ prev.state_name }} {{ prev.label }}</a>{% else %}<span></span>{% endif %}{% if nxt %}<a href="/measures/{{ nxt.id }}">{{ nxt.state_name }} {{ nxt.label }} &rarr;</a>{% endif %}</nav>
 <p class="fine bs-wide">We Elect is a Brunner Creative site. {{ ms_meta.disclaimer }}</p>
 </div>{% endblock %}

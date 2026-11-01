@@ -10,6 +10,7 @@ import bothsides as bs_mod
 import measures as ms_mod
 import getinvolved as gi_mod
 import results as rs_mod
+import finance as ft_mod
 import localdata
 from functools import lru_cache
 import requests
@@ -141,7 +142,12 @@ def _bothsides_helpers():
             "bs_for_vote": bs_mod.match_recent, "bs_meta": bs_mod.meta(),
             "ms_numbers": ms_mod.source_numbers, "ms_sourcelist": ms_mod.sources, "ms_match": ms_mod.match,
             "ms_meta": ms_mod.meta(), "ms_for_state": ms_mod.for_state,
-            "rs_box": rs_mod.box, "rs_outcome": rs_mod.outcome, "rs_elect_note": rs_mod.elect_note}
+            "rs_box": rs_mod.box, "rs_outcome": rs_mod.outcome, "rs_elect_note": rs_mod.elect_note,
+            "ft_get": _ft_get, "ft_money": ft_mod.money, "ft_date": ft_mod.as_of_label}
+
+
+def _ft_get(slug):
+    return ft_mod.get(slug, {i["id"]: f"{i['state_name']} {i['label']}" for i in ms_mod.items()})
 
 
 @app.route("/votes")

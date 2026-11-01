@@ -6,7 +6,7 @@
   {% for pt in it[key] %}<p>{{ pt.text }}{{ cite(it, pt.src, nums) }}</p>{% endfor %}
 </section>
 {% endmacro %}
-{% macro block(it) %}
+{% macro block(it, fin=None) %}{% import "_finance.html" as F with context %}
 {% set nums = ms_numbers(it) %}
 <div class="bs ms">
   <p class="bs-summary"><strong>What it does.</strong> {{ it.summary }}{{ cite(it, it.summary_src, nums) }}</p>
@@ -27,7 +27,7 @@
     <ul>{% for pt in it.unsaid %}<li><strong>{{ pt.label }}</strong> {{ pt.text }}{{ cite(it, pt.src, nums) }}</li>{% endfor %}</ul>
     <p class="bs-unsaid-note">{{ ms_meta.unsaid_note }} <a href="/credits#measures">How we choose these</a>.</p>
   </section>{% endif %}
-  {% if it.money %}<section class="ms-fact" aria-labelledby="ms-{{ it.id }}-money"><h4 id="ms-{{ it.id }}-money">Who is paying for the campaigns</h4><p>{{ it.money.text }}{{ cite(it, it.money.src, nums) }} Campaign finance reports change daily; check the state’s campaign-finance site for the latest.</p></section>{% endif %}
+  {% if fin %}{{ F.section(it, fin) }}{% elif it.money %}<section class="ms-fact" aria-labelledby="ms-{{ it.id }}-money"><h4 id="ms-{{ it.id }}-money">Who is paying for the campaigns</h4><p>{{ it.money.text }}{{ cite(it, it.money.src, nums) }} Campaign finance reports change daily; check the state’s campaign-finance site for the latest.</p></section>{% endif %}
   <div class="bs-sources"><h4>Sources</h4>
     <ol>{% for n, sid, s in ms_sourcelist(it) %}<li id="ms-{{ it.id }}-s{{ n }}"><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a> — {{ s.org }} <span class="bs-type">({{ s.type }}, {{ s.date }})</span></li>{% endfor %}</ol>
   </div>
