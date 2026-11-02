@@ -35,7 +35,6 @@
 
 <section id="gifts" class="sup-gifts" aria-labelledby="gifts-h">
   <div class="sechead"><span class="star">★</span><h2 id="gifts-h">Ways to say thanks</h2></div>
-  <p class="bs-wide">In the spirit of public television: give any amount, or choose a thank-you gift at its listed price.</p>
   <div class="tiers">
     <div class="tier"><h3>Reader</h3><p class="tier-price">Any amount</p><p>Give what you like, or nothing at all. Every reader gets the same site.</p><p><a href="#give">Give now</a></p></div>
     {% for p in products %}<div class="tier">{% if p.image %}<img class="tier-img" src="{{ p.image }}" alt="" width="96" height="96" loading="lazy">{% endif %}<h3>{{ p.tier.title or p.name }}</h3><p class="tier-price">{{ p.price_from }}</p><p>{{ p.tier.text or p.blurb }}</p><p><a href="#prod-{{ p.id }}">See the {{ p.kind if p.kind != 'item' else 'item' }}</a></p></div>
@@ -45,7 +44,7 @@
 </section>
 
 <section id="shop" class="sup-shop" aria-labelledby="shop-h">
-  <div class="sechead"><span class="star">★</span><h2 id="shop-h">The We Elect shop</h2></div>
+  <div class="sechead"><span class="star">★</span><h2 id="shop-h">We Elect Gifts</h2></div>
   {% if not shop_open %}
   <div class="shop-soon" role="status"><h3>Coming soon</h3><p>The {{ products_phrase }} {{ 'are' if products|length > 1 else 'is' }} on the way. The shop is not open yet, so there is nothing to buy today &mdash; the rest of this page works as usual. Check back soon.</p></div>
   <div class="prod-grid soon">

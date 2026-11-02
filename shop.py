@@ -500,7 +500,7 @@ def build_paypal_order(lines, addr):
     pu = {
         "reference_id": "default",
         "custom_id": SOURCE,
-        "description": "We Elect shop order",
+        "description": "We Elect Gifts order",
         "amount": dict(_amt(q["total"]), breakdown={"item_total": _amt(q["items"]), "shipping": _amt(q["shipping"]),
                                                     "tax_total": _amt(q["tax"])}),
         "items": [{"name": l["name"][:127], "sku": f"{l['p']}.{l['c']}.{l['s']}", "quantity": str(l["q"]),
