@@ -213,6 +213,7 @@ class CreateOrderTests(ShopBase):
         body = json.loads(kw["data"])
         self.assertEqual(body["intent"], "CAPTURE")
         self.assertEqual(body["application_context"]["shipping_preference"], "SET_PROVIDED_ADDRESS")
+        self.assertEqual(body["application_context"]["brand_name"], "We Elect (Brunner Creative LLC)")
         pu = body["purchase_units"][0]
         self.assertEqual(pu["custom_id"], "weelect-shop")
         self.assertEqual([(i["sku"], i["quantity"], i["unit_amount"]["value"]) for i in pu["items"]],
@@ -573,8 +574,10 @@ class PageTests(ShopBase):
         self.assertIn("HttpOnly", ck)
         self.assertIn("SameSite=Strict", ck)
         self.assertNotIn("EsecretUnitTest", t)
+        self.assertIn("sold by Brunner Creative LLC, which publishes We Elect and is the seller of record", t)
 
     def test_checkout_page(self):
+        self.assertIn("sold by Brunner Creative LLC", self.c.get("/shop/checkout", base_url=self.base).get_data(as_text=True))
         r = self.c.get("/shop/checkout", base_url=self.base)
         t = r.get_data(as_text=True)
         self.assertIn('data-client-id="AcidUnitTest"', t)

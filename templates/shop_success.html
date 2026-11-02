@@ -4,7 +4,7 @@
 <meta name="robots" content="noindex">
 <p class="kicker">Thank you</p>
 <h1 class="hero" style="text-align:left;font-size:2.2rem">Thank you for supporting We Elect</h1>
-{% if info.paid %}<p class="deck bs-wide">Your order is in.{% if info.email %} PayPal is sending your receipt to {{ info.email }}.{% endif %} Your items are made to order and shipped by Printful, who will email tracking details when they ship.</p>
+{% if info.paid %}<p class="deck bs-wide">Your order is in. The seller is {{ seller }}.{% if info.email %} PayPal is sending your receipt to {{ info.email }}.{% endif %} Your items are made to order and shipped by Printful, who will email tracking details when they ship.</p>
 {% elif info.pending %}<p class="deck bs-wide">Thank you. PayPal is still confirming your payment, which can take a little while. We will make and ship your order as soon as PayPal confirms it, and PayPal will email you if anything is needed.</p>
 {% elif info.paid is none %}<p class="deck bs-wide">If you just finished paying, your order is on its way to us. PayPal will email your receipt, and Printful will email tracking details when your items ship.</p>
 {% else %}<p class="deck bs-wide">We could not confirm a payment for this visit, so you have not been charged by us. <a href="/support#shop">Return to the shop</a> to try again.</p>{% endif %}

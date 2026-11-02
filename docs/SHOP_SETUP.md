@@ -44,7 +44,7 @@ Printful order = DRAFT by default, external_id "pp" + PayPal order id, so it can
 | `PRINTFUL_STORE_ID` | fulfilment | Only for an account-level token (sent as `X-PF-Store-Id`). Find it with `scripts/printful_sync.py --stores`. |
 | `PRINTFUL_AUTO_CONFIRM` | optional | `1` = send orders straight to production (Printful charges you then). Default: drafts for review. Orders whose paid amount does not match the catalog are never auto-confirmed. |
 | `SHOP_TAX_RATES` | optional | Sales tax per ship-to state, as JSON percentages. See "Sales tax". Default: no tax collected anywhere. |
-| `SELLER_NAME` | optional | Seller named on the page (default `Brunner Creative`). Set to the legal name Bob sells under. |
+| `SELLER_NAME` | optional | Seller of record named on the shop, checkout and thank-you pages and sent to PayPal as part of the brand name (default `Brunner Creative LLC`). Leave unset unless the LLC's legal name changes. |
 | `SHOP_SECRET` | optional | Signing key for CSRF tokens. Defaults to a hash of `PAYPAL_CLIENT_SECRET`. |
 | `SHOP_ORDER_LOG` | optional | JSONL path (default `/tmp/weelect_shop_orders.jsonl`; Render's disk is ephemeral, the real record is the `SHOP_ORDER` lines in the Render logs). |
 | `SHOP_CSP_REPORT_ONLY` | debugging | `1` = send the shop pages' Content-Security-Policy as report-only. |
@@ -54,7 +54,7 @@ The old Stripe variables (`STRIPE_*`) are no longer used; delete them from Rende
 
 ## 1. PayPal
 
-1. **Business account.** Sign up at <https://www.paypal.com/us/business> for a **Business** account as the seller (Bob / Brunner Creative), or upgrade a personal account. Confirm the email, link and confirm a bank account, and finish any identity or business-verification steps PayPal asks for. Under Account Settings -> Business information, set the customer-service email and the name buyers see.
+1. **Business account.** Sign up at <https://www.paypal.com/us/business> for a **Business** account in the name of **Brunner Creative LLC** (the seller of record), using the LLC's EIN and business bank account, or move an existing Business account over to the LLC. Confirm the email, link and confirm a bank account, and finish any identity or business-verification steps PayPal asks for. Under Account Settings -> Business information, set the customer-service email and the name buyers see (Brunner Creative LLC), and set the credit-card statement name (for example `WEELECT`) so buyers recognise the charge.
 2. **Developer app (credentials).** Log in at <https://developer.paypal.com/dashboard/> with the same login. Under **Apps & Credentials**:
    * With the toggle on **Sandbox**, open the default app or **Create App** (type: Merchant). Copy its **Client ID** and **Secret** into `PAYPAL_CLIENT_ID` / `PAYPAL_CLIENT_SECRET`, and set `PAYPAL_ENV=sandbox`.
    * The sandbox also gives you test accounts (Testing Tools -> Sandbox Accounts): a *business* account that receives the money and a *personal* account to pay with.
@@ -80,14 +80,14 @@ Margin check (illustrative, from the public catalog on 2026-10-28; recheck befor
 
 ## 3. Sales tax, resale and policies (confirm with an accountant)
 
-* **Bob is the seller of record.** PayPal takes payment for Bob's PayPal Business account; Printful is a supplier that prints and ships. The page names the seller (`SELLER_NAME`), says We Elect is not a charity, and says purchases and gifts are not tax-deductible. Do not add any charity or deductibility language.
+* **Brunner Creative LLC is the seller of record.** PayPal takes payment into the LLC's PayPal Business account (the account, the bank account it pays out to and the seller's permit should all be in the LLC's name, not Bob's personal name); Bob is the contact person. Printful is a supplier that prints and ships. The page names the seller (`SELLER_NAME`), says We Elect is not a charity, and says purchases and gifts are not tax-deductible. Do not add any charity or deductibility language.
 * **PayPal does not work out sales tax.** The shop adds tax only from `SHOP_TAX_RATES`, a JSON object of ship-to state -> percent:
   * `{"WA": 10.25}` charges 10.25% of the item total on orders shipped to Washington, and nothing anywhere else.
   * `{"TX": {"rate": 8.25, "shipping": true}}` also taxes the shipping charge (some states tax shipping, some do not).
   * Unlisted states are charged no tax. Unset or invalid JSON means no tax anywhere (bad entries are skipped and logged, never guessed).
   * The rate is a single number per state. Many states add city/county rates on top, which vary by address; a flat state number is only right if that is what your state tells you to collect (for example, some states let remote sellers use one rate). **Bob must confirm, with his state's revenue department or an accountant, where he has to register and collect and at what rate, before turning the shop on.** If he needs exact rates by street address, that needs a tax service (for example TaxJar or Avalara), which this code does not include.
   * The tax is itemized on the checkout page and in the PayPal order (`tax_total`), and the fine print on `/support` lists the states you collect for.
-* **Seller's permit.** Many states require a seller's permit before the first sale, even if little or no tax is due. Selling into other states can create obligations there once you pass their "economic nexus" thresholds.
+* **Seller's permit.** Get it in the name of **Brunner Creative LLC**, in the state where the LLC is registered and operates. Many states require a seller's permit before the first sale, even if little or no tax is due. Selling into other states can create obligations there once you pass their "economic nexus" thresholds.
 * **Printful and resale.** Printful may charge sales tax on orders shipped to states where it has to collect tax, unless you give it a valid resale/exemption certificate for that state (Printful dashboard -> Settings -> Billing/Tax). Collecting tax from customers *and* paying it to Printful can double-tax you unless the certificate is on file; ask your accountant.
 * **Shipping to U.S. addresses only** (50 states + DC; the form offers nothing else). Adding countries means customs forms, VAT and different shipping rates.
 * **Policies to decide before launch** (not in the code): returns/exchanges (Printful products are made to order), a contact address for order problems (`CORRECTIONS_EMAIL` shows on the About page; the support page links to it), and how long you will take to resolve problems.

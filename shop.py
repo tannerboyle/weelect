@@ -18,7 +18,7 @@ Env vars (all optional; nothing is required for the rest of the site to work):
   SHOP_SECRET                 signing key for CSRF tokens (defaults to a hash of PAYPAL_CLIENT_SECRET)
   SHOP_ORDER_LOG              path of the JSONL order log (default /tmp/weelect_shop_orders.jsonl)
   SHOP_CSP_REPORT_ONLY=1      send the shop pages' CSP as report-only (debugging)
-  SELLER_NAME                 name shown as the seller (default "Brunner Creative")
+  SELLER_NAME                 seller of record shown on the shop, checkout and thank-you pages and to PayPal (default "Brunner Creative LLC")
 """
 import hashlib, hmac, json, os, re, secrets, threading, time, logging
 from decimal import Decimal, ROUND_HALF_UP, InvalidOperation
@@ -62,6 +62,13 @@ class ShopError(Exception):
 # ------------------------------------------------------------------ config (read at call time so tests can patch env)
 def env(name, default=""):
     return (os.environ.get(name) or default).strip()
+
+
+DEFAULT_SELLER = "Brunner Creative LLC"
+
+
+def seller_name():
+    return env("SELLER_NAME", DEFAULT_SELLER)
 
 
 def site_url():
@@ -443,7 +450,7 @@ def build_paypal_order(lines, addr):
     pu["shipping"]["address"] = {k: v for k, v in pu["shipping"]["address"].items() if v}
     return {"intent": "CAPTURE", "purchase_units": [pu],
             # SET_PROVIDED_ADDRESS: PayPal shows (and charges for) exactly the address we computed tax and shipping for.
-            "application_context": {"brand_name": "We Elect", "shipping_preference": "SET_PROVIDED_ADDRESS", "user_action": "PAY_NOW"}}, q
+            "application_context": {"brand_name": f"We Elect ({seller_name()})"[:127], "shipping_preference": "SET_PROVIDED_ADDRESS", "user_action": "PAY_NOW"}}, q
 
 
 def unit_of(order):
@@ -695,7 +702,7 @@ def _page_context():
                     "ok": {f"{c['id']}:{s}": variant_ok(p, c["id"], s) for c in p["colors"] for s in p["sizes"]}})
     sh = catalog().get("shipping", {})
     return {"products": pub, "shop_open": shop_open(), "kofi_page": KOFI_PAGE, "kofi_embed": KOFI_EMBED,
-            "seller": env("SELLER_NAME", "Brunner Creative"), "tax_mode": tax_mode(), "tax_states": sorted(tax_rates()),
+            "seller": seller_name(), "tax_mode": tax_mode(), "tax_states": sorted(tax_rates()),
             "shipping_label": sh.get("label", "Standard shipping"), "shipping_first": money(int(sh.get("first_item_cents", 0))),
             "shipping_more": money(int(sh.get("additional_item_cents", 0))),
             "shop_json": {"products": [{k: p[k] for k in ("id", "name", "price_cents", "colors", "ok")} for p in pub],
@@ -887,7 +894,7 @@ def success():
                 info["email"] = (order.get("payer") or {}).get("email_address")
         except ShopError as e:
             log.error("success lookup failed: %s", e)
-    resp = make_response(render_template("shop_success.html", info=info, seller=env("SELLER_NAME", "Brunner Creative")))
+    resp = make_response(render_template("shop_success.html", info=info, seller=seller_name()))
     resp.headers["Cache-Control"] = "no-store"
     resp.headers["X-Robots-Tag"] = "noindex"
     return resp

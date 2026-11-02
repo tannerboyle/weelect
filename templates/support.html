@@ -15,7 +15,7 @@
   <p class="sup-actions"><a class="support-btn" href="{{ kofi_page }}" target="_blank" rel="noopener">Give through Ko-fi</a>
   <button type="button" class="support-btn alt" id="kofi-show" data-src="{{ kofi_embed }}" aria-controls="kofi-slot" aria-expanded="false" hidden>Show the Ko-fi form here</button></p>
   <div id="kofi-slot" class="kofi-slot" aria-live="polite"></div>
-  <p class="fine">Gifts to We Elect, a {{ seller }} site, are voluntary. We Elect is not a charity, and gifts are not tax-deductible.</p>
+  <p class="fine">Gifts to We Elect, which is published by {{ seller }}, are voluntary. We Elect is not a charity, and gifts are not tax-deductible.</p>
 </section>
 
 <section id="gifts" class="sup-gifts" aria-labelledby="gifts-h">
@@ -66,7 +66,7 @@
 <section id="fine-print" aria-labelledby="fine-h">
   <div class="sechead"><span class="star">★</span><h2 id="fine-h">Fine print</h2></div>
   <ul class="fineprint">
-    <li><strong>Seller.</strong> Shop items are sold by {{ seller }}, which operates We Elect.</li>
+    <li><strong>Seller.</strong> Shop items are sold by {{ seller }}, which publishes We Elect and is the seller of record.</li>
     <li><strong>Not a charity.</strong> We Elect is not a charity or nonprofit, and neither gifts nor purchases are tax-deductible.</li>
     <li><strong>Made to order.</strong> Items are printed or embroidered on demand and shipped by Printful. We ship within the United States only.</li>
     <li><strong>Shipping{% if tax_mode != 'none' %} and tax{% endif %}.</strong> {{ shipping_label }} is {{ shipping_first }} for the first item and {{ shipping_more }} for each additional item.{% if tax_mode != 'none' %} Sales tax is added at checkout for orders shipped to {{ tax_states|join(', ') }}.{% endif %}</li>
