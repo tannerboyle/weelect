@@ -10,5 +10,6 @@ To confirm, open this link (it works for 48 hours):
 
 Didn't ask for this? Ignore this email. You won't be added and won't hear from us again.
 
-We Elect is an independent, nonpartisan civic information project. We keep only your email address, with our email service Resend, and never sell or share it.
-https://weelect.org
+We Elect is an independent, nonpartisan civic information project published by {{ sender }}. We keep only your email address, with our email service Resend, and never sell or share it.
+{% if postal_address %}{{ sender }}, {{ postal_address }}
+{% endif %}https://weelect.org

@@ -21,8 +21,9 @@
 </td></tr>
 <tr><td colspan="3" align="center" style="padding:14px 28px 20px;border-top:1px solid #cfc8b4;font-family:Georgia,'Times New Roman',serif;font-size:12px;line-height:1.5;color:#5d5f66;">
 <span style="color:#9b2335;letter-spacing:6px;">&#9733; &#9733; &#9733;</span><br>
-We Elect is an independent, nonpartisan civic information project. We keep only your email address, with our email service Resend, and never sell or share it.<br>
-<a href="https://weelect.org" style="color:#5d5f66;">weelect.org</a>
+We Elect is an independent, nonpartisan civic information project published by {{ sender }}. We keep only your email address, with our email service Resend, and never sell or share it.<br>
+{% if postal_address %}{{ sender }}, {{ postal_address }}<br>
+{% endif %}<a href="https://weelect.org" style="color:#5d5f66;">weelect.org</a>
 </td></tr>
 </table>
 </td></tr></table>

@@ -15,6 +15,9 @@ Env vars (all optional; with any required one missing the site shows "Newsletter
   RESEND_TOPIC_ID     optional. If set, subscribers are opted in to this topic.
   NEWSLETTER_FROM     optional. Default "We Elect <updates@news.weelect.org>" (must be on the domain verified in Resend).
   NEWSLETTER_REPLY_TO optional. Reply-to address for the confirmation email.
+  NEWSLETTER_POSTAL_ADDRESS  TODO(Bob): Brunner Creative LLC's physical postal address (street address, or a registered
+                      USPS PO box or private mailbox), shown in the email footer. CAN-SPAM requires one in every marketing
+                      email (each broadcast). Placeholder: unset, so the footer shows no address until it is provided.
   SECRET_KEY          optional but recommended. Signs the tokens; if unset a key is derived from RESEND_API_KEY.
   NEWSLETTER_DAILY_CAP optional. Max confirmation emails per day per worker (default 80; Resend Free sends 100/day total).
 """
@@ -30,6 +33,7 @@ CONFIRM_MAX_AGE = 48 * 3600      # confirmation links work for 48 hours
 FORM_MAX_AGE = 24 * 3600         # a signup form left open longer than a day must be reloaded
 EMAIL_COOLDOWN = 10 * 60         # at most one confirmation email per address per 10 minutes
 DEFAULT_FROM = "We Elect <updates@news.weelect.org>"
+SENDER_NAME = "Brunner Creative LLC"     # publisher of weelect.org; named in the email footer
 EMAIL_RE = re.compile(r"[A-Za-z0-9.!#&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?"
                       r"(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*\.[A-Za-z]{2,63}")
 
@@ -48,6 +52,7 @@ def config():
             "topic_id": os.environ.get("RESEND_TOPIC_ID", "").strip(),
             "from": os.environ.get("NEWSLETTER_FROM", "").strip() or DEFAULT_FROM,
             "reply_to": os.environ.get("NEWSLETTER_REPLY_TO", "").strip(),
+            "postal_address": os.environ.get("NEWSLETTER_POSTAL_ADDRESS", "").strip(),   # TODO(Bob): set in Render
             "daily_cap": int(os.environ.get("NEWSLETTER_DAILY_CAP", "80") or 80)}
 
 
@@ -156,8 +161,8 @@ def _resend(method, path, json=None):
 def send_confirmation(email, link):
     c = config()
     body = {"from": c["from"], "to": [email], "subject": "Confirm your We Elect updates",
-            "html": render_template("email/newsletter_confirm.html", link=link),
-            "text": render_template("email/newsletter_confirm.txt", link=link),
+            "html": render_template("email/newsletter_confirm.html", link=link, sender=SENDER_NAME, postal_address=c["postal_address"]),
+            "text": render_template("email/newsletter_confirm.txt", link=link, sender=SENDER_NAME, postal_address=c["postal_address"]),
             "tags": [{"name": "kind", "value": "newsletter-confirm"}]}
     if c["reply_to"]:
         body["reply_to"] = c["reply_to"]

@@ -104,6 +104,7 @@ Render → the weelect service → **Environment** → add:
 | `SECRET_KEY` | click **Generate** in Render (a long random value) | recommended |
 | `NEWSLETTER_FROM` | `We Elect <updates@news.weelect.org>` (this is the default; must be on the verified domain) | optional |
 | `NEWSLETTER_REPLY_TO` | an address you read, if you'd like replies to reach you | optional |
+| `NEWSLETTER_POSTAL_ADDRESS` | **TODO(Bob):** Brunner Creative LLC's physical postal address, e.g. `123 Main St, Springfield, ST 00000` (a street address, or a USPS PO box / private mailbox registered to the LLC). Shown in the confirmation-email footer; leave unset until you have it | needed before the first broadcast |
 | `RESEND_TOPIC_ID` | the topic ID from step 4, if you made one | optional |
 | `NEWSLETTER_DAILY_CAP` | default `80` confirmation emails a day (Resend Free allows 100 sends a day in total) | optional |
 
@@ -115,6 +116,10 @@ values are set. Until then, those spots say "Newsletter coming soon".
 **Broadcasts → Create broadcast**:
 - **From:** `We Elect <updates@news.weelect.org>`. **To:** the `We Elect updates` segment (and topic, if you made one).
 - Write it in the editor, keep it short and nonpartisan.
+- **Sender and postal address (CAN-SPAM).** Every broadcast is a marketing email, so its footer must name the sender
+  and give a valid physical postal address. Put this line in the footer above the unsubscribe link:
+  `We Elect is published by Brunner Creative LLC, <postal address>.` (the same address as
+  `NEWSLETTER_POSTAL_ADDRESS`). **TODO(Bob): the address is not set yet; do not send a broadcast until it is.**
 - The footer must keep the unsubscribe link. Resend fills in `{{{RESEND_UNSUBSCRIBE_URL}}}` with a personal
   one-click link for each reader (<https://resend.com/docs/dashboard/broadcasts/editor>).
 - Click **Test Email** to send yourself a copy first, then **Send** and slide to confirm.

@@ -7,7 +7,7 @@ import app as app_mod
 import newsletter as nl
 
 ENV = {"RESEND_API_KEY": "re_test_not_real", "RESEND_SEGMENT_ID": "seg_test", "SECRET_KEY": "test-secret",
-       "NEWSLETTER_FROM": "", "RESEND_TOPIC_ID": "", "RESEND_AUDIENCE_ID": "", "NEWSLETTER_DAILY_CAP": "80"}
+       "NEWSLETTER_FROM": "", "NEWSLETTER_POSTAL_ADDRESS": "", "RESEND_TOPIC_ID": "", "RESEND_AUDIENCE_ID": "", "NEWSLETTER_DAILY_CAP": "80"}
 ORIGIN = {"Origin": "http://localhost"}
 
 
@@ -58,6 +58,16 @@ class Signup(Base):
         self.assertEqual(body["from"], "We Elect <updates@news.weelect.org>")
         self.assertIn("Confirm my email", body["html"])
         self.assertTrue(r.headers["Cache-Control"] == "no-store")
+        for part in ("html", "text"):                                    # sender named; no address until it is set
+            self.assertIn("published by Brunner Creative LLC", body[part])
+            self.assertNotIn("Brunner Creative LLC, ", body[part])
+
+    def test_footer_shows_postal_address_when_set(self):
+        with mock.patch.dict(os.environ, {"NEWSLETTER_POSTAL_ADDRESS": "PO Box 1, Testville, ST 00000"}):
+            self.subscribe()
+        body = self.resend.call_args.args[2]
+        for part in ("html", "text"):
+            self.assertIn("Brunner Creative LLC, PO Box 1, Testville, ST 00000", body[part])
 
     def test_invalid_emails(self):
         for bad in ("", "not-an-email", "a@b", "a..b@example.com", "x@exa mple.com", "<a@example.com>",
