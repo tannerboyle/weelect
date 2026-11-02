@@ -1,0 +1,44 @@
+{# Follow the money. Same structure, order and visual weight for both sides: supporting first, then opposing. No party colours, no characterizing words. #}
+{% macro side(it, f, key, heading) %}{% set s = f[key] %}
+<section class="ftm-side" aria-labelledby="ftm-{{ it.id }}-{{ key }}">
+  <h4 id="ftm-{{ it.id }}-{{ key }}">{{ heading }}</h4>
+  {% if s.state == "none" %}
+  <p class="ftm-total"><span class="ftm-k">Total raised</span> <span class="ftm-v">—</span></p>
+  <p class="ftm-empty">No committee registered.</p>
+  {% else %}
+  <p class="ftm-total"><span class="ftm-k">Total raised</span> <span class="ftm-v">{{ ft_money(s.total) }}</span></p>
+  <p class="ftm-sub">{{ "Committee" if s.committees|length == 1 else "Committees" }}</p>
+  <ul class="ftm-comm">{% for c in s.committees %}<li>{% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %} <span class="ftm-amt">{{ ft_money(c.total) }}</span></li>{% endfor %}</ul>
+  {% if s.total_note %}<p class="ftm-note">{{ s.total_note }}</p>{% endif %}
+  {% if s.sum_differs %}<p class="ftm-note">Committee figures do not add up to the side total; the total shown is the one the source reports.</p>{% endif %}
+  {% if s.shared_with %}<p class="ftm-note">At least one of these committees also campaigns on {{ s.shared_with|join(", ") }}, so its money cannot be split by measure.</p>{% endif %}
+  <p class="ftm-sub">Major donors</p>
+  {% if s.donor_note %}<p class="ftm-empty ftm-verify">{{ s.donor_note }}</p>
+  {% elif s.donors %}
+  <table class="ftm-donors"><tbody>{% for d in s.donors %}<tr><td>{% if d.filer_url %}<a href="{{ d.filer_url }}" target="_blank" rel="noopener">{{ d.name }}</a>{% else %}{{ d.name }}{% endif %}</td><td class="ftm-amt">{{ ft_money(d.amount) }}</td></tr>{% endfor %}</tbody></table>
+  {% if s.share is not none %}<p class="ftm-note">Donors shown gave {{ s.share }}% of this side’s total.</p>{% endif %}
+  {% if s.filer_links %}<p class="ftm-note">Linked donors file their own reports, which list where their money comes from.</p>{% endif %}
+  {% if s.same_name %}<p class="ftm-note">A name listed twice was filed under two different addresses, so the entries are not combined.</p>{% endif %}
+  {% else %}<p class="ftm-empty">No major donors reported.</p>{% endif %}
+  {% endif %}
+  {% if s.ie %}<details class="ftm-ie"><summary>Independent spending by other groups ({{ s.ie|length }})</summary>
+  <p class="ftm-note">Spent separately, not given to a committee; not included in the total.</p>
+  <table class="ftm-donors"><tbody>{% for d in s.ie %}<tr><td>{{ d.name }}{% if d.period %} <span class="ftm-per">({{ d.period }})</span>{% endif %}</td><td class="ftm-amt">{{ ft_money(d.amount) }}</td></tr>{% endfor %}</tbody></table>
+  </details>{% endif %}
+</section>
+{% endmacro %}
+{% macro section(it, f) %}
+<section class="ftm" aria-labelledby="ftm-{{ it.id }}">
+  <div class="sechead ms-sechead"><span class="star">★</span><h2 id="ftm-{{ it.id }}">Follow the money</h2></div>
+  <p class="ftm-intro">Contributions reported by committees registered to support or oppose {{ it.label }}. Major donors are those who gave {{ ft_money(f.threshold) }} or more; where fewer than three did, up to five of the largest listed donors giving {{ ft_money(f.floor) }} or more are shown.</p>
+  <div class="ftm-cols">
+    {{ side(it, f, "yes", "Supporting (Yes)") }}
+    {{ side(it, f, "no", "Opposing (No)") }}
+  </div>
+  {% if f.source.kind == "official" %}
+  <p class="ftm-fine">Reported contributions through {{ ft_date(f.as_of) }}, from itemized contributions filed with the <a href="{{ f.source.url }}" target="_blank" rel="noopener">{{ f.source.org }}</a>. {{ f.source.method }} Each donor’s amount adds up their reported contributions to the committees above; names appear as filed. Figures may be updated as new reports are filed. Amounts are rounded to the nearest dollar. <a href="{{ f.filings.url }}" target="_blank" rel="noopener">Official filings: {{ f.filings.org }}</a>.</p>
+  {% else %}
+  <p class="ftm-fine">{% if f.as_of %}Reported contributions through {{ ft_date(f.as_of) }}{% else %}Reported contributions as of {{ ft_date(f.source.accessed) }}{% endif %}, as compiled by <a href="{{ f.source.url }}" target="_blank" rel="noopener">{{ f.source.org }}</a> from state filings; the source lists each side’s top donors, not every donor. Figures are reported contributions and may be updated as new reports are filed. Amounts are rounded to the nearest dollar. <a href="{{ f.filings.url }}" target="_blank" rel="noopener">Official filings: {{ f.filings.org }}</a>.</p>
+  {% endif %}
+</section>
+{% endmacro %}

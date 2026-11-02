@@ -4,6 +4,7 @@
 <div class="profile p-{{ p.pclass }}"><span class="avatar big">{% if p.photo %}<img src="{{ p.photo }}" alt="Photo of {{ p.name }}" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="initials" hidden aria-hidden="true">{{ p.initials }}</span>{% else %}<span class="initials" role="img" aria-label="No photo available for {{ p.name }}">{{ p.initials }}</span>{% endif %}</span>
 <div><h1>{{ p.name }}</h1><p>{{ p.office }} &middot; {{ p.where }}{% if p.party %} &middot; <span class="party">{{ p.party }}</span>{% endif %}</p>
 {% if since %}<p>In Congress since {{ since }}{% if term_end %}; current term ends {{ term_end }}{% endif %}.</p>{% endif %}</div></div>
+{% import "_results.html" as R %}{{ R.elect_note(rs_elect_note(kind, p.id, p.name)) }}
 <div class="sechead"><span class="star">★</span><h2>Contact</h2></div><ul>{% for k,v in contact.items() if v %}<li><strong>{{ k }}:</strong> {{ v }}</li>{% endfor %}</ul>
 <div class="sechead"><span class="star">★</span><h2>Links</h2></div><ul>{% for label,url in links %}<li><a href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a></li>{% endfor %}</ul>
 {% if kind == "fed" %}<div class="sechead"><span class="star">★</span><h2>Recently sponsored bills</h2></div>

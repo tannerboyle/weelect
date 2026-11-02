@@ -3,7 +3,7 @@
 @font-face{font-family:"Source Serif 4";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/source-serif-4-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:"Source Serif 4";font-weight:400;font-style:italic;font-display:swap;src:url(fonts/source-serif-4-latin-400-italic.woff2) format("woff2")}
 @font-face{font-family:"Source Serif 4";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/source-serif-4-latin-600-normal.woff2) format("woff2")}
-:root{--paper:#f7f3e8;--card:#fbf9f2;--ink:#15171c;--mute:#5d5f66;--rule:#15171c;--hair:#cfc8b4;--logo-red:#9b2335;--logo-navy:#1f2f5a;--logo-cream:#f7f3e8; /* exact colours used in static/logo-mark.svg */
+:root{--paper:#f7f3e8;--card:#fbf9f2;--ink:#15171c;--mute:#5d5f66;--rule:#15171c;--hair:#cfc8b4;--logo-red:#9b2335;--logo-navy:#1f2f5a;--logo-cream:#f7f3e8;--box:#fffdf7; /* exact colours used in static/logo-mark.svg */
  --red:var(--logo-red);--navy:var(--logo-navy);--pR:var(--logo-red);--pD:var(--logo-navy);--pN:#4a4f57;--cream:var(--logo-cream);
  --display:"Playfair Display",Georgia,"Times New Roman",serif;--text:"Source Serif 4",Georgia,"Times New Roman",serif}
 *{box-sizing:border-box}
@@ -265,7 +265,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{ou
 @media (max-width:520px){.voice .btnlink{display:block}}
 .gi .gi-jump{font-size:.88rem;line-height:1.9;margin:12px 0 4px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:6px 0}
 .gi .gi-jump a{white-space:nowrap}
-.gi .gi-lookup{border:1px solid var(--ink);border-top-width:3px;background:#fffdf7;padding:12px 16px 14px;margin:18px 0 6px}
+.gi .gi-lookup{border:1px solid var(--ink);border-top-width:3px;background:var(--box);padding:12px 16px 14px;margin:18px 0 6px}
 .gi .gi-lookup h2{font-size:1.15rem;margin:0 0 2px}
 .gi .gi-lookup .fine{text-align:left;margin:4px 0 10px;max-width:none}
 .gi .gi-way h3{font-size:1rem;margin:12px 0 4px}
@@ -274,6 +274,60 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{ou
 .gi .gi-src{font-size:.82rem;color:var(--mute);margin:6px 0 0}
 .gi .gi-sources{font-size:.88rem;padding-left:1.5em;overflow-wrap:anywhere}
 .gi p,.gi li{overflow-wrap:break-word}
+/* Post-election: official results box, certified outcome stamp, officials-elect note */
+.offres{background:var(--card);border:1px solid var(--rule);border-top:3px double var(--rule);padding:14px 18px 10px;margin:18px 0}
+.offres .kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:600}
+.offres p{margin:6px 0}
+.offres-text{font-size:1.05rem;line-height:1.45}
+.offres-link a{font-weight:600}
+.offres .fine{margin-top:8px}
+.ms-stamp{display:inline-flex;align-items:center;gap:14px;border:2px solid var(--ink);outline:1px solid var(--ink);outline-offset:3px;padding:8px 14px;margin:14px 4px 10px;background:var(--paper)}
+.ms-stamp-word{font:700 1.25rem var(--display);letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.ms-stamp-detail{font-size:.85rem;line-height:1.4;color:var(--ink);border-left:1px solid var(--hair);padding-left:14px}
+.ms-stamp.compact{padding:2px 8px;margin:6px 0 0;outline:none;gap:0}
+.ms-stamp.compact .ms-stamp-word{font-size:.72rem;letter-spacing:.14em}
+.elect-notes{list-style:none;padding:0;margin:8px 0 0}
+.elect-note{font-size:.9rem;margin:6px 0;padding:6px 10px;border-left:3px solid var(--ink);background:var(--card)}
+.rs-recap h2.ms-state{margin-top:24px}
+.rs-list{list-style:none;padding:0;margin:0}
+.rs-list li{border-bottom:1px solid var(--hair);padding:10px 0;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+@media (max-width:600px){.ms-stamp{flex-direction:column;align-items:flex-start;gap:6px}.ms-stamp-detail{border-left:0;padding-left:0}.offres{padding:12px 14px 8px}}
+/* Follow the money (ballot measure pages). Both sides share one style; no party colours. */
+.ftm{margin:18px 0 6px}
+.ftm-intro{font-size:.95rem;color:#34363c;margin:0 0 12px}
+.ftm-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ftm-side{border:1px solid var(--ink);border-top-width:3px;padding:10px 14px 8px;background:#fffdf7;min-width:0}
+.ftm-side h4{font-family:var(--display);font-size:1.1rem;margin:0 0 8px;color:var(--ink)}
+.ftm-total{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--hair);padding-bottom:6px;margin:0 0 8px}
+.ftm-k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ftm-v{font-family:var(--display);font-size:1.45rem;font-variant-numeric:tabular-nums}
+.ftm-sub{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:10px 0 4px}
+.ftm-comm{list-style:none;margin:0;padding:0;font-size:.9rem}
+.ftm-comm li{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px dotted var(--hair)}
+.ftm-donors{width:100%;border-collapse:collapse;font-size:.92rem}
+.ftm-donors td{padding:4px 0;border-bottom:1px dotted var(--hair);vertical-align:top}
+.ftm-amt{text-align:right;white-space:nowrap;padding-left:10px;font-variant-numeric:tabular-nums}
+.ftm-per{color:var(--mute);font-size:.82rem}
+.ftm-note{font-size:.82rem;color:var(--mute);margin:6px 0 0}
+.ftm-empty{font-style:italic;color:var(--mute);margin:4px 0 6px;font-size:.95rem}
+.ftm-ie{margin-top:10px;font-size:.9rem}.ftm-ie summary{cursor:pointer;color:var(--navy)}
+.ftm-fine{font-size:.8rem;color:var(--mute);margin:10px 0 0}
+@media (max-width:760px){.ftm-cols{grid-template-columns:1fr}.ftm-v{font-size:1.25rem}}
+/* newsletter signup ("Get We Elect updates") */
+.newsform{max-width:720px;margin:34px auto 0;border:1px solid var(--ink);border-top-width:3px;background:var(--box);color:var(--ink);padding:12px 16px 14px;box-sizing:border-box;text-align:center} /* same look as the get-involved .gi-lookup box */
+.newsform h2{font-size:1.15rem;margin:0 0 4px}
+.newsform .fine{text-align:center;max-width:560px;margin:0 auto 10px}
+.newsform form{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;justify-content:center}
+.newsform label{display:flex;flex-direction:column;align-items:stretch;text-align:left;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);gap:4px}
+.newsform input[type=email]{width:min(340px,80vw);height:44px;box-sizing:border-box;padding:10px 12px;font:inherit;font-size:1rem;border:1px solid var(--ink);border-radius:0;background:#fff;color:var(--ink);letter-spacing:normal;text-transform:none}
+.newsform input[type=email]:focus{outline:2px solid var(--navy);outline-offset:-2px}
+.newsform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.newsform button{padding:11px 20px;height:44px}
+.newsform .nl-privacy{margin-top:10px;font-size:.76rem}
+.nl-page .newsform{margin-left:0;text-align:left}.nl-page .newsform .fine,.nl-page .newsform form{text-align:left;justify-content:flex-start;margin-left:0}
+.nl-confirm{margin:18px 0}
+.nl-facts{padding-left:20px}.nl-facts li{margin:6px 0}
+@media (max-width:520px){.newsform form{flex-direction:column;align-items:stretch}.newsform input[type=email]{width:100%}.newsform button{width:100%}}
 
 /* ---- Support page and shop ---- */
 .support-page .kicker{font:600 .78rem var(--text);letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin:6px 0 2px}

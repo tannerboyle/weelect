@@ -10,6 +10,9 @@ import bothsides as bs_mod
 import measures as ms_mod
 import getinvolved as gi_mod
 import shop as shop_mod
+import results as rs_mod
+import finance as ft_mod
+import newsletter as nl_mod
 import localdata
 from functools import lru_cache
 import requests
@@ -140,7 +143,13 @@ def _bothsides_helpers():
     return {"bs_numbers": bs_mod.source_numbers, "bs_sourcelist": bs_mod.sources, "bs_roll_url": bs_mod.roll_url,
             "bs_for_vote": bs_mod.match_recent, "bs_meta": bs_mod.meta(),
             "ms_numbers": ms_mod.source_numbers, "ms_sourcelist": ms_mod.sources, "ms_match": ms_mod.match,
-            "ms_meta": ms_mod.meta(), "ms_for_state": ms_mod.for_state}
+            "ms_meta": ms_mod.meta(), "ms_for_state": ms_mod.for_state,
+            "rs_box": rs_mod.box, "rs_outcome": rs_mod.outcome, "rs_elect_note": rs_mod.elect_note,
+            "ft_get": _ft_get, "ft_money": ft_mod.money, "ft_date": ft_mod.as_of_label}
+
+
+def _ft_get(slug):
+    return ft_mod.get(slug, {i["id"]: f"{i['state_name']} {i['label']}" for i in ms_mod.items()})
 
 
 @app.route("/votes")
@@ -174,7 +183,8 @@ def get_involved():
 
 @app.route("/measures")
 def measures_index():
-    return render_template("measures_index.html", groups=ms_mod.by_state(), total=len(ms_mod.items()))
+    return render_template("measures_index.html", groups=ms_mod.by_state(), total=len(ms_mod.items()),
+                           has_recap=not _recap()["empty"])
 
 
 @app.route("/measures/<slug>")
@@ -185,6 +195,27 @@ def measures_item(slug):
     items = ms_mod.items()
     i = items.index(it)
     return render_template("measures_item.html", it=it, prev=items[i - 1] if i else None, nxt=items[i + 1] if i + 1 < len(items) else None)
+
+
+def _current_name(kind, oid):
+    if kind == "fed" and oid in FED_BY_ID:
+        return fed_summary(FED_BY_ID[oid])["name"]
+    if kind == "st" and oid in STATE_BY_ID:
+        return STATE_BY_ID[oid]["name"]
+    return None
+
+
+def _recap():
+    return rs_mod.recap(ms_mod.items(), _current_name)
+
+
+@app.route("/results")
+def results_recap():
+    """Post-election recap from certified, sourced data only. A 404 (and unlinked) until that data exists."""
+    r = _recap()
+    if r["empty"]:
+        abort(404)
+    return render_template("results_recap.html", r=r)
 
 
 # ---------- data loading ----------
@@ -403,6 +434,9 @@ def _private(resp):
     return resp
 
 
+nl_mod.register(app, _rate_limited, _private, SITE_URL)   # /newsletter, /newsletter/subscribe, /newsletter/confirm
+
+
 @app.route("/lookup", methods=["GET", "POST"])
 def lookup():
     # POST keeps the address out of the URL (and so out of access logs, browser history, shared links and
@@ -558,6 +592,12 @@ def st_profile(pid):
                            bills=None, bills_error=None, has_key=False, kind="st")
 
 
+@app.route("/BingSiteAuth.xml")
+def bing_site_auth():
+    body = ('<?xml version="1.0"?>\n<users>\n\t<user>2FBEF01D24EF9871F1D7D5A4943756F7</user>\n</users>')
+    return Response(body, mimetype="application/xml")
+
+
 @app.route("/robots.txt")
 def robots_txt():
     body = ("User-agent: *\n"
@@ -565,6 +605,7 @@ def robots_txt():
             "Disallow: /lookup\n"
             "Disallow: /city-interest\n"
             "Disallow: /shop/\n"
+            "Disallow: /newsletter/\n"
             f"\nSitemap: {SITE_URL}/sitemap.xml\n")
     return Response(body, mimetype="text/plain")
 
@@ -573,6 +614,10 @@ def robots_txt():
 def sitemap_xml():
     from xml.sax.saxutils import escape
     urls = [("/", None), ("/support", None), ("/get-involved", gi_mod.CHECKED), ("/votes", bs_mod.meta().get("last_reviewed")), ("/measures", ms_mod.meta().get("last_reviewed")), ("/credits", None)]
+    if not _recap()["empty"]:
+        urls.append(("/results", None))
+    if nl_mod.enabled():
+        urls.append(("/newsletter", None))
     urls += [(f"/votes/{it['id']}", bs_mod.meta().get("last_reviewed")) for it in bs_mod.items()]
     urls += [(f"/measures/{it['id']}", ms_mod.meta().get("last_reviewed")) for it in ms_mod.items()]
     urls += [(f"/official/fed/{b}", None) for b in sorted(FED_BY_ID)]

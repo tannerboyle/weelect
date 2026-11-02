@@ -1,0 +1,277 @@
+{
+ "meta": {
+  "description": "Each state's (and D.C.'s) official election-results page, from the Secretary of State or state election board. Every URL was fetched on the checked date; 'flagged' entries need a recheck (see note).",
+  "checked": "2026-10-29",
+  "election_date": "2026-11-03"
+ },
+ "states": {
+  "AL": {
+   "agency": "Alabama Secretary of State",
+   "url": "https://www.sos.alabama.gov/alabama-votes/voter/election-data",
+   "status": "flagged",
+   "note": "Election data and results downloads page. The state's election-night results site (www2.alabamavotes.gov/electionNight) returned a blank page on Oct 29, so we link the data page; recheck on Nov 3."
+  },
+  "AK": {
+   "agency": "Alaska Division of Elections",
+   "url": "https://www.elections.alaska.gov/election-results/",
+   "status": "flagged",
+   "note": "Page exists (HTTP 200), but the server's security certificate chain is incomplete, so some browsers and phones may show a certificate warning."
+  },
+  "AZ": {
+   "agency": "Arizona Secretary of State",
+   "url": "https://results.arizona.vote/",
+   "status": "verified"
+  },
+  "AR": {
+   "agency": "Arkansas Secretary of State",
+   "url": "https://www.sos.arkansas.gov/elections/research/election-results",
+   "status": "verified"
+  },
+  "CA": {
+   "agency": "California Secretary of State",
+   "url": "https://electionresults.sos.ca.gov/",
+   "status": "flagged",
+   "note": "Official election-night results site. Until results go live it redirects to the Secretary of State's Prior Elections page."
+  },
+  "CO": {
+   "agency": "Colorado Secretary of State",
+   "url": "https://results.enr.clarityelections.com/CO/",
+   "status": "verified",
+   "note": "Election-night reporting site run for the Colorado Secretary of State (hosted by the state's results vendor)."
+  },
+  "CT": {
+   "agency": "Connecticut Secretary of the State",
+   "url": "https://portal.ct.gov/sots/election-services/election-results/election-results",
+   "status": "verified"
+  },
+  "DE": {
+   "agency": "Delaware Department of Elections",
+   "url": "https://elections.delaware.gov/results/",
+   "status": "verified"
+  },
+  "DC": {
+   "agency": "D.C. Board of Elections",
+   "url": "https://electionresults.dcboe.org/",
+   "status": "verified"
+  },
+  "FL": {
+   "agency": "Florida Division of Elections",
+   "url": "https://results.elections.myflorida.com/",
+   "status": "verified"
+  },
+  "GA": {
+   "agency": "Georgia Secretary of State",
+   "url": "https://results.sos.ga.gov/results/public/Georgia",
+   "status": "verified"
+  },
+  "HI": {
+   "agency": "Hawaii Office of Elections",
+   "url": "https://elections.hawaii.gov/election-results/",
+   "status": "verified"
+  },
+  "ID": {
+   "agency": "Idaho Secretary of State",
+   "url": "https://voteidaho.gov/election-results/",
+   "status": "verified"
+  },
+  "IL": {
+   "agency": "Illinois State Board of Elections",
+   "url": "https://www.elections.il.gov/electionoperations/ElectionResults.aspx",
+   "status": "verified",
+   "note": "The state board posts official totals; county clerks post election-night counts."
+  },
+  "IN": {
+   "agency": "Indiana Election Division",
+   "url": "https://enr.indianavoters.in.gov/",
+   "status": "verified"
+  },
+  "IA": {
+   "agency": "Iowa Secretary of State",
+   "url": "https://electionresults.iowa.gov/",
+   "status": "verified"
+  },
+  "KS": {
+   "agency": "Kansas Secretary of State",
+   "url": "https://sos.ks.gov/elections/election-results.html",
+   "status": "verified"
+  },
+  "KY": {
+   "agency": "Kentucky State Board of Elections",
+   "url": "https://elect.ky.gov/results/",
+   "status": "verified"
+  },
+  "LA": {
+   "agency": "Louisiana Secretary of State",
+   "url": "https://voterportal.sos.la.gov/graphical",
+   "status": "verified"
+  },
+  "ME": {
+   "agency": "Maine Secretary of State",
+   "url": "https://www.maine.gov/sos/elections-voting/election-results-data",
+   "status": "verified"
+  },
+  "MD": {
+   "agency": "Maryland State Board of Elections",
+   "url": "https://elections.maryland.gov/elections/2026/general_results/index.html",
+   "status": "verified",
+   "note": "2026 general election results page."
+  },
+  "MA": {
+   "agency": "Massachusetts Secretary of the Commonwealth",
+   "url": "https://electionstats.state.ma.us/",
+   "status": "verified"
+  },
+  "MI": {
+   "agency": "Michigan Department of State",
+   "url": "https://www.michigan.gov/sos/elections/election-results-and-data",
+   "status": "verified"
+  },
+  "MN": {
+   "agency": "Minnesota Secretary of State",
+   "url": "https://electionresults.sos.mn.gov/",
+   "status": "verified"
+  },
+  "MS": {
+   "agency": "Mississippi Secretary of State",
+   "url": "https://www.sos.ms.gov/elections-voting/election-results",
+   "status": "verified"
+  },
+  "MO": {
+   "agency": "Missouri Secretary of State",
+   "url": "https://www.sos.mo.gov/elections/results",
+   "status": "verified"
+  },
+  "MT": {
+   "agency": "Montana Secretary of State",
+   "url": "https://sosmt.gov/elections/results/",
+   "status": "verified"
+  },
+  "NE": {
+   "agency": "Nebraska Secretary of State",
+   "url": "https://electionresults.nebraska.gov/",
+   "status": "verified"
+  },
+  "NV": {
+   "agency": "Nevada Secretary of State",
+   "url": "https://silverstateelection.nv.gov/",
+   "status": "verified"
+  },
+  "NH": {
+   "agency": "New Hampshire Secretary of State",
+   "url": "https://www.sos.nh.gov/2026-general-election-results",
+   "status": "verified",
+   "note": "2026 general election results page; the state posts results after the election is completed."
+  },
+  "NJ": {
+   "agency": "New Jersey Division of Elections",
+   "url": "https://www.nj.gov/state/elections/election-information-results.shtml",
+   "status": "verified",
+   "note": "The state posts official results; county clerks post election-night counts."
+  },
+  "NM": {
+   "agency": "New Mexico Secretary of State",
+   "url": "https://electionresults.sos.nm.gov/",
+   "status": "verified"
+  },
+  "NY": {
+   "agency": "New York State Board of Elections",
+   "url": "https://nyenr.elections.ny.gov/",
+   "status": "verified"
+  },
+  "NC": {
+   "agency": "North Carolina State Board of Elections",
+   "url": "https://er.ncsbe.gov/",
+   "status": "verified"
+  },
+  "ND": {
+   "agency": "North Dakota Secretary of State",
+   "url": "https://www.sos.nd.gov/elections/election-results",
+   "status": "verified"
+  },
+  "OH": {
+   "agency": "Ohio Secretary of State",
+   "url": "https://www.ohiosos.gov/elections/election-results-and-data/",
+   "status": "flagged",
+   "note": "Could not be machine-checked: the site shows a security check to automated visitors. The address is the Secretary of State's own Election Results and Data page; please open it once in a normal browser to confirm."
+  },
+  "OK": {
+   "agency": "Oklahoma State Election Board",
+   "url": "https://oklahoma.gov/elections/elections-results/election-results.html",
+   "status": "verified"
+  },
+  "OR": {
+   "agency": "Oregon Secretary of State",
+   "url": "https://sos.oregon.gov/elections/pages/historical-data.aspx",
+   "status": "flagged",
+   "note": "Election Results & History page. Oregon's election-night site (results.oregonvotes.gov) currently redirects to the Secretary of State home page; recheck on Nov 3."
+  },
+  "PA": {
+   "agency": "Pennsylvania Department of State",
+   "url": "https://www.electionreturns.pa.gov/",
+   "status": "verified"
+  },
+  "RI": {
+   "agency": "Rhode Island Board of Elections",
+   "url": "https://elections.ri.gov/elections/previous-election-results",
+   "status": "flagged",
+   "note": "Results page titled 'Previous Election Results' (lists the 2026 primary). The live results site (electionresults.ri.gov) refused our automated check; recheck on Nov 3."
+  },
+  "SC": {
+   "agency": "South Carolina Election Commission",
+   "url": "https://scvotes.gov/elections-statistics/election-results/",
+   "status": "verified"
+  },
+  "SD": {
+   "agency": "South Dakota Secretary of State",
+   "url": "https://electionresults.sd.gov/",
+   "status": "verified"
+  },
+  "TN": {
+   "agency": "Tennessee Secretary of State",
+   "url": "https://elections.tn.gov/",
+   "status": "verified"
+  },
+  "TX": {
+   "agency": "Texas Secretary of State",
+   "url": "https://results.texas-election.com/",
+   "status": "verified"
+  },
+  "UT": {
+   "agency": "Utah Lieutenant Governor's Office",
+   "url": "https://electionresults.utah.gov/",
+   "status": "verified"
+  },
+  "VT": {
+   "agency": "Vermont Secretary of State",
+   "url": "https://sos.vermont.gov/elections/election-info-resources/elections-results-data",
+   "status": "verified"
+  },
+  "VA": {
+   "agency": "Virginia Department of Elections",
+   "url": "https://www.elections.virginia.gov/resultsreports/election-results/",
+   "status": "verified"
+  },
+  "WA": {
+   "agency": "Washington Secretary of State",
+   "url": "https://results.vote.wa.gov/results/current/",
+   "status": "verified"
+  },
+  "WV": {
+   "agency": "West Virginia Secretary of State",
+   "url": "https://sos.wv.gov/elections/election-data/historical-election-results-and-turnout",
+   "status": "flagged",
+   "note": "Election results and turnout page (lists 2026 primary results). No 2026 general election-night page was found on Oct 29; recheck on Nov 3."
+  },
+  "WI": {
+   "agency": "Wisconsin Elections Commission",
+   "url": "https://elections.wi.gov/elections/election-results",
+   "status": "verified",
+   "note": "The commission posts official results; county clerks post election-night counts."
+  },
+  "WY": {
+   "agency": "Wyoming Secretary of State",
+   "url": "https://sos.wyo.gov/elections/electionresults.aspx",
+   "status": "verified"
+  }
+ }
+}

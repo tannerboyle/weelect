@@ -5,7 +5,7 @@
   {% if s.hours %}<div class="hrs">{{ s.hours }}</div>{% endif %}
   {% if s.start or s.end %}<div class="meta">{{ s.start }}{% if s.end %} – {{ s.end }}{% endif %}</div>{% endif %}
   {% if s.notes %}<div class="meta">{{ s.notes }}</div>{% endif %}</li>{% endmacro %}
-{% set E = elections %}{% set C = E.civic %}
+{% set E = elections %}{% set C = E.civic %}{% import "_results.html" as R %}
 <div class="sechead" id="elections"><span class="star">★</span><h2>Elections &amp; voting</h2><small>{{ E.name }}</small></div>
 
 <section class="electionbar" aria-label="Next election">
@@ -16,6 +16,7 @@
   </div>
   <div class="countdown{% if E.past %} done{% endif %}"><b>{{ E.when }}</b>{{ src("2 U.S.C. §7 (federal Election Day)", "https://www.law.cornell.edu/uscode/text/2/7") }}</div>
 </section>
+{{ R.box(rs_box(geo.state)) }}
 
 <div class="elgrid">
   <section class="elcard" aria-label="Key dates">
@@ -88,7 +89,7 @@
   <li><span class="mtype" title="{{ m.type_label }}">{{ m.type }}</span>
     <div><strong>{% if m.url %}<a href="{{ m.url }}" target="_blank" rel="noopener">{{ m.title }}</a>{% else %}{{ m.title }}{% endif %}</strong>
     <div class="meta">{{ m.summary }}</div>
-    {% set ms = ms_match(m.url) %}{% if ms %}<a class="ms-link" href="/measures/{{ ms.id }}">What yes and no do, and both sides &rarr;</a>{% endif %}</div></li>
+    {% set ms = ms_match(m.url) %}{% if ms %}{{ R.stamp(rs_outcome(ms), compact=True) }}<a class="ms-link" href="/measures/{{ ms.id }}">What yes and no do, and both sides &rarr;</a>{% endif %}</div></li>
   {% endfor %}
 </ul>
 {% set ns = namespace(n=0, st="") %}{% for m in E.measures %}{% set x = ms_match(m.url) %}{% if x %}{% set ns.n = ns.n + 1 %}{% set ns.st = x.state|lower %}{% endif %}{% endfor %}{% if ns.n %}<p class="fine left">We have plain-language, two-sided summaries for {{ ns.n }} of these. <a href="/measures#{{ ns.st }}">See {{ "it" if ns.n == 1 else "them" }}</a>.</p>{% endif %}

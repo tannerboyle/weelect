@@ -1,0 +1,16 @@
+WE ELECT
+Know who represents you.
+Nonpartisan civic information
+
+Please confirm your We Elect updates
+
+Someone, hopefully you, asked to get occasional email updates from We Elect (weelect.org): new features, ballot measures and election results.
+
+To confirm, open this link (it works for 48 hours):
+{{ link }}
+
+Didn't ask for this? Ignore this email. You won't be added and won't hear from us again.
+
+We Elect is an independent, nonpartisan civic information project published by {{ sender }}. We keep only your email address, with our email service Resend, and never sell or share it.
+{% if postal_address %}{{ sender }}, {{ postal_address }}
+{% endif %}https://weelect.org

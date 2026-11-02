@@ -1,0 +1,4545 @@
+{
+ "meta": {
+  "source_note": "Figures are reported contributions to registered ballot measure committees, as compiled by Ballotpedia from state campaign-finance filings, except entries whose source kind is 'official', which are built directly from state filings (Washington PDC, California CAL-ACCESS). They change as new reports are filed.",
+  "threshold": 100000,
+  "min_shown": 3,
+  "fallback_top": 5,
+  "built": "2026-11-01"
+ },
+ "items": {
+  "california-proposition-3": {
+   "as_of": "2026-10-22",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "California Proposition 3 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/California_Proposition_3,_Renew_State_Income_Tax_Increase_for_Education_Funding_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "California Secretary of State, Cal-Access",
+    "url": "https://cal-access.sos.ca.gov/Campaign/Measures/"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Yes on Prop 3",
+      "total": 71429943.99
+     },
+     {
+      "name": "Communities for an Affordable California Yes 3, No on 39, and 43",
+      "total": 2338429.0,
+      "also": [
+       "california-proposition-39"
+      ]
+     },
+     {
+      "name": "Tax the Ultra-Rich Now, YES on 3 & 40, NO on 41 & 42",
+      "total": 464579.28,
+      "also": [
+       "california-proposition-40",
+       "california-proposition-41",
+       "california-proposition-42"
+      ]
+     },
+     {
+      "name": "Working Families for a Better Central Coast - Yes on Prop 3, No on Prop 39",
+      "total": 291758.83,
+      "also": [
+       "california-proposition-39"
+      ]
+     },
+     {
+      "name": "Black Californians for Thriving Communities - Yes on Prop 3, No on Props 39 & 43",
+      "total": 220000.0,
+      "also": [
+       "california-proposition-39"
+      ]
+     },
+     {
+      "name": "Working People in Supporting of Prop 3 and in Opposition of Prop 39, 43 and 45",
+      "total": 100000.0,
+      "also": [
+       "california-proposition-39"
+      ]
+     },
+     {
+      "name": "Californians for Yes on 3 and No on 39",
+      "total": 20000.0,
+      "also": [
+       "california-proposition-39"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "California Teachers Association / Issues PAC",
+      "amount": 53838619.42
+     },
+     {
+      "name": "National Education Association (MPO)",
+      "amount": 7500000.0
+     },
+     {
+      "name": "California Federation of Teachers COPE Prop/Ballot Committee",
+      "amount": 1750000.0
+     },
+     {
+      "name": "PACE of California School Employees Association Issues",
+      "amount": 1600000.0
+     },
+     {
+      "name": "SEIU California State Council for Working People",
+      "amount": 1509028.58
+     }
+    ],
+    "total": 74864711.1,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "No on Proposition 3, Sponsored by California Taxpayers Association",
+      "total": 5500.0
+     }
+    ],
+    "donors": [
+     {
+      "name": "Family Business Association of California Issues Political Action Committee",
+      "amount": 5000.0
+     },
+     {
+      "name": "Pacific Coast Companies, Inc.",
+      "amount": 500.0
+     }
+    ],
+    "total": 5500.0,
+    "ie": []
+   }
+  },
+  "california-proposition-39": {
+   "as_of": "2026-10-22",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "California Proposition 39 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/California_Proposition_39,_Voter_Identification,_Citizenship_Verification,_and_Registered_Voter_List_Administration_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "California Secretary of State, Cal-Access",
+    "url": "https://cal-access.sos.ca.gov/Campaign/Measures/"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Californians for Voter ID, Yes on 39",
+      "total": 32752567.94
+     },
+     {
+      "name": "Reform California with Carl DeMaio",
+      "total": 6788206.93
+     }
+    ],
+    "donors": [
+     {
+      "name": "Richard Uihlein",
+      "amount": 17000000.0
+     },
+     {
+      "name": "Joseph Gebbia",
+      "amount": 8000000.0
+     },
+     {
+      "name": "Reform California with Carl DeMaio - Ballot Measure Committee",
+      "amount": 3103479.5
+     },
+     {
+      "name": "Nicole Shanahan",
+      "amount": 370000.0
+     },
+     {
+      "name": "Perfect One Capital",
+      "amount": 300000.0
+     }
+    ],
+    "total": 39540774.87,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "No on 39 - Block Election Rigging",
+      "total": 15180879.15
+     },
+     {
+      "name": "United Against Prop. 39 -- Stop the Rig",
+      "total": 10570661.11
+     },
+     {
+      "name": "No on Prop 39 - Californians for Voting Rights",
+      "total": 4796352.95
+     },
+     {
+      "name": "Communities for an Affordable California Yes 3, No on 39, and 43",
+      "total": 2338429.0,
+      "also": [
+       "california-proposition-3"
+      ]
+     },
+     {
+      "name": "Working Families for a Better Central Coast - Yes on Prop 3, No on Prop 39",
+      "total": 291758.83,
+      "also": [
+       "california-proposition-3"
+      ]
+     },
+     {
+      "name": "Black Californians for Thriving Communities - Yes on Prop 3, No on Props 39 & 43",
+      "total": 220000.0,
+      "also": [
+       "california-proposition-3"
+      ]
+     },
+     {
+      "name": "Working People in Supporting of Prop 3 and in Opposition of Prop 39, 43 and 45",
+      "total": 100000.0,
+      "also": [
+       "california-proposition-3"
+      ]
+     },
+     {
+      "name": "Citizens for a Just California - No on Prop 39",
+      "total": 50000.0
+     },
+     {
+      "name": "Californians for Yes on 3 and No on 39",
+      "total": 20000.0,
+      "also": [
+       "california-proposition-3"
+      ]
+     },
+     {
+      "name": "No on Prop 39 - Voteriders Committee",
+      "total": 1420.0
+     }
+    ],
+    "donors": [
+     {
+      "name": "California Democratic Party",
+      "amount": 10106700.86,
+      "rows": 2
+     },
+     {
+      "name": "California Nurses Association Initiative PAC",
+      "amount": 2000000.0
+     },
+     {
+      "name": "The Tribal Council of the Federated Indians of Graton Rancheria",
+      "amount": 2000000.0
+     },
+     {
+      "name": "M. Quinn Delaney",
+      "amount": 1500000.0
+     },
+     {
+      "name": "Patty Quillin",
+      "amount": 1500000.0
+     },
+     {
+      "name": "SEIU California State Council for Working People",
+      "amount": 1071815.41
+     }
+    ],
+    "total": 33277742.21,
+    "ie": []
+   }
+  },
+  "california-proposition-40": {
+   "source": {
+    "org": "California Secretary of State, CAL-ACCESS",
+    "kind": "official",
+    "title": "Power Search: contributions to committees supporting and opposing Proposition 40",
+    "url": "https://powersearch.sos.ca.gov/advanced.php",
+    "accessed": "2026-11-01",
+    "method": "Contributions to the committees that report supporting or opposing the measure, with transfers between allied committees left out."
+   },
+   "filings": {
+    "org": "California Secretary of State, CAL-ACCESS",
+    "url": "https://cal-access.sos.ca.gov/Campaign/Measures/"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Yes on 40 - Billionaire Tax Now - No on 41 & 42",
+      "total": 32974997.73,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1484470",
+      "also": [
+       "california-proposition-41",
+       "california-proposition-42"
+      ]
+     },
+     {
+      "name": "Tax the Ultra-Rich Now, YES on 3 & 40, NO on 41 & 42",
+      "total": 579579.28,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1495036",
+      "also": [
+       "california-proposition-3",
+       "california-proposition-41",
+       "california-proposition-42"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Service Employees International Union, United Healthcare Workers West Nonprofit 501(c)(5)",
+      "amount": 22077898.56,
+      "rows": 73,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1373047"
+     },
+     {
+      "name": "SEIU United Health Care Workers West Political Issues Committee",
+      "amount": 7733164.35,
+      "rows": 18,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=991800"
+     },
+     {
+      "name": "SEIU United Healthcare Workers West PAC",
+      "amount": 2000000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=747285"
+     },
+     {
+      "name": "Alan Davis",
+      "amount": 400000.0,
+      "rows": 5
+     },
+     {
+      "name": "Saikat Chakrabarti",
+      "amount": 201000.0
+     },
+     {
+      "name": "Ross Boucher",
+      "amount": 200000.0,
+      "rows": 2
+     },
+     {
+      "name": "California Labor Federation AFL-CIO",
+      "amount": 200000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=741504"
+     },
+     {
+      "name": "Service Employees International Union - United Healthcare Workers West",
+      "amount": 160906.01
+     },
+     {
+      "name": "Hillary Perkins",
+      "amount": 100000.0
+     },
+     {
+      "name": "Excessive Wealth",
+      "amount": 45000.0,
+      "rows": 2
+     },
+     {
+      "name": "California Donor Table Issues Committee",
+      "amount": 40000.0,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1489719"
+     },
+     {
+      "name": "John O'Farrell",
+      "amount": 35000.0,
+      "rows": 2
+     },
+     {
+      "name": "American Federation of State, County & Municipal Employees Council 57 Issues PAC",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1338455"
+     },
+     {
+      "name": "William Connell",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1494715"
+     },
+     {
+      "name": "John Esler",
+      "amount": 25000.0
+     },
+     {
+      "name": "James Stone",
+      "amount": 25000.0
+     },
+     {
+      "name": "Thomas Scruggs",
+      "amount": 25000.0
+     },
+     {
+      "name": "Nicole Pesco",
+      "amount": 10000.0
+     },
+     {
+      "name": "JB Moss Voice of the Electorate (Vote) FED PAC ID# C00007898",
+      "amount": 10000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1309168"
+     },
+     {
+      "name": "Henry Scott Wallace",
+      "amount": 10000.0
+     },
+     {
+      "name": "Leah Hunt-Hendrix",
+      "amount": 10000.0
+     },
+     {
+      "name": "California Democratic Party",
+      "amount": 8374.58,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=741666"
+     },
+     {
+      "name": "Mark Schlesinger",
+      "amount": 7500.0
+     },
+     {
+      "name": "Betsy Krieger",
+      "amount": 6000.0,
+      "rows": 2
+     },
+     {
+      "name": "David Olsen",
+      "amount": 5100.0,
+      "rows": 2
+     }
+    ],
+    "total": 33554577.01,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "No on Prop 40 - Doctors, Teachers, Small Businesses, Working Families and Public Safety Against the Reckless Wealth Tax Experiment",
+      "total": 158739981.97,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1492108"
+     },
+     {
+      "name": "Golden State Promise - No on Prop 40",
+      "total": 10450000.0,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1486695"
+     },
+     {
+      "name": "Californians Against Tax Increases, sponsored by the California Business Roundtable - No on 40",
+      "total": 1114310.54,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1485228"
+     },
+     {
+      "name": "Stop the Squeeze - No on Prop 40",
+      "total": 400000.0,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1485007"
+     }
+    ],
+    "donors": [
+     {
+      "name": "Building a Better California",
+      "amount": 158500000.0,
+      "rows": 17,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1486767"
+     },
+     {
+      "name": "Chris Larsen",
+      "amount": 5000000.0
+     },
+     {
+      "name": "Ripple Labs",
+      "amount": 5000000.0
+     },
+     {
+      "name": "California Business Roundtable Issues PAC",
+      "amount": 975000.0,
+      "rows": 13,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1264590"
+     },
+     {
+      "name": "Right Path California Issues PAC",
+      "amount": 584310.54,
+      "rows": 4,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1483288"
+     },
+     {
+      "name": "Daniel Tierney",
+      "amount": 200000.0
+     },
+     {
+      "name": "Ronald Conway",
+      "amount": 100000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1229437"
+     },
+     {
+      "name": "Intersect USA, LLC(Michael Wheeler)",
+      "amount": 100000.0
+     },
+     {
+      "name": "California Medical Association",
+      "amount": 100000.0
+     },
+     {
+      "name": "California Primary Care Association Advocates",
+      "amount": 100000.0
+     },
+     {
+      "name": "Planned Parenthood Affiliates Of California Votes Pac",
+      "amount": 34293.58,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1331005"
+     },
+     {
+      "name": "California Business Properties Association Issues Pac",
+      "amount": 5000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1244001"
+     }
+    ],
+    "total": 170704292.51,
+    "ie": []
+   },
+   "as_of": "2026-10-31"
+  },
+  "virginia-question-1": {
+   "as_of": "2026-10-24",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Virginia Question 1 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Virginia_Question_1,_Right_to_Reproductive_Freedom_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Virginia Department of Elections, campaign finance reports",
+    "url": "https://cfreports.elections.virginia.gov/"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Virginians for Reproductive Freedom",
+      "total": 4034184.73
+     },
+     {
+      "name": "Feminists for Reproductive Freedom",
+      "total": 10533.56
+     }
+    ],
+    "donors": [
+     {
+      "name": "Planned Parenthood Action Fund Inc",
+      "amount": 527277.51
+     },
+     {
+      "name": "Virginian League for Planned Parenthood",
+      "amount": 432988.54
+     },
+     {
+      "name": "American Civil Liberties Union Foundation, Inc.",
+      "amount": 430671.95
+     },
+     {
+      "name": "Planned Parenthood Federation of America Inc.",
+      "amount": 400000.0
+     },
+     {
+      "name": "ACLU of Virginia",
+      "amount": 325982.07
+     }
+    ],
+    "total": 4044718.29,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Virginians for Safe Reproductive Policy",
+      "total": 702177.63
+     },
+     {
+      "name": "No Safeguards, No Deal",
+      "total": 273964.35
+     },
+     {
+      "name": "VSHL 2026 Referendum Committee",
+      "total": 98379.84
+     },
+     {
+      "name": "Virginia Medical Professionals for Women's Safety",
+      "total": 91551.17
+     },
+     {
+      "name": "Defend Virginia's Sons and Daughters, Inc.",
+      "total": 52218.97,
+      "also": [
+       "virginia-question-2"
+      ]
+     },
+     {
+      "name": "Virginia Catholic Conference, LLC",
+      "total": 33624.33
+     },
+     {
+      "name": "Virginia Conservative Action Referendum Committee 2026",
+      "total": 17284.32,
+      "also": [
+       "virginia-question-2"
+      ]
+     },
+     {
+      "name": "Virginia Voters for Freedom, Inc.",
+      "total": 10500.0,
+      "also": [
+       "virginia-question-2",
+       "virginia-question-3"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Virginia Catholic Conference",
+      "amount": 375000.0
+     },
+     {
+      "name": "The Family Foundation",
+      "amount": 273694.35
+     },
+     {
+      "name": "Knights of Columbus",
+      "amount": 100000.0
+     },
+     {
+      "name": "AAPLOG Action",
+      "amount": 89921.4
+     },
+     {
+      "name": "Virginia Society for Human Life",
+      "amount": 70000.0
+     }
+    ],
+    "total": 1279700.61,
+    "ie": []
+   }
+  },
+  "virginia-question-2": {
+   "as_of": "2026-10-24",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Virginia Question 2 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Virginia_Question_2,_Remove_Constitutional_Same-Sex_Marriage_Ban_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Virginia Department of Elections, campaign finance reports",
+    "url": "https://cfreports.elections.virginia.gov/"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Virginians for Marriage Equality",
+      "total": 693201.68
+     },
+     {
+      "name": "Feminists for Marriage Equality",
+      "total": 10533.56
+     }
+    ],
+    "donors": [
+     {
+      "name": "ACLU of Virginia",
+      "amount": 155240.84
+     },
+     {
+      "name": "New Virginia Majority",
+      "amount": 106407.28
+     },
+     {
+      "name": "Reginald J. Brown",
+      "amount": 100000.0
+     },
+     {
+      "name": "Centerline Liberties, Inc.",
+      "amount": 90000.0
+     },
+     {
+      "name": "Equality Virginia Advocates",
+      "amount": 58570.2
+     }
+    ],
+    "total": 703735.24,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Defend Virginia's Sons and Daughters, Inc.",
+      "total": 52218.97,
+      "also": [
+       "virginia-question-1"
+      ]
+     },
+     {
+      "name": "Virginians Against 3",
+      "total": 46795.59
+     },
+     {
+      "name": "Virginia Conservative Action Referendum Committee 2026",
+      "total": 17284.32,
+      "also": [
+       "virginia-question-1"
+      ]
+     },
+     {
+      "name": "Virginia Voters for Freedom, Inc.",
+      "total": 10500.0,
+      "also": [
+       "virginia-question-1",
+       "virginia-question-3"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Elizabeth Jenks",
+      "amount": 50139.49
+     },
+     {
+      "name": "The Family Foundation",
+      "amount": 46795.59
+     },
+     {
+      "name": "VA Conservative Action Fund",
+      "amount": 16600.57
+     },
+     {
+      "name": "Butters Home Health Care",
+      "amount": 10000.0
+     },
+     {
+      "name": "Lunenburg County Republican Unit",
+      "amount": 427.5
+     }
+    ],
+    "total": 126798.88,
+    "ie": []
+   }
+  },
+  "virginia-question-3": {
+   "as_of": "2026-10-26",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Virginia Question 3 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Virginia_Question_3,_Voting_Rights_Restoration_for_Felons_Upon_Release_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Virginia Department of Elections, campaign finance reports",
+    "url": "https://cfreports.elections.virginia.gov/"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Virginians for the Right to Vote",
+      "total": 668291.43
+     },
+     {
+      "name": "Feminists for Voting Rights",
+      "total": 10533.56
+     }
+    ],
+    "donors": [
+     {
+      "name": "New Virginia Majority",
+      "amount": 558709.28
+     },
+     {
+      "name": "ACLU Virginia",
+      "amount": 53202.76
+     },
+     {
+      "name": "Don Scott For Virginia",
+      "amount": 25000.0
+     },
+     {
+      "name": "Underground to Uplift",
+      "amount": 15000.0
+     },
+     {
+      "name": "Feminist Majority Foundation",
+      "amount": 10533.56
+     }
+    ],
+    "total": 678824.99,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Virginia Voters for Freedom, Inc.",
+      "total": 10500.0,
+      "also": [
+       "virginia-question-1",
+       "virginia-question-2"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Butters Home Health Care",
+      "amount": 10000.0
+     },
+     {
+      "name": "Craig Bergman",
+      "amount": 300.0
+     },
+     {
+      "name": "C. Nasseri",
+      "amount": 200.0
+     }
+    ],
+    "total": 10500.0,
+    "ie": []
+   }
+  },
+  "nevada-question-6": {
+   "as_of": "2026-09-30",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Nevada Question 6 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Nevada_Question_6,_Right_to_Abortion_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Nevada Secretary of State, campaign finance search",
+    "url": "https://www.nvsos.gov/SoSCandidateServices/AnonymousAccess/CEFDSearchUU/Search.aspx"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Nevadans for Reproductive Freedom",
+      "total": 1568861.29
+     }
+    ],
+    "donors": [
+     {
+      "name": "Planned Parenthood Action Fund",
+      "amount": 402667.1
+     },
+     {
+      "name": "Think Big America",
+      "amount": 350000.0
+     },
+     {
+      "name": "Planned Parenthood Advocates Mar Monte",
+      "amount": 257576.5
+     },
+     {
+      "name": "Quinn Delaney",
+      "amount": 250000.0
+     },
+     {
+      "name": "Reproductive Freedom for All",
+      "amount": 215423.19
+     }
+    ],
+    "total": 1568861.29,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Protect Our Girls",
+      "total": 59700.0
+     },
+     {
+      "name": "Washoe Freedom Coalition PAC",
+      "total": 10000.0
+     },
+     {
+      "name": "Students for Life Action Ballot PAC",
+      "total": 7707.33
+     },
+     {
+      "name": "Yes7Nay6DotNet",
+      "total": 0.0,
+      "also": [
+       "nevada-question-7"
+      ]
+     }
+    ],
+    "donors": [],
+    "total": 77407.33,
+    "ie": []
+   }
+  },
+  "nevada-question-7": {
+   "as_of": "2026-09-30",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Nevada Question 7 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Nevada_Question_7,_Require_Voter_Identification_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Nevada Secretary of State, campaign finance search",
+    "url": "https://www.nvsos.gov/SoSCandidateServices/AnonymousAccess/CEFDSearchUU/Search.aspx"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Nevada Voter ID Coalition",
+      "total": 308791.98
+     },
+     {
+      "name": "Repair the Vote",
+      "total": 33000.0
+     },
+     {
+      "name": "Yes7Nay6DotNet",
+      "total": 0.0,
+      "also": [
+       "nevada-question-6"
+      ]
+     }
+    ],
+    "donors": [],
+    "total": 341791.98,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Nevada Voter Freedom Alliance",
+      "total": 0.0
+     }
+    ],
+    "donors": [],
+    "total": 0.0,
+    "ie": []
+   }
+  },
+  "missouri-proposition-a": {
+   "as_of": "2026-10-22",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Missouri Proposition A (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Missouri_Proposition_A,_Congressional_Map_Referendum_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Missouri Ethics Commission, campaign finance search",
+    "url": "https://www.mec.mo.gov/mec/campaign_finance/CFSearch.aspx"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Put Missouri First",
+      "total": 3114012.5
+     }
+    ],
+    "donors": [
+     {
+      "name": "American Action Network",
+      "amount": 1450000.0
+     },
+     {
+      "name": "Securing American Greatness Inc.",
+      "amount": 1450000.0
+     },
+     {
+      "name": "Republican National Committee",
+      "amount": 164012.5
+     },
+     {
+      "name": "National Republican Congressional Committee",
+      "amount": 50000.0
+     }
+    ],
+    "total": 3114012.5,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "People Not Politicians",
+      "total": 13586070.33
+     }
+    ],
+    "donors": [
+     {
+      "name": "The Fairness Project",
+      "amount": 3485000.0
+     },
+     {
+      "name": "American Opportunity Action",
+      "amount": 2000000.0
+     },
+     {
+      "name": "Health Forward Foundation",
+      "amount": 1300000.0
+     },
+     {
+      "name": "Green Advocacy Project",
+      "amount": 1000000.0
+     },
+     {
+      "name": "Reid Hoffman",
+      "amount": 1000000.0
+     },
+     {
+      "name": "Global Impact Social Welfare Fund",
+      "amount": 500000.0
+     },
+     {
+      "name": "Think Big America",
+      "amount": 500000.0
+     },
+     {
+      "name": "United Futures",
+      "amount": 500000.0
+     },
+     {
+      "name": "Open Society Action Fund",
+      "amount": 450000.0
+     },
+     {
+      "name": "Tides Foundation",
+      "amount": 350000.0
+     },
+     {
+      "name": "Brick by Brick Foundation",
+      "amount": 250000.0
+     },
+     {
+      "name": "National Education Association",
+      "amount": 250000.0
+     },
+     {
+      "name": "National Redistricting Action Fund",
+      "amount": 250000.0
+     },
+     {
+      "name": "Focus for Democracy Fund",
+      "amount": 200000.0
+     },
+     {
+      "name": "Democracy Fund Voice",
+      "amount": 150000.0
+     }
+    ],
+    "total": 13586070.33,
+    "ie": []
+   }
+  },
+  "missouri-amendment-3": {
+   "as_of": "2026-10-22",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Missouri Amendment 3 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Missouri_Amendment_3,_Prohibit_Abortion_and_Gender_Transition_Procedures_for_Minors_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Missouri Ethics Commission, campaign finance search",
+    "url": "https://www.mec.mo.gov/mec/campaign_finance/CFSearch.aspx"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Her Health, Her Future PAC",
+      "total": 6645970.75
+     },
+     {
+      "name": "Vote Yes on Amendment 3",
+      "total": 1000000.0
+     },
+     {
+      "name": "Missouri Right to Life PAC",
+      "total": 966690.76
+     }
+    ],
+    "donors": [
+     {
+      "name": "Her Health, Her Future Missouri",
+      "amount": 3900000.0
+     },
+     {
+      "name": "America Next, Inc.",
+      "amount": 1000000.0
+     },
+     {
+      "name": "Rick Briton",
+      "amount": 250000.0
+     },
+     {
+      "name": "Drury Displays Inc.",
+      "amount": 235715.0
+     },
+     {
+      "name": "Donald Ross",
+      "amount": 110000.0
+     },
+     {
+      "name": "Chris Archer",
+      "amount": 100000.0
+     },
+     {
+      "name": "L.B. Eckelkamp Jr.",
+      "amount": 75000.0
+     },
+     {
+      "name": "Drury Development Corporation",
+      "amount": 50000.0
+     },
+     {
+      "name": "GJ Grewe Inc.",
+      "amount": 50000.0
+     },
+     {
+      "name": "Gretchen Gannon",
+      "amount": 25000.0
+     },
+     {
+      "name": "John Martin",
+      "amount": 5000.0
+     },
+     {
+      "name": "The Central Trust Bank",
+      "amount": 4000.0
+     }
+    ],
+    "total": 8612661.51,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Stop the Ban",
+      "total": 26821600.64
+     },
+     {
+      "name": "Protect Freedom and Democracy",
+      "total": 600688.21
+     },
+     {
+      "name": "Abolish Abortion Missouri",
+      "total": 31240.96
+     }
+    ],
+    "donors": [
+     {
+      "name": "The Fairness Project",
+      "amount": 11945000.0
+     },
+     {
+      "name": "American Civil Liberties Union, Foundation, Inc.",
+      "amount": 3800000.0
+     },
+     {
+      "name": "Lynn Schusterman",
+      "amount": 3000000.0
+     },
+     {
+      "name": "Michael Bloomberg",
+      "amount": 1250000.0
+     },
+     {
+      "name": "Open Society Policy Center",
+      "amount": 700000.0
+     },
+     {
+      "name": "Planned Parenthood Great Rivers Action",
+      "amount": 700000.0
+     },
+     {
+      "name": "Missouri Organizing and Voter Engagement Action",
+      "amount": 150000.0
+     },
+     {
+      "name": "Missouri Jobs with Justice Voter Action",
+      "amount": 121430.16
+     }
+    ],
+    "total": 27453529.81,
+    "ie": []
+   }
+  },
+  "colorado-amendment-87": {
+   "as_of": "2026-10-14",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Colorado Amendment 87 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Colorado_Amendment_87,_Establish_Graduated_Income_Tax_and_Dedicate_New_Revenue_to_Education,_Healthcare,_and_Childcare_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Colorado Secretary of State, TRACER",
+    "url": "https://tracer.sos.colorado.gov/PublicSite/homepage.aspx"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Protect Colorado's Future",
+      "total": 2528931.1,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=51642",
+      "also": [
+       "colorado-proposition-136"
+      ]
+     },
+     {
+      "name": "Make Good Change",
+      "total": 0.0,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52677",
+      "also": [
+       "colorado-proposition-136"
+      ]
+     },
+     {
+      "name": "People for a Fair Colorado",
+      "total": 0.0,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52396",
+      "also": [
+       "colorado-proposition-136"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Merle Chambers",
+      "amount": 500000.0
+     },
+     {
+      "name": "New Era Colorado Action Fund",
+      "amount": 276241.33
+     },
+     {
+      "name": "Stand for Children, Inc.",
+      "amount": 250000.0
+     },
+     {
+      "name": "Colorado WINS",
+      "amount": 212889.76
+     },
+     {
+      "name": "Save the Children Action Network",
+      "amount": 162869.0
+     },
+     {
+      "name": "Colorado Statewide Parent Coalition",
+      "amount": 142680.49
+     },
+     {
+      "name": "The Bell Policy Center",
+      "amount": 141929.0
+     },
+     {
+      "name": "Great Education Colorado Action",
+      "amount": 113269.98
+     },
+     {
+      "name": "Colorado Center on Law and Policy",
+      "amount": 107500.0
+     },
+     {
+      "name": "Colorado Community Health Network",
+      "amount": 105000.0
+     },
+     {
+      "name": "Colorado Fiscal Institute",
+      "amount": 102950.43
+     },
+     {
+      "name": "Western Colorado Alliance",
+      "amount": 31921.9
+     },
+     {
+      "name": "AARP INC.",
+      "amount": 28955.0
+     }
+    ],
+    "total": 2528931.1,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Brighter Colorado",
+      "total": 3270775.0,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52270",
+      "also": [
+       "colorado-proposition-136"
+      ]
+     },
+     {
+      "name": "Don't Price Us Out",
+      "total": 2146500.0,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52410"
+     },
+     {
+      "name": "Keep Colorado Affordable",
+      "total": 607500.0,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52269",
+      "also": [
+       "colorado-proposition-136"
+      ]
+     },
+     {
+      "name": "Let's Go Colorado",
+      "total": 500000.0,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52355"
+     },
+     {
+      "name": "Americans for Prosperity Colorado Issue Committee",
+      "total": 350222.84
+     },
+     {
+      "name": "Your Family's Future Alliance",
+      "total": 23190.5,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52086"
+     },
+     {
+      "name": "Affordable Colorado",
+      "total": 11417.21,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52352"
+     },
+     {
+      "name": "Colorado Union of Taxpayers",
+      "total": 0.0,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52680",
+      "also": [
+       "colorado-proposition-136"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Common Sense America",
+      "amount": 2000000.0
+     },
+     {
+      "name": "American Prosperity Coalition",
+      "amount": 1710000.0
+     },
+     {
+      "name": "GOPAC Election Fund",
+      "amount": 1605000.0,
+      "rows": 2
+     },
+     {
+      "name": "Denver Metro Chamber of Commerce",
+      "amount": 500000.0
+     },
+     {
+      "name": "Americans for Prosperity",
+      "amount": 350222.84
+     },
+     {
+      "name": "Ready Colorado",
+      "amount": 300000.0
+     },
+     {
+      "name": "Colorado Dawn",
+      "amount": 166000.0,
+      "rows": 2
+     },
+     {
+      "name": "1876 Resources LLC",
+      "amount": 25000.0
+     },
+     {
+      "name": "Jeffrey Keller",
+      "amount": 25000.0
+     },
+     {
+      "name": "Joseph O'Dea",
+      "amount": 25000.0
+     },
+     {
+      "name": "Matt Stava",
+      "amount": 25000.0
+     },
+     {
+      "name": "Oscar Brown",
+      "amount": 25000.0
+     },
+     {
+      "name": "Rado Capital",
+      "amount": 25000.0
+     },
+     {
+      "name": "Advance Colorado",
+      "amount": 20000.0
+     },
+     {
+      "name": "Independence Institute",
+      "amount": 11417.21
+     },
+     {
+      "name": "JCC 2020 Trust",
+      "amount": 2500.0
+     }
+    ],
+    "total": 6909605.55,
+    "ie": []
+   }
+  },
+  "washington-initiative-645": {
+   "as_of": "2026-10-30",
+   "source": {
+    "org": "Washington Public Disclosure Commission",
+    "kind": "official",
+    "title": "Contributions to Candidates and Political Committees (open data)",
+    "url": "https://data.wa.gov/Politics/Contributions-to-Candidates-and-Political-Committe/kv7h-kjye",
+    "accessed": "2026-11-01",
+    "method": "Itemized contributions reported to each committee for the 2025 and 2026 election years."
+   },
+   "filings": {
+    "org": "Washington Public Disclosure Commission",
+    "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Let's Go Washington",
+      "total": 8258315.77,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-30644",
+      "also": [
+       "washington-initiative-1",
+       "washington-initiative-638"
+      ]
+     },
+     {
+      "name": "Vote Yes Repeal the Income Tax",
+      "total": 3689885.0,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-42237"
+     }
+    ],
+    "donors": [
+     {
+      "name": "Heywood Brian",
+      "amount": 2580049.0,
+      "rows": 41
+     },
+     {
+      "name": "Gordon Steve",
+      "amount": 1452000.0,
+      "rows": 12
+     },
+     {
+      "name": "Hughes Lawrence",
+      "amount": 1000000.0,
+      "rows": 2,
+      "separate_address": true
+     },
+     {
+      "name": "Kemper Holdings LLC",
+      "amount": 505000.0,
+      "rows": 5
+     },
+     {
+      "name": "Kelley DevCom LLC",
+      "amount": 450000.0,
+      "rows": 3
+     },
+     {
+      "name": "Crow Robert",
+      "amount": 345000.0,
+      "rows": 4
+     },
+     {
+      "name": "Washington Rising Inc",
+      "amount": 300000.0
+     },
+     {
+      "name": "Madrona Venture Group, LLC",
+      "amount": 250000.0
+     },
+     {
+      "name": "Hughes Lawrence",
+      "amount": 250000.0,
+      "separate_address": true
+     },
+     {
+      "name": "Emerald Pacific Properties LLC",
+      "amount": 250000.0,
+      "rows": 2
+     },
+     {
+      "name": "Gordon Larry",
+      "amount": 200000.0,
+      "separate_address": true
+     },
+     {
+      "name": "TDM Strategies",
+      "amount": 189531.7
+     },
+     {
+      "name": "Gordon Virginia",
+      "amount": 125000.0
+     },
+     {
+      "name": "Gordon Larry",
+      "amount": 125000.0,
+      "separate_address": true
+     },
+     {
+      "name": "Sundquist Larry",
+      "amount": 105000.0,
+      "rows": 3
+     },
+     {
+      "name": "Sundquist Diane",
+      "amount": 105000.0,
+      "rows": 3
+     },
+     {
+      "name": "Gordon Truck Centers",
+      "amount": 100000.0
+     },
+     {
+      "name": "Weidner Community Enhancement Association",
+      "amount": 100000.0
+     },
+     {
+      "name": "Sanders Molly",
+      "amount": 100000.0
+     },
+     {
+      "name": "Schlaepfer Phil",
+      "amount": 100000.0
+     },
+     {
+      "name": "Waldorf Chris",
+      "amount": 78000.0,
+      "rows": 5
+     },
+     {
+      "name": "Muglia Bob",
+      "amount": 75000.0,
+      "rows": 2
+     },
+     {
+      "name": "Muglia Laura Ellen",
+      "amount": 75000.0,
+      "rows": 2
+     },
+     {
+      "name": "BIAW Member Services Corporation",
+      "amount": 75000.0,
+      "rows": 2
+     },
+     {
+      "name": "Zieve Peter",
+      "amount": 65000.0,
+      "rows": 3
+     }
+    ],
+    "total": 11948200.77,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "No on 645",
+      "total": 13118972.07,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-42211"
+     },
+     {
+      "name": "Defend Washington",
+      "total": 578791.33,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-35835",
+      "also": [
+       "washington-initiative-1",
+       "washington-initiative-638"
+      ]
+     },
+     {
+      "name": "Millionaire's Tax Washington",
+      "total": 243799.0,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-42119"
+     },
+     {
+      "name": "Permanent Defense PAC (Wrong for Washington)",
+      "total": 8439.52,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-15151",
+      "also": [
+       "washington-initiative-1",
+       "washington-initiative-638"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Washington Education Association",
+      "amount": 3215887.28,
+      "rows": 14,
+      "separate_address": true
+     },
+     {
+      "name": "Washington Federation of State Employees",
+      "amount": 2526816.76,
+      "rows": 5
+     },
+     {
+      "name": "SEIU 775 Ballot Fund",
+      "amount": 1550000.0,
+      "rows": 4
+     },
+     {
+      "name": "SEIU Initiative Fund",
+      "amount": 1100000.0,
+      "rows": 8
+     },
+     {
+      "name": "National Education Association",
+      "amount": 1000000.0,
+      "rows": 2
+     },
+     {
+      "name": "SEIU Healthcare 1199NW",
+      "amount": 750000.0,
+      "rows": 3
+     },
+     {
+      "name": "American Federation of State, County, Municipal Employees",
+      "amount": 500000.0
+     },
+     {
+      "name": "Service Employees International Union Local 925",
+      "amount": 330000.0
+     },
+     {
+      "name": "Invest in Washington Now",
+      "amount": 277006.0,
+      "rows": 11
+     },
+     {
+      "name": "David Habib",
+      "amount": 250000.0,
+      "rows": 2
+     },
+     {
+      "name": "PPP Committee",
+      "amount": 250000.0
+     },
+     {
+      "name": "UFCW Local 3000",
+      "amount": 250000.0
+     },
+     {
+      "name": "Jabe Blumenthal",
+      "amount": 200000.0
+     },
+     {
+      "name": "American Federation of Teachers",
+      "amount": 200000.0
+     },
+     {
+      "name": "Holly Marklyn",
+      "amount": 150000.0
+     },
+     {
+      "name": "Samuel McVeety",
+      "amount": 100000.0
+     },
+     {
+      "name": "Washington State Nurses Association",
+      "amount": 100000.0
+     },
+     {
+      "name": "North Coast States Regional Council of Carpenters",
+      "amount": 100000.0
+     },
+     {
+      "name": "Seiu 775",
+      "amount": 96245.48,
+      "rows": 4
+     },
+     {
+      "name": "Brian Jacobson",
+      "amount": 75000.0
+     },
+     {
+      "name": "ACLU of Washington",
+      "amount": 50285.49,
+      "rows": 2
+     },
+     {
+      "name": "Ari Hertz",
+      "amount": 50000.0
+     },
+     {
+      "name": "Rebecca Liebman",
+      "amount": 50000.0,
+      "rows": 2
+     },
+     {
+      "name": "Ruth Lipscomb",
+      "amount": 50000.0
+     },
+     {
+      "name": "Washington Education Association",
+      "amount": 50000.0,
+      "separate_address": true
+     }
+    ],
+    "total": 13743001.92,
+    "ie": [],
+    "total_note": "The total leaves out $207,000 No on 645 gave to Defend Washington, so that money is not counted twice."
+   }
+  },
+  "massachusetts-question-8": {
+   "as_of": "2026-10-20",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Massachusetts Question 8 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Massachusetts_Question_8,_Eliminate_Recreational_Marijuana_Sales_and_Allow_Limited_Possession_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Massachusetts Office of Campaign and Political Finance (OCPF)",
+    "url": "https://www.ocpf.us/Reports/ActiveBallotQuestionReports"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Coalition for a Healthy Massachusetts",
+      "total": 3781800.0
+     }
+    ],
+    "donors": [
+     {
+      "name": "SAM Action",
+      "amount": 3730000.0
+     },
+     {
+      "name": "Americans Against Legalizing Marijuana",
+      "amount": 50000.0
+     }
+    ],
+    "total": 3781800.0,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Committee to Protect Cannabis Regulation",
+      "total": 2959877.03
+     },
+     {
+      "name": "Committee for Keep Cannabis Legal, Vote No on 8",
+      "total": 14231.93
+     },
+     {
+      "name": "Democratic Socialists Against Reactionary Rollbacks",
+      "total": 5704.95,
+      "also": [
+       "massachusetts-question-3",
+       "massachusetts-question-5"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "INSA",
+      "amount": 273932.79
+     },
+     {
+      "name": "Ascend Wellness Holdings LLC",
+      "amount": 250000.0
+     },
+     {
+      "name": "Curaleaf Inc.",
+      "amount": 200000.0
+     },
+     {
+      "name": "Chicago Atlantic Admin, LLC",
+      "amount": 125000.0
+     },
+     {
+      "name": "Vireo Health",
+      "amount": 125000.0
+     },
+     {
+      "name": "Fernway LLC",
+      "amount": 110000.0
+     }
+    ],
+    "total": 2979813.91,
+    "ie": []
+   }
+  },
+  "ohio-issue-3": {
+   "as_of": null,
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Ohio Issue 3 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Ohio_Issue_3,_Require_Voter_Identification_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Ohio Secretary of State, campaign finance",
+    "url": "https://www.ohiosos.gov/campaign-finance/search/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   }
+  },
+  "north-carolina-photo-id-amendment": {
+   "as_of": "2026-10-02",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "North Carolina Amendment (photo ID) (2026): Campaign finance",
+    "url": "https://ballotpedia.org/North_Carolina_Require_Voter_Identification_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "North Carolina State Board of Elections, campaign finance",
+    "url": "https://cf.ncsbe.gov/CFOrgLkup/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "NC By the People",
+      "total": 59305.62,
+      "also": [
+       "north-carolina-income-tax-cap-amendment",
+       "north-carolina-property-tax-levy-limit-amendment"
+      ]
+     }
+    ],
+    "donors": [],
+    "total": 59305.62,
+    "ie": []
+   }
+  },
+  "michigan-proposal-1": {
+   "as_of": "2026-10-18",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Michigan Proposal 26-1 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Michigan_Proposal_1,_Constitutional_Convention_Question_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Michigan Bureau of Elections, committee search",
+    "url": "https://mi-boe.entellitrak.com/etk-mi-boe-prod/page.request.do?page=page.miboeCommitteePublicSearch"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Yes on Proposal 1",
+      "total": 0.0
+     }
+    ],
+    "donors": [],
+    "total": 0.0,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Protect MI Constitution from Special Interests",
+      "total": 4389861.04
+     },
+     {
+      "name": "Voters Not Politicians Ballot Committee",
+      "total": 240113.19,
+      "also": [
+       "michigan-proposal-2"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "The Fairness Project",
+      "amount": 3000000.0
+     },
+     {
+      "name": "American Opportunity Action",
+      "amount": 825000.0
+     },
+     {
+      "name": "Global Impact Social Welfare Fd",
+      "amount": 175000.0
+     },
+     {
+      "name": "The Beckwith Fund",
+      "amount": 100000.0
+     },
+     {
+      "name": "Voters Not Politicians",
+      "amount": 25508.5
+     }
+    ],
+    "total": 4629974.23,
+    "ie": []
+   }
+  },
+  "washington-initiative-1": {
+   "as_of": "2026-10-30",
+   "source": {
+    "org": "Washington Public Disclosure Commission",
+    "kind": "official",
+    "title": "Contributions to Candidates and Political Committees (open data)",
+    "url": "https://data.wa.gov/Politics/Contributions-to-Candidates-and-Political-Committe/kv7h-kjye",
+    "accessed": "2026-11-01",
+    "method": "Itemized contributions reported to each committee for the 2025 and 2026 election years."
+   },
+   "filings": {
+    "org": "Washington Public Disclosure Commission",
+    "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Let's Go Washington",
+      "total": 8258315.77,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-30644",
+      "also": [
+       "washington-initiative-638",
+       "washington-initiative-645"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Heywood Brian",
+      "amount": 2580049.0,
+      "rows": 41
+     },
+     {
+      "name": "Gordon Steve",
+      "amount": 902000.0,
+      "rows": 8
+     },
+     {
+      "name": "Kelley DevCom LLC",
+      "amount": 450000.0,
+      "rows": 3
+     },
+     {
+      "name": "Washington Rising Inc",
+      "amount": 300000.0
+     },
+     {
+      "name": "Kemper Holdings LLC",
+      "amount": 250000.0,
+      "rows": 3
+     },
+     {
+      "name": "Hughes Lawrence",
+      "amount": 250000.0
+     },
+     {
+      "name": "Crow Robert",
+      "amount": 245000.0,
+      "rows": 3
+     },
+     {
+      "name": "TDM Strategies",
+      "amount": 189531.7
+     },
+     {
+      "name": "Gordon Virginia",
+      "amount": 125000.0
+     },
+     {
+      "name": "Gordon Larry",
+      "amount": 125000.0
+     },
+     {
+      "name": "Sundquist Larry",
+      "amount": 105000.0,
+      "rows": 3
+     },
+     {
+      "name": "Sundquist Diane",
+      "amount": 105000.0,
+      "rows": 3
+     },
+     {
+      "name": "Sanders Molly",
+      "amount": 100000.0
+     },
+     {
+      "name": "Schlaepfer Phil",
+      "amount": 100000.0
+     },
+     {
+      "name": "Waldorf Chris",
+      "amount": 78000.0,
+      "rows": 5
+     },
+     {
+      "name": "Hermanson Richard",
+      "amount": 61000.0,
+      "rows": 3
+     },
+     {
+      "name": "Zieve Peter",
+      "amount": 55000.0,
+      "rows": 2
+     },
+     {
+      "name": "Magnano Ben",
+      "amount": 50000.0
+     },
+     {
+      "name": "Rowley Properties, Inc.",
+      "amount": 50000.0,
+      "rows": 2
+     },
+     {
+      "name": "Petrie George",
+      "amount": 50000.0,
+      "rows": 2
+     },
+     {
+      "name": "Abraham Zach",
+      "amount": 50000.0
+     },
+     {
+      "name": "McKinley Sands",
+      "amount": 46000.0,
+      "rows": 22
+     },
+     {
+      "name": "Plath Peter",
+      "amount": 40000.0,
+      "rows": 3
+     },
+     {
+      "name": "Barber David",
+      "amount": 26275.0,
+      "rows": 4
+     },
+     {
+      "name": "Barber Jean",
+      "amount": 26250.0,
+      "rows": 3
+     }
+    ],
+    "total": 8258315.77,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "No Hate in WA State",
+      "total": 4702768.92,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-38851",
+      "also": [
+       "washington-initiative-638"
+      ]
+     },
+     {
+      "name": "Defend Washington",
+      "total": 578791.33,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-35835",
+      "also": [
+       "washington-initiative-638",
+       "washington-initiative-645"
+      ]
+     },
+     {
+      "name": "Permanent Defense PAC (Wrong for Washington)",
+      "total": 8439.52,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-15151",
+      "also": [
+       "washington-initiative-638",
+       "washington-initiative-645"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Inatai Foundation",
+      "amount": 1000000.0,
+      "rows": 3
+     },
+     {
+      "name": "SEIU 775 Ballot Fund",
+      "amount": 750500.0,
+      "rows": 5
+     },
+     {
+      "name": "Washington Education Association",
+      "amount": 629091.62,
+      "rows": 31
+     },
+     {
+      "name": "ACLU of Washington",
+      "amount": 333776.19,
+      "rows": 20
+     },
+     {
+      "name": "National Education Association",
+      "amount": 250000.0
+     },
+     {
+      "name": "No on 645",
+      "amount": 207000.0,
+      "rows": 2
+     },
+     {
+      "name": "SEIU Initiative Fund",
+      "amount": 150000.0,
+      "rows": 4
+     },
+     {
+      "name": "Gender Justice League",
+      "amount": 125340.84,
+      "rows": 10
+     },
+     {
+      "name": "Seiu 775",
+      "amount": 85084.0,
+      "rows": 3
+     },
+     {
+      "name": "UFCW Local 3000",
+      "amount": 75000.0
+     },
+     {
+      "name": "SEIU Washington State Council",
+      "amount": 75000.0
+     },
+     {
+      "name": "Wfse",
+      "amount": 70000.0,
+      "rows": 2
+     },
+     {
+      "name": "Social Justice Fund",
+      "amount": 65000.0
+     },
+     {
+      "name": "Invest in Washington Now",
+      "amount": 55100.0,
+      "rows": 3
+     },
+     {
+      "name": "Planned Parenthood Alliance Advocates",
+      "amount": 50892.05,
+      "rows": 24
+     },
+     {
+      "name": "Ross Boucher",
+      "amount": 50000.0
+     },
+     {
+      "name": "Pro-Choice Washington",
+      "amount": 37121.87,
+      "rows": 12
+     },
+     {
+      "name": "Pacific Market Research",
+      "amount": 34500.0
+     },
+     {
+      "name": "Equal Rights for All Petition Committee",
+      "amount": 33275.0
+     },
+     {
+      "name": "Rebecca Liebman",
+      "amount": 30000.0
+     },
+     {
+      "name": "Lisa Mennet",
+      "amount": 30000.0
+     },
+     {
+      "name": "Rachel Gelman",
+      "amount": 30000.0
+     },
+     {
+      "name": "Grace Ann Nordhoff",
+      "amount": 25000.0
+     },
+     {
+      "name": "Northwest Health Foundation",
+      "amount": 25000.0
+     },
+     {
+      "name": "Jeffrey S Raikes",
+      "amount": 25000.0
+     }
+    ],
+    "total": 5289999.77,
+    "ie": []
+   }
+  },
+  "washington-initiative-638": {
+   "as_of": "2026-10-30",
+   "source": {
+    "org": "Washington Public Disclosure Commission",
+    "kind": "official",
+    "title": "Contributions to Candidates and Political Committees (open data)",
+    "url": "https://data.wa.gov/Politics/Contributions-to-Candidates-and-Political-Committe/kv7h-kjye",
+    "accessed": "2026-11-01",
+    "method": "Itemized contributions reported to each committee for the 2025 and 2026 election years."
+   },
+   "filings": {
+    "org": "Washington Public Disclosure Commission",
+    "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Let's Go Washington",
+      "total": 8258315.77,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-30644",
+      "also": [
+       "washington-initiative-1",
+       "washington-initiative-645"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Heywood Brian",
+      "amount": 2580049.0,
+      "rows": 41
+     },
+     {
+      "name": "Gordon Steve",
+      "amount": 902000.0,
+      "rows": 8
+     },
+     {
+      "name": "Kelley DevCom LLC",
+      "amount": 450000.0,
+      "rows": 3
+     },
+     {
+      "name": "Washington Rising Inc",
+      "amount": 300000.0
+     },
+     {
+      "name": "Kemper Holdings LLC",
+      "amount": 250000.0,
+      "rows": 3
+     },
+     {
+      "name": "Hughes Lawrence",
+      "amount": 250000.0
+     },
+     {
+      "name": "Crow Robert",
+      "amount": 245000.0,
+      "rows": 3
+     },
+     {
+      "name": "TDM Strategies",
+      "amount": 189531.7
+     },
+     {
+      "name": "Gordon Virginia",
+      "amount": 125000.0
+     },
+     {
+      "name": "Gordon Larry",
+      "amount": 125000.0
+     },
+     {
+      "name": "Sundquist Larry",
+      "amount": 105000.0,
+      "rows": 3
+     },
+     {
+      "name": "Sundquist Diane",
+      "amount": 105000.0,
+      "rows": 3
+     },
+     {
+      "name": "Sanders Molly",
+      "amount": 100000.0
+     },
+     {
+      "name": "Schlaepfer Phil",
+      "amount": 100000.0
+     },
+     {
+      "name": "Waldorf Chris",
+      "amount": 78000.0,
+      "rows": 5
+     },
+     {
+      "name": "Hermanson Richard",
+      "amount": 61000.0,
+      "rows": 3
+     },
+     {
+      "name": "Zieve Peter",
+      "amount": 55000.0,
+      "rows": 2
+     },
+     {
+      "name": "Magnano Ben",
+      "amount": 50000.0
+     },
+     {
+      "name": "Rowley Properties, Inc.",
+      "amount": 50000.0,
+      "rows": 2
+     },
+     {
+      "name": "Petrie George",
+      "amount": 50000.0,
+      "rows": 2
+     },
+     {
+      "name": "Abraham Zach",
+      "amount": 50000.0
+     },
+     {
+      "name": "McKinley Sands",
+      "amount": 46000.0,
+      "rows": 22
+     },
+     {
+      "name": "Plath Peter",
+      "amount": 40000.0,
+      "rows": 3
+     },
+     {
+      "name": "Barber David",
+      "amount": 26275.0,
+      "rows": 4
+     },
+     {
+      "name": "Barber Jean",
+      "amount": 26250.0,
+      "rows": 3
+     }
+    ],
+    "total": 8258315.77,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "No Hate in WA State",
+      "total": 4702768.92,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-38851",
+      "also": [
+       "washington-initiative-1"
+      ]
+     },
+     {
+      "name": "Defend Washington",
+      "total": 578791.33,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-35835",
+      "also": [
+       "washington-initiative-1",
+       "washington-initiative-645"
+      ]
+     },
+     {
+      "name": "Permanent Defense PAC (Wrong for Washington)",
+      "total": 8439.52,
+      "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-15151",
+      "also": [
+       "washington-initiative-1",
+       "washington-initiative-645"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Inatai Foundation",
+      "amount": 1000000.0,
+      "rows": 3
+     },
+     {
+      "name": "SEIU 775 Ballot Fund",
+      "amount": 750500.0,
+      "rows": 5
+     },
+     {
+      "name": "Washington Education Association",
+      "amount": 629091.62,
+      "rows": 31
+     },
+     {
+      "name": "ACLU of Washington",
+      "amount": 333776.19,
+      "rows": 20
+     },
+     {
+      "name": "National Education Association",
+      "amount": 250000.0
+     },
+     {
+      "name": "No on 645",
+      "amount": 207000.0,
+      "rows": 2
+     },
+     {
+      "name": "SEIU Initiative Fund",
+      "amount": 150000.0,
+      "rows": 4
+     },
+     {
+      "name": "Gender Justice League",
+      "amount": 125340.84,
+      "rows": 10
+     },
+     {
+      "name": "Seiu 775",
+      "amount": 85084.0,
+      "rows": 3
+     },
+     {
+      "name": "UFCW Local 3000",
+      "amount": 75000.0
+     },
+     {
+      "name": "SEIU Washington State Council",
+      "amount": 75000.0
+     },
+     {
+      "name": "Wfse",
+      "amount": 70000.0,
+      "rows": 2
+     },
+     {
+      "name": "Social Justice Fund",
+      "amount": 65000.0
+     },
+     {
+      "name": "Invest in Washington Now",
+      "amount": 55100.0,
+      "rows": 3
+     },
+     {
+      "name": "Planned Parenthood Alliance Advocates",
+      "amount": 50892.05,
+      "rows": 24
+     },
+     {
+      "name": "Ross Boucher",
+      "amount": 50000.0
+     },
+     {
+      "name": "Pro-Choice Washington",
+      "amount": 37121.87,
+      "rows": 12
+     },
+     {
+      "name": "Pacific Market Research",
+      "amount": 34500.0
+     },
+     {
+      "name": "Equal Rights for All Petition Committee",
+      "amount": 33275.0
+     },
+     {
+      "name": "Rebecca Liebman",
+      "amount": 30000.0
+     },
+     {
+      "name": "Lisa Mennet",
+      "amount": 30000.0
+     },
+     {
+      "name": "Rachel Gelman",
+      "amount": 30000.0
+     },
+     {
+      "name": "Grace Ann Nordhoff",
+      "amount": 25000.0
+     },
+     {
+      "name": "Northwest Health Foundation",
+      "amount": 25000.0
+     },
+     {
+      "name": "Jeffrey S Raikes",
+      "amount": 25000.0
+     }
+    ],
+    "total": 5289999.77,
+    "ie": []
+   }
+  },
+  "massachusetts-question-3": {
+   "as_of": "2026-10-20",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Massachusetts Question 3 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Massachusetts_Question_3,_Top-Two_Primary_Elections_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Massachusetts Office of Campaign and Political Finance (OCPF)",
+    "url": "https://www.ocpf.us/Reports/ActiveBallotQuestionReports"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Coalition for Healthy Democracy 2026",
+      "total": 7164297.62,
+      "also": [
+       "massachusetts-question-1"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "David Randolph Peeler",
+      "amount": 1050000.0
+     },
+     {
+      "name": "Andrew Balson",
+      "amount": 750000.0
+     },
+     {
+      "name": "Joshua Bekenstein",
+      "amount": 500000.0
+     },
+     {
+      "name": "Mark Nunnelly",
+      "amount": 375000.0
+     },
+     {
+      "name": "Brian Conway",
+      "amount": 300000.0
+     },
+     {
+      "name": "Dwight Poler",
+      "amount": 300000.0
+     }
+    ],
+    "total": 7164297.62,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Voter Rights MA",
+      "total": 189454.32
+     },
+     {
+      "name": "Democratic Socialists Against Reactionary Rollbacks",
+      "total": 5704.95,
+      "also": [
+       "massachusetts-question-5",
+       "massachusetts-question-8"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "1199 SEIU MA PAC",
+      "amount": 100000.0
+     },
+     {
+      "name": "MA Democratic State Committee",
+      "amount": 63346.4
+     },
+     {
+      "name": "Progressive Massachusetts",
+      "amount": 14589.0
+     },
+     {
+      "name": "Democratic Socialists of America, Inc.",
+      "amount": 10000.0
+     },
+     {
+      "name": "Local 509 SEIU",
+      "amount": 10000.0
+     },
+     {
+      "name": "SEIU 509",
+      "amount": 1401.55
+     }
+    ],
+    "total": 195159.27,
+    "ie": []
+   }
+  },
+  "massachusetts-question-7": {
+   "as_of": "2026-10-20",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Massachusetts Question 7 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Massachusetts_Question_7,_Limit_on_Required_Lot_Size_for_Single-Family_Homes_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Massachusetts Office of Campaign and Political Finance (OCPF)",
+    "url": "https://www.ocpf.us/Reports/ActiveBallotQuestionReports"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Legalize Starter Homes",
+      "total": 1477397.53
+     },
+     {
+      "name": "Abundant Housing Legalize Starter Homes",
+      "total": 274457.89
+     },
+     {
+      "name": "Democratic Socialists for a Fair Massachusetts",
+      "total": 5704.95,
+      "also": [
+       "massachusetts-question-1",
+       "massachusetts-question-2",
+       "massachusetts-question-4",
+       "massachusetts-question-9"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Greater Boston Real Estate Board",
+      "amount": 350000.0
+     },
+     {
+      "name": "Mass Association of Realtors PAC",
+      "amount": 350000.0
+     },
+     {
+      "name": "Welcoming Neighbors Network",
+      "amount": 250000.0
+     },
+     {
+      "name": "Mass Association of Realtors",
+      "amount": 150000.0
+     },
+     {
+      "name": "Eastern Bank",
+      "amount": 100000.0
+     },
+     {
+      "name": "Marcus Partners LLC",
+      "amount": 100000.0
+     },
+     {
+      "name": "Gary Mikula",
+      "amount": 65000.0
+     }
+    ],
+    "total": 1757560.37,
+    "ie": []
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   }
+  },
+  "california-proposition-41": {
+   "source": {
+    "org": "California Secretary of State, CAL-ACCESS",
+    "kind": "official",
+    "title": "Power Search: contributions to committees supporting and opposing Proposition 41",
+    "url": "https://powersearch.sos.ca.gov/advanced.php",
+    "accessed": "2026-11-01",
+    "method": "Contributions to the committees that report supporting or opposing the measure, with transfers between allied committees left out."
+   },
+   "filings": {
+    "org": "California Secretary of State, CAL-ACCESS",
+    "url": "https://cal-access.sos.ca.gov/Campaign/Measures/"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Yes on 41 - Californians for Transparency and Accountability",
+      "total": 58376445.92,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1488423"
+     }
+    ],
+    "donors": [
+     {
+      "name": "Building a Better California",
+      "amount": 58350000.0,
+      "rows": 13,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1486767"
+     },
+     {
+      "name": "Reform California with Carl DeMaio - Ballot Measure Committee",
+      "amount": 21807.92,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1268914"
+     }
+    ],
+    "total": 58376445.92,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Yes on 40 - Billionaire Tax Now - No on 41 & 42",
+      "total": 32974997.73,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1484470",
+      "also": [
+       "california-proposition-40",
+       "california-proposition-42"
+      ]
+     },
+     {
+      "name": "Working Families Say No to Propositions 41 and 42",
+      "total": 1011000.0,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1497412",
+      "also": [
+       "california-proposition-42"
+      ]
+     },
+     {
+      "name": "Tax the Ultra-Rich Now, YES on 3 & 40, NO on 41 & 42",
+      "total": 579579.28,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1495036",
+      "also": [
+       "california-proposition-3",
+       "california-proposition-40",
+       "california-proposition-42"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Service Employees International Union, United Healthcare Workers West Nonprofit 501(c)(5)",
+      "amount": 22077898.56,
+      "rows": 73,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1373047"
+     },
+     {
+      "name": "SEIU United Health Care Workers West Political Issues Committee",
+      "amount": 7733164.35,
+      "rows": 18,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=991800"
+     },
+     {
+      "name": "SEIU United Healthcare Workers West PAC",
+      "amount": 2000000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=747285"
+     },
+     {
+      "name": "Million More Voters, sponsored by the California Labor Federation, AFL-CIO",
+      "amount": 500000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1291923"
+     },
+     {
+      "name": "Alan Davis",
+      "amount": 400000.0,
+      "rows": 5
+     },
+     {
+      "name": "United Domestic Workers of America Issues PAC",
+      "amount": 250000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1367548"
+     },
+     {
+      "name": "Saikat Chakrabarti",
+      "amount": 201000.0
+     },
+     {
+      "name": "Ross Boucher",
+      "amount": 200000.0,
+      "rows": 2
+     },
+     {
+      "name": "California Labor Federation AFL-CIO",
+      "amount": 200000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=741504"
+     },
+     {
+      "name": "Service Employees International Union - United Healthcare Workers West",
+      "amount": 160906.01
+     },
+     {
+      "name": "PACE of California School Employees Association - Issues",
+      "amount": 150000.0,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=902738"
+     },
+     {
+      "name": "Hillary Perkins",
+      "amount": 100000.0
+     },
+     {
+      "name": "California Federation of Teachers COPE PROP/BALLOT Committee",
+      "amount": 100000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1240104"
+     },
+     {
+      "name": "Excessive Wealth",
+      "amount": 45000.0,
+      "rows": 2
+     },
+     {
+      "name": "California Donor Table Issues Committee",
+      "amount": 40000.0,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1489719"
+     },
+     {
+      "name": "John O'Farrell",
+      "amount": 35000.0,
+      "rows": 2
+     },
+     {
+      "name": "American Federation of State, County & Municipal Employees Council 57 Issues PAC",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1338455"
+     },
+     {
+      "name": "William Connell",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1494715"
+     },
+     {
+      "name": "John Esler",
+      "amount": 25000.0
+     },
+     {
+      "name": "James Stone",
+      "amount": 25000.0
+     },
+     {
+      "name": "Thomas Scruggs",
+      "amount": 25000.0
+     },
+     {
+      "name": "Henry Scott Wallace",
+      "amount": 20000.0,
+      "rows": 2
+     },
+     {
+      "name": "Nicole Pesco",
+      "amount": 10000.0
+     },
+     {
+      "name": "JB Moss Voice of the Electorate (Vote) FED PAC ID# C00007898",
+      "amount": 10000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1309168"
+     },
+     {
+      "name": "Leah Hunt-Hendrix",
+      "amount": 10000.0
+     }
+    ],
+    "total": 34565577.01,
+    "ie": []
+   },
+   "as_of": "2026-10-31"
+  },
+  "california-proposition-42": {
+   "source": {
+    "org": "California Secretary of State, CAL-ACCESS",
+    "kind": "official",
+    "title": "Power Search: contributions to committees supporting and opposing Proposition 42",
+    "url": "https://powersearch.sos.ca.gov/advanced.php",
+    "accessed": "2026-11-01",
+    "method": "Contributions to the committees that report supporting or opposing the measure, with transfers between allied committees left out."
+   },
+   "filings": {
+    "org": "California Secretary of State, CAL-ACCESS",
+    "url": "https://cal-access.sos.ca.gov/Campaign/Measures/"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Yes on 42 - Protect Retirement & Life Savings",
+      "total": 159277037.26,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1488418"
+     }
+    ],
+    "donors": [
+     {
+      "name": "Building a Better California",
+      "amount": 159100000.0,
+      "rows": 22,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1486767"
+     },
+     {
+      "name": "Peace Officers Research Association of California Political Issues Committee (PORAC PIC)",
+      "amount": 150000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=911908"
+     },
+     {
+      "name": "Reform California with Carl DeMaio - Ballot Measure Committee",
+      "amount": 22537.26,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1268914"
+     }
+    ],
+    "total": 159277037.26,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Yes on 40 - Billionaire Tax Now - No on 41 & 42",
+      "total": 32974997.73,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1484470",
+      "also": [
+       "california-proposition-40",
+       "california-proposition-41"
+      ]
+     },
+     {
+      "name": "Working Families Say No to Propositions 41 and 42",
+      "total": 1011000.0,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1497412",
+      "also": [
+       "california-proposition-41"
+      ]
+     },
+     {
+      "name": "Tax the Ultra-Rich Now, YES on 3 & 40, NO on 41 & 42",
+      "total": 579579.28,
+      "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1495036",
+      "also": [
+       "california-proposition-3",
+       "california-proposition-40",
+       "california-proposition-41"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Service Employees International Union, United Healthcare Workers West Nonprofit 501(c)(5)",
+      "amount": 22077898.56,
+      "rows": 73,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1373047"
+     },
+     {
+      "name": "SEIU United Health Care Workers West Political Issues Committee",
+      "amount": 7733164.35,
+      "rows": 18,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=991800"
+     },
+     {
+      "name": "SEIU United Healthcare Workers West PAC",
+      "amount": 2000000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=747285"
+     },
+     {
+      "name": "Million More Voters, sponsored by the California Labor Federation, AFL-CIO",
+      "amount": 500000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1291923"
+     },
+     {
+      "name": "Alan Davis",
+      "amount": 400000.0,
+      "rows": 5
+     },
+     {
+      "name": "United Domestic Workers of America Issues PAC",
+      "amount": 250000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1367548"
+     },
+     {
+      "name": "Saikat Chakrabarti",
+      "amount": 201000.0
+     },
+     {
+      "name": "Ross Boucher",
+      "amount": 200000.0,
+      "rows": 2
+     },
+     {
+      "name": "California Labor Federation AFL-CIO",
+      "amount": 200000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=741504"
+     },
+     {
+      "name": "Service Employees International Union - United Healthcare Workers West",
+      "amount": 160906.01
+     },
+     {
+      "name": "PACE of California School Employees Association - Issues",
+      "amount": 150000.0,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=902738"
+     },
+     {
+      "name": "Hillary Perkins",
+      "amount": 100000.0
+     },
+     {
+      "name": "California Federation of Teachers COPE PROP/BALLOT Committee",
+      "amount": 100000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1240104"
+     },
+     {
+      "name": "Excessive Wealth",
+      "amount": 45000.0,
+      "rows": 2
+     },
+     {
+      "name": "California Donor Table Issues Committee",
+      "amount": 40000.0,
+      "rows": 2,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1489719"
+     },
+     {
+      "name": "John O'Farrell",
+      "amount": 35000.0,
+      "rows": 2
+     },
+     {
+      "name": "American Federation of State, County & Municipal Employees Council 57 Issues PAC",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1338455"
+     },
+     {
+      "name": "William Connell",
+      "amount": 25000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1494715"
+     },
+     {
+      "name": "John Esler",
+      "amount": 25000.0
+     },
+     {
+      "name": "James Stone",
+      "amount": 25000.0
+     },
+     {
+      "name": "Thomas Scruggs",
+      "amount": 25000.0
+     },
+     {
+      "name": "Henry Scott Wallace",
+      "amount": 20000.0,
+      "rows": 2
+     },
+     {
+      "name": "Nicole Pesco",
+      "amount": 10000.0
+     },
+     {
+      "name": "JB Moss Voice of the Electorate (Vote) FED PAC ID# C00007898",
+      "amount": 10000.0,
+      "filer_url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1309168"
+     },
+     {
+      "name": "Leah Hunt-Hendrix",
+      "amount": 10000.0
+     }
+    ],
+    "total": 34565577.01,
+    "ie": []
+   },
+   "as_of": "2026-10-31"
+  },
+  "colorado-proposition-136": {
+   "as_of": "2026-10-14",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Colorado Proposition 136 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Colorado_Proposition_136,_Establish_4.4%25_Cap_on_Individual_and_Corporate_Income_Tax_Rates_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Colorado Secretary of State, TRACER",
+    "url": "https://tracer.sos.colorado.gov/PublicSite/homepage.aspx"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Brighter Colorado",
+      "total": 3270775.0,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52270",
+      "also": [
+       "colorado-amendment-87"
+      ]
+     },
+     {
+      "name": "Keep Colorado Affordable",
+      "total": 607500.0,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52269",
+      "also": [
+       "colorado-amendment-87"
+      ]
+     },
+     {
+      "name": "Colorado Union of Taxpayers",
+      "total": 0.0,
+      "also": [
+       "colorado-amendment-87"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Common Sense America",
+      "amount": 2000000.0
+     },
+     {
+      "name": "GOPAC Election Fund",
+      "amount": 1605000.0,
+      "rows": 2
+     },
+     {
+      "name": "Colorado Dawn",
+      "amount": 100000.0
+     },
+     {
+      "name": "1876 Resources LLC",
+      "amount": 25000.0
+     },
+     {
+      "name": "Matt Stava",
+      "amount": 25000.0
+     },
+     {
+      "name": "Oscar Brown",
+      "amount": 25000.0
+     },
+     {
+      "name": "Rado Capital",
+      "amount": 25000.0
+     }
+    ],
+    "total": 3878275.0,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Protect Colorado's Future",
+      "total": 2528931.1,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=51642",
+      "also": [
+       "colorado-amendment-87"
+      ]
+     },
+     {
+      "name": "Vote Common Sense",
+      "total": 830569.33,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52134"
+     },
+     {
+      "name": "Make Good Change",
+      "total": 0.0,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52677",
+      "also": [
+       "colorado-amendment-87"
+      ]
+     },
+     {
+      "name": "People for a Fair Colorado",
+      "total": 0.0,
+      "url": "https://tracer.sos.colorado.gov/PublicSite/SearchPages/CommitteeDetail.aspx?OrgID=52396",
+      "also": [
+       "colorado-amendment-87"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Merle Chambers",
+      "amount": 500000.0
+     },
+     {
+      "name": "Conservation Colorado",
+      "amount": 490723.97
+     },
+     {
+      "name": "New Era Colorado Action Fund",
+      "amount": 276241.33
+     },
+     {
+      "name": "Stand for Children, Inc.",
+      "amount": 250000.0
+     },
+     {
+      "name": "Colorado WINS",
+      "amount": 212889.76
+     }
+    ],
+    "total": 3359500.43,
+    "ie": []
+   }
+  },
+  "arizona-proposition-144": {
+   "as_of": "2026-10-24",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Arizona Proposition 144 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Arizona_Proposition_144,_Voter_Identification_and_Citizenship_Voting_Requirements_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Arizona Secretary of State, See the Money",
+    "url": "https://seethemoney.az.gov/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": [
+     {
+      "name": "Arizona Free Enterprise Club",
+      "amount": 9639.65,
+      "period": "in October 2026"
+     },
+     {
+      "name": "Freedom Club PAC",
+      "amount": 17937.0,
+      "period": "from September through October 2026"
+     }
+    ]
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Will of the People",
+      "total": 871000.0,
+      "also": [
+       "arizona-proposition-142",
+       "arizona-proposition-318",
+       "arizona-proposition-320"
+      ]
+     },
+     {
+      "name": "Protect the Vote Arizona",
+      "total": 405143.13
+     }
+    ],
+    "donors": [
+     {
+      "name": "Progress Arizona",
+      "amount": 281000.0
+     },
+     {
+      "name": "Committee For Arizona Leadership",
+      "amount": 250000.0
+     },
+     {
+      "name": "Future Freedoms",
+      "amount": 150000.0
+     },
+     {
+      "name": "Arizona Education Association",
+      "amount": 75000.0
+     },
+     {
+      "name": "UFCW Local 99",
+      "amount": 75000.0
+     },
+     {
+      "name": "Lynn Schusterman",
+      "amount": 70000.0
+     },
+     {
+      "name": "Stacy Shusterman",
+      "amount": 70000.0
+     }
+    ],
+    "total": 871000.0,
+    "ie": [
+     {
+      "name": "Democrats of the Red Rocks (DORR)",
+      "amount": 482.62,
+      "period": "from September through October 2026"
+     },
+     {
+      "name": "LD4 Democrats",
+      "amount": 916.32,
+      "period": "from July through September 2026"
+     },
+     {
+      "name": "D14 Democrats",
+      "amount": 16.03,
+      "period": "in October 2026"
+     },
+     {
+      "name": "Legislative District 20 Democratic Committee",
+      "amount": 460.94,
+      "period": "in September 2026"
+     },
+     {
+      "name": "Worker Power PAC",
+      "amount": 608.56,
+      "period": "in September 2026"
+     },
+     {
+      "name": "Save Our Schools Arizona",
+      "amount": 1308.18,
+      "period": "from September through October 2026"
+     }
+    ]
+   }
+  },
+  "arizona-proposition-318": {
+   "as_of": "2026-10-24",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Arizona Proposition 318 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Arizona_Proposition_318,_Require_All_Schools_and_Athletic_Associations_to_Restrict_Sports_Participation_and_Access_to_Private_Spaces_Based_on_Sex_Measure_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Arizona Secretary of State, See the Money",
+    "url": "https://seethemoney.az.gov/"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Protect Girls' Sports in AZ",
+      "total": 3600.0
+     }
+    ],
+    "donors": [
+     {
+      "name": "Casidy Ferneding",
+      "amount": 1000.0
+     },
+     {
+      "name": "Catherine Coluch",
+      "amount": 1000.0
+     },
+     {
+      "name": "Russ Jones",
+      "amount": 1000.0
+     }
+    ],
+    "total": 3600.0,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Will of the People",
+      "total": 871000.0,
+      "also": [
+       "arizona-proposition-142",
+       "arizona-proposition-144",
+       "arizona-proposition-320"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Progress Arizona",
+      "amount": 281000.0
+     },
+     {
+      "name": "Future Freedoms",
+      "amount": 150000.0
+     },
+     {
+      "name": "Arizona Education Association",
+      "amount": 75000.0
+     },
+     {
+      "name": "UFCW Local 99",
+      "amount": 75000.0
+     },
+     {
+      "name": "Lynn Schusterman",
+      "amount": 70000.0
+     },
+     {
+      "name": "Stacy Shusterman",
+      "amount": 70000.0
+     }
+    ],
+    "total": 871000.0,
+    "ie": [
+     {
+      "name": "Democrats of the Red Rocks (DORR)",
+      "amount": 405.34,
+      "period": "in September 2026"
+     },
+     {
+      "name": "LD4 Democrats",
+      "amount": 916.32,
+      "period": "from July through September 2026"
+     },
+     {
+      "name": "Center for Arizona Policy Action",
+      "amount": 546.56,
+      "period": "in September 2026"
+     },
+     {
+      "name": "D14 Democrats",
+      "amount": 16.03,
+      "period": "in October 2026"
+     },
+     {
+      "name": "Save Our Schools Arizona PAC",
+      "amount": 137.06,
+      "period": "from September through October 2026"
+     },
+     {
+      "name": "Legislative District 20 Democratic Committee",
+      "amount": 460.94,
+      "period": "in September 2026"
+     },
+     {
+      "name": "Worker Power PAC",
+      "amount": 608.56,
+      "period": "in September 2026"
+     }
+    ]
+   }
+  },
+  "florida-amendment-3": {
+   "as_of": "2026-10-29",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Florida Amendment 3 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Florida_Amendment_3,_Homestead_Tax_Exemptions,_Property_Assessments,_and_Spending_Restrictions_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Florida Division of Elections, committee search",
+    "url": "https://dos.elections.myflorida.com/committees/"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Vote Yes on 3",
+      "total": 21516510.33,
+      "url": "https://dos.elections.myflorida.com/committees/ComDetail.asp?account=93318"
+     }
+    ],
+    "donors": [
+     {
+      "name": "Florida Realtors",
+      "amount": 19500000.0
+     },
+     {
+      "name": "National Association of Realtors",
+      "amount": 2016500.0
+     }
+    ],
+    "total": 21516510.33,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Floridians for Shared Prosperity, Inc.",
+      "total": 916146.25,
+      "url": "https://dos.elections.myflorida.com/committees/ComDetail.asp?account=93209"
+     },
+     {
+      "name": "Vote No on 3 Florida",
+      "total": 512930.93
+     },
+     {
+      "name": "No On 3. Protect Our Homes",
+      "total": 336000.0,
+      "url": "https://dos.elections.myflorida.com/committees/ComDetail.asp?account=93273"
+     },
+     {
+      "name": "Florida Public Servants No on 3",
+      "total": 100.0,
+      "url": "https://dos.elections.myflorida.com/committees/ComDetail.asp?account=93307"
+     }
+    ],
+    "donors": [
+     {
+      "name": "Hopewell Fund",
+      "amount": 434150.0
+     },
+     {
+      "name": "Our Democracy PC",
+      "amount": 311000.0
+     },
+     {
+      "name": "Stop Unfair Tax Shifts Today",
+      "amount": 280000.0
+     },
+     {
+      "name": "Scott Barancik",
+      "amount": 200000.0
+     },
+     {
+      "name": "CBPP Action",
+      "amount": 100000.0
+     },
+     {
+      "name": "Florida Association of Special Districts",
+      "amount": 100000.0
+     }
+    ],
+    "total": 1765177.18,
+    "ie": []
+   }
+  },
+  "massachusetts-question-4": {
+   "as_of": "2026-10-20",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Massachusetts Question 4 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Massachusetts_Question_4,_Permit_Same-Day_Voter_Registration_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Massachusetts Office of Campaign and Political Finance (OCPF)",
+    "url": "https://www.ocpf.us/Reports/ActiveBallotQuestionReports"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "YES on Election Day Voter Registration",
+      "total": 168052.14
+     },
+     {
+      "name": "Vote Yes on 4 Election Day Registration",
+      "total": 155996.61
+     },
+     {
+      "name": "Democratic Socialists for a Fair Massachusetts",
+      "total": 5704.95,
+      "also": [
+       "massachusetts-question-1",
+       "massachusetts-question-2",
+       "massachusetts-question-7",
+       "massachusetts-question-9"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "American Civil Liberties Union",
+      "amount": 112511.85
+     },
+     {
+      "name": "William F. Galvin Committee",
+      "amount": 79000.0
+     },
+     {
+      "name": "Common Cause Massachusetts",
+      "amount": 18992.98
+     },
+     {
+      "name": "International Brotherhood of Teamsters",
+      "amount": 10000.0
+     },
+     {
+      "name": "MA & Northern NE Laborers' District Council PAC",
+      "amount": 10000.0
+     },
+     {
+      "name": "Robert Rivers",
+      "amount": 10000.0
+     },
+     {
+      "name": "Massachusetts Teachers Association",
+      "amount": 8000.0
+     }
+    ],
+    "total": 329753.7,
+    "ie": []
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   }
+  },
+  "massachusetts-question-9": {
+   "as_of": "2026-10-20",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Massachusetts Question 9 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Massachusetts_Question_9,_Firearm_Regulations_Referendum_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Massachusetts Office of Campaign and Political Finance (OCPF)",
+    "url": "https://www.ocpf.us/Reports/ActiveBallotQuestionReports"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Yes for A Safe Massachusetts",
+      "total": 891225.09
+     },
+     {
+      "name": "Democratic Socialists for a Fair Massachusetts",
+      "total": 5704.95,
+      "also": [
+       "massachusetts-question-1",
+       "massachusetts-question-2",
+       "massachusetts-question-4",
+       "massachusetts-question-7"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Massachusetts Teachers Association",
+      "amount": 500237.0
+     },
+     {
+      "name": "Everytown For Gun Safety Action Fund",
+      "amount": 94324.45
+     },
+     {
+      "name": "Alliance for Gun Responsibility",
+      "amount": 50000.0
+     },
+     {
+      "name": "Molly Malloy",
+      "amount": 25000.0
+     },
+     {
+      "name": "Local 509 Service Employees Int'l Union Comm on Pol Ed, MA Workers' Pol Action Comm.",
+      "amount": 20000.0
+     }
+    ],
+    "total": 896930.04,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "The Civil Rights Coalition",
+      "total": 593467.57
+     }
+    ],
+    "donors": [
+     {
+      "name": "Jeffrey Freudberg",
+      "amount": 57000.0
+     },
+     {
+      "name": "Smith & Wesson Brands",
+      "amount": 50000.0
+     },
+     {
+      "name": "Gun Owners Action League",
+      "amount": 22776.0
+     },
+     {
+      "name": "Old Colony Sportsmen's Association Inc.",
+      "amount": 22008.63
+     },
+     {
+      "name": "EcoGeek, Inc.",
+      "amount": 19425.0
+     }
+    ],
+    "total": 593467.57,
+    "ie": []
+   }
+  },
+  "massachusetts-question-1": {
+   "as_of": "2026-10-20",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Massachusetts Question 1 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Massachusetts_Question_1,_Public_Records_Requirements_for_Legislature_and_Governor%E2%80%99s_Office_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Massachusetts Office of Campaign and Political Finance (OCPF)",
+    "url": "https://www.ocpf.us/Reports/ActiveBallotQuestionReports"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Coalition for Healthy Democracy 2026",
+      "total": 7164297.62,
+      "also": [
+       "massachusetts-question-3"
+      ]
+     },
+     {
+      "name": "Committee for Transparency and Democracy",
+      "total": 374937.0
+     },
+     {
+      "name": "Democratic Socialists for a Fair Massachusetts",
+      "total": 5704.95,
+      "also": [
+       "massachusetts-question-2",
+       "massachusetts-question-4",
+       "massachusetts-question-7",
+       "massachusetts-question-9"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "David Randolph Peeler",
+      "amount": 1050000.0
+     },
+     {
+      "name": "Andrew Balson",
+      "amount": 750000.0
+     },
+     {
+      "name": "Joshua Bekenstein",
+      "amount": 500000.0
+     },
+     {
+      "name": "Mark Nunnelly",
+      "amount": 375000.0
+     },
+     {
+      "name": "Brian Conway",
+      "amount": 300000.0
+     },
+     {
+      "name": "Dwight Poler",
+      "amount": 300000.0
+     }
+    ],
+    "total": 7544939.57,
+    "ie": []
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   }
+  },
+  "massachusetts-question-2": {
+   "as_of": "2026-10-20",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Massachusetts Question 2 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Massachusetts_Question_2,_Permit_Collective_Bargaining_for_Committee_for_Public_Counsel_Services_Employees_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Massachusetts Office of Campaign and Political Finance (OCPF)",
+    "url": "https://www.ocpf.us/Reports/ActiveBallotQuestionReports"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Labor Unions for Public Counsel Workers Rights",
+      "total": 1068060.0
+     },
+     {
+      "name": "Democratic Socialists for a Fair Massachusetts",
+      "total": 5704.95,
+      "also": [
+       "massachusetts-question-1",
+       "massachusetts-question-4",
+       "massachusetts-question-7",
+       "massachusetts-question-9"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "SEIU Local 888",
+      "amount": 542060.0
+     },
+     {
+      "name": "National Association of Government Employees",
+      "amount": 526000.0
+     },
+     {
+      "name": "Democratic Socialists of America, Inc",
+      "amount": 5000.0
+     },
+     {
+      "name": "Massachusetts Democratic Socialists of America, Inc",
+      "amount": 654.95
+     }
+    ],
+    "total": 1073764.95,
+    "ie": []
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   }
+  },
+  "massachusetts-question-5": {
+   "as_of": "2026-10-20",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Massachusetts Question 5 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Massachusetts_Question_5,_Change_State_Tax_Revenue_Limit_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Massachusetts Office of Campaign and Political Finance (OCPF)",
+    "url": "https://www.ocpf.us/Reports/ActiveBallotQuestionReports"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Taxpayers for an Affordable Massachusetts",
+      "total": 2532364.91
+     }
+    ],
+    "donors": [
+     {
+      "name": "Massachusetts Opportunity Alliance",
+      "amount": 1900000.0
+     },
+     {
+      "name": "Massachusetts High Technology Council",
+      "amount": 105704.1
+     },
+     {
+      "name": "ABP Trust",
+      "amount": 100000.0
+     },
+     {
+      "name": "Raymond State",
+      "amount": 100000.0
+     },
+     {
+      "name": "Massachusetts Competitive Partnership Inc.",
+      "amount": 50000.0
+     },
+     {
+      "name": "Pioneer Institute",
+      "amount": 50000.0
+     },
+     {
+      "name": "Retailers Association of Massachusetts",
+      "amount": 50000.0
+     }
+    ],
+    "total": 2532364.91,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Protect Massachusetts Future",
+      "total": 798545.6
+     },
+     {
+      "name": "Labor Leaders for Revenue Responsibility",
+      "total": 75000.0
+     },
+     {
+      "name": "Raise Up Massachusetts 2026",
+      "total": 66130.41
+     },
+     {
+      "name": "Democratic Socialists Against Reactionary Rollbacks",
+      "total": 5704.95,
+      "also": [
+       "massachusetts-question-3",
+       "massachusetts-question-8"
+      ]
+     },
+     {
+      "name": "Democratic Socialists Against Austerity",
+      "total": 3426.0
+     }
+    ],
+    "donors": [
+     {
+      "name": "SEIU Mass State Council",
+      "amount": 322920.0
+     },
+     {
+      "name": "Massachusetts Teachers Association",
+      "amount": 176594.0
+     },
+     {
+      "name": "1199 SEIU MA PAC",
+      "amount": 162102.0
+     },
+     {
+      "name": "AFSCME",
+      "amount": 25000.0
+     },
+     {
+      "name": "Democratic Socialists of America, Inc.",
+      "amount": 10000.0
+     }
+    ],
+    "total": 948806.96,
+    "ie": []
+   }
+  },
+  "massachusetts-question-6": {
+   "as_of": "2026-10-20",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Massachusetts Question 6 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Massachusetts_Question_6,_Establish_the_Nature_for_All_Fund_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Massachusetts Office of Campaign and Political Finance (OCPF)",
+    "url": "https://www.ocpf.us/Reports/ActiveBallotQuestionReports"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Vote Yes for Water and Nature",
+      "total": 4311486.96,
+      "url": "https://www.ocpf.us/filers?q=95527"
+     }
+    ],
+    "donors": [
+     {
+      "name": "Mass Audubon",
+      "amount": 1128150.7
+     },
+     {
+      "name": "The Trustees of the Reservations",
+      "amount": 812930.12
+     },
+     {
+      "name": "Kirsten Waerstad",
+      "amount": 800000.0
+     },
+     {
+      "name": "Natasha Grigg",
+      "amount": 420278.51
+     },
+     {
+      "name": "Helen Pounds",
+      "amount": 250000.0
+     }
+    ],
+    "total": 4311486.96,
+    "ie": []
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   }
+  },
+  "michigan-proposal-2": {
+   "as_of": "2026-10-18",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Michigan Proposal 26-2 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Michigan_Proposal_2,_Utility_and_Government_Contractor_Campaign_Finance_Regulations_Initiative_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Michigan Bureau of Elections, committee search",
+    "url": "https://mi-boe.entellitrak.com/etk-mi-boe-prod/page.request.do?page=page.miboeCommitteePublicSearch"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Michiganders for Money Out of Politics",
+      "total": 10139229.3
+     },
+     {
+      "name": "Voters Not Politicians Ballot Committee",
+      "total": 240113.19,
+      "also": [
+       "michigan-proposal-1"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "All Hands on Deck Network Inc",
+      "amount": 3155000.0
+     },
+     {
+      "name": "Pro-Democracy Campaign",
+      "amount": 900000.0
+     },
+     {
+      "name": "Sixteen Thirty Fund",
+      "amount": 700000.0
+     },
+     {
+      "name": "Michigan United",
+      "amount": 513345.16
+     },
+     {
+      "name": "Green Advocacy Project",
+      "amount": 400000.0
+     }
+    ],
+    "total": 10379342.49,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Protect MI Free Speech",
+      "total": 579000.0
+     }
+    ],
+    "donors": [
+     {
+      "name": "MITA, Inc",
+      "amount": 125000.0
+     },
+     {
+      "name": "Michigan Citizens for Better Health",
+      "amount": 75000.0
+     },
+     {
+      "name": "Blue Cross Blue Shield of Michigan",
+      "amount": 65000.0
+     },
+     {
+      "name": "CMS Energy Corporation",
+      "amount": 65000.0
+     },
+     {
+      "name": "Comcast Financial Agency Corp",
+      "amount": 65000.0
+     }
+    ],
+    "total": 579000.0,
+    "ie": []
+   }
+  },
+  "north-carolina-property-tax-levy-limit-amendment": {
+   "as_of": "2026-10-02",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "North Carolina Amendment (property tax limit) (2026): Campaign finance",
+    "url": "https://ballotpedia.org/North_Carolina_Property_Tax_Levy_Limit_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "North Carolina State Board of Elections, campaign finance",
+    "url": "https://cf.ncsbe.gov/CFOrgLkup/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "NC By the People",
+      "total": 59305.62,
+      "also": [
+       "north-carolina-income-tax-cap-amendment",
+       "north-carolina-photo-id-amendment"
+      ]
+     }
+    ],
+    "donors": [],
+    "total": 59305.62,
+    "ie": []
+   }
+  },
+  "north-carolina-income-tax-cap-amendment": {
+   "as_of": "2026-10-02",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "North Carolina Amendment (income tax cap) (2026): Campaign finance",
+    "url": "https://ballotpedia.org/North_Carolina_Reduce_Income_Tax_Rate_Cap_from_7%25_to_3.5%25_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "North Carolina State Board of Elections, campaign finance",
+    "url": "https://cf.ncsbe.gov/CFOrgLkup/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "NC By the People",
+      "total": 59305.62,
+      "also": [
+       "north-carolina-photo-id-amendment",
+       "north-carolina-property-tax-levy-limit-amendment"
+      ]
+     }
+    ],
+    "donors": [],
+    "total": 59305.62,
+    "ie": []
+   }
+  },
+  "florida-amendment-1": {
+   "as_of": null,
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Florida Amendment 1 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Florida_Amendment_1,_Changes_to_Budget_Stabilization_Fund_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Florida Division of Elections, committee search",
+    "url": "https://dos.elections.myflorida.com/committees/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   }
+  },
+  "florida-amendment-2": {
+   "as_of": null,
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Florida Amendment 2 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Florida_Amendment_2,_Exempt_Tangible_Personal_Property_Used_for_Agriculture_or_Agritourism_from_Property_Taxes_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Florida Division of Elections, committee search",
+    "url": "https://dos.elections.myflorida.com/committees/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   }
+  },
+  "arizona-proposition-141": {
+   "as_of": "2026-10-24",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Arizona Proposition 141 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Arizona_Proposition_141,_Prohibit_Taxes_or_Fees_on_Miles_Traveled_in_Motor_Vehicle_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Arizona Secretary of State, See the Money",
+    "url": "https://seethemoney.az.gov/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": [
+     {
+      "name": "Arizona Free Enterprise Club",
+      "amount": 9639.65,
+      "period": "in October 2026"
+     },
+     {
+      "name": "Freedom Club PAC",
+      "amount": 22596.65,
+      "period": "from September through October 2026"
+     }
+    ]
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": [
+     {
+      "name": "Democrats of the Red Rocks (DORR)",
+      "amount": 482.62,
+      "period": "from September through October 2026"
+     },
+     {
+      "name": "LD4 Democrats",
+      "amount": 916.32,
+      "period": "from July through September 2026"
+     },
+     {
+      "name": "Legislative District 20 Democratic Committee",
+      "amount": 460.94,
+      "period": "in September 2026"
+     },
+     {
+      "name": "D14 Democrats",
+      "amount": 16.04,
+      "period": "in October 2026"
+     }
+    ]
+   }
+  },
+  "arizona-proposition-142": {
+   "as_of": "2026-10-24",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Arizona Proposition 142 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Arizona_Proposition_142,_Prohibit_Race-_or_Ethnicity-Based_Preferential_Treatment,_Public_Education_Offices,_and_Disciplinary_Policies_Amendment_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Arizona Secretary of State, See the Money",
+    "url": "https://seethemoney.az.gov/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": [
+     {
+      "name": "Goldwater Institute",
+      "amount": 365730.63,
+      "period": "from September through October 2026"
+     },
+     {
+      "name": "Arizona Free Enterprise Club",
+      "amount": 4639.65,
+      "period": "in October 2026"
+     }
+    ]
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Will of the People",
+      "total": 871000.0,
+      "also": [
+       "arizona-proposition-144",
+       "arizona-proposition-318",
+       "arizona-proposition-320"
+      ]
+     }
+    ],
+    "donors": [
+     {
+      "name": "Progress Arizona",
+      "amount": 281000.0
+     },
+     {
+      "name": "Future Freedoms",
+      "amount": 150000.0
+     },
+     {
+      "name": "Arizona Education Association",
+      "amount": 75000.0
+     },
+     {
+      "name": "UFCW Local 99",
+      "amount": 75000.0
+     },
+     {
+      "name": "Lynn Schusterman",
+      "amount": 70000.0
+     },
+     {
+      "name": "Stacy Shusterman",
+      "amount": 70000.0
+     }
+    ],
+    "total": 871000.0,
+    "ie": [
+     {
+      "name": "Democrats of the Red Rocks (DORR)",
+      "amount": 482.62,
+      "period": "from September through October 2026"
+     },
+     {
+      "name": "D14 Democrats",
+      "amount": 16.03,
+      "period": "in October 2026"
+     },
+     {
+      "name": "LD4 Democrats",
+      "amount": 916.32,
+      "period": "from July through September 2026"
+     },
+     {
+      "name": "Legislative District 20 Democratic Committee",
+      "amount": 460.94,
+      "period": "in September 2026"
+     },
+     {
+      "name": "Worker Power PAC",
+      "amount": 608.56,
+      "period": "in September 2026"
+     },
+     {
+      "name": "Save Our Schools Arizona PAC",
+      "amount": 1308.18,
+      "period": "from September through October 2026"
+     }
+    ]
+   }
+  },
+  "arizona-proposition-316": {
+   "as_of": "2026-10-24",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Arizona Proposition 316 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Arizona_Proposition_316,_Limit_Local_Tax_Rate_on_Groceries_to_2%25_of_Base_Price_and_Require_Voter_Approval_to_Increase_Tax_Rate_Measure_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Arizona Secretary of State, See the Money",
+    "url": "https://seethemoney.az.gov/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": [
+     {
+      "name": "Democrats of the Red Rocks (DORR)",
+      "amount": 482.62,
+      "period": "from September through October 2026"
+     },
+     {
+      "name": "D14 Democrats",
+      "amount": 16.03,
+      "period": "in October 2026"
+     },
+     {
+      "name": "LD4 Democrats",
+      "amount": 916.32,
+      "period": "from July through September 2026"
+     },
+     {
+      "name": "Legislative District 20 Democratic Committee",
+      "amount": 460.94,
+      "period": "in September 2026"
+     }
+    ]
+   }
+  },
+  "arizona-proposition-317": {
+   "as_of": "2026-10-15",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Arizona Proposition 317 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Arizona_Proposition_317,_Designate_Drug_Cartels_as_Terrorist_Organizations_and_Require_State_DHS_to_Address_Threats_Measure_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Arizona Secretary of State, See the Money",
+    "url": "https://seethemoney.az.gov/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": []
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": [
+     {
+      "name": "Democrats of the Red Rocks (DORR)",
+      "amount": 405.34,
+      "period": "in September 2026"
+     },
+     {
+      "name": "LD4 Democrats",
+      "amount": 916.32,
+      "period": "from July through September 2026"
+     },
+     {
+      "name": "Legislative District 20 Democratic Committee",
+      "amount": 460.94,
+      "period": "in September 2026"
+     }
+    ]
+   }
+  },
+  "arizona-proposition-319": {
+   "as_of": "2026-10-24",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Arizona Proposition 319 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Arizona_Proposition_319,_Prohibit_New_Photo_Traffic_Enforcement_Systems_Measure_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Arizona Secretary of State, See the Money",
+    "url": "https://seethemoney.az.gov/"
+   },
+   "yes": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": [
+     {
+      "name": "Arizona Free Enterprise Club",
+      "amount": 4639.65,
+      "period": ""
+     }
+    ]
+   },
+   "no": {
+    "committees": [],
+    "donors": [],
+    "total": null,
+    "ie": [
+     {
+      "name": "Democrats of the Red Rocks (DORR)",
+      "amount": 559.9,
+      "period": "from September through October 2026"
+     },
+     {
+      "name": "D14 Democrats",
+      "amount": 16.03,
+      "period": "in October 2026"
+     },
+     {
+      "name": "LD4 Democrats",
+      "amount": 916.32,
+      "period": "from July through September 2026"
+     },
+     {
+      "name": "Legislative District 20 Democratic Committee",
+      "amount": 460.94,
+      "period": "in September 2026"
+     }
+    ]
+   }
+  },
+  "arizona-proposition-320": {
+   "as_of": "2026-10-24",
+   "source": {
+    "org": "Ballotpedia",
+    "title": "Arizona Proposition 320 (2026): Campaign finance",
+    "url": "https://ballotpedia.org/Arizona_Proposition_320,_Require_Certain_School_Districts_to_Spend_60%25_of_Operational_Spending_on_Direct_Instruction_Measure_(2026)#Campaign_finance",
+    "accessed": "2026-11-01"
+   },
+   "filings": {
+    "org": "Arizona Secretary of State, See the Money",
+    "url": "https://seethemoney.az.gov/"
+   },
+   "yes": {
+    "committees": [
+     {
+      "name": "Pay Teachers First PAC",
+      "total": 20000.0
+     }
+    ],
+    "donors": [
+     {
+      "name": "William Smead",
+      "amount": 20000.0
+     }
+    ],
+    "total": 20000.0,
+    "ie": [
+     {
+      "name": "Arizona Free Enterprise Club",
+      "amount": 4639.65,
+      "period": "in October 2026"
+     },
+     {
+      "name": "Goldwater Institute",
+      "amount": 15000.0,
+      "period": "in October 2026"
+     }
+    ]
+   },
+   "no": {
+    "committees": [
+     {
+      "name": "Will of the People",
+      "total": 871000.0,
+      "also": [
+       "arizona-proposition-142",
+       "arizona-proposition-144",
+       "arizona-proposition-318"
+      ]
+     },
+     {
+      "name": "No on Prop 320 PAC",
+      "total": 15337.85
+     }
+    ],
+    "donors": [
+     {
+      "name": "Progress Arizona",
+      "amount": 281000.0
+     },
+     {
+      "name": "Future Freedoms",
+      "amount": 150000.0
+     },
+     {
+      "name": "Arizona Education Association",
+      "amount": 75000.0
+     },
+     {
+      "name": "UFCW Local 99",
+      "amount": 75000.0
+     },
+     {
+      "name": "Lynn Schusterman",
+      "amount": 70000.0
+     },
+     {
+      "name": "Stacy Shusterman",
+      "amount": 70000.0
+     }
+    ],
+    "total": 886337.85,
+    "ie": [
+     {
+      "name": "Democrats of the Red Rocks (DORR)",
+      "amount": 482.62,
+      "period": "from September through October 2026"
+     },
+     {
+      "name": "LD4 Democrats",
+      "amount": 916.32,
+      "period": "from July through September 2026"
+     },
+     {
+      "name": "D14 Democrats",
+      "amount": 19.67,
+      "period": "in September 2026"
+     },
+     {
+      "name": "Save Our Schools Arizona PAC",
+      "amount": 2588.4,
+      "period": "in October 2026"
+     },
+     {
+      "name": "Legislative District 20 Democratic Committee",
+      "amount": 460.94,
+      "period": "in September 2026"
+     },
+     {
+      "name": "Worker Power PAC",
+      "amount": 608.56,
+      "period": "in September 2026"
+     }
+    ]
+   }
+  }
+ }
+}

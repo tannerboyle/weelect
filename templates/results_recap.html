@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% import "_results.html" as R %}{% block title %}Certified results, Nov. 3, 2026 – We Elect{% endblock %}
+{% block meta_description %}Which statewide ballot measures passed and failed on Nov. 3, 2026, and which seats will have new officeholders, from certified official results. Every result links its source.{% endblock %}
+{% block body %}<div class="credits rs-recap">
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Certified results</h1>
+<p class="deck bs-wide">Outcomes from the Nov. 3, 2026 general election, added only after each state certifies its results. Every line links the official source. We do not report election-night counts.</p>
+{% if r.measures %}<div class="sechead"><span class="star">★</span><h2>Ballot measures</h2><small>{{ r.n_passed }} passed · {{ r.n_failed }} failed</small></div>
+{% for state_name, group in r.measures %}<h2 class="ms-state">{{ state_name }}</h2>
+<ul class="rs-list">{% for it, o in group %}<li>{{ R.stamp(o) }}<div><strong><a href="/measures/{{ it.id }}">{{ it.label }}: {{ it.title }}</a></strong><div class="meta">{{ it.mtype }} · {{ it.topic }}</div></div></li>{% endfor %}</ul>
+{% endfor %}{% endif %}
+{% if r.seats %}<div class="sechead"><span class="star">★</span><h2>New officeholders</h2><small>Seats changing hands</small></div>
+<ul class="rs-list">{% for e in r.seats %}<li><div><strong>{{ e.seat }}:</strong> {{ e.elected_name }} takes office {{ e.takes_office_label }}{% if e.outgoing %}, succeeding {{ e.outgoing }}{% endif %}. <a href="{{ e.source_url }}" target="_blank" rel="noopener">Source</a> <span class="meta">(certified {{ e.certified_label }})</span></div></li>{% endfor %}</ul>{% endif %}
+<p class="fine bs-wide">Results are as certified by each state; recounts or court rulings can change them later. See an error? <a href="/credits">Tell us</a>. <a href="/">Find my officials</a>.</p>
+</div>{% endblock %}

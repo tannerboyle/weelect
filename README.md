@@ -54,7 +54,7 @@ Editorial section showing the strongest case for and against a few notable votes
 - **Data:** `data/counterarguments.json` — `meta` (last reviewed date, disclaimer), `sources` (id → org, title, url, type, date, checked) and `items` (summary, `rolls` pointing at real House Clerk / Senate roll numbers, `for` and `against` points, each citing source ids). `bothsides.py` loads it and looks up each member's vote on the featured rolls.
 - **Rules:** same structure and length for both sides, always "for" then "against", no party colors, at least two real sources per side, no quote or number that is not in a source we opened. Anything unverifiable is left out. Update `last_reviewed` whenever an item is re-checked.
 - **Adding an item:** add sources and an item to the JSON (rolls: House `chamber/year/roll`, Senate `chamber/session/roll`), re-read every cited page, and check each quote and number against the page text.
-- Corrections contact on `/credits#both-sides` is generic (a Brunner Creative site); add a real address before launch.
+- Publisher: weelect.org is published by Brunner Creative LLC (footer, `/credits`, and the fine print on vote and measure pages). Corrections go to `CORRECTIONS_EMAIL` (set on Render), with Bob Brunner (`RESPONSIBLE_NAME`) as the named contact; without it, `/credits#both-sides` falls back to "contact Brunner Creative LLC".
 
 ### "What neither side is saying"
 Each item in `data/counterarguments.json` has an `unsaid` list (`label`, `text`, `src[]`) shown full width under the two columns (copy in `meta.unsaid_*`). Only add a point if it concerns the bill's effects, cost, enforcement or who it affects, is not covered by the for/against arguments, is sourced to a page you opened, and states no opinion on what should be done. Add its sources to `sources` and re-check every number and quote against the source text.
@@ -66,6 +66,7 @@ Each item in `data/counterarguments.json` has an `unsaid` list (`label`, `text`,
 - **"Tell us your city"** (`/city-interest`): city + state only; one `CITY_INTEREST {...}` line is written to the app log. No database. TODO(Bob): move to a durable destination if you want to keep these.
 - **Abuse protection & headers:** `/lookup` is limited to 20 requests a minute per client and `/city-interest` to 6 (in memory, per worker); addresses over 200 characters or with odd symbols are rejected before any upstream call. Static files are cached for a week, so bump `?v=N` on CSS/JS when they change. Custom 404/500/429 pages use `templates/error.html`.
 - **About page placeholders:** set `CORRECTIONS_EMAIL` and `RESPONSIBLE_NAME` (Render env vars) to replace the `[TODO(Bob): ...]` text.
+- **Newsletter (Resend):** set `RESEND_API_KEY` (Full access) and `RESEND_SEGMENT_ID`; until then the signup shows "Newsletter coming soon". Full steps and DNS records: `docs/NEWSLETTER_SETUP.md`.
 - The masthead date uses U.S. Eastern time (same clock as the election countdown); `tzdata` is in requirements.txt.
 
 ## Local officials data
