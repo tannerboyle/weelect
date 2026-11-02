@@ -55,6 +55,7 @@
     if(c<100){say('The smallest gift we can accept online is $1.');return;}
     if(c>1000000){say('Online gifts are limited to $10,000.');return;}
     chosen=c;say('');sum.textContent='Your one-time gift: '+fmt(c)+'. Choose how to pay:';pay.hidden=false;go.disabled=true;
-    loadSdk().then(render,function(){say('We could not load PayPal. Please check your connection and try again.');}).then(function(){go.disabled=false;pay.scrollIntoView({block:'nearest',behavior:'smooth'});});
+    pay.scrollIntoView({block:'nearest'}); /* draw PayPal's buttons on-screen; off-screen buttons can fail to respond */
+    loadSdk().then(render,function(){say('We could not load PayPal. Please check your connection and try again.');}).then(function(){go.disabled=false;});
   });
 })();

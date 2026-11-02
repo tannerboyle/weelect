@@ -61,8 +61,10 @@
     var a=address(), go=document.getElementById('ship-go');go.disabled=true;
     post('/shop/quote',{items:cart,address:a}).then(function(q){
       quoted=a;show(q);pay.hidden=false;
+      /* Bring the payment box into view before PayPal draws its buttons: buttons drawn off-screen can fail to respond (seen in Chrome). */
+      pay.scrollIntoView({block:'nearest'});
       return loadSdk().then(render,function(){say('We could not load PayPal. Please check your connection and try again.');});
-    }).then(function(){pay.scrollIntoView({block:'nearest',behavior:'smooth'});})
+    })
       .catch(function(e){say(e.message);}).then(function(){go.disabled=false;});
   });
   /* Editing the address after a quote means shipping or tax may change: hide the buttons until it is re-quoted. */
