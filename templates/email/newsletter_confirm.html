@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Confirm your We Elect updates</title></head>
+<body style="margin:0;padding:0;background:#f7f3e8;">
+<div style="display:none;max-height:0;overflow:hidden;">One click to confirm. You won&rsquo;t be added until you do.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f7f3e8;"><tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;background:#fbf9f2;border:1px solid #15171c;">
+<tr><td style="height:6px;line-height:6px;font-size:0;background:#9b2335;" width="33%">&nbsp;</td><td style="height:6px;line-height:6px;font-size:0;background:#f7f3e8;" width="34%">&nbsp;</td><td style="height:6px;line-height:6px;font-size:0;background:#1f2f5a;" width="33%">&nbsp;</td></tr>
+<tr><td colspan="3" align="center" style="padding:22px 28px 10px;border-bottom:3px double #15171c;">
+<div style="font-family:Georgia,'Times New Roman',serif;font-size:34px;font-weight:bold;color:#15171c;letter-spacing:.5px;">We Elect</div>
+<div style="font-family:Georgia,'Times New Roman',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#5d5f66;padding-top:4px;">Nonpartisan civic information</div>
+</td></tr>
+<tr><td colspan="3" style="padding:24px 28px 8px;font-family:Georgia,'Times New Roman',serif;color:#15171c;font-size:17px;line-height:1.55;">
+<h1 style="font-family:Georgia,'Times New Roman',serif;font-size:24px;line-height:1.25;margin:0 0 14px;color:#15171c;">Please confirm your We Elect updates</h1>
+<p style="margin:0 0 14px;">Someone, hopefully you, asked to get occasional email updates from We Elect: new features, ballot measures and election results.</p>
+<p style="margin:0 0 22px;">Press the button to confirm. The link works for 48 hours.</p>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td style="background:#1f2f5a;border:1px solid #1f2f5a;">
+<a href="{{ link }}" style="display:inline-block;padding:13px 26px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#ffffff;text-decoration:none;">Confirm my email</a>
+</td></tr></table>
+<p style="margin:22px 0 6px;font-size:13px;color:#5d5f66;">Or copy this link into your browser:</p>
+<p style="margin:0 0 18px;font-size:12px;word-break:break-all;"><a href="{{ link }}" style="color:#1f2f5a;">{{ link }}</a></p>
+<p style="margin:0 0 6px;font-size:15px;"><strong>Didn&rsquo;t ask for this?</strong> Ignore this email. You won&rsquo;t be added and won&rsquo;t hear from us again.</p>
+</td></tr>
+<tr><td colspan="3" align="center" style="padding:14px 28px 20px;border-top:1px solid #cfc8b4;font-family:Georgia,'Times New Roman',serif;font-size:12px;line-height:1.5;color:#5d5f66;">
+<span style="color:#9b2335;letter-spacing:6px;">&#9733; &#9733; &#9733;</span><br>
+We Elect is an independent, nonpartisan civic information project published by {{ sender }}. We keep only your email address, with our email service Resend, and never sell or share it.<br>
+{% if postal_address %}{{ sender }}, {{ postal_address }}<br>
+{% endif %}<a href="https://weelect.org" style="color:#5d5f66;">weelect.org</a>
+</td></tr>
+</table>
+</td></tr></table>
+</body></html>

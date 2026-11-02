@@ -66,6 +66,7 @@ Each item in `data/counterarguments.json` has an `unsaid` list (`label`, `text`,
 - **"Tell us your city"** (`/city-interest`): city + state only; one `CITY_INTEREST {...}` line is written to the app log. No database. TODO(Bob): move to a durable destination if you want to keep these.
 - **Abuse protection & headers:** `/lookup` is limited to 20 requests a minute per client and `/city-interest` to 6 (in memory, per worker); addresses over 200 characters or with odd symbols are rejected before any upstream call. Static files are cached for a week, so bump `?v=N` on CSS/JS when they change. Custom 404/500/429 pages use `templates/error.html`.
 - **About page placeholders:** set `CORRECTIONS_EMAIL` and `RESPONSIBLE_NAME` (Render env vars) to replace the `[TODO(Bob): ...]` text.
+- **Newsletter (Resend):** set `RESEND_API_KEY` (Full access) and `RESEND_SEGMENT_ID`; until then the signup shows "Newsletter coming soon". Full steps and DNS records: `docs/NEWSLETTER_SETUP.md`.
 - The masthead date uses U.S. Eastern time (same clock as the election countdown); `tzdata` is in requirements.txt.
 
 ## Local officials data

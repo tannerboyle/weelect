@@ -11,6 +11,7 @@ import measures as ms_mod
 import getinvolved as gi_mod
 import results as rs_mod
 import finance as ft_mod
+import newsletter as nl_mod
 import localdata
 from functools import lru_cache
 import requests
@@ -432,6 +433,9 @@ def _private(resp):
     return resp
 
 
+nl_mod.register(app, _rate_limited, _private, SITE_URL)   # /newsletter, /newsletter/subscribe, /newsletter/confirm
+
+
 @app.route("/lookup", methods=["GET", "POST"])
 def lookup():
     # POST keeps the address out of the URL (and so out of access logs, browser history, shared links and
@@ -599,6 +603,7 @@ def robots_txt():
             "Allow: /\n"
             "Disallow: /lookup\n"
             "Disallow: /city-interest\n"
+            "Disallow: /newsletter/\n"
             f"\nSitemap: {SITE_URL}/sitemap.xml\n")
     return Response(body, mimetype="text/plain")
 
@@ -609,6 +614,8 @@ def sitemap_xml():
     urls = [("/", None), ("/get-involved", gi_mod.CHECKED), ("/votes", bs_mod.meta().get("last_reviewed")), ("/measures", ms_mod.meta().get("last_reviewed")), ("/credits", None)]
     if not _recap()["empty"]:
         urls.append(("/results", None))
+    if nl_mod.enabled():
+        urls.append(("/newsletter", None))
     urls += [(f"/votes/{it['id']}", bs_mod.meta().get("last_reviewed")) for it in bs_mod.items()]
     urls += [(f"/measures/{it['id']}", ms_mod.meta().get("last_reviewed")) for it in ms_mod.items()]
     urls += [(f"/official/fed/{b}", None) for b in sorted(FED_BY_ID)]

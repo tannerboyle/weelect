@@ -1,0 +1,12 @@
+<section class="newsform" id="updates" aria-label="Get We Elect updates">
+{% if not nl_bare %}  <h2>Get We Elect updates</h2>
+{% endif %}{% if newsletter_on %}  <p class="fine">Occasional updates on new features, ballot measures and election results. No spam; unsubscribe anytime.</p>
+  <form action="/newsletter/subscribe" method="post">
+    <label>Email <input type="email" name="email" maxlength="254" required autocomplete="email" inputmode="email" spellcheck="false" value="{{ email|default('') }}"></label>
+    <input type="hidden" name="csrf" value="{{ newsletter_form_token() }}">
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button>Sign up</button>
+  </form>
+  <p class="fine nl-privacy">We&rsquo;ll email you a link to confirm. We keep only your email address, with our email service <a href="https://resend.com" target="_blank" rel="noopener">Resend</a>, and never sell or share it. <a href="/newsletter#privacy">Privacy</a></p>
+{% else %}  <p class="fine">Newsletter coming soon: occasional updates on new features, ballot measures and election results. Check back shortly.</p>
+{% endif %}</section>

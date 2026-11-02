@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}{% if state == "signup" or state == "soon" %}Get We Elect updates{% elif state == "sent" %}Check your email{% elif state == "confirm" %}Confirm your subscription{% elif state == "confirmed" %}You&rsquo;re subscribed{% else %}Newsletter{% endif %} – We Elect{% endblock %}
+{% block meta_description %}Occasional email updates from We Elect on new features, ballot measures and election results. Nonpartisan. No spam; unsubscribe anytime.{% endblock %}
+{% block robots %}{% if state not in ("signup", "soon") %}<meta name="robots" content="noindex,nofollow">{% endif %}{% endblock %}
+{% block body %}<div class="credits nl-page">
+{% if state == "signup" or state == "soon" %}
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Get We Elect updates</h1>
+<p class="deck bs-wide">A short, occasional email when we add something worth knowing about: new features, new ballot measures with both sides explained, and certified election results. Nonpartisan, like everything on the site.</p>
+{% if error %}<p class="note" role="alert">{{ error }}</p>{% endif %}
+{% set nl_bare = True %}{% include "_newsletter.html" %}
+{% elif state == "sent" %}
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Check your email</h1>
+<p>If that address can receive email, a message from We Elect is on its way with a link to confirm your subscription. <strong>You won&rsquo;t be added until you click it.</strong></p>
+<p>The link works for 48 hours. If you don&rsquo;t see it within a few minutes, check your spam or promotions folder.</p>
+{% elif state == "confirm" %}
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Confirm your subscription</h1>
+<p>Please confirm that <strong>{{ email }}</strong> should receive occasional updates from We Elect.</p>
+<form class="nl-confirm" action="/newsletter/confirm" method="post"><input type="hidden" name="t" value="{{ token }}"><button>Yes, sign me up</button></form>
+<p class="fine left">Didn&rsquo;t ask for this? Just close this page; nothing happens unless you press the button.</p>
+{% elif state == "confirmed" %}
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Thank you &mdash; you&rsquo;re subscribed</h1>
+<p>You&rsquo;ll get occasional updates on new features, ballot measures and election results. Every email has an unsubscribe link at the bottom, and one click takes you off the list.</p>
+<p><a class="btnlink" href="/">Find my officials</a></p>
+{% elif state == "expired" %}
+<h1 class="hero" style="text-align:left;font-size:2.2rem">That link has expired</h1>
+<p>Confirmation links work for 48 hours. Enter your email again and we&rsquo;ll send a fresh one.</p>
+{% set nl_bare = True %}{% include "_newsletter.html" %}
+{% elif state == "invalid" %}
+<h1 class="hero" style="text-align:left;font-size:2.2rem">That link didn&rsquo;t work</h1>
+<p>The confirmation link may have been cut off or changed. Try copying the whole link from the email, or sign up again below.</p>
+{% set nl_bare = True %}{% include "_newsletter.html" %}
+{% elif state == "stale" %}
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Please try again</h1>
+<p>That form was open too long or came from another site. Please use the form below.</p>
+{% set nl_bare = True %}{% include "_newsletter.html" %}
+{% elif state == "slow" %}
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Too many tries</h1>
+<p>Please wait a few minutes and try again.</p>
+{% elif state == "busy" %}
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Sign-ups are paused for today</h1>
+<p>We&rsquo;ve reached today&rsquo;s limit for confirmation emails. Please try again tomorrow.</p>
+{% else %}
+<h1 class="hero" style="text-align:left;font-size:2.2rem">Something went wrong</h1>
+<p>We couldn&rsquo;t reach our email service just now. That was our problem, not yours. Please try again in a few minutes.</p>
+{% endif %}
+<div class="sechead" id="privacy"><span class="star">★</span><h2>Your privacy</h2></div>
+<ul class="nl-facts">
+<li><strong>What we keep:</strong> only your email address. No name, no street address, and it is never linked to an address you look up on We Elect.</li>
+<li><strong>Who sends it:</strong> Brunner Creative LLC, which publishes We Elect.</li>
+<li><strong>Where:</strong> with our email service, <a href="https://resend.com" target="_blank" rel="noopener">Resend</a>, which sends the emails for us. We don&rsquo;t sell, rent or share the list.</li>
+<li><strong>Double opt-in:</strong> nobody is added until they click the confirmation link we email them.</li>
+<li><strong>Leaving:</strong> every email has an unsubscribe link at the bottom. One click removes you from future emails.</li>
+</ul>
+<p><a href="/">&larr; Back to the home page</a></p>
+</div>{% endblock %}
