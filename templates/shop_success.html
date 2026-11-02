@@ -4,10 +4,20 @@
 <meta name="robots" content="noindex">
 <p class="kicker">Thank you</p>
 <h1 class="hero" style="text-align:left;font-size:2.2rem">Thank you for supporting We Elect</h1>
-{% if info.paid %}<p class="deck bs-wide">Your order is in. The seller is {{ seller }}.{% if info.email %} PayPal is sending your receipt to {{ info.email }}.{% endif %} Your items are made to order and shipped by Printful, who will email tracking details when they ship.</p>
+{% if info.gift and info.paid %}<p class="deck bs-wide">Your gift{% if info.amount %} of <strong>{{ info.amount }}</strong>{% endif %} came through. Thank you &mdash; readers like you are how We Elect stays free, with no ads and no paywall.{% if info.email %} PayPal is emailing a receipt to {{ info.email }}.{% endif %}</p>
+<div class="gift-receipt"><h2 class="co-h">Your receipt</h2><dl class="co-totals">
+<dt>Gift to</dt><dd>We Elect (weelect.org)</dd>
+<dt>Paid to</dt><dd>{{ seller }}</dd>
+{% if info.amount %}<dt>Amount</dt><dd>{{ info.amount }} (US$)</dd>{% endif %}
+{% if info.date %}<dt>Date (UTC)</dt><dd>{{ info.date }}</dd>{% endif %}
+{% if info.receipt %}<dt>PayPal transaction</dt><dd>{{ info.receipt }}</dd>{% endif %}
+<dt>Kind</dt><dd>One-time gift</dd></dl>
+<p class="fine" style="text-align:left;margin-left:0">{{ seller }} publishes weelect.org and is not a charity or 501(c)(3) organization. This gift is not a tax-deductible charitable contribution. It buys no influence, coverage or changes to what we publish.</p></div>
+{% elif info.gift and info.pending %}<p class="deck bs-wide">Thank you. PayPal is still confirming your gift, which can take a little while. PayPal will email you once it goes through, or if anything is needed.</p>
+{% elif info.paid %}<p class="deck bs-wide">Your order is in. The seller is {{ seller }}.{% if info.email %} PayPal is sending your receipt to {{ info.email }}.{% endif %} Your items are made to order and shipped by Printful, who will email tracking details when they ship.</p>
 {% elif info.pending %}<p class="deck bs-wide">Thank you. PayPal is still confirming your payment, which can take a little while. We will make and ship your order as soon as PayPal confirms it, and PayPal will email you if anything is needed.</p>
-{% elif info.paid is none %}<p class="deck bs-wide">If you just finished paying, your order is on its way to us. PayPal will email your receipt, and Printful will email tracking details when your items ship.</p>
-{% else %}<p class="deck bs-wide">We could not confirm a payment for this visit, so you have not been charged by us. <a href="/support#shop">Return to the shop</a> to try again.</p>{% endif %}
+{% elif info.paid is none %}<p class="deck bs-wide">If you just finished paying, PayPal will email your receipt. For shop orders, Printful will email tracking details when your items ship.</p>
+{% else %}<p class="deck bs-wide">We could not confirm a payment for this visit, so you have not been charged by us. <a href="/support">Return to the Support page</a> to try again.</p>{% endif %}
 <p class="bs-wide">Readers like you keep We Elect free for everyone. Sales and gifts help cover hosting and data costs. Questions about an order? Contact us from the <a href="/credits#who">About page</a>.</p>
 <p><a class="support-btn" href="/">Find my officials</a></p>
 <script>try{localStorage.removeItem('we_cart_v1')}catch(e){}</script>

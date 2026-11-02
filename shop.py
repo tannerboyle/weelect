@@ -12,7 +12,9 @@ Env vars (all optional; nothing is required for the rest of the site to work):
   PAYPAL_WEBHOOK_ID                        id of the webhook pointing at /paypal/webhook (used to verify events)
   PAYPAL_ENV=sandbox|live                  which PayPal environment to use (default sandbox)
   PRINTFUL_API_TOKEN, PRINTFUL_STORE_ID    Printful (store id only for account-level tokens)
-  PRINTFUL_AUTO_CONFIRM=1     submit Printful orders for fulfillment automatically (default: leave as drafts)
+  PRINTFUL_AUTO_CONFIRM=1     submit Printful orders for fulfillment automatically (default: leave as drafts, confirm=false)
+  SHOP_LIVE_CATALOG=0         serve only the committed snapshot data/shop_products.json (default: live Printful store, cached)
+  SHOP_CATALOG_TTL, SHOP_CATALOG_RETRY, SHOP_CATALOG_CACHE   catalog cache tuning (see printful_store.py)
   SHOP_TAX_RATES              JSON of state -> percent, e.g. {"WA": 10.25, "TX": {"rate": 8.25, "shipping": true}}.
                               Tax is collected only for orders shipped to the listed states. Default: none.
   SHOP_SECRET                 signing key for CSRF tokens (defaults to a hash of PAYPAL_CLIENT_SECRET)
@@ -23,15 +25,20 @@ Env vars (all optional; nothing is required for the rest of the site to work):
 import hashlib, hmac, json, os, re, secrets, threading, time, logging
 from decimal import Decimal, ROUND_HALF_UP, InvalidOperation
 import requests
+import printful_store
 from flask import Blueprint, request, jsonify, render_template, redirect, make_response
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-CATALOG_PATH = os.path.join(ROOT, "data", "shop_products.json")
 log = logging.getLogger("weelect.shop")
 
 PRINTFUL_API = "https://api.printful.com"
 PAYPAL_API = {"sandbox": "https://api-m.sandbox.paypal.com", "live": "https://api-m.paypal.com"}
-SOURCE = "weelect-shop"            # custom_id on every PayPal order we create; anything else is ignored
+SOURCE = "weelect-shop"            # custom_id on every PayPal shop order we create; anything else is ignored
+DONATION_SOURCE = "weelect-gift"   # custom_id on one-time gifts (no Printful, no shipping, no tax)
+OUR_SOURCES = (SOURCE, DONATION_SOURCE)
+DONATION_MIN_CENTS, DONATION_MAX_CENTS = 100, 1_000_000
+DONATION_SUGGESTIONS = (5, 10, 25, 50, 100)
+DONATION_RE = re.compile(r"^\$?\s*(\d{1,3}(,\d{3})+|\d{1,6})(\.\d{1,2})?$")
 CSRF_TTL = 4 * 3600
 HTTP_TIMEOUT = 15
 ORDER_ID_RE = re.compile(r"^[A-Z0-9]{10,30}$")     # PayPal order ids are 17 upper-case alphanumerics today
@@ -95,6 +102,35 @@ def printful_ready():
     return bool(env("PRINTFUL_API_TOKEN"))
 
 
+def donations_open():
+    """On-site PayPal gifts need only the PayPal credentials and webhook id (no catalog). Until then the page links to Ko-fi."""
+    return paypal_ready() and webhook_ready()
+
+
+def parse_donation(raw):
+    """'25', '25.5', '$1,000.00' -> cents. Returns (cents, error). Whole dollars or dollars and cents; $1 to $10,000."""
+    if isinstance(raw, bool) or raw is None:
+        return None, "Please enter an amount."
+    v = str(raw).strip() if isinstance(raw, (str, int)) else None
+    if v is None or len(v) > 16 or not DONATION_RE.match(v):
+        return None, "Please enter an amount in dollars, like 25 or 25.50."
+    c = _cents(v.replace("$", "").replace(",", "").strip())
+    if c is None or c < DONATION_MIN_CENTS:
+        return None, "The smallest gift we can accept online is $1."
+    if c > DONATION_MAX_CENTS:
+        return None, "Online gifts are limited to $10,000. To give more, please contact us from the About page."
+    return c, None
+
+
+def build_donation_order(c):
+    return {"intent": "CAPTURE", "purchase_units": [{
+        "reference_id": "default", "custom_id": DONATION_SOURCE,
+        "description": f"Gift to We Elect (weelect.org), received by {seller_name()}. Not tax-deductible."[:127],
+        "amount": dict(_amt(c), breakdown={"item_total": _amt(c)}),
+        "items": [{"name": "Gift to We Elect", "sku": "gift", "quantity": "1", "unit_amount": _amt(c), "category": "DONATION"}]}],
+        "application_context": {"brand_name": f"We Elect ({seller_name()})"[:127], "shipping_preference": "NO_SHIPPING", "user_action": "PAY_NOW"}}
+
+
 def shop_open():
     """The store takes orders only when PayPal credentials AND the webhook id are set; otherwise 'coming soon'."""
     return paypal_ready() and webhook_ready() and bool(catalog_products())
@@ -143,24 +179,19 @@ def tax_cents(items_cents, ship_cents, state):
 
 
 # ------------------------------------------------------------------ catalog
-_CAT = {"mtime": None, "data": None}
-
-
 def catalog():
-    try:
-        m = os.path.getmtime(CATALOG_PATH)
-    except OSError:
-        return {"products": [], "limits": {}, "shipping": {}}
-    if _CAT["mtime"] != m:
-        with open(CATALOG_PATH, encoding="utf-8") as f:
-            _CAT["data"] = json.load(f)
-        _CAT["mtime"] = m
-    return _CAT["data"]
+    """Products live in the Printful store; printful_store caches them (memory, disk, committed snapshot)."""
+    return printful_store.get()
 
 
 def variant_ok(p, color_id, size):
     v = (p.get("variants") or {}).get(f"{color_id}:{size}")
-    return bool(v and v.get("printful_variant_id"))
+    return bool(v and (v.get("sync_variant_id") or v.get("printful_variant_id")) and variant_price(p, v) > 0)
+
+
+def variant_price(p, v):
+    """Retail price as set in Printful for this exact variant (sizes can differ), falling back to the product price."""
+    return int((v or {}).get("price_cents") or p.get("price_cents") or 0)
 
 
 def catalog_products():
@@ -216,10 +247,9 @@ def parse_cart(raw):
         p = find_product(pid)
         color = next(c for c in p["colors"] if c["id"] == cid)
         label = f"{p['name']} ({color['name']}" + ("" if size == "One size" else f", {size}") + ")"
-        lines.append({"p": pid, "c": cid, "s": size, "q": merged[(pid, cid, size)], "name": label, "price_cents": int(p["price_cents"]),
-                      "variant_id": p["variants"][f"{cid}:{size}"]["printful_variant_id"],
-                      "file_type": (p.get("printful") or {}).get("file_type", "default"),
-                      "file_url": ((p.get("printful") or {}).get("files") or {}).get(cid)})
+        v = p["variants"][f"{cid}:{size}"]
+        lines.append({"p": pid, "c": cid, "s": size, "q": merged[(pid, cid, size)], "name": label, "price_cents": variant_price(p, v),
+                      "variant_id": v.get("printful_variant_id"), "sync_variant_id": v.get("sync_variant_id")})
     return lines, None
 
 
@@ -227,10 +257,40 @@ def subtotal_cents(lines):
     return sum(l["price_cents"] * l["q"] for l in lines)
 
 
-def shipping_cents(lines):
-    sh = catalog().get("shipping", {})
-    n = sum(l["q"] for l in lines)
-    return int(sh.get("first_item_cents", 0)) + int(sh.get("additional_item_cents", 0)) * max(0, n - 1)
+SHIP_LABEL = "Standard shipping (U.S.)"
+SHIP_CACHE_TTL = 600
+_SHIP = {}
+
+
+class ShippingUnavailable(Exception):
+    """Printful could not give a shipping rate; checkout asks the buyer to try again rather than guess."""
+
+
+def shipping_cents(lines, addr):
+    """Printful's live STANDARD rate for these items to this address (POST /shipping/rates, an estimate only; it creates
+    nothing). Cached for 10 minutes per cart + destination, so the quote and the PayPal order agree."""
+    items = sorted((int(l["variant_id"]), int(l["q"])) for l in lines if l.get("variant_id"))
+    if len(items) != len(lines) or not printful_ready():
+        raise ShippingUnavailable("no catalog variant ids or no Printful token")
+    key = (addr.get("state"), (addr.get("zip") or "")[:5], tuple(items))
+    now = time.time()
+    hit = _SHIP.get(key)
+    if hit and now - hit[1] < SHIP_CACHE_TTL:
+        return hit[0]
+    recipient = {"country_code": "US", "state_code": addr.get("state"), "zip": (addr.get("zip") or "")[:5],
+                 "city": addr.get("city") or "", "address1": addr.get("line1") or ""}
+    rates, err = printful_shipping_rates(recipient, [{"variant_id": v, "quantity": q} for v, q in items])
+    if not rates:
+        log.warning("printful shipping rates unavailable: %s", err or "no rates")
+        raise ShippingUnavailable(err or "no rates")
+    pick = next((r for r in rates if r.get("id") == "STANDARD"), None) or min(rates, key=lambda r: _cents(r.get("rate")) or 10**9)
+    c = _cents(pick.get("rate"))
+    if c is None or c < 0:
+        raise ShippingUnavailable("bad rate")
+    if len(_SHIP) > 500:
+        _SHIP.clear()
+    _SHIP[key] = (c, now)
+    return c
 
 
 def cart_token(lines):
@@ -284,18 +344,20 @@ def parse_address(raw):
     return a, None
 
 
-def quote(lines, state):
-    """All money for an order, in cents, computed on the server from the catalog and SHOP_TAX_RATES."""
+def quote(lines, addr, ship=None):
+    """All money for an order, in cents, computed on the server from the catalog (Printful retail prices), Printful's
+    shipping rate for this address and SHOP_TAX_RATES. Pass ship to re-check an order whose shipping is already fixed."""
     items = subtotal_cents(lines)
-    ship = shipping_cents(lines)
-    tax = tax_cents(items, ship, state)
+    if ship is None:
+        ship = shipping_cents(lines, addr)
+    tax = tax_cents(items, ship, addr.get("state"))
     return {"items": items, "shipping": ship, "tax": tax, "total": items + ship + tax}
 
 
 def public_quote(lines, q):
     return {"lines": [{"name": l["name"], "q": l["q"], "amount": money(l["price_cents"] * l["q"])} for l in lines],
             "items": money(q["items"]), "shipping": money(q["shipping"]), "tax": money(q["tax"]), "total": money(q["total"]),
-            "shipping_label": catalog().get("shipping", {}).get("label", "Standard shipping")}
+            "shipping_label": SHIP_LABEL}
 
 
 # ------------------------------------------------------------------ CSRF (signed token + double-submit cookie + Origin check)
@@ -355,7 +417,7 @@ def shop_csp():
         f"script-src 'self' 'unsafe-inline' {PAYPAL_SRC} https://gc.zgo.at",
         f"style-src 'self' 'unsafe-inline' {PAYPAL_SRC}",
         f"font-src 'self' {PAYPAL_SRC}",
-        f"img-src 'self' data: {PAYPAL_SRC} https://ko-fi.com https://storage.ko-fi.com {GOAT}",
+        f"img-src 'self' data: {PAYPAL_SRC} https://files.cdn.printful.com https://ko-fi.com https://storage.ko-fi.com {GOAT}",
         f"connect-src 'self' {PAYPAL_SRC} {GOAT}",
         f"frame-src {PAYPAL_SRC} https://ko-fi.com",
         f"child-src {PAYPAL_SRC} https://ko-fi.com",
@@ -434,7 +496,7 @@ def _cents(v):
 
 
 def build_paypal_order(lines, addr):
-    q = quote(lines, addr["state"])
+    q = quote(lines, addr)
     pu = {
         "reference_id": "default",
         "custom_id": SOURCE,
@@ -552,14 +614,14 @@ def build_printful_order(order, lines):
         recipient["email"] = email    # Printful sends the shipping/tracking notice; We Elect sends no email itself
     items = []
     for l in lines:
-        it = {"variant_id": l["variant_id"], "quantity": l["q"], "name": l["name"], "retail_price": f"{l['price_cents']/100:.2f}"}
-        if l.get("file_url"):
-            it["files"] = [{"type": l["file_type"], "url": site_url() + l["file_url"]}]
+        # sync_variant_id = the product as designed in the Printful store, so Printful uses Bob's own print files and placements.
+        it = {"sync_variant_id": l["sync_variant_id"]} if l.get("sync_variant_id") else {"variant_id": l["variant_id"]}
+        it.update({"quantity": l["q"], "name": l["name"], "retail_price": f"{l['price_cents']/100:.2f}"})
         items.append(it)
     bd = (unit_of(order).get("amount") or {}).get("breakdown") or {}
     return {"external_id": external_id(order["id"]), "shipping": "STANDARD", "recipient": recipient, "items": items,
             "retail_costs": {"currency": "USD", "subtotal": f"{subtotal_cents(lines)/100:.2f}",
-                             "shipping": (bd.get("shipping") or {}).get("value", f"{shipping_cents(lines)/100:.2f}"),
+                             "shipping": (bd.get("shipping") or {}).get("value", "0.00"),
                              "tax": (bd.get("tax_total") or {}).get("value", "0.00")}}
 
 
@@ -577,6 +639,8 @@ def printful_order_exists(ext_id):
 
 
 def printful_create_order(payload, confirm):
+    """confirm=False (the default unless PRINTFUL_AUTO_CONFIRM=1) leaves the order as a Printful draft: nothing is
+    printed or charged until it is confirmed in the Printful dashboard."""
     url = PRINTFUL_API + "/orders" + ("?confirm=true" if confirm else "")
     try:
         r = requests.post(url, headers=printful_headers(), data=json.dumps(payload), timeout=HTTP_TIMEOUT)
@@ -598,8 +662,7 @@ def printful_create_order(payload, confirm):
 
 
 def printful_shipping_rates(recipient, items):
-    """Printful shipping rates for a recipient + [{variant_id, quantity}]. Returns (rates, error). Used by scripts/printful_sync.py
-    to check the flat rates in data/shop_products.json; checkout itself uses the flat rates (see docs)."""
+    """Printful shipping rates for a recipient + [{variant_id, quantity}]. Returns (rates, error). Read-only estimate."""
     try:
         r = requests.post(PRINTFUL_API + "/shipping/rates", headers=printful_headers(),
                           data=json.dumps({"recipient": recipient, "items": items, "currency": "USD"}), timeout=HTTP_TIMEOUT)
@@ -662,7 +725,9 @@ def fulfil(order):
             write_log({"order_id": oid, "capture_id": cap.get("id"), "state": "failed_permanent", "error": "cart: " + str(err)})
             return 200, "needs manual attention"
         addr = order_address(order)
-        q = quote(lines, addr.get("state"))
+        # Shipping was fixed (from Printful's rate) when the PayPal order was created; re-check items and tax against it.
+        ship = _cents((((unit_of(order).get("amount") or {}).get("breakdown") or {}).get("shipping") or {}).get("value"))
+        q = quote(lines, addr, ship=ship if ship is not None and ship >= 0 else 0)
         paid = _cents((cap.get("amount") or {}).get("value"))
         amounts_ok = paid == q["total"] and (cap.get("amount") or {}).get("currency_code") == "USD"
         if not printful_ready():
@@ -688,6 +753,9 @@ def fulfil(order):
 
 
 # ------------------------------------------------------------------ routes
+SHIP_DOWN = "We could not get a shipping rate from our printer just now. Please try again in a few minutes."
+
+
 def _json_error(status, msg):
     return jsonify({"error": msg}), status
 
@@ -696,26 +764,29 @@ def _page_context():
     products = catalog_products()
     pub = []
     for p in products:
-        pub.append({"id": p["id"], "name": p["name"], "kind": p["kind"], "blurb": p["blurb"], "details": p.get("details", []),
-                    "price_cents": p["price_cents"], "price": money(p["price_cents"]), "colors": p["colors"],
-                    "sizes": [s for s in p["sizes"] if any(variant_ok(p, c["id"], s) for c in p["colors"])],
-                    "ok": {f"{c['id']}:{s}": variant_ok(p, c["id"], s) for c in p["colors"] for s in p["sizes"]}})
-    sh = catalog().get("shipping", {})
-    return {"products": pub, "shop_open": shop_open(), "kofi_page": KOFI_PAGE, "kofi_embed": KOFI_EMBED,
-            "seller": seller_name(), "tax_mode": tax_mode(), "tax_states": sorted(tax_rates()),
-            "shipping_label": sh.get("label", "Standard shipping"), "shipping_first": money(int(sh.get("first_item_cents", 0))),
-            "shipping_more": money(int(sh.get("additional_item_cents", 0))),
-            "shop_json": {"products": [{k: p[k] for k in ("id", "name", "price_cents", "colors", "ok")} for p in pub],
-                          "shipping": {"first": int(sh.get("first_item_cents", 0)), "more": int(sh.get("additional_item_cents", 0)),
-                                       "label": sh.get("label", "Standard shipping")},
+        ok = {f"{c['id']}:{s}": variant_ok(p, c["id"], s) for c in p["colors"] for s in p["sizes"]}
+        prices = {k: variant_price(p, p["variants"][k]) for k, good in ok.items() if good}
+        lo, hi = (min(prices.values()), max(prices.values())) if prices else (p.get("price_cents", 0),) * 2
+        pub.append({"id": p["id"], "name": p["name"], "kind": p.get("kind", "item"), "blurb": p.get("blurb", ""),
+                    "details": p.get("details", []), "tier": p.get("tier") or {}, "image": p.get("image"),
+                    "price_cents": lo, "price": money(lo) if lo == hi else f"{money(lo)}\u2013{money(hi)}",
+                    "price_from": money(lo) if lo == hi else "From " + money(lo), "colors": p["colors"],
+                    "sizes": [s for s in p["sizes"] if any(ok.get(f"{c['id']}:{s}") for c in p["colors"])],
+                    "ok": ok, "prices": prices})
+    kinds = [p["kind"] if p.get("kind") not in (None, "item") else p["name"] for p in pub]
+    phrase = kinds[0] if len(kinds) == 1 else ", ".join(kinds[:-1]) + " and " + kinds[-1] if kinds else "shop items"
+    return {"products": pub, "products_phrase": phrase, "shop_open": shop_open(), "donations_open": donations_open(),
+            "donation_suggestions": DONATION_SUGGESTIONS, "kofi_page": KOFI_PAGE, "kofi_embed": KOFI_EMBED,
+            "seller": seller_name(), "tax_mode": tax_mode(), "tax_states": sorted(tax_rates()), "shipping_label": SHIP_LABEL,
+            "shop_json": {"products": [{k: p[k] for k in ("id", "name", "price_cents", "colors", "ok", "prices")} for p in pub],
                           "limits": catalog().get("limits", {})}}
 
 
-def _guard(bucket, limit):
+def _guard(bucket, limit, is_open=None):
     """Common checks for the browser-facing JSON endpoints. Returns an error response or None."""
     if _rate_limited(bucket, limit):
         return _json_error(429, "Too many requests. Please wait a minute and try again.")
-    if not shop_open():
+    if not (is_open or shop_open)():
         return _json_error(503, "The store is not open yet.")
     if not origin_ok() or not check_csrf(request.headers.get("X-CSRF-Token", ""), request.cookies.get("we_csrf", "")):
         return _json_error(403, "Your session expired. Please reload the page and try again.")
@@ -739,8 +810,8 @@ def _cart_and_address():
 @bp.route("/support")
 def support():
     ctx = _page_context()
-    token = make_csrf() if ctx["shop_open"] else None
-    resp = make_response(render_template("support.html", csrf=token, **ctx))
+    token = make_csrf() if (ctx["shop_open"] or ctx["donations_open"]) else None
+    resp = make_response(render_template("support.html", csrf=token, paypal_client_id=env("PAYPAL_CLIENT_ID") if ctx["donations_open"] else "", **ctx))
     if token:
         set_csrf_cookie(resp, token)
     return shop_headers(resp)
@@ -772,7 +843,10 @@ def quote_route():
     lines, addr, err = _cart_and_address()
     if err:
         return _json_error(400, err)
-    return jsonify(public_quote(lines, quote(lines, addr["state"])))
+    try:
+        return jsonify(public_quote(lines, quote(lines, addr)))
+    except ShippingUnavailable:
+        return _json_error(503, SHIP_DOWN)
 
 
 @bp.route("/shop/paypal/order", methods=["POST"])
@@ -783,7 +857,10 @@ def create_order():
     lines, addr, err = _cart_and_address()
     if err:
         return _json_error(400, err)
-    body, q = build_paypal_order(lines, addr)
+    try:
+        body, q = build_paypal_order(lines, addr)
+    except ShippingUnavailable:
+        return _json_error(503, SHIP_DOWN)
     try:
         status, res = paypal_request("POST", "/v2/checkout/orders", body=body, request_id="we-create-" + secrets.token_hex(12))
     except ShopError as e:
@@ -795,9 +872,29 @@ def create_order():
     return jsonify({"id": res["id"], "total": money(q["total"])})
 
 
+@bp.route("/shop/paypal/donation", methods=["POST"])
+def create_donation():
+    bad = _guard("shop-donate", 12, donations_open)
+    if bad:
+        return bad
+    data = request.get_json(silent=True)
+    c, err = parse_donation((data if isinstance(data, dict) else {}).get("amount"))
+    if err:
+        return _json_error(400, err)
+    try:
+        status, res = paypal_request("POST", "/v2/checkout/orders", body=build_donation_order(c), request_id="we-gift-" + secrets.token_hex(12))
+    except ShopError as e:
+        log.error("create donation failed: %s", e)
+        return _json_error(502, "We could not start your gift. Please try again in a few minutes.")
+    if status not in (200, 201) or not ORDER_ID_RE.match(str(res.get("id") or "")):
+        log.error("create donation failed: %s %s", status, res.get("name"))
+        return _json_error(502, "We could not start your gift. Please try again in a few minutes.")
+    return jsonify({"id": res["id"], "total": money(c)})
+
+
 @bp.route("/shop/paypal/order/<oid>/capture", methods=["POST"])
 def capture_route(oid):
-    bad = _guard("shop-capture", 12)
+    bad = _guard("shop-capture", 12, lambda: shop_open() or donations_open())
     if bad:
         return bad
     if not ORDER_ID_RE.match(oid):
@@ -811,8 +908,13 @@ def capture_route(oid):
         return jsonify({"restart": True, "error": "Your payment was declined. Please try another card or payment method."}), 402
     if outcome == "failed":
         return _json_error(502, "We could not complete your payment. You have not been charged. Please try again.")
-    if unit_of(order).get("custom_id") != SOURCE:
+    if unit_of(order).get("custom_id") not in OUR_SOURCES:
         return _json_error(400, "That order could not be found.")
+    if unit_of(order).get("custom_id") == DONATION_SOURCE:
+        cap = capture_of(order)
+        write_log({"order_id": oid, "capture_id": cap.get("id"), "state": "gift_" + outcome, "kind": "gift",
+                   "paid_cents": _cents((cap.get("amount") or {}).get("value"))})
+        return jsonify({"status": outcome, "redirect": "/shop/success?order=" + oid})
     if outcome == "pending":
         write_log({"order_id": oid, "capture_id": capture_of(order).get("id"), "state": "pending",
                    "reason": (capture_of(order).get("status_details") or {}).get("reason")})
@@ -854,7 +956,7 @@ def paypal_webhook():
             status, note = fulfil(get_order(oid))
         elif etype in ("CHECKOUT.ORDER.APPROVED", "CHECKOUT.ORDER.COMPLETED"):
             oid = str(res.get("id") or "")
-            if not ORDER_ID_RE.match(oid) or unit_of(res).get("custom_id") != SOURCE:
+            if not ORDER_ID_RE.match(oid) or unit_of(res).get("custom_id") not in OUR_SOURCES:
                 return jsonify({"received": True, "note": "ignored"}), 200
             if etype == "CHECKOUT.ORDER.APPROVED":
                 # The buyer approved but the browser never asked us to capture (closed tab, lost connection): capture now.
@@ -883,18 +985,24 @@ def paypal_webhook():
 @bp.route("/shop/success")
 def success():
     oid = request.args.get("order", "")
-    info = {"paid": None, "pending": False, "email": None}
+    info = {"paid": None, "pending": False, "email": None, "gift": False, "amount": None, "receipt": None, "date": None}
     if ORDER_ID_RE.match(oid) and paypal_ready():
         try:
             order = get_order(oid)
-            if unit_of(order).get("custom_id") == SOURCE:
-                st = capture_of(order).get("status")
+            if unit_of(order).get("custom_id") in OUR_SOURCES:
+                cap = capture_of(order)
+                st = cap.get("status")
                 info["paid"] = st == "COMPLETED"
                 info["pending"] = st == "PENDING"
                 info["email"] = (order.get("payer") or {}).get("email_address")
+                info["gift"] = unit_of(order).get("custom_id") == DONATION_SOURCE
+                c = _cents((cap.get("amount") or {}).get("value"))
+                info["amount"] = money(c) if c is not None else None
+                info["receipt"] = cap.get("id")
+                info["date"] = (cap.get("create_time") or "")[:10] or None
         except ShopError as e:
             log.error("success lookup failed: %s", e)
-    resp = make_response(render_template("shop_success.html", info=info, seller=seller_name()))
+    resp = make_response(render_template("shop_success.html", info=info, seller=seller_name(), order_id=oid if info["receipt"] else None))
     resp.headers["Cache-Control"] = "no-store"
     resp.headers["X-Robots-Tag"] = "noindex"
     return resp

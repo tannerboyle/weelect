@@ -1,5 +1,5 @@
 /* Cart for the We Elect shop. The cart lives in this browser (localStorage); prices shown here are for display only,
-   the server re-prices every line from data/shop_products.json when you check out. */
+   the server re-prices every line from the Printful store catalog when you check out. */
 (function(){
   var KEY='we_cart_v1', data=JSON.parse(document.getElementById('shop-data').textContent), P={};
   data.products.forEach(function(p){P[p.id]=p;});
@@ -7,6 +7,7 @@
   function load(){try{var c=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(c)?c.filter(valid):[];}catch(e){return [];}}
   function save(c){try{localStorage.setItem(KEY,JSON.stringify(c));}catch(e){}}
   function valid(l){var p=l&&P[l.p];return !!(p&&p.ok[l.c+':'+l.s]&&l.q>=1&&l.q<=maxQ);}
+  function price(p,c,s){var k=c+':'+s;return (p.prices&&p.prices[k])||p.price_cents;}
   function money(c){return '$'+(c/100).toFixed(2);}
   function colorName(p,id){for(var i=0;i<p.colors.length;i++)if(p.colors[i].id===id)return p.colors[i].name;return id;}
   var linesEl=document.getElementById('cart-lines'), totalEl=document.getElementById('cart-total'), shipEl=document.getElementById('cart-ship'),
@@ -26,12 +27,11 @@
       minus.onclick=function(){l.q-=1;if(l.q<1)cart.splice(i,1);save(cart);render();};
       plus.onclick=function(){if(l.q<maxQ){l.q+=1;save(cart);render();}};
       q.appendChild(minus);q.appendChild(el('span','cart-qn',String(l.q)));q.appendChild(plus);row.appendChild(q);
-      row.appendChild(el('span','cart-amt',money(p.price_cents*l.q)));
-      linesEl.appendChild(row);sub+=p.price_cents*l.q;n+=l.q;
+      var each=price(p,l.c,l.s);row.appendChild(el('span','cart-amt',money(each*l.q)));
+      linesEl.appendChild(row);sub+=each*l.q;n+=l.q;
     });
-    var ship=data.shipping.first+data.shipping.more*(n-1);
     totalEl.textContent='Items: '+money(sub);totalEl.hidden=false;
-    shipEl.textContent=data.shipping.label+': '+money(ship)+'. Sales tax, if any, is shown at checkout.';shipEl.hidden=false;
+    shipEl.textContent='Shipping (at our printer\u2019s rate for your address) and any sales tax are shown at checkout.';shipEl.hidden=false;
     goEl.hidden=false;clearEl.hidden=false;
   }
   function add(pid){
@@ -40,6 +40,7 @@
     var q=parseInt(root.querySelector('[name="qty-'+pid+'"]').value,10);
     if(!(q>=1)||q>maxQ){q=1;}
     var size=sizeEl.value, found=null;
+    if(!P[pid].ok[color+':'+size])return;
     cart.forEach(function(l){if(l.p===pid&&l.c===color&&l.s===size)found=l;});
     if(found){found.q=Math.min(maxQ,found.q+q);}
     else{if(cart.length>=maxLines)return;cart.push({p:pid,c:color,s:size,q:q});}
@@ -47,8 +48,22 @@
     document.getElementById('cart').scrollIntoView({block:'nearest',behavior:'smooth'});
   }
   Array.prototype.forEach.call(document.querySelectorAll('.add-btn'),function(b){b.addEventListener('click',function(){add(b.getAttribute('data-pid'));});});
-  Array.prototype.forEach.call(document.querySelectorAll('.prod input[type=radio]'),function(r){r.addEventListener('change',function(){
-    var img=r.closest('.prod').querySelector('.prod-img');if(img&&r.getAttribute('data-img'))img.src=r.getAttribute('data-img');});});
+  /* Color changes swap the Printful mockup and grey out sizes that color does not come in; size changes update the price. */
+  function sync(pid){
+    var root=document.querySelector('.prod[data-pid="'+pid+'"]'),p=P[pid];if(!root||!p)return;
+    var r=root.querySelector('input[name="color-'+pid+'"]:checked'),sel=root.querySelector('select[name="size-'+pid+'"]'),c=r.value;
+    var img=root.querySelector('.prod-img');if(img&&r.getAttribute('data-img')){img.src=r.getAttribute('data-img');img.alt=p.name+' in '+r.getAttribute('data-name');}
+    if(sel){var first=null;Array.prototype.forEach.call(sel.options,function(o){var ok=!!p.ok[c+':'+o.value];o.disabled=!ok;o.textContent=o.value+(ok?'':' (not in this color)');if(ok&&!first)first=o;});
+      if(sel.selectedOptions[0]&&sel.selectedOptions[0].disabled&&first)sel.value=first.value;}
+    var size=sel?sel.value:root.querySelector('[name="size-'+pid+'"]').value,pe=root.querySelector('.prod-price');
+    if(pe&&p.ok[c+':'+size])pe.textContent=money(price(p,c,size));
+    var btn=root.querySelector('.add-btn');if(btn)btn.disabled=!p.ok[c+':'+size];
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.prod[data-pid]'),function(root){
+    var pid=root.getAttribute('data-pid');
+    Array.prototype.forEach.call(root.querySelectorAll('input[type=radio],select'),function(x){x.addEventListener('change',function(){sync(pid);});});
+    sync(pid);
+  });
   clearEl.addEventListener('click',function(){cart=[];save(cart);render();});
   render();
 })();

@@ -1,0 +1,27 @@
+{
+ "_comment": "Short copy for shop products, keyed by Printful sync product id. Names, colors, sizes, prices and images come from Printful itself (see printful_store.py); edit only the words here. 'id' is the short id used in carts and PayPal SKUs: keep it stable once the shop is open. 'order' sets the order on the page and in the thank-you tiers.",
+ "488261342": {
+  "id": "cap",
+  "kind": "cap",
+  "order": 10,
+  "blurb": "A soft, garment-washed cotton cap with the We Elect mark embroidered on the front.",
+  "details": ["Comfort Colors washed cap (CCWC0), adjustable, one size", "Embroidered on demand and shipped by Printful"],
+  "tier": {"title": "Thank-you cap", "text": "The We Elect star, embroidered on a washed black cap."}
+ },
+ "488259186": {
+  "id": "tee",
+  "kind": "tee",
+  "order": 20,
+  "blurb": "A soft unisex tee with the We Elect mark on the front and WeElect.org across the back.",
+  "details": ["Bella+Canvas 3001 unisex short-sleeve tee", "Mark on the front, WeElect.org on the back", "Printed on demand and shipped by Printful"],
+  "tier": {"title": "Thank-you tee", "text": "Our mark on the front and WeElect.org on the back, in four colors."}
+ },
+ "488262318": {
+  "id": "tote",
+  "kind": "tote",
+  "order": 30,
+  "blurb": "A roomy organic-cotton tote with WeElect.org on the side. Big enough for groceries, books or a voter guide.",
+  "details": ["Econscious EC8001 large organic cotton tote", "Printed on demand and shipped by Printful"],
+  "tier": {"title": "Thank-you tote", "text": "A large organic tote with WeElect.org in cream on black."}
+ }
+}

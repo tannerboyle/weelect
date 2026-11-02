@@ -1,134 +1,297 @@
 {
- "_comment": "Shop catalog. Prices are set here on the server, never taken from the browser. Printful variant ids come from Printful's public catalog (run scripts/printful_sync.py to re-check or refresh). Set available=false to hide a product.",
+ "source": "printful",
+ "fetched_at": 1793629427,
  "currency": "usd",
  "limits": {
   "max_lines": 8,
   "max_qty_per_line": 10
  },
- "shipping": {
-  "label": "Standard shipping (U.S.)",
-  "countries": [
-   "US"
-  ],
-  "first_item_cents": 595,
-  "additional_item_cents": 200,
-  "_note": "Placeholder flat rates. Compare with Printful's rates (scripts/printful_sync.py --rates) and your margin, then edit."
- },
  "products": [
   {
-   "id": "tee",
+   "id": "cap",
+   "printful_product_id": 488261342,
    "available": true,
-   "name": "We Elect tee",
-   "kind": "tee",
-   "blurb": "Soft unisex jersey tee with the We Elect mark on the chest. A thank-you gift for readers who help keep the site free.",
+   "name": "We Elect Washed Cap",
+   "kind": "cap",
+   "blurb": "A soft, garment-washed cotton cap with the We Elect mark embroidered on the front.",
    "details": [
-    "Bella+Canvas 3001 unisex short-sleeve tee",
-    "Ring-spun cotton (heather colors contain polyester)",
-    "Printed on demand in the U.S. and shipped by Printful"
-   ],
-   "price_cents": 2800,
-   "tax_code": null,
-   "printful": {
-    "catalog_product_id": 71,
-    "file_type": "default",
-    "files": {
-     "navy": "/static/shop/print/tee-on-navy.png",
-     "cream": "/static/shop/print/tee-on-cream.png"
-    }
-   },
-   "colors": [
-    {
-     "id": "navy",
-     "name": "Navy",
-     "swatch": "#1f2f5a",
-     "printful_color": "Navy",
-     "image": "/static/shop/tee-navy.svg"
-    },
-    {
-     "id": "cream",
-     "name": "Cream",
-     "swatch": "#f1e9d2",
-     "printful_color": "Soft Cream",
-     "image": "/static/shop/tee-cream.svg"
-    }
-   ],
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL"
-   ],
-   "variants": {
-    "navy:S": {
-     "printful_variant_id": 4111
-    },
-    "navy:M": {
-     "printful_variant_id": 4112
-    },
-    "navy:L": {
-     "printful_variant_id": 4113
-    },
-    "navy:XL": {
-     "printful_variant_id": 4114
-    },
-    "navy:2XL": {
-     "printful_variant_id": 4115
-    },
-    "cream:S": {
-     "printful_variant_id": 4151
-    },
-    "cream:M": {
-     "printful_variant_id": 4152
-    },
-    "cream:L": {
-     "printful_variant_id": 4153
-    },
-    "cream:XL": {
-     "printful_variant_id": 4154
-    },
-    "cream:2XL": {
-     "printful_variant_id": 4155
-    }
-   }
-  },
-  {
-   "id": "hat",
-   "available": true,
-   "name": "We Elect dad hat",
-   "kind": "hat",
-   "blurb": "Low-profile, unstructured cotton cap with the We Elect mark embroidered on the front. A thank-you gift for readers.",
-   "details": [
-    "Yupoong 6245CM classic dad cap",
-    "Adjustable strap, one size",
+    "Comfort Colors washed cap (CCWC0), adjustable, one size",
     "Embroidered on demand and shipped by Printful"
    ],
-   "price_cents": 2800,
-   "tax_code": null,
-   "printful": {
-    "catalog_product_id": 206,
-    "file_type": "default",
-    "files": {
-     "navy": "/static/shop/print/hat-embroidery.png"
-    }
+   "tier": {
+    "title": "Thank-you cap",
+    "text": "The We Elect star, embroidered on a washed black cap."
    },
+   "order": 10,
+   "price_cents": 2995,
+   "price_max_cents": 2995,
+   "image": "/static/shop/pf/675b6803ebe2ece2.jpg",
    "colors": [
     {
-     "id": "navy",
-     "name": "Navy",
-     "swatch": "#1f2f5a",
-     "printful_color": "Navy",
-     "image": "/static/shop/hat-navy.svg"
+     "id": "black",
+     "name": "Black",
+     "swatch": "#000000",
+     "image": "/static/shop/pf/191d6fdf227f40a8.jpg"
     }
    ],
    "sizes": [
     "One size"
    ],
    "variants": {
-    "navy:One size": {
-     "printful_variant_id": 7857
+    "black:One size": {
+     "printful_variant_id": 53139,
+     "sync_variant_id": 5613156721,
+     "price_cents": 2995
+    }
+   }
+  },
+  {
+   "id": "tee",
+   "printful_product_id": 488259186,
+   "available": true,
+   "name": "We Elect Unisex t-shirt",
+   "kind": "tee",
+   "blurb": "A soft unisex tee with the We Elect mark on the front and WeElect.org across the back.",
+   "details": [
+    "Bella+Canvas 3001 unisex short-sleeve tee",
+    "Mark on the front, WeElect.org on the back",
+    "Printed on demand and shipped by Printful"
+   ],
+   "tier": {
+    "title": "Thank-you tee",
+    "text": "Our mark on the front and WeElect.org on the back, in four colors."
+   },
+   "order": 20,
+   "price_cents": 2995,
+   "price_max_cents": 2995,
+   "image": "/static/shop/pf/3f5972343d3d67b2.jpg",
+   "colors": [
+    {
+     "id": "dark-grey",
+     "name": "Dark Grey",
+     "swatch": "#2A2929",
+     "image": "/static/shop/pf/3f5972343d3d67b2.jpg"
+    },
+    {
+     "id": "maroon",
+     "name": "Maroon",
+     "swatch": "#721d37",
+     "image": "/static/shop/pf/45641e458c1e26fe.jpg"
+    },
+    {
+     "id": "heather-navy",
+     "name": "Heather Navy",
+     "swatch": "#303643",
+     "image": "/static/shop/pf/0287ea9bd40c3dd4.jpg"
+    },
+    {
+     "id": "military-green",
+     "name": "Military Green",
+     "swatch": "#4d4c36",
+     "image": "/static/shop/pf/bceb30ae8f9a620b.jpg"
+    }
+   ],
+   "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL"
+   ],
+   "variants": {
+    "dark-grey:XS": {
+     "printful_variant_id": 21577,
+     "sync_variant_id": 5613146959,
+     "price_cents": 2995
+    },
+    "dark-grey:S": {
+     "printful_variant_id": 21578,
+     "sync_variant_id": 5613146960,
+     "price_cents": 2995
+    },
+    "dark-grey:M": {
+     "printful_variant_id": 21579,
+     "sync_variant_id": 5613146961,
+     "price_cents": 2995
+    },
+    "dark-grey:L": {
+     "printful_variant_id": 21580,
+     "sync_variant_id": 5613146962,
+     "price_cents": 2995
+    },
+    "dark-grey:XL": {
+     "printful_variant_id": 21581,
+     "sync_variant_id": 5613146963,
+     "price_cents": 2995
+    },
+    "dark-grey:2XL": {
+     "printful_variant_id": 21582,
+     "sync_variant_id": 5613146964,
+     "price_cents": 2995
+    },
+    "maroon:XS": {
+     "printful_variant_id": 9545,
+     "sync_variant_id": 5613146965,
+     "price_cents": 2995
+    },
+    "maroon:S": {
+     "printful_variant_id": 4106,
+     "sync_variant_id": 5613146966,
+     "price_cents": 2995
+    },
+    "maroon:M": {
+     "printful_variant_id": 4107,
+     "sync_variant_id": 5613146967,
+     "price_cents": 2995
+    },
+    "maroon:L": {
+     "printful_variant_id": 4108,
+     "sync_variant_id": 5613146968,
+     "price_cents": 2995
+    },
+    "maroon:XL": {
+     "printful_variant_id": 4109,
+     "sync_variant_id": 5613146969,
+     "price_cents": 2995
+    },
+    "maroon:2XL": {
+     "printful_variant_id": 4110,
+     "sync_variant_id": 5613146970,
+     "price_cents": 2995
+    },
+    "maroon:3XL": {
+     "printful_variant_id": 15792,
+     "sync_variant_id": 5613146971,
+     "price_cents": 2995
+    },
+    "maroon:4XL": {
+     "printful_variant_id": 15793,
+     "sync_variant_id": 5613146972,
+     "price_cents": 2995
+    },
+    "heather-navy:XS": {
+     "printful_variant_id": 9571,
+     "sync_variant_id": 5613146973,
+     "price_cents": 2995
+    },
+    "heather-navy:S": {
+     "printful_variant_id": 8509,
+     "sync_variant_id": 5613146974,
+     "price_cents": 2995
+    },
+    "heather-navy:M": {
+     "printful_variant_id": 8510,
+     "sync_variant_id": 5613146975,
+     "price_cents": 2995
+    },
+    "heather-navy:L": {
+     "printful_variant_id": 8511,
+     "sync_variant_id": 5613146976,
+     "price_cents": 2995
+    },
+    "heather-navy:XL": {
+     "printful_variant_id": 8512,
+     "sync_variant_id": 5613146977,
+     "price_cents": 2995
+    },
+    "heather-navy:2XL": {
+     "printful_variant_id": 8513,
+     "sync_variant_id": 5613146978,
+     "price_cents": 2995
+    },
+    "heather-navy:3XL": {
+     "printful_variant_id": 8514,
+     "sync_variant_id": 5613146979,
+     "price_cents": 2995
+    },
+    "heather-navy:4XL": {
+     "printful_variant_id": 8515,
+     "sync_variant_id": 5613146980,
+     "price_cents": 2995
+    },
+    "military-green:XS": {
+     "printful_variant_id": 17202,
+     "sync_variant_id": 5613146981,
+     "price_cents": 2995
+    },
+    "military-green:S": {
+     "printful_variant_id": 17203,
+     "sync_variant_id": 5613146982,
+     "price_cents": 2995
+    },
+    "military-green:M": {
+     "printful_variant_id": 17204,
+     "sync_variant_id": 5613146983,
+     "price_cents": 2995
+    },
+    "military-green:L": {
+     "printful_variant_id": 17205,
+     "sync_variant_id": 5613146984,
+     "price_cents": 2995
+    },
+    "military-green:XL": {
+     "printful_variant_id": 17206,
+     "sync_variant_id": 5613146985,
+     "price_cents": 2995
+    },
+    "military-green:2XL": {
+     "printful_variant_id": 17209,
+     "sync_variant_id": 5613146986,
+     "price_cents": 2995
+    },
+    "military-green:3XL": {
+     "printful_variant_id": 17208,
+     "sync_variant_id": 5613146987,
+     "price_cents": 2995
+    },
+    "military-green:4XL": {
+     "printful_variant_id": 17207,
+     "sync_variant_id": 5613146988,
+     "price_cents": 2995
+    }
+   }
+  },
+  {
+   "id": "tote",
+   "printful_product_id": 488262318,
+   "available": true,
+   "name": "Large organic tote bag",
+   "kind": "tote",
+   "blurb": "A roomy organic-cotton tote with WeElect.org on the side. Big enough for groceries, books or a voter guide.",
+   "details": [
+    "Econscious EC8001 large organic cotton tote",
+    "Printed on demand and shipped by Printful"
+   ],
+   "tier": {
+    "title": "Thank-you tote",
+    "text": "A large organic tote with WeElect.org in cream on black."
+   },
+   "order": 30,
+   "price_cents": 3395,
+   "price_max_cents": 3395,
+   "image": "/static/shop/pf/c81ad5e9cc942807.jpg",
+   "colors": [
+    {
+     "id": "black",
+     "name": "Black",
+     "swatch": "#222222",
+     "image": "/static/shop/pf/c81ad5e9cc942807.jpg"
+    }
+   ],
+   "sizes": [
+    "One size"
+   ],
+   "variants": {
+    "black:One size": {
+     "printful_variant_id": 10732,
+     "sync_variant_id": 5613160991,
+     "price_cents": 3395
     }
    }
   }
- ]
+ ],
+ "_comment": "Fallback snapshot of the Printful store, written by scripts/printful_sync.py --snapshot. The live site reads Printful directly (cached); this copy is served only when Printful has not answered yet or is down. Do not edit prices here: change them in Printful, then re-run the snapshot."
 }

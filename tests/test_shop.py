@@ -6,10 +6,12 @@ from unittest import mock
 
 TEST_ENV = {"PAYPAL_CLIENT_ID": "AcidUnitTest", "PAYPAL_CLIENT_SECRET": "EsecretUnitTest", "PAYPAL_WEBHOOK_ID": "WH-UNIT-1",
             "PAYPAL_ENV": "", "PRINTFUL_API_TOKEN": "pf_unit", "SITE_URL": "https://weelect.org", "SHOP_TAX_RATES": "",
-            "PRINTFUL_AUTO_CONFIRM": "", "PRINTFUL_STORE_ID": ""}
+            "PRINTFUL_AUTO_CONFIRM": "", "PRINTFUL_STORE_ID": "", "SHOP_LIVE_CATALOG": "0"}
 ORDER_ID = "5O190127TN364715T"
 SB = "https://api-m.sandbox.paypal.com"
-CART = [{"p": "tee", "c": "navy", "s": "M", "q": 2}, {"p": "hat", "c": "navy", "s": "One size", "q": 1}]
+CART = [{"p": "tee", "c": "heather-navy", "s": "M", "q": 2}, {"p": "cap", "c": "black", "s": "One size", "q": 1}]
+TEE_NAVY_M = (8510, 5613146975)      # (Printful catalog variant id, sync variant id) in the committed snapshot
+CAP = (53139, 5613156721)
 ADDR = {"name": "Pat Reader", "line1": "1 Main St", "line2": "", "city": "Austin", "state": "TX", "zip": "78701"}
 WH_HEADERS = {"PAYPAL-AUTH-ALGO": "SHA256withRSA", "PAYPAL-CERT-URL": "https://api.sandbox.paypal.com/v1/notifications/certs/CERT-1",
               "PAYPAL-TRANSMISSION-ID": "t-1", "PAYPAL-TRANSMISSION-SIG": "sig", "PAYPAL-TRANSMISSION-TIME": "2026-10-29T20:00:00Z"}
@@ -109,8 +111,10 @@ class ShopBase(unittest.TestCase):
         env = dict(TEST_ENV, SHOP_ORDER_LOG=os.path.join(self.tmp, "orders.jsonl"), **self.extra_env)
         self.patch = mock.patch.dict(os.environ, env)
         self.patch.start()
-        import app as appmod, shop
+        import app as appmod, shop, printful_store
         shop._TOKEN.update(key=None, token=None, exp=0)
+        shop._SHIP.clear()
+        printful_store.reset()
         self.app = appmod.app
         self.c = self.app.test_client()
         self.base = "https://weelect.org"
@@ -217,10 +221,10 @@ class CreateOrderTests(ShopBase):
         pu = body["purchase_units"][0]
         self.assertEqual(pu["custom_id"], "weelect-shop")
         self.assertEqual([(i["sku"], i["quantity"], i["unit_amount"]["value"]) for i in pu["items"]],
-                         [("tee.navy.M", "2", "28.00"), ("hat.navy.One size", "1", "28.00")], "client-sent prices ignored")
+                         [("tee.heather-navy.M", "2", "29.95"), ("cap.black.One size", "1", "29.95")], "client-sent prices ignored")
         bd = pu["amount"]["breakdown"]
-        self.assertEqual((bd["item_total"]["value"], bd["shipping"]["value"], bd["tax_total"]["value"]), ("84.00", "9.95", "0.00"))
-        self.assertEqual(pu["amount"]["value"], "93.95")
+        self.assertEqual((bd["item_total"]["value"], bd["shipping"]["value"], bd["tax_total"]["value"]), ("89.85", "4.75", "0.00"))
+        self.assertEqual(pu["amount"]["value"], "94.60")
         self.assertEqual(pu["shipping"]["address"], {"address_line_1": "1 Main St", "admin_area_2": "Austin", "admin_area_1": "TX",
                                                      "postal_code": "78701", "country_code": "US"})
         self.assertEqual(pu["shipping"]["name"]["full_name"], "Pat Reader")
@@ -232,10 +236,10 @@ class CreateOrderTests(ShopBase):
             self.assertEqual(self.create().status_code, 200)
         pu = json.loads(self.fake.paypal_calls("/v2/checkout/orders")[0][2]["data"])["purchase_units"][0]
         bd = {k: v["value"] for k, v in pu["amount"]["breakdown"].items()}
-        self.assertEqual(bd, {"item_total": "84.00", "shipping": "9.95", "tax_total": "7.75"})
-        self.assertEqual(pu["amount"]["value"], "101.70")
+        self.assertEqual(bd, {"item_total": "89.85", "shipping": "4.75", "tax_total": "7.80"})
+        self.assertEqual(pu["amount"]["value"], "102.40")
         items = sum(float(i["unit_amount"]["value"]) * int(i["quantity"]) for i in pu["items"])
-        self.assertAlmostEqual(items, 84.00)
+        self.assertAlmostEqual(items, 89.85)
 
     def test_live_env_uses_live_api(self):
         with mock.patch.dict(os.environ, {"PAYPAL_ENV": "live"}):
@@ -244,9 +248,10 @@ class CreateOrderTests(ShopBase):
 
     def test_rejects_bad_carts_and_addresses(self):
         bad = [[], "x", [{"p": "mug", "c": "navy", "s": "M", "q": 1}], [{"p": "tee", "c": "pink", "s": "M", "q": 1}],
-               [{"p": "tee", "c": "navy", "s": "XXXL", "q": 1}], [{"p": "tee", "c": "navy", "s": "M", "q": 0}],
-               [{"p": "tee", "c": "navy", "s": "M", "q": 11}], [{"p": "tee", "c": "navy", "s": "M", "q": "2"}],
-               [{"p": "tee", "c": "navy", "s": "M", "q": True}], [{"p": "tee", "c": "navy", "s": "M", "q": 6}, {"p": "tee", "c": "navy", "s": "M", "q": 6}]]
+               [{"p": "tee", "c": "dark-grey", "s": "3XL", "q": 1}],
+               [{"p": "tee", "c": "heather-navy", "s": "XXXL", "q": 1}], [{"p": "tee", "c": "heather-navy", "s": "M", "q": 0}],
+               [{"p": "tee", "c": "heather-navy", "s": "M", "q": 11}], [{"p": "tee", "c": "heather-navy", "s": "M", "q": "2"}],
+               [{"p": "tee", "c": "heather-navy", "s": "M", "q": True}], [{"p": "tee", "c": "heather-navy", "s": "M", "q": 6}, {"p": "tee", "c": "heather-navy", "s": "M", "q": 6}]]
         for items in bad:
             self.assertEqual(self.create(items).status_code, 400, items)
         self.assertEqual(self.create(CART, dict(ADDR, state="ZZ")).status_code, 400)
@@ -283,10 +288,23 @@ class CreateOrderTests(ShopBase):
     def test_quote_matches_order(self):
         with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"TX": 8.25}'}):
             q = self.api("/shop/quote", {"items": CART, "address": ADDR}).get_json()
-            self.assertEqual((q["items"], q["shipping"], q["tax"], q["total"]), ("$84.00", "$9.95", "$6.93", "$100.88"))
+            self.assertEqual((q["items"], q["shipping"], q["tax"], q["total"]), ("$89.85", "$4.75", "$7.41", "$102.01"))
             q2 = self.api("/shop/quote", {"items": CART, "address": dict(ADDR, state="OR", zip="97201")}).get_json()
-            self.assertEqual((q2["tax"], q2["total"]), ("$0.00", "$93.95"))
-        self.assertEqual(self.fake.calls, [], "quotes never call PayPal")
+            self.assertEqual((q2["tax"], q2["total"]), ("$0.00", "$94.60"))
+        self.assertEqual([c for c in self.fake.calls if "paypal" in c[1]], [], "quotes never call PayPal")
+        rates = [c for c in self.fake.calls if "shipping/rates" in c[1]]
+        self.assertEqual(len(rates), 2, "one Printful rate lookup per destination, cached")
+        body = json.loads(rates[0][2]["data"])
+        self.assertEqual(sorted((i["variant_id"], i["quantity"]) for i in body["items"]), sorted([(TEE_NAVY_M[0], 2), (CAP[0], 1)]))
+        self.assertEqual((body["recipient"]["state_code"], body["recipient"]["zip"]), ("TX", "78701"))
+
+    def test_printful_rates_down_means_no_quote_and_no_order(self):
+        with mock.patch("shop.printful_shipping_rates", return_value=(None, "ConnectionError")):
+            r = self.api("/shop/quote", {"items": CART, "address": ADDR})
+            self.assertEqual(r.status_code, 503)
+            self.assertIn("shipping rate", r.get_json()["error"])
+            self.assertEqual(self.create().status_code, 503)
+        self.assertEqual(self.fake.paypal_calls("/v2/checkout/orders"), [])
 
 
 # ------------------------------------------------------------------ capture (browser path)
@@ -305,12 +323,12 @@ class CaptureTests(ShopBase):
         self.assertLessEqual(len(payload["external_id"]), 32)
         self.assertEqual(payload["recipient"], {"name": "Pat Reader", "address1": "1 Main St", "address2": "", "city": "Austin", "state_code": "TX",
                                                 "country_code": "US", "zip": "78701", "email": "reader@example.com"})
-        items = {i["variant_id"]: i for i in payload["items"]}
-        self.assertEqual(items[4112]["quantity"], 2, "navy M tee variant")
-        self.assertEqual(items[7857]["quantity"], 1, "navy dad hat variant")
-        self.assertEqual(items[4112]["retail_price"], "28.00")
-        self.assertTrue(items[4112]["files"][0]["url"].startswith("https://weelect.org/static/shop/print/"))
-        self.assertEqual(payload["retail_costs"], {"currency": "USD", "subtotal": "84.00", "shipping": "9.95", "tax": "0.00"})
+        items = {i["sync_variant_id"]: i for i in payload["items"]}
+        self.assertEqual(items[TEE_NAVY_M[1]]["quantity"], 2, "Heather Navy M tee, the store's own synced variant")
+        self.assertEqual(items[CAP[1]]["quantity"], 1, "washed cap")
+        self.assertEqual(items[TEE_NAVY_M[1]]["retail_price"], "29.95")
+        self.assertNotIn("files", items[TEE_NAVY_M[1]], "print files come from the Printful store product")
+        self.assertEqual(payload["retail_costs"], {"currency": "USD", "subtotal": "89.85", "shipping": "4.75", "tax": "0.00"})
         rec = self.log_records()[-1]
         self.assertEqual((rec["state"], rec["printful_id"], rec["confirmed"], rec["amounts_match"]), ("created", 99, False, True))
         self.assertNotIn("Main St", json.dumps(self.log_records()), "no addresses in the log")
@@ -372,7 +390,7 @@ class CaptureTests(ShopBase):
             self.create()
             pu = self.fake.orders[ORDER_ID]["purchase_units"][0]
             pu["items"][0]["unit_amount"]["value"] = "0.01"
-            pu["amount"]["value"] = "37.97"
+            pu["amount"]["value"] = "34.71"
             self.capture()
         url, _ = self.fake.pf_posts[0]
         self.assertEqual(url, "https://api.printful.com/orders")
@@ -410,8 +428,8 @@ class CaptureTests(ShopBase):
         self.assertEqual(self.log_records()[-1]["state"], "failed_permanent")
 
     def test_missing_printful_token_logs_for_manual_order(self):
+        self.create()
         with mock.patch.dict(os.environ, {"PRINTFUL_API_TOKEN": ""}):
-            self.create()
             self.assertEqual(self.capture().get_json()["status"], "completed")
         self.assertEqual(self.fake.pf_posts, [])
         self.assertEqual(self.log_records()[-1]["state"], "failed_permanent")
@@ -557,7 +575,12 @@ class PageTests(ShopBase):
         self.assertEqual(r.status_code, 200)
         self.assertNotIn("Coming soon", t)
         self.assertIn('id="shop-data"', t)
-        self.assertIn("We Elect tee", t)
+        self.assertIn("We Elect Unisex t-shirt", t)
+        self.assertIn("We Elect Washed Cap", t)
+        self.assertIn("Large organic tote bag", t)
+        self.assertIn("$29.95", t)
+        self.assertIn("$33.95", t)
+        self.assertIn("https://files.cdn.printful.com", r.headers["Content-Security-Policy"])
         self.assertIn("PayPal", t)
         self.assertNotIn("Stripe", t)
         csp = r.headers["Content-Security-Policy"]
@@ -626,26 +649,192 @@ class PageTests(ShopBase):
                         self.assertNotIn("stripe.com", fh.read().lower(), os.path.join(d, f))
 
     def test_catalog_integrity(self):
-        import shop
-        cat = shop.catalog()
+        """The committed snapshot (the fallback when Printful is down) is a well-formed copy of the Printful store."""
+        import shop, printful_store
+        cat = printful_store._read_json(printful_store.SNAPSHOT_PATH)
+        self.assertEqual(cat["source"], "printful")
+        self.assertEqual(sorted(p["id"] for p in cat["products"]), ["cap", "tee", "tote"])
         for p in cat["products"]:
-            self.assertEqual(p["price_cents"], 2800)
+            self.assertTrue(p["printful_product_id"])
             for c in p["colors"]:
-                self.assertTrue(os.path.exists(os.path.join(os.path.dirname(shop.__file__), p["printful"]["files"][c["id"]].lstrip("/"))))
-                self.assertTrue(os.path.exists(os.path.join(os.path.dirname(shop.__file__), c["image"].lstrip("/"))))
-                for s in p["sizes"]:
-                    self.assertIsInstance(p["variants"][f"{c['id']}:{s}"]["printful_variant_id"], int)
-                    self.assertLessEqual(len(f"{p['id']}.{c['id']}.{s}"), 127, "fits PayPal's sku limit")
+                self.assertTrue(os.path.exists(os.path.join(os.path.dirname(shop.__file__), c["image"].lstrip("/"))), c["image"])
+            for key, v in p["variants"].items():
+                self.assertIsInstance(v["printful_variant_id"], int)
+                self.assertIsInstance(v["sync_variant_id"], int)
+                self.assertGreater(v["price_cents"], 0)
+                self.assertLessEqual(len(f"{p['id']}.{key.replace(':', '.')}"), 127, "fits PayPal's sku limit")
+        tee = next(p for p in cat["products"] if p["id"] == "tee")
+        self.assertEqual(len(tee["variants"]), 30)
+        self.assertNotIn("dark-grey:3XL", tee["variants"])
 
     def test_printful_shipping_rates(self):
         import shop
-        rates, err = shop.printful_shipping_rates({"country_code": "US"}, [{"variant_id": 4112, "quantity": 1}])
+        rates, err = shop.printful_shipping_rates({"country_code": "US"}, [{"variant_id": 8510, "quantity": 1}])
         self.assertEqual(rates[0]["rate"], "4.75")
         with mock.patch("shop.requests.post", side_effect=shop.requests.ConnectionError("x")):
             rates, err = shop.printful_shipping_rates({"country_code": "US"}, [])
         self.assertIsNone(rates)
         self.assertEqual(err, "ConnectionError")
 
+
+
+# ------------------------------------------------------------------ one-time gifts (PayPal, no Printful)
+class DonationTests(ShopBase):
+    def test_amount_validation(self):
+        import shop
+        for raw, want in [("25", 2500), ("25.5", 2550), ("$1,000.00", 100000), ("1", 100), (10, 1000), ("10000", 1000000)]:
+            self.assertEqual(shop.parse_donation(raw), (want, None), raw)
+        for raw in [None, True, "", "abc", "0.99", "0", "-5", "10000.01", "25.555", "1e3", "12,34", 5.5, [], "100000000"]:
+            self.assertIsNone(shop.parse_donation(raw)[0], raw)
+
+    def test_gift_order_has_no_shipping_tax_or_printful(self):
+        with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"TX": 8.25}'}):
+            r = self.api("/shop/paypal/donation", {"amount": "25.00", "price": "0.01"})
+        self.assertEqual(r.status_code, 200, r.data)
+        self.assertEqual(r.get_json(), {"id": ORDER_ID, "total": "$25.00"})
+        body = json.loads(self.fake.paypal_calls("/v2/checkout/orders")[0][2]["data"])
+        pu = body["purchase_units"][0]
+        self.assertEqual(pu["custom_id"], "weelect-gift")
+        self.assertEqual(pu["amount"], {"currency_code": "USD", "value": "25.00", "breakdown": {"item_total": {"currency_code": "USD", "value": "25.00"}}})
+        self.assertEqual(pu["items"][0]["category"], "DONATION")
+        self.assertIn("Not tax-deductible", pu["description"])
+        self.assertNotIn("shipping", pu)
+        self.assertEqual(body["application_context"]["shipping_preference"], "NO_SHIPPING")
+        self.assertEqual([c for c in self.fake.calls if "printful" in c[1]], [])
+
+    def test_bad_amount_and_csrf(self):
+        self.assertEqual(self.api("/shop/paypal/donation", {"amount": "0.50"}).status_code, 400)
+        self.assertEqual(self.api("/shop/paypal/donation", {"amount": "25"}, token=None).status_code, 403)
+        self.assertEqual(self.fake.paypal_calls("/v2/checkout/orders"), [])
+
+    def test_capture_gift_logs_and_never_touches_printful(self):
+        self.assertEqual(self.api("/shop/paypal/donation", {"amount": "50"}).status_code, 200)
+        r = self.capture()
+        self.assertEqual(r.get_json(), {"status": "completed", "redirect": "/shop/success?order=" + ORDER_ID})
+        self.assertEqual(self.fake.pf_posts, [])
+        rec = self.log_records()[-1]
+        self.assertEqual((rec["kind"], rec["state"], rec["paid_cents"]), ("gift", "gift_completed", 5000))
+        self.assertEqual(self.webhook(capture_event()).status_code, 200)
+        self.assertEqual(self.fake.pf_posts, [], "webhook ignores gifts for fulfilment")
+        t = self.c.get("/shop/success?order=" + ORDER_ID).get_data(as_text=True)
+        self.assertIn("Your gift of <strong>$50.00</strong> came through", t)
+        self.assertIn("not a tax-deductible charitable contribution", t)
+        self.assertIn("Brunner Creative LLC", t)
+        self.assertIn("3C679366HH908993F", t)
+
+    def test_support_page_gift_form(self):
+        t = self.c.get("/support", base_url=self.base).get_data(as_text=True)
+        self.assertIn('id="gift-form"', t)
+        self.assertIn('data-client-id="AcidUnitTest"', t)
+        self.assertIn("not a tax-deductible charitable contribution", t)
+        self.assertIn("501(c)(3)", t)
+        self.assertIn("donate.js", t)
+        self.assertNotIn("Give through Ko-fi", t)
+        for a in ("$5", "$10", "$25", "$50"):
+            self.assertIn(f">{a}</button>", t)
+
+
+class GiftsClosedTests(unittest.TestCase):
+    def test_without_paypal_page_falls_back_to_kofi_and_endpoint_closed(self):
+        env = dict(TEST_ENV, PAYPAL_CLIENT_ID="", PAYPAL_CLIENT_SECRET="", PAYPAL_WEBHOOK_ID="")
+        with mock.patch.dict(os.environ, env):
+            import app as appmod, printful_store
+            printful_store.reset()
+            appmod._HITS.clear()
+            c = appmod.app.test_client()
+            t = c.get("/support").get_data(as_text=True)
+            self.assertIn("Give through Ko-fi", t)
+            self.assertNotIn('id="gift-form"', t)
+            self.assertEqual(c.post("/shop/paypal/donation", json={"amount": "5"}).status_code, 503)
+
+
+# ------------------------------------------------------------------ live Printful catalog
+def _pf_detail(pid, name, variants, thumb="https://files.cdn.printful.com/files/x/thumb_preview.png"):
+    return {"sync_product": {"id": pid, "name": name, "thumbnail_url": thumb, "is_ignored": False},
+            "sync_variants": [{"id": sv, "variant_id": cv, "color": col, "size": size, "retail_price": price, "currency": "USD",
+                               "availability_status": "active", "is_ignored": False, "product": {"variant_id": cv, "product_id": 71},
+                               "files": [{"type": "preview", "preview_url": f"https://files.cdn.printful.com/files/x/{col}_preview.png"}]}
+                              for sv, cv, col, size, price in variants]}
+
+
+class FakePF:
+    def __init__(self, down=False):
+        self.down, self.calls = down, []
+        self.details = {
+            1: _pf_detail(1, "We Elect Unisex t-shirt", [(11, 4011, "Maroon", "L", "29.95"), (12, 4012, "Maroon", "S", "29.95"),
+                                                         (13, 4013, "Maroon", "3XL", "31.95"), (14, 4014, "Dark Grey", "S", "29.95")]),
+            2: _pf_detail(2, "Large organic tote bag", [(21, 5021, "Black", "One size", "33.95")])}
+
+    def get(self, url, **kw):
+        self.calls.append(url)
+        if self.down:
+            raise __import__("requests").ConnectionError("down")
+        if "/store/products?" in url:
+            return Resp(200, {"result": [{"id": 1}, {"id": 2}], "paging": {"total": 2}})
+        if "/store/products/" in url:
+            return Resp(200, {"result": self.details[int(url.rsplit("/", 1)[1])]})
+        if url.endswith("/products/71"):
+            return Resp(200, {"result": {"product": {"title": "Unisex Staple T-Shirt | Bella + Canvas 3001"},
+                                         "variants": [{"id": 4011, "color_code": "#721d37"}, {"id": 4014, "color_code": "#2A2929"}]}})
+        raise AssertionError(url)
+
+
+class LiveCatalogTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        self.patch = mock.patch.dict(os.environ, dict(TEST_ENV, SHOP_LIVE_CATALOG="1", SHOP_CATALOG_CACHE=os.path.join(self.tmp, "cat.json")))
+        self.patch.start()
+        import printful_store
+        self.pfs = printful_store
+        printful_store.reset()
+
+    def tearDown(self):
+        self.patch.stop()
+        self.pfs.reset()
+
+    def test_builds_products_from_printful(self):
+        cat = self.pfs.fetch_from_printful(FakePF())
+        by = {p["id"]: p for p in cat["products"]}
+        self.assertEqual(set(by), {"tee", "tote"})
+        tee = by["tee"]
+        self.assertEqual(tee["name"], "We Elect Unisex t-shirt")
+        self.assertEqual(tee["sizes"], ["S", "L", "3XL"], "sizes in size order")
+        self.assertEqual([c["name"] for c in tee["colors"]], ["Maroon", "Dark Grey"])
+        self.assertEqual(tee["colors"][0]["swatch"], "#721d37")
+        self.assertEqual(tee["variants"]["maroon:3XL"], {"printful_variant_id": 4013, "sync_variant_id": 13, "price_cents": 3195})
+        self.assertEqual((tee["price_cents"], tee["price_max_cents"]), (2995, 3195))
+        self.assertNotIn("dark-grey:L", tee["variants"])
+        self.assertTrue(tee["colors"][0]["image"].startswith("https://files.cdn.printful.com/"))
+        self.assertEqual(by["tote"]["price_cents"], 3395)
+
+    def test_never_blocks_and_falls_back(self):
+        import threading
+        # first call serves the committed snapshot at once and refreshes in the background
+        with mock.patch.object(threading, "Thread") as T:
+            d = self.pfs.get()
+            self.assertEqual(self.pfs.source(), "snapshot")
+            self.assertTrue(d["products"])
+            T.assert_called_once()
+        # Printful down: keep serving the snapshot, back off
+        self.assertFalse(self.pfs.refresh(FakePF(down=True)))
+        self.assertEqual(self.pfs.source(), "snapshot")
+        self.assertGreater(self.pfs._STATE["next_try"], time.time())
+        # Printful back: live catalog, saved to disk for the next restart
+        self.assertTrue(self.pfs.refresh(FakePF()))
+        self.assertEqual(self.pfs.source(), "printful")
+        self.assertEqual({p["id"] for p in self.pfs.get()["products"]}, {"tee", "tote"})
+        self.pfs.reset()
+        with mock.patch.object(threading, "Thread"):
+            self.pfs.get()
+        self.assertEqual(self.pfs.source(), "disk")
+
+    def test_fresh_catalog_does_not_refetch(self):
+        import threading
+        self.pfs.refresh(FakePF())
+        with mock.patch.object(threading, "Thread") as T:
+            for _ in range(5):
+                self.pfs.get()
+            T.assert_not_called()
 
 if __name__ == "__main__":
     unittest.main()
