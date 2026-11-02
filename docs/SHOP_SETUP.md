@@ -1,6 +1,9 @@
 # We Elect: Support page and shop setup
 
-This is everything Bob needs to do to turn the shop on. Nothing here needs code changes. Until the PayPal environment variables below are set, `/support` shows the thank-you page, a plain "Give through Ko-fi" link and a "Coming soon" shop panel listing the real Printful products, and the rest of the site is unaffected.
+This is everything Bob needs to do to turn the shop on. Nothing here needs code changes. Gifts and the store switch on separately:
+
+* **Value for Value gifts** work as soon as `PAYPAL_CLIENT_ID` and `PAYPAL_CLIENT_SECRET` are set (no Printful token, no `SHOP_OPEN`). `PAYPAL_WEBHOOK_ID` is recommended: it captures a gift whose buyer closed the tab right after approving. Without PayPal, `/support` shows a plain "Give through Ko-fi" link.
+* **We Elect Gifts (the store)** opens only when `SHOP_OPEN=1` **and** the PayPal credentials **and** `PAYPAL_WEBHOOK_ID` are set. Until then it shows "Coming soon" with the real Printful products as previews (no cart, no checkout), and `/shop/checkout`, `/shop/quote` and `/shop/paypal/order` refuse on the server. Open it only once sales tax (WA seller's permit, `SHOP_TAX_RATES`) is sorted.
 
 > Not legal or tax advice. The sales-tax and resale sections are a checklist of things to confirm with an accountant or the state's revenue department.
 
@@ -51,7 +54,8 @@ Reader -> /support#give: pick $5/$10/$25/$50/$100 or type any amount ($1 to $10,
 |---|---|---|
 | `PAYPAL_CLIENT_ID` | checkout | From your PayPal REST app (sandbox first, then live). Public: it appears in the page. |
 | `PAYPAL_CLIENT_SECRET` | checkout | From the same app. Secret: only ever in Render. |
-| `PAYPAL_WEBHOOK_ID` | webhook + opening the shop and gifts | The **Webhook ID** PayPal shows for the `/paypal/webhook` URL. The shop stays "coming soon" and gifts fall back to the Ko-fi link without it. |
+| `PAYPAL_WEBHOOK_ID` | webhook; required to open the store, recommended for gifts | The **Webhook ID** PayPal shows for the `/paypal/webhook` URL. Without it the store stays "coming soon" and `/paypal/webhook` answers 404; gifts still work (captured in the browser). |
+| `SHOP_OPEN` | opening the store | `1` opens We Elect Gifts (cart, checkout, order endpoints). Unset/anything else: "coming soon". Gifts do not depend on it. |
 | `PAYPAL_ENV` | checkout | `sandbox` (default) or `live`. Must match the app the id/secret came from. |
 | `PRINTFUL_API_TOKEN` | catalog, shipping, fulfilment | Private token. Needed for the live catalog and shipping rates as well as orders; without it the shop shows the committed snapshot and checkout cannot quote shipping. Without it, paid orders are logged as `failed_permanent` for you to create by hand. |
 | `PRINTFUL_STORE_ID` | fulfilment | Only for an account-level token (sent as `X-PF-Store-Id`). Find it with `scripts/printful_sync.py --stores`. |

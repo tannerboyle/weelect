@@ -46,7 +46,7 @@
 <section id="shop" class="sup-shop" aria-labelledby="shop-h">
   <div class="sechead"><span class="star">★</span><h2 id="shop-h">We Elect Gifts</h2></div>
   {% if not shop_open %}
-  <div class="shop-soon" role="status"><h3>Coming soon</h3><p>The {{ products_phrase }} {{ 'are' if products|length > 1 else 'is' }} on the way. The shop is not open yet, so there is nothing to buy today &mdash; the rest of this page works as usual. Check back soon.</p></div>
+  <div class="shop-soon" role="status"><h3>Coming soon</h3><p>The {{ products_phrase }} {{ 'are' if products|length > 1 else 'is' }} on the way. The shop is not open yet, so there is nothing to buy today; the prices below are previews. {% if donations_open %}You can still <a href="#give">give any amount</a> above.{% else %}The rest of this page works as usual.{% endif %} Check back soon.</p></div>
   <div class="prod-grid soon">
     {% for p in products %}<article class="prod" id="prod-{{ p.id }}"><img src="{{ p.colors[0].image }}" alt="{{ p.name }} in {{ p.colors[0].name }}" width="640" height="640" loading="lazy"><h3>{{ p.name }}</h3><p class="prod-price">{{ p.price }}</p><p>{{ p.blurb }}</p>
       <p class="prod-opts">{% if p.colors|length > 1 %}{{ p.colors|length }} colors: {{ p.colors|map(attribute='name')|join(', ') }}. {% else %}{{ p.colors[0].name }}. {% endif %}{% if p.sizes|length > 1 %}Sizes {{ p.sizes[0] }}&ndash;{{ p.sizes[-1] }}.{% else %}One size.{% endif %}</p></article>{% endfor %}
@@ -86,7 +86,7 @@
     <li><strong>Not a charity.</strong> We Elect is not a charity or nonprofit, and neither gifts nor purchases are tax-deductible.</li>
     <li><strong>Made to order.</strong> Items are printed or embroidered on demand and shipped by Printful. We ship within the United States only.</li>
     <li><strong>Shipping{% if tax_mode != 'none' %} and tax{% endif %}.</strong> {{ shipping_label }} is charged at Printful&rsquo;s own rate for your address and items, shown at checkout before you pay. Each item is made to order, so allow a few business days for printing before it ships.{% if tax_mode != 'none' %} Sales tax is added at checkout for orders shipped to {{ tax_states|join(', ') }}.{% endif %}</li>
-    <li><strong>Problems with an order.</strong> If something arrives damaged or misprinted, contact us from the <a href="/credits#who">About page</a> and we will make it right.</li>
+    <li><strong>Returns.</strong> Items are made to order. If an item arrives damaged or misprinted, contact us from the <a href="/credits#who">About page</a> and we will replace it. Otherwise, we do not accept returns or exchanges.</li>
     <li><strong>Privacy.</strong> Payments are processed by <a href="https://www.paypal.com/us/legalhub/privacy-full" target="_blank" rel="noopener">PayPal</a>; we keep the order, shipping address and email only to fulfil and support your order. The address lookup on the rest of this site stays separate and is never saved.</li>
     <li><strong>No influence.</strong> Gifts and purchases do not buy influence, coverage or changes to what we publish.</li>
   </ul>

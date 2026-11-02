@@ -6,7 +6,7 @@ from unittest import mock
 
 TEST_ENV = {"PAYPAL_CLIENT_ID": "AcidUnitTest", "PAYPAL_CLIENT_SECRET": "EsecretUnitTest", "PAYPAL_WEBHOOK_ID": "WH-UNIT-1",
             "PAYPAL_ENV": "", "PRINTFUL_API_TOKEN": "pf_unit", "SITE_URL": "https://weelect.org", "SHOP_TAX_RATES": "",
-            "PRINTFUL_AUTO_CONFIRM": "", "PRINTFUL_STORE_ID": "", "SHOP_LIVE_CATALOG": "0"}
+            "PRINTFUL_AUTO_CONFIRM": "", "PRINTFUL_STORE_ID": "", "SHOP_LIVE_CATALOG": "0", "SHOP_OPEN": "1"}
 ORDER_ID = "5O190127TN364715T"
 SB = "https://api-m.sandbox.paypal.com"
 CART = [{"p": "tee", "c": "heather-navy", "s": "M", "q": 2}, {"p": "cap", "c": "black", "s": "One size", "q": 1}]
@@ -733,6 +733,97 @@ class DonationTests(ShopBase):
         self.assertNotIn("Give through Ko-fi", t)
         for a in ("$5", "$10", "$25", "$50"):
             self.assertIn(f">{a}</button>", t)
+
+
+class ShopClosedDonationsOpenTests(ShopBase):
+    """Launch state: SHOP_OPEN unset, PayPal client id + secret set. Gifts work; the store is a preview and refuses orders."""
+    extra_env = {"SHOP_OPEN": "", "PRINTFUL_API_TOKEN": "", "PAYPAL_WEBHOOK_ID": ""}
+
+    def csrf(self):
+        r = self.c.get("/support", base_url=self.base)
+        self.assertEqual(r.status_code, 200)
+        return re.search(r'name="csrf-token" content="([^"]+)"', r.get_data(as_text=True)).group(1)
+
+    def test_page_shows_gift_form_and_store_preview(self):
+        import shop
+        self.assertFalse(shop.shop_open())
+        self.assertTrue(shop.donations_open())
+        t = self.c.get("/support", base_url=self.base).get_data(as_text=True)
+        self.assertIn('id="gift-form"', t)
+        self.assertIn("donate.js", t)
+        self.assertNotIn("Give through Ko-fi", t)
+        self.assertIn("Coming soon", t)
+        self.assertIn("We Elect Unisex t-shirt", t)
+        self.assertIn("$34.95", t)
+        for frag in ("add-btn", "Add to cart", "cart-checkout", 'id="shop-data"', "shop.js"):
+            self.assertNotIn(frag, t)
+        self.assertIn("we do not accept returns or exchanges", t)
+        self.assertIn("we will replace it", t)
+
+    def test_store_endpoints_refuse_server_side(self):
+        tok = self.csrf()
+        h = {"X-CSRF-Token": tok}
+        self.assertEqual(self.c.get("/shop/checkout", base_url=self.base).status_code, 302)
+        self.assertEqual(self.c.post("/shop/quote", json={"items": CART, "address": ADDR}, headers=h, base_url=self.base).status_code, 503)
+        self.assertEqual(self.c.post("/shop/paypal/order", json={"items": CART, "address": ADDR}, headers=h, base_url=self.base).status_code, 503)
+        self.assertEqual(self.fake.paypal_calls("/v2/checkout/orders"), [])
+        self.assertEqual([c for c in self.fake.calls if "printful" in c[1]], [])
+
+    def test_store_order_is_never_captured_while_closed(self):
+        # a store order that somehow exists at PayPal (e.g. created before the store was closed)
+        self.fake.orders[ORDER_ID] = {"id": ORDER_ID, "status": "APPROVED", "purchase_units": [{"custom_id": "weelect-shop", "amount": {"currency_code": "USD", "value": "10.00"}}]}
+        r = self.capture()
+        self.assertEqual(r.status_code, 503)
+        self.assertEqual(self.fake.paypal_calls("/capture"), [])
+
+    def test_gift_end_to_end_without_printful_or_webhook(self):
+        r = self.api("/shop/paypal/donation", {"amount": "10.50"})
+        self.assertEqual(r.status_code, 200, r.data)
+        self.assertEqual(r.get_json()["total"], "$10.50")
+        r = self.capture()
+        self.assertEqual(r.get_json(), {"status": "completed", "redirect": "/shop/success?order=" + ORDER_ID})
+        rec = self.log_records()[-1]
+        self.assertEqual((rec["kind"], rec["state"], rec["paid_cents"]), ("gift", "gift_completed", 1050))
+        self.assertEqual([c for c in self.fake.calls if "printful" in c[1]], [])
+        t = self.c.get("/shop/success?order=" + ORDER_ID, base_url=self.base).get_data(as_text=True)
+        self.assertIn("Your gift of <strong>$10.50</strong> came through", t)
+        self.assertEqual(self.c.post("/paypal/webhook", data=b"{}", base_url=self.base).status_code, 404, "no webhook id: endpoint off")
+
+
+class ShopClosedWebhookTests(ShopBase):
+    """Launch state with the (recommended) webhook id set: the webhook backs up gifts but never captures store orders."""
+    extra_env = {"SHOP_OPEN": "", "PRINTFUL_API_TOKEN": ""}
+
+    def csrf(self):
+        return re.search(r'name="csrf-token" content="([^"]+)"', self.c.get("/support", base_url=self.base).get_data(as_text=True)).group(1)
+
+    def test_approved_gift_captured_and_logged_once(self):
+        self.assertEqual(self.api("/shop/paypal/donation", {"amount": "25"}).status_code, 200)
+        ev = {"id": "WH-EVT-2", "event_type": "CHECKOUT.ORDER.APPROVED", "resource": dict(self.fake.orders[ORDER_ID])}
+        r = self.webhook(ev)
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.get_json()["note"], "gift completed")
+        self.assertEqual(self.webhook(ev).get_json()["note"], "duplicate")
+        recs = [x for x in self.log_records() if x.get("kind") == "gift"]
+        self.assertEqual(len(recs), 1)
+        self.assertEqual(recs[0]["paid_cents"], 2500)
+
+    def test_approved_store_order_ignored(self):
+        self.fake.orders[ORDER_ID] = {"id": ORDER_ID, "status": "APPROVED", "purchase_units": [{"custom_id": "weelect-shop", "amount": {"currency_code": "USD", "value": "10.00"}}]}
+        r = self.webhook({"id": "WH-EVT-3", "event_type": "CHECKOUT.ORDER.APPROVED", "resource": dict(self.fake.orders[ORDER_ID])})
+        self.assertEqual(r.get_json()["note"], "ignored: store closed")
+        self.assertEqual(self.fake.paypal_calls("/capture"), [])
+
+    def test_shop_open_flag_values(self):
+        import shop
+        self.assertFalse(shop.shop_open())
+        for v in ("0", "no", "off", ""):
+            with mock.patch.dict(os.environ, {"SHOP_OPEN": v}):
+                self.assertFalse(shop.shop_open(), v)
+        with mock.patch.dict(os.environ, {"SHOP_OPEN": "1"}):
+            self.assertTrue(shop.shop_open())
+            with mock.patch.dict(os.environ, {"PAYPAL_WEBHOOK_ID": ""}):
+                self.assertFalse(shop.shop_open(), "store still needs the webhook id")
 
 
 class GiftsClosedTests(unittest.TestCase):

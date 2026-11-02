@@ -4,12 +4,16 @@ Self-contained on weelect.org: PayPal's JavaScript SDK draws the PayPal and "Deb
 checkout page (card details are typed into PayPal's iframe, never into this server). The server creates every PayPal
 order from the catalog (Orders API v2, itemized: item_total + shipping + tax_total), captures it, and only after PayPal
 reports a COMPLETED capture does it create the Printful order. A verified PayPal webhook is the backstop for anything
-the browser did not finish. Everything degrades to a "coming soon" panel when the PayPal variables are unset.
+the browser did not finish. Gifts (Value for Value) and the store are switched on separately: gifts need only the PayPal
+credentials; the store also needs SHOP_OPEN=1 and PAYPAL_WEBHOOK_ID. Without PayPal, gifts fall back to a Ko-fi link.
 See docs/SHOP_SETUP.md.
 
 Env vars (all optional; nothing is required for the rest of the site to work):
   PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET   REST app credentials (sandbox first)
-  PAYPAL_WEBHOOK_ID                        id of the webhook pointing at /paypal/webhook (used to verify events)
+  PAYPAL_WEBHOOK_ID                        id of the webhook pointing at /paypal/webhook (used to verify events; required
+                                           for the store, recommended for gifts as the closed-tab capture backstop)
+  SHOP_OPEN=1                 open the We Elect Gifts store (cart, checkout, order endpoints). Default: off ("coming soon",
+                              products shown as previews). Gifts do not depend on it.
   PAYPAL_ENV=sandbox|live                  which PayPal environment to use (default sandbox)
   PRINTFUL_API_TOKEN, PRINTFUL_STORE_ID    Printful (store id only for account-level tokens)
   PRINTFUL_AUTO_CONFIRM=1     submit Printful orders for fulfillment automatically (default: leave as drafts, confirm=false)
@@ -102,9 +106,14 @@ def printful_ready():
     return bool(env("PRINTFUL_API_TOKEN"))
 
 
+def shop_switched_on():
+    return env("SHOP_OPEN").lower() in ("1", "true", "yes", "on")
+
+
 def donations_open():
-    """On-site PayPal gifts need only the PayPal credentials and webhook id (no catalog). Until then the page links to Ko-fi."""
-    return paypal_ready() and webhook_ready()
+    """On-site PayPal gifts need only the PayPal client id and secret: no Printful, no catalog, no SHOP_OPEN. The browser
+    captures each gift; the webhook (if PAYPAL_WEBHOOK_ID is set) only backs that up. Without PayPal the page links to Ko-fi."""
+    return paypal_ready()
 
 
 def parse_donation(raw):
@@ -132,8 +141,9 @@ def build_donation_order(c):
 
 
 def shop_open():
-    """The store takes orders only when PayPal credentials AND the webhook id are set; otherwise 'coming soon'."""
-    return paypal_ready() and webhook_ready() and bool(catalog_products())
+    """The store takes orders only when SHOP_OPEN=1 AND PayPal credentials AND the webhook id are set (the webhook is the
+    fulfilment backstop); otherwise 'coming soon'. Checked server-side on every store endpoint."""
+    return shop_switched_on() and paypal_ready() and webhook_ready() and bool(catalog_products())
 
 
 # ------------------------------------------------------------------ sales tax (PayPal does not calculate it)
@@ -899,6 +909,15 @@ def capture_route(oid):
         return bad
     if not ORDER_ID_RE.match(oid):
         return _json_error(400, "That order could not be found.")
+    if not shop_open():
+        # Store closed: only gifts may be captured. Read the order first so a store order is never charged.
+        try:
+            pre = get_order(oid)
+        except ShopError as e:
+            log.error("capture %s pre-check failed: %s", oid, e)
+            return _json_error(400, "That order could not be found.")
+        if unit_of(pre).get("custom_id") != DONATION_SOURCE:
+            return _json_error(503, "The store is not open yet.")
     try:
         outcome, order = capture_order(oid)
     except ShopError as e:
@@ -961,9 +980,18 @@ def paypal_webhook():
             if etype == "CHECKOUT.ORDER.APPROVED":
                 # The buyer approved but the browser never asked us to capture (closed tab, lost connection): capture now.
                 # Same PayPal-Request-Id as the browser path, so this can never charge twice.
+                if unit_of(res).get("custom_id") == SOURCE and not shop_open():
+                    return jsonify({"received": True, "note": "ignored: store closed"}), 200
                 outcome, order = capture_order(oid)
                 if outcome == "failed":
                     return jsonify({"received": False}), 500
+                if unit_of(order).get("custom_id") == DONATION_SOURCE:
+                    cap = capture_of(order)
+                    if (read_log().get(oid) or {}).get("state") == "gift_" + outcome:
+                        return jsonify({"received": True, "note": "duplicate"}), 200
+                    write_log({"order_id": oid, "capture_id": cap.get("id"), "state": "gift_" + outcome, "kind": "gift", "via": "webhook",
+                               "paid_cents": _cents((cap.get("amount") or {}).get("value"))})
+                    return jsonify({"received": True, "note": "gift " + outcome}), 200
             else:
                 order = get_order(oid)
             status, note = fulfil(order)
