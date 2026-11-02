@@ -1,6 +1,6 @@
 {
  "source": "printful",
- "fetched_at": 1793637631,
+ "fetched_at": 1793637942,
  "currency": "usd",
  "limits": {
   "max_lines": 8,
@@ -309,8 +309,8 @@
     "text": "The We Elect mark on a 22 oz insulated bottle."
    },
    "order": 40,
-   "price_cents": 3400,
-   "price_max_cents": 3400,
+   "price_cents": 3495,
+   "price_max_cents": 3495,
    "image": "/static/shop/pf/4731497a5fc9e84c.jpg",
    "colors": [
     {
@@ -327,7 +327,7 @@
     "white:22oz": {
      "printful_variant_id": 23882,
      "sync_variant_id": 5613305477,
-     "price_cents": 3400
+     "price_cents": 3495
     }
    }
   }
