@@ -1,6 +1,6 @@
 {
  "source": "printful",
- "fetched_at": 1793629427,
+ "fetched_at": 1793637631,
  "currency": "usd",
  "limits": {
   "max_lines": 8,
@@ -258,7 +258,7 @@
    "id": "tote",
    "printful_product_id": 488262318,
    "available": true,
-   "name": "Large organic tote bag",
+   "name": "We Elect Large organic tote bag",
    "kind": "tote",
    "blurb": "A roomy organic-cotton tote with WeElect.org on the side. Big enough for groceries, books or a voter guide.",
    "details": [
@@ -270,15 +270,15 @@
     "text": "A large organic tote with WeElect.org in cream on black."
    },
    "order": 30,
-   "price_cents": 3395,
-   "price_max_cents": 3395,
+   "price_cents": 3495,
+   "price_max_cents": 3495,
    "image": "/static/shop/pf/c81ad5e9cc942807.jpg",
    "colors": [
     {
      "id": "black",
      "name": "Black",
      "swatch": "#222222",
-     "image": "/static/shop/pf/c81ad5e9cc942807.jpg"
+     "image": "/static/shop/pf/d81e92ac8ef0b957.jpg"
     }
    ],
    "sizes": [
@@ -288,7 +288,46 @@
     "black:One size": {
      "printful_variant_id": 10732,
      "sync_variant_id": 5613160991,
-     "price_cents": 3395
+     "price_cents": 3495
+    }
+   }
+  },
+  {
+   "id": "bottle",
+   "printful_product_id": 488300926,
+   "available": true,
+   "name": "We Elect Copper Vacuum Insulated Bottle",
+   "kind": "bottle",
+   "blurb": "A 22 oz white insulated bottle with the We Elect mark. Copper insulation keeps drinks cold or hot without condensation.",
+   "details": [
+    "Stainless steel with copper vacuum insulation, powder-coat finish",
+    "22 oz (650 ml), spill-proof lid",
+    "Printed on demand and shipped by Printful"
+   ],
+   "tier": {
+    "title": "Thank-you bottle",
+    "text": "The We Elect mark on a 22 oz insulated bottle."
+   },
+   "order": 40,
+   "price_cents": 3400,
+   "price_max_cents": 3400,
+   "image": "/static/shop/pf/4731497a5fc9e84c.jpg",
+   "colors": [
+    {
+     "id": "white",
+     "name": "White",
+     "swatch": "#FFFFFF",
+     "image": "/static/shop/pf/8964fe5ee09d9646.jpg"
+    }
+   ],
+   "sizes": [
+    "22oz"
+   ],
+   "variants": {
+    "white:22oz": {
+     "printful_variant_id": 23882,
+     "sync_variant_id": 5613305477,
+     "price_cents": 3400
     }
    }
   }

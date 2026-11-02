@@ -5,23 +5,57 @@
   "kind": "cap",
   "order": 10,
   "blurb": "A soft, garment-washed cotton cap with the We Elect mark embroidered on the front.",
-  "details": ["Comfort Colors washed cap (CCWC0), adjustable, one size", "Embroidered on demand and shipped by Printful"],
-  "tier": {"title": "Thank-you cap", "text": "The We Elect star, embroidered on a washed black cap."}
+  "details": [
+   "Comfort Colors washed cap (CCWC0), adjustable, one size",
+   "Embroidered on demand and shipped by Printful"
+  ],
+  "tier": {
+   "title": "Thank-you cap",
+   "text": "The We Elect star, embroidered on a washed black cap."
+  }
  },
  "488259186": {
   "id": "tee",
   "kind": "tee",
   "order": 20,
   "blurb": "A soft unisex tee with the We Elect mark on the front and WeElect.org across the back.",
-  "details": ["Bella+Canvas 3001 unisex short-sleeve tee", "Mark on the front, WeElect.org on the back", "Printed on demand and shipped by Printful"],
-  "tier": {"title": "Thank-you tee", "text": "Our mark on the front and WeElect.org on the back, in four colors."}
+  "details": [
+   "Bella+Canvas 3001 unisex short-sleeve tee",
+   "Mark on the front, WeElect.org on the back",
+   "Printed on demand and shipped by Printful"
+  ],
+  "tier": {
+   "title": "Thank-you tee",
+   "text": "Our mark on the front and WeElect.org on the back, in four colors."
+  }
  },
  "488262318": {
   "id": "tote",
   "kind": "tote",
   "order": 30,
   "blurb": "A roomy organic-cotton tote with WeElect.org on the side. Big enough for groceries, books or a voter guide.",
-  "details": ["Econscious EC8001 large organic cotton tote", "Printed on demand and shipped by Printful"],
-  "tier": {"title": "Thank-you tote", "text": "A large organic tote with WeElect.org in cream on black."}
+  "details": [
+   "Econscious EC8001 large organic cotton tote",
+   "Printed on demand and shipped by Printful"
+  ],
+  "tier": {
+   "title": "Thank-you tote",
+   "text": "A large organic tote with WeElect.org in cream on black."
+  }
+ },
+ "488300926": {
+  "id": "bottle",
+  "kind": "bottle",
+  "order": 40,
+  "blurb": "A 22 oz white insulated bottle with the We Elect mark. Copper insulation keeps drinks cold or hot without condensation.",
+  "details": [
+   "Stainless steel with copper vacuum insulation, powder-coat finish",
+   "22 oz (650 ml), spill-proof lid",
+   "Printed on demand and shipped by Printful"
+  ],
+  "tier": {
+   "title": "Thank-you bottle",
+   "text": "The We Elect mark on a 22 oz insulated bottle."
+  }
  }
 }

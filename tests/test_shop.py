@@ -579,7 +579,8 @@ class PageTests(ShopBase):
         self.assertIn("We Elect Washed Cap", t)
         self.assertIn("Large organic tote bag", t)
         self.assertIn("$29.95", t)
-        self.assertIn("$33.95", t)
+        self.assertIn("$34.95", t)
+        self.assertIn("We Elect Copper Vacuum Insulated Bottle", t)
         self.assertIn("https://files.cdn.printful.com", r.headers["Content-Security-Policy"])
         self.assertIn("PayPal", t)
         self.assertNotIn("Stripe", t)
@@ -653,7 +654,7 @@ class PageTests(ShopBase):
         import shop, printful_store
         cat = printful_store._read_json(printful_store.SNAPSHOT_PATH)
         self.assertEqual(cat["source"], "printful")
-        self.assertEqual(sorted(p["id"] for p in cat["products"]), ["cap", "tee", "tote"])
+        self.assertEqual(sorted(p["id"] for p in cat["products"]), ["bottle", "cap", "tee", "tote"])
         for p in cat["products"]:
             self.assertTrue(p["printful_product_id"])
             for c in p["colors"]:
