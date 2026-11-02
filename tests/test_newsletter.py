@@ -69,6 +69,19 @@ class Signup(Base):
         for part in ("html", "text"):
             self.assertIn("Brunner Creative LLC, PO Box 1, Testville, ST 00000", body[part])
 
+    def test_email_masthead_image_and_tagline(self):
+        self.subscribe()
+        body = self.resend.call_args.args[2]
+        self.assertIn('src="https://weelect.org/static/email/masthead.png"', body["html"])   # absolute URL
+        self.assertIn('alt="We Elect"', body["html"])                                         # images-off fallback
+        self.assertIn('width="300"', body["html"])
+        for part in ("html", "text"):
+            self.assertIn("Know who represents you.", body[part])
+        r = self.c.get("/static/email/masthead.png")                                         # the image is served
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.mimetype, "image/png")
+        r.close()
+
     def test_invalid_emails(self):
         for bad in ("", "not-an-email", "a@b", "a..b@example.com", "x@exa mple.com", "<a@example.com>",
                     "a" * 65 + "@example.com", "a@" + "b" * 250 + ".com"):

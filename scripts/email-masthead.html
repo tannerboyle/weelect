@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* Source for static/email/masthead.png: the site masthead lockup (logo mark + "We Elect" wordmark) with the
+   same proportions as .brand / .wordmark in static/style.css (52px mark, 12px gap, Playfair Display 700 at
+   4.2rem, letter-spacing -.02em, #000), on the site paper colour #f7f3e8. Rendered at 3x for email.
+   Regenerate: venv python scripts/build_email_masthead.py */
+@font-face{font-family:"Playfair Display";font-weight:700;src:url(../static/fonts/playfair-display-latin-700-normal.woff2) format("woff2")}
+*{box-sizing:border-box;margin:0}
+html,body{background:#f7f3e8}
+.brand{display:inline-flex;align-items:center;gap:12px;padding:4px 8px 4px 6px}
+.brand img{width:52px;height:52px}
+.wordmark{color:#000;font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:67.2px;letter-spacing:-.02em;line-height:1}
+</style></head><body><div class="brand" id="lockup"><img src="../static/logo-mark.svg" alt=""><span class="wordmark">We Elect</span></div></body></html>
