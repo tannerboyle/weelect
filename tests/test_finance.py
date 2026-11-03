@@ -53,13 +53,13 @@ class Data(unittest.TestCase):
 
 
 class Official(unittest.TestCase):
-    """Washington from PDC open data, California 40-42 from CAL-ACCESS (Power Search), read on 2026-11-01."""
+    """Washington from PDC open data, California 40-42 from CAL-ACCESS (Power Search), read on 2026-11-02."""
     def test_washington_from_pdc(self):
         i645 = DOC["items"]["washington-initiative-645"]
         self.assertEqual(i645["source"]["kind"], "official")
         self.assertIn("data.wa.gov", i645["source"]["url"])
         self.assertEqual(i645["as_of"], "2026-10-30")
-        self.assertEqual(i645["yes"]["total"], 11948200.77)
+        self.assertEqual(i645["yes"]["total"], 12124100.77)
         # 13,950,001.92 across the four committees less the 207,000 No on 645 gave Defend Washington.
         self.assertEqual(i645["no"]["total"], 13743001.92)
         self.assertIn("$207,000", i645["no"]["total_note"])
@@ -80,7 +80,7 @@ class Official(unittest.TestCase):
         for slug in ("california-proposition-40", "california-proposition-41", "california-proposition-42"):
             it = DOC["items"][slug]
             self.assertEqual(it["source"]["kind"], "official", slug)
-            self.assertEqual(it["as_of"], "2026-10-31", slug)
+            self.assertEqual(it["as_of"], "2026-11-01", slug)
             for side in ("yes", "no"):
                 s = it[side]
                 self.assertLessEqual(sum(x["amount"] for x in s["donors"]), s["total"] + 0.01, (slug, side))
@@ -89,7 +89,7 @@ class Official(unittest.TestCase):
         self.assertEqual(p41["yes"]["total"], 58376445.92)
         self.assertEqual([c["name"] for c in p41["yes"]["committees"]], ["Yes on 41 - Californians for Transparency and Accountability"])
         self.assertEqual(p41["yes"]["donors"][0]["name"], "Building a Better California")
-        self.assertEqual(p41["no"]["total"], 34565577.01)
+        self.assertEqual(p41["no"]["total"], 34569577.01)
         self.assertEqual(DOC["items"]["california-proposition-42"]["yes"]["total"], 159277037.26)
         # Building a Better California gives to committees; it is not itself a Prop 40-42 committee in CAL-ACCESS.
         self.assertNotIn("Building a Better California", [c["name"] for c in DOC["items"]["california-proposition-40"]["no"]["committees"]])
@@ -109,8 +109,8 @@ class Official(unittest.TestCase):
 
     def test_official_pages(self):
         c = app_mod.app.test_client()
-        for slug, needles in {"washington-initiative-645": ["Washington Public Disclosure Commission", "through Oct. 30, 2026", "$207,000", "$11,948,201"],
-                              "california-proposition-41": ["CAL-ACCESS", "through Oct. 31, 2026", "Building a Better California", "$58,376,446",
+        for slug, needles in {"washington-initiative-645": ["Washington Public Disclosure Commission", "through Oct. 30, 2026", "$207,000", "$12,124,101"],
+                              "california-proposition-41": ["CAL-ACCESS", "through Nov. 1, 2026", "Building a Better California", "$58,376,446",
                                                             "Linked donors file their own reports"]}.items():
             h = c.get(f"/measures/{slug}").get_data(as_text=True)
             for n in needles:

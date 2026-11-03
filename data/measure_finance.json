@@ -259,7 +259,7 @@
     "kind": "official",
     "title": "Power Search: contributions to committees supporting and opposing Proposition 40",
     "url": "https://powersearch.sos.ca.gov/advanced.php",
-    "accessed": "2026-11-01",
+    "accessed": "2026-11-02",
     "method": "Contributions to the committees that report supporting or opposing the measure, with transfers between allied committees left out."
    },
    "filings": {
@@ -279,7 +279,7 @@
      },
      {
       "name": "Tax the Ultra-Rich Now, YES on 3 & 40, NO on 41 & 42",
-      "total": 579579.28,
+      "total": 583579.28,
       "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1495036",
       "also": [
        "california-proposition-3",
@@ -408,7 +408,7 @@
       "rows": 2
      }
     ],
-    "total": 33554577.01,
+    "total": 33558577.01,
     "ie": []
    },
    "no": {
@@ -497,7 +497,7 @@
     "total": 170704292.51,
     "ie": []
    },
-   "as_of": "2026-10-31"
+   "as_of": "2026-11-01"
   },
   "virginia-question-1": {
    "as_of": "2026-10-24",
@@ -1387,7 +1387,7 @@
     "kind": "official",
     "title": "Contributions to Candidates and Political Committees (open data)",
     "url": "https://data.wa.gov/Politics/Contributions-to-Candidates-and-Political-Committe/kv7h-kjye",
-    "accessed": "2026-11-01",
+    "accessed": "2026-11-02",
     "method": "Itemized contributions reported to each committee for the 2025 and 2026 election years."
    },
    "filings": {
@@ -1407,7 +1407,7 @@
      },
      {
       "name": "Vote Yes Repeal the Income Tax",
-      "total": 3689885.0,
+      "total": 3865785.0,
       "url": "https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/committees/co-2026-42237"
      }
     ],
@@ -1439,6 +1439,12 @@
       "rows": 3
      },
      {
+      "name": "Gordon Larry",
+      "amount": 350000.0,
+      "rows": 2,
+      "separate_address": true
+     },
+     {
       "name": "Crow Robert",
       "amount": 345000.0,
       "rows": 4
@@ -1460,11 +1466,6 @@
       "name": "Emerald Pacific Properties LLC",
       "amount": 250000.0,
       "rows": 2
-     },
-     {
-      "name": "Gordon Larry",
-      "amount": 200000.0,
-      "separate_address": true
      },
      {
       "name": "TDM Strategies",
@@ -1531,7 +1532,7 @@
       "rows": 3
      }
     ],
-    "total": 11948200.77,
+    "total": 12124100.77,
     "ie": []
    },
    "no": {
@@ -1895,7 +1896,7 @@
     "kind": "official",
     "title": "Contributions to Candidates and Political Committees (open data)",
     "url": "https://data.wa.gov/Politics/Contributions-to-Candidates-and-Political-Committe/kv7h-kjye",
-    "accessed": "2026-11-01",
+    "accessed": "2026-11-02",
     "method": "Itemized contributions reported to each committee for the 2025 and 2026 election years."
    },
    "filings": {
@@ -2189,7 +2190,7 @@
     "kind": "official",
     "title": "Contributions to Candidates and Political Committees (open data)",
     "url": "https://data.wa.gov/Politics/Contributions-to-Candidates-and-Political-Committe/kv7h-kjye",
-    "accessed": "2026-11-01",
+    "accessed": "2026-11-02",
     "method": "Itemized contributions reported to each committee for the 2025 and 2026 election years."
    },
    "filings": {
@@ -2651,7 +2652,7 @@
     "kind": "official",
     "title": "Power Search: contributions to committees supporting and opposing Proposition 41",
     "url": "https://powersearch.sos.ca.gov/advanced.php",
-    "accessed": "2026-11-01",
+    "accessed": "2026-11-02",
     "method": "Contributions to the committees that report supporting or opposing the measure, with transfers between allied committees left out."
    },
    "filings": {
@@ -2703,7 +2704,7 @@
      },
      {
       "name": "Tax the Ultra-Rich Now, YES on 3 & 40, NO on 41 & 42",
-      "total": 579579.28,
+      "total": 583579.28,
       "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1495036",
       "also": [
        "california-proposition-3",
@@ -2835,10 +2836,10 @@
       "amount": 10000.0
      }
     ],
-    "total": 34565577.01,
+    "total": 34569577.01,
     "ie": []
    },
-   "as_of": "2026-10-31"
+   "as_of": "2026-11-01"
   },
   "california-proposition-42": {
    "source": {
@@ -2846,7 +2847,7 @@
     "kind": "official",
     "title": "Power Search: contributions to committees supporting and opposing Proposition 42",
     "url": "https://powersearch.sos.ca.gov/advanced.php",
-    "accessed": "2026-11-01",
+    "accessed": "2026-11-02",
     "method": "Contributions to the committees that report supporting or opposing the measure, with transfers between allied committees left out."
    },
    "filings": {
@@ -2903,7 +2904,7 @@
      },
      {
       "name": "Tax the Ultra-Rich Now, YES on 3 & 40, NO on 41 & 42",
-      "total": 579579.28,
+      "total": 583579.28,
       "url": "https://cal-access.sos.ca.gov/Campaign/Committees/Detail.aspx?id=1495036",
       "also": [
        "california-proposition-3",
@@ -3035,10 +3036,10 @@
       "amount": 10000.0
      }
     ],
-    "total": 34565577.01,
+    "total": 34569577.01,
     "ie": []
    },
-   "as_of": "2026-10-31"
+   "as_of": "2026-11-01"
   },
   "colorado-proposition-136": {
    "as_of": "2026-10-14",
