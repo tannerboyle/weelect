@@ -28,10 +28,11 @@
     <dl class="co-totals" id="sum-totals" hidden>
       <dt>Items</dt><dd id="sum-items"></dd>
       <dt id="sum-ship-l">Shipping</dt><dd id="sum-ship"></dd>
-      <dt>Sales tax</dt><dd id="sum-tax"></dd>
+      <dt id="sum-tax-l">Sales tax</dt><dd id="sum-tax"></dd>
       <dt class="co-total">Total</dt><dd class="co-total" id="sum-total"></dd>
     </dl>
-    <p class="fine" id="sum-note">Shipping and any sales tax are worked out once you enter your address.{% if not tax_states %} We do not currently collect sales tax.{% endif %}</p>
+    <p class="fine" id="sum-note">Shipping and any sales tax are worked out once you enter your address. Washington orders pay Washington sales tax at the rate for the delivery address, on items and shipping; orders shipped outside Washington pay none.</p>
+    <p class="fine" id="sum-tax-note" hidden></p>
   </aside>
   <section class="co-pay" id="pay" aria-labelledby="pay-h" hidden>
     <h2 class="co-h" id="pay-h">2. Pay</h2>
@@ -39,5 +40,5 @@
     <div id="paypal-buttons" class="pp-slot"></div>
   </section>
 </div>
-<script src="{{ url_for('static', filename='shop-checkout.js') }}?v=3" defer></script>
+<script src="{{ url_for('static', filename='shop-checkout.js') }}?v=4" defer></script>
 </div>{% endblock %}
