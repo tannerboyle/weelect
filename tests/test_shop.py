@@ -23,6 +23,9 @@ DOR_SEATTLE = ('<?xml version="1.0" encoding="utf-8"?><response loccode="1726" l
 DOR_BAD_ZIP = '<?xml version="1.0" encoding="utf-8"?><response loccode="-1" localrate="-1" rate="-1" code="9" debughint="Zipcode is invalid for WA State." xmlns="" />'
 DOR_INTERNAL = '<?xml version="1.0" encoding="utf-8"?><response loccode="-1" localrate="-1" rate="-1" code="9" xmlns="" />'
 DOR_URL = "https://webgis.dor.wa.gov/webapi/AddressRates.aspx"
+DOR_ZIP_ONLY = ('<?xml version="1.0" encoding="utf-8"?><response loccode="4100" localrate=".017" rate=".082" code="5" xmlns="">'
+                '<addressline code="4100" street="FAKE RD" househigh="1" houselow="1" evenodd="O" state="WA" zip="98359" '
+                'period="Q42026" rta="N" ptba="" cez="" /><rate name="PIERCE COUNTY" code="4100" staterate=".065" localrate=".017" /></response>')
 WH_HEADERS = {"PAYPAL-AUTH-ALGO": "SHA256withRSA", "PAYPAL-CERT-URL": "https://api.sandbox.paypal.com/v1/notifications/certs/CERT-1",
               "PAYPAL-TRANSMISSION-ID": "t-1", "PAYPAL-TRANSMISSION-SIG": "sig", "PAYPAL-TRANSMISSION-TIME": "2026-10-29T20:00:00Z"}
 
@@ -264,6 +267,42 @@ class TaxTests(ShopBase):
                 q = self.api("/shop/quote", {"items": CART, "address": dict(ADDR, state=st, zip=z)}).get_json()
                 self.assertEqual((q["tax"], q["total"], q["tax_label"]), ("$0.00", "$94.60", "Sales tax"), st)
         self.assertEqual(self.fake.dor_calls(), [])
+
+    def test_zip_only_match_charges_higher_of_dor_and_fallback(self):
+        import shop, wa_tax
+        from decimal import Decimal
+        for code in ("5", "1", "3"):
+            for raw, want_pct, want_src, why in [
+                    ('{"WA": {"rate": 8.0, "zips": {"98359": 9.2}}}', "9.2", "fallback_higher", "SHOP_TAX_RATES zip 98359 9.2%; charged the higher"),
+                    ('{"WA": 9.5}', "9.5", "fallback_higher", "SHOP_TAX_RATES WA default 9.5%; charged the higher"),
+                    ('{"WA": {"rate": 9.9, "zips": {"98359": 7.0}}}', "8.2", "dor", ">= SHOP_TAX_RATES zip 98359 7%; charged dor"),
+                    ('{"WA": 8.0}', "8.2", "dor", ">= SHOP_TAX_RATES WA default 8%; charged dor"),
+                    ("", "8.2", "dor", "no fallback set; charged dor")]:
+                wa_tax.reset()
+                self.fake.dor = (200, DOR_ZIP_ONLY.replace('code="5"', f'code="{code}"', 1))
+                with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": raw}):
+                    t = shop.tax_info(WA_ADDR)
+                self.assertEqual((shop.fmt_pct(t["rate_pct"]), t["source"], t["result_code"]), (want_pct, want_src, int(code)), (code, raw))
+                self.assertIn(why, t["reason"])
+                self.assertIn(f"zip-only match (code {code})", t["reason"])
+        # a full street match (code 0) never uses the fallback, even if it is higher
+        wa_tax.reset()
+        self.fake.dor = (200, DOR_OK)
+        with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"WA": 10.0}'}):
+            t = shop.tax_info(WA_ADDR)
+        self.assertEqual((shop.fmt_pct(t["rate_pct"]), t["source"], t["reason"]), ("9.2", "dor", "dor address match"))
+        # end to end: the higher rate is charged, put on the PayPal order and logged with the reason
+        wa_tax.reset()
+        self.fake.dor = (200, DOR_ZIP_ONLY)
+        with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"WA": {"zips": {"98359": 9.2}}}'}):
+            self.assertEqual(self.create(CART, dict(WA_ADDR, line1="1 Fake Rd")).status_code, 200)
+        pu = json.loads(self.fake.paypal_calls("/v2/checkout/orders")[0][2]["data"])["purchase_units"][0]
+        self.assertEqual(pu["amount"]["breakdown"]["tax_total"]["value"], "8.70")      # 94.60 * 9.2%, not 8.2% ($7.76)
+        rec = self.log_records()[-1]
+        self.assertEqual((rec["tax_rate_pct"], rec["tax_source"], rec["tax_result_code"], rec["tax_cents"]), ("9.2", "fallback_higher", 5, 870))
+        self.assertIn("8.2% < SHOP_TAX_RATES zip 98359 9.2%", rec["tax_reason"])
+        self.assertEqual(self.capture().status_code, 200)
+        self.assertEqual((self.log_records()[-1]["state"], self.log_records()[-1]["amounts_match"]), ("created", True))
 
     def test_tax_rounding(self):
         import shop

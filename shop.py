@@ -156,6 +156,7 @@ def shop_open():
 # Orders shipped outside Washington are charged no sales tax. Gifts are never taxed (they never come through here).
 TAX_STATE = "WA"
 TAX_MIN_PCT, TAX_MAX_PCT = Decimal("6.5"), Decimal("15")     # 6.5% is the WA state rate; no WA location is near 15%
+ZIP_ONLY_CODES = {1, 3, 5}    # DOR matched the ZIP+4 (1, 3) or only the 5-digit ZIP (5), not the street address
 TAX_DOWN = ("We could not look up Washington sales tax for this address just now, so we cannot take the order yet. "
             "Please try again in a few minutes.")
 TAX_NOT_FOUND = ("We could not find that address in Washington. Please check the street address, city and ZIP code "
@@ -235,19 +236,37 @@ def tax_info(addr):
     z5 = (addr.get("zip") or "")[:5]
     try:
         r = wa_tax.lookup(addr.get("line1"), addr.get("city"), addr.get("zip"))
-        return {"state": st, "rate_pct": r["rate"] * 100, "loccode": r["loccode"], "source": "dor",
-                "result_code": r["code"], "period": r.get("period")}
+        t = {"state": st, "rate_pct": r["rate"] * 100, "loccode": r["loccode"], "source": "dor",
+             "result_code": r["code"], "period": r.get("period"), "reason": "dor address match"}
+        if r["code"] in ZIP_ONLY_CODES:
+            # DOR found only the ZIP / ZIP+4, not the street: its rate is for the ZIP's main area and may be too low for this
+            # address (98359 spans Pierce 8.2% and Kitsap 9.2%). Charge the higher of DOR's rate and our fallback.
+            fb = tax_fallback()
+            alt, alt_name = (fb["zips"][z5], "SHOP_TAX_RATES zip " + z5) if z5 in fb["zips"] else (fb["default"], "SHOP_TAX_RATES WA default")
+            dor_pct = t["rate_pct"]
+            if alt is not None and alt > dor_pct:
+                t.update(rate_pct=alt, source="fallback_higher",
+                         reason=f"dor zip-only match (code {r['code']}) {fmt_pct(dor_pct)}% < {alt_name} {fmt_pct(alt)}%; charged the higher")
+            elif alt is not None:
+                t["reason"] = f"dor zip-only match (code {r['code']}) {fmt_pct(dor_pct)}% >= {alt_name} {fmt_pct(alt)}%; charged dor"
+            else:
+                t["reason"] = f"dor zip-only match (code {r['code']}); no fallback set; charged dor"
+            log.info("WA tax: %s", t["reason"])
+        return t
     except wa_tax.AddressNotFound:
         fb = tax_fallback()
         if z5 in fb["zips"]:
-            return {"state": st, "rate_pct": fb["zips"][z5], "loccode": None, "source": "fallback_zip", "result_code": None, "period": None}
+            return {"state": st, "rate_pct": fb["zips"][z5], "loccode": None, "source": "fallback_zip", "result_code": None, "period": None,
+                    "reason": "dor says address not in WA; SHOP_TAX_RATES zip"}
         raise TaxAddressError(TAX_NOT_FOUND)
     except wa_tax.LookupFailed:
         fb = tax_fallback()
         if z5 in fb["zips"]:
-            return {"state": st, "rate_pct": fb["zips"][z5], "loccode": None, "source": "fallback_zip", "result_code": None, "period": None}
+            return {"state": st, "rate_pct": fb["zips"][z5], "loccode": None, "source": "fallback_zip", "result_code": None, "period": None,
+                    "reason": "dor lookup failed; SHOP_TAX_RATES zip"}
         if fb["default"] is not None:
-            return {"state": st, "rate_pct": fb["default"], "loccode": None, "source": "fallback_default", "result_code": None, "period": None}
+            return {"state": st, "rate_pct": fb["default"], "loccode": None, "source": "fallback_default", "result_code": None, "period": None,
+                    "reason": "dor lookup failed; SHOP_TAX_RATES WA default"}
         log.error("WA tax: DOR lookup failed and SHOP_TAX_RATES has no WA fallback; refusing checkout")
         raise TaxUnavailable(TAX_DOWN)
 
@@ -472,7 +491,7 @@ def tax_record(q):
     t = q.get("tax_info") or {}
     return {"tax_cents": q["tax"], "tax_rate_pct": fmt_pct(t.get("rate_pct")) if t.get("source") not in (None, "none") else "0",
             "tax_loccode": t.get("loccode"), "tax_source": t.get("source"), "tax_period": t.get("period"),
-            "tax_result_code": t.get("result_code"), "taxable_cents": q["items"] + q["shipping"] if t.get("source") not in (None, "none") else 0}
+            "tax_result_code": t.get("result_code"), "tax_reason": t.get("reason"), "taxable_cents": q["items"] + q["shipping"] if t.get("source") not in (None, "none") else 0}
 
 
 # ------------------------------------------------------------------ CSRF (signed token + double-submit cookie + Origin check)
@@ -828,7 +847,8 @@ def tax_from_order(order, addr):
         return {"state": st, "rate_pct": Decimal(0), "loccode": None, "source": "none", "result_code": None, "period": None}
     m = TAX_NOTE_RE.search(str(unit_of(order).get("description") or ""))
     if m:
-        return {"state": st, "rate_pct": Decimal(m.group(1)), "loccode": m.group(2), "source": "order", "result_code": None, "period": None}
+        return {"state": st, "rate_pct": Decimal(m.group(1)), "loccode": m.group(2), "source": "order", "result_code": None, "period": None,
+                "reason": "rate as charged on the PayPal order"}
     try:
         return tax_info(addr)
     except (TaxUnavailable, TaxAddressError):
