@@ -13,6 +13,16 @@ CART = [{"p": "tee", "c": "heather-navy", "s": "M", "q": 2}, {"p": "cap", "c": "
 TEE_NAVY_M = (8510, 5613146975)      # (Printful catalog variant id, sync variant id) in the committed snapshot
 CAP = (53139, 5613156721)
 ADDR = {"name": "Pat Reader", "line1": "1 Main St", "line2": "", "city": "Austin", "state": "TX", "zip": "78701"}
+WA_ADDR = {"name": "Sam Olalla", "line1": "12345 Olalla Valley Rd SE", "line2": "", "city": "Olalla", "state": "WA", "zip": "98359"}
+DOR_OK = ('<?xml version="1.0" encoding="utf-8"?><response loccode="1800" localrate=".027" rate=".092" code="0" xmlns="">'
+          '<addressline code="1800" street="OLALLA VALLEY RD SE" househigh="12345" houselow="12345" evenodd="O" state="WA" zip="98359" '
+          'period="Q42026" rta="N" ptba="Kitsap PTBA" cez="" /><rate name="KITSAP PTBA" code="1800" staterate=".065" localrate=".027" /></response>')
+DOR_SEATTLE = ('<?xml version="1.0" encoding="utf-8"?><response loccode="1726" localrate=".0405" rate=".1055" code="2" xmlns="">'
+               '<addressline code="1726" street="UNION ST" househigh="601" houselow="601" evenodd="O" state="WA" zip="98101" plus4="2341" '
+               'period="Q42026" rta="Y" ptba="King PTBA" cez="" /><rate name="SEATTLE" code="1726" staterate=".0650" localrate=".0405" /></response>')
+DOR_BAD_ZIP = '<?xml version="1.0" encoding="utf-8"?><response loccode="-1" localrate="-1" rate="-1" code="9" debughint="Zipcode is invalid for WA State." xmlns="" />'
+DOR_INTERNAL = '<?xml version="1.0" encoding="utf-8"?><response loccode="-1" localrate="-1" rate="-1" code="9" xmlns="" />'
+DOR_URL = "https://webgis.dor.wa.gov/webapi/AddressRates.aspx"
 WH_HEADERS = {"PAYPAL-AUTH-ALGO": "SHA256withRSA", "PAYPAL-CERT-URL": "https://api.sandbox.paypal.com/v1/notifications/certs/CERT-1",
               "PAYPAL-TRANSMISSION-ID": "t-1", "PAYPAL-TRANSMISSION-SIG": "sig", "PAYPAL-TRANSMISSION-TIME": "2026-10-29T20:00:00Z"}
 
@@ -38,6 +48,10 @@ class FakeHTTP:
         self.pf_existing = set()
         self.pf_post = (200, {"code": 200, "result": {"id": 99, "status": "draft"}})
         self.pf_posts = []
+        self.dor = (200, DOR_OK)       # WA DOR address rate lookup: (status, xml) or an exception instance
+
+    def dor_calls(self):
+        return [c for c in self.calls if c[1].startswith(DOR_URL)]
 
     def order_from_create(self, body, oid=ORDER_ID):
         o = {"id": oid, "status": "CREATED", "intent": "CAPTURE", "purchase_units": copy.deepcopy(body["purchase_units"])}
@@ -74,6 +88,12 @@ class FakeHTTP:
 
     def get(self, url, **kw):
         self.calls.append(("GET", url, kw))
+        if url.startswith(DOR_URL):
+            if isinstance(self.dor, Exception):
+                raise self.dor
+            r = Resp(self.dor[0])
+            r.text = self.dor[1]
+            return r
         if url.startswith("https://api.printful.com/orders/@"):
             return Resp(200, {"result": {"id": 1}}) if url.rsplit("@", 1)[1] in self.pf_existing else Resp(404, {"error": {"message": "Not found"}})
         raise AssertionError("unexpected GET " + url)
@@ -111,7 +131,8 @@ class ShopBase(unittest.TestCase):
         env = dict(TEST_ENV, SHOP_ORDER_LOG=os.path.join(self.tmp, "orders.jsonl"), **self.extra_env)
         self.patch = mock.patch.dict(os.environ, env)
         self.patch.start()
-        import app as appmod, shop, printful_store
+        import app as appmod, shop, printful_store, wa_tax
+        wa_tax.reset()
         shop._TOKEN.update(key=None, token=None, exp=0)
         shop._SHIP.clear()
         printful_store.reset()
@@ -170,26 +191,88 @@ def capture_event(oid=ORDER_ID, etype="PAYMENT.CAPTURE.COMPLETED"):
 
 # ------------------------------------------------------------------ tax and address
 class TaxTests(ShopBase):
-    def test_no_rates_means_no_tax(self):
-        import shop
-        self.assertEqual(shop.tax_rates(), {})
-        self.assertEqual(shop.tax_cents(8400, 995, "TX"), 0)
-        self.assertEqual(shop.tax_mode(), "none")
+    """Washington destination-based sales tax: DOR address lookup, SHOP_TAX_RATES fallback, refusal with no rate."""
+    def test_dor_parse_and_lookup_success(self):
+        import wa_tax
+        r = wa_tax.parse(DOR_OK)
+        self.assertEqual((r["rate"], r["loccode"], r["code"], r["period"], r["name"]), (__import__("decimal").Decimal(".092"), "1800", 0, "Q42026", "KITSAP PTBA"))
+        self.assertEqual(wa_tax.parse(DOR_SEATTLE)["rate"], __import__("decimal").Decimal(".1055"))
+        self.assertRaises(wa_tax.AddressNotFound, wa_tax.parse, DOR_BAD_ZIP)
+        self.assertRaises(wa_tax.LookupFailed, wa_tax.parse, DOR_INTERNAL)
+        for bad in ["", "<html>busy</html>", "not xml", '<response code="0" rate=".5" loccode="1800"/>',
+                    '<response code="0" rate=".092" loccode="x"/>', '<!DOCTYPE x [<!ENTITY a "b">]><response code="0"/>']:
+            self.assertRaises(wa_tax.LookupFailed, wa_tax.parse, bad)
 
-    def test_rates_only_for_listed_states_with_rounding_and_shipping_option(self):
+    def test_wa_lookup_success_taxes_items_and_shipping(self):
         import shop
-        with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"wa": 10.25, "TX": {"rate": 8.25, "shipping": true}}'}):
-            self.assertEqual(shop.tax_cents(8400, 995, "WA"), 861)            # 8400 * 10.25% = 861.0, shipping not taxed
-            self.assertEqual(shop.tax_cents(8400, 995, "TX"), 775)            # (8400+995) * 8.25% = 775.09
-            self.assertEqual(shop.tax_cents(2800, 595, "CA"), 0)              # not listed: no tax
-            self.assertEqual(shop.tax_cents(2, 0, "WA"), 0)                   # 0.205 cents rounds to 0
-            self.assertEqual(shop.tax_mode(), "state_rates")
+        q = self.api("/shop/quote", {"items": CART, "address": WA_ADDR}).get_json()
+        # (89.85 + 4.75) * 9.2% = 8.7032 -> $8.70
+        self.assertEqual((q["items"], q["shipping"], q["tax"], q["total"]), ("$89.85", "$4.75", "$8.70", "$103.30"))
+        self.assertEqual(q["tax_label"], "WA sales tax (9.2%)")
+        call = self.fake.dor_calls()[0]
+        self.assertEqual(call[2]["params"], {"output": "xml", "addr": "12345 Olalla Valley Rd SE", "city": "Olalla", "zip": "98359"})
+        self.assertLessEqual(call[2]["timeout"], 10)
+        t = shop.tax_info(WA_ADDR)
+        self.assertEqual((shop.fmt_pct(t["rate_pct"]), t["loccode"], t["source"], t["period"]), ("9.2", "1800", "dor", "Q42026"))
 
-    def test_bad_config_collects_nothing(self):
-        import shop
-        for raw in ['{"WA": 10.25', '[1,2]', '{"ZZ": 5}', '{"WA": "abc"}', '{"WA": 45}', '{"WA": -1}', '{"WA": true}']:
+    def test_lookups_are_cached(self):
+        for _ in range(3):
+            self.assertEqual(self.api("/shop/quote", {"items": CART, "address": WA_ADDR}).status_code, 200)
+        self.assertEqual(self.create(CART, WA_ADDR).status_code, 200)
+        self.assertEqual(len(self.fake.dor_calls()), 1)
+
+    def test_lookup_failure_uses_zip_fallback_then_default(self):
+        import shop, requests
+        self.fake.dor = requests.Timeout("slow")
+        with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"WA": {"rate": 8.0, "zips": {"98359": 9.2}}}'}):
+            t = shop.tax_info(WA_ADDR)
+            self.assertEqual((t["rate_pct"], t["source"], t["loccode"]), (__import__("decimal").Decimal("9.2"), "fallback_zip", None))
+            t = shop.tax_info(dict(WA_ADDR, zip="98501", city="Olympia"))
+            self.assertEqual((shop.fmt_pct(t["rate_pct"]), t["source"]), ("8", "fallback_default"))
+        for dor in [(500, "oops"), (200, DOR_INTERNAL), (200, "<html>maintenance</html>"), requests.ConnectionError("down")]:
+            import wa_tax
+            wa_tax.reset()
+            self.fake.dor = dor
+            with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"WA": 9.0}'}):
+                q = self.api("/shop/quote", {"items": CART, "address": WA_ADDR})
+            self.assertEqual(q.status_code, 200, dor)
+            self.assertEqual(q.get_json()["tax"], "$8.51", dor)          # 94.60 * 9% = 8.514
+
+    def test_lookup_failure_without_fallback_blocks_wa_checkout(self):
+        import requests
+        self.fake.dor = requests.Timeout("slow")
+        for raw in ["", '{"WA": 2}', '{"WA": 45}', '{"WA": "abc"}', '{"WA": true}', '{"TX": 8.25}', '{"WA": 10.25', '[1]',
+                    '{"WA": {"zips": {"98101": 10.55}}}']:
             with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": raw}):
-                self.assertEqual(shop.tax_rates(), {}, raw)
+                r = self.api("/shop/quote", {"items": CART, "address": WA_ADDR})
+                self.assertEqual(r.status_code, 503, raw)
+                self.assertIn("Washington sales tax", r.get_json()["error"])
+                self.assertEqual(self.create(CART, WA_ADDR).status_code, 503, raw)
+        self.assertEqual(self.fake.paypal_calls("/v2/checkout/orders"), [], "no PayPal order without a WA rate")
+        self.assertEqual([c for c in self.fake.calls if "shipping/rates" in c[1]], [], "refused before asking Printful")
+        self.assertEqual(len(self.fake.dor_calls()), 1, "a failed lookup is remembered briefly, not retried on every click")
+
+    def test_address_not_in_wa_asks_buyer_to_fix_it(self):
+        self.fake.dor = (200, DOR_BAD_ZIP)
+        r = self.api("/shop/quote", {"items": CART, "address": dict(WA_ADDR, zip="97201")})
+        self.assertEqual(r.status_code, 400)
+        self.assertIn("could not find that address in Washington", r.get_json()["error"])
+
+    def test_non_wa_addresses_pay_no_tax_and_never_call_dor(self):
+        with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"WA": 9.0, "TX": 8.25, "OR": 5}'}):
+            for st, z in [("TX", "78701"), ("OR", "97201"), ("CA", "94103"), ("ID", "83814")]:
+                q = self.api("/shop/quote", {"items": CART, "address": dict(ADDR, state=st, zip=z)}).get_json()
+                self.assertEqual((q["tax"], q["total"], q["tax_label"]), ("$0.00", "$94.60", "Sales tax"), st)
+        self.assertEqual(self.fake.dor_calls(), [])
+
+    def test_tax_rounding(self):
+        import shop
+        from decimal import Decimal
+        self.assertEqual(shop.tax_cents(8985, 475, Decimal("9.2")), 870)     # 870.32
+        self.assertEqual(shop.tax_cents(2995, 475, Decimal("10.55")), 366)   # 366.085 -> half up
+        self.assertEqual(shop.tax_cents(5, 0, Decimal("9.2")), 0)
+        self.assertEqual(shop.tax_cents(8985, 475, 0), 0)
+        self.assertEqual(shop.fmt_pct(Decimal(".100") * 100), "10")
 
 
 class AddressTests(unittest.TestCase):
@@ -231,15 +314,59 @@ class CreateOrderTests(ShopBase):
         tok = [c for c in self.fake.calls if c[1].endswith("/v1/oauth2/token")][0]
         self.assertEqual(tok[2]["auth"], ("AcidUnitTest", "EsecretUnitTest"))
 
-    def test_breakdown_adds_up_with_tax(self):
-        with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"TX": {"rate": 8.25, "shipping": true}}'}):
-            self.assertEqual(self.create().status_code, 200)
+    def test_breakdown_adds_up_with_wa_tax(self):
+        from decimal import Decimal
+        self.fake.dor = (200, DOR_SEATTLE)
+        seattle = dict(WA_ADDR, line1="601 Union St", city="Seattle", zip="98101")
+        r = self.create(CART, seattle)
+        self.assertEqual(r.status_code, 200, r.data)
+        self.assertEqual(r.get_json()["total"], "$104.58")
         pu = json.loads(self.fake.paypal_calls("/v2/checkout/orders")[0][2]["data"])["purchase_units"][0]
         bd = {k: v["value"] for k, v in pu["amount"]["breakdown"].items()}
-        self.assertEqual(bd, {"item_total": "89.85", "shipping": "4.75", "tax_total": "7.80"})
-        self.assertEqual(pu["amount"]["value"], "102.40")
-        items = sum(float(i["unit_amount"]["value"]) * int(i["quantity"]) for i in pu["items"])
-        self.assertAlmostEqual(items, 89.85)
+        self.assertEqual(bd, {"item_total": "89.85", "shipping": "4.75", "tax_total": "9.98"})   # 94.60 * 10.55% = 9.9803
+        self.assertEqual(pu["amount"]["value"], "104.58")
+        self.assertEqual(sum(Decimal(v) for v in bd.values()), Decimal(pu["amount"]["value"]), "item_total + shipping + tax_total = total")
+        items = sum(Decimal(i["unit_amount"]["value"]) * int(i["quantity"]) for i in pu["items"])
+        self.assertEqual(items, Decimal(bd["item_total"]))
+        self.assertEqual(pu["description"], "We Elect Gifts order. WA sales tax 10.55% (DOR location 1726)")
+        rec = self.log_records()[-1]
+        self.assertEqual((rec["state"], rec["tax_cents"], rec["tax_rate_pct"], rec["tax_loccode"], rec["tax_source"], rec["taxable_cents"], rec["tax_period"]),
+                         ("opened", 998, "10.55", "1726", "dor", 9460, "Q42026"))
+        self.assertNotIn("Union", json.dumps(self.log_records()), "no addresses in the log")
+
+    def test_breakdown_math_many_carts(self):
+        """item_total + shipping + tax_total always equals the order total, to the cent, for WA and non-WA."""
+        from decimal import Decimal
+        import shop
+        carts = [[CART[0]], [CART[1]], CART, [dict(CART[0], q=10)], [dict(CART[0], q=3), dict(CART[1], q=7)]]
+        for addr in (WA_ADDR, ADDR):
+            for items in carts:
+                lines, err = shop.parse_cart(items)
+                self.assertIsNone(err)
+                body, q = shop.build_paypal_order(lines, addr)
+                amt = body["purchase_units"][0]["amount"]
+                bd = {k: Decimal(v["value"]) for k, v in amt["breakdown"].items()}
+                self.assertEqual(bd["item_total"] + bd["shipping"] + bd["tax_total"], Decimal(amt["value"]), (addr["state"], items))
+                want = ((bd["item_total"] + bd["shipping"]) * Decimal("0.092")).quantize(Decimal("0.01"), rounding="ROUND_HALF_UP") if addr["state"] == "WA" else Decimal("0.00")
+                self.assertEqual(bd["tax_total"], want)
+
+    def test_wa_order_records_tax_for_filing_after_capture(self):
+        self.assertEqual(self.create(CART, WA_ADDR).status_code, 200)
+        self.assertEqual(self.capture().status_code, 200)
+        url, payload = self.fake.pf_posts[0]
+        self.assertEqual(payload["retail_costs"]["tax"], "8.70")
+        rec = self.log_records()[-1]
+        self.assertEqual((rec["state"], rec["amounts_match"], rec["tax_cents"], rec["tax_rate_pct"], rec["tax_loccode"], rec["taxable_cents"], rec["ship_state"]),
+                         ("created", True, 870, "9.2", "1800", 9460, "WA"))
+
+    def test_capture_keeps_rate_charged_even_if_dor_changes(self):
+        import wa_tax, requests
+        self.assertEqual(self.create(CART, WA_ADDR).status_code, 200)
+        wa_tax.reset()
+        self.fake.dor = requests.ConnectionError("down")     # fulfilment never depends on DOR: the rate rides on the PayPal order
+        self.assertEqual(self.capture().status_code, 200)
+        rec = self.log_records()[-1]
+        self.assertEqual((rec["state"], rec["amounts_match"], rec["tax_cents"], rec["tax_loccode"]), ("created", True, 870, "1800"))
 
     def test_live_env_uses_live_api(self):
         with mock.patch.dict(os.environ, {"PAYPAL_ENV": "live"}):
@@ -286,11 +413,10 @@ class CreateOrderTests(ShopBase):
         appmod._HITS.clear()
 
     def test_quote_matches_order(self):
-        with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"TX": 8.25}'}):
-            q = self.api("/shop/quote", {"items": CART, "address": ADDR}).get_json()
-            self.assertEqual((q["items"], q["shipping"], q["tax"], q["total"]), ("$89.85", "$4.75", "$7.41", "$102.01"))
-            q2 = self.api("/shop/quote", {"items": CART, "address": dict(ADDR, state="OR", zip="97201")}).get_json()
-            self.assertEqual((q2["tax"], q2["total"]), ("$0.00", "$94.60"))
+        q = self.api("/shop/quote", {"items": CART, "address": ADDR}).get_json()
+        self.assertEqual((q["items"], q["shipping"], q["tax"], q["total"]), ("$89.85", "$4.75", "$0.00", "$94.60"))
+        q2 = self.api("/shop/quote", {"items": CART, "address": dict(ADDR, state="OR", zip="97201")}).get_json()
+        self.assertEqual((q2["tax"], q2["total"]), ("$0.00", "$94.60"))
         self.assertEqual([c for c in self.fake.calls if "paypal" in c[1]], [], "quotes never call PayPal")
         rates = [c for c in self.fake.calls if "shipping/rates" in c[1]]
         self.assertEqual(len(rates), 2, "one Printful rate lookup per destination, cached")
@@ -610,10 +736,10 @@ class PageTests(ShopBase):
         self.assertIn("shop-checkout.js", t)
         self.assertIn("frame-ancestors 'none'", r.headers["Content-Security-Policy"])
 
-    def test_tax_states_listed_in_fine_print(self):
-        with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"WA": 10.25}'}):
-            self.assertIn("orders shipped to WA", self.c.get("/support").get_data(as_text=True))
-        self.assertNotIn("Sales tax is added", self.c.get("/support").get_data(as_text=True))
+    def test_tax_explained_in_fine_print(self):
+        t = self.c.get("/support").get_data(as_text=True)
+        self.assertIn("Sales tax is added at checkout for orders shipped to Washington", t)
+        self.assertIn("orders shipped to other states pay no sales tax", t)
 
     def test_other_pages_keep_default_headers(self):
         r = self.c.get("/credits")
@@ -689,7 +815,7 @@ class DonationTests(ShopBase):
             self.assertIsNone(shop.parse_donation(raw)[0], raw)
 
     def test_gift_order_has_no_shipping_tax_or_printful(self):
-        with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"TX": 8.25}'}):
+        with mock.patch.dict(os.environ, {"SHOP_TAX_RATES": '{"WA": 9.2}'}):
             r = self.api("/shop/paypal/donation", {"amount": "25.00", "price": "0.01"})
         self.assertEqual(r.status_code, 200, r.data)
         self.assertEqual(r.get_json(), {"id": ORDER_ID, "total": "$25.00"})
@@ -702,6 +828,8 @@ class DonationTests(ShopBase):
         self.assertNotIn("shipping", pu)
         self.assertEqual(body["application_context"]["shipping_preference"], "NO_SHIPPING")
         self.assertEqual([c for c in self.fake.calls if "printful" in c[1]], [])
+        self.assertEqual(self.fake.dor_calls(), [], "gifts are never taxed and never look up a rate")
+        self.assertNotIn("tax_total", pu["amount"]["breakdown"])
 
     def test_bad_amount_and_csrf(self):
         self.assertEqual(self.api("/shop/paypal/donation", {"amount": "0.50"}).status_code, 400)

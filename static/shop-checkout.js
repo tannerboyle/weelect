@@ -19,6 +19,8 @@
     q.lines.forEach(function(l){var row=el('div','cart-line');row.appendChild(el('span','cart-name',l.name+(l.q>1?' \u00d7 '+l.q:'')));row.appendChild(el('span','cart-amt',l.amount));box.appendChild(row);});
     document.getElementById('sum-items').textContent=q.items;document.getElementById('sum-ship-l').textContent=q.shipping_label;
     document.getElementById('sum-ship').textContent=q.shipping;document.getElementById('sum-tax').textContent=q.tax;
+    document.getElementById('sum-tax-l').textContent=q.tax_label||'Sales tax';
+    var tn=document.getElementById('sum-tax-note');tn.textContent=q.tax_note||'';tn.hidden=!q.tax_note;
     document.getElementById('sum-total').textContent=q.total;document.getElementById('sum-totals').hidden=false;
     document.getElementById('sum-note').hidden=true;
   }
@@ -68,6 +70,6 @@
       .catch(function(e){say(e.message);}).then(function(){go.disabled=false;});
   });
   /* Editing the address after a quote means shipping or tax may change: hide the buttons until it is re-quoted. */
-  form.addEventListener('input',function(){if(quoted){quoted=null;pay.hidden=true;document.getElementById('sum-note').hidden=false;
+  form.addEventListener('input',function(){if(quoted){quoted=null;pay.hidden=true;document.getElementById('sum-note').hidden=false;document.getElementById('sum-tax-note').hidden=true;
     document.getElementById('sum-note').textContent='Address changed. Press \u201cContinue to payment\u201d to update shipping and tax.';}});
 })();

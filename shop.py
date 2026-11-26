@@ -19,8 +19,10 @@ Env vars (all optional; nothing is required for the rest of the site to work):
   PRINTFUL_AUTO_CONFIRM=1     submit Printful orders for fulfillment automatically (default: leave as drafts, confirm=false)
   SHOP_LIVE_CATALOG=0         serve only the committed snapshot data/shop_products.json (default: live Printful store, cached)
   SHOP_CATALOG_TTL, SHOP_CATALOG_RETRY, SHOP_CATALOG_CACHE   catalog cache tuning (see printful_store.py)
-  SHOP_TAX_RATES              JSON of state -> percent, e.g. {"WA": 10.25, "TX": {"rate": 8.25, "shipping": true}}.
-                              Tax is collected only for orders shipped to the listed states. Default: none.
+  SHOP_TAX_RATES              FALLBACK Washington sales tax, used only when the WA Department of Revenue rate lookup
+                              (wa_tax.py) cannot be reached: {"WA": 9.2} or {"WA": {"rate": 9.2, "zips": {"98359": 9.2}}}
+                              (percent). With no fallback, WA checkout is refused while DOR is down. Orders shipped
+                              outside WA are never taxed; shipping is taxed along with the items for WA.
   SHOP_SECRET                 signing key for CSRF tokens (defaults to a hash of PAYPAL_CLIENT_SECRET)
   SHOP_ORDER_LOG              path of the JSONL order log (default /tmp/weelect_shop_orders.jsonl)
   SHOP_CSP_REPORT_ONLY=1      send the shop pages' CSP as report-only (debugging)
@@ -30,6 +32,7 @@ import hashlib, hmac, json, os, re, secrets, threading, time, logging
 from decimal import Decimal, ROUND_HALF_UP, InvalidOperation
 import requests
 import printful_store
+import wa_tax
 from flask import Blueprint, request, jsonify, render_template, redirect, make_response
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -147,45 +150,127 @@ def shop_open():
 
 
 # ------------------------------------------------------------------ sales tax (PayPal does not calculate it)
-def tax_rates():
-    """SHOP_TAX_RATES -> {state: (Decimal percent, taxes_shipping)}. Bad JSON or bad entries are logged and skipped,
-    so a typo never charges the wrong tax: a state that is not listed (correctly) is charged no tax."""
+# Washington only (Brunner Creative LLC's home state). WA sales tax is destination-based: the rate is the combined state +
+# local rate where the order is delivered, and it applies to the merchandise AND the delivery charge. The rate comes from
+# the WA Department of Revenue's address lookup (wa_tax.py); SHOP_TAX_RATES is only the fallback when DOR cannot be asked.
+# Orders shipped outside Washington are charged no sales tax. Gifts are never taxed (they never come through here).
+TAX_STATE = "WA"
+TAX_MIN_PCT, TAX_MAX_PCT = Decimal("6.5"), Decimal("15")     # 6.5% is the WA state rate; no WA location is near 15%
+TAX_DOWN = ("We could not look up Washington sales tax for this address just now, so we cannot take the order yet. "
+            "Please try again in a few minutes.")
+TAX_NOT_FOUND = ("We could not find that address in Washington. Please check the street address, city and ZIP code "
+                 "(and the state).")
+
+
+class TaxUnavailable(Exception):
+    """No trustworthy WA rate (DOR down and no fallback): checkout is refused rather than undercharging."""
+
+
+class TaxAddressError(Exception):
+    """DOR says the street/ZIP is not a Washington address: the buyer should fix the address."""
+
+
+def _pct(v):
+    if isinstance(v, bool):
+        return None
+    try:
+        r = Decimal(str(v))
+    except (InvalidOperation, ValueError):
+        return None
+    return r if TAX_MIN_PCT <= r <= TAX_MAX_PCT else None
+
+
+def tax_fallback():
+    """SHOP_TAX_RATES -> {"default": Decimal percent or None, "zips": {"98359": Decimal percent}} for Washington.
+    Accepted forms: {"WA": 9.2}  or  {"WA": {"rate": 9.2, "zips": {"98359": 9.2, "98101": 10.55}}}.
+    Percent values must be 6.5-15. Bad JSON or bad entries are logged and skipped (never guessed); other states are
+    ignored because the shop collects only Washington tax."""
+    out = {"default": None, "zips": {}}
     raw = env("SHOP_TAX_RATES")
     if not raw:
-        return {}
+        return out
     try:
         data = json.loads(raw)
     except ValueError:
-        log.error("SHOP_TAX_RATES is not valid JSON; collecting no tax")
-        return {}
-    out = {}
+        log.error("SHOP_TAX_RATES is not valid JSON; no WA fallback rate")
+        return out
     if not isinstance(data, dict):
-        log.error("SHOP_TAX_RATES must be a JSON object; collecting no tax")
-        return {}
+        log.error("SHOP_TAX_RATES must be a JSON object; no WA fallback rate")
+        return out
     for st, v in data.items():
-        st = str(st).upper()
-        ship = False
-        if isinstance(v, dict):
-            ship, v = bool(v.get("shipping")), v.get("rate")
-        try:
-            rate = Decimal(str(v))
-        except (InvalidOperation, ValueError):
-            rate = None
-        if st not in US_STATES or rate is None or isinstance(v, bool) or not (0 <= rate <= 20):
-            log.error("SHOP_TAX_RATES entry for %s ignored (state must be a US code, rate a percent 0-20)", st)
+        if str(st).upper() != TAX_STATE:
+            log.warning("SHOP_TAX_RATES entry for %s ignored (the shop collects Washington tax only)", st)
             continue
-        out[st] = (rate, ship)
+        zips = {}
+        if isinstance(v, dict):
+            zips, v = v.get("zips") or {}, v.get("rate")
+        if v is not None:
+            out["default"] = _pct(v)
+            if out["default"] is None:
+                log.error("SHOP_TAX_RATES WA rate ignored (must be a percent from 6.5 to 15)")
+        if not isinstance(zips, dict):
+            log.error("SHOP_TAX_RATES WA zips must be an object of ZIP -> percent")
+            zips = {}
+        for z, r in zips.items():
+            r2 = _pct(r)
+            if re.fullmatch(r"\d{5}", str(z)) and r2 is not None:
+                out["zips"][str(z)] = r2
+            else:
+                log.error("SHOP_TAX_RATES WA ZIP entry %s ignored", z)
     return out
 
 
 def tax_mode():
-    return "state_rates" if tax_rates() else "none"
+    return "wa"
 
 
-def tax_cents(items_cents, ship_cents, state):
-    rate, ship = tax_rates().get(state, (Decimal(0), False))
-    base = items_cents + (ship_cents if ship else 0)
-    return int((Decimal(base) * rate / Decimal(100)).quantize(Decimal(1), rounding=ROUND_HALF_UP))
+def tax_info(addr):
+    """The sales tax to charge for this ship-to address, as a dict:
+    {"state", "rate_pct" (Decimal percent), "loccode", "source", "result_code", "period"}.
+    Non-WA: rate 0, source "none". WA: DOR's rate for the address; if DOR cannot be asked, the SHOP_TAX_RATES ZIP rate,
+    then its WA default. Raises TaxUnavailable when there is no rate, TaxAddressError when DOR says the address is not in WA."""
+    st = (addr.get("state") or "").upper()
+    if st != TAX_STATE:
+        return {"state": st, "rate_pct": Decimal(0), "loccode": None, "source": "none", "result_code": None, "period": None}
+    z5 = (addr.get("zip") or "")[:5]
+    try:
+        r = wa_tax.lookup(addr.get("line1"), addr.get("city"), addr.get("zip"))
+        return {"state": st, "rate_pct": r["rate"] * 100, "loccode": r["loccode"], "source": "dor",
+                "result_code": r["code"], "period": r.get("period")}
+    except wa_tax.AddressNotFound:
+        fb = tax_fallback()
+        if z5 in fb["zips"]:
+            return {"state": st, "rate_pct": fb["zips"][z5], "loccode": None, "source": "fallback_zip", "result_code": None, "period": None}
+        raise TaxAddressError(TAX_NOT_FOUND)
+    except wa_tax.LookupFailed:
+        fb = tax_fallback()
+        if z5 in fb["zips"]:
+            return {"state": st, "rate_pct": fb["zips"][z5], "loccode": None, "source": "fallback_zip", "result_code": None, "period": None}
+        if fb["default"] is not None:
+            return {"state": st, "rate_pct": fb["default"], "loccode": None, "source": "fallback_default", "result_code": None, "period": None}
+        log.error("WA tax: DOR lookup failed and SHOP_TAX_RATES has no WA fallback; refusing checkout")
+        raise TaxUnavailable(TAX_DOWN)
+
+
+def tax_cents(items_cents, ship_cents, rate_pct):
+    """Washington taxes the delivery charge too, so the base is merchandise + shipping. Rounded half up to the cent."""
+    base = items_cents + ship_cents
+    return int((Decimal(base) * Decimal(rate_pct) / Decimal(100)).quantize(Decimal(1), rounding=ROUND_HALF_UP))
+
+
+def fmt_pct(d):
+    """Decimal percent -> '9.2', '10.55', '10' (never '1E+1')."""
+    return format(Decimal(d).normalize(), "f")
+
+
+def tax_note(t):
+    """Short record of the rate for the PayPal order description (kept by PayPal, so the filing data survives restarts)."""
+    if not t or t.get("source") == "none":
+        return ""
+    return f"WA sales tax {fmt_pct(t['rate_pct'])}%" + (f" (DOR location {t['loccode']})" if t.get("loccode") else f" ({t['source']})")
+
+
+TAX_NOTE_RE = re.compile(r"WA sales tax (\d{1,2}(?:\.\d{1,4})?)%(?: \(DOR location (\d{4})\))?")
 
 
 # ------------------------------------------------------------------ catalog
@@ -354,20 +439,40 @@ def parse_address(raw):
     return a, None
 
 
-def quote(lines, addr, ship=None):
+def quote(lines, addr, ship=None, tax=None):
     """All money for an order, in cents, computed on the server from the catalog (Printful retail prices), Printful's
-    shipping rate for this address and SHOP_TAX_RATES. Pass ship to re-check an order whose shipping is already fixed."""
+    shipping rate for this address and the WA sales tax rate for it (tax_info). Pass ship / tax to re-check an order whose
+    shipping and tax rate are already fixed. Raises ShippingUnavailable, TaxUnavailable or TaxAddressError."""
     items = subtotal_cents(lines)
+    if tax is None:
+        tax = tax_info(addr)          # before shipping: a refused WA lookup should not cost a Printful rate call
     if ship is None:
         ship = shipping_cents(lines, addr)
-    tax = tax_cents(items, ship, addr.get("state"))
-    return {"items": items, "shipping": ship, "tax": tax, "total": items + ship + tax}
+    t = tax_cents(items, ship, tax["rate_pct"])
+    return {"items": items, "shipping": ship, "tax": t, "total": items + ship + t, "tax_info": tax}
+
+
+def tax_label(t):
+    if not t or t.get("source") == "none":
+        return "Sales tax"
+    return f"WA sales tax ({fmt_pct(t['rate_pct'])}%)"
 
 
 def public_quote(lines, q):
+    t = q.get("tax_info") or {}
     return {"lines": [{"name": l["name"], "q": l["q"], "amount": money(l["price_cents"] * l["q"])} for l in lines],
             "items": money(q["items"]), "shipping": money(q["shipping"]), "tax": money(q["tax"]), "total": money(q["total"]),
-            "shipping_label": SHIP_LABEL}
+            "shipping_label": SHIP_LABEL, "tax_label": tax_label(t),
+            "tax_note": ("Washington sales tax at the rate for your delivery address, on items and shipping."
+                         if t.get("source") not in (None, "none") else "No sales tax is charged on orders shipped outside Washington.")}
+
+
+def tax_record(q):
+    """What goes in the order log for filing: rate, DOR location code, source and amount. No address."""
+    t = q.get("tax_info") or {}
+    return {"tax_cents": q["tax"], "tax_rate_pct": fmt_pct(t.get("rate_pct")) if t.get("source") not in (None, "none") else "0",
+            "tax_loccode": t.get("loccode"), "tax_source": t.get("source"), "tax_period": t.get("period"),
+            "tax_result_code": t.get("result_code"), "taxable_cents": q["items"] + q["shipping"] if t.get("source") not in (None, "none") else 0}
 
 
 # ------------------------------------------------------------------ CSRF (signed token + double-submit cookie + Origin check)
@@ -510,7 +615,7 @@ def build_paypal_order(lines, addr):
     pu = {
         "reference_id": "default",
         "custom_id": SOURCE,
-        "description": "We Elect Gifts order",
+        "description": ("We Elect Gifts order. " + tax_note(q["tax_info"])).strip()[:127],
         "amount": dict(_amt(q["total"]), breakdown={"item_total": _amt(q["items"]), "shipping": _amt(q["shipping"]),
                                                     "tax_total": _amt(q["tax"])}),
         "items": [{"name": l["name"][:127], "sku": f"{l['p']}.{l['c']}.{l['s']}", "quantity": str(l["q"]),
@@ -715,6 +820,21 @@ def write_log(rec):
         pass
 
 
+def tax_from_order(order, addr):
+    """The tax rate fixed when the PayPal order was created, read back from its description (PayPal keeps it), so the
+    amounts check and the filing record use exactly what the buyer was charged, even after a restart or a rate change."""
+    st = (addr.get("state") or "").upper()
+    if st != TAX_STATE:
+        return {"state": st, "rate_pct": Decimal(0), "loccode": None, "source": "none", "result_code": None, "period": None}
+    m = TAX_NOTE_RE.search(str(unit_of(order).get("description") or ""))
+    if m:
+        return {"state": st, "rate_pct": Decimal(m.group(1)), "loccode": m.group(2), "source": "order", "result_code": None, "period": None}
+    try:
+        return tax_info(addr)
+    except (TaxUnavailable, TaxAddressError):
+        return {"state": st, "rate_pct": Decimal(0), "loccode": None, "source": "unknown", "result_code": None, "period": None}
+
+
 def fulfil(order):
     """Create the Printful order for a PayPal order, but only if PayPal says its capture is COMPLETED.
     Returns (http_status, note). 5xx asks PayPal (webhook) to retry later; everything else is final."""
@@ -737,7 +857,7 @@ def fulfil(order):
         addr = order_address(order)
         # Shipping was fixed (from Printful's rate) when the PayPal order was created; re-check items and tax against it.
         ship = _cents((((unit_of(order).get("amount") or {}).get("breakdown") or {}).get("shipping") or {}).get("value"))
-        q = quote(lines, addr, ship=ship if ship is not None and ship >= 0 else 0)
+        q = quote(lines, addr, ship=ship if ship is not None and ship >= 0 else 0, tax=tax_from_order(order, addr))
         paid = _cents((cap.get("amount") or {}).get("value"))
         amounts_ok = paid == q["total"] and (cap.get("amount") or {}).get("currency_code") == "USD"
         if not printful_ready():
@@ -753,7 +873,7 @@ def fulfil(order):
         if res["ok"]:
             write_log({"order_id": oid, "capture_id": cap.get("id"), "state": "created", "printful_id": res.get("printful_id"),
                        "printful_status": res.get("status"), "confirmed": bool(confirm), "amounts_match": amounts_ok,
-                       "cart": cart_token(lines), "paid_cents": paid, "tax_cents": q["tax"], "ship_state": addr.get("state")})
+                       "cart": cart_token(lines), "paid_cents": paid, "ship_state": addr.get("state"), **tax_record(q)})
             return 200, "created"
         if res.get("retry"):
             write_log({"order_id": oid, "capture_id": cap.get("id"), "state": "retrying", "error": res["error"]})
@@ -787,7 +907,7 @@ def _page_context():
     phrase = kinds[0] if len(kinds) == 1 else ", ".join(kinds[:-1]) + " and " + kinds[-1] if kinds else "shop items"
     return {"products": pub, "products_phrase": phrase, "shop_open": shop_open(), "donations_open": donations_open(),
             "donation_suggestions": DONATION_SUGGESTIONS, "kofi_page": KOFI_PAGE, "kofi_embed": KOFI_EMBED,
-            "seller": seller_name(), "tax_mode": tax_mode(), "tax_states": sorted(tax_rates()), "shipping_label": SHIP_LABEL,
+            "seller": seller_name(), "tax_mode": tax_mode(), "tax_states": [TAX_STATE], "shipping_label": SHIP_LABEL,
             "shop_json": {"products": [{k: p[k] for k in ("id", "name", "price_cents", "colors", "ok", "prices")} for p in pub],
                           "limits": catalog().get("limits", {})}}
 
@@ -857,6 +977,10 @@ def quote_route():
         return jsonify(public_quote(lines, quote(lines, addr)))
     except ShippingUnavailable:
         return _json_error(503, SHIP_DOWN)
+    except TaxAddressError as e:
+        return _json_error(400, str(e))
+    except TaxUnavailable as e:
+        return _json_error(503, str(e))
 
 
 @bp.route("/shop/paypal/order", methods=["POST"])
@@ -871,6 +995,10 @@ def create_order():
         body, q = build_paypal_order(lines, addr)
     except ShippingUnavailable:
         return _json_error(503, SHIP_DOWN)
+    except TaxAddressError as e:
+        return _json_error(400, str(e))
+    except TaxUnavailable as e:
+        return _json_error(503, str(e))
     try:
         status, res = paypal_request("POST", "/v2/checkout/orders", body=body, request_id="we-create-" + secrets.token_hex(12))
     except ShopError as e:
@@ -879,6 +1007,8 @@ def create_order():
     if status not in (200, 201) or not ORDER_ID_RE.match(str(res.get("id") or "")):
         log.error("create order failed: %s %s %s", status, res.get("name"), [d.get("issue") for d in res.get("details") or [] if isinstance(d, dict)])
         return _json_error(502, "We could not start checkout. Please try again in a few minutes.")
+    write_log({"order_id": res["id"], "state": "opened", "items_cents": q["items"], "shipping_cents": q["shipping"],
+               "total_cents": q["total"], "ship_state": addr.get("state"), **tax_record(q)})
     return jsonify({"id": res["id"], "total": money(q["total"])})
 
 

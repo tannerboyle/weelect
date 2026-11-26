@@ -3,7 +3,7 @@
 This is everything Bob needs to do to turn the shop on. Nothing here needs code changes. Gifts and the store switch on separately:
 
 * **Value for Value gifts** work as soon as `PAYPAL_CLIENT_ID` and `PAYPAL_CLIENT_SECRET` are set (no Printful token, no `SHOP_OPEN`). `PAYPAL_WEBHOOK_ID` is recommended: it captures a gift whose buyer closed the tab right after approving. Without PayPal, `/support` shows a plain "Give through Ko-fi" link.
-* **We Elect Gifts (the store)** opens only when `SHOP_OPEN=1` **and** the PayPal credentials **and** `PAYPAL_WEBHOOK_ID` are set. Until then it shows "Coming soon" with the real Printful products as previews (no cart, no checkout), and `/shop/checkout`, `/shop/quote` and `/shop/paypal/order` refuse on the server. Open it only once sales tax (WA seller's permit, `SHOP_TAX_RATES`) is sorted.
+* **We Elect Gifts (the store)** opens only when `SHOP_OPEN=1` **and** the PayPal credentials **and** `PAYPAL_WEBHOOK_ID` are set. Until then it shows "Coming soon" with the real Printful products as previews (no cart, no checkout), and `/shop/checkout`, `/shop/quote` and `/shop/paypal/order` refuse on the server. Open it only once Washington sales tax registration is sorted (the rate lookup itself is built in; see "Sales tax").
 
 > Not legal or tax advice. The sales-tax and resale sections are a checklist of things to confirm with an accountant or the state's revenue department.
 
@@ -13,7 +13,8 @@ This is everything Bob needs to do to turn the shop on. Nothing here needs code 
 Reader -> /support (cart lives in the browser)
        -> /shop/checkout   our own page: shipping-address form, then PayPal's buttons drawn on the same page
        -> POST /shop/quote            server prices the cart from the Printful catalog, asks Printful for the shipping rate
-                                      to that address (POST /shipping/rates), adds SHOP_TAX_RATES (display only)
+                                      to that address (POST /shipping/rates); for a WA address, looks up the WA sales tax
+                                      rate from the WA Department of Revenue (wa_tax.py) and taxes items + shipping
        -> PayPal button / "Debit or Credit Card" button
             createOrder -> POST /shop/paypal/order
                  server re-prices every line, builds an itemized PayPal order (Orders API v2):
@@ -62,7 +63,7 @@ Reader -> /support#give: pick $5/$10/$25/$50/$100 or type any amount ($1 to $10,
 | `PRINTFUL_AUTO_CONFIRM` | optional | `1` = send orders straight to production (Printful charges you then). Default: drafts for review. Orders whose paid amount does not match the catalog are never auto-confirmed. |
 | `SHOP_LIVE_CATALOG` | optional | `0` = serve only the committed snapshot (no Printful catalog calls). Default: live store catalog, cached. |
 | `SHOP_CATALOG_TTL` / `SHOP_CATALOG_RETRY` / `SHOP_CATALOG_CACHE` | optional | Catalog cache lifetime (default 900 s), wait after a failed refresh (300 s), disk copy path (`/tmp/weelect_printful_catalog.json`). |
-| `SHOP_TAX_RATES` | optional | Sales tax per ship-to state, as JSON percentages. See "Sales tax". Default: no tax collected anywhere. |
+| `SHOP_TAX_RATES` | recommended | **Fallback** Washington sales tax, used only if the WA Department of Revenue rate lookup is down: `{"WA": 9.2}` or `{"WA": {"rate": 9.2, "zips": {"98359": 9.2}}}` (percent, 6.5-15). Without it, WA checkout is refused while DOR is down (never undercharged). See "Sales tax". |
 | `SELLER_NAME` | optional | Seller of record named on the shop, checkout and thank-you pages and sent to PayPal as part of the brand name (default `Brunner Creative LLC`). Leave unset unless the LLC's legal name changes. |
 | `SHOP_SECRET` | optional | Signing key for CSRF tokens. Defaults to a hash of `PAYPAL_CLIENT_SECRET`. |
 | `SHOP_ORDER_LOG` | optional | JSONL path (default `/tmp/weelect_shop_orders.jsonl`; Render's disk is ephemeral, the real record is the `SHOP_ORDER` lines in the Render logs). |
@@ -99,12 +100,13 @@ Margin check (Printful API, 2026-11-02; recheck before launch): tee base $11.92 
 ## 3. Sales tax, resale and policies (confirm with an accountant)
 
 * **Brunner Creative LLC is the seller of record.** PayPal takes payment into the LLC's PayPal Business account (the account, the bank account it pays out to and the seller's permit should all be in the LLC's name, not Bob's personal name); Bob is the contact person. Printful is a supplier that prints and ships. The page names the seller (`SELLER_NAME`), says Brunner Creative LLC is not a charity or 501(c)(3), and says purchases and gifts are not tax-deductible. Do not add any charity or deductibility language.
-* **PayPal does not work out sales tax.** The shop adds tax only from `SHOP_TAX_RATES`, a JSON object of ship-to state -> percent:
-  * `{"WA": 10.25}` charges 10.25% of the item total on orders shipped to Washington, and nothing anywhere else.
-  * `{"TX": {"rate": 8.25, "shipping": true}}` also taxes the shipping charge (some states tax shipping, some do not).
-  * Unlisted states are charged no tax. Unset or invalid JSON means no tax anywhere (bad entries are skipped and logged, never guessed).
-  * The rate is a single number per state. Many states add city/county rates on top, which vary by address; a flat state number is only right if that is what your state tells you to collect (for example, some states let remote sellers use one rate). **Bob must confirm, with his state's revenue department or an accountant, where he has to register and collect and at what rate, before turning the shop on.** If he needs exact rates by street address, that needs a tax service (for example TaxJar or Avalara), which this code does not include.
-  * The tax is itemized on the checkout page and in the PayPal order (`tax_total`), and the fine print on `/support` lists the states you collect for.
+* **PayPal does not work out sales tax; the shop does, for Washington only.** Washington sales tax is destination-based: the rate is the combined state + local rate where the order is delivered, and it applies to the merchandise **and** the shipping charge.
+  * For a WA ship-to address the server asks the WA Department of Revenue's free rate lookup (<https://dor.wa.gov/wa-sales-tax-rate-lookup-url-interface>): `GET https://webgis.dor.wa.gov/webapi/AddressRates.aspx?output=xml&addr=<street>&city=<city>&zip=<zip>`. It returns the combined rate and the 4-digit DOR **location code** (the code you report the sale under on the excise tax return). Example, 2026-11-26: an Olalla, WA 98359 address in Kitsap County -> 9.2%, location 1800; 601 Union St, Seattle 98101 -> 10.55%, location 1726. Answers are cached for 12 hours (rates change at most quarterly).
+  * If DOR cannot be reached (timeout, error, bad answer), the shop uses `SHOP_TAX_RATES`: the rate for that ZIP if listed, otherwise the WA default. If neither exists, WA checkout is refused with "We could not look up Washington sales tax..." rather than charging too little. If DOR says the address is not in Washington (bad ZIP), the buyer is asked to fix the address.
+  * Orders shipped outside Washington are charged no sales tax (other `SHOP_TAX_RATES` states are ignored). Gifts are never taxed.
+  * The tax is a separate line on the checkout summary ("WA sales tax (9.2%)") before payment, and in the PayPal order (`item_total + shipping + tax_total = total`). The PayPal order description carries the rate and location code ("WA sales tax 9.2% (DOR location 1800)"), so the record survives in PayPal.
+  * For filing, every order writes `SHOP_ORDER` log lines (Render logs) with `tax_cents`, `tax_rate_pct`, `tax_loccode`, `taxable_cents` (items + shipping), `tax_source` (`dor`, `fallback_zip`, `fallback_default`, `order`, `none`) and `tax_period`. No addresses are logged.
+  * DOR result code 5 means it found only the ZIP, not the street; it then gives the rate for the ZIP's main area, which can differ from the buyer's exact location (98359 spans Pierce and Kitsap counties). That rate is used and the code is logged as `tax_result_code`.
 * **Seller's permit.** Get it in the name of **Brunner Creative LLC**, in the state where the LLC is registered and operates. Many states require a seller's permit before the first sale, even if little or no tax is due. Selling into other states can create obligations there once you pass their "economic nexus" thresholds.
 * **Printful and resale.** Printful may charge sales tax on orders shipped to states where it has to collect tax, unless you give it a valid resale/exemption certificate for that state (Printful dashboard -> Settings -> Billing/Tax). Collecting tax from customers *and* paying it to Printful can double-tax you unless the certificate is on file; ask your accountant.
 * **Shipping to U.S. addresses only** (50 states + DC; the form offers nothing else). Adding countries means customs forms, VAT and different shipping rates.
@@ -113,7 +115,7 @@ Margin check (Printful API, 2026-11-02; recheck before launch): tee base $11.92 
 ## 4. Test it in the PayPal sandbox (no real money)
 
 1. In Render (a preview/staging service, or production while still on sandbox credentials) set the **sandbox** `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `PAYPAL_WEBHOOK_ID` (from a sandbox webhook pointing at that service's `/paypal/webhook`), `PAYPAL_ENV=sandbox`, `PRINTFUL_API_TOKEN` and `SITE_URL`, then deploy this branch.
-2. Open `/support#shop`, add a tee and a cap, press **Check out**, enter a U.S. address, press **Continue to payment**. Check the summary: items, shipping, tax (if you set `SHOP_TAX_RATES`), total.
+2. Open `/support#shop`, add a tee and a cap, press **Check out**, enter a U.S. address, press **Continue to payment**. Check the summary: items, shipping, tax (a WA address shows "WA sales tax (x%)"; other states $0.00), total.
 3. **PayPal button:** log in with the sandbox *personal* account and pay. **Card button:** click "Debit or Credit Card" and use a test card from developer.paypal.com -> Testing Tools -> **Card Testing** (a generated Visa works with any future expiry and any 3-digit CVV).
 4. Check, in order: the "Thank you" page appears on weelect.org; Render logs show `SHOP_ORDER {... "state":"created" ...}`; Printful -> Orders -> **Drafts** has the order with the right items, variants and the address you typed; the sandbox business account (log in at <https://www.sandbox.paypal.com>) shows the payment with the itemized amounts.
 5. Webhook: developer dashboard -> your sandbox app -> Webhooks -> **Webhook events** shows the deliveries with `200`. Use **Resend** on a `PAYMENT.CAPTURE.COMPLETED` event: logs say `duplicate` and no second draft appears.
@@ -151,6 +153,6 @@ Automated tests (no keys, no network; PayPal and Printful are faked): `python -m
 
 ## 7. What has been tested
 
-* Automated tests (faked HTTP): order building and itemized totals, tax by state, tampering, capture outcomes, webhook verification, idempotency, CSRF, rate limits, coming-soon mode, Printful catalog building and cache fallback, Printful shipping-rate failure, gift amount validation, gift order shape, gift capture and receipt.
+* Automated tests (faked HTTP): order building and itemized totals, WA sales tax (DOR lookup, fallback, refusal with no rate, non-WA, breakdown math, filing record), tampering, capture outcomes, webhook verification, idempotency, CSRF, rate limits, coming-soon mode, Printful catalog building and cache fallback, Printful shipping-rate failure, gift amount validation, gift order shape, gift capture and receipt.
 * Locally against the real services (2026-11-02): the live Printful catalog and shipping rates; a PayPal **sandbox** shop order paid with a test card through the card button, captured, which created one Printful **draft** (then cancelled via the API); and a PayPal sandbox gift of $10.50, captured, with the receipt page.
 * Not yet tested: real PayPal webhook deliveries (needs a public URL registered as a sandbox webhook) and live (non-sandbox) PayPal.
